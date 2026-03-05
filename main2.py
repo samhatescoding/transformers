@@ -1,107 +1,52 @@
-# main.py
-import os
 import traceback
 
-os.environ["HDF5_USE_FILE_LOCKING"] = "FALSE"
-
-from data import (
-    BaseDataset,
-    Cityscapes,
-    Flickr30k,
-    FlyingThings3D,
-    ImageNet1k,
-    INaturalist,
-    MSCOCO,
-    UCF101,
-)
-from models import (
-    BLOOM,
-    Baichuan2,
-    DBRX,
-    Falcon,
-    Gemma,
-    GPT4,
-    Llava,
-    OLMoE,
-    Orion14B,
-)
+from benchmarks import MSCOCOBenchmark, Flickr30kBenchmark
+from models import Llava
 
 
-def make_prompt(labels: list[str]) -> str:
-    # Keep prompt concise but strict.
-    # NOTE: If labels get very large, this becomes a long prompt.
-    label_set = ", ".join(labels)
-    return (
-        "USER: <image>\n"
-        "Return exactly ONE label from this list (one item only, no extra words):\n"
-        f"{label_set}\n"
-        "ASSISTANT:"
-    )
+# Edit these values directly to control benchmark size.
+TEST_SIZE = 2
+LABEL_SAMPLE_SIZE = 10
 
 
 def main() -> int:
-    N = 2
-    LABEL_SAMPLE_SIZE = 64
+    test_size = max(1, TEST_SIZE)
+    label_sample_size = max(1, LABEL_SAMPLE_SIZE)
 
     try:
-        ds = MSCOCO(streaming=True)
-        rows_for_labels = ds.get_samples(max(N, LABEL_SAMPLE_SIZE))
-    except Exception as exc:
-        print("\n[ERROR] Failed while loading MSCOCO data.")
-        print(f"Reason: {exc.__class__.__name__}: {exc}")
-        print("Hint: This often happens when network access to Hugging Face is blocked.")
-        print("Full traceback:")
-        print(traceback.format_exc())
-        return 1
+        benchmark = MSCOCOBenchmark()
+        model = Llava(max_new_tokens=16)
 
-    rows = rows_for_labels[:N]
-
-    # Build labels from dataset-provided taxonomy fields and/or text fallback.
-    labels = ds.get_labels(rows_for_labels)
-    print(f"Selected {N} images")
-    print(f"Extracted {len(labels)} candidate labels from selected rows")
-    print("First 30 labels:", labels[:30])
-    try:
-        model = DBRX(max_new_tokens=16)
-        print("model loaded.")
+        report = benchmark.run(
+            model=model,
+            n=test_size,
+            label_sample_size=label_sample_size,
+            show_progress=True,
+        )
     except Exception as exc:
-        print("\n[ERROR] Failed while loading model.")
+        print("\n[ERROR] Benchmark execution failed.")
         print(f"Reason: {exc.__class__.__name__}: {exc}")
         print("Full traceback:")
         print(traceback.format_exc())
         return 1
 
+    print(f"Benchmark: {report['benchmark']}")
+    print(f"Dataset: {report['dataset']}")
+    print(f"Evaluated {report['num_samples']} samples")
+    print(f"Candidate labels: {report['num_candidate_labels']}")
 
-    prompt = make_prompt(labels)
+    correct = 0
+    for item in report["results"]:
+        print(f"\nImage {item['index']}/{report['num_samples']}")
+        print("Prediction:", item["prediction"])
+        if item["correct"]:
+            correct += 1
+            print("Correct")
+        else:
+            print("Incorrect")
+            print("Valid labels for this image:", item["valid_labels"])
 
-    for i, row in enumerate(rows):
-        try:
-            image = ds.get_image_from_row(row)
-
-            # Extract candidate labels for this image
-            nouns_this_image = ds.get_labels_img(row)
-
-            # Normalize them
-            nouns_norm = {ds.normalize_text(n) for n in nouns_this_image}
-
-            print(f"\nImage {i+1}/{N}")
-            pred = model.predict(image, prompt).strip()
-            pred_norm = ds.normalize_text(pred)
-
-            print("Prediction:", pred)
-
-            if pred_norm in nouns_norm:
-                print("Correct")
-            else:
-                print("Incorrect")
-                print("Valid labels for this image:", sorted(nouns_norm))
-        except Exception as exc:
-            print(f"\n[ERROR] Failed during inference for image {i+1}/{N}.")
-            print(f"Reason: {exc.__class__.__name__}: {exc}")
-            print("Full traceback:")
-            print(traceback.format_exc())
-            return 1
-
+    print(f"\nAccuracy: {correct}/{report['num_samples']}")
     return 0
 
 
