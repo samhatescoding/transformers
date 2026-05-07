@@ -4,7 +4,7 @@ import torch
 from PIL import Image
 from transformers import LlavaNextForConditionalGeneration, LlavaNextProcessor
 
-from .base import BaseModel
+from ._base_model import BaseModel
 
 
 class Falcon(BaseModel):

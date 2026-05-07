@@ -8,7 +8,7 @@ from typing import Optional
 
 from PIL import Image
 
-from .base import BaseModel
+from ._base_model import BaseModel
 
 
 class GPT4(BaseModel):
@@ -30,7 +30,7 @@ class GPT4(BaseModel):
         temperature: float = 0.0,
         api_key: Optional[str] = None,
     ):
-        self.name = "gpt4"
+        self.name = str(model_id)
         self.model_id = model_id
         self.max_new_tokens = max_new_tokens
         self.temperature = temperature

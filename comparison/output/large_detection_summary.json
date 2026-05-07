@@ -1,0 +1,22 @@
+[
+  {
+    "model": "gpt-4.1",
+    "status": "ok",
+    "results_path": "comparison\\output\\large_detection_results\\gpt-4.1_openimages_v4_detection.json",
+    "prediction": "Fixed-wing aircraft: [0.073, 0.222, 0.946, 0.408]",
+    "correct": true,
+    "f1": 1.0
+  },
+  {
+    "model": "llava-onevision-72b",
+    "status": "error",
+    "error": "RuntimeError: LLaVA-OneVision 72B requires GPU here; this machine has no CUDA device.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\comparison\\run_large_detection_benchmark.py\", line 89, in main\n    summary.append(_run_one(model_name, factory, max_new_tokens))\n                   ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\comparison\\run_large_detection_benchmark.py\", line 28, in _run_one\n    model = model_factory(max_new_tokens)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\comparison\\run_large_detection_benchmark.py\", line 67, in _make_llava72\n    raise RuntimeError(\"LLaVA-OneVision 72B requires GPU here; this machine has no CUDA device.\")\nRuntimeError: LLaVA-OneVision 72B requires GPU here; this machine has no CUDA device.\n"
+  },
+  {
+    "model": "qwen25-vl-72b",
+    "status": "error",
+    "error": "RuntimeError: Qwen2.5-VL-72B-Instruct requires GPU here; this machine has no CUDA device.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\comparison\\run_large_detection_benchmark.py\", line 89, in main\n    summary.append(_run_one(model_name, factory, max_new_tokens))\n                   ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\comparison\\run_large_detection_benchmark.py\", line 28, in _run_one\n    model = model_factory(max_new_tokens)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\comparison\\run_large_detection_benchmark.py\", line 58, in _make_qwen72\n    raise RuntimeError(\"Qwen2.5-VL-72B-Instruct requires GPU here; this machine has no CUDA device.\")\nRuntimeError: Qwen2.5-VL-72B-Instruct requires GPU here; this machine has no CUDA device.\n"
+  }
+]

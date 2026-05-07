@@ -4,7 +4,7 @@ import torch
 from PIL import Image
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from .base import BaseModel
+from ._base_model import BaseModel
 
 
 class Orion14B(BaseModel):

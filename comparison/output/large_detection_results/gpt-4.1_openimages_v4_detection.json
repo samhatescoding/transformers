@@ -1,0 +1,72 @@
+{
+  "model": "gpt-4.1",
+  "benchmark": "openimages_v4_detection",
+  "report": {
+    "benchmark": "openimages_v4_detection",
+    "dataset": "openimages_v4",
+    "num_samples": 1,
+    "num_candidate_labels": 14,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "Fixed-wing aircraft"
+        ],
+        "prediction": "Fixed-wing aircraft: [0.073, 0.222, 0.946, 0.408]",
+        "correct": true,
+        "valid_labels": [
+          "Fixed-wing aircraft"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Fixed-wing aircraft",
+            "xyxy": [
+              23.21718406677246,
+              31.75409936159849,
+              987.34130859375,
+              357.8442708849907
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Fixed-wing aircraft",
+            "xyxy": [
+              74.752,
+              99.234,
+              1043.456,
+              281.61
+            ]
+          }
+        ],
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "mean_iou_matched": 0.5126967915160293,
+        "mean_iou_all_predictions": 0.5126967915160293,
+        "matched_predictions": [
+          {
+            "label": "Fixed-wing aircraft",
+            "xyxy": [
+              74.752,
+              99.234,
+              1043.456,
+              281.61
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "Fixed-wing aircraft",
+            "xyxy": [
+              23.21718406677246,
+              31.75409936159849,
+              987.34130859375,
+              357.8442708849907
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

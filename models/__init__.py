@@ -1,7 +1,11 @@
 from importlib import import_module
 
 __all__ = [
+    "BaseModel",
     "Llava",
+    "LlavaOnevision",
+    "SmallLlava",
+    "Qwen25VL",
     "GPT4",
     "Falcon",
     "Gemma",
@@ -13,7 +17,11 @@ __all__ = [
 ]
 
 _LAZY_IMPORTS = {
+    "BaseModel": "_base_model",
     "Llava": "llava",
+    "LlavaOnevision": "llava_onevision",
+    "SmallLlava": "small_llava",
+    "Qwen25VL": "qwen25_vl",
     "GPT4": "gpt4",
     "Falcon": "falcon",
     "Gemma": "gemma",

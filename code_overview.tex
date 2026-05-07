@@ -1,0 +1,351 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\title{Testing One Benchmark Against One Model}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Scope}
+This document describes the code path for running a list of benchmarks against a list of models, under the simplifying assumptions that:
+\begin{enumerate}[label=\arabic*.]
+    \item the benchmark list contains exactly one benchmark,
+    \item the model list contains exactly one model,
+    \item the benchmark is a labeling benchmark, so it uses the classification benchmark path.
+\end{enumerate}
+
+The entry point for this path is \texttt{run\_benchmark\_matrix()} in \texttt{benchmark\_runner.py}. The example benchmark used here is \texttt{ImageNet1kBenchmark}, but the same execution structure applies to the other classification benchmarks such as \texttt{PlacesBenchmark}, \texttt{LSUNBenchmark}, \texttt{FairFaceBenchmark}, and \texttt{INaturalistBenchmark}.
+
+\section{High-Level Flow}
+For one benchmark name and one model name, the execution chain is:
+\begin{enumerate}[label=\arabic*.]
+    \item \texttt{benchmark\_runner.py} validates the requested names against registries.
+    \item The selected model factory is resolved from \texttt{MODELS} and instantiated.
+    \item The selected benchmark class is resolved from \texttt{BENCHMARKS} and instantiated.
+    \item The benchmark object calls \texttt{BaseBenchmark.run(model=..., n=...)}.
+    \item The benchmark prepares rows and candidate labels from its dataset.
+    \item For each sample, the benchmark loads an image, builds a prompt, calls \texttt{model.predict()}, scores the prediction, and records stats.
+    \item The report is written to \texttt{results/<model>\_<benchmark>.json}.
+\end{enumerate}
+
+\section{Files Involved}
+
+\subsection*{\texttt{benchmark\_runner.py}}
+This is the main orchestration file for matrix-style execution.
+
+\textbf{Important globals}
+\begin{itemize}[leftmargin=*]
+    \item \texttt{BENCHMARKS}: maps benchmark names such as \texttt{"imagenet1k"} to benchmark classes.
+    \item \texttt{MODELS}: maps model names such as \texttt{"llava-7b"} or \texttt{"qwen25-vl"} to model factory functions.
+    \item \texttt{BENCHMARK\_TOKENS}: per-benchmark \texttt{max\_new\_tokens} defaults.
+\end{itemize}
+
+\textbf{Functions involved}
+\begin{longtable}{>{\ttfamily}p{0.34\textwidth}p{0.6\textwidth}}
+\textnormal{Function} & \textnormal{Role} \\
+\hline
+\texttt{\_write\_report(output\_dir, model\_name, benchmark\_name, report)} & Saves the final JSON payload to disk. \\
+\texttt{run\_benchmark\_matrix(model\_names, benchmark\_names, num\_samples, ...)} & Validates names, loads the model, instantiates the benchmark, runs the benchmark, annotates stats, and writes results. \\
+\end{longtable}
+
+\textbf{What \texttt{run\_benchmark\_matrix()} does in the one-model/one-benchmark case}
+\begin{enumerate}[label=\arabic*.]
+    \item checks that \texttt{num\_samples >= 1},
+    \item checks that the requested model name exists in \texttt{model\_registry},
+    \item checks that the requested benchmark name exists in \texttt{benchmark\_registry},
+    \item computes the initial token budget from \texttt{benchmark\_tokens},
+    \item instantiates the model with that token budget,
+    \item instantiates the benchmark with \texttt{streaming=True},
+    \item updates \texttt{model.max\_new\_tokens} to the benchmark-specific token budget,
+    \item calls \texttt{benchmark.run(...)},
+    \item inserts \texttt{model\_load\_time\_seconds} into \texttt{report["stats"]},
+    \item writes the report JSON and returns a summary dictionary.
+\end{enumerate}
+
+\subsection*{\texttt{benchmarks/\_\_init\_\_.py}}
+This file provides lazy imports for benchmark classes through \texttt{\_\_getattr\_\_()}.
+
+\textbf{Function involved}
+\begin{itemize}[leftmargin=*]
+    \item \texttt{\_\_getattr\_\_(name)}: when \texttt{benchmark\_runner.py} imports benchmark classes from \texttt{benchmarks}, this function resolves names such as \texttt{ImageNet1kBenchmark} to the right module.
+\end{itemize}
+
+For a labeling benchmark, the important mapping is usually:
+\begin{itemize}[leftmargin=*]
+    \item benchmark class name $\rightarrow$ \texttt{benchmarks.datas.benchmark\_wrappers}
+\end{itemize}
+
+\subsection*{\texttt{benchmarks/datas/benchmark\_wrappers.py}}
+This file binds concrete datasets to generic benchmark types.
+
+For the example labeling path:
+\begin{itemize}[leftmargin=*]
+    \item \texttt{ImageNet1kBenchmark(\_\_init\_\_)} constructs \texttt{ImageNet1k(split=..., streaming=...)} and passes it into \texttt{ClassificationBenchmark}.
+\end{itemize}
+
+Other classification wrappers in this file, such as \texttt{PlacesBenchmark}, \texttt{LSUNBenchmark}, \texttt{FairFaceBenchmark}, and \texttt{INaturalistBenchmark}, follow the same pattern.
+
+\subsection*{\texttt{benchmarks/classification.py}}
+This file defines the benchmark subclass used for labeling tasks.
+
+\textbf{Functions involved}
+\begin{longtable}{>{\ttfamily}p{0.34\textwidth}p{0.6\textwidth}}
+\textnormal{Function} & \textnormal{Role} \\
+\hline
+\texttt{ClassificationBenchmark.\_\_init\_\_(dataset, name)} & Passes the dataset and benchmark name into \texttt{BaseBenchmark}. \\
+\texttt{get\_image\_for\_row(row)} & Loads the image from the dataset and resizes it if it is a PIL image. \\
+\texttt{\_resize\_image(image)} & Shrinks the image so its largest edge fits under \texttt{max\_edge}. \\
+\end{longtable}
+
+This subclass does not override prompt construction or scoring. It relies on the default label-selection behavior from \texttt{BaseBenchmark}.
+
+\subsection*{\texttt{benchmarks/base.py}}
+This file contains the main benchmark execution loop.
+
+\textbf{Functions involved in the labeling path}
+\begin{longtable}{>{\ttfamily}p{0.34\textwidth}p{0.6\textwidth}}
+\textnormal{Function} & \textnormal{Role} \\
+\hline
+\texttt{BaseBenchmark.\_\_init\_\_(dataset, name)} & Stores the dataset object and benchmark name. \\
+\texttt{get\_candidate\_labels(rows)} & Delegates to \texttt{dataset.get\_labels(rows)} to build the label pool. \\
+\texttt{get\_valid\_labels\_for\_row(row)} & Delegates to \texttt{dataset.get\_labels\_img(row)} to fetch acceptable labels for one row. \\
+\texttt{get\_prompt\_labels\_for\_row(row, labels)} & Downsamples the candidate label list if it exceeds \texttt{MAX\_PROMPT\_LABELS}, while trying to preserve the true labels. \\
+\texttt{make\_rng\_for\_row(row)} & Creates a deterministic random generator used for prompt-label sampling. \\
+\texttt{prepare(n, label\_sample\_size)} & Gets sample rows and candidate labels before the main loop starts. \\
+\texttt{make\_prompt(labels, row, image)} & Builds the default labeling prompt: one image, one label, no extra text. \\
+\texttt{evaluate\_prediction(row, prediction, image)} & Normalizes the model output and checks whether it matches any valid label for the row. \\
+\texttt{analyze\_prediction(...)} & Computes behavior stats such as hallucinated label count and generated output count. \\
+\texttt{build\_run\_statistics(sample\_results, wall\_clock\_seconds)} & Aggregates sample-level stats into run-level metrics. \\
+\texttt{run(model, n, label\_sample\_size, show\_progress, on\_sample)} & Executes the full benchmark loop and returns the final report. \\
+\end{longtable}
+
+\textbf{What \texttt{prepare()} does}
+\begin{enumerate}[label=\arabic*.]
+    \item calls \texttt{dataset.get\_samples(max(n, label\_sample\_size))},
+    \item slices the first \texttt{n} rows for evaluation,
+    \item calls \texttt{get\_candidate\_labels(rows\_for\_labels)},
+    \item returns \texttt{(rows, labels)}.
+\end{enumerate}
+
+\textbf{What \texttt{run()} does for each sample}
+\begin{enumerate}[label=\arabic*.]
+    \item calls \texttt{get\_image\_for\_row(row)},
+    \item calls \texttt{get\_prompt\_labels\_for\_row(row, labels)},
+    \item calls \texttt{make\_prompt(labels=prompt\_labels, row=row, image=image)},
+    \item constructs a \texttt{ResourceSampler} and starts it,
+    \item calls \texttt{model.predict(image, prompt)},
+    \item stops the resource sampler,
+    \item calls \texttt{parse\_prediction\_boxes(...)} even though the labeling path normally returns no boxes,
+    \item calls \texttt{evaluate\_prediction(row, prediction, image)},
+    \item calls \texttt{get\_ground\_truth\_boxes\_for\_row(row)}, which returns an empty list for a normal labeling row,
+    \item calls \texttt{analyze\_prediction(...)},
+    \item optionally calls \texttt{model.count\_text\_tokens(prediction)},
+    \item stores the per-sample result dictionary,
+    \item after the loop, calls \texttt{build\_run\_statistics(...)} and returns the final report.
+\end{enumerate}
+
+\subsection*{\texttt{benchmarks/resource\_sampler.py}}
+This file records resource usage while a prediction is being generated.
+
+\textbf{Functions involved}
+\begin{longtable}{>{\ttfamily}p{0.34\textwidth}p{0.6\textwidth}}
+\textnormal{Function} & \textnormal{Role} \\
+\hline
+\texttt{ResourceSampler.\_\_init\_\_(interval\_seconds)} & Initializes process handles and sample storage. \\
+\texttt{start()} & Records initial RAM state, resets CUDA peak tracking if needed, and starts the sampling thread. \\
+\texttt{stop()} & Stops sampling and returns a metrics dictionary. \\
+\texttt{\_run()} & Background loop that samples CPU RAM, CPU utilization, and current GPU allocation. \\
+\end{longtable}
+
+\subsection*{\texttt{benchmarks/datas/\_\_init\_\_.py}}
+This file provides lazy imports for dataset classes through \texttt{\_\_getattr\_\_()}.
+
+\textbf{Function involved}
+\begin{itemize}[leftmargin=*]
+    \item \texttt{\_\_getattr\_\_(name)}: resolves dataset class names such as \texttt{ImageNet1k} to concrete dataset modules.
+\end{itemize}
+
+For the ImageNet example, the relevant mapping is:
+\begin{itemize}[leftmargin=*]
+    \item \texttt{ImageNet1k} $\rightarrow$ \texttt{benchmarks.datas.class\_imagenet1k}
+\end{itemize}
+
+\subsection*{\texttt{benchmarks/datas/base.py}}
+This file defines the dataset interface expected by \texttt{BaseBenchmark}.
+
+\textbf{Functions involved}
+\begin{longtable}{>{\ttfamily}p{0.34\textwidth}p{0.6\textwidth}}
+\textnormal{Function} & \textnormal{Role} \\
+\hline
+\texttt{BaseDataset.\_\_iter\_\_()} & Abstract iteration interface. \\
+\texttt{get\_labels(rows)} & Abstract method for producing the candidate label pool. \\
+\texttt{get\_samples(n)} & Abstract method for selecting benchmark rows. \\
+\texttt{get\_image\_from\_row(row)} & Abstract method for loading the image object. \\
+\texttt{normalize\_text(text)} & Lowercases and strips punctuation for label matching. \\
+\texttt{label\_map\_normalized()} & Builds normalized label lookup tables. \\
+\texttt{is\_valid\_label(label)} & Checks whether a label exists in the dataset label set. \\
+\end{longtable}
+
+In the single-benchmark classification path, \texttt{normalize\_text()} is especially important because both the ground-truth labels and the model output are normalized before exact matching.
+
+\subsection*{\texttt{benchmarks/datas/class\_imagenet1k.py}}
+This is a concrete labeling dataset implementation.
+
+\textbf{Functions involved}
+\begin{longtable}{>{\ttfamily}p{0.34\textwidth}p{0.6\textwidth}}
+\textnormal{Function} & \textnormal{Role} \\
+\hline
+\texttt{ImageNet1k.\_\_init\_\_(split, streaming, dataset\_id, use\_auth\_token)} & Loads the Hugging Face dataset and initializes class labels. \\
+\texttt{\_\_iter\_\_()} & Returns an iterator over the dataset stream. \\
+\texttt{get\_samples(n)} & Reads the first \texttt{n} rows from the dataset stream. \\
+\texttt{get\_image\_from\_row(row)} & Converts the row's image field into a PIL image in RGB mode. \\
+\texttt{get\_labels\_img(row)} & Returns the valid labels for one row, including the leaf label and optional WordNet hypernyms. \\
+\texttt{get\_labels(rows)} & Merges labels across sampled rows to build the candidate label list. \\
+\end{longtable}
+
+\textbf{Helper functions used by \texttt{get\_labels\_img()}}
+\begin{itemize}[leftmargin=*]
+    \item \texttt{\_synset\_from\_imagenet\_synset\_id(synset\_id)}
+    \item \texttt{\_ancestor\_synsets(syn, max\_depth)}
+\end{itemize}
+
+These helpers matter only when the dataset exposes ImageNet synset IDs and the benchmark chooses to accept parent classes as valid labels.
+
+\subsection*{\texttt{models/\_\_init\_\_.py}}
+This file provides lazy imports for model classes through \texttt{\_\_getattr\_\_()}.
+
+\textbf{Function involved}
+\begin{itemize}[leftmargin=*]
+    \item \texttt{\_\_getattr\_\_(name)}: resolves names such as \texttt{Llava}, \texttt{Gemma}, \texttt{Qwen25VL}, and \texttt{SmallLlava} to concrete modules.
+\end{itemize}
+
+\subsection*{\texttt{models/base.py}}
+This file defines the interface expected by \texttt{BaseBenchmark.run()}.
+
+\textbf{Functions involved}
+\begin{longtable}{>{\ttfamily}p{0.34\textwidth}p{0.6\textwidth}}
+\textnormal{Function} & \textnormal{Role} \\
+\hline
+\texttt{BaseModel.predict(image, prompt)} & Required abstract generation function. \\
+\texttt{get\_tokenizer()} & Finds a tokenizer on the model object or its processor. \\
+\texttt{count\_text\_tokens(text)} & Counts generated output tokens for telemetry and truncation tracking. \\
+\end{longtable}
+
+\subsection*{\texttt{models/llava.py}}
+This is one concrete model wrapper and is representative of the model-side work done during benchmark execution.
+
+\textbf{Functions involved}
+\begin{longtable}{>{\ttfamily}p{0.34\textwidth}p{0.6\textwidth}}
+\textnormal{Function} & \textnormal{Role} \\
+\hline
+\texttt{Llava.\_\_init\_\_(model\_id, max\_new\_tokens, stream, load\_in\_4bit)} & Loads the processor and model weights and stores generation settings. \\
+\texttt{\_load\_with\_local\_fallback(loader, model\_id, artifact\_name, ...)} & Tries normal model loading, then local-cache loading if needed. \\
+\texttt{\_synchronize\_processor\_with\_model\_config()} & Repairs processor metadata needed for image token handling. \\
+\texttt{predict(image, prompt)} & Prepares inputs, runs generation, decodes text, and returns cleaned output. \\
+\texttt{\_prepare\_prompt(prompt)} & Converts the benchmark prompt into the model's expected chat format. \\
+\texttt{\_extract\_instruction(prompt)} & Removes wrapper tokens such as \texttt{USER:}, \texttt{<image>}, and \texttt{ASSISTANT:}. \\
+\texttt{\_repair\_image\_token\_mismatch(prompt, image, inputs)} & Fixes mismatches between expected and actual image-token counts. \\
+\texttt{\_clean\_output\_text(output\_text, prompt)} & Normalizes generated text and, for label prompts, returns a single cleaned line. \\
+\texttt{\_normalize\_for\_matching(text)} & Helper for matching generated text against prompt labels. \\
+\end{longtable}
+
+Other model files such as \texttt{models/gemma.py}, \texttt{models/qwen25\_vl.py}, and \texttt{models/small\_llava.py} fill the same role. The benchmark loop only requires that the selected wrapper implement \texttt{predict()} and optionally expose token-counting support through \texttt{BaseModel}.
+
+\section{Exact Call Chain}
+Under the assumptions of this document, the call chain is:
+\begin{enumerate}[label=\arabic*.]
+    \item \texttt{benchmark\_runner.run\_benchmark\_matrix(["imagenet1k"], ["llava-7b"], num\_samples)}
+    \item resolve \texttt{MODELS["llava-7b"]} and instantiate \texttt{models.llava.Llava}
+    \item resolve \texttt{BENCHMARKS["imagenet1k"]} and instantiate \texttt{benchmarks.datas.benchmark\_wrappers.ImageNet1kBenchmark}
+    \item \texttt{ImageNet1kBenchmark.\_\_init\_\_()} constructs \texttt{benchmarks.datas.class\_imagenet1k.ImageNet1k}
+    \item \texttt{ClassificationBenchmark.\_\_init\_\_()} delegates to \texttt{BaseBenchmark.\_\_init\_\_()}
+    \item \texttt{BaseBenchmark.run(model, n, label\_sample\_size, show\_progress=False)}
+    \item \texttt{BaseBenchmark.prepare(...)} calls \texttt{ImageNet1k.get\_samples(...)} and \texttt{ImageNet1k.get\_labels(...)}
+    \item for each row, \texttt{ClassificationBenchmark.get\_image\_for\_row(row)} calls \texttt{ImageNet1k.get\_image\_from\_row(row)}
+    \item \texttt{BaseBenchmark.get\_prompt\_labels\_for\_row(...)} decides which labels appear in the prompt
+    \item \texttt{BaseBenchmark.make\_prompt(...)} creates the label-selection prompt
+    \item \texttt{ResourceSampler.start()}
+    \item \texttt{Llava.predict(image, prompt)}
+    \item \texttt{ResourceSampler.stop()}
+    \item \texttt{BaseBenchmark.evaluate\_prediction(row, prediction, image)}
+    \item \texttt{BaseBenchmark.analyze\_prediction(...)}
+    \item \texttt{BaseModel.count\_text\_tokens(prediction)} if available
+    \item \texttt{BaseBenchmark.build\_run\_statistics(...)}
+    \item \texttt{benchmark\_runner.\_write\_report(...)}
+\end{enumerate}
+
+\section{Sample-Level Data Flow}
+For one row in a labeling benchmark, the key data transformations are:
+\begin{enumerate}[label=\arabic*.]
+    \item the dataset row enters from \texttt{get\_samples()},
+    \item the image is extracted by \texttt{get\_image\_from\_row()},
+    \item the valid labels for that row come from \texttt{get\_labels\_img(row)},
+    \item the candidate prompt-label list comes from \texttt{get\_labels(rows)},
+    \item \texttt{make\_prompt()} embeds those labels into a strict ``return exactly one label'' instruction,
+    \item \texttt{predict()} returns raw model text,
+    \item \texttt{evaluate\_prediction()} normalizes that text and compares it against normalized valid labels,
+    \item the result is recorded with correctness, prediction text, valid labels, and telemetry.
+\end{enumerate}
+
+\section{Output Structure}
+The JSON written by \texttt{\_write\_report()} has this shape:
+\begin{verbatim}
+{
+  "model": "...",
+  "benchmark": "...",
+  "report": {
+    "benchmark": "...",
+    "dataset": "...",
+    "num_samples": ...,
+    "num_candidate_labels": ...,
+    "results": [...],
+    "stats": {...}
+  }
+}
+\end{verbatim}
+
+In the one-model/one-benchmark case, \texttt{run\_benchmark\_matrix()} also returns a one-element summary list with:
+\begin{itemize}[leftmargin=*]
+    \item model name,
+    \item benchmark name,
+    \item number of samples,
+    \item \texttt{max\_new\_tokens},
+    \item result file path.
+\end{itemize}
+
+\section{What Is Not Involved}
+This document is intentionally about the \texttt{benchmark\_runner.py} path. The following files are not part of this specific execution path:
+\begin{itemize}[leftmargin=*]
+    \item \texttt{main.py}, which is a separate manual runner with UI hooks,
+    \item \texttt{comparison/} scripts, which read saved result files after benchmark execution,
+    \item non-classification benchmark files such as \texttt{benchmarks/detection.py}, \texttt{benchmarks/captioning.py}, and \texttt{benchmarks/visualqa.py}.
+\end{itemize}
+
+\section{Summary}
+For one labeling benchmark and one model, the execution path is compact:
+\begin{enumerate}[label=\arabic*.]
+    \item \texttt{benchmark\_runner.py} chooses the model class and benchmark class,
+    \item \texttt{benchmarks/datas/benchmark\_wrappers.py} binds the benchmark to a concrete dataset,
+    \item \texttt{benchmarks/base.py} and \texttt{benchmarks/classification.py} run the evaluation loop,
+    \item \texttt{benchmarks/datas/base.py} plus a concrete dataset file such as \texttt{class\_imagenet1k.py} provide rows, labels, and images,
+    \item \texttt{models/base.py} plus a concrete model file such as \texttt{models/llava.py} generate predictions,
+    \item \texttt{benchmarks/resource\_sampler.py} records telemetry,
+    \item \texttt{benchmark\_runner.\_write\_report()} saves the final JSON result.
+\end{enumerate}
+
+\end{document}

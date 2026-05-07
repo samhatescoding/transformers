@@ -10,6 +10,7 @@ from PIL import Image, ImageDraw, ImageTk
 @dataclass
 class Box:
     label: str
+    caption: str
     xyxy: tuple[float, float, float, float]
     color: str
 
@@ -123,22 +124,33 @@ class BenchmarkUI:
         out = image.convert("RGB").copy()
         draw = ImageDraw.Draw(out)
 
-        normalized_gt = self._normalize_boxes(gt_boxes, color="lime")
-        normalized_pred = self._normalize_boxes(pred_boxes, color="orange")
+        normalized_gt = self._normalize_boxes(gt_boxes, default_color="lime", show_coords=False)
+        normalized_pred = self._normalize_boxes(
+            pred_boxes,
+            default_color="orange",
+            show_coords=True,
+            color_cycle=self.PRED_COLORS,
+        )
 
         for box in normalized_gt + normalized_pred:
             x0, y0, x1, y1 = box.xyxy
             draw.rectangle((x0, y0, x1, y1), outline=box.color, width=3)
-            if box.label:
+            if box.caption:
                 text_y = max(0, y0 - 15)
-                draw.text((x0 + 2, text_y), box.label, fill=box.color)
+                draw.text((x0 + 2, text_y), box.caption, fill=box.color)
 
         out.thumbnail(self.max_image_size, Image.Resampling.LANCZOS)
         return out
 
-    def _normalize_boxes(self, boxes: List[Dict[str, Any]], color: str) -> List[Box]:
+    def _normalize_boxes(
+        self,
+        boxes: List[Dict[str, Any]],
+        default_color: str,
+        show_coords: bool,
+        color_cycle: tuple[str, ...] | None = None,
+    ) -> List[Box]:
         out: List[Box] = []
-        for item in boxes or []:
+        for idx, item in enumerate(boxes or []):
             if not isinstance(item, dict):
                 continue
             coords = item.get("xyxy")
@@ -149,7 +161,14 @@ class BenchmarkUI:
             except (TypeError, ValueError):
                 continue
             label = str(item.get("label", "")).strip()
-            out.append(Box(label=label, xyxy=(x0, y0, x1, y1), color=color))
+            w = int(round(max(0.0, x1 - x0)))
+            h = int(round(max(0.0, y1 - y0)))
+            xi = int(round(x0))
+            yi = int(round(y0))
+            coords_text = f"[{xi}, {yi}, {w}, {h}]"
+            caption = f"{label} {coords_text}".strip() if show_coords else label
+            color = color_cycle[idx % len(color_cycle)] if color_cycle else default_color
+            out.append(Box(label=label, caption=caption, xyxy=(x0, y0, x1, y1), color=color))
         return out
 
     def _render_current_sample(self) -> None:
@@ -161,18 +180,26 @@ class BenchmarkUI:
         gt_boxes = payload.get("ground_truth_boxes", [])
         pred_boxes = payload.get("predicted_boxes", [])
         prediction = payload.get("prediction", "")
+        prompt_labels = payload.get("prompt_labels", [])
         valid_labels = payload.get("valid_labels", [])
         is_correct = payload.get("correct", False)
         index = payload.get("index", "?")
         total = payload.get("total", "?")
+        box_matches = payload.get("box_matches", [])
 
-        rendered = self._render_image(image=image, gt_boxes=gt_boxes, pred_boxes=pred_boxes)
+        if payload.get("pre_rendered_image"):
+            rendered = image.convert("RGB").copy()
+            rendered.thumbnail(self.max_image_size, Image.Resampling.LANCZOS)
+        else:
+            rendered = self._render_image(image=image, gt_boxes=gt_boxes, pred_boxes=pred_boxes)
         self._photo = ImageTk.PhotoImage(rendered)
         self.image_label.configure(image=self._photo)
 
         gt_labels_text = ", ".join(valid_labels) if valid_labels else "(none)"
+        prompt_labels_text = ", ".join(prompt_labels) if prompt_labels else "(none)"
         lines = [
             f"Sample: {index}/{total}",
+            f"Prompt labels: {prompt_labels_text}",
             f"Prediction: {prediction}",
             f"Correct: {is_correct}",
             "",
@@ -181,11 +208,43 @@ class BenchmarkUI:
             "",
             f"Ground-truth boxes: {len(gt_boxes)}",
             f"Predicted boxes: {len(pred_boxes)}",
-            "",
-            "Legend:",
-            "Green = ground truth box",
-            "Orange = predicted box",
         ]
+        if box_matches:
+            lines.extend(
+                [
+                    "",
+                    "Metrics:",
+                    f"Precision: {float(payload.get('precision', 0.0)):.3f}",
+                    f"Recall: {float(payload.get('recall', 0.0)):.3f}",
+                    f"F1: {float(payload.get('f1', 0.0)):.3f}",
+                    f"Mean IoU (matched): {float(payload.get('mean_iou_matched', 0.0)):.3f}",
+                    f"Mean IoU (all preds): {float(payload.get('mean_iou_all_predictions', 0.0)):.3f}",
+                    "",
+                    "Predicted box IoUs:",
+                ]
+            )
+            for match in box_matches:
+                label = str(match.get("label", "")).strip() or "(no label)"
+                iou = float(match.get("iou", 0.0))
+                status = "matched" if match.get("matched") else "unmatched"
+                lines.append(f"{match.get('prediction_index', '?')}. {label}: IoU={iou:.3f} {status}")
+        if not gt_boxes and not valid_labels:
+            lines.extend(
+                [
+                    "",
+                    "Note: no ground-truth annotations were found",
+                    "for this sample in the dataset row.",
+                ]
+            )
+        lines.extend(
+            [
+                "",
+                "Legend:",
+                "Green = ground truth box",
+                "Predicted boxes are color-coded",
+                "Pred captions include [x, y, w, h]",
+            ]
+        )
         self.meta_var.set("\n".join(lines))
 
         self.nav_var.set(f"Viewing saved sample {self.current_index + 1}/{len(self.samples)}")
@@ -204,3 +263,12 @@ class BenchmarkUI:
             self.root.focus_force()
         except tk.TclError:
             pass
+    PRED_COLORS = (
+        "orange",
+        "cyan",
+        "magenta",
+        "yellow",
+        "red",
+        "dodgerblue",
+        "white",
+    )

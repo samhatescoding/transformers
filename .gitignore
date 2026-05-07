@@ -3,6 +3,11 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
 # Virtual environments
 .venv/
@@ -15,3 +20,24 @@ env/
 # OS
 .DS_Store
 Thumbs.db 
+todo.md
+
+# Local scratch and generated UI outputs
+.tmp/
+ui/ui_outputs/
+
+# Generic local artifacts
+*.log
+*.tmp
+.idea/
+
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+
+# Generated local docs
+code_overview.pdf
