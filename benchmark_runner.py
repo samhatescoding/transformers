@@ -30,7 +30,7 @@ from benchmarks import (
     UCF101Benchmark,
     VQAv2Benchmark,
 )
-from models import Gemma, GPT4, Llava, Qwen25VL, SmallLlava
+from models import Gemma, GPT4, InternVL25, Llava, LlavaOnevision, MiniCPMV26, Qwen25VL, SmallLlava
 
 BenchmarkFactory = Callable[..., BaseBenchmark]
 ModelFactory = Callable[[int], object]
@@ -92,6 +92,43 @@ MODELS: tuple[ModelSpec, ...] = (
     ModelSpec(
         name="qwen25-vl",
         factory=lambda max_new_tokens: Qwen25VL(
+            max_new_tokens=max_new_tokens,
+        ),
+    ),
+    ModelSpec(
+        name="qwen25-vl-7b",
+        factory=lambda max_new_tokens: Qwen25VL(
+            model_id="Qwen/Qwen2.5-VL-7B-Instruct",
+            max_new_tokens=max_new_tokens,
+        ),
+    ),
+    ModelSpec(
+        name="qwen25-vl-72b",
+        factory=lambda max_new_tokens: Qwen25VL(
+            model_id="Qwen/Qwen2.5-VL-72B-Instruct",
+            max_new_tokens=max_new_tokens,
+        ),
+    ),
+    ModelSpec(
+        name="llava-onevision-72b",
+        factory=lambda max_new_tokens: LlavaOnevision(
+            model_id="llava-hf/llava-onevision-qwen2-72b-ov-hf",
+            max_new_tokens=max_new_tokens,
+            stream=False,
+            load_in_4bit=False,
+        ),
+    ),
+    ModelSpec(
+        name="internvl25-8b",
+        factory=lambda max_new_tokens: InternVL25(
+            model_id="OpenGVLab/InternVL2_5-8B",
+            max_new_tokens=max_new_tokens,
+        ),
+    ),
+    ModelSpec(
+        name="minicpm-v-2_6",
+        factory=lambda max_new_tokens: MiniCPMV26(
+            model_id="openbmb/MiniCPM-V-2_6",
             max_new_tokens=max_new_tokens,
         ),
     ),

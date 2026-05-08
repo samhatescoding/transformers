@@ -14,8 +14,8 @@ class Qwen25VL(BaseModel):
         max_new_tokens: int = 100,
         temperature: float = 0.0,
     ):
-        self.name = "qwen25-vl"
         self.model_id = "Qwen/Qwen2.5-VL-3B-Instruct" if model_id == "qwen25-vl" else model_id
+        self.name = self._name_from_model_id(self.model_id)
         self.max_new_tokens = max_new_tokens
         self.temperature = temperature
 
@@ -24,6 +24,15 @@ class Qwen25VL(BaseModel):
 
         print("Loading Qwen2.5-VL model...")
         self.model = self._load_model()
+
+    @staticmethod
+    def _name_from_model_id(model_id: str) -> str:
+        normalized = str(model_id or "").strip()
+        if normalized in {"qwen25-vl", "Qwen/Qwen2.5-VL-3B-Instruct"}:
+            return "qwen25-vl"
+        if normalized == "Qwen/Qwen2.5-VL-72B-Instruct":
+            return "qwen25-vl-72b"
+        return normalized.rsplit("/", 1)[-1].lower().replace(".", "").replace("_", "-")
 
     def _load_processor(self):
         try:

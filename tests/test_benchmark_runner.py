@@ -5,7 +5,7 @@ import shutil
 import unittest
 from pathlib import Path
 
-from benchmark_runner import run_benchmark_matrix
+from benchmark_runner import available_model_names, run_benchmark_matrix
 
 _TMP_ROOT = Path(__file__).resolve().parents[1] / ".tmp" / "test_benchmark_runner"
 
@@ -109,3 +109,11 @@ class BenchmarkRunnerTests(unittest.TestCase):
                 model_registry={},
                 output_dir=output_dir,
             )
+
+    def test_available_model_names_exposes_large_vlm_variants(self) -> None:
+        names = available_model_names()
+        self.assertIn("qwen25-vl-7b", names)
+        self.assertIn("qwen25-vl-72b", names)
+        self.assertIn("llava-onevision-72b", names)
+        self.assertIn("internvl25-8b", names)
+        self.assertIn("minicpm-v-2_6", names)

@@ -38,7 +38,7 @@ from benchmarks import (
     VisualGenomeBenchmark,
     VQAv2Benchmark,
 )
-from models import Gemma, Qwen25VL, SmallLlava
+from models import Gemma, InternVL25, LlavaOnevision, MiniCPMV26, Qwen25VL, SmallLlava
 
 RESULTS_DIR = Path("results")
 TEST_SIZE = 1
@@ -82,6 +82,22 @@ MODELS = {
     "small-llava": lambda: SmallLlava(max_new_tokens=32, stream=False, load_in_4bit=False),
     "gemma": lambda: Gemma(max_new_tokens=32),
     "qwen25-vl": lambda: Qwen25VL(max_new_tokens=32),
+    "qwen25-vl-7b": lambda: Qwen25VL(model_id="Qwen/Qwen2.5-VL-7B-Instruct", max_new_tokens=32),
+    "qwen25-vl-72b": lambda: Qwen25VL(model_id="Qwen/Qwen2.5-VL-72B-Instruct", max_new_tokens=32),
+    "llava-onevision-72b": lambda: LlavaOnevision(
+        model_id="llava-hf/llava-onevision-qwen2-72b-ov-hf",
+        max_new_tokens=32,
+        stream=False,
+        load_in_4bit=False,
+    ),
+    "internvl25-8b": lambda: InternVL25(
+        model_id="OpenGVLab/InternVL2_5-8B",
+        max_new_tokens=32,
+    ),
+    "minicpm-v-2_6": lambda: MiniCPMV26(
+        model_id="openbmb/MiniCPM-V-2_6",
+        max_new_tokens=32,
+    ),
 }
 
 
