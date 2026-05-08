@@ -12,7 +12,7 @@
         "prompt_labels": [
           "Fixed-wing aircraft"
         ],
-        "prediction": "Fixed-wing aircraft: [0.0, 0.2, 1.0, 0.59]",
+        "prediction": "Fixed-wing aircraft: [0.0, 0.2, 0.98, 0.57]",
         "correct": true,
         "valid_labels": [
           "Fixed-wing aircraft"
@@ -34,24 +34,24 @@
             "xyxy": [
               0.0,
               89.4,
-              1024.0,
-              353.13
+              1003.52,
+              344.19
             ]
           }
         ],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 85.05144930000097,
-          "generation_time_seconds": 84.76208469999983,
+          "wall_clock_time_seconds": 5.53652221699997,
+          "generation_time_seconds": 5.529616689000022,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 3.390483387999993,
-          "output_tokens": 25,
+          "time_per_output_token_seconds": 0.2126775649615393,
+          "output_tokens": 26,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 13135872000,
-          "cpu_utilization_percent": 482.4464263897373,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 3763191808,
+          "cpu_utilization_percent": 101.40462962962964,
+          "peak_gpu_memory_bytes": 8440226304,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -67,16 +67,16 @@
         "tp": 1,
         "fp": 0,
         "fn": 0,
-        "mean_iou_matched": 0.770084670500053,
-        "mean_iou_all_predictions": 0.770084670500053,
+        "mean_iou_matched": 0.757173766694033,
+        "mean_iou_all_predictions": 0.757173766694033,
         "matched_predictions": [
           {
             "label": "Fixed-wing aircraft",
             "xyxy": [
               0.0,
               89.4,
-              1024.0,
-              353.13
+              1003.52,
+              344.19
             ]
           }
         ],
@@ -406,16 +406,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 148.34167159999924,
-          "generation_time_seconds": 148.12853900000118,
+          "wall_clock_time_seconds": 7.006848227000091,
+          "generation_time_seconds": 6.9680295059999935,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 5.925141560000047,
+          "time_per_output_token_seconds": 0.27872118023999976,
           "output_tokens": 25,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 13058347008,
-          "cpu_utilization_percent": 392.3326359832636,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 3653873664,
+          "cpu_utilization_percent": 99.79057971014493,
+          "peak_gpu_memory_bytes": 9505299968,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -830,16 +830,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 200.8543137000015,
-          "generation_time_seconds": 200.67814489999728,
+          "wall_clock_time_seconds": 9.535874863999993,
+          "generation_time_seconds": 9.50619683900004,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 6.473488545161202,
+          "time_per_output_token_seconds": 0.30665151093548515,
           "output_tokens": 31,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12933668864,
-          "cpu_utilization_percent": 382.6588919807741,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 3676717056,
+          "cpu_utilization_percent": 104.2877659574468,
+          "peak_gpu_memory_bytes": 11187630592,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -972,16 +972,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 254.93091349999668,
-          "generation_time_seconds": 254.71593159999975,
+          "wall_clock_time_seconds": 7.453109424000104,
+          "generation_time_seconds": 7.419260879000035,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 7.959872862499992,
+          "time_per_output_token_seconds": 0.2318519024687511,
           "output_tokens": 32,
           "retry_count": 0,
           "truncated": true,
-          "peak_cpu_ram_bytes": 12920254464,
-          "cpu_utilization_percent": 323.91451005025124,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 3676717056,
+          "cpu_utilization_percent": 99.98503401360544,
+          "peak_gpu_memory_bytes": 9505315328,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -1037,16 +1037,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 204.21497649999947,
-          "generation_time_seconds": 203.99911229999998,
+          "wall_clock_time_seconds": 6.515699741999924,
+          "generation_time_seconds": 6.472413163000056,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 7.846119703846153,
+          "time_per_output_token_seconds": 0.24893896780769445,
           "output_tokens": 26,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12592320512,
-          "cpu_utilization_percent": 338.70243657372515,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 3676729344,
+          "cpu_utilization_percent": 99.45859375,
+          "peak_gpu_memory_bytes": 9201679872,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -1092,7 +1092,7 @@
         "prompt_labels": [
           "Dog"
         ],
-        "prediction": "Dog: [0.19, 0.18, 0.75, 0.96]",
+        "prediction": "Dog: [0.19, 0.17, 0.75, 0.96]",
         "correct": false,
         "valid_labels": [
           "Dog"
@@ -1113,25 +1113,25 @@
             "label": "Dog",
             "xyxy": [
               187.53,
-              184.32,
+              174.08,
               927.78,
-              1167.36
+              1157.12
             ]
           }
         ],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 174.0319460999999,
-          "generation_time_seconds": 173.80984009999884,
+          "wall_clock_time_seconds": 9.366892502000042,
+          "generation_time_seconds": 9.345137247000025,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 6.684993849999955,
+          "time_per_output_token_seconds": 0.3594283556538471,
           "output_tokens": 26,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12908544000,
-          "cpu_utilization_percent": 416.4952395391146,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 3678121984,
+          "cpu_utilization_percent": 99.64184782608694,
+          "peak_gpu_memory_bytes": 11629822464,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -1157,7 +1157,7 @@
         "prompt_labels": [
           "Fixed-wing aircraft"
         ],
-        "prediction": "Fixed-wing aircraft: [0.3, 0.37, 0.8, 0.5]",
+        "prediction": "Fixed-wing aircraft: [0.3, 0.37, 0.75, 0.5]",
         "correct": false,
         "valid_labels": [
           "Fixed-wing aircraft"
@@ -1179,7 +1179,7 @@
             "xyxy": [
               307.2,
               251.97,
-              1126.4,
+              1075.2,
               592.47
             ]
           }
@@ -1187,16 +1187,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 198.53575210000054,
-          "generation_time_seconds": 198.3339182000018,
+          "wall_clock_time_seconds": 6.886572658999967,
+          "generation_time_seconds": 6.834902691000025,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 7.933356728000072,
-          "output_tokens": 25,
+          "time_per_output_token_seconds": 0.2628808727307702,
+          "output_tokens": 26,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12778082304,
-          "cpu_utilization_percent": 343.67835859905904,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 3678126080,
+          "cpu_utilization_percent": 99.94264705882354,
+          "peak_gpu_memory_bytes": 9505299456,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -1228,7 +1228,7 @@
           "Mammal",
           "Mammal"
         ],
-        "prediction": "Person: [0.37, 0.36, 0.5, 0.49]",
+        "prediction": "Person: [0.37, 0.38, 0.5, 0.49]",
         "correct": false,
         "valid_labels": [
           "Person",
@@ -1309,25 +1309,25 @@
             "label": "Person",
             "xyxy": [
               378.88,
-              244.79999999999998,
+              258.4,
               890.88,
-              578.0
+              591.6
             ]
           }
         ],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 163.50787710000077,
-          "generation_time_seconds": 163.3115711999999,
+          "wall_clock_time_seconds": 6.798716880000029,
+          "generation_time_seconds": 6.780165521000072,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 6.532462847999995,
+          "time_per_output_token_seconds": 0.27120662084000285,
           "output_tokens": 25,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12715704320,
-          "cpu_utilization_percent": 394.2762264150943,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 3678126080,
+          "cpu_utilization_percent": 99.03358208955224,
+          "peak_gpu_memory_bytes": 9505299968,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -1522,16 +1522,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 174.50052050000158,
-          "generation_time_seconds": 174.29977300000246,
+          "wall_clock_time_seconds": 7.452051013999949,
+          "generation_time_seconds": 7.4056593650000195,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 5.446867906250077,
+          "time_per_output_token_seconds": 0.2314268551562506,
           "output_tokens": 32,
           "retry_count": 0,
           "truncated": true,
-          "peak_cpu_ram_bytes": 13094424576,
-          "cpu_utilization_percent": 383.74472598703596,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 3678126080,
+          "cpu_utilization_percent": 99.48027210884354,
+          "peak_gpu_memory_bytes": 9505327616,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -1587,16 +1587,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 145.33867660000033,
-          "generation_time_seconds": 145.15172019999955,
+          "wall_clock_time_seconds": 6.9425556220001,
+          "generation_time_seconds": 6.905303839999988,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 5.806068807999981,
+          "time_per_output_token_seconds": 0.2762121535999995,
           "output_tokens": 25,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12852809728,
-          "cpu_utilization_percent": 411.8015756302521,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 3678126080,
+          "cpu_utilization_percent": 99.57007299270073,
+          "peak_gpu_memory_bytes": 9505299456,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -1639,21 +1639,21 @@
       }
     ],
     "stats": {
-      "wall_clock_time_seconds": 1749.7644752999986,
-      "wall_clock_time_per_sample_seconds_mean": 174.9308097000001,
-      "total_generation_time_seconds_mean": 174.71906352000005,
+      "wall_clock_time_seconds": 73.50091031599993,
+      "wall_clock_time_per_sample_seconds_mean": 7.349484315100017,
+      "total_generation_time_seconds_mean": 7.316668574000028,
       "first_token_latency_seconds_mean": null,
-      "time_per_output_token_seconds_mean": 6.399885619975747,
-      "samples_per_second": 0.00571505487804894,
-      "number_of_output_tokens_mean": 27.2,
+      "time_per_output_token_seconds_mean": 0.267999598439434,
+      "samples_per_second": 0.13605273672131876,
+      "number_of_output_tokens_mean": 27.4,
       "number_of_generated_outputs_mean": 1.0,
       "number_of_benchmark_samples_completed": 10,
       "success_count": 10,
       "failure_count": 0,
       "retry_count": 0,
-      "peak_cpu_ram_bytes": 13135872000,
-      "peak_gpu_memory_bytes": null,
-      "cpu_utilization_percent_mean": 387.00510271483074,
+      "peak_cpu_ram_bytes": 3763191808,
+      "peak_gpu_memory_bytes": 11629822464,
+      "cpu_utilization_percent_mean": 100.25950251368337,
       "gpu_utilization_percent_mean": null,
       "vram_allocation_over_time_bytes": null,
       "disk_offload_volume_bytes": null,
@@ -1662,8 +1662,8 @@
       "false_positive_count_total": 7,
       "false_negative_count_total": 95,
       "mean_number_of_predicted_detections": 1.0,
-      "tokens_per_second": 0.155678490097255,
-      "model_load_time_seconds": 24.148672999999917
+      "tokens_per_second": 3.7448737390356337,
+      "model_load_time_seconds": 186.35278578199996
     }
   }
 }

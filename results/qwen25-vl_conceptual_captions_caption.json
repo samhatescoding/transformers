@@ -20,16 +20,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 126.67521750000014,
-          "generation_time_seconds": 125.99654699999883,
+          "wall_clock_time_seconds": 4.634548247999987,
+          "generation_time_seconds": 4.498569791000023,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 9.692042076922986,
+          "time_per_output_token_seconds": 0.3460438300769248,
           "output_tokens": 13,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12420304896,
-          "cpu_utilization_percent": 368.4232530120482,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 2406215680,
+          "cpu_utilization_percent": 98.64943820224718,
+          "peak_gpu_memory_bytes": 8704460800,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -56,8 +56,8 @@
         "predicted_boxes": [],
         "stats": {
           "success": false,
-          "error": "TimeoutError: timed out",
-          "wall_clock_time_seconds": 30.149751199998718,
+          "error": "HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+          "wall_clock_time_seconds": 0.6968504069999994,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -76,7 +76,7 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "TimeoutError: timed out"
+        "error": "HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily"
       },
       {
         "index": 3,
@@ -90,8 +90,8 @@
         "predicted_boxes": [],
         "stats": {
           "success": false,
-          "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-          "wall_clock_time_seconds": 0.13089570000011008,
+          "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+          "wall_clock_time_seconds": 0.009650169999986247,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -110,7 +110,7 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+        "error": "URLError: <urlopen error [Errno -2] Name or service not known>"
       },
       {
         "index": 4,
@@ -125,7 +125,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 410: Gone",
-          "wall_clock_time_seconds": 0.22165139999924577,
+          "wall_clock_time_seconds": 0.031582547000027716,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -159,7 +159,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 404: Not Found",
-          "wall_clock_time_seconds": 1.3137844999982917,
+          "wall_clock_time_seconds": 0.142721718999951,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -193,16 +193,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 87.24070190000202,
-          "generation_time_seconds": 86.58330280000155,
+          "wall_clock_time_seconds": 2.59614438899996,
+          "generation_time_seconds": 2.486454399999957,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 10.822912850000193,
+          "time_per_output_token_seconds": 0.3108067999999946,
           "output_tokens": 8,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12457857024,
-          "cpu_utilization_percent": 405.2419392523364,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 2406256640,
+          "cpu_utilization_percent": 98.898,
+          "peak_gpu_memory_bytes": 7945728512,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -230,7 +230,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 403: Forbidden",
-          "wall_clock_time_seconds": 0.11647549999906914,
+          "wall_clock_time_seconds": 0.0924299310000265,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -264,7 +264,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 400: Bad Request",
-          "wall_clock_time_seconds": 0.6681081999995513,
+          "wall_clock_time_seconds": 0.10222559200002479,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -288,8 +288,8 @@
       {
         "index": 9,
         "prompt_labels": [],
-        "prediction": "People gather under cherry blossoms in a park.",
-        "correct": true,
+        "prediction": "People standing in a park with pink flowers.",
+        "correct": false,
         "valid_labels": [
           "party in the park under cherry blossoms"
         ],
@@ -298,16 +298,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 116.36671829999977,
-          "generation_time_seconds": 115.54614370000127,
+          "wall_clock_time_seconds": 4.335648977000005,
+          "generation_time_seconds": 4.207106801000009,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 11.554614370000127,
-          "output_tokens": 10,
+          "time_per_output_token_seconds": 0.4674563112222232,
+          "output_tokens": 9,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12971491328,
-          "cpu_utilization_percent": 405.0934649122807,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 2407936000,
+          "cpu_utilization_percent": 99.26666666666667,
+          "peak_gpu_memory_bytes": 8826434560,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -317,7 +317,7 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "bleu": 0.3303164318013807,
+        "bleu": 0.17747405280050263,
         "reference_captions": [
           "party in the park under cherry blossoms"
         ]
@@ -334,8 +334,8 @@
         "predicted_boxes": [],
         "stats": {
           "success": false,
-          "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-          "wall_clock_time_seconds": 0.05675840000185417,
+          "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+          "wall_clock_time_seconds": 0.01177255300001434,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -354,25 +354,25 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+        "error": "URLError: <urlopen error [Errno -2] Name or service not known>"
       }
     ],
     "stats": {
-      "wall_clock_time_seconds": 363.096631299999,
-      "wall_clock_time_per_sample_seconds_mean": 36.294006259999875,
-      "total_generation_time_seconds_mean": 32.81259935000016,
+      "wall_clock_time_seconds": 12.65618264599999,
+      "wall_clock_time_per_sample_seconds_mean": 1.2653574532999983,
+      "total_generation_time_seconds_mean": 1.119213099199999,
       "first_token_latency_seconds_mean": null,
-      "time_per_output_token_seconds_mean": 10.689856432307769,
-      "samples_per_second": 0.027540877931576745,
-      "number_of_output_tokens_mean": 3.1,
+      "time_per_output_token_seconds_mean": 0.37476898043304757,
+      "samples_per_second": 0.790127661689563,
+      "number_of_output_tokens_mean": 3.0,
       "number_of_generated_outputs_mean": 0.3,
       "number_of_benchmark_samples_completed": 3,
       "success_count": 3,
       "failure_count": 7,
       "retry_count": 0,
-      "peak_cpu_ram_bytes": 12971491328,
-      "peak_gpu_memory_bytes": null,
-      "cpu_utilization_percent_mean": 392.91955239222176,
+      "peak_cpu_ram_bytes": 2407936000,
+      "peak_gpu_memory_bytes": 8826434560,
+      "cpu_utilization_percent_mean": 98.9380349563046,
       "gpu_utilization_percent_mean": null,
       "vram_allocation_over_time_bytes": null,
       "disk_offload_volume_bytes": null,
@@ -381,8 +381,8 @@
       "false_positive_count_total": 0,
       "false_negative_count_total": 0,
       "mean_number_of_predicted_detections": 0.0,
-      "tokens_per_second": 0.09447590442114683,
-      "model_load_time_seconds": 21.16711960000248
+      "tokens_per_second": 2.6804546892315386,
+      "model_load_time_seconds": 186.35278578199996
     }
   }
 }

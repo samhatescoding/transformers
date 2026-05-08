@@ -25,16 +25,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 94.51646220000111,
-          "generation_time_seconds": 94.07515910000075,
+          "wall_clock_time_seconds": 7.1577128289999905,
+          "generation_time_seconds": 6.7918010189999904,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 8.552287190909158,
+          "time_per_output_token_seconds": 0.6174364562727264,
           "output_tokens": 11,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12572008448,
-          "cpu_utilization_percent": 475.01694549379386,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 2347708416,
+          "cpu_utilization_percent": 84.6141791044776,
+          "peak_gpu_memory_bytes": 8705538048,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -65,8 +65,8 @@
         "predicted_boxes": [],
         "stats": {
           "success": false,
-          "error": "TimeoutError: timed out",
-          "wall_clock_time_seconds": 30.161748099999386,
+          "error": "HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+          "wall_clock_time_seconds": 0.8437615520000463,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -85,7 +85,7 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "TimeoutError: timed out"
+        "error": "HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily"
       },
       {
         "index": 3,
@@ -99,8 +99,8 @@
         "predicted_boxes": [],
         "stats": {
           "success": false,
-          "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-          "wall_clock_time_seconds": 0.13949380000121891,
+          "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+          "wall_clock_time_seconds": 0.03748836899995922,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -119,7 +119,7 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+        "error": "URLError: <urlopen error [Errno -2] Name or service not known>"
       },
       {
         "index": 4,
@@ -134,7 +134,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 410: Gone",
-          "wall_clock_time_seconds": 0.13835330000074464,
+          "wall_clock_time_seconds": 0.07410845399999744,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -168,7 +168,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 404: Not Found",
-          "wall_clock_time_seconds": 1.9187835000011546,
+          "wall_clock_time_seconds": 0.18331118099996502,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -207,16 +207,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 108.65432890000011,
-          "generation_time_seconds": 108.21075320000091,
+          "wall_clock_time_seconds": 2.911861984999973,
+          "generation_time_seconds": 2.8008431760000008,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 10.82107532000009,
+          "time_per_output_token_seconds": 0.2800843176000001,
           "output_tokens": 10,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12552642560,
-          "cpu_utilization_percent": 339.0917602996255,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 2379096064,
+          "cpu_utilization_percent": 96.19454545454545,
+          "peak_gpu_memory_bytes": 7945966080,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -248,7 +248,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 403: Forbidden",
-          "wall_clock_time_seconds": 0.21604540000043926,
+          "wall_clock_time_seconds": 0.13073694600001318,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -282,7 +282,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 400: Bad Request",
-          "wall_clock_time_seconds": 0.30314499999803957,
+          "wall_clock_time_seconds": 0.14325762700002542,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -321,16 +321,16 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 162.473799899999,
-          "generation_time_seconds": 161.79119760000322,
+          "wall_clock_time_seconds": 4.520574173,
+          "generation_time_seconds": 4.3328242910000085,
           "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": 16.179119760000322,
+          "time_per_output_token_seconds": 0.43328242910000087,
           "output_tokens": 10,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 12528173056,
-          "cpu_utilization_percent": 358.2665309956168,
-          "peak_gpu_memory_bytes": null,
+          "peak_cpu_ram_bytes": 2405400576,
+          "cpu_utilization_percent": 99.49418604651163,
+          "peak_gpu_memory_bytes": 8826672128,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
@@ -361,8 +361,8 @@
         "predicted_boxes": [],
         "stats": {
           "success": false,
-          "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-          "wall_clock_time_seconds": 0.08641089999946416,
+          "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+          "wall_clock_time_seconds": 0.04415472300001966,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -381,25 +381,25 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+        "error": "URLError: <urlopen error [Errno -2] Name or service not known>"
       }
     ],
     "stats": {
-      "wall_clock_time_seconds": 398.72307060000094,
-      "wall_clock_time_per_sample_seconds_mean": 39.86085710000007,
-      "total_generation_time_seconds_mean": 36.40771099000049,
+      "wall_clock_time_seconds": 16.049684146000004,
+      "wall_clock_time_per_sample_seconds_mean": 1.604696783899999,
+      "total_generation_time_seconds_mean": 1.3925468485999999,
       "first_token_latency_seconds_mean": null,
-      "time_per_output_token_seconds_mean": 11.850827423636524,
-      "samples_per_second": 0.02508006367665643,
+      "time_per_output_token_seconds_mean": 0.44360106765757573,
+      "samples_per_second": 0.6230652210369049,
       "number_of_output_tokens_mean": 3.1,
       "number_of_generated_outputs_mean": 0.3,
       "number_of_benchmark_samples_completed": 3,
       "success_count": 3,
       "failure_count": 7,
       "retry_count": 0,
-      "peak_cpu_ram_bytes": 12572008448,
-      "peak_gpu_memory_bytes": null,
-      "cpu_utilization_percent_mean": 390.7917455963454,
+      "peak_cpu_ram_bytes": 2405400576,
+      "peak_gpu_memory_bytes": 8826672128,
+      "cpu_utilization_percent_mean": 93.43430353517823,
       "gpu_utilization_percent_mean": null,
       "vram_allocation_over_time_bytes": null,
       "disk_offload_volume_bytes": null,
@@ -408,8 +408,8 @@
       "false_positive_count_total": 0,
       "false_negative_count_total": 0,
       "mean_number_of_predicted_detections": 0.0,
-      "tokens_per_second": 0.08514679763447437,
-      "model_load_time_seconds": 25.520300499996665
+      "tokens_per_second": 2.22613695411152,
+      "model_load_time_seconds": 186.35278578199996
     }
   }
 }
