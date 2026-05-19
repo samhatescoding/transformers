@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Mapping, Sequence
 
+from benchmark_run import BenchmarkRun
 from benchmarks._base_benchmark import BaseBenchmark
 from benchmarks import (
     ConceptualCaptionsBenchmark,
@@ -207,6 +208,45 @@ def _write_report(output_dir: Path, model_name: str, benchmark_name: str, report
     return path
 
 
+def run_benchmark_runs(
+    models: Sequence[object],
+    benchmark_runs: Sequence[BenchmarkRun],
+    *,
+    output_dir: str | Path = "results",
+) -> list[dict[str, object]]:
+    resolved_output_dir = Path(output_dir)
+    summaries: list[dict[str, object]] = []
+
+    for model in models:
+        model_name = str(getattr(model, "name", model.__class__.__name__))
+        for benchmark_run in benchmark_runs:
+            benchmark = benchmark_run.benchmark
+            report = benchmark.run(
+                model=model,
+                n=benchmark_run.num_samples,
+                label_sample_size=max(4, benchmark_run.num_samples),
+                show_progress=False,
+            )
+            report.setdefault("stats", {})
+            result_path = _write_report(
+                output_dir=resolved_output_dir,
+                model_name=model_name,
+                benchmark_name=benchmark.name,
+                report=report,
+            )
+            summaries.append(
+                {
+                    "model": model_name,
+                    "benchmark": benchmark.name,
+                    "num_samples": benchmark_run.num_samples,
+                    "max_new_tokens": getattr(model, "max_new_tokens", None),
+                    "results_path": str(result_path),
+                }
+            )
+
+    return summaries
+
+
 def run_benchmark_matrix(
     model_names: list[str],
     benchmark_names: list[str],
@@ -221,8 +261,6 @@ def run_benchmark_matrix(
     model_registry = _resolve_model_registry(MODELS if model_registry is None else model_registry)
     if benchmark_tokens is None:
         benchmark_tokens = get_benchmark_token_defaults(benchmark_registry)
-    resolved_output_dir = Path(output_dir)
-    summaries: list[dict[str, object]] = []
 
     if num_samples < 1:
         raise ValueError("num_samples must be at least 1")
@@ -235,21 +273,37 @@ def run_benchmark_matrix(
     if unknown_benchmarks:
         raise ValueError(f"Unknown benchmarks: {', '.join(unknown_benchmarks)}")
 
+    benchmark_runs = [
+        BenchmarkRun(
+            benchmark=benchmark_registry[benchmark_name](streaming=True),
+            num_samples=num_samples,
+        )
+        for benchmark_name in benchmark_names
+    ]
+
+    prepared_models: list[tuple[str, object, float]] = []
     for model_name in model_names:
         initial_tokens = max((benchmark_tokens.get(name, 24) for name in benchmark_names), default=24)
         model_started_at = time.perf_counter()
         model = model_registry[model_name](initial_tokens)
-        model_load_time_seconds = time.perf_counter() - model_started_at
-        for benchmark_name in benchmark_names:
-            benchmark_factory = benchmark_registry[benchmark_name]
-            max_new_tokens = benchmark_tokens.get(benchmark_name, initial_tokens)
+        if benchmark_names:
+            first_benchmark_name = benchmark_names[0]
+            if hasattr(model, "max_new_tokens"):
+                model.max_new_tokens = benchmark_tokens.get(first_benchmark_name, initial_tokens)
+        prepared_models.append((model_name, model, time.perf_counter() - model_started_at))
+
+    summaries: list[dict[str, object]] = []
+    resolved_output_dir = Path(output_dir)
+    for model_name, model, model_load_time_seconds in prepared_models:
+        for benchmark_name, benchmark_run in zip(benchmark_names, benchmark_runs):
+            max_new_tokens = benchmark_tokens.get(benchmark_name, getattr(model, "max_new_tokens", None))
             if hasattr(model, "max_new_tokens"):
                 model.max_new_tokens = max_new_tokens
-            benchmark = benchmark_factory(streaming=True)
+            benchmark = benchmark_run.benchmark
             report = benchmark.run(
                 model=model,
-                n=num_samples,
-                label_sample_size=max(4, num_samples),
+                n=benchmark_run.num_samples,
+                label_sample_size=max(4, benchmark_run.num_samples),
                 show_progress=False,
             )
             report.setdefault("stats", {})
@@ -264,7 +318,7 @@ def run_benchmark_matrix(
                 {
                     "model": model_name,
                     "benchmark": benchmark.name,
-                    "num_samples": num_samples,
+                    "num_samples": benchmark_run.num_samples,
                     "max_new_tokens": max_new_tokens,
                     "results_path": str(result_path),
                 }

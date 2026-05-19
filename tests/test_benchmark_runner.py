@@ -5,7 +5,8 @@ import shutil
 import unittest
 from pathlib import Path
 
-from benchmark_runner import available_model_names, run_benchmark_matrix
+from benchmark_run import BenchmarkRun
+from benchmark_runner import available_model_names, run_benchmark_matrix, run_benchmark_runs
 
 _TMP_ROOT = Path(__file__).resolve().parents[1] / ".tmp" / "test_benchmark_runner"
 
@@ -109,6 +110,42 @@ class BenchmarkRunnerTests(unittest.TestCase):
                 model_registry={},
                 output_dir=output_dir,
             )
+
+    def test_benchmark_run_rejects_invalid_sample_count(self) -> None:
+        with self.assertRaisesRegex(ValueError, "num_samples must be at least 1"):
+            BenchmarkRun(benchmark=_StubBenchmark("bench_a", []), num_samples=0)
+
+    def test_run_benchmark_runs_executes_prepared_objects(self) -> None:
+        bench_a_tokens: list[int] = []
+        bench_b_tokens: list[int] = []
+        output_dir = _TMP_ROOT / "object_runs"
+
+        model = _StubModel("prepared_model", 23)
+        benchmark_runs = [
+            BenchmarkRun(benchmark=_StubBenchmark("bench_a", bench_a_tokens), num_samples=2),
+            BenchmarkRun(benchmark=_StubBenchmark("bench_b", bench_b_tokens), num_samples=5),
+        ]
+
+        summaries = run_benchmark_runs(
+            models=[model],
+            benchmark_runs=benchmark_runs,
+            output_dir=output_dir,
+        )
+
+        self.assertEqual(len(summaries), 2)
+        self.assertEqual(bench_a_tokens, [23])
+        self.assertEqual(bench_b_tokens, [23])
+        self.assertEqual(summaries[0]["num_samples"], 2)
+        self.assertEqual(summaries[1]["num_samples"], 5)
+        self.assertEqual(summaries[0]["max_new_tokens"], 23)
+        self.assertEqual(summaries[1]["max_new_tokens"], 23)
+
+        for item in summaries:
+            path = Path(str(item["results_path"]))
+            self.assertTrue(path.exists(), str(path))
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(payload["model"], "prepared_model")
+            self.assertIn(payload["benchmark"], {"bench_a", "bench_b"})
 
     def test_available_model_names_exposes_large_vlm_variants(self) -> None:
         names = available_model_names()
