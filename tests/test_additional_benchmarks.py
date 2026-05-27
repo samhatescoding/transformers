@@ -166,6 +166,13 @@ class AdditionalBenchmarkTests(unittest.TestCase):
                     self.assertIs(benchmark.dataset, fake_dataset)
                     loader_cls.assert_called_once()
 
+    def test_fashion_mnist_default_evaluation_uses_test_split(self) -> None:
+        fake_dataset = _BaseStubDataset("fake", [{"image": _square("white"), "label": "label"}], labels=["label"])
+        with patch.object(FashionMNISTBenchmark, "dataset_cls", return_value=fake_dataset) as loader_cls:
+            benchmark = FashionMNISTBenchmark()
+        self.assertIs(benchmark.dataset, fake_dataset)
+        loader_cls.assert_called_once_with(split="test", streaming=True)
+
 
 if __name__ == "__main__":
     unittest.main()

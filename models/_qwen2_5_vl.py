@@ -17,11 +17,26 @@ class _Qwen25VLBase(AutoProcessorModelBase):
         self,
         max_new_tokens: int = 100,
         temperature: float = 0.0,
+        adapter_path: str | None = None,
     ):
         self.max_new_tokens = max_new_tokens
         self.temperature = temperature
+        self.adapter_path = adapter_path
 
         self._load_input_artifact_and_model()
+
+    def _load_model(self):
+        model = super()._load_model()
+        if self.adapter_path is None:
+            return model
+        try:
+            from peft import PeftModel
+        except ImportError as exc:
+            raise ImportError(
+                "Loading a Qwen2.5-VL LoRA adapter requires peft. "
+                "Install fine-tuning/requirements-qwen.txt."
+            ) from exc
+        return PeftModel.from_pretrained(model, self.adapter_path)
 
     def predict(self, image: Image.Image, prompt: str) -> str:
         prompt = self._prepare_prompt(prompt)
