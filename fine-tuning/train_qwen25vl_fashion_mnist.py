@@ -112,8 +112,8 @@ def main() -> None:
         type=Path,
         default=Path("fine-tuning/output/qwen2.5-vl-3b-fashion-mnist-lora"),
     )
-    parser.add_argument("--epochs", type=float, default=3.0)
-    parser.add_argument("--learning-rate", type=float, default=2e-4)
+    parser.add_argument("--epochs", type=float, default=2.0)
+    parser.add_argument("--learning-rate", type=float, default=1e-4)
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--gradient-accumulation-steps", type=int, default=8)
     parser.add_argument("--lora-rank", type=int, default=16)
@@ -191,13 +191,15 @@ def main() -> None:
             per_device_eval_batch_size=1,
             gradient_accumulation_steps=args.gradient_accumulation_steps,
             learning_rate=args.learning_rate,
-            warmup_ratio=0.03,
+            warmup_steps=5,
             logging_steps=5,
             logging_first_step=True,
             eval_strategy="epoch",
             save_strategy="epoch",
             save_total_limit=2,
-            load_best_model_at_end=False,
+            load_best_model_at_end=True,
+            metric_for_best_model="eval_loss",
+            greater_is_better=False,
             fp16=compute_dtype == torch.float16,
             bf16=compute_dtype == torch.bfloat16,
             gradient_checkpointing=True,

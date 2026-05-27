@@ -18,6 +18,7 @@ from runners import BenchmarkRun, ModelRun, run_benchmark_matrix
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--adapter-path", type=Path)
+    parser.add_argument("--model-name")
     parser.add_argument("--samples", type=int, default=50)
     parser.add_argument(
         "--output-dir", type=Path, default=Path("results/fine-tuning")
@@ -28,8 +29,8 @@ def main() -> None:
     if args.adapter_path is not None and not args.adapter_path.exists():
         raise SystemExit(f"Adapter path does not exist: {args.adapter_path}")
 
-    name = (
-        "qwen2.5-vl-3b-fashion-mnist-lora"
+    name = args.model_name or (
+        args.adapter_path.name
         if args.adapter_path is not None
         else "qwen2.5-vl-3b-base-test-split"
     )

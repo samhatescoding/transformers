@@ -26,6 +26,7 @@ from benchmarks import (
     VQAv2Benchmark,
     MSCOCOCaptionBenchmark,
 )
+from dataset import FashionMNIST
 
 
 class _BaseStubDataset:
@@ -172,6 +173,13 @@ class AdditionalBenchmarkTests(unittest.TestCase):
             benchmark = FashionMNISTBenchmark()
         self.assertIs(benchmark.dataset, fake_dataset)
         loader_cls.assert_called_once_with(split="test", streaming=True)
+
+    def test_fashion_mnist_normalizes_equivalent_tshirt_spelling(self) -> None:
+        dataset = FashionMNIST.__new__(FashionMNIST)
+        self.assertEqual(
+            dataset.normalize_text("T - shirt / top"),
+            dataset.normalize_text("T-shirt/top"),
+        )
 
 
 if __name__ == "__main__":

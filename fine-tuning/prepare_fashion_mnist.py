@@ -6,6 +6,7 @@ import argparse
 import json
 import random
 import sys
+from collections import Counter
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -54,10 +55,48 @@ def _export_records(
     return manifest_path
 
 
+def select_balanced_indices(
+    rows: list[dict],
+    *,
+    label_count: int,
+    train_per_class: int,
+    validation_per_class: int,
+    seed: int,
+) -> tuple[list[int], list[int]]:
+    rng = random.Random(seed)
+    grouped: dict[int, list[int]] = {label: [] for label in range(label_count)}
+    for index, row in enumerate(rows):
+        label = int(row["label"])
+        if label in grouped:
+            grouped[label].append(index)
+
+    required = train_per_class + validation_per_class
+    for label, indices in grouped.items():
+        if len(indices) < required:
+            raise ValueError(
+                f"label {label} has {len(indices)} records; {required} are required"
+            )
+        rng.shuffle(indices)
+
+    train_indices = [
+        index
+        for label in range(label_count)
+        for index in grouped[label][:train_per_class]
+    ]
+    validation_indices = [
+        index
+        for label in range(label_count)
+        for index in grouped[label][train_per_class:required]
+    ]
+    rng.shuffle(train_indices)
+    rng.shuffle(validation_indices)
+    return train_indices, validation_indices
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--train-examples", type=int, default=100)
-    parser.add_argument("--validation-examples", type=int, default=20)
+    parser.add_argument("--train-per-class", type=int, default=30)
+    parser.add_argument("--validation-per-class", type=int, default=10)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
         "--output-dir",
@@ -65,22 +104,26 @@ def main() -> None:
         default=Path("fine-tuning/data/fashion_mnist"),
     )
     args = parser.parse_args()
-    if args.train_examples < 10:
-        raise SystemExit("--train-examples must be at least 10.")
-    if args.validation_examples < 1:
-        raise SystemExit("--validation-examples must be at least 1.")
+    if args.train_per_class < 1:
+        raise SystemExit("--train-per-class must be at least 1.")
+    if args.validation_per_class < 1:
+        raise SystemExit("--validation-per-class must be at least 1.")
 
-    total = args.train_examples + args.validation_examples
     dataset = FashionMNIST(split="train", streaming=False)
     labels = dataset.get_labels([])
     if not labels:
         raise SystemExit("Fashion-MNIST labels could not be loaded.")
 
-    indices = list(range(len(dataset.ds)))
-    random.Random(args.seed).shuffle(indices)
-    selected = [dict(dataset.ds[index]) for index in indices[:total]]
-    training_rows = selected[: args.train_examples]
-    validation_rows = selected[args.train_examples :]
+    source_rows = [dict(row) for row in dataset.ds]
+    train_indices, validation_indices = select_balanced_indices(
+        source_rows,
+        label_count=len(labels),
+        train_per_class=args.train_per_class,
+        validation_per_class=args.validation_per_class,
+        seed=args.seed,
+    )
+    training_rows = [source_rows[index] for index in train_indices]
+    validation_rows = [source_rows[index] for index in validation_indices]
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     train_manifest = _export_records(
@@ -107,15 +150,26 @@ def main() -> None:
         "training_source_split": "train",
         "evaluation_split": "test",
         "seed": args.seed,
-        "train_examples": args.train_examples,
-        "validation_examples": args.validation_examples,
+        "train_examples": len(training_rows),
+        "validation_examples": len(validation_rows),
+        "train_per_class": args.train_per_class,
+        "validation_per_class": args.validation_per_class,
+        "train_class_counts": dict(
+            Counter(labels[int(row["label"])] for row in training_rows)
+        ),
+        "validation_class_counts": dict(
+            Counter(labels[int(row["label"])] for row in validation_rows)
+        ),
         "labels": labels,
     }
     (args.output_dir / "metadata.json").write_text(
         json.dumps(metadata, indent=2), encoding="utf-8"
     )
-    print(f"Wrote {args.train_examples} training examples to {train_output}")
-    print(f"Wrote {args.validation_examples} validation examples to {validation_output}")
+    print(f"Wrote {len(training_rows)} balanced training examples to {train_output}")
+    print(
+        f"Wrote {len(validation_rows)} balanced validation examples to "
+        f"{validation_output}"
+    )
     print("Reserved Fashion-MNIST test split for benchmark evaluation.")
 
 

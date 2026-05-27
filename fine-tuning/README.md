@@ -98,15 +98,15 @@ Fashion-MNIST is suitable for a first vision fine-tune because it contains
 clothing images rather than people or faces. The repository benchmark is
 configured to evaluate it on its held-out `test` split.
 
-Generate a small, reproducible pilot dataset. This uses only shuffled records
-from Fashion-MNIST `train`; it never writes test examples into fine-tuning
-data:
+Generate a balanced, reproducible dataset. This selects equal numbers of each
+class from Fashion-MNIST `train`; it never writes test examples into
+fine-tuning data:
 
 ```powershell
 python fine-tuning\prepare_fashion_mnist.py `
-  --train-examples 100 `
-  --validation-examples 20 `
-  --output-dir fine-tuning\data\fashion_mnist
+  --train-per-class 30 `
+  --validation-per-class 10 `
+  --output-dir fine-tuning\data\fashion_mnist_balanced
 ```
 
 After reviewing the generated JSONL files and setting a rotated API key,
@@ -114,8 +114,8 @@ submit the pilot:
 
 ```powershell
 python fine-tuning\submit_vision_fine_tune.py `
-  --training-file fine-tuning\data\fashion_mnist\train_openai.jsonl `
-  --validation-file fine-tuning\data\fashion_mnist\validation_openai.jsonl `
+  --training-file fine-tuning\data\fashion_mnist_balanced\train_openai.jsonl `
+  --validation-file fine-tuning\data\fashion_mnist_balanced\validation_openai.jsonl `
   --suffix fashion-mnist-pilot `
   --confirm-submit
 ```
@@ -152,17 +152,19 @@ In Colab, after cloning this repository:
 ```python
 %cd /content/transformers
 !pip install -r requirements.txt -r fine-tuning/requirements-qwen.txt
+!pip uninstall -y torchao
 
 !python fine-tuning/prepare_fashion_mnist.py \
-    --train-examples 100 \
-    --validation-examples 20 \
-    --output-dir fine-tuning/data/fashion_mnist
+    --train-per-class 30 \
+    --validation-per-class 10 \
+    --output-dir fine-tuning/data/fashion_mnist_balanced
 
 !python fine-tuning/train_qwen25vl_fashion_mnist.py \
-    --train-manifest fine-tuning/data/fashion_mnist/train_manifest.jsonl \
-    --validation-manifest fine-tuning/data/fashion_mnist/validation_manifest.jsonl \
-    --output-dir fine-tuning/output/qwen2.5-vl-3b-fashion-mnist-lora \
-    --epochs 3
+    --train-manifest fine-tuning/data/fashion_mnist_balanced/train_manifest.jsonl \
+    --validation-manifest fine-tuning/data/fashion_mnist_balanced/validation_manifest.jsonl \
+    --output-dir fine-tuning/output/qwen2.5-vl-3b-fashion-mnist-balanced-lora \
+    --epochs 2 \
+    --learning-rate 1e-4
 ```
 
 Evaluate the original and adapted models on identical held-out examples:
@@ -171,9 +173,29 @@ Evaluate the original and adapted models on identical held-out examples:
 !python fine-tuning/evaluate_qwen25vl_fashion_mnist.py --samples 50
 
 !python fine-tuning/evaluate_qwen25vl_fashion_mnist.py \
-    --adapter-path fine-tuning/output/qwen2.5-vl-3b-fashion-mnist-lora \
+    --adapter-path fine-tuning/output/qwen2.5-vl-3b-fashion-mnist-balanced-lora \
     --samples 50
 ```
+
+If adapted-model evaluation fails with an error that Colab's installed
+`torchao` is incompatible with `peft`, uninstall `torchao` and rerun only the
+evaluation command:
+
+```python
+!pip uninstall -y torchao
+
+!python fine-tuning/evaluate_qwen25vl_fashion_mnist.py \
+    --adapter-path fine-tuning/output/qwen2.5-vl-3b-fashion-mnist-balanced-lora \
+    --samples 50
+```
+
+No retraining is needed after that import-time adapter loading failure.
+
+The original 100-example pilot was imbalanced (`Shirt`: 16 examples and
+`Trouser`: 3 examples) and produced no held-out accuracy gain after corrected
+label normalization. The balanced second run is intentionally larger (300
+training and 100 validation examples) and uses a lower learning rate to reduce
+class collapse.
 
 The adapter checkpoints are written under `fine-tuning/output/` and are
 ignored by git. Copy the resulting evaluation JSON files from

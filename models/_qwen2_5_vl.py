@@ -36,7 +36,16 @@ class _Qwen25VLBase(AutoProcessorModelBase):
                 "Loading a Qwen2.5-VL LoRA adapter requires peft. "
                 "Install fine-tuning/requirements-qwen.txt."
             ) from exc
-        return PeftModel.from_pretrained(model, self.adapter_path)
+        try:
+            return PeftModel.from_pretrained(model, self.adapter_path)
+        except ImportError as exc:
+            if "incompatible version of torchao" in str(exc):
+                raise ImportError(
+                    "The installed torchao version is incompatible with peft. "
+                    "This QLoRA workflow uses bitsandbytes, so uninstall torchao "
+                    "(`pip uninstall -y torchao`) and rerun evaluation."
+                ) from exc
+            raise
 
     def predict(self, image: Image.Image, prompt: str) -> str:
         prompt = self._prepare_prompt(prompt)
