@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List, Sequence
+from typing import Any, Dict, List
 
-from PIL import Image, ImageDraw
+from PIL import Image
 
 from .._base_benchmark import BaseBenchmark
 
@@ -38,25 +38,3 @@ class VideoClassificationBenchmark(BaseBenchmark):
             f"{label_text}\n"
             "ASSISTANT:"
         )
-
-    def _make_contact_sheet(self, frames: Sequence[Image.Image]) -> Image.Image:
-        rgb_frames = [frame.convert("RGB") for frame in frames]
-        tile_width = max(frame.width for frame in rgb_frames)
-        tile_height = max(frame.height for frame in rgb_frames)
-        canvas = Image.new("RGB", (tile_width * len(rgb_frames), tile_height + 24), color=(255, 255, 255))
-        draw = ImageDraw.Draw(canvas)
-        for idx, frame in enumerate(rgb_frames, start=1):
-            x = (idx - 1) * tile_width
-            canvas.paste(frame, (x, 24))
-            draw.text((x + 8, 4), f"Frame {idx}", fill=(0, 0, 0))
-        return canvas
-
-    def _coerce_image(self, value: Any) -> Image.Image:
-        if isinstance(value, Image.Image):
-            return value
-        if hasattr(value, "convert"):
-            try:
-                return value.convert("RGB")
-            except Exception:
-                pass
-        return Image.fromarray(value)

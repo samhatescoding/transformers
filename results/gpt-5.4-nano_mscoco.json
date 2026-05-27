@@ -1,0 +1,1548 @@
+{
+  "model": "gpt-5.4-nano",
+  "benchmark": "mscoco",
+  "report": {
+    "benchmark": "mscoco",
+    "dataset": "mscoco",
+    "num_samples": 10,
+    "num_candidate_labels": 80,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "bottle",
+          "bowl",
+          "broccoli",
+          "carrot",
+          "cup",
+          "dining table",
+          "knife",
+          "oven",
+          "person",
+          "sink"
+        ],
+        "prediction": "person: [0.61, 0.16, 0.93, 0.95]",
+        "correct": false,
+        "valid_labels": [
+          "bottle",
+          "bowl",
+          "broccoli",
+          "carrot",
+          "cup",
+          "dining table",
+          "knife",
+          "oven",
+          "person",
+          "sink",
+          "spoon"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "bottle",
+            "xyxy": [
+              217.62,
+              240.54,
+              256.61,
+              298.28999999999996
+            ]
+          },
+          {
+            "label": "dining table",
+            "xyxy": [
+              1.0,
+              240.24,
+              347.63,
+              427.0
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              388.66,
+              69.92,
+              498.07000000000005,
+              347.54
+            ]
+          },
+          {
+            "label": "knife",
+            "xyxy": [
+              135.57,
+              249.43,
+              157.89,
+              278.22
+            ]
+          },
+          {
+            "label": "bowl",
+            "xyxy": [
+              31.28,
+              344.0,
+              99.4,
+              384.83
+            ]
+          },
+          {
+            "label": "bowl",
+            "xyxy": [
+              59.63,
+              287.36,
+              135.7,
+              328.66
+            ]
+          },
+          {
+            "label": "oven",
+            "xyxy": [
+              1.36,
+              164.33,
+              193.92000000000002,
+              262.70000000000005
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              0.0,
+              262.81,
+              62.16,
+              299.58
+            ]
+          },
+          {
+            "label": "cup",
+            "xyxy": [
+              119.4,
+              272.51,
+              144.22,
+              306.76
+            ]
+          },
+          {
+            "label": "cup",
+            "xyxy": [
+              141.47,
+              267.91,
+              173.66,
+              303.77000000000004
+            ]
+          },
+          {
+            "label": "bowl",
+            "xyxy": [
+              155.97,
+              168.95,
+              182.0,
+              186.07999999999998
+            ]
+          },
+          {
+            "label": "bowl",
+            "xyxy": [
+              157.2,
+              114.15,
+              175.06,
+              129.97
+            ]
+          },
+          {
+            "label": "broccoli",
+            "xyxy": [
+              98.75,
+              304.78,
+              109.53,
+              310.34999999999997
+            ]
+          },
+          {
+            "label": "spoon",
+            "xyxy": [
+              166.03,
+              256.36,
+              174.85,
+              274.94
+            ]
+          },
+          {
+            "label": "broccoli",
+            "xyxy": [
+              86.41,
+              293.97,
+              110.37,
+              305.15000000000003
+            ]
+          },
+          {
+            "label": "broccoli",
+            "xyxy": [
+              70.14,
+              296.16,
+              79.42,
+              300.74
+            ]
+          },
+          {
+            "label": "oven",
+            "xyxy": [
+              0.0,
+              210.9,
+              191.36,
+              309.88
+            ]
+          },
+          {
+            "label": "carrot",
+            "xyxy": [
+              96.69,
+              297.09,
+              104.53,
+              301.95
+            ]
+          },
+          {
+            "label": "sink",
+            "xyxy": [
+              497.25,
+              203.4,
+              619.26,
+              232.01
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "person",
+            "xyxy": [
+              0.61,
+              0.16,
+              1.54,
+              1.1099999999999999
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.2665901000145823,
+          "generation_time_seconds": 1.115600600023754,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1091772416,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 19,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 19,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "banana",
+          "chair",
+          "dining table",
+          "orange",
+          "oven",
+          "potted plant",
+          "refrigerator",
+          "sink"
+        ],
+        "prediction": "refrigerator: [0.37, 0.34, 0.60, 0.86]",
+        "correct": false,
+        "valid_labels": [
+          "banana",
+          "chair",
+          "dining table",
+          "orange",
+          "oven",
+          "potted plant",
+          "refrigerator",
+          "sink"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "potted plant",
+            "xyxy": [
+              102.49,
+              118.47,
+              110.39,
+              135.78
+            ]
+          },
+          {
+            "label": "chair",
+            "xyxy": [
+              26.5,
+              215.25,
+              88.0,
+              229.75
+            ]
+          },
+          {
+            "label": "chair",
+            "xyxy": [
+              116.5,
+              189.57,
+              166.5,
+              215.07
+            ]
+          },
+          {
+            "label": "dining table",
+            "xyxy": [
+              79.55,
+              178.05,
+              287.91,
+              226.75
+            ]
+          },
+          {
+            "label": "refrigerator",
+            "xyxy": [
+              301.84,
+              74.94,
+              351.46,
+              226.38
+            ]
+          },
+          {
+            "label": "banana",
+            "xyxy": [
+              220.65,
+              178.93,
+              258.49,
+              206.84
+            ]
+          },
+          {
+            "label": "oven",
+            "xyxy": [
+              137.47,
+              124.11,
+              197.65,
+              195.13
+            ]
+          },
+          {
+            "label": "sink",
+            "xyxy": [
+              266.33,
+              134.49,
+              294.2,
+              137.96
+            ]
+          },
+          {
+            "label": "orange",
+            "xyxy": [
+              215.77,
+              184.9,
+              233.03,
+              200.87
+            ]
+          },
+          {
+            "label": "orange",
+            "xyxy": [
+              231.6,
+              200.96,
+              248.29,
+              216.89000000000001
+            ]
+          },
+          {
+            "label": "orange",
+            "xyxy": [
+              230.55,
+              178.25,
+              242.28,
+              189.23
+            ]
+          },
+          {
+            "label": "orange",
+            "xyxy": [
+              205.19,
+              187.01,
+              220.18,
+              208.20999999999998
+            ]
+          },
+          {
+            "label": "chair",
+            "xyxy": [
+              241.95,
+              180.42,
+              293.32,
+              225.82
+            ]
+          },
+          {
+            "label": "orange",
+            "xyxy": [
+              217.89,
+              200.56,
+              232.02999999999997,
+              214.05
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "refrigerator",
+            "xyxy": [
+              130.24,
+              78.2,
+              341.44,
+              276.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4256550000282004,
+          "generation_time_seconds": 1.022597900009714,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1091821568,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 14,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 14,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "cup",
+          "handbag",
+          "person",
+          "traffic light",
+          "umbrella"
+        ],
+        "prediction": "person: [0.04, 0.33, 0.27, 0.98]\nperson: [0.42,",
+        "correct": false,
+        "valid_labels": [
+          "cup",
+          "handbag",
+          "person",
+          "traffic light",
+          "umbrella"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "person",
+            "xyxy": [
+              326.28,
+              174.56,
+              397.52,
+              371.81
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              9.79,
+              167.06,
+              131.73,
+              393.51
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              510.44,
+              171.27,
+              634.1,
+              387.03
+            ]
+          },
+          {
+            "label": "umbrella",
+            "xyxy": [
+              560.73,
+              90.25,
+              640.0,
+              157.57
+            ]
+          },
+          {
+            "label": "handbag",
+            "xyxy": [
+              46.01,
+              211.11,
+              79.56,
+              262.96000000000004
+            ]
+          },
+          {
+            "label": "cup",
+            "xyxy": [
+              345.13,
+              226.41,
+              356.19,
+              248.55
+            ]
+          },
+          {
+            "label": "traffic light",
+            "xyxy": [
+              337.06,
+              44.11,
+              398.42,
+              101.28
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "person",
+            "xyxy": [
+              25.6,
+              141.24,
+              198.4,
+              560.6800000000001
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9421316001098603,
+          "generation_time_seconds": 1.245333299972117,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1091837952,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 7,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 7,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "bicycle",
+          "person",
+          "skateboard"
+        ],
+        "prediction": "person: [0.586, 0.451, 0.709, 0.853]  \nperson: [0.420",
+        "correct": false,
+        "valid_labels": [
+          "bicycle",
+          "person",
+          "skateboard"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "bicycle",
+            "xyxy": [
+              253.21,
+              271.07,
+              312.8,
+              332.03999999999996
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              226.04,
+              229.31,
+              237.63,
+              259.72
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              257.85,
+              224.48,
+              301.98,
+              321.48
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              68.18,
+              238.19,
+              84.36000000000001,
+              281.07
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              79.16,
+              232.26,
+              107.38,
+              283.38
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              98.4,
+              234.28,
+              117.92,
+              280.74
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              326.86,
+              223.46,
+              339.97,
+              262.13
+            ]
+          },
+          {
+            "label": "bicycle",
+            "xyxy": [
+              155.27,
+              246.34,
+              170.14000000000001,
+              268.33
+            ]
+          },
+          {
+            "label": "skateboard",
+            "xyxy": [
+              298.61,
+              316.85,
+              362.52,
+              364.04
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              345.41,
+              173.41,
+              418.35,
+              358.82
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              239.72,
+              225.38,
+              250.36,
+              258.44
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              167.02,
+              234.0,
+              182.8,
+              271.46
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              209.68,
+              231.08,
+              218.83,
+              265.61
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              408.29,
+              231.25,
+              425.41,
+              266.22
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              204.14,
+              229.02,
+              211.47,
+              263.98
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              195.32,
+              228.06,
+              205.97,
+              265.24
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              1.0,
+              190.0,
+              639.0,
+              291.0
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "person",
+            "xyxy": [
+              375.03999999999996,
+              216.48000000000002,
+              828.8,
+              625.9200000000001
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.944093499914743,
+          "generation_time_seconds": 1.2261047000065446,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1093070848,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 17,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 17,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "bicycle",
+          "car",
+          "traffic light",
+          "truck"
+        ],
+        "prediction": "bicycle: [0.32, 0.34, 0.74, 0.96]",
+        "correct": false,
+        "valid_labels": [
+          "bicycle",
+          "car",
+          "traffic light",
+          "truck"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "bicycle",
+            "xyxy": [
+              187.74,
+              5.84,
+              498.14,
+              386.33
+            ]
+          },
+          {
+            "label": "car",
+            "xyxy": [
+              398.03,
+              80.69,
+              479.15,
+              117.49
+            ]
+          },
+          {
+            "label": "car",
+            "xyxy": [
+              148.45,
+              71.56,
+              240.45,
+              115.83000000000001
+            ]
+          },
+          {
+            "label": "traffic light",
+            "xyxy": [
+              109.26,
+              26.54,
+              117.85000000000001,
+              38.11
+            ]
+          },
+          {
+            "label": "traffic light",
+            "xyxy": [
+              95.07,
+              67.63,
+              101.96,
+              75.97
+            ]
+          },
+          {
+            "label": "car",
+            "xyxy": [
+              364.21,
+              86.57,
+              395.5,
+              110.24
+            ]
+          },
+          {
+            "label": "car",
+            "xyxy": [
+              81.28,
+              76.22,
+              108.09,
+              94.53
+            ]
+          },
+          {
+            "label": "car",
+            "xyxy": [
+              122.6,
+              79.2,
+              131.93,
+              94.10000000000001
+            ]
+          },
+          {
+            "label": "truck",
+            "xyxy": [
+              506.05,
+              25.26,
+              640.0,
+              137.23
+            ]
+          },
+          {
+            "label": "truck",
+            "xyxy": [
+              396.71,
+              80.69,
+              478.84,
+              116.25
+            ]
+          },
+          {
+            "label": "truck",
+            "xyxy": [
+              476.76,
+              81.15,
+              520.4,
+              120.62
+            ]
+          },
+          {
+            "label": "traffic light",
+            "xyxy": [
+              32.65,
+              58.41,
+              37.879999999999995,
+              61.86
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "bicycle",
+            "xyxy": [
+              204.8,
+              131.92000000000002,
+              678.4000000000001,
+              504.40000000000003
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.8437936999835074,
+          "generation_time_seconds": 1.2263870000606403,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1093955584,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 12,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 12,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "sink",
+          "toilet"
+        ],
+        "prediction": "sink: [0.0, 0.37, 0.21, 0.74]\ntoilet: [0.64",
+        "correct": false,
+        "valid_labels": [
+          "sink",
+          "toilet"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "toilet",
+            "xyxy": [
+              411.1,
+              237.7,
+              504.11,
+              480.0
+            ]
+          },
+          {
+            "label": "sink",
+            "xyxy": [
+              9.21,
+              313.62,
+              151.92000000000002,
+              391.88
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "sink",
+            "xyxy": [
+              0.0,
+              189.07,
+              134.4,
+              567.2099999999999
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.67966330004856,
+          "generation_time_seconds": 1.1464484999887645,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1094033408,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 2,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 2,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "toilet"
+        ],
+        "prediction": "toilet: [0.06, 0.03, 0.55, 0.90]",
+        "correct": false,
+        "valid_labels": [
+          "toilet"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "toilet",
+            "xyxy": [
+              186.97,
+              471.83,
+              287.64,
+              527.92
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "toilet",
+            "xyxy": [
+              25.619999999999997,
+              19.2,
+              260.47,
+              595.2
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6966624999186024,
+          "generation_time_seconds": 1.1245358000742272,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1095143424,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "motorcycle",
+          "person"
+        ],
+        "prediction": "motorcycle: [0.28, 0.09, 0.73, 0.96]",
+        "correct": false,
+        "valid_labels": [
+          "motorcycle",
+          "person"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "motorcycle",
+            "xyxy": [
+              14.61,
+              68.54,
+              343.82,
+              489.89000000000004
+            ]
+          },
+          {
+            "label": "motorcycle",
+            "xyxy": [
+              284.06,
+              300.79,
+              329.35,
+              364.6
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              47.19,
+              296.12,
+              75.49,
+              329.29
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              32.75,
+              298.94,
+              49.269999999999996,
+              328.15999999999997
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              320.16,
+              275.05,
+              347.22,
+              379.58000000000004
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              10.05,
+              302.96,
+              23.75,
+              328.65
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              266.37,
+              293.13,
+              290.34000000000003,
+              382.09
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              369.5,
+              278.52,
+              375.0,
+              324.16999999999996
+            ]
+          },
+          {
+            "label": "motorcycle",
+            "xyxy": [
+              345.6,
+              306.34,
+              372.76000000000005,
+              332.26
+            ]
+          },
+          {
+            "label": "motorcycle",
+            "xyxy": [
+              343.74,
+              296.41,
+              361.48,
+              307.06
+            ]
+          },
+          {
+            "label": "motorcycle",
+            "xyxy": [
+              0.0,
+              329.66,
+              35.78,
+              366.84000000000003
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              290.03,
+              299.79,
+              305.27,
+              319.66
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              302.2,
+              298.22,
+              314.93,
+              316.95000000000005
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "motorcycle",
+            "xyxy": [
+              105.00000000000001,
+              45.0,
+              378.75,
+              525.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.279427699977532,
+          "generation_time_seconds": 3.68337350001093,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1095331840,
+          "cpu_utilization_percent": 0.426027397260274,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 12,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 0.07692307692307693,
+        "f1": 0.14285714285714288,
+        "tp": 1,
+        "fp": 0,
+        "fn": 12,
+        "mean_iou_matched": 0.5937181242704092,
+        "mean_iou_all_predictions": 0.5937181242704092,
+        "matched_predictions": [
+          {
+            "label": "motorcycle",
+            "xyxy": [
+              105.00000000000001,
+              45.0,
+              378.75,
+              525.0
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "motorcycle",
+            "xyxy": [
+              14.61,
+              68.54,
+              343.82,
+              489.89000000000004
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "toilet"
+        ],
+        "prediction": "toilet: [0.16, 0.15, 0.86, 0.96]",
+        "correct": false,
+        "valid_labels": [
+          "toilet"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "toilet",
+            "xyxy": [
+              33.27,
+              0.0,
+              336.44,
+              426.0
+            ]
+          },
+          {
+            "label": "toilet",
+            "xyxy": [
+              228.8,
+              172.38,
+              424.09000000000003,
+              353.31
+            ]
+          },
+          {
+            "label": "toilet",
+            "xyxy": [
+              236.35,
+              11.53,
+              505.1,
+              390.83
+            ]
+          },
+          {
+            "label": "toilet",
+            "xyxy": [
+              346.72,
+              73.55,
+              540.62,
+              313.29
+            ]
+          },
+          {
+            "label": "toilet",
+            "xyxy": [
+              448.38,
+              41.46,
+              586.65,
+              206.71
+            ]
+          },
+          {
+            "label": "toilet",
+            "xyxy": [
+              399.88,
+              28.4,
+              550.41,
+              241.11
+            ]
+          },
+          {
+            "label": "toilet",
+            "xyxy": [
+              539.94,
+              78.89,
+              640.0,
+              229.93
+            ]
+          },
+          {
+            "label": "toilet",
+            "xyxy": [
+              0.0,
+              0.0,
+              201.7,
+              426.0
+            ]
+          },
+          {
+            "label": "toilet",
+            "xyxy": [
+              504.25,
+              135.9,
+              556.85,
+              170.16
+            ]
+          },
+          {
+            "label": "toilet",
+            "xyxy": [
+              428.64,
+              129.32,
+              563.3399999999999,
+              233.26999999999998
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "toilet",
+            "xyxy": [
+              102.4,
+              63.9,
+              652.8,
+              472.85999999999996
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6783658000640571,
+          "generation_time_seconds": 1.0314127000747249,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1095344128,
+          "cpu_utilization_percent": 1.480952380952381,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 10,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 10,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "sink",
+          "toilet"
+        ],
+        "prediction": "toilet: [0.19, 0.29, 0.84, 0.98]",
+        "correct": false,
+        "valid_labels": [
+          "sink",
+          "toilet"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "toilet",
+            "xyxy": [
+              28.03,
+              252.91,
+              321.75,
+              492.83
+            ]
+          },
+          {
+            "label": "sink",
+            "xyxy": [
+              53.25,
+              61.04,
+              301.3,
+              145.45
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "toilet",
+            "xyxy": [
+              66.69,
+              145.0,
+              361.53000000000003,
+              635.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.5294876999687403,
+          "generation_time_seconds": 1.9433272000169381,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1096753152,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 2,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 2,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 21.29029979999177,
+      "wall_clock_time_per_sample_seconds_mean": 2.1285870900028385,
+      "total_generation_time_seconds_mean": 1.4765121200238354,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.46969747227344655,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 10,
+      "success_count": 10,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1096753152,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.1906979778212655,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 9,
+      "false_negative_count_total": 96,
+      "mean_number_of_predicted_detections": 1.0,
+      "tokens_per_second": null
+    }
+  }
+}

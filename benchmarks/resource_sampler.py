@@ -25,9 +25,13 @@ class ResourceSampler:
         self._started = True
         self._rss_peak_bytes = self.process.memory_info().rss
         self.process.cpu_percent(interval=None)
-        if torch.cuda.is_available():
-            torch.cuda.reset_peak_memory_stats()
-            self._gpu_memory_peak_bytes = 0
+        self._gpu_memory_peak_bytes = None
+        if self._cuda_memory_available():
+            try:
+                torch.cuda.reset_peak_memory_stats()
+                self._gpu_memory_peak_bytes = 0
+            except Exception:
+                self._gpu_memory_peak_bytes = None
         self._thread = threading.Thread(target=self._run, daemon=True)
         self._thread.start()
 
@@ -49,9 +53,12 @@ class ResourceSampler:
         if self._cpu_samples:
             avg_cpu = sum(self._cpu_samples) / len(self._cpu_samples)
 
-        gpu_peak = self._gpu_memory_peak_bytes
-        if torch.cuda.is_available():
-            gpu_peak = int(torch.cuda.max_memory_allocated())
+        gpu_peak = None
+        if self._cuda_memory_available():
+            try:
+                gpu_peak = int(torch.cuda.max_memory_allocated())
+            except Exception:
+                gpu_peak = self._gpu_memory_peak_bytes
 
         return {
             "peak_cpu_ram_bytes": int(self._rss_peak_bytes),
@@ -67,10 +74,16 @@ class ResourceSampler:
             try:
                 self._rss_peak_bytes = max(self._rss_peak_bytes, self.process.memory_info().rss)
                 self._cpu_samples.append(self.process.cpu_percent(interval=None))
-                if torch.cuda.is_available():
+                if self._cuda_memory_available():
                     current_gpu_memory = int(torch.cuda.memory_allocated())
                     peak_so_far = self._gpu_memory_peak_bytes or 0
                     self._gpu_memory_peak_bytes = max(peak_so_far, current_gpu_memory)
             except Exception:
                 pass
             time.sleep(self.interval_seconds)
+
+    def _cuda_memory_available(self) -> bool:
+        try:
+            return bool(torch.cuda.is_available())
+        except Exception:
+            return False

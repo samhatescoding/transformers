@@ -1,0 +1,398 @@
+{
+  "model": "gpt-5.4-nano",
+  "benchmark": "gqa",
+  "report": {
+    "benchmark": "gqa",
+    "dataset": "gqa",
+    "num_samples": 10,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [],
+        "prediction": "Cockatoo",
+        "correct": false,
+        "valid_labels": [
+          "parrot"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.0108240999979898,
+          "generation_time_seconds": 0.9940054999897256,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1186082816,
+          "cpu_utilization_percent": 13.920000000000002,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "parrot"
+        ]
+      },
+      {
+        "index": 2,
+        "prompt_labels": [],
+        "prediction": "blue",
+        "correct": false,
+        "valid_labels": [
+          "light blue"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.8096277000149712,
+          "generation_time_seconds": 0.8060265000676736,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1181220864,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "light blue"
+        ]
+      },
+      {
+        "index": 3,
+        "prompt_labels": [],
+        "prediction": "Indoors",
+        "correct": true,
+        "valid_labels": [
+          "indoors"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9118196000345051,
+          "generation_time_seconds": 0.9021487000863999,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1181233152,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "indoors"
+        ]
+      },
+      {
+        "index": 4,
+        "prompt_labels": [],
+        "prediction": "No, there are no napkins under the utensil to the",
+        "correct": false,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.910220899968408,
+          "generation_time_seconds": 0.8994913001079112,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1181233152,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ]
+      },
+      {
+        "index": 5,
+        "prompt_labels": [],
+        "prediction": "A napkin",
+        "correct": false,
+        "valid_labels": [
+          "napkin"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.0121164999436587,
+          "generation_time_seconds": 1.010816500056535,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1181233152,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "napkin"
+        ]
+      },
+      {
+        "index": 6,
+        "prompt_labels": [],
+        "prediction": "right side",
+        "correct": false,
+        "valid_labels": [
+          "left"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.062947200029157,
+          "generation_time_seconds": 1.0220227000536397,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1181265920,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "left"
+        ]
+      },
+      {
+        "index": 7,
+        "prompt_labels": [],
+        "prediction": "an elephant and its calf drinking at a waterhole in a dry",
+        "correct": false,
+        "valid_labels": [
+          "shore"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.8266551999840885,
+          "generation_time_seconds": 0.783513700007461,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1181265920,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "shore"
+        ]
+      },
+      {
+        "index": 8,
+        "prompt_labels": [],
+        "prediction": "Elephants at a watering hole in a river in Africa (a",
+        "correct": false,
+        "valid_labels": [
+          "shore"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3676031000213698,
+          "generation_time_seconds": 1.3250750999432057,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1181261824,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "shore"
+        ]
+      },
+      {
+        "index": 9,
+        "prompt_labels": [],
+        "prediction": "a clown",
+        "correct": false,
+        "valid_labels": [
+          "statue"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9638249999843538,
+          "generation_time_seconds": 0.9378437999403104,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1182244864,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "statue"
+        ]
+      },
+      {
+        "index": 10,
+        "prompt_labels": [],
+        "prediction": "No.",
+        "correct": true,
+        "valid_labels": [
+          "no"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.6597260000417009,
+          "generation_time_seconds": 0.6270100000547245,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1182248960,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "no"
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 9.537663500057533,
+      "wall_clock_time_per_sample_seconds_mean": 0.9535365300020203,
+      "total_generation_time_seconds_mean": 0.9307953800307587,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 1.0484748177517142,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 10,
+      "success_count": 10,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1186082816,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.3920000000000001,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null
+    }
+  }
+}

@@ -9,6 +9,7 @@ from .._base_benchmark import BaseBenchmark
 class DetectionBenchmark(BaseBenchmark):
     MAX_PROMPT_LABELS = 10
     PLACEHOLDER_LABELS = {"label", "<label_name>", "class", "object"}
+    default_max_new_tokens = 32
 
     def get_predicted_boxes(self, prediction: str) -> List[Dict[str, Any]]:
         box_pattern = re.compile(

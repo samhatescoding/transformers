@@ -6,11 +6,14 @@ from PIL import Image
 
 class BaseModel(ABC):
     name: str
-    tokens: int
 
     @abstractmethod
     def predict(self, image: Image.Image, prompt: str) -> str:
         raise NotImplementedError
+
+    def _log_loading_artifact(self, artifact_name: str, name: str | None = None) -> None:
+        name = name or getattr(self, "name", self.__class__.__name__)
+        print("Loading " + name + " " + artifact_name + "...")
 
     def get_tokenizer(self) -> Any | None:
         tokenizer = getattr(self, "tokenizer", None)

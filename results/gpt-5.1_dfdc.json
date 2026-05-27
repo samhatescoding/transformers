@@ -1,0 +1,398 @@
+{
+  "model": "gpt-5.1",
+  "benchmark": "dfdc",
+  "report": {
+    "benchmark": "dfdc",
+    "dataset": "dfdc",
+    "num_samples": 10,
+    "num_candidate_labels": 2,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "real",
+          "fake"
+        ],
+        "prediction": "real",
+        "correct": false,
+        "valid_labels": [
+          "fake"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6039136999752373,
+          "generation_time_seconds": 1.5873143000062555,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1414991872,
+          "cpu_utilization_percent": 81.80333333333333,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "real",
+          "fake"
+        ],
+        "prediction": "real",
+        "correct": true,
+        "valid_labels": [
+          "real"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.923547799931839,
+          "generation_time_seconds": 1.826462399912998,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1430855680,
+          "cpu_utilization_percent": 7.771428571428571,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "real",
+          "fake"
+        ],
+        "prediction": "real",
+        "correct": false,
+        "valid_labels": [
+          "fake"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6757345999358222,
+          "generation_time_seconds": 1.594726899988018,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1348907008,
+          "cpu_utilization_percent": 1.9516129032258065,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "real",
+          "fake"
+        ],
+        "prediction": "real",
+        "correct": true,
+        "valid_labels": [
+          "real"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.2641800000565127,
+          "generation_time_seconds": 2.2036397999618202,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1349459968,
+          "cpu_utilization_percent": 35.49756097560975,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "real",
+          "fake"
+        ],
+        "prediction": "real",
+        "correct": false,
+        "valid_labels": [
+          "fake"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5324589000083506,
+          "generation_time_seconds": 1.472940299892798,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1349939200,
+          "cpu_utilization_percent": 1.092857142857143,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "real",
+          "fake"
+        ],
+        "prediction": "real",
+        "correct": true,
+        "valid_labels": [
+          "real"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3396354999858886,
+          "generation_time_seconds": 1.271702800062485,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1350320128,
+          "cpu_utilization_percent": 1.1708333333333334,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "real",
+          "fake"
+        ],
+        "prediction": "real",
+        "correct": false,
+        "valid_labels": [
+          "fake"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0955583000322804,
+          "generation_time_seconds": 2.0838670999510214,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1345843200,
+          "cpu_utilization_percent": 0.77,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "real",
+          "fake"
+        ],
+        "prediction": "real",
+        "correct": true,
+        "valid_labels": [
+          "real"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.168129300000146,
+          "generation_time_seconds": 1.1377069998998195,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1346281472,
+          "cpu_utilization_percent": 1.3227272727272728,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "real",
+          "fake"
+        ],
+        "prediction": "fake",
+        "correct": true,
+        "valid_labels": [
+          "fake"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6152285999851301,
+          "generation_time_seconds": 1.5753153000259772,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1351426048,
+          "cpu_utilization_percent": 0.9766666666666667,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "real",
+          "fake"
+        ],
+        "prediction": "real",
+        "correct": false,
+        "valid_labels": [
+          "fake"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6338198999874294,
+          "generation_time_seconds": 1.6045289000030607,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1346838528,
+          "cpu_utilization_percent": 1.0133333333333332,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 16.865613899892196,
+      "wall_clock_time_per_sample_seconds_mean": 1.6852206599898636,
+      "total_generation_time_seconds_mean": 1.6358204799704255,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.5929223839319552,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 10,
+      "success_count": 10,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1430855680,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 13.337035353251519,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null
+    }
+  }
+}

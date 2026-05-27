@@ -6,7 +6,7 @@ from types import SimpleNamespace
 import torch
 from PIL import Image
 
-from models.llava import Llava
+from models.llava15_7b import Llava
 
 
 class _FakeBatch(dict):

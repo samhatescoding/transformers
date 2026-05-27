@@ -5,7 +5,7 @@ import traceback
 from pathlib import Path
 
 from benchmarks import OpenImagesV4DetectionBenchmark
-from models import Gemma, Qwen25VL, SmallLlava
+from models import Gemma, Qwen25VL3B, SmallLlava
 
 
 OUTPUT_DIR = Path("comparison/output")
@@ -56,9 +56,9 @@ def _summarize_report(model_name: str, report: dict, path: Path) -> dict:
 def main() -> int:
     benchmark = OpenImagesV4DetectionBenchmark(streaming=True)
     model_factories = {
-        "small-llava": lambda: SmallLlava(max_new_tokens=32, stream=False, load_in_4bit=False),
-        "gemma": lambda: Gemma(max_new_tokens=32),
-        "qwen25-vl": lambda: Qwen25VL(max_new_tokens=32),
+        "llava-gemma-2b": lambda: SmallLlava(max_new_tokens=32, stream=False),
+        "paligemma-3b-mix-224": lambda: Gemma(max_new_tokens=32),
+        "qwen2.5-vl-3b-instruct": lambda: Qwen25VL3B(max_new_tokens=32),
     }
 
     summary = []

@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any, Dict, List, Sequence, Tuple
 
-from PIL import Image, ImageDraw
+from PIL import Image
 
 from .._base_benchmark import BaseBenchmark
 
@@ -94,8 +94,8 @@ class MultipleChoiceBenchmark(BaseBenchmark):
         del prompt_labels
         del valid_labels
         del predicted_boxes
-        choices = list(self._get_choices(row))
-        selected_choice = str(evaluation.get("selected_choice", "")).strip()
+        del row
+        del evaluation
         return {
             "generated_output_count": 0 if not str(prediction or "").strip() else 1,
             "hallucinated_label_count": 0,
@@ -192,29 +192,9 @@ class MultipleChoiceBenchmark(BaseBenchmark):
         canvas = Image.new("RGB", (width, height), "white")
         canvas.paste(left_rgb, (0, 24))
         canvas.paste(right_rgb, (left_rgb.width, 24))
+        from PIL import ImageDraw
+
         draw = ImageDraw.Draw(canvas)
         draw.text((8, 4), left_label, fill=(0, 0, 0))
         draw.text((left_rgb.width + 8, 4), right_label, fill=(0, 0, 0))
         return canvas
-
-    def _make_contact_sheet(self, frames: Sequence[Image.Image]) -> Image.Image:
-        rgb_frames = [frame.convert("RGB") for frame in frames]
-        tile_width = max(frame.width for frame in rgb_frames)
-        tile_height = max(frame.height for frame in rgb_frames)
-        canvas = Image.new("RGB", (tile_width * len(rgb_frames), tile_height + 24), "white")
-        draw = ImageDraw.Draw(canvas)
-        for idx, frame in enumerate(rgb_frames, start=1):
-            x = (idx - 1) * tile_width
-            canvas.paste(frame, (x, 24))
-            draw.text((x + 8, 4), f"Frame {idx}", fill=(0, 0, 0))
-        return canvas
-
-    def _coerce_image(self, value: Any) -> Image.Image:
-        if isinstance(value, Image.Image):
-            return value
-        if hasattr(value, "convert"):
-            try:
-                return value.convert("RGB")
-            except Exception:
-                pass
-        return Image.fromarray(value)

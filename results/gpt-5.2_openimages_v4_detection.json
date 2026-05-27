@@ -1,0 +1,1688 @@
+{
+  "model": "gpt-5.2",
+  "benchmark": "openimages_v4_detection",
+  "report": {
+    "benchmark": "openimages_v4_detection",
+    "dataset": "openimages_v4",
+    "num_samples": 10,
+    "num_candidate_labels": 18,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "Fixed-wing aircraft"
+        ],
+        "prediction": "Fixed-wing aircraft: [0.0703, 0.0828, 0.9102, 0.8079]",
+        "correct": true,
+        "valid_labels": [
+          "Fixed-wing aircraft"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Fixed-wing aircraft",
+            "xyxy": [
+              23.21718406677246,
+              31.75409936159849,
+              987.34130859375,
+              357.8442708849907
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Fixed-wing aircraft",
+            "xyxy": [
+              71.9872,
+              37.0116,
+              1004.032,
+              398.1429
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.8116935000289232,
+          "generation_time_seconds": 1.7636223000008613,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1350946816,
+          "cpu_utilization_percent": 21.975757575757573,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.8219149280619307,
+        "mean_iou_all_predictions": 0.8219149280619307,
+        "matched_predictions": [
+          {
+            "label": "Fixed-wing aircraft",
+            "xyxy": [
+              71.9872,
+              37.0116,
+              1004.032,
+              398.1429
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "Fixed-wing aircraft",
+            "xyxy": [
+              23.21718406677246,
+              31.75409936159849,
+              987.34130859375,
+              357.8442708849907
+            ]
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "Food",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit"
+        ],
+        "prediction": "Fruit: [0.1992, 0.0458, 0.9033, 0.8354]",
+        "correct": false,
+        "valid_labels": [
+          "Food",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit",
+          "Fruit"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Food",
+            "xyxy": [
+              0.0,
+              0.0,
+              1024.0,
+              681.0
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              144.77761840820312,
+              460.5432445406914,
+              183.98822021484375,
+              498.2926948070526
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              218.6745147705078,
+              203.84701520204544,
+              259.3932189941406,
+              241.59644517302513
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              238.27981567382812,
+              333.70510625839233,
+              295.5876159667969,
+              371.45455652475357
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              251.85272216796875,
+              372.9645329117775,
+              298.60382080078125,
+              412.22395956516266
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              251.85272216796875,
+              449.9734098315239,
+              297.0957336425781,
+              487.72281950712204
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              253.36082458496094,
+              258.20620572566986,
+              291.0633239746094,
+              297.465632379055
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              253.36082458496094,
+              413.7339359521866,
+              301.6200256347656,
+              459.03326815366745
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              277.49041748046875,
+              406.18405401706696,
+              313.6848449707031,
+              448.46343344449997
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              289.55523681640625,
+              228.0066576898098,
+              349.8792419433594,
+              291.4257268309593
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              324.2415466308594,
+              120.79822258651257,
+              369.4845275878906,
+              167.60754132270813
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              358.9278259277344,
+              409.2040067911148,
+              393.6141357421875,
+              456.0133153796196
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              363.4521484375,
+              442.4234873056412,
+              410.2032470703125,
+              495.27274203300476
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              384.5655517578125,
+              403.164060652256,
+              437.3490295410156,
+              449.9734098315239
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              389.08984375,
+              261.2261584997177,
+              606.2562866210938,
+              422.79379427433014
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              416.2356262207031,
+              169.11751770973206,
+              461.4786376953125,
+              206.8669679760933
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              437.3490295410156,
+              486.2128431200981,
+              478.0677490234375,
+              526.9822461605072
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              443.3814392089844,
+              406.18405401706696,
+              508.229736328125,
+              466.5831500887871
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              444.8895568847656,
+              501.31264758110046,
+              494.6568603515625,
+              554.161861717701
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              467.51104736328125,
+              138.91795952618122,
+              624.3534545898438,
+              344.2749409675598
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              564.0294799804688,
+              439.4035345315933,
+              610.7805786132812,
+              484.7028667330742
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              618.321044921875,
+              308.0354670882225,
+              659.0397338867188,
+              354.8447756767273
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              631.8939819335938,
+              200.82704213261604,
+              686.185546875,
+              252.16630017757416
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              645.4668579101562,
+              357.86472845077515,
+              696.7422485351562,
+              401.6540842652321
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              646.9749755859375,
+              477.15298479795456,
+              693.72607421875,
+              525.4722697734833
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              654.5154418945312,
+              92.10865093767643,
+              699.7584838867188,
+              137.4079831391573
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              687.6936645507812,
+              197.8070893585682,
+              735.952880859375,
+              241.59644517302513
+            ]
+          },
+          {
+            "label": "Fruit",
+            "xyxy": [
+              758.5744018554688,
+              108.71840134263039,
+              809.8497924804688,
+              166.0975649356842
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Fruit",
+            "xyxy": [
+              203.9808,
+              31.1898,
+              1128.96,
+              600.0972
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.8485697000287473,
+          "generation_time_seconds": 1.7977725000819191,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1318866944,
+          "cpu_utilization_percent": 1.7030303030303031,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 28,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 28,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "Clothing",
+          "Clothing",
+          "Clothing",
+          "Human body",
+          "Human body",
+          "Human body",
+          "Mammal",
+          "Mammal",
+          "Mammal",
+          "Footwear"
+        ],
+        "prediction": "Human body: [0.0293, 0.1013, 0.3066, 0.7385]\nClothing",
+        "correct": false,
+        "valid_labels": [
+          "Clothing",
+          "Clothing",
+          "Clothing",
+          "Human body",
+          "Human body",
+          "Human body",
+          "Mammal",
+          "Mammal",
+          "Mammal",
+          "Footwear",
+          "Footwear",
+          "Footwear",
+          "Footwear",
+          "Footwear",
+          "Footwear",
+          "Sports equipment",
+          "Sports equipment",
+          "Sports equipment",
+          "Sports equipment",
+          "Sports equipment",
+          "Sports equipment",
+          "Sports equipment",
+          "Sports equipment",
+          "Sports equipment",
+          "Sports equipment",
+          "Sports equipment",
+          "Sports equipment",
+          "Human arm",
+          "Human arm",
+          "Human arm",
+          "Human arm",
+          "Human arm",
+          "Human arm",
+          "Man",
+          "Man",
+          "Man"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Clothing",
+            "xyxy": [
+              111.83617401123047,
+              258.6462759375572,
+              265.6109313964844,
+              407.1931164264679
+            ]
+          },
+          {
+            "label": "Clothing",
+            "xyxy": [
+              344.2457275390625,
+              52.428297244012356,
+              648.3003540039062,
+              580.2065072059631
+            ]
+          },
+          {
+            "label": "Clothing",
+            "xyxy": [
+              719.9453735351562,
+              228.9368914961815,
+              987.3037719726562,
+              763.7055662870407
+            ]
+          },
+          {
+            "label": "Human body",
+            "xyxy": [
+              15.726962089538574,
+              94.3709398061037,
+              339.00341796875,
+              597.6826028823853
+            ]
+          },
+          {
+            "label": "Human body",
+            "xyxy": [
+              337.2559814453125,
+              0.0,
+              662.2798461914062,
+              604.673030257225
+            ]
+          },
+          {
+            "label": "Human body",
+            "xyxy": [
+              700.7235717773438,
+              171.26577031612396,
+              1013.515380859375,
+              858.0764720439911
+            ]
+          },
+          {
+            "label": "Mammal",
+            "xyxy": [
+              8.737201690673828,
+              99.61376714706421,
+              332.0136413574219,
+              604.673030257225
+            ]
+          },
+          {
+            "label": "Mammal",
+            "xyxy": [
+              340.7508544921875,
+              0.0,
+              660.5324096679688,
+              608.1682711839676
+            ]
+          },
+          {
+            "label": "Mammal",
+            "xyxy": [
+              697.2286987304688,
+              164.27532932162285,
+              1011.7679443359375,
+              861.5717129707336
+            ]
+          },
+          {
+            "label": "Footwear",
+            "xyxy": [
+              26.21160316467285,
+              505.0592631101608,
+              89.11945343017578,
+              576.7112662792206
+            ]
+          },
+          {
+            "label": "Footwear",
+            "xyxy": [
+              286.5802001953125,
+              522.535358786583,
+              333.7610778808594,
+              606.4206507205963
+            ]
+          },
+          {
+            "label": "Footwear",
+            "xyxy": [
+              405.4061584472656,
+              503.31164264678955,
+              478.79864501953125,
+              529.5257861614227
+            ]
+          },
+          {
+            "label": "Footwear",
+            "xyxy": [
+              592.3822631835938,
+              571.4684593677521,
+              618.5938720703125,
+              608.1682711839676
+            ]
+          },
+          {
+            "label": "Footwear",
+            "xyxy": [
+              700.7235717773438,
+              256.89865547418594,
+              788.0955810546875,
+              321.5602312684059
+            ]
+          },
+          {
+            "label": "Footwear",
+            "xyxy": [
+              940.1228637695312,
+              823.1242806911469,
+              1013.515380859375,
+              859.8240925073624
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              15.726962089538574,
+              253.40344178676605,
+              69.89761352539062,
+              319.81261080503464
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              113.5836181640625,
+              260.39386916160583,
+              265.6109313964844,
+              407.1931164264679
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              199.20819091796875,
+              110.09942863881588,
+              260.36859130859375,
+              167.77055662870407
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              700.7235717773438,
+              253.40344178676605,
+              789.843017578125,
+              323.3078517317772
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              721.6928100585938,
+              225.4416778087616,
+              987.3037719726562,
+              749.7246570587158
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              737.4197998046875,
+              171.26577031612396,
+              823.0443725585938,
+              234.17972564697266
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              898.184326171875,
+              744.4818501472473,
+              969.829345703125,
+              835.3575694561005
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              936.6279907226562,
+              819.6290397644043,
+              1018.7576904296875,
+              861.5717129707336
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              941.8703002929688,
+              347.7743747830391,
+              999.5358276367188,
+              424.66921210289
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              945.3651733398438,
+              344.2791610956192,
+              999.5358276367188,
+              405.4454959630966
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              947.1126098632812,
+              697.2963700294495,
+              968.0819091796875,
+              718.2677066326141
+            ]
+          },
+          {
+            "label": "Sports equipment",
+            "xyxy": [
+              947.1126098632812,
+              697.2963700294495,
+              971.5767822265625,
+              723.5105135440826
+            ]
+          },
+          {
+            "label": "Human arm",
+            "xyxy": [
+              15.726962089538574,
+              230.68451195955276,
+              113.5836181640625,
+              335.54111325740814
+            ]
+          },
+          {
+            "label": "Human arm",
+            "xyxy": [
+              162.51194763183594,
+              106.60420814156532,
+              263.8634948730469,
+              199.22753429412842
+            ]
+          },
+          {
+            "label": "Human arm",
+            "xyxy": [
+              339.00341796875,
+              64.6615689843893,
+              477.05120849609375,
+              162.5277224779129
+            ]
+          },
+          {
+            "label": "Human arm",
+            "xyxy": [
+              531.2218627929688,
+              55.92351774126291,
+              660.5324096679688,
+              200.97514113783836
+            ]
+          },
+          {
+            "label": "Human arm",
+            "xyxy": [
+              739.167236328125,
+              171.26577031612396,
+              926.1433715820312,
+              394.95985490083694
+            ]
+          },
+          {
+            "label": "Human arm",
+            "xyxy": [
+              905.174072265625,
+              510.30212450027466,
+              992.5460815429688,
+              728.7533204555511
+            ]
+          },
+          {
+            "label": "Man",
+            "xyxy": [
+              20.969284057617188,
+              87.38049881160259,
+              337.2559814453125,
+              608.1682711839676
+            ]
+          },
+          {
+            "label": "Man",
+            "xyxy": [
+              328.5187683105469,
+              0.0,
+              655.2901000976562,
+              602.9254097938538
+            ]
+          },
+          {
+            "label": "Man",
+            "xyxy": [
+              691.986328125,
+              157.28488832712173,
+              1015.2628173828125,
+              866.8145198822021
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Human body",
+            "xyxy": [
+              30.0032,
+              92.5882,
+              343.9616,
+              767.5772000000001
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.293988700024784,
+          "generation_time_seconds": 4.244792299927212,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1320812544,
+          "cpu_utilization_percent": 0.38625,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 35,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 0.027777777777777776,
+        "f1": 0.05405405405405406,
+        "tp": 1,
+        "fp": 0,
+        "fn": 35,
+        "mean_iou_matched": 0.7098159343721788,
+        "mean_iou_all_predictions": 0.7098159343721788,
+        "matched_predictions": [
+          {
+            "label": "Human body",
+            "xyxy": [
+              30.0032,
+              92.5882,
+              343.9616,
+              767.5772000000001
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "Human body",
+            "xyxy": [
+              15.726962089538574,
+              94.3709398061037,
+              339.00341796875,
+              597.6826028823853
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "Trousers",
+          "Dog",
+          "Human leg",
+          "Human leg",
+          "Person",
+          "Mammal",
+          "Footwear",
+          "Human arm"
+        ],
+        "prediction": "Dog: [0.476, 0.206, 0.897, 0.756]\nPerson: [0.777,",
+        "correct": false,
+        "valid_labels": [
+          "Trousers",
+          "Dog",
+          "Human leg",
+          "Human leg",
+          "Person",
+          "Mammal",
+          "Footwear",
+          "Human arm"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Trousers",
+            "xyxy": [
+              753.6519165039062,
+              15.110619412735105,
+              948.4837646484375,
+              275.0132669508457
+            ]
+          },
+          {
+            "label": "Dog",
+            "xyxy": [
+              430.4424743652344,
+              123.9070804566145,
+              812.5545654296875,
+              492.60617631673813
+            ]
+          },
+          {
+            "label": "Human leg",
+            "xyxy": [
+              750.6312866210938,
+              18.132743295282125,
+              841.250732421875,
+              275.0132669508457
+            ]
+          },
+          {
+            "label": "Human leg",
+            "xyxy": [
+              845.78173828125,
+              4.533185823820531,
+              953.0147705078125,
+              256.88053637742996
+            ]
+          },
+          {
+            "label": "Person",
+            "xyxy": [
+              752.1416015625,
+              0.0,
+              954.5250854492188,
+              252.34733846783638
+            ]
+          },
+          {
+            "label": "Mammal",
+            "xyxy": [
+              749.1209716796875,
+              0.0,
+              963.5870361328125,
+              265.94691184163094
+            ]
+          },
+          {
+            "label": "Footwear",
+            "xyxy": [
+              919.78759765625,
+              229.68140998482704,
+              951.50439453125,
+              252.34733846783638
+            ]
+          },
+          {
+            "label": "Human arm",
+            "xyxy": [
+              795.9409790039062,
+              0.0,
+              823.1268310546875,
+              13.599558107554913
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Dog",
+            "xyxy": [
+              487.424,
+              140.69799999999998,
+              1405.952,
+              657.0459999999999
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4733810999896377,
+          "generation_time_seconds": 1.4299695000518113,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1320828928,
+          "cpu_utilization_percent": 1.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 8,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 8,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "Dog"
+        ],
+        "prediction": "Dog: [0.2012, 0.1640, 0.9385, 0.9242]",
+        "correct": true,
+        "valid_labels": [
+          "Dog"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Dog",
+            "xyxy": [
+              177.58880615234375,
+              133.10489133000374,
+              923.7482299804688,
+              578.219123005867
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Dog",
+            "xyxy": [
+              206.0288,
+              100.696,
+              1167.0528,
+              668.1548
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6888023999053985,
+          "generation_time_seconds": 1.6481237999396399,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1319616512,
+          "cpu_utilization_percent": 0.959375,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.572521156370342,
+        "mean_iou_all_predictions": 0.572521156370342,
+        "matched_predictions": [
+          {
+            "label": "Dog",
+            "xyxy": [
+              206.0288,
+              100.696,
+              1167.0528,
+              668.1548
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "Dog",
+            "xyxy": [
+              177.58880615234375,
+              133.10489133000374,
+              923.7482299804688,
+              578.219123005867
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "Dog"
+        ],
+        "prediction": "Dog: [0.1965, 0.1012, 0.8282, 0.9769]",
+        "correct": false,
+        "valid_labels": [
+          "Dog"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Dog",
+            "xyxy": [
+              223.16360986232758,
+              114.38298034667969,
+              705.7775700688362,
+              956.8226928710938
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Dog",
+            "xyxy": [
+              193.9455,
+              103.6288,
+              1011.3789000000002,
+              1103.9744
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.356767699937336,
+          "generation_time_seconds": 2.314065699931234,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1320869888,
+          "cpu_utilization_percent": 0.6866666666666666,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "Fixed-wing aircraft"
+        ],
+        "prediction": "Fixed-wing aircraft: [0.3037, 0.2556, 0.7334, 0.4456]",
+        "correct": false,
+        "valid_labels": [
+          "Fixed-wing aircraft"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Fixed-wing aircraft",
+            "xyxy": [
+              301.6200256347656,
+              232.0221192240715,
+              722.3799438476562,
+              351.04645442962646
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Fixed-wing aircraft",
+            "xyxy": [
+              310.9888,
+              174.0636,
+              1061.9904000000001,
+              477.5172
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4287250000052154,
+          "generation_time_seconds": 1.391110899974592,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1321140224,
+          "cpu_utilization_percent": 1.1035714285714284,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "Person",
+          "Person",
+          "Person",
+          "Person",
+          "Mammal",
+          "Mammal",
+          "Mammal"
+        ],
+        "prediction": "Person: [0.405, 0.355, 0.469, 0.519]\nPerson: [0.466,",
+        "correct": false,
+        "valid_labels": [
+          "Person",
+          "Person",
+          "Person",
+          "Person",
+          "Mammal",
+          "Mammal",
+          "Mammal"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Person",
+            "xyxy": [
+              366.46832275390625,
+              244.25719618797302,
+              416.2356262207031,
+              349.8004341125488
+            ]
+          },
+          {
+            "label": "Person",
+            "xyxy": [
+              377.0250244140625,
+              280.4434549808502,
+              476.55963134765625,
+              343.7693977355957
+            ]
+          },
+          {
+            "label": "Person",
+            "xyxy": [
+              441.87335205078125,
+              223.14856886863708,
+              491.6406555175781,
+              324.1685092449188
+            ]
+          },
+          {
+            "label": "Person",
+            "xyxy": [
+              491.6406555175781,
+              194.5011055469513,
+              568.5537719726562,
+              325.6762683391571
+            ]
+          },
+          {
+            "label": "Mammal",
+            "xyxy": [
+              363.4521484375,
+              196.00886464118958,
+              472.03533935546875,
+              345.277156829834
+            ]
+          },
+          {
+            "label": "Mammal",
+            "xyxy": [
+              443.3814392089844,
+              189.97782826423645,
+              500.6892395019531,
+              327.1840274333954
+            ]
+          },
+          {
+            "label": "Mammal",
+            "xyxy": [
+              488.62445068359375,
+              159.822615981102,
+              570.0618286132812,
+              319.645231962204
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Person",
+            "xyxy": [
+              414.72,
+              241.39999999999998,
+              894.976,
+              594.32
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4403972999425605,
+          "generation_time_seconds": 1.394158500013873,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1319890944,
+          "cpu_utilization_percent": 1.1481481481481481,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 7,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 7,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "Fashion accessory",
+          "Fashion accessory",
+          "Person",
+          "Clothing",
+          "Human body",
+          "Human body",
+          "Human hand",
+          "Human hand",
+          "Human hand",
+          "Human arm"
+        ],
+        "prediction": "Human hand: [0.036, 0.000, 0.673, 1.000]\nHuman hand: [0.",
+        "correct": false,
+        "valid_labels": [
+          "Fashion accessory",
+          "Fashion accessory",
+          "Person",
+          "Clothing",
+          "Human body",
+          "Human body",
+          "Human hand",
+          "Human hand",
+          "Human hand",
+          "Human arm",
+          "Human arm",
+          "Human arm",
+          "Woman",
+          "Man"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Fashion accessory",
+            "xyxy": [
+              441.2235412597656,
+              189.41906994581223,
+              612.8941040039062,
+              329.22839069366455
+            ]
+          },
+          {
+            "label": "Fashion accessory",
+            "xyxy": [
+              459.29412841796875,
+              320.208423435688,
+              545.12939453125,
+              365.3082193136215
+            ]
+          },
+          {
+            "label": "Person",
+            "xyxy": [
+              0.0,
+              0.0,
+              605.3646850585938,
+              676.496675491333
+            ]
+          },
+          {
+            "label": "Clothing",
+            "xyxy": [
+              582.7764892578125,
+              1.5033259293995798,
+              1022.494140625,
+              634.4035488367081
+            ]
+          },
+          {
+            "label": "Human body",
+            "xyxy": [
+              0.0,
+              0.0,
+              433.6941223144531,
+              674.993350982666
+            ]
+          },
+          {
+            "label": "Human body",
+            "xyxy": [
+              233.41175842285156,
+              0.0,
+              1022.494140625,
+              670.483377456665
+            ]
+          },
+          {
+            "label": "Human hand",
+            "xyxy": [
+              18.070589065551758,
+              61.636365473270416,
+              310.2117614746094,
+              434.4611871242523
+            ]
+          },
+          {
+            "label": "Human hand",
+            "xyxy": [
+              227.3882293701172,
+              285.63191932439804,
+              677.6470336914062,
+              678.0
+            ]
+          },
+          {
+            "label": "Human hand",
+            "xyxy": [
+              313.2235412597656,
+              190.92239445447922,
+              603.8588256835938,
+              508.12416887283325
+            ]
+          },
+          {
+            "label": "Human arm",
+            "xyxy": [
+              0.0,
+              0.0,
+              314.7294006347656,
+              419.4279420375824
+            ]
+          },
+          {
+            "label": "Human arm",
+            "xyxy": [
+              222.87059020996094,
+              0.0,
+              804.1411743164062,
+              533.6807259321213
+            ]
+          },
+          {
+            "label": "Human arm",
+            "xyxy": [
+              231.9058837890625,
+              288.6385885477066,
+              721.317626953125,
+              674.993350982666
+            ]
+          },
+          {
+            "label": "Woman",
+            "xyxy": [
+              0.0,
+              0.0,
+              1024.0,
+              678.0
+            ]
+          },
+          {
+            "label": "Man",
+            "xyxy": [
+              227.3882293701172,
+              0.0,
+              1022.494140625,
+              670.483377456665
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Human hand",
+            "xyxy": [
+              36.864,
+              0.0,
+              726.0160000000001,
+              678.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.7101328999269754,
+          "generation_time_seconds": 1.692831400083378,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1319878656,
+          "cpu_utilization_percent": 0.96875,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 14,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 14,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "Salad"
+        ],
+        "prediction": "Salad: [0.1230, 0.1090, 0.9785, 0.9229]",
+        "correct": true,
+        "valid_labels": [
+          "Salad"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Salad",
+            "xyxy": [
+              146.50148010253906,
+              34.75442401319742,
+              1022.4896850585938,
+              679.9778952002525
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Salad",
+            "xyxy": [
+              125.952,
+              74.447,
+              1127.9360000000001,
+              704.7877
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3419119000900537,
+          "generation_time_seconds": 1.3124368999851868,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1319890944,
+          "cpu_utilization_percent": 2.2880000000000003,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.796021232557233,
+        "mean_iou_all_predictions": 0.796021232557233,
+        "matched_predictions": [
+          {
+            "label": "Salad",
+            "xyxy": [
+              125.952,
+              74.447,
+              1127.9360000000001,
+              704.7877
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "Salad",
+            "xyxy": [
+              146.50148010253906,
+              34.75442401319742,
+              1022.4896850585938,
+              679.9778952002525
+            ]
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 19.405841100029647,
+      "wall_clock_time_per_sample_seconds_mean": 1.9394370199879631,
+      "total_generation_time_seconds_mean": 1.8988883799989709,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.5153087644309693,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 10,
+      "success_count": 10,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1350946816,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 3.221954912217412,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 6,
+      "false_negative_count_total": 94,
+      "mean_number_of_predicted_detections": 1.0,
+      "tokens_per_second": null
+    }
+  }
+}

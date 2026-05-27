@@ -1,0 +1,409 @@
+{
+  "model": "llava-gemma-2b",
+  "benchmark": "conceptual_captions_caption",
+  "report": {
+    "benchmark": "conceptual_captions_caption",
+    "dataset": "conceptual_captions",
+    "num_samples": 10,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [],
+        "prediction": "A man and a woman are sitting on a couch in a room with a camera set up.",
+        "correct": false,
+        "valid_labels": [
+          "author : a life in photography -- in pictures"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 768.991597699991,
+          "generation_time_seconds": 768.9469266000087,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 40.470890873684674,
+          "output_tokens": 19,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3809710080,
+          "cpu_utilization_percent": 119.17450252056248,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.07535838128770536,
+        "reference_captions": [
+          "author : a life in photography -- in pictures"
+        ]
+      },
+      {
+        "index": 2,
+        "prompt_labels": [],
+        "prediction": "A bedroom with a bed and a nightstand.",
+        "correct": false,
+        "valid_labels": [
+          "the - bedroom stone cottage can sleep people"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 716.6935461000248,
+          "generation_time_seconds": 716.6788964000007,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 71.66788964000007,
+          "output_tokens": 10,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3807842304,
+          "cpu_utilization_percent": 124.17492889647326,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.16036590969929357,
+        "reference_captions": [
+          "the - bedroom stone cottage can sleep people"
+        ]
+      },
+      {
+        "index": 3,
+        "prompt_labels": [],
+        "prediction": "A group of people are gathered under a tree with pink flowers.",
+        "correct": false,
+        "valid_labels": [
+          "party in the park under cherry blossoms"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 709.477339199977,
+          "generation_time_seconds": 709.4273738000193,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 54.57133644615533,
+          "output_tokens": 13,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3803455488,
+          "cpu_utilization_percent": 122.78088087368876,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10390302174233558,
+        "reference_captions": [
+          "party in the park under cherry blossoms"
+        ]
+      },
+      {
+        "index": 4,
+        "prompt_labels": [],
+        "prediction": "A hand with a ring on it is holding a nail polish bottle with a picture of Mickey Mouse on it.",
+        "correct": false,
+        "valid_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 684.1218582000001,
+          "generation_time_seconds": 684.0743099999963,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 31.09428681818165,
+          "output_tokens": 22,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3782057984,
+          "cpu_utilization_percent": 125.75739072157272,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.0580966520440919,
+        "reference_captions": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !"
+        ]
+      },
+      {
+        "index": 5,
+        "prompt_labels": [],
+        "prediction": "A white plate with a green leaf on it.",
+        "correct": false,
+        "valid_labels": [
+          "that combines elements of a simple vegetable and dish"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 668.1283403999987,
+          "generation_time_seconds": 668.0989075000107,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 66.80989075000107,
+          "output_tokens": 10,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3858235392,
+          "cpu_utilization_percent": 125.27088626970763,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.14113991930789777,
+        "reference_captions": [
+          "that combines elements of a simple vegetable and dish"
+        ]
+      },
+      {
+        "index": 6,
+        "prompt_labels": [],
+        "prediction": "A robot with a sword is fighting another robot in a cartoon.",
+        "correct": false,
+        "valid_labels": [
+          "transformers : till all are issue # 4b"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 684.7588989000069,
+          "generation_time_seconds": 684.7460654999886,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 52.67277426922989,
+          "output_tokens": 13,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3859275776,
+          "cpu_utilization_percent": 123.29444898565802,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "transformers : till all are issue # 4b"
+        ]
+      },
+      {
+        "index": 7,
+        "prompt_labels": [],
+        "prediction": "A young child is sitting in a bathtub with a rubber ducky.",
+        "correct": false,
+        "valid_labels": [
+          "illustration of a little girl taking a bath"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 680.3455652999983,
+          "generation_time_seconds": 680.3195412000059,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 48.594252942857565,
+          "output_tokens": 14,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3823681536,
+          "cpu_utilization_percent": 119.49295101553167,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.11498759556447223,
+        "reference_captions": [
+          "illustration of a little girl taking a bath"
+        ]
+      },
+      {
+        "index": 8,
+        "prompt_labels": [],
+        "prediction": "A green awning is over a door that leads to a flower shop.",
+        "correct": false,
+        "valid_labels": [
+          "tv police procedural is filming on the street this week ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 705.1969890999899,
+          "generation_time_seconds": 705.1808695999789,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 50.37006211428421,
+          "output_tokens": 14,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3773095936,
+          "cpu_utilization_percent": 119.5199826739821,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.09552040806823767,
+        "reference_captions": [
+          "tv police procedural is filming on the street this week ."
+        ]
+      },
+      {
+        "index": 9,
+        "prompt_labels": [],
+        "prediction": "A large building with a clock tower sits on a pier.",
+        "correct": false,
+        "valid_labels": [
+          "the new terminal on island with quiet sea and setting sun"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 727.6218202000018,
+          "generation_time_seconds": 727.5831357999996,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 60.6319279833333,
+          "output_tokens": 12,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3772284928,
+          "cpu_utilization_percent": 116.17993278252347,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.12605968092174913,
+        "reference_captions": [
+          "the new terminal on island with quiet sea and setting sun"
+        ]
+      },
+      {
+        "index": 10,
+        "prompt_labels": [],
+        "prediction": "A woman with a smile on her face is pointing at something.",
+        "correct": false,
+        "valid_labels": [
+          "what makeup to wear to a job interview"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 724.9744851999858,
+          "generation_time_seconds": 724.9391581999953,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 55.764550630768866,
+          "output_tokens": 13,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3773050880,
+          "cpu_utilization_percent": 117.58142515138712,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10390302174233558,
+        "reference_captions": [
+          "what makeup to wear to a job interview"
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 7070.421902700007,
+      "wall_clock_time_per_sample_seconds_mean": 707.0310440299975,
+      "total_generation_time_seconds_mean": 706.9995184600004,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": 53.26478624684967,
+      "samples_per_second": 0.0014143427560074264,
+      "number_of_output_tokens_mean": 14.0,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 10,
+      "success_count": 10,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 3859275776,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 121.32273298910873,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": 0.01980199368522211,
+      "model_load_time_seconds": 12.786775499989744
+    }
+  }
+}

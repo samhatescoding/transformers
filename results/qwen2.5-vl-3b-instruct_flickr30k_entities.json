@@ -1,0 +1,795 @@
+{
+  "model": "qwen2.5-vl-3b-instruct",
+  "benchmark": "flickr30k_entities",
+  "report": {
+    "benchmark": "flickr30k_entities",
+    "dataset": "flickr30k_entities",
+    "num_samples": 10,
+    "num_candidate_labels": 19,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "A man",
+          "a yellow helmet",
+          "a cliff face",
+          "snow"
+        ],
+        "prediction": "A man: [0.6, 0.25, 0.8, 0.53]",
+        "correct": false,
+        "valid_labels": [
+          "A man",
+          "a yellow helmet",
+          "a cliff face",
+          "snow"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A man",
+            "xyxy": [
+              285.9569397,
+              52.67939377,
+              389.3494873,
+              203.69972229
+            ]
+          },
+          {
+            "label": "a yellow helmet",
+            "xyxy": [
+              352.44180298,
+              52.29131699,
+              389.74865723,
+              79.8338623
+            ]
+          },
+          {
+            "label": "a cliff face",
+            "xyxy": [
+              1.32843852,
+              187.75733948,
+              499.7583313,
+              374.63452148
+            ]
+          },
+          {
+            "label": "snow",
+            "xyxy": [
+              1.56399608,
+              1.82078409,
+              499.49630737,
+              212.78866577
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A man",
+            "xyxy": [
+              639.6,
+              200.0,
+              1492.3999999999999,
+              624.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.407473506999963,
+          "generation_time_seconds": 8.383651536999992,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.3353460614799997,
+          "output_tokens": 25,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2987671552,
+          "cpu_utilization_percent": 99.94036144578313,
+          "peak_gpu_memory_bytes": 10527884288,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 4,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 4,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "A dog of dark color",
+          "A man",
+          "A smiling woman",
+          "A soccer player",
+          "A woman",
+          "A young person",
+          "A young teenage girl",
+          "a car",
+          "a cliff face",
+          "a hosepipe"
+        ],
+        "prediction": "A man: [0.36, 0.2, 0.5, 0.47]",
+        "correct": false,
+        "valid_labels": [],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.274877164999907,
+          "generation_time_seconds": 8.233011193000038,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.3293204477200015,
+          "output_tokens": 25,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3008491520,
+          "cpu_utilization_percent": 99.49018404907976,
+          "peak_gpu_memory_bytes": 10527887360,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "A young teenage girl",
+          "a car",
+          "a hosepipe"
+        ],
+        "prediction": "A young teenage girl: [0.1, 0.2, 0.3, 0.4]\na car: [0.0",
+        "correct": false,
+        "valid_labels": [
+          "A young teenage girl",
+          "a car",
+          "a hosepipe"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A young teenage girl",
+            "xyxy": [
+              24.44830513,
+              27.76274109,
+              362.45361328,
+              374.54730225
+            ]
+          },
+          {
+            "label": "a car",
+            "xyxy": [
+              76.35383606,
+              112.24752808,
+              499.89920044,
+              374.74987793
+            ]
+          },
+          {
+            "label": "a hosepipe",
+            "xyxy": [
+              343.10186768,
+              189.2989502,
+              453.77529907,
+              311.07369995
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A young teenage girl",
+            "xyxy": [
+              106.60000000000001,
+              160.0,
+              426.40000000000003,
+              480.00000000000006
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.479168668000057,
+          "generation_time_seconds": 8.453464939000014,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.26417077934375044,
+          "output_tokens": 32,
+          "retry_count": 0,
+          "truncated": true,
+          "peak_cpu_ram_bytes": 3008626688,
+          "cpu_utilization_percent": 98.98263473053892,
+          "peak_gpu_memory_bytes": 10527884288,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 3,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 3,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "A soccer player",
+          "the ball"
+        ],
+        "prediction": "A soccer player: [0.17, 0.15, 0.69, 0.8]",
+        "correct": false,
+        "valid_labels": [
+          "A soccer player",
+          "the ball"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A soccer player",
+            "xyxy": [
+              96.1496048,
+              45.72498703,
+              404.16009521,
+              448.82049561
+            ]
+          },
+          {
+            "label": "the ball",
+            "xyxy": [
+              101.59225464,
+              310.4765625,
+              409.03567505,
+              440.19851685
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A soccer player",
+            "xyxy": [
+              136.0,
+              120.0,
+              688.0,
+              760.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.695437969999944,
+          "generation_time_seconds": 6.668653414999994,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.24698716351851832,
+          "output_tokens": 27,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3008749568,
+          "cpu_utilization_percent": 100.0909090909091,
+          "peak_gpu_memory_bytes": 9309558272,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 2,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 2,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "A young person",
+          "a trunk of a tree"
+        ],
+        "prediction": "A young person: [0.3, 0.17, 0.56, 0.63]\na trunk of a tree",
+        "correct": false,
+        "valid_labels": [
+          "A young person",
+          "a trunk of a tree"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A young person",
+            "xyxy": [
+              127.41062164,
+              15.52435017,
+              243.50341797,
+              221.45497131
+            ]
+          },
+          {
+            "label": "a trunk of a tree",
+            "xyxy": [
+              225.28630066,
+              1.32623792,
+              499.75704956,
+              320.48974609
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A young person",
+            "xyxy": [
+              359.09999999999997,
+              136.0,
+              1029.42,
+              640.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.688320826000108,
+          "generation_time_seconds": 9.650707506000003,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.3015846095625001,
+          "output_tokens": 32,
+          "retry_count": 0,
+          "truncated": true,
+          "peak_cpu_ram_bytes": 3029200896,
+          "cpu_utilization_percent": 99.54712041884817,
+          "peak_gpu_memory_bytes": 11339765760,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 2,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 2,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "A woman",
+          "a red shirt",
+          "the desk of the Ottawa Music Academy"
+        ],
+        "prediction": "A woman: [0.45, 0.41, 0.61, 0.57]\na red shirt: [",
+        "correct": false,
+        "valid_labels": [
+          "A woman",
+          "a red shirt",
+          "the desk of the Ottawa Music Academy"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A woman",
+            "xyxy": [
+              218.59825134,
+              156.89651489,
+              289.58703613,
+              213.01829529
+            ]
+          },
+          {
+            "label": "a red shirt",
+            "xyxy": [
+              224.68873596,
+              186.64181519,
+              289.51785278,
+              213.22612
+            ]
+          },
+          {
+            "label": "the desk of the Ottawa Music Academy",
+            "xyxy": [
+              14.99991131,
+              204.26428223,
+              462.28897095,
+              374.70837402
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A woman",
+            "xyxy": [
+              479.7,
+              328.0,
+              1129.96,
+              784.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.579570956999987,
+          "generation_time_seconds": 8.556026091000035,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.2673758153437511,
+          "output_tokens": 32,
+          "retry_count": 0,
+          "truncated": true,
+          "peak_cpu_ram_bytes": 2988134400,
+          "cpu_utilization_percent": 99.35207100591715,
+          "peak_gpu_memory_bytes": 10527884288,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 3,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 3,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "A dog of dark color",
+          "A man",
+          "A smiling woman",
+          "A soccer player",
+          "A woman",
+          "A young person",
+          "A young teenage girl",
+          "a car",
+          "a cliff face",
+          "a hosepipe"
+        ],
+        "prediction": "A dog of dark color: [0.35, 0.41, 0.48, 0.76]",
+        "correct": false,
+        "valid_labels": [],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.310886531999927,
+          "generation_time_seconds": 7.270851623999988,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.2423617207999996,
+          "output_tokens": 30,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2988216320,
+          "cpu_utilization_percent": 99.88194444444444,
+          "peak_gpu_memory_bytes": 9429545984,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "A dog of dark color",
+          "a red leash",
+          "his mouth"
+        ],
+        "prediction": "A dog of dark color: [0.1, 0.2, 0.3, 0.4]\na red leash: [0",
+        "correct": false,
+        "valid_labels": [
+          "A dog of dark color",
+          "a red leash",
+          "his mouth"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A dog of dark color",
+            "xyxy": [
+              26.94587326,
+              1.43705559,
+              406.35650635,
+              449.75827026
+            ]
+          },
+          {
+            "label": "a red leash",
+            "xyxy": [
+              38.22727585,
+              1.35720038,
+              499.50909424,
+              452.29302979
+            ]
+          },
+          {
+            "label": "his mouth",
+            "xyxy": [
+              128.41719055,
+              261.21554565,
+              318.73123169,
+              372.40115356
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A dog of dark color",
+            "xyxy": [
+              88.30000000000001,
+              160.0,
+              353.20000000000005,
+              480.00000000000006
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.5238345039999786,
+          "generation_time_seconds": 7.516326755000023,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.2348852110937507,
+          "output_tokens": 32,
+          "retry_count": 0,
+          "truncated": true,
+          "peak_cpu_ram_bytes": 2988412928,
+          "cpu_utilization_percent": 99.70067567567568,
+          "peak_gpu_memory_bytes": 9680262656,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 3,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 3,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "A smiling woman",
+          "her right arm"
+        ],
+        "prediction": "A smiling woman: [0.35, 0.17, 0.8, 0.9]",
+        "correct": false,
+        "valid_labels": [
+          "A smiling woman",
+          "her right arm"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A smiling woman",
+            "xyxy": [
+              647488.0,
+              647489.0,
+              647491.0,
+              647490.0
+            ]
+          },
+          {
+            "label": "her right arm",
+            "xyxy": [
+              1.0,
+              2.0,
+              4.0,
+              3.0
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A smiling woman",
+            "xyxy": [
+              420.34999999999997,
+              136.0,
+              1381.1499999999999,
+              856.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.285892309000019,
+          "generation_time_seconds": 9.244592456000078,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.3555612483076953,
+          "output_tokens": 26,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3014594560,
+          "cpu_utilization_percent": 99.53551912568307,
+          "peak_gpu_memory_bytes": 11339765760,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 2,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 2,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "A woman"
+        ],
+        "prediction": "A woman: [0.57, 0.26, 0.74, 0.58]",
+        "correct": false,
+        "valid_labels": [
+          "A woman"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A woman",
+            "xyxy": [
+              169.04872131,
+              176.33039856,
+              335.65115356,
+              326.91192627
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A woman",
+            "xyxy": [
+              686.28,
+              208.0,
+              1577.24,
+              672.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.586280708000004,
+          "generation_time_seconds": 9.554263135000042,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.35386159759259417,
+          "output_tokens": 27,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3010260992,
+          "cpu_utilization_percent": 99.56031746031746,
+          "peak_gpu_memory_bytes": 11339763200,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 83.83781115499994,
+      "wall_clock_time_per_sample_seconds_mean": 8.383174314599989,
+      "total_generation_time_seconds_mean": 8.35315486510002,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": 0.2931454654762561,
+      "samples_per_second": 0.11927792319758837,
+      "number_of_output_tokens_mean": 28.8,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 10,
+      "success_count": 10,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 3029200896,
+      "peak_gpu_memory_bytes": 11339765760,
+      "cpu_utilization_percent_mean": 99.60817374471969,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.4,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 8,
+      "false_negative_count_total": 20,
+      "mean_number_of_predicted_detections": 1.0,
+      "tokens_per_second": 3.4477991208241714,
+      "model_load_time_seconds": 186.35278578199996
+    }
+  }
+}

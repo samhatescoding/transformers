@@ -202,12 +202,10 @@ class SyntheticMSCOCOTests(unittest.TestCase):
         if provider == "llava":
             model_id = os.getenv("MSCOCO_TEST_LLAVA_MODEL_ID", "llava-hf/llava-1.5-7b-hf")
             max_new_tokens = int(os.getenv("MSCOCO_TEST_MAX_NEW_TOKENS", "200"))
-            load_in_4bit = os.getenv("MSCOCO_TEST_LOAD_IN_4BIT", "0").strip().lower() in {"1", "true", "yes"}
             return Llava(
                 model_id=model_id,
                 max_new_tokens=max_new_tokens,
                 stream=False,
-                load_in_4bit=load_in_4bit,
             )
 
         self.fail(f"Unsupported MSCOCO_TEST_MODEL value: {provider}")

@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Any, Dict, List, Tuple
 
-from PIL import Image, ImageDraw
+from PIL import Image
 
 from dataset import UCF101
 
@@ -11,8 +11,9 @@ from ._video_classification import VideoClassificationBenchmark
 
 
 class UCF101Benchmark(VideoClassificationBenchmark):
+    dataset_cls = UCF101
     benchmark_name = "ucf101"
-    default_max_new_tokens = 16
+    default_split = "test"
     max_edge = 160
 
     def __init__(
@@ -23,8 +24,7 @@ class UCF101Benchmark(VideoClassificationBenchmark):
         frames_per_clip: int = 4,
         search_limit: int = 512,
     ):
-        dataset = dataset or UCF101(split=split, streaming=streaming)
-        super().__init__(dataset=dataset, name=self.benchmark_name)
+        super().__init__(dataset=dataset, split=split, streaming=streaming)
         self.frames_per_clip = max(2, int(frames_per_clip))
         self.search_limit = max(self.frames_per_clip, int(search_limit))
 
@@ -101,24 +101,3 @@ class UCF101Benchmark(VideoClassificationBenchmark):
         step = (len(clip_rows) - 1) / (self.frames_per_clip - 1)
         indices = [round(step * i) for i in range(self.frames_per_clip)]
         return [clip_rows[i] for i in indices]
-
-    def _make_contact_sheet(self, frames: List[Image.Image]) -> Image.Image:
-        normalized = [frame.convert("RGB") for frame in frames]
-        tile_width = max(frame.width for frame in normalized)
-        tile_height = max(frame.height for frame in normalized)
-        canvas = Image.new("RGB", (tile_width * len(normalized), tile_height + 24), color=(255, 255, 255))
-        draw = ImageDraw.Draw(canvas)
-        for idx, frame in enumerate(normalized, start=1):
-            x = (idx - 1) * tile_width
-            canvas.paste(frame, (x, 24))
-            draw.text((x + 8, 4), f"Frame {idx}", fill=(0, 0, 0))
-        return canvas
-
-    def _resize_image(self, image: Image.Image) -> Image.Image:
-        width, height = image.size
-        largest_edge = max(width, height)
-        if largest_edge <= self.max_edge:
-            return image
-        scale = self.max_edge / float(largest_edge)
-        new_size = (max(1, round(width * scale)), max(1, round(height * scale)))
-        return image.resize(new_size, Image.Resampling.BICUBIC)

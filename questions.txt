@@ -1,0 +1,11 @@
+ - Architecture at a glance
+
+So like the data that comes out of `get_samples()` is used as input for `make_prompt()`,
+and the data that comes out from that is used in `predict()`?
+
+ - Model 
+ Do we use testing stubs?
+ Could we say preprocessing always consists in changing the format of the inputs so that the model can read them properly? 
+ Similarly, is output decoding a form of post-processing?
+
+ Remember not to use made-up examples like `Model(ABC)`. I'd rather you use real examples. This applies to the entire notebook

@@ -8,8 +8,10 @@ from .._base_benchmark import BaseBenchmark
 
 
 class CaptioningBenchmark(BaseBenchmark):
-    def __init__(self, dataset, name: str, bleu_threshold: float = 0.25):
-        super().__init__(dataset=dataset, name=name)
+    default_max_new_tokens = 24
+
+    def __init__(self, dataset=None, name: str | None = None, bleu_threshold: float = 0.25, **dataset_kwargs):
+        super().__init__(dataset=dataset, name=name, **dataset_kwargs)
         self.bleu_threshold = float(bleu_threshold)
 
     def get_candidate_labels(self, rows: List[Dict[str, Any]]) -> List[str]:

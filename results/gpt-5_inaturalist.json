@@ -1,0 +1,428 @@
+{
+  "model": "gpt-5",
+  "benchmark": "inaturalist",
+  "report": {
+    "benchmark": "inaturalist",
+    "dataset": "inaturalist",
+    "num_samples": 10,
+    "num_candidate_labels": 5,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Youngia japonica",
+        "correct": true,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.859937100089155,
+          "generation_time_seconds": 4.816484099952504,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 4102049792,
+          "cpu_utilization_percent": 6.792222222222222,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Grindelia stricta",
+        "correct": false,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5554797999793664,
+          "generation_time_seconds": 1.4986227999906987,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3846008832,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Youngia japonica",
+        "correct": true,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.331923000048846,
+          "generation_time_seconds": 1.2673640999710187,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3846107136,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Youngia japonica",
+        "correct": true,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.530841900035739,
+          "generation_time_seconds": 1.478895700071007,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3846164480,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Youngia japonica",
+        "correct": true,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.4327857999596745,
+          "generation_time_seconds": 2.4058528000023216,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3848531968,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Youngia japonica",
+        "correct": true,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.1205017999745905,
+          "generation_time_seconds": 1.1123393999878317,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3848577024,
+          "cpu_utilization_percent": 1.4619047619047618,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Youngia japonica",
+        "correct": true,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.1243360000662506,
+          "generation_time_seconds": 1.0843541999347508,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3850846208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Youngia japonica",
+        "correct": true,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6379061000188813,
+          "generation_time_seconds": 1.6183834000257775,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3850891264,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Youngia japonica",
+        "correct": true,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.1837481999536976,
+          "generation_time_seconds": 1.1575769999762997,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3852394496,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Youngia japonica",
+        "correct": true,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4123965000035241,
+          "generation_time_seconds": 1.35962479992304,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3852443648,
+          "cpu_utilization_percent": 2.2,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 18.192904300056398,
+      "wall_clock_time_per_sample_seconds_mean": 1.8189856200129726,
+      "total_generation_time_seconds_mean": 1.779949829983525,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.5496648492769238,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 10,
+      "success_count": 10,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 4102049792,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.0454126984126983,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null
+    }
+  }
+}

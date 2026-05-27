@@ -5,10 +5,8 @@ import os
 import traceback
 from pathlib import Path
 
-import torch
-
 from benchmarks import OpenImagesV4DetectionBenchmark
-from models import GPT4, LlavaOnevision, Qwen25VL
+from models import GPT4, LlavaOnevision, Qwen25VL72B
 
 
 OUTPUT_DIR = Path("comparison/output")
@@ -54,22 +52,14 @@ def _make_gpt41(max_new_tokens: int):
 
 
 def _make_qwen72(max_new_tokens: int):
-    if not torch.cuda.is_available():
-        raise RuntimeError("Qwen2.5-VL-72B-Instruct requires GPU here; this machine has no CUDA device.")
-    return Qwen25VL(
-        model_id="Qwen/Qwen2.5-VL-72B-Instruct",
-        max_new_tokens=max_new_tokens,
-    )
+    return Qwen25VL72B(max_new_tokens=max_new_tokens)
 
 
 def _make_llava72(max_new_tokens: int):
-    if not torch.cuda.is_available():
-        raise RuntimeError("LLaVA-OneVision 72B requires GPU here; this machine has no CUDA device.")
     return LlavaOnevision(
         model_id="llava-hf/llava-onevision-qwen2-72b-ov-hf",
         max_new_tokens=max_new_tokens,
         stream=False,
-        load_in_4bit=False,
     )
 
 
@@ -80,8 +70,8 @@ def main() -> int:
     summary = []
     runs = [
         ("gpt-4.1", _make_gpt41, 128),
-        ("llava-onevision-72b", _make_llava72, 64),
-        ("qwen25-vl-72b", _make_qwen72, 64),
+        ("llava-onevision-qwen2-72b-ov-hf", _make_llava72, 64),
+        ("qwen2.5-vl-72b-instruct", _make_qwen72, 64),
     ]
     for model_name, factory, max_new_tokens in runs:
         try:

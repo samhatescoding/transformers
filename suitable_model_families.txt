@@ -1,0 +1,268 @@
+SUITABLE MODEL FAMILIES FOR THIS PROJECT
+========================================
+
+Reviewed against primary model documentation: 2026-05-26.
+
+Selection rule
+--------------
+This repository benchmarks a model by supplying a still image plus a text
+prompt and evaluating its generated text. This list therefore includes only
+models that support image input and text output. Text-only LLMs, image
+generators, embedding models, audio-only models, and video-only models are
+excluded.
+
+Status labels:
+  IMPLEMENTED = a model wrapper is present under models/
+  INCLUDED*   = a wrapper is present, but the model is optional in the
+                default benchmark suite
+
+Year meaning:
+  Release year is the model-family/checkpoint release year stated by the
+  publisher, or the year of an official dated snapshot/model-card/release
+  announcement.
+
+
+OPENAI GPT FAMILY (API; Responses API)
+--------------------------------------
+Model ID                  Year  Status       Suggested use
+------------------------  ----  -----------  ----------------------------------
+gpt-4o                    2024  IMPLEMENTED  Existing API baseline
+gpt-4.1                   2025  IMPLEMENTED  Existing non-reasoning API result
+gpt-5                     2025  INCLUDED*       Historical GPT-5 progression
+gpt-5.1                   2025  INCLUDED*       Historical GPT-5 progression
+gpt-5.2                   2025  IMPLEMENTED    Previous frontier baseline
+gpt-5.3-chat-latest       n/a   INCLUDED*       Moving ChatGPT-oriented alias
+gpt-5.4                   2026  IMPLEMENTED    Current lower-cost frontier model
+gpt-5.4-mini              2026  IMPLEMENTED    Lower-cost, high-volume baseline
+gpt-5.4-nano              2026  INCLUDED*       Very low-cost classification case
+gpt-5.5                   2026  IMPLEMENTED    Current flagship API baseline
+
+Notes:
+  - All models listed here support image input and text output.
+  - A compact, useful default API panel would be gpt-4o, gpt-4.1, gpt-5.2,
+    gpt-5.4, gpt-5.4-mini, and gpt-5.5.
+  - Include gpt-5 and gpt-5.1 only for historical trend analysis.
+  - Avoid relying on gpt-5.3-chat-latest for reproducible long-term results:
+    it is an alias for a ChatGPT model rather than the primary frontier line,
+    and its official page does not publish a dated snapshot/release year.
+  - The existing OpenAI wrapper already sends image and text through the
+    Responses API, but GPT-5-family integration should not unconditionally
+    send temperature; use options supported by the selected API model.
+
+
+LLAVA FAMILY (local Hugging Face models)
+----------------------------------------
+Model ID                                           Year  Status       Rationale
+-------------------------------------------------  ----  -----------  ------------------------------
+llava-hf/llava-1.5-7b-hf                         2023  IMPLEMENTED  Established local baseline
+llava-hf/llava-1.5-13b-hf                        2023  IMPLEMENTED    Larger LLaVA 1.5 baseline
+Intel/llava-gemma-2b                              2024  IMPLEMENTED  Lightweight local baseline
+llava-hf/llava-v1.6-mistral-7b-hf                2024  IMPLEMENTED    Primary LLaVA-NeXT baseline
+llava-hf/llava-v1.6-vicuna-13b-hf                2024  IMPLEMENTED    Medium LLaVA-NeXT model
+llava-hf/llama3-llava-next-8b-hf                 2024  IMPLEMENTED    Llama-3-backed NeXT model
+llava-hf/llava-onevision-qwen2-7b-ov-hf          2024  IMPLEMENTED    Practical OneVision model
+llava-hf/llava-onevision-qwen2-72b-ov-hf         2024  IMPLEMENTED  Large quality comparison
+lmms-lab/LLaVA-OneVision-1.5-4B-Instruct         2025  IMPLEMENTED    New compact OneVision model
+
+Notes:
+  - LLaVA-NeXT (also called LLaVA 1.6) was released in January 2024 and is
+    specifically relevant to this project because it improves OCR and visual
+    reasoning on image tasks.
+  - LLaVA-OneVision was released in 2024 and covers single-image as well as
+    multi-image/video settings; its image checkpoints fit this benchmark.
+  - The 7B OneVision checkpoint remains the lowest-friction missing addition,
+    since a 72B OneVision wrapper is already implemented.
+  - The 4B LLaVA-OneVision-1.5 checkpoint gives one newer representative
+    without duplicating the practical size tier too heavily; it
+    may require a different loading path (`trust_remote_code=True`) than the
+    existing Hugging Face OneVision wrapper.
+  - Specialized visual-prompt, multi-image interleave, single-image tuning,
+    and very large NeXT variants are omitted to keep this a focused shortlist.
+    Video checkpoints are also omitted because the current benchmark contract
+    is for still images.
+
+
+QWEN VL FAMILY (local Hugging Face models)
+------------------------------------------
+Model ID                              Year  Status       Rationale
+------------------------------------  ----  -----------  ------------------------------
+Qwen/Qwen2.5-VL-3B-Instruct          2025  IMPLEMENTED  Small local baseline
+Qwen/Qwen2.5-VL-7B-Instruct          2025  IMPLEMENTED    Best incremental addition
+Qwen/Qwen2.5-VL-32B-Instruct         2025  INCLUDED*       Large middle tier
+Qwen/Qwen2.5-VL-72B-Instruct         2025  IMPLEMENTED  Very large comparison
+Qwen/Qwen3-VL-4B-Instruct            2025  IMPLEMENTED    Newer compact generation
+Qwen/Qwen3-VL-8B-Instruct            2025  IMPLEMENTED    Newer practical main model
+Qwen/Qwen3.5-4B                      2026  IMPLEMENTED    Current compact native VLM
+Qwen/Qwen3.5-9B                      2026  IMPLEMENTED    Current practical VLM tier
+
+Notes:
+  - Qwen2.5-VL-7B fills the current gap between 3B and 72B with minimal new
+    wrapper logic.
+  - Qwen3-VL is a modern successor line; implementation should verify the
+    installed transformers version because its model support is newer.
+  - Qwen3.5 is natively multimodal rather than being labeled as a separate
+    VL branch; its official model card supplies image-text-to-text examples.
+
+
+PALIGEMMA / GEMMA FAMILY (local Hugging Face models)
+----------------------------------------------------
+Model ID                           Year  Status       Rationale
+---------------------------------  ----  -----------  ------------------------------
+google/paligemma-3b-mix-224       2024  IMPLEMENTED  Existing compact task mixture
+google/paligemma-3b-mix-448       2024  IMPLEMENTED    Higher-resolution comparison
+google/paligemma2-3b-mix-448      2024  IMPLEMENTED    Updated PaliGemma mixture
+google/paligemma2-10b-mix-448     2024  INCLUDED*       Larger PaliGemma 2 tier
+google/gemma-3-4b-it               2025  IMPLEMENTED    Modern compact Gemma VLM
+google/gemma-3-12b-it              2025  IMPLEMENTED    Medium-size quality comparison
+google/gemma-3-27b-it              2025  INCLUDED*       Large hardware-heavy comparison
+google/gemma-4-E2B-it              2026  IMPLEMENTED    New edge-size multimodal model
+google/gemma-4-E4B-it              2026  IMPLEMENTED    New practical local model
+google/gemma-4-26B-A4B-it          2026  INCLUDED*       New larger MoE model
+google/gemma-4-31B-it              2026  INCLUDED*       New largest dense model
+
+Notes:
+  - PaliGemma mix checkpoints are directly relevant to captioning, VQA,
+    object detection-as-text, OCR, and segmentation-style outputs.
+  - Gemma 3 is multimodal for its 4B, 12B, and 27B variants; the 1B variant
+    is text-only and is intentionally not listed.
+  - Google released Gemma 4 in April 2026; its documented models accept text
+    and image input and generate text output, directly fitting this suite.
+
+
+INTERNVL FAMILY (local Hugging Face models)
+-------------------------------------------
+Model ID                              Year  Status       Rationale
+------------------------------------  ----  -----------  ------------------------------
+OpenGVLab/InternVL2_5-4B             2024  IMPLEMENTED    Smaller family comparator
+OpenGVLab/InternVL2_5-8B             2024  IMPLEMENTED  Existing practical baseline
+OpenGVLab/InternVL3-2B               2025  IMPLEMENTED    Compact newer model
+OpenGVLab/InternVL3-8B               2025  IMPLEMENTED    Main newer baseline
+OpenGVLab/InternVL3_5-8B-Instruct    2025  IMPLEMENTED    More recent 8B successor
+
+Notes:
+  - The existing InternVL wrapper uses custom-code loading; newer members of
+    this family are natural additions but should be integration-tested.
+
+
+MINICPM-V FAMILY (local Hugging Face models)
+--------------------------------------------
+Model ID                    Year  Status       Rationale
+--------------------------  ----  -----------  ------------------------------
+openbmb/MiniCPM-V-2_6      2024  IMPLEMENTED  Efficient existing VLM
+openbmb/MiniCPM-o-2_6      2025  IMPLEMENTED    Improved multimodal successor
+openbmb/MiniCPM-V-4.6      2026  IMPLEMENTED    New efficient image-text model
+openbmb/MiniCPM-V-4.6-Thinking  2026  INCLUDED*    Reasoning-oriented variant
+
+Notes:
+  - MiniCPM-o supports additional modalities, but it is still appropriate for
+    this suite because it supports still-image prompting and textual answers.
+  - OpenBMB documents MiniCPM-V 4.6 in May 2026 as a highly efficient model
+    with single-image understanding and standard image-text prompt examples.
+
+
+FALCON VLM FAMILY (local Hugging Face models)
+---------------------------------------------
+Model ID                 Year  Status       Rationale
+-----------------------  ----  -----------  ------------------------------
+tiiuae/falcon-11B-vlm    2024  IMPLEMENTED  Existing 11B vision baseline
+
+
+OPENAI REASONING FAMILY (API; OPTIONAL SUPPLEMENT)
+--------------------------------------------------
+Model ID  Year  Status     Rationale
+--------  ----  ---------  -----------------------------------------------
+o3        2025  INCLUDED*     Vision-capable older reasoning comparison
+
+Notes:
+  - This is suitable for the image-plus-prompt contract, but it is outside
+    the GPT family requested above and superseded by GPT-5 for most purposes.
+
+
+HIGH-PRIORITY MODELS FOR BENCHMARK RUNS
+---------------------------------------
+1. gpt-5.5 (2026)
+   Current high-end API baseline.
+
+2. gpt-5.4-mini (2026)
+   Lower-cost API baseline suitable for running the full benchmark suite.
+
+3. Qwen/Qwen2.5-VL-7B-Instruct (2025)
+   Straightforward intermediate-size addition to an already supported family.
+
+4. llava-hf/llava-onevision-qwen2-7b-ov-hf (2024)
+   Practical local OneVision alternative to the represented 72B checkpoint.
+
+5. lmms-lab/LLaVA-OneVision-1.5-4B-Instruct (2025)
+   Newer compact LLaVA family baseline for single-image evaluation.
+
+6. Qwen/Qwen3.5-4B (2026)
+   New current-generation compact model with straightforward image prompting.
+
+7. google/gemma-4-E4B-it (2026)
+   Current compact-to-medium Google multimodal baseline.
+
+8. openbmb/MiniCPM-V-4.6 (2026)
+   Recent efficiency-focused image understanding model.
+
+9. OpenGVLab/InternVL3-8B (2025)
+   Newer comparison against the implemented InternVL2.5 model.
+
+
+PRIMARY REFERENCES
+------------------
+OpenAI API models:
+  https://developers.openai.com/api/docs/models
+  https://developers.openai.com/api/docs/models/gpt-4o
+  https://developers.openai.com/api/docs/models/gpt-4.1
+  https://developers.openai.com/api/docs/models/gpt-5
+  https://developers.openai.com/api/docs/models/gpt-5.1
+  https://developers.openai.com/api/docs/models/gpt-5.2
+  https://developers.openai.com/api/docs/models/gpt-5.3-chat-latest
+  https://developers.openai.com/api/docs/models/gpt-5.4
+  https://developers.openai.com/api/docs/models/gpt-5.4-mini
+  https://developers.openai.com/api/docs/models/gpt-5.5
+  https://developers.openai.com/api/docs/models/o3
+
+LLaVA models:
+  https://huggingface.co/llava-hf/llava-1.5-7b-hf
+  https://huggingface.co/llava-hf/llava-1.5-13b-hf
+  https://huggingface.co/llava-hf/llava-v1.6-mistral-7b-hf
+  https://huggingface.co/llava-hf/llama3-llava-next-8b-hf
+  https://huggingface.co/Intel/llava-gemma-2b
+  https://huggingface.co/llava-hf/llava-onevision-qwen2-7b-ov-hf
+  https://huggingface.co/llava-hf/llava-onevision-qwen2-72b-ov-hf
+  https://huggingface.co/lmms-lab/LLaVA-OneVision-1.5-4B-Instruct
+  https://llava-vl.github.io/blog/2024-01-30-llava-next/
+  https://arxiv.org/abs/2408.03326
+
+Qwen vision-language models:
+  https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct
+  https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct
+  https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct
+  https://huggingface.co/Qwen/Qwen3.5-4B
+  https://huggingface.co/Qwen/Qwen3.5-9B
+  https://huggingface.co/docs/transformers/model_doc/qwen2_5_vl
+
+Google PaliGemma and Gemma models:
+  https://huggingface.co/google/paligemma-3b-mix-224
+  https://huggingface.co/google/paligemma2-3b-mix-448
+  https://huggingface.co/google/gemma-3-4b-it
+  https://huggingface.co/google/gemma-4-E2B-it
+  https://huggingface.co/google/gemma-4-E4B-it
+  https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/
+  https://huggingface.co/blog/paligemma2
+  https://huggingface.co/blog/gemma3
+
+InternVL models:
+  https://huggingface.co/OpenGVLab/InternVL2_5-8B
+  https://huggingface.co/OpenGVLab/InternVL3-8B
+  https://huggingface.co/OpenGVLab/InternVL3_5-8B-Instruct
+
+MiniCPM multimodal models:
+  https://huggingface.co/openbmb/MiniCPM-V-2_6
+  https://huggingface.co/openbmb/MiniCPM-o-2_6
+  https://huggingface.co/openbmb/MiniCPM-V-4.6
+
+Falcon VLM:
+  https://huggingface.co/tiiuae/falcon-11B-vlm
+  https://huggingface.co/blog/falcon2-11b

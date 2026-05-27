@@ -1,0 +1,409 @@
+{
+  "model": "llava-1.5-7b-hf",
+  "benchmark": "docvqa",
+  "report": {
+    "benchmark": "docvqa",
+    "dataset": "docvqa",
+    "num_samples": 10,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [],
+        "prediction": "1.0",
+        "correct": false,
+        "valid_labels": [
+          "028"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.8276758060001157,
+          "generation_time_seconds": 0.806738339000276,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.201684584750069,
+          "output_tokens": 4,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 4257038336,
+          "cpu_utilization_percent": 105.0875,
+          "peak_gpu_memory_bytes": 14534748160,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "0.28"
+        ]
+      },
+      {
+        "index": 2,
+        "prompt_labels": [],
+        "prediction": "University of virginia",
+        "correct": false,
+        "valid_labels": [
+          "university of california",
+          "university of california san diego"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.8707151649996376,
+          "generation_time_seconds": 0.844181264999861,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.1688362529999722,
+          "output_tokens": 5,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 4257030144,
+          "cpu_utilization_percent": 90.94117647058823,
+          "peak_gpu_memory_bytes": 14524147200,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "university of california",
+          "University of California",
+          "university of california, san diego"
+        ]
+      },
+      {
+        "index": 3,
+        "prompt_labels": [],
+        "prediction": "Tcc",
+        "correct": false,
+        "valid_labels": [
+          "itc limited"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.7233252020000691,
+          "generation_time_seconds": 0.6881214449999788,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.3440607224999894,
+          "output_tokens": 2,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 4257030144,
+          "cpu_utilization_percent": 92.39285714285714,
+          "peak_gpu_memory_bytes": 14525394432,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "itc limited",
+          "ITC Limited"
+        ]
+      },
+      {
+        "index": 4,
+        "prompt_labels": [],
+        "prediction": "Nowhere",
+        "correct": false,
+        "valid_labels": [
+          "san diego"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.6664891649998026,
+          "generation_time_seconds": 0.6572533430003205,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.32862667150016023,
+          "output_tokens": 2,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 4257030144,
+          "cpu_utilization_percent": 104.1846153846154,
+          "peak_gpu_memory_bytes": 14524147200,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "san diego",
+          "San Diego"
+        ]
+      },
+      {
+        "index": 5,
+        "prompt_labels": [],
+        "prediction": "Wilson",
+        "correct": false,
+        "valid_labels": [
+          "paul"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.6102750210002341,
+          "generation_time_seconds": 0.585230600000159,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.585230600000159,
+          "output_tokens": 1,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 4257030144,
+          "cpu_utilization_percent": 92.10833333333333,
+          "peak_gpu_memory_bytes": 14524770304,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Paul"
+        ]
+      },
+      {
+        "index": 6,
+        "prompt_labels": [],
+        "prediction": "National Soft Drink Association",
+        "correct": false,
+        "valid_labels": [
+          "1128 sixteenth st n w washington d c 20036"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9171362030001546,
+          "generation_time_seconds": 0.9042635389996576,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.15071058983327626,
+          "output_tokens": 6,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 4257030144,
+          "cpu_utilization_percent": 95.28333333333333,
+          "peak_gpu_memory_bytes": 14525394432,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "1128 SIXTEENTH ST., N. W., WASHINGTON, D. C. 20036",
+          "1128 sixteenth st., N. W., washington, D. C. 20036"
+        ]
+      },
+      {
+        "index": 7,
+        "prompt_labels": [],
+        "prediction": "ITC's brand of Atta featured in the advertisement is called",
+        "correct": false,
+        "valid_labels": [
+          "aashirvaad"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.528898757999741,
+          "generation_time_seconds": 1.4969776560001264,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.0935611035000079,
+          "output_tokens": 16,
+          "retry_count": 0,
+          "truncated": true,
+          "peak_cpu_ram_bytes": 4257030144,
+          "cpu_utilization_percent": 97.28,
+          "peak_gpu_memory_bytes": 14531006464,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "aashirvaad",
+          "Aashirvaad"
+        ]
+      },
+      {
+        "index": 8,
+        "prompt_labels": [],
+        "prediction": "William march foundation",
+        "correct": false,
+        "valid_labels": [
+          "the robert a welch foundation"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.7655941739999435,
+          "generation_time_seconds": 0.7350976400002764,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.2450325466667588,
+          "output_tokens": 3,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 4257030144,
+          "cpu_utilization_percent": 94.87333333333332,
+          "peak_gpu_memory_bytes": 14524770304,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The Robert A. Welch Foundation"
+        ]
+      },
+      {
+        "index": 9,
+        "prompt_labels": [],
+        "prediction": "10:00",
+        "correct": false,
+        "valid_labels": [
+          "1114 to 1139 am"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9133610349999799,
+          "generation_time_seconds": 0.9104846339996584,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.15174743899994306,
+          "output_tokens": 6,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 4257030144,
+          "cpu_utilization_percent": 94.47777777777777,
+          "peak_gpu_memory_bytes": 14527264768,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "11:14 to 11:39 a.m.",
+          "11.14 to 11.39 a.m."
+        ]
+      },
+      {
+        "index": 10,
+        "prompt_labels": [],
+        "prediction": "$1,125",
+        "correct": false,
+        "valid_labels": [
+          "$97500",
+          "97500"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9730269810002028,
+          "generation_time_seconds": 0.9288594290001129,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 0.15480990483335214,
+          "output_tokens": 6,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 4257030144,
+          "cpu_utilization_percent": 96.74736842105263,
+          "peak_gpu_memory_bytes": 14529136128,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "$975.00",
+          "975.00"
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 8.799388596999961,
+      "wall_clock_time_per_sample_seconds_mean": 0.8796497509999881,
+      "total_generation_time_seconds_mean": 0.8557207890000427,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": 0.2424300415583688,
+      "samples_per_second": 1.1364425936830853,
+      "number_of_output_tokens_mean": 5.1,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 10,
+      "success_count": 10,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 4257038336,
+      "peak_gpu_memory_bytes": 14534748160,
+      "cpu_utilization_percent_mean": 96.33762951968912,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.1,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": 5.959887927883152,
+      "model_load_time_seconds": 305.72426892400017
+    }
+  }
+}

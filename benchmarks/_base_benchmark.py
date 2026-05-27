@@ -4,7 +4,9 @@ import random
 import re
 import time
 from abc import ABC
-from typing import Any, Callable, Dict, List, Tuple
+from typing import Any, Callable, Dict, List, Sequence, Tuple
+
+from PIL import Image, ImageDraw
 
 from models._base_model import BaseModel
 from benchmarks.resource_sampler import ResourceSampler
@@ -14,11 +16,28 @@ from dataset._base_dataset import BaseDataset
 class BaseBenchmark(ABC):
     name: str
     dataset: BaseDataset
+    dataset_cls = None
+    benchmark_name: str | None = None
+    default_split = "train"
+    default_max_new_tokens = 16
     MAX_PROMPT_LABELS = 16
+    max_edge: int | None = None
 
-    def __init__(self, dataset: BaseDataset, name: str):
+    def __init__(
+        self,
+        dataset: BaseDataset | None = None,
+        name: str | None = None,
+        split: str | None = None,
+        streaming: bool = True,
+        **dataset_kwargs: Any,
+    ):
+        if dataset is None:
+            if self.dataset_cls is None:
+                raise ValueError(f"{self.__class__.__name__} requires a dataset or dataset_cls.")
+            dataset_split = self.default_split if split is None else split
+            dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)
         self.dataset = dataset
-        self.name = name
+        self.name = name or self.benchmark_name or getattr(dataset, "name", self.__class__.__name__)
 
     def get_candidate_labels(self, rows: List[Dict[str, Any]]) -> List[str]:
         return self.dataset.get_labels(rows)
@@ -64,6 +83,48 @@ class BaseBenchmark(ABC):
 
     def get_image_for_row(self, row: Dict[str, Any]) -> Any:
         return self.dataset.get_image_from_row(row)
+
+    def _coerce_image(self, value: Any) -> Image.Image:
+        if isinstance(value, Image.Image):
+            return value
+        if hasattr(value, "convert"):
+            try:
+                return value.convert("RGB")
+            except Exception:
+                pass
+        return Image.fromarray(value)
+
+    def _resize_image(self, image: Image.Image, max_edge: int | None = None) -> Image.Image:
+        edge = self.max_edge if max_edge is None else max_edge
+        if edge is None:
+            return image
+
+        width, height = image.size
+        largest_edge = max(width, height)
+        if largest_edge <= edge:
+            return image
+        scale = edge / float(largest_edge)
+        new_size = (max(1, round(width * scale)), max(1, round(height * scale)))
+        return image.resize(new_size, Image.Resampling.BICUBIC)
+
+    def _make_contact_sheet(
+        self,
+        frames: Sequence[Image.Image],
+        *,
+        labels: Sequence[str] | None = None,
+        header_height: int = 24,
+    ) -> Image.Image:
+        rgb_frames = [frame.convert("RGB") for frame in frames]
+        tile_width = max(frame.width for frame in rgb_frames)
+        tile_height = max(frame.height for frame in rgb_frames)
+        canvas = Image.new("RGB", (tile_width * len(rgb_frames), tile_height + header_height), "white")
+        draw = ImageDraw.Draw(canvas)
+        for idx, frame in enumerate(rgb_frames):
+            x = idx * tile_width
+            canvas.paste(frame, (x, header_height))
+            label = labels[idx] if labels and idx < len(labels) else f"Frame {idx + 1}"
+            draw.text((x + 8, 4), label, fill=(0, 0, 0))
+        return canvas
 
     def make_rng_for_row(self, row: Dict[str, Any]) -> random.Random:
         seed_parts = [

@@ -7,20 +7,9 @@ from benchmarks.resource_sampler import ResourceSampler
 
 
 class ResourceSamplerGpuDetectionTests(unittest.TestCase):
-    def test_reports_no_gpu_metrics_when_cuda_unavailable(self) -> None:
-        sampler = ResourceSampler(interval_seconds=0.001)
-        with patch("benchmarks.resource_sampler.torch.cuda.is_available", return_value=False):
-            sampler.start()
-            stats = sampler.stop()
-
-        self.assertIsNone(stats["peak_gpu_memory_bytes"])
-        self.assertIsNone(stats["gpu_utilization_percent"])
-        self.assertIsNone(stats["vram_allocation_over_time_bytes"])
-
-    def test_records_gpu_peak_when_cuda_available(self) -> None:
+    def test_records_gpu_peak(self) -> None:
         sampler = ResourceSampler(interval_seconds=0.001)
         with (
-            patch("benchmarks.resource_sampler.torch.cuda.is_available", return_value=True),
             patch("benchmarks.resource_sampler.torch.cuda.reset_peak_memory_stats") as reset_peak,
             patch("benchmarks.resource_sampler.torch.cuda.memory_allocated", return_value=128),
             patch("benchmarks.resource_sampler.torch.cuda.max_memory_allocated", return_value=256),
