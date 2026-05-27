@@ -205,3 +205,54 @@ measured comparison.
 References:
 - https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct
 - https://huggingface.co/docs/peft/developer_guides/quantization
+
+## Fine-Tune Other Benchmarks
+
+The general Qwen workflow supports every benchmark registered by this
+repository, including classification, visual question answering, captioning,
+multiple choice, video classification, and object detection. It exports each
+benchmark through the same prompt and image construction used for evaluation.
+For detection, assistant targets are normalized `label: [x, y, width, height]`
+lines.
+
+Run one adapter per benchmark. For example, to train a captioning adapter on
+Flickr30k:
+
+```python
+%cd /content/transformers
+!pip install -r requirements.txt -r fine-tuning/requirements-qwen.txt
+!pip uninstall -y torchao
+
+!python fine-tuning/prepare_benchmark.py \
+    --benchmark flickr30k \
+    --train-split train \
+    --train-examples 300 \
+    --validation-examples 100 \
+    --output-dir fine-tuning/data/flickr30k_qwen
+
+!python fine-tuning/train_qwen25vl_benchmark.py \
+    --train-manifest fine-tuning/data/flickr30k_qwen/train_manifest.jsonl \
+    --validation-manifest fine-tuning/data/flickr30k_qwen/validation_manifest.jsonl \
+    --output-dir fine-tuning/output/qwen2.5-vl-3b-flickr30k-lora \
+    --epochs 2 \
+    --learning-rate 1e-4
+
+!python fine-tuning/evaluate_qwen25vl_benchmark.py \
+    --benchmark flickr30k \
+    --split test \
+    --adapter-path fine-tuning/output/qwen2.5-vl-3b-flickr30k-lora \
+    --model-name qwen2.5-vl-3b-flickr30k-lora \
+    --samples 50
+```
+
+Replace `flickr30k` with a benchmark name accepted by
+`fine-tuning/prepare_benchmark.py --help`. Examples include `docvqa`,
+`flickr30k`, `mscoco`, `openimages_v4_detection`, `ucf101`, and
+`conceptual_captions`.
+
+By default, `prepare_benchmark.py` takes non-overlapping training and
+validation slices from `--train-split`. Evaluation must use another split or
+another disjoint slice. Several datasets are gated, unavailable under their
+configured Hub identifier, or provide only the split already used by the
+benchmark; those require access or a dataset/split configuration change before
+a leakage-free fine-tuning comparison can be run.
