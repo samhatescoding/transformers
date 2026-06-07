@@ -9,10 +9,18 @@ __pycache__/
 .coverage
 htmlcov/
 
+# Jupyter
+.ipynb_checkpoints/
+
 # Virtual environments
 .venv/
 venv/
 env/
+
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
 
 # VSCode
 .vscode/
@@ -30,6 +38,20 @@ ui/ui_outputs/
 *.log
 *.tmp
 .idea/
+
+# Machine-learning caches and experiment outputs
+.cache/
+.huggingface/
+wandb/
+mlruns/
+lightning_logs/
+
+# Model weights and checkpoints
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.onnx
 
 # LaTeX build artifacts
 *.aux

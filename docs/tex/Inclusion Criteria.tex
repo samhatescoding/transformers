@@ -1,0 +1,166 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[a4paper,margin=24mm,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{url}
+
+\definecolor{ink}{RGB}{32,44,58}
+\definecolor{accent}{RGB}{37,96,151}
+\definecolor{soft}{RGB}{237,243,248}
+\definecolor{warning}{RGB}{139,69,19}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=18pt,itemsep=2pt,topsep=3pt}
+\renewcommand{\arraystretch}{1.18}
+\captionsetup{font=small,labelfont=bf}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{ink}{Vision-Language Model Comparison}}
+\rhead{\textcolor{ink}{\thepage}}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\figpath}[1]{comparison/output/#1}
+\newcommand{\archbox}[2]{\fcolorbox{accent}{soft}{\parbox{#1}{\centering #2}}}
+\newcommand{\resultbox}[1]{%
+  \vspace{3pt}\noindent
+  \fcolorbox{accent}{soft}{\parbox{0.94\textwidth}{#1}}\vspace{4pt}}
+\newcommand{\twographs}[6]{%
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{#1}}
+\captionof{subfigure}{#2}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{#3}}
+\captionof{subfigure}{#4}
+\end{minipage}
+\caption{#5}
+\label{#6}
+\end{figure}}
+
+\title{\textbf{Seeing the Same Task Differently}\\[8pt]
+Vision-Language Model Operation, Benchmark Comparison,\\
+and a Qwen2.5-VL Fine-Tuning Case Study}
+\author{Technical report from the repository evaluation outputs}
+\date{}
+
+\begin{document}
+\pagenumbering{roman}
+
+\begin{titlepage}
+\centering
+\vspace*{34mm}
+{\Huge\bfseries Seeing the Same Task Differently\par}
+\vspace{10mm}
+{\Large Vision-Language Model Operation, Benchmark Comparison,\\
+and a Qwen2.5-VL Fine-Tuning Case Study\par}
+\vspace{22mm}
+\rule{0.68\textwidth}{0.5pt}\par
+\vspace{12mm}
+{\large A report built from the benchmark and fine-tuning artifacts\\
+stored in this repository\par}
+\vfill
+{\normalsize Primary analysis command:\par}
+\vspace{2mm}
+\code{python comparison\textbackslash build\_report.py --results-dir results --output-dir comparison\textbackslash output --bootstrap-samples 5000}
+\end{titlepage}
+\setcounter{page}{2}
+
+\chapter{Models}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccclll}
+\toprule
+\textbf{Model name} &
+\textbf{Prop. rank} &
+\textbf{Overall rank} &
+\textbf{Score} &
+\textbf{Date} &
+\textbf{Family} &
+\textbf{Company} \
+\midrule
+GPT-5.4 Thinking w/ tools
+& 1 & 1 & 82.1 & 2026-03-05 & GPT-5.4 & OpenAI \
+GPT-5.4 Thinking w/o tools
+& 2 & 2 & 81.2 & 2026-03-05 & GPT-5.4 & OpenAI \
+Gemini 3.0 Pro
+& 3 & 3 & 81.0 & 2025-11-18 & Gemini 3 & Google DeepMind \
+Gemini 3.1 Pro Thinking (High)
+& 4 & 4 & 80.5 & 2026-02-19 & Gemini 3.1 & Google DeepMind \
+Muse Spark Thinking
+& 5 & 5 & 80.4 & 2026-04-08 & Muse Spark & Meta \
+GPT-5.2 Thinking w/o Python
+& 5 & 5 & 80.4 & 2025-12-11 & GPT-5.2 & OpenAI \
+GPT-5.2 Thinking w/o tools
+& 7 & 7 & 79.5 & 2025-12-11 & GPT-5.2 & OpenAI \
+GPT-5.1 Thinking
+& 8 & 8 & 79.0 & 2025-11-13 & GPT-5.1 & OpenAI \
+GPT-5 w/ thinking
+& 9 & 9 & 78.4 & 2025-08-07 & GPT-5 & OpenAI \
+Claude Opus 4.6 w/ tools
+& 10 & 10 & 77.3 & 2026-02-05 & Claude Opus 4.6 & Anthropic \
+o3
+& 11 & 12 & 76.4 & 2025-04-16 & o3 & OpenAI \
+GPT-5.1
+& 12 & 13 & 76.0 & 2025-11-13 & GPT-5.1 & OpenAI \
+Claude Sonnet 4.6 w/ tools
+& 13 & 14 & 75.6 & 2026-02-17 & Claude Sonnet 4.6 & Anthropic \
+Claude Sonnet 4.6 w/o tools
+& 14 & 15 & 74.5 & 2026-02-17 & Claude Sonnet 4.6 & Anthropic \
+Claude Opus 4.6 w/o tools
+& 15 & 16 & 73.9 & 2026-02-05 & Claude Opus 4.6 & Anthropic \
+Claude Opus 4.5
+& 15 & 16 & 73.9 & 2025-11-24 & Claude Opus 4.5 & Anthropic \
+Claude Sonnet 4.5
+& 17 & 20 & 68.9 & 2025-09-29 & Claude Sonnet 4.5 & Anthropic \
+Gemini 2.5 Pro 05-06
+& 18 & 22 & 68.0 & 2025-05-06 & Gemini 2.5 & Google DeepMind \
+Seed 1.5-VL Thinking
+& 19 & 23 & 67.6 & 2025-05-13 & Seed 1.5-VL & ByteDance \
+\bottomrule
+\end{tabular}
+\caption{Highest-ranked proprietary/API models on the MMMU-Pro leaderboard, extended until five owning companies are represented. Ranks are model-only ranks, excluding human baselines. Tied scores share the same rank.}
+\label{tab:mmmu-pro-proprietary-five-companies}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
