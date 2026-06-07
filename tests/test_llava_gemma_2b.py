@@ -44,7 +44,7 @@ class _FakeProcessor:
         return "<formatted>"
 
 
-class SmallLlavaTests(unittest.TestCase):
+class LlavaGemma2BTests(unittest.TestCase):
     def test_repairs_missing_image_placeholder_token_before_generation(self) -> None:
         model = Llava.__new__(Llava)
         model.processor = _FakeProcessor()

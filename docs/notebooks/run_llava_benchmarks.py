@@ -13,7 +13,7 @@ from models import (
     LlavaOnevision,
     LlavaOnevision15_4BInstruct,
     LlavaOnevisionQwen2_7B,
-    SmallLlava,
+    LlavaGemma2B,
 )
 from runners.full_suite import run_full_suite
 
@@ -30,7 +30,7 @@ def _llava_15_13b():
 
 
 def _llava_gemma_2b():
-    return SmallLlava(stream=False)
+    return LlavaGemma2B(stream=False)
 
 
 def _llava_next_mistral_7b():

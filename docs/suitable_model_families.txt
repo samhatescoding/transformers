@@ -1,3 +1,47 @@
+How are the models chosen?
+
+Model families are first chosen if they appear in the following benchmarks:
+
+https://huggingface.co/spaces/opencompass/open_vlm_leaderboard (default config)
+https://mmmu-benchmark.github.io/
+https://arena.ai/leaderboard/vision (overall)
+
+Top proprietary families in Arena: 
+ * Claude (Anthropic)
+ * Muse (Meta)
+ * Gemini (Google)
+ * GPT (OpenAI)
+ * Qwen (Alibaba) (some versions are open-source)
+Top open-source families in Arena:
+ * Kimi (Moonshot)
+ * Gemma (Google)
+ * minimax (Minimax)
+ * mimo (Xiaomi)
+ * mistral (Mistral)
+
+
+Top families in MMMU:
+ * GPT
+ * Gemini
+ * Muse
+ * Claude 
+ * o3
+ * Gemma (partly)
+ * dots.vlm1 (yes)
+ * Qwen (partly)
+ * Seed 
+ * GLM (yes)
+ * Skywork (some versions)
+ * InternVL (yes)
+ * EVLM-KTO
+ * mimo (yes)
+ * llama 
+ * NVILA
+ * llaVa
+
+
+
+
 SUITABLE MODEL FAMILIES FOR THIS PROJECT
 ========================================
 

@@ -1,0 +1,1336 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[a4paper,margin=24mm,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{url}
+
+\definecolor{ink}{RGB}{32,44,58}
+\definecolor{accent}{RGB}{37,96,151}
+\definecolor{soft}{RGB}{237,243,248}
+\definecolor{warning}{RGB}{139,69,19}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=18pt,itemsep=2pt,topsep=3pt}
+\renewcommand{\arraystretch}{1.18}
+\captionsetup{font=small,labelfont=bf}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{ink}{Vision-Language Model Comparison}}
+\rhead{\textcolor{ink}{\thepage}}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\figpath}[1]{comparison/output/#1}
+\newcommand{\archbox}[2]{\fcolorbox{accent}{soft}{\parbox{#1}{\centering #2}}}
+\newcommand{\resultbox}[1]{%
+  \vspace{3pt}\noindent
+  \fcolorbox{accent}{soft}{\parbox{0.94\textwidth}{#1}}\vspace{4pt}}
+\newcommand{\twographs}[6]{%
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{#1}}
+\captionof{subfigure}{#2}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{#3}}
+\captionof{subfigure}{#4}
+\end{minipage}
+\caption{#5}
+\label{#6}
+\end{figure}}
+
+\title{\textbf{Seeing the Same Task Differently}\\[8pt]
+Vision-Language Model Operation, Benchmark Comparison,\\
+and a Qwen2.5-VL Fine-Tuning Case Study}
+\author{Technical report from the repository evaluation outputs}
+\date{}
+
+\begin{document}
+\pagenumbering{roman}
+
+\begin{titlepage}
+\centering
+\vspace*{34mm}
+{\Huge\bfseries Seeing the Same Task Differently\par}
+\vspace{10mm}
+{\Large Vision-Language Model Operation, Benchmark Comparison,\\
+and a Qwen2.5-VL Fine-Tuning Case Study\par}
+\vspace{22mm}
+\rule{0.68\textwidth}{0.5pt}\par
+\vspace{12mm}
+{\large A report built from the benchmark and fine-tuning artifacts\\
+stored in this repository\par}
+\vfill
+{\normalsize Primary analysis command:\par}
+\vspace{2mm}
+\code{python comparison\textbackslash build\_report.py --results-dir results --output-dir comparison\textbackslash output --bootstrap-samples 5000}
+\end{titlepage}
+\setcounter{page}{2}
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This report starts from a practical question: if the same harness gives the
+same kinds of images and prompts to several vision-language models, what
+actually changes in their answers?  The setup in this repository is a good
+place to ask that question.  Whether a model is loaded locally through Hugging
+Face or called through an API wrapper, the outside contract is simple: an image
+and a prompt go in, text comes out, and the benchmark turns that text into a
+score plus some runtime information.
+
+The main comparison covers 294 model--benchmark cells: fourteen models, twenty-
+one benchmarks, and four task families: captioning, visual question answering
+(QA), labeling, and detection.  On the benchmark-normalized summary,
+\code{gpt-5.5} comes first at 0.825, with \code{gpt-4.1} second at 0.757.
+That is the headline result, but it is not enough by itself.
+\code{qwen2.5-vl-3b-instruct} has the most first-place finishes and is the
+strongest captioning model in this run.  PaliGemma looks weak in the overall
+mean, yet leads the normalized QA summary.  In practice, the right model
+depends heavily on the kind of answer the application needs.
+
+The report also includes a small Fashion-MNIST fine-tuning case study.
+Balanced QLoRA adaptation of Qwen2.5-VL-3B improves held-out accuracy from
+19/50 to 24/50.  That is a real gain on this sample, but it is not a clean win:
+the adapted model predicts \emph{shirt} much more often and loses ground on
+nearby clothing classes.  The useful lesson is narrow but important.  Fine-
+tuning can move a small model, but the error pattern has to be checked just as
+carefully as the headline accuracy.
+
+\resultbox{\textbf{How to read this report.} Performance claims in the main
+comparison come from \code{comparison/output/}, regenerated from the top-level
+\code{results/} JSON files.  Fine-tuning results are handled separately; they
+do not enter the aggregate leaderboard.}
+
+\clearpage
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\chapter{Research Questions and Scope}
+
+\section{Why compare through one harness?}
+Vision-language models are usually introduced through parameter counts,
+architecture names, or public benchmark scores.  Those are useful facts, but
+they do not answer the question that matters inside this repository: given a
+PIL image, a prompt, and an expected output format, which wrapper behaves best
+when it is actually used in this benchmark code?
+
+That kind of question needs a fairly ordinary kind of care.  The prompts have
+to ask for a parseable answer.  Predictions have to be normalized in the same
+way.  Captioning scores and classification accuracies cannot simply be averaged
+as if they were the same unit.  Runtime numbers need to be kept, but they also
+need context, because a hosted API call and a local GPU run are not the same
+experiment.
+
+The repository gives us a clean comparison point through a small shared
+interface.  Every model wrapper exposes \code{predict(image, prompt)}: image
+and prompt in, text out.  Every benchmark builds a prompt, sends it to the
+wrapper, parses the answer, and records a score.  That is the level this report
+trusts.  It compares what the wrappers do in this harness, not what a model
+name may suggest in isolation.
+
+\section{Questions addressed}
+I organize the analysis around three questions.
+
+\begin{enumerate}[leftmargin=22pt]
+\item Which of the evaluated models is strongest overall, after respecting
+      differences between benchmark metrics?
+\item Do particular models have credible task specialisms, even when they do
+      not top the aggregate table?
+\item In a small, held-out clothing classification experiment, does QLoRA
+      adaptation improve Qwen2.5-VL-3B, and what new mistakes appear?
+\end{enumerate}
+
+The first two questions use the main comparison output: fourteen model labels,
+twenty-one benchmarks, and four task families.  The fine-tuning question uses
+separate nested result files.  Once a model has been adapted, it is no longer
+part of the same baseline ranking, so those results are kept out of the general
+leaderboard.
+
+\section{Evidence boundary}
+The model labels in the figures are the result identifiers used by this
+repository.  For local models, we can discuss loading, processing, and decoding
+because the wrapper code is present.  For API-served models, the evidence is
+more limited: the wrapper submits text plus a data-URL image and receives text
+back.  The report therefore does not infer private architecture from an API
+model name.
+
+\begin{table}[H]
+\centering
+\caption{Evidence layers used in the report.}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{32mm} X X}
+\toprule
+Layer & Evidence & What it supports \\
+\midrule
+Implementation & \code{models/}, \code{benchmarks/}, \code{fine-tuning/} &
+Prompt, input, generation, parsing, and adaptation workflow statements. \\
+Main results & CSV tables and PNG plots in \code{comparison/output/} &
+Aggregate, family, benchmark, pairwise, uncertainty, and telemetry claims. \\
+Adapter case study & JSON reports in \code{results/fine-tuning/} and the
+downloaded smoke artifact folder & Paired Fashion-MNIST outcomes only. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\clearpage
+\chapter{Models}
+
+\section{One contract, several paths}
+From the benchmark's point of view, every model looks similar: it receives an
+image and a prompt, then returns text.  Inside the wrappers, the paths are very
+different.  This chapter is about those visible paths in the repository.  It is
+not trying to reconstruct private model internals or treat a model family name
+as a complete architectural description.
+
+\section{Model families, transformer structure, and paths}
+There are two useful identifiers for each model: the wrapper path we can read,
+and the checkpoint or API model ID that the wrapper calls.  For hosted API
+models, the wrapper is the honest boundary of the evidence.  For local
+checkpoints, the common pattern is easier to describe: visual information is
+turned into embeddings or image tokens, then passed into a language model that
+generates the answer.
+
+\begin{table}[H]
+\centering
+\caption{Evaluated model labels covered by the architecture discussion.}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries}p{30mm} X}
+\toprule
+Architecture family & Model labels in the regenerated comparison \\
+\midrule
+OpenAI API vision pathway &
+\code{gpt-4.1}, \code{gpt-4o}, \code{gpt-5}, \code{gpt-5.1},
+\code{gpt-5.2}, \code{gpt-5.3-chat-latest}, \code{gpt-5.4},
+\code{gpt-5.4-mini}, \code{gpt-5.4-nano}, \code{gpt-5.5}. \\
+Qwen2.5-VL &
+\code{qwen2.5-vl-3b-instruct}. \\
+LLaVA-style local models &
+\code{llava-1.5-7b-hf}, \code{llava-gemma-2b}. \\
+PaliGemma &
+\code{paligemma-3b-mix-224}. \\
+\bottomrule
+\end{tabularx}
+\normalsize
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Model paths and architecture level used in the report.}
+\footnotesize
+\begin{tabularx}{\textwidth}{>{\bfseries}p{25mm} p{38mm} p{39mm} X}
+\toprule
+Family & Repository path & Model ID or checkpoint path & Architecture described here \\
+\midrule
+OpenAI vision models &
+\path{models/_openai_vision.py}; wrappers such as \path{models/gpt_5_5.py} &
+\code{gpt-4.1}, \code{gpt-4o}, \code{gpt-5.*} API model IDs &
+Hosted image-to-text transformer systems observed only through the Responses
+API request and returned text. \\
+Qwen2.5-VL &
+\path{models/_qwen2_5_vl.py};
+\path{models/qwen2_5_vl_3b_instruct.py} &
+\path{Qwen/Qwen2.5-VL-3B-Instruct} &
+Vision-language transformer using a Qwen processor, image inputs, chat
+template, and autoregressive text decoding; optional PEFT adapter loading. \\
+LLaVA &
+\path{models/llava15_7b.py} &
+\path{llava-hf/llava-1.5-7b-hf} &
+CLIP-style visual tokens aligned with a causal language model through
+image-token placeholders and checkpoint-specific processor settings. \\
+PaliGemma &
+\path{models/paligemma_3b_mix_224.py} &
+\path{google/paligemma-3b-mix-224} &
+PaLI/Gemma-style vision-language conditional generation with paired image
+and text processing before decoder generation. \\
+\bottomrule
+\end{tabularx}
+\normalsize
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{tabularx}{0.95\textwidth}{>{\bfseries}p{29mm} X >{\centering\arraybackslash}p{32mm}}
+\toprule
+Path & Processing sequence visible in code & Output \\
+\midrule
+API vision wrapper &
+Convert image to RGB JPEG data URL; pair \code{input\_text} with
+\code{input\_image}; request a response from the configured model ID. &
+Response output text \\
+\addlinespace
+Local generic wrapper &
+Apply processor chat template to an image/text turn; build tensors; generate
+tokens on the loaded model; decode only generated continuation. &
+Decoded continuation \\
+\addlinespace
+Qwen2.5-VL &
+Apply Qwen chat template and image processor; optionally attach a PEFT
+adapter before generation. &
+Decoded continuation \\
+\addlinespace
+LLaVA &
+Prepare image-token prompt; synchronize image-token configuration when
+necessary; generate and clean task-shaped text. &
+Cleaned task answer \\
+\bottomrule
+\end{tabularx}
+\caption{Operational paths exposed by the repository wrappers.}
+\label{fig:paths}
+\end{figure}
+
+\section{The common multimodal transformer pattern}
+The local open models in this report all use the same broad recipe.  An image
+is split into patches or otherwise converted into visual tokens.  A vision
+transformer turns those tokens into hidden states.  A small connector or
+model-specific merger maps the visual states into the language model's token
+space.  The language model is then used as an autoregressive decoder: it sees
+the prompt plus visual context and generates answer tokens one at a time.
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c c c c c c c}
+\archbox{23mm}{Image\\pixels} & $\rightarrow$ &
+\archbox{29mm}{Patchify /\\image processor} & $\rightarrow$ &
+\archbox{31mm}{Vision\\Transformer} & $\rightarrow$ &
+\archbox{32mm}{Visual token\\hidden states} \\
+&&&&&& $\downarrow$ \\[-1mm]
+\archbox{28mm}{Prompt\\tokens} & $\rightarrow$ &
+\archbox{31mm}{Text\\embedding} & $\rightarrow$ &
+\archbox{34mm}{Multimodal\\token stream} & $\rightarrow$ &
+\archbox{34mm}{Decoder-only\\Transformer} \\
+&&&&&& $\downarrow$ \\[-1mm]
+&&&&&& \archbox{34mm}{Generated\\answer text}
+\end{tabular}
+}
+\caption{Common architecture pattern for local vision-language transformers:
+visual tokens are projected into a language-token stream before autoregressive
+decoding.}
+\label{fig:commonvlm}
+\end{figure}
+
+The differences between Qwen2.5-VL, LLaVA, and PaliGemma mostly lie in three
+places: the visual encoder, the connector between vision and language, and the
+language backbone.  Those choices affect how well a model handles detail,
+layout, long prompts, and task-specific output formatting.
+
+\section{API-served vision models}
+The API pathway lives in \code{models/\_openai\_vision.py}.  It does very
+little on purpose: convert the PIL image to RGB, encode it as a JPEG data URL,
+send it with the cleaned prompt through the Responses API, and return the
+output text.  The GPT-5 wrapper variant also avoids sending temperature where
+that API configuration does not support it.
+
+That gives the benchmark a convenient interface, but it also limits what we
+can claim.  We can compare answer quality and observed request timing.  We
+cannot inspect token-level visual features or provider-side memory use.  So
+when the report compares API labels with local labels, it is comparing their
+end-to-end behavior in this harness, not running a controlled hardware or
+architecture ablation.
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{c c c c c}
+\archbox{28mm}{PIL image} & $\rightarrow$ &
+\archbox{35mm}{RGB JPEG\\data URL} & $\rightarrow$ &
+\archbox{42mm}{Responses API\\\code{input\_image}} \\
+&&&& $\downarrow$ \\[-1mm]
+\archbox{28mm}{Prompt text} & $\rightarrow$ &
+\archbox{35mm}{Cleaned\\instruction} & $\rightarrow$ &
+\archbox{42mm}{Responses API\\\code{input\_text}} \\
+&&&& $\downarrow$ \\[-1mm]
+&&&& \archbox{42mm}{Returned\\output text}
+\end{tabular}
+\caption{Observable architecture boundary for API-served model labels.  The
+repo can describe the request and response path, but not the provider-side
+transformer internals.}
+\label{fig:openaiarch}
+\end{figure}
+
+\section{Local Hugging Face models}
+The local wrappers share loading code from \code{models/\_hf\_model.py}.  They
+try the local cache first and fall back to the hub when needed.  The generic
+image-text route builds a one-image, one-instruction conversation, applies the
+processor's chat template, moves tensors to the model device, generates a
+continuation, and decodes only the new tokens.
+
+This route is useful because we can read and adjust the exact prompt
+preparation, generation settings, and local telemetry.  The trade-off is
+practical: local hardware decides which checkpoints are feasible and how slow
+the run will be.
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c c c c c c c}
+\archbox{25mm}{Model ID} & $\rightarrow$ &
+\archbox{32mm}{Processor\\load} & $\rightarrow$ &
+\archbox{32mm}{Model\\load} & $\rightarrow$ &
+\archbox{32mm}{Device map\\and dtype} \\
+&&&&&& $\downarrow$ \\[-1mm]
+\archbox{25mm}{Image} & $\rightarrow$ &
+\archbox{32mm}{Chat\\template} & $\rightarrow$ &
+\archbox{32mm}{Tensor\\batch} & $\rightarrow$ &
+\archbox{32mm}{Generate\\tokens}
+\end{tabular}
+}
+\caption{Generic Hugging Face execution graph used by the local wrappers:
+processor and model loading are separate from the per-example generation path.}
+\label{fig:hfarch}
+\end{figure}
+
+\section{Qwen2.5-VL and adapter loading}
+The Qwen2.5-VL wrapper uses
+\code{Qwen2\_5\_VLForConditionalGeneration}.  It builds a user conversation
+with an image placeholder and the benchmark prompt, lets the processor prepare
+the text and image inputs, generates a bounded continuation, and decodes the
+answer.  If an adapter path is provided, the wrapper attaches a PEFT adapter
+before evaluation.
+
+That adapter hook matters because it lets the report move from comparison to
+intervention.  The baseline runs ask how the model behaves as-is.  The
+Fashion-MNIST case study asks whether a small task-specific update changes
+that behavior, while keeping the benchmark runner and answer parsing the same.
+
+Architecturally, Qwen2.5-VL follows a three-part vision-language transformer
+design.  The image side uses a native dynamic-resolution Vision Transformer,
+so the processor can preserve more of the image's original spatial structure
+instead of forcing every input into one fixed token pattern.  Window attention
+keeps the vision encoder more efficient on high-resolution inputs.  A
+multimodal merger then maps visual representations into the Qwen language
+model's embedding space.  The decoder is a Qwen transformer language backbone,
+with multimodal rotary position handling used to keep visual and textual
+positions aligned.
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{c c c c c}
+\archbox{31mm}{Native-resolution\\image} & $\rightarrow$ &
+\archbox{36mm}{Qwen image\\processor} & $\rightarrow$ &
+\archbox{38mm}{Dynamic-resolution\\ViT} \\
+&&&& $\downarrow$ \\[-1mm]
+\archbox{31mm}{Prompt +\\chat template} & $\rightarrow$ &
+\archbox{36mm}{Text tokens} & $\rightarrow$ &
+\archbox{38mm}{Multimodal\\merger / MRoPE} \\
+&&&& $\downarrow$ \\[-1mm]
+&&&& \archbox{38mm}{Qwen decoder\\Transformer} \\
+&&&& $\downarrow$ \\[-1mm]
+&&&& \archbox{38mm}{Answer tokens}
+\end{tabular}
+\caption{Qwen2.5-VL architecture as used by the local wrapper: a dynamic-
+resolution ViT feeds a multimodal token stream consumed by the Qwen decoder.}
+\label{fig:qwenarch}
+\end{figure}
+
+The adapter path adds a small trainable layer on top of that base architecture.
+In the fine-tuning experiment, LoRA modules are attached to attention
+projection matrices.  During evaluation the benchmark still sees the same
+\code{predict(image, prompt)} interface; the difference is that the Qwen
+decoder now contains the loaded PEFT adapter.
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{c c c c c}
+\archbox{34mm}{Base Qwen2.5-VL\\weights} & $+$ &
+\archbox{34mm}{LoRA adapter\\weights} & $\rightarrow$ &
+\archbox{40mm}{Adapted generation\\path} \\
+&&&& $\downarrow$ \\[-1mm]
+\archbox{34mm}{Same benchmark\\prompt} & $\rightarrow$ &
+\archbox{34mm}{Same parser\\and labels} & $\rightarrow$ &
+\archbox{40mm}{Comparable paired\\predictions}
+\end{tabular}
+\caption{Adapter loading graph for the Qwen fine-tuning case study.  The model
+changes, but the benchmark input and scoring path stay fixed.}
+\label{fig:qwenadapterarch}
+\end{figure}
+
+\section{LLaVA's practical compatibility handling}
+The LLaVA wrapper is a reminder that a checkpoint ID is not enough.  Some
+LLaVA-style checkpoints need the processor settings to match the visual token
+sequence expected by the model.  The wrapper reads the visual patch settings
+and repairs image-token mismatches when needed.  It also cleans the generated
+text differently by task: a classification answer is reduced to one line,
+while detection output has to keep parseable labelled boxes.
+
+This is not just housekeeping.  A bad prompt template or image-token mismatch
+can make a capable checkpoint look broken.  The wrapper is therefore part of
+the experiment, not just plumbing around it.
+
+LLaVA-1.5 is a deliberately simple multimodal transformer stack.  A CLIP
+Vision Transformer encodes the image into patch-level visual states.  A
+vision-language connector, implemented as an MLP in LLaVA-1.5, projects those
+visual states into the language model's embedding space.  The prompt contains
+an image placeholder, and the projected visual tokens occupy that position in
+the sequence seen by the language model.  The answer is generated by an
+autoregressive decoder language model.
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{c c c c c}
+\archbox{30mm}{Image} & $\rightarrow$ &
+\archbox{35mm}{CLIP ViT\\vision encoder} & $\rightarrow$ &
+\archbox{35mm}{Patch-level\\visual states} \\
+&&&& $\downarrow$ \\[-1mm]
+\archbox{30mm}{Prompt with\\\code{<image>}} & $\rightarrow$ &
+\archbox{35mm}{Tokenizer and\\text embeddings} & $\rightarrow$ &
+\archbox{35mm}{MLP projector\\+ image tokens} \\
+&&&& $\downarrow$ \\[-1mm]
+&&&& \archbox{35mm}{Causal LM\\decoder} \\
+&&&& $\downarrow$ \\[-1mm]
+&&&& \archbox{35mm}{Cleaned task\\answer}
+\end{tabular}
+\caption{LLaVA-style architecture: a CLIP vision transformer is connected to a
+causal language model through a learned projector.}
+\label{fig:llavaarch}
+\end{figure}
+
+The evaluated \code{llava-gemma-2b} label follows the same broad idea---vision
+tokens connected to a decoder language model---but with a different language
+backbone and checkpoint configuration.  That is why the report treats it as a
+LLaVA-style local model while still relying on the wrapper's compatibility
+logic for the exact processor settings.
+
+\section{PaliGemma and compatible processing}
+The PaliGemma wrapper chooses the available compatible conditional-generation
+class, processes the image and prompt together, and decodes the generated
+tokens.  The path is simpler than the LLaVA repair logic, but the results are
+one of the more useful reminders in the report: a model can be weak in the
+aggregate table and still be competitive for a particular family, in this case
+QA.
+
+PaliGemma is built from open components in the PaLI/Gemma line: a SigLIP vision
+encoder and a Gemma language model joined for conditional generation.  Compared
+with the LLaVA wrapper, the local code path is less about repairing an explicit
+\code{<image>} placeholder and more about giving the processor the image and
+text together so the model can form the combined sequence expected by the
+checkpoint.
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{c c c c c}
+\archbox{30mm}{Image} & $\rightarrow$ &
+\archbox{35mm}{SigLIP-style\\vision encoder} & $\rightarrow$ &
+\archbox{35mm}{Visual\\representations} \\
+&&&& $\downarrow$ \\[-1mm]
+\archbox{30mm}{Prompt} & $\rightarrow$ &
+\archbox{35mm}{PaliGemma\\processor} & $\rightarrow$ &
+\archbox{35mm}{Joint image-text\\inputs} \\
+&&&& $\downarrow$ \\[-1mm]
+&&&& \archbox{35mm}{Gemma decoder\\generation} \\
+&&&& $\downarrow$ \\[-1mm]
+&&&& \archbox{35mm}{Decoded\\answer text}
+\end{tabular}
+\caption{PaliGemma architecture: SigLIP-style visual representations are paired
+with a Gemma language decoder for image-conditioned generation.}
+\label{fig:paligemmaarch}
+\end{figure}
+
+\section{Where the architectures differ}
+The practical differences between these models can be summarized by where
+vision enters the transformer computation.  In the API-served path, the
+repository sees only the boundary.  In Qwen2.5-VL, the model-specific processor
+and merger create a native multimodal sequence for the Qwen decoder.  In
+LLaVA, the connector explicitly projects CLIP visual states into the language
+embedding space.  In PaliGemma, the processor builds the paired image-text
+inputs expected by the SigLIP-plus-Gemma conditional-generation stack.
+
+\begin{figure}[H]
+\centering
+\begin{tabularx}{0.98\textwidth}{>{\bfseries}p{24mm} X X X}
+\toprule
+Family & Vision side & Fusion point & Language side \\
+\midrule
+OpenAI API path &
+Not inspectable in this repository. &
+Provider-side, not visible to the harness. &
+Returned text only. \\
+Qwen2.5-VL &
+Dynamic-resolution ViT with efficient visual attention. &
+Model-specific multimodal merger and position handling. &
+Qwen decoder transformer. \\
+LLaVA &
+CLIP Vision Transformer visual states. &
+MLP projector inserts visual tokens into the language stream. &
+Causal language model decoder. \\
+PaliGemma &
+SigLIP-style vision encoder. &
+Processor/model build paired image-text inputs. &
+Gemma decoder transformer. \\
+\bottomrule
+\end{tabularx}
+\caption{Comparison graph for the main architecture families.  The central
+difference is the fusion point between vision features and language decoding.}
+\label{fig:archcompare}
+\end{figure}
+
+\resultbox{\textbf{Operational conclusion.} The evaluation treats each system
+as an image-to-text component.  The wrappers handle the family-specific details
+needed to avoid obvious formatting failures.  The results are therefore best
+read as performance of a model \emph{plus its wrapper and prompt protocol}.}
+
+\clearpage
+\chapter{Datasets and Benchmarks}
+
+\section{Twenty-one benchmarks, four families}
+The aggregate run contains twenty-one benchmarks, grouped into captioning, QA,
+labeling, and detection.  These families ask for different kinds of text, so
+they reward different habits in a model.  Captioning needs a short description.
+QA needs a concise answer to a visual question.  Labeling asks the model to
+choose from a class list.  Detection asks for both a label and usable
+coordinates.
+
+\begin{table}[H]
+\centering
+\caption{Task families represented in the current aggregate comparison.}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{27mm} p{55mm} X}
+\toprule
+Family & Examples appearing in output & What the model must return \\
+\midrule
+Captioning & \code{flickr30k}, \code{textcaps},
+\code{mscoco\_caption}, \code{conceptual\_captions\_caption} &
+A short natural-language description. \\
+QA & \code{docvqa}, \code{gqa}, \code{vqav2} &
+A question-conditioned answer string. \\
+Labeling & \code{fashion\_mnist}, \code{imagenet1k}, \code{places},
+\code{inaturalist}, \code{lsun}, \code{mvtec\_ad}, video/image label tasks &
+One label from a candidate list. \\
+Detection & \code{mscoco}, \code{openimages\_v4\_detection},
+\code{flickr30k\_entities} &
+Labels paired with parseable boxes. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Coverage is broad enough to compare, not to generalize universally}
+Each of the fourteen model labels appears on each of the twenty-one current
+benchmarks, giving a rectangular 294-cell comparison.  That is important:
+the aggregate table is not inflated by one model being evaluated only on its
+best tasks.  Still, this is not a universal ranking of multimodal systems.
+Some task runs have modest sample sizes, and several benchmarks produce large
+ties.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{\figpath{telemetry_coverage.png}}
+\caption{Coverage of recorded telemetry in the main comparison.  The
+regenerated output marks all evaluated cells as measured rather than
+estimated.}
+\label{fig:coverage}
+\end{figure}
+
+\section{Reading the figures together}
+The results section uses three views repeatedly.  The normalized score plot is
+the shortest answer to ``who did well across these mixed tasks?''  The raw
+score plot keeps the original metric scale visible, but should not carry the
+whole comparison by itself.  Heatmaps and family plots show where the averages
+come from.  When these views disagree, that disagreement is usually the point,
+not a problem to smooth away.
+
+\clearpage
+\chapter{Evaluation Methodology}
+
+\section{The evaluation loop}
+The central pipeline is deliberately plain.  A dataset provides a row and an
+image.  A benchmark turns that row into a constrained prompt.  A model wrapper
+runs its own inference path and returns text.  The benchmark parses that text,
+records whether it was useful, and stores telemetry.  The comparison script
+then reads the JSON reports and builds the tables and plots used here.
+
+\begin{figure}[H]
+\centering
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{>{\centering\arraybackslash}p{25mm} c
+                >{\centering\arraybackslash}p{30mm} c
+                >{\centering\arraybackslash}p{29mm} c
+                >{\centering\arraybackslash}p{29mm}}
+\fcolorbox{accent}{soft}{\parbox{22mm}{\centering Dataset\\row + image}} &
+$\rightarrow$ &
+\fcolorbox{accent}{soft}{\parbox{27mm}{\centering Benchmark\\prompt}} &
+$\rightarrow$ &
+\fcolorbox{accent}{soft}{\parbox{26mm}{\centering Model\\text output}} &
+$\rightarrow$ &
+\fcolorbox{accent}{soft}{\parbox{26mm}{\centering Score\\+ telemetry}}\\
+\end{tabular}
+\caption{The observable evaluation pipeline shared by the model wrappers.}
+\label{fig:pipeline}
+\end{figure}
+
+For labeling tasks, the prompt asks for exactly one label from a supplied
+list.  The benchmark normalizes the model's text and counts it as correct if
+it matches one of the valid labels for that row.  When the label set is large,
+the benchmark keeps the valid labels and samples distractors with a row-derived
+seed.  That keeps the choice set stable rather than adding avoidable noise.
+
+Captioning, QA, and detection keep the same input/output shape but use
+different scoring logic.  Captioning scores caption text.  QA scores answer
+text.  Detection parses labelled coordinate expressions.  Some video-oriented
+datasets are represented as contact sheets of frames, which keeps the model
+contract image-based while still giving the model temporal clues.
+
+\section{What is recorded}
+Each JSON report contains per-example outputs and aggregate statistics.  The
+comparison builder extracts the primary score, result count, wall-clock time,
+generation time, memory peaks, and whether telemetry was measured.  In the
+regenerated table used here, all 294 main cells have measured telemetry; none
+are marked as estimated.
+
+\begin{table}[H]
+\centering
+\caption{Scoring concepts used in the comparison builder.}
+\begin{tabularx}{\textwidth}{p{38mm} X}
+\toprule
+Quantity & Meaning in this report \\
+\midrule
+Raw primary score & Original score for a benchmark, useful within its task
+type but not automatically commensurate across families. \\
+Within-benchmark normalized score & For each benchmark, a model's position
+between the observed minimum and maximum; used for the overall ranking. \\
+Benchmark rank & Rank of each model on a benchmark, with tied maxima receiving
+the same first rank. \\
+Pairwise win rate & Fraction of shared benchmarks on which model A beats
+model B, with ties contributing half in the generated summary. \\
+Bootstrap interval & Variation in mean raw score under benchmark resampling;
+used as a caution about ordering stability. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{A necessary warning about normalization}
+Within-benchmark normalization asks a useful question: compared with the other
+models on this same task, how strong was this system?  That prevents metrics
+with naturally larger numbers from dominating the aggregate.  The trade-off is
+that a small absolute difference on a tightly clustered benchmark can look more
+important than it really is, while an all-tie benchmark adds little evidence.
+For that reason, the report keeps normalized rankings next to raw plots,
+spreads, ranks, and family-level discussion.
+
+\clearpage
+\chapter{Baseline Results and Comparison}
+
+\section{The leading aggregate result}
+The normalized comparison has a clear leader: \code{gpt-5.5} reaches 0.825
+with a mean benchmark rank of 2.76.  \code{gpt-4.1} follows at 0.757, a gap
+of 0.068 normalized points.  Behind them, \code{gpt-5.1},
+\code{gpt-5.4-mini}, \code{gpt-5.4}, and
+\code{qwen2.5-vl-3b-instruct} sit in a fairly tight group from 0.742 down to
+0.714.  I would not read every adjacent rank in that group as a decisive
+practical difference.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{\figpath{model_normalized_scores.png}}
+\caption{Mean score normalized within each benchmark.  This is the primary
+cross-family ranking used in the report.}
+\label{fig:normalized}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Top ten models in the aggregate output.}
+\begin{tabular}{lrrrr}
+\toprule
+Model & Normalized mean & Raw mean & Mean rank & Firsts \\
+\midrule
+gpt-5.5 & 0.825 & 0.555 & 2.76 & 8 \\
+gpt-4.1 & 0.757 & 0.518 & 3.48 & 9 \\
+gpt-5.1 & 0.742 & 0.508 & 3.76 & 9 \\
+gpt-5.4-mini & 0.727 & 0.496 & 4.48 & 7 \\
+gpt-5.4 & 0.724 & 0.505 & 4.81 & 6 \\
+qwen2.5-vl-3b-instruct & 0.714 & 0.478 & 4.81 & 10 \\
+gpt-4o & 0.708 & 0.495 & 4.62 & 6 \\
+gpt-5 & 0.688 & 0.499 & 4.81 & 8 \\
+gpt-5.2 & 0.678 & 0.480 & 5.19 & 6 \\
+llava-1.5-7b-hf & 0.666 & 0.467 & 4.57 & 7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Raw scores give context, not a replacement leaderboard}
+Raw means tell a similar top-line story: \code{gpt-5.5} leads at 0.555,
+compared with 0.518 for \code{gpt-4.1}.  That agreement is reassuring, but it
+does not make raw averaging enough.  A classification task with values near
+one and a detection task with values near zero do not carry equal weight in a
+raw average.  The raw chart is best used as a reality check before moving into
+the family-level analysis.
+
+\section{Winning often is not the same as winning broadly}
+The first-place count shows the most interesting tension in the table.
+Qwen2.5-VL 3B wins or ties for first on ten benchmarks, more than any other
+label, but it ranks sixth by normalized mean.  In other words, it has real
+peaks and real weak spots.  \code{gpt-5.5} has fewer first-place finishes,
+but is steadier across the full set.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{model_mean_scores.png}}\\
+{\small (a) Mean raw primary score.}
+\end{minipage}\hfill
+\begin{minipage}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{first_place_finishes.png}}\\
+{\small (b) First-place finishes including ties.}
+\end{minipage}
+\caption{Two complementary aggregate views.  Raw scores preserve original
+metric scale, while win counts reveal Qwen's task-specific peaks.}
+\label{fig:rawfirsts}
+\end{figure}
+
+\clearpage
+\section{Task-family comparison}
+
+\subsection{Four families tell four different stories}
+The overall score is useful for a quick ranking, but the models make more
+sense once the tasks are separated.  The family summary produces a different
+leader in almost every category.  That is not noise; it tells us that captions,
+short answers, labels, and boxes stress the models in different ways.
+
+\begin{table}[H]
+\centering
+\caption{Family leaders by benchmark-normalized mean score.}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{26mm} X r r}
+\toprule
+Family & Leader or tied leaders & Normalized & Raw mean \\
+\midrule
+Captioning & qwen2.5-vl-3b-instruct & 0.977 & 0.325 \\
+Detection & gpt-5.4; gpt-5.5 & 0.873 & 0.159 \\
+Labeling & gpt-4.1; gpt-5.1 & 0.877 & 0.764 \\
+QA & paligemma-3b-mix-224 & 0.833 & 0.600 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{\figpath{family_small_multiples.png}}
+\caption{Scores separated into task families and component benchmarks.  The
+panel view prevents a family average from concealing its source.}
+\label{fig:families}
+\end{figure}
+
+\subsection{Captioning: local Qwen and LLaVA are competitive for a reason}
+Captioning is where Qwen looks strongest.  \code{qwen2.5-vl-3b-instruct}
+gets a normalized family mean of 0.977.  It wins three captioning rows:
+\code{conceptual\_captions\_caption}, \code{flickr30k}, and \code{textcaps}.
+\code{llava-1.5-7b-hf} is close behind at 0.936 and wins
+\code{mscoco\_caption}.  Their raw captioning means are almost identical after
+rounding, but normalization favors Qwen because it stays closer to the best
+result within the individual caption tasks.
+
+For an application mostly built around descriptions, this matters more than
+the aggregate ranking.  Picking Qwen for captioning would not be a preference
+for a lower-ranked model; it would be following the more relevant evidence.
+
+\subsection{QA and labeling: an instructive reversal}
+PaliGemma is the best warning against dismissing a model from one aggregate
+number.  It has the lowest normalized aggregate mean in the main table, 0.318,
+but it leads the normalized QA family summary at 0.833.  At the same time,
+\code{gpt-5.5} has the higher raw QA mean, 0.633 versus PaliGemma's 0.600,
+while landing behind it on normalized QA mean at 0.800.
+
+That reversal is not a contradiction.  The normalized summary gives each QA
+benchmark a relative voice; the raw average lets the original numeric scales
+matter more.  Both facts belong in the report: \code{gpt-5.5} has the higher
+raw QA average here, while PaliGemma is the stronger relative competitor
+across the individual QA tasks after normalization.
+
+Labeling is less surprising, but the top is tight.  \code{gpt-4.1} and
+\code{gpt-5.1} tie for the normalized family lead at 0.877 and the raw family
+lead at 0.764.  \code{gpt-5.5} follows closely at 0.864 normalized.  For a
+label-heavy deployment, latency and operating constraints may matter more than
+these small score differences.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{\figpath{family_radar.png}}
+\caption{Family profile view.  The chart is useful for seeing specialization,
+but exact conclusions should be read from the accompanying family table.}
+\label{fig:radar}
+\end{figure}
+
+\subsection{Detection: low values and a non-discriminating task}
+Detection sits on the lowest raw score scale of the four families.  In the
+family mean, \code{gpt-5.4} and \code{gpt-5.5} tie at 0.873 normalized
+(raw 0.159), with \code{gpt-5.4-mini} close behind at 0.806 (raw 0.154).
+But this section needs a warning: \code{flickr30k\_entities} gives every
+evaluated model a raw score of zero.  That does not prove the models are
+equally bad at detection.  It says this benchmark/protocol combination did not
+distinguish them on that row.
+
+The other detection rows are more informative.  On \code{mscoco},
+\code{gpt-4.1} and \code{gpt-5.1} tie at 0.114.  On
+\code{openimages\_v4\_detection}, \code{gpt-5.4-mini} leads at 0.413, just
+ahead of \code{gpt-5.4} and \code{gpt-5.5}, both at 0.405.  Detection belongs
+in the report, but the all-zero row should be debugged before this part of the
+comparison is treated as settled.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.99\textwidth]{\figpath{score_heatmap_normalized.png}}
+\caption{Normalized score heatmap.  Bright cells expose specialist wins;
+flat or uniformly dark rows expose weak discriminatory evidence.}
+\label{fig:heatmap}
+\end{figure}
+
+\clearpage
+\section{Spread, ranks, and uncertainty}
+
+\subsection{Which benchmarks separate models?}
+Three benchmarks---\code{inaturalist}, \code{lsun}, and \code{ucf101}---span
+the complete observed range from 0.000 to 1.000.  \code{docvqa} follows with
+a spread of 0.800, while \code{fashion\_mnist} and \code{mvtec\_ad} each
+span 0.700.  These rows pull the eye in a heatmap, so they deserve extra
+attention.  Before treating them as broad capability signals, it is worth
+checking the example counts and the actual mistakes.
+
+\subsection{Ranks retain ties that averages obscure}
+Rank views help where the score scales differ.  They also expose tie-heavy
+rows, including tasks where many models reach the maximum.  A first-place
+count should therefore be read as ``reached the best recorded value,'' not
+``uniquely solved the task.''
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.47\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{benchmark_spread.png}}\\
+{\small (a) Observed benchmark spread.}
+\end{minipage}\hfill
+\begin{minipage}{0.51\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{rank_heatmap.png}}\\
+{\small (b) Rank heatmap, including ties.}
+\end{minipage}
+\caption{Spread and rank should be read together: separating tasks can also
+contain substantial ties or limited evidence.}
+\label{fig:spreadranks}
+\end{figure}
+
+\subsection{Head-to-head comparisons are close at the top}
+The aggregate leader does not sweep its closest competitors.  \code{gpt-5.5}
+beats \code{gpt-4.1} on seven benchmarks, loses on five, and ties on nine;
+its mean raw difference is only +0.037.  Against
+\code{qwen2.5-vl-3b-instruct}, it wins eight, loses six, and ties seven, with
+a mean difference of +0.077.  Those are real aggregate advantages, but not
+evidence that either alternative is generally unsuitable.
+
+The bigger pairwise gaps appear farther down the table.  \code{gpt-5.5}
+records 17 wins, no losses, and four ties against \code{gpt-5.4-nano}; against
+\code{paligemma-3b-mix-224} it records 18 wins, two losses, and one tie.  Even
+that last comparison should be read alongside PaliGemma's QA result.
+
+\subsection{Intervals make overstatement harder}
+The bootstrap intervals are generated by resampling benchmarks, not individual
+examples.  They show how sensitive the raw mean is to the particular task mix
+in this report.  \code{gpt-5.5} has observed raw mean 0.555 with a 90 percent
+interval of [0.442, 0.665].  \code{gpt-4.1} is 0.518 with interval
+[0.401, 0.639], and \code{gpt-5.1} is 0.508 with [0.394, 0.631].  Those
+intervals overlap a lot.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{pairwise_win_rate_heatmap.png}}\\
+{\small (a) Pairwise win-rate heatmap.}
+\end{minipage}\hfill
+\begin{minipage}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{bootstrap_confidence_intervals.png}}\\
+{\small (b) Bootstrap intervals for raw means.}
+\end{minipage}
+\caption{The mixed head-to-head pattern and overlapping intervals both
+caution against treating the top ordering as universal.}
+\label{fig:pairwisebootstrap}
+\end{figure}
+
+The fair reading is balanced.  \code{gpt-5.5} leads this regenerated table by
+both raw and normalized summaries.  At the same time, the result set is not
+large or uniform enough to promise the same order under a different application
+mix.  In practice, the family plots and latency requirements should often make
+the final decision.
+
+\section{Runtime and resource trade-offs}
+
+\subsection{Recorded timing}
+All main comparison cells report measured timing rather than estimated
+statistics.  The fastest mean wall-clock values are \code{gpt-5.4-nano}
+(1.18 seconds), \code{llava-1.5-7b-hf} (1.19 seconds), and
+\code{gpt-5.4-mini} (1.21 seconds).  The aggregate quality leader,
+\code{gpt-5.5}, averages 1.63 seconds.  \code{qwen2.5-vl-3b-instruct}
+averages 2.70 seconds.  PaliGemma and LLaVA-Gemma are much slower in this
+recorded table, at 12.81 and 99.07 seconds respectively.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{telemetry_mean_wall_clock_seconds.png}}\\
+{\small (a) Mean wall-clock seconds.}
+\end{minipage}\hfill
+\begin{minipage}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{telemetry_peak_cpu_ram_gib.png}}\\
+{\small (b) Recorded peak CPU RAM.}
+\end{minipage}
+\caption{Runtime and memory measurements observed by the benchmark harness.
+Absolute values combine model pathway and execution environment.}
+\label{fig:wallclockram}
+\end{figure}
+
+\subsection{A practical quality--latency frontier}
+If we prefer higher normalized score and lower wall-clock time, the observed
+non-dominated frontier contains five labels: \code{gpt-5.4-nano},
+\code{llava-1.5-7b-hf}, \code{gpt-5.4-mini}, \code{gpt-4.1}, and
+\code{gpt-5.5}.  Moving along that frontier buys more aggregate quality for
+modest increases in recorded time.
+
+Qwen is not on that aggregate frontier because its 0.714 normalized score and
+2.70-second mean are dominated in the all-task summary.  It can still be the
+right choice for a caption-heavy application.  The frontier uses the aggregate
+objective; Qwen's strongest evidence is family-specific.
+
+\subsection{Memory values require environmental context}
+The memory chart is most useful for local runs, where model size and device
+constraints decide what is feasible.  It is less useful for saying that one
+API-served system is intrinsically lighter than another.  The repository
+measures its own process and observed call, not the provider's serving
+infrastructure.  The same caution applies to direct API-versus-local timing.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{\figpath{telemetry_wall_clock_by_benchmark.png}}
+\caption{Wall-clock results separated by benchmark.  Per-task variation can
+matter as much as a model mean when designing an interactive workflow.}
+\label{fig:wallbybench}
+\end{figure}
+
+\resultbox{\textbf{Deployment implication.} For a mixed-task workload in this
+measurement context, \code{gpt-5.5} gives the strongest score with moderate
+recorded time.  For captioning, Qwen remains compelling despite slower
+aggregate timing.  A production latency decision still needs repeated runs in
+the intended local or API environment.}
+
+\clearpage
+\chapter{Fine-Tuning Experiments}
+
+\section{Why a separate case study?}
+The main comparison asks how ready-to-use wrappers behave across task
+families.  Fine-tuning asks a different question: can we change one model so it
+handles a narrow task better?  For that reason, the fine-tuning result files
+stay outside the aggregate leaderboard and are analyzed as paired Fashion-MNIST
+evaluations.
+
+Fashion-MNIST is a useful pilot because it is small, visual, and has ten clear
+classes.  It also lets training data come from the training split while
+evaluation stays on the held-out test split.  At the same time, it is not as
+easy as it looks for a language-generating vision model.  Classes such as
+\emph{shirt}, \emph{pullover}, \emph{coat}, and \emph{t-shirt/top} are close
+enough visually that class collapse appears quickly.
+
+\section{QLoRA workflow}
+The generic script in \code{fine-tuning/train\_qwen25vl\_benchmark.py} reads
+manifest records with images, prompts, and target answers.  The collator
+formats each example as a Qwen conversation and masks the prompt tokens so the
+loss is applied to the assistant answer rather than the instruction.  The base
+model is loaded with 4-bit NF4 quantization and double quantization.  LoRA
+modules are attached to the attention projections \code{q\_proj},
+\code{k\_proj}, \code{v\_proj}, and \code{o\_proj}.  The standard Qwen wrapper
+then loads the adapter for evaluation.
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{c c c c c}
+\fcolorbox{accent}{soft}{\parbox{24mm}{\centering Train split\\images}} &
+$\rightarrow$ &
+\fcolorbox{accent}{soft}{\parbox{30mm}{\centering Balanced\\manifests}} &
+$\rightarrow$ &
+\fcolorbox{accent}{soft}{\parbox{33mm}{\centering QLoRA\\adapter}} \\
+&&&& $\downarrow$ \\[-1mm]
+\fcolorbox{accent}{soft}{\parbox{29mm}{\centering Test split\\only}} &
+$\rightarrow$ &
+\fcolorbox{accent}{soft}{\parbox{31mm}{\centering Same benchmark\\runner}} &
+$\rightarrow$ &
+\fcolorbox{accent}{soft}{\parbox{33mm}{\centering Paired\\errors}} \\
+\end{tabular}
+\caption{Fine-tuning and held-out evaluation workflow.  The test examples do
+not enter the training manifests.}
+\label{fig:ftpipe}
+\end{figure}
+
+\section{Accuracy improves, but the error distribution moves}
+The earlier LoRA run matches the base result exactly: 19 correct answers out
+of 50.  The balanced LoRA run reaches 24 correct answers, a gain of five
+answers, or ten percentage points, on the same paired sample.
+
+\begin{table}[H]
+\centering
+\caption{Stored Fashion-MNIST Qwen2.5-VL-3B evaluation results.}
+\begin{tabular}{lrrr}
+\toprule
+Run & Correct & Total & Accuracy \\
+\midrule
+Base test-split evaluation & 19 & 50 & 38.0\% \\
+Earlier LoRA adapter & 19 & 50 & 38.0\% \\
+Balanced LoRA adapter & 24 & 50 & 48.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{@{}l@{\hspace{8mm}}l r@{}}
+Base & \textcolor{accent}{\rule{57mm}{7pt}} & 38.0\% \\
+Earlier LoRA & \textcolor{accent}{\rule{57mm}{7pt}} & 38.0\% \\
+Balanced LoRA & \textcolor{accent}{\rule{72mm}{7pt}} & 48.0\% \\
+\end{tabular}
+\caption{Accuracy comparison for the paired 50-example Fashion-MNIST
+evaluation.}
+\label{fig:ftbars}
+\end{figure}
+
+The paired transition count says more than the bar chart.  Compared with the
+base predictions, the balanced adapter changes 17 answers.  Ten of those
+changes fix a base error.  Five turn a previously correct answer into an
+error.  The remaining changed answers move from one wrong label to another.
+So the adapter helps, but it does not improve the model uniformly.
+
+\begin{table}[H]
+\centering
+\caption{Correctness transitions from base to balanced adapter.}
+\begin{tabular}{lr}
+\toprule
+Transition & Count \\
+\midrule
+Incorrect under base, correct under balanced adapter & 10 \\
+Correct under base, incorrect under balanced adapter & 5 \\
+Net gain in correct predictions & +5 \\
+All changed predictions & 17 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Class-level improvement and class bias}
+The adapter improves \emph{shirt} sharply, from 2/5 correct examples to 5/5.
+It also fixes some \emph{coat}, \emph{trouser}, \emph{ankle boot}, \emph{bag},
+and \emph{sandal} examples.  But the gain has a cost.  \emph{Pullover} drops
+from 4/6 to 1/6, and \emph{t-shirt/top} drops from 2/3 to 0/3.  Those losses
+are not random-looking: they sit in the same visually similar clothing region
+as the newly strengthened shirt label.
+
+\begin{table}[H]
+\centering
+\caption{Correct predictions by class: base versus balanced LoRA.}
+\begin{tabular}{lrr@{\hspace{7mm}}lrr}
+\toprule
+Class & Base & Balanced & Class & Base & Balanced \\
+\midrule
+ankle boot & 1/4 & 2/4 & sandal & 0/4 & 1/4 \\
+bag & 2/4 & 3/4 & shirt & 2/5 & 5/5 \\
+coat & 0/5 & 2/5 & sneaker & 7/7 & 7/7 \\
+dress & 1/5 & 1/5 & t-shirt/top & 2/3 & 0/3 \\
+pullover & 4/6 & 1/6 & trouser & 0/7 & 2/7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{@{}l@{\hspace{3mm}}l@{\hspace{5mm}}l@{\hspace{3mm}}l@{}}
+\multicolumn{2}{c}{\textbf{Base predictions}} &
+\multicolumn{2}{c}{\textbf{Balanced predictions}}\\[4pt]
+shirt & \textcolor{warning}{\rule{50mm}{6pt}} 20 &
+shirt & \textcolor{warning}{\rule{59mm}{6pt}} 25 \\
+sneaker & \textcolor{accent}{\rule{25mm}{6pt}} 10 &
+sneaker & \textcolor{accent}{\rule{20mm}{6pt}} 8 \\
+pullover & \textcolor{accent}{\rule{22.5mm}{6pt}} 9 &
+coat & \textcolor{accent}{\rule{12.5mm}{6pt}} 5 \\
+\end{tabular}
+\caption{Most frequent predicted labels.  The balanced adapter improves
+accuracy while increasing an already prominent preference for \emph{shirt}.}
+\label{fig:bias}
+\end{figure}
+
+There are only five true shirt instances in the fifty-example evaluation, yet
+the balanced adapter predicts shirt twenty-five times.  That is the main
+caution in the case study.  Balanced training improves measured accuracy, but
+it does not solve calibration among related garment classes.  Before treating
+this adapter as more than a pilot, we would need a larger test, a confusion
+matrix, and repeated training seeds.
+
+\section{The Colab smoke result}
+A newer downloaded artifact contains a twenty-example base-versus-adapter
+smoke evaluation from the generalized Colab workflow.  The base run gets 7/20
+(35.0 percent), and the adapter run gets 9/20 (45.0 percent).  Ten predictions
+change, five errors are fixed, and three correct base outputs regress.
+
+That is useful operational evidence: the generalized training and evaluation
+path can produce an adapter, load it, and score it with the same runner.  It is
+not strong additional performance evidence.  Twenty examples are too few for a
+stable accuracy estimate, and this result should not be merged with the
+fifty-example comparison as if it were a planned replication.
+
+\begin{table}[H]
+\centering
+\caption{Interpretation of the two fine-tuning evidence sources.}
+\begin{tabularx}{\textwidth}{p{35mm} p{31mm} X}
+\toprule
+Evidence source & Result & Suitable conclusion \\
+\midrule
+Paired 50-example stored comparison &
+38.0\% to 48.0\% &
+Balanced LoRA improved this held-out pilot sample, with visible class bias. \\
+Downloaded 20-example Colab smoke pair &
+35.0\% to 45.0\% &
+The generalized Colab adapter/evaluation path runs end to end and can change
+measured outputs. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\resultbox{\textbf{Fine-tuning conclusion.} A narrow adapter can shift Qwen's
+Fashion-MNIST behavior enough to improve the paired result.  The new shirt
+bias is not a footnote; it is exactly the kind of error redistribution that
+has to be checked before calling a specialist model successful.}
+
+\chapter{Limitations and Next Experiments}
+
+\section{Limits of the present evidence}
+The comparison is useful because it covers the full represented
+model--benchmark rectangle, but it is still a study of the artifacts available
+here.  Some runs use modest sample sizes.  Some rows have many ties.  One
+detection row is zero for every model.  Normalization helps combine unlike
+metrics, but it cannot turn a small or non-discriminating task into strong
+evidence.
+
+The telemetry has a different limit.  It honestly records what this harness
+observed, but the execution paths mix hosted API calls and local model runs.
+That can guide this repository's workflow, but it cannot establish intrinsic
+inference efficiency across deployment modes.
+
+The fine-tuning experiment is narrower again.  It evaluates one adapter family
+on one classification task and one held-out sample.  The accuracy gain is worth
+reporting, but the class-level regressions are exactly why more repetitions are
+needed.
+
+\section{Next experiments worth running}
+\begin{enumerate}[leftmargin=22pt]
+\item Repeat the balanced Fashion-MNIST QLoRA training with multiple seeds and
+larger held-out evaluations; report mean accuracy and confusion matrices.
+\item Diagnose the all-zero \code{flickr30k\_entities} detection result by
+checking prompt format, coordinate normalization, parsing, and example-level
+outputs before using it in model selection.
+\item Fine-tune Qwen independently on one captioning task and one QA task.
+This tests whether its observed captioning strength can be enhanced without
+moving a narrow classifier's bias problem into a new setting.
+\item Record deployment mode and repeated latency trials explicitly, so the
+quality--speed comparison distinguishes API round-trip latency from local GPU
+generation.
+\item Increase benchmark sample counts on rows with very large observed
+spread, then regenerate the bootstrap and pairwise analyses.
+\end{enumerate}
+
+\clearpage
+\chapter*{Reproduction Notes and Sources}
+\addcontentsline{toc}{chapter}{Reproduction Notes and Sources}
+
+\section*{Reproducing the comparison}
+\addcontentsline{toc}{section}{Reproducing the comparison}
+The main tables and graphs in this report are generated from the top-level
+JSON reports under \code{results/}.  From the repository root, run:
+
+\begin{verbatim}
+python comparison\build_report.py --results-dir results \
+  --output-dir comparison\output --bootstrap-samples 5000
+\end{verbatim}
+
+This produces the CSV tables and plots used in Chapters 4--7.  The nested
+fine-tuning reports are intentionally not included by that command.  They are
+examined separately so the baseline comparison stays separate from the
+task-adapted model.
+
+\section*{Local sources used}
+\addcontentsline{toc}{section}{Local sources used}
+\begin{longtable}{>{\raggedright\arraybackslash}p{67mm}p{78mm}}
+\toprule
+\textbf{File or directory} & \textbf{Role in this report} \\
+\midrule
+\endhead
+\path{comparison/output/model_summary.csv} &
+Aggregate normalized scores, raw means, ranks, and first-place totals. \\
+\path{comparison/output/family_summary.csv} &
+Family-specific leader comparisons. \\
+\path{comparison/output/pairwise_wins.csv} &
+Head-to-head benchmark outcomes. \\
+\path{comparison/output/bootstrap_summary.csv} &
+Benchmark-resampled uncertainty intervals. \\
+\path{comparison/output/telemetry_model_summary.csv} &
+Timing, memory, and measured-coverage summary. \\
+\path{models/_openai_vision.py} and \path{models/_hf_model.py} &
+API and generic local inference pathways. \\
+\path{models/_qwen2_5_vl.py}, \path{models/llava15_7b.py},
+\path{models/paligemma_3b_mix_224.py} &
+Family-specific wrapper behavior discussed in Chapter 3. \\
+\path{benchmarks/_base_benchmark.py} &
+Prompt, image, label, and evaluation contract. \\
+\path{fine-tuning/train_qwen25vl_benchmark.py} &
+QLoRA configuration and manifest-driven training behavior. \\
+\path{results/fine-tuning/*.json} &
+Stored 50-example Fashion-MNIST paired evaluations. \\
+\path{fine_tuning_smoke_artifacts (1)/*.json} &
+Downloaded 20-example Colab smoke comparison. \\
+\bottomrule
+\end{longtable}
+
+\section*{External architecture references}
+\addcontentsline{toc}{section}{External architecture references}
+The architecture descriptions in Chapter 2 also use public model documentation
+for the local open model families.  The API-served models are still described
+only at the request/response boundary visible in this repository.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{48mm}p{97mm}}
+\toprule
+\textbf{Reference} & \textbf{Use in this report} \\
+\midrule
+\endhead
+\path{https://huggingface.co/papers/2502.13923} &
+Qwen2.5-VL technical report summary: dynamic-resolution vision transformer,
+window attention, and multimodal positional handling. \\
+\path{https://huggingface.co/docs/transformers/v4.51.3/en/model_doc/qwen2_5_vl} &
+Transformers implementation documentation for Qwen2.5-VL conditional
+generation and configuration. \\
+\path{https://huggingface.co/docs/transformers/v4.48.1/en/model_doc/llava} &
+Transformers LLaVA documentation: CLIP vision encoder, MLP projection, and
+autoregressive language-model generation. \\
+\path{https://ai.google.dev/gemma/docs/paligemma/model-card} &
+Google PaliGemma model card: PaLI/Gemma lineage, SigLIP vision component, and
+Gemma language model component. \\
+\bottomrule
+\end{longtable}
+
+\section*{Closing observation}
+\addcontentsline{toc}{section}{Closing observation}
+The main lesson is not simply that one model wins, and it is not that rankings
+are meaningless.  The evaluated models do have an aggregate order in this
+result set, and \code{gpt-5.5} leads it.  But the useful engineering decision
+usually happens one level lower: Qwen's captioning behavior, PaliGemma's QA
+result, the latency frontier, and the adapter's shirt bias all change what
+``best'' means for a concrete application.  The value of the shared harness is
+that it makes those differences visible.
+
+\end{document}

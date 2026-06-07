@@ -3,7 +3,7 @@ from __future__ import annotations
 from .llava15_7b import Llava
 
 
-class SmallLlava(Llava):
+class LlavaGemma2B(Llava):
     default_model_id = "Intel/llava-gemma-2b"
 
     def __init__(

@@ -18,7 +18,7 @@ from models.paligemma_3b_mix_224 import Gemma
 from models.internvl2_5_8b import InternVL25
 from models.llava15_7b import Llava
 from models.llava_onevision_qwen2_72b_ov import LlavaOnevision
-from models.llava_gemma_2b import SmallLlava
+from models.llava_gemma_2b import LlavaGemma2B
 from models.minicpm_v_2_6 import MiniCPMV26
 from models._qwen2_5_vl import _Qwen25VLBase
 from models.qwen2_5_vl_3b_instruct import Qwen25VL3B
@@ -167,7 +167,7 @@ class BenchmarkRunnerTests(unittest.TestCase):
     def test_default_checkpoint_names_are_specific(self) -> None:
         self.assertEqual(Llava._name_from_model_id("llava-hf/llava-1.5-7b-hf"), "llava-1.5-7b-hf")
         self.assertEqual(Llava._name_from_model_id("Intel/llava-gemma-2b"), "llava-gemma-2b")
-        self.assertEqual(SmallLlava.default_model_id, "Intel/llava-gemma-2b")
+        self.assertEqual(LlavaGemma2B.default_model_id, "Intel/llava-gemma-2b")
         self.assertEqual(
             LlavaOnevision._name_from_model_id("llava-hf/llava-onevision-qwen2-72b-ov-hf"),
             "llava-onevision-qwen2-72b-ov-hf",
@@ -193,6 +193,7 @@ class BenchmarkRunnerTests(unittest.TestCase):
             "LlavaNextMistral7B": "llava-hf/llava-v1.6-mistral-7b-hf",
             "LlavaNextVicuna13B": "llava-hf/llava-v1.6-vicuna-13b-hf",
             "Llama3LlavaNext8B": "llava-hf/llama3-llava-next-8b-hf",
+            "LlavaGemma2B": "Intel/llava-gemma-2b",
             "LlavaOnevisionQwen2_7B": "llava-hf/llava-onevision-qwen2-7b-ov-hf",
             "LlavaOnevision15_4BInstruct": "lmms-lab/LLaVA-OneVision-1.5-4B-Instruct",
             "Qwen25VL7B": "Qwen/Qwen2.5-VL-7B-Instruct",
