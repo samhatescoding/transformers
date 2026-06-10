@@ -66,9 +66,15 @@ class MSCOCOCaption(BaseDataset):
         if not url:
             raise ValueError("MSCOCO caption row is missing an image URL.")
         parts = urlsplit(url)
-        if parts.scheme == "http" and parts.netloc == "images.cocodataset.org":
+        if parts.netloc == "images.cocodataset.org":
             url = urlunsplit(
-                ("https", parts.netloc, parts.path, parts.query, parts.fragment)
+                (
+                    "https",
+                    "s3.amazonaws.com",
+                    f"/images.cocodataset.org{parts.path}",
+                    parts.query,
+                    parts.fragment,
+                )
             )
         request = Request(url, headers={"User-Agent": "transformers-benchmark/1.0"})
         for attempt in range(self.IMAGE_DOWNLOAD_ATTEMPTS):

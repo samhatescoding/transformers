@@ -46,7 +46,11 @@ class MSCOCOCaptionTests(unittest.TestCase):
         self.assertEqual(mock_urlopen.call_count, 2)
         mock_sleep.assert_called_once_with(1)
         request = mock_urlopen.call_args_list[0].args[0]
-        self.assertEqual(request.full_url.split(":", 1)[0], "https")
+        self.assertEqual(
+            request.full_url,
+            "https://s3.amazonaws.com/images.cocodataset.org/"
+            "train2014/example.jpg",
+        )
         self.assertEqual(request.get_header("User-agent"), "transformers-benchmark/1.0")
 
     @patch("dataset.mscoco_caption.time.sleep")
