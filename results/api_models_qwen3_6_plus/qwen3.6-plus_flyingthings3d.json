@@ -1,0 +1,820 @@
+{
+  "model": "qwen3.6-plus",
+  "benchmark": "flyingthings3d",
+  "report": {
+    "benchmark": "flyingthings3d",
+    "dataset": "flyingthings3d",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "blue",
+          "green",
+          "red",
+          "yellow"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "red"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 6.983061299892142,
+          "generation_time_seconds": 6.951985299936496,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 656625664,
+          "cpu_utilization_percent": 6.593430656934307,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "7",
+          "8",
+          "5",
+          "9"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "7"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 4.519990500062704,
+          "generation_time_seconds": 4.488783900043927,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661045248,
+          "cpu_utilization_percent": 1.3910112359550562,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "the front",
+          "the back",
+          "the side",
+          "the top"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "the back"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 4.932542699971236,
+          "generation_time_seconds": 4.904726899927482,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661073920,
+          "cpu_utilization_percent": 23.101030927835055,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "3 planes and no car",
+          "3 planes and 1 car",
+          "2 planes and no car",
+          "2 planes and 1 car"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "3 planes and 1 car"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.9153834000462666,
+          "generation_time_seconds": 3.8586129000177607,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661082112,
+          "cpu_utilization_percent": 0.4025974025974026,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "3"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 4.0836233999580145,
+          "generation_time_seconds": 4.027605399955064,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661082112,
+          "cpu_utilization_percent": 0.77125,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "3"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.2055086999898776,
+          "generation_time_seconds": 3.1899259000783786,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661090304,
+          "cpu_utilization_percent": 0.4888888888888889,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "yellow",
+          "red",
+          "blue",
+          "green"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "yellow"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 4.06224810006097,
+          "generation_time_seconds": 4.026666400022805,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661094400,
+          "cpu_utilization_percent": 0.7848101265822784,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "white"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.76304870005697,
+          "generation_time_seconds": 3.7578219000715762,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661094400,
+          "cpu_utilization_percent": 0.8364864864864866,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "white"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.902479099924676,
+          "generation_time_seconds": 3.8823219999903813,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661098496,
+          "cpu_utilization_percent": 0.4025974025974026,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "brown"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.715407699928619,
+          "generation_time_seconds": 3.6775737999705598,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661098496,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "a lightbulb",
+          "a tree",
+          "a building",
+          "a car"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "a lightbulb"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 5.811502699973062,
+          "generation_time_seconds": 5.7718554000603035,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661106688,
+          "cpu_utilization_percent": 0.27280701754385966,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "3"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 5.954972499981523,
+          "generation_time_seconds": 5.9277186000254005,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661049344,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "a car",
+          "a tree",
+          "a building",
+          "a plane"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "a plane"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.7002006999682635,
+          "generation_time_seconds": 3.6859331999439746,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661049344,
+          "cpu_utilization_percent": 0.426027397260274,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "gray",
+          "orange",
+          "purple",
+          "brown"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "purple"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.9088145999703556,
+          "generation_time_seconds": 3.8583617999684066,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661053440,
+          "cpu_utilization_percent": 0.8038961038961039,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "upper right",
+          "upper left",
+          "lower right",
+          "lower left"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "upper left"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.396533399936743,
+          "generation_time_seconds": 3.3599757000338286,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661057536,
+          "cpu_utilization_percent": 0.45671641791044776,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "above",
+          "below",
+          "right",
+          "left"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "left"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.9335901000304148,
+          "generation_time_seconds": 3.896029599942267,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661057536,
+          "cpu_utilization_percent": 0.8077922077922078,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "1"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.7464757999405265,
+          "generation_time_seconds": 3.7399961999617517,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661057536,
+          "cpu_utilization_percent": 1.25,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "upper right",
+          "upper left",
+          "lower right",
+          "lower left"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "upper right"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 3.658069600001909,
+          "generation_time_seconds": 3.6092886000405997,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661053440,
+          "cpu_utilization_percent": 0.43194444444444446,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "the front",
+          "the side",
+          "the top",
+          "the bottom"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "the bottom"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 4.323748899972998,
+          "generation_time_seconds": 4.292630499927327,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661053440,
+          "cpu_utilization_percent": 0.3623529411764706,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "upper (horizontal) center",
+          "right (vertical) center",
+          "left (vertical) center",
+          "bottom (horizontal) center"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "bottom (horizontal) center"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "APIConnectionError: Connection error.",
+          "wall_clock_time_seconds": 4.10859870002605,
+          "generation_time_seconds": 4.085633600014262,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661057536,
+          "cpu_utilization_percent": 0.7617283950617284,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "APIConnectionError: Connection error."
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 85.63679389993194,
+      "wall_clock_time_per_sample_seconds_mean": 4.281290029984666,
+      "total_generation_time_seconds_mean": 4.249672379996627,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.23354447415874,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 0.0,
+      "number_of_benchmark_samples_completed": 0,
+      "success_count": 0,
+      "failure_count": 20,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 661106688,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 2.0172684026481207,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.3238149000098929
+    }
+  }
+}

@@ -227,7 +227,7 @@ Seed 1.5-VL Thinking
 \bottomrule
 \end{tabular}
 }
-\caption{Highest-ranked proprietary/API models on the MMMU-Pro leaderboard, extended until five owning companies are represented. Ranks are model-only ranks, excluding human baselines. Tied scores share the same rank.}
+\caption{Highest-ranked proprietary/API models on the MMMU-Pro leaderboard snapshot~\cite{yue2024mmmupro}, extended until five owning companies are represented. Ranks are model-only ranks, excluding human baselines. Tied scores share the same rank.}
 \label{tab:mmmu-pro-proprietary-five-companies}
 \end{table}
 
@@ -268,7 +268,7 @@ Skywork-R1V3-38B
 \bottomrule
 \end{tabular}%
 }
-\caption{Highest-ranked open-weight models on MMMU-Pro, extended until five distinct owning companies are represented. Ranks are model-only ranks, excluding human baselines. Seed models are excluded because they are treated here as API-accessible rather than open-weight.}
+\caption{Highest-ranked open-weight models on MMMU-Pro~\cite{yue2024mmmupro}, extended until five distinct owning companies are represented. Ranks are model-only ranks, excluding human baselines. Seed models are excluded because they are treated here as API-accessible rather than open-weight.}
 \label{tab:mmmu-pro-open-weight-five-companies}
 \end{table}
 
@@ -307,7 +307,7 @@ Skywork-R1V3-38B
         \bottomrule
     \end{tabular}%
     }
-    \caption{Highest-ranked proprietary models on Arena Vision Overall, extended until five distinct companies are represented.}
+    \caption{Highest-ranked proprietary models on Arena Vision Overall~\cite{chiang2024arena,lmarenaVision}, extended until five distinct companies are represented.}
     \label{tab:arena-vision-proprietary-five-companies}
 \end{table}
 
@@ -338,7 +338,7 @@ Skywork-R1V3-38B
         \bottomrule
     \end{tabular}%
     }
-    \caption{Highest-ranked open-weight models visible in the provided Arena Vision Overall excerpt. The excerpt reaches four distinct companies: Moonshot, Google, Alibaba, and Xiaomi.}
+    \caption{Highest-ranked open-weight models visible in the provided Arena Vision Overall excerpt~\cite{chiang2024arena,lmarenaVision}. The excerpt reaches four distinct companies: Moonshot, Google, Alibaba, and Xiaomi.}
     \label{tab:arena-vision-open-visible}
 \end{table}
 
@@ -421,7 +421,7 @@ The fifth family is obtained by extending the leaderboard beyond the visible exc
 \subsection{Dataset Selection}
 \subsubsection{Dataset selection procedure}
 
-For each period $\{$pre-2015, 2015, 2016, \dots, 2024, 2025$\}$, I selected the three multimodal datasets with the highest number of citations on \texttt{Semantic Scholar} (\texttt{semanticscholar.org/}) as Google scholar does not allow me to order items by number of citations. Concretely, for each year bin I queried \texttt{Semantic Scholar} with the keywords \texttt{``dataset''}, \texttt{``image''}, and \texttt{``objects''} and then ranked results by the number of citations. A dataset was included only if it satisfied all of the following:
+For each period $\{$pre-2015, 2015, 2016, \dots, 2024, 2025$\}$, I selected the three multimodal datasets with the highest number of citations on \texttt{Semantic Scholar} (\texttt{semanticscholar.org/}) as Google scholar does not allow me to order items by number of citations. Concretely, for each year bin I queried \texttt{Semantic Scholar} with the keywords \texttt{``dataset''}, \texttt{``image''}, and \texttt{``objects''} and then ranked results by the number of citations reported by the Semantic Scholar platform~\cite{kinney2023semanticscholar}. A dataset was included only if it satisfied all of the following:
 
 \begin{enumerate}
   \item \textbf{Search visibility.} The dataset must appear in \texttt{Semantic Scholar} search results for at least one of the keywords \emph{dataset}, \emph{image}, or \emph{objects}.
@@ -519,11 +519,11 @@ Evaluation types: \textbf{A} = answering questions; \textbf{B} = bounding box ob
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-ImageNet & 66,633 & FNCR & Img + Lbl & L\\
+ImageNet~\cite{deng2009imagenet} & 66,633 & FNCR & Img + Lbl & L\\
 \hline
-UCF101 & 6,460 & CC0-1.0 & Vid + Act & L\\
+UCF101~\cite{soomro2012ucf101} & 6,460 & CC0-1.0 & Vid + Act & L\\
 \hline
-MS COCO & 46,361 & CC BY 4.0 & Img + Seg + Cap & B + C\\
+MS COCO~\cite{lin2014coco} & 46,361 & CC BY 4.0 & Img + Seg + Cap & B + C\\
 \hline
 
 \end{tabular}
@@ -536,11 +536,11 @@ MS COCO & 46,361 & CC BY 4.0 & Img + Seg + Cap & B + C\\
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-Flickr30k Entities & 2,226 & FNCR & Img + Cap + BB + Rel & B + C\\
+Flickr30k Entities~\cite{plummer2015flickr30k} & 2,226 & FNCR & Img + Cap + BB + Rel & B + C\\
 \hline
-FlyingThings3D & 2,758 & FNCR & Img pairs + 3D & A\\
+FlyingThings3D~\cite{mayer2016large} & 2,758 & FNCR & Img pairs + 3D & A\\
 \hline
-LSUN & 2,436 & FNCR + conditions & Img + Lbl & L\\
+LSUN~\cite{yu2015lsun} & 2,436 & FNCR + conditions & Img + Lbl & L\\
 \hline
 
 \end{tabular}
@@ -553,11 +553,11 @@ LSUN & 2,436 & FNCR + conditions & Img + Lbl & L\\
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-Cityscapes & 12,189 & FNCR & Img + Seg + Lbl & L\\
+Cityscapes~\cite{cordts2016cityscapes} & 12,189 & FNCR & Img + Seg + Lbl & L\\
 \hline
-Visual Genome & 6,018 & CC BY 4.0* & Img + BB + Rel + QA & A\\
+Visual Genome~\cite{krishna2017visualgenome} & 6,018 & CC BY 4.0* & Img + BB + Rel + QA & A\\
 \hline
-VQA v2.0 & 3,558 & CC BY 4.0 & Img pairs + QA & A\\
+VQA v2.0~\cite{goyal2017vqa} & 3,558 & CC BY 4.0 & Img pairs + QA & A\\
 \hline
 
 \end{tabular}
@@ -570,11 +570,11 @@ VQA v2.0 & 3,558 & CC BY 4.0 & Img pairs + QA & A\\
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-Fashion-MNIST & 9,435 & MIT & Img + Lbl & L\\
+Fashion-MNIST~\cite{xiao2017fashionmnist} & 9,435 & MIT & Img + Lbl & L\\
 \hline
-Kinetics Human Action Video Dataset & 3,981 & CC BY 4.0* & Vid + Lbl & L\\
+Kinetics Human Action Video Dataset~\cite{kay2017kinetics} & 3,981 & CC BY 4.0* & Vid + Lbl & L\\
 \hline
-iNaturalist & 1,763 & CC BY-NC & Img + BB + Lbl & L + B\\
+iNaturalist~\cite{vanhorn2018inaturalist} & 1,763 & CC BY-NC & Img + BB + Lbl & L + B\\
 \hline
 
 \end{tabular}
@@ -587,11 +587,11 @@ iNaturalist & 1,763 & CC BY-NC & Img + BB + Lbl & L + B\\
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-Places & 4,319 & FNCR & Img + Lbl & L\\
+Places~\cite{zhou2017places} & 4,319 & FNCR & Img + Lbl & L\\
 \hline
-Conceptual Captions & 2,643 & FAP & Img + Cap & C\\
+Conceptual Captions~\cite{sharma2018conceptual} & 2,643 & FAP & Img + Cap & C\\
 \hline
-Open Images V4 & 1,441 & CC BY 2.0 (Img) / 4.0 (ann.) & Img + BB + Lbl + Rel & L + B\\
+Open Images V4~\cite{kuznetsova2020openimages} & 1,441 & CC BY 2.0 (Img) / 4.0 (ann.) & Img + BB + Lbl + Rel & L + B\\
 \hline
 
 \end{tabular}
@@ -604,11 +604,11 @@ Open Images V4 & 1,441 & CC BY 2.0 (Img) / 4.0 (ann.) & Img + BB + Lbl + Rel & L
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-GQA & 2,402 & CC BY 4.0 & Img + QA & A\\
+GQA~\cite{hudson2019gqa} & 2,402 & CC BY 4.0 & Img + QA & A\\
 \hline
-MVTec AD & 1,549 & CC BY-NC-SA 4.0 & Img + Seg & L\\
+MVTec AD~\cite{bergmann2019mvtec} & 1,549 & CC BY-NC-SA 4.0 & Img + Seg & L\\
 \hline
-LVIS & 1,492 & CC BY 4.0 & Img + Seg + Lbl & B\\
+LVIS~\cite{gupta2019lvis} & 1,492 & CC BY 4.0 & Img + Seg + Lbl & B\\
 \hline
 
 \end{tabular}
@@ -621,11 +621,11 @@ LVIS & 1,492 & CC BY 4.0 & Img + Seg + Lbl & B\\
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-DocVQA & 930 & Unk. & Img + QA & A\\
+DocVQA~\cite{mathew2020docvqa} & 930 & Unk. & Img + QA & A\\
 \hline
-DFDC & 597 & MRL? & Vid + Lbl & L\\
+DFDC~\cite{dolhansky2020dfdc} & 597 & MRL? & Vid + Lbl & L\\
 \hline
-TextCaps & 469 & CC BY 4.0 & Img + Cap & C\\
+TextCaps~\cite{sidorov2020textcaps} & 469 & CC BY 4.0 & Img + Cap & C\\
 \hline
 
 \end{tabular}
@@ -638,11 +638,11 @@ TextCaps & 469 & CC BY 4.0 & Img + Cap & C\\
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-LAION-400M & 1,486 & CC BY 4.0 (meta.); Img: OC & Img + Lbl + Sc & C\\
+LAION-400M~\cite{schuhmann2021laion400m} & 1,486 & CC BY 4.0 (meta.); Img: OC & Img + Lbl + Sc & C\\
 \hline
-FairFace & 616 & CC BY 4.0 & Img + Lbl & L\\
+FairFace~\cite{karkkainen2021fairface} & 616 & CC BY 4.0 & Img + Lbl & L\\
 \hline
-HDTF & 413 & GPL-3.0 & Vid + Aud + Txt & C\\
+HDTF~\cite{zhang2021hdtf} & 413 & GPL-3.0 & Vid + Aud + Txt & C\\
 \hline
 
 \end{tabular}
@@ -655,11 +655,11 @@ HDTF & 413 & GPL-3.0 & Vid + Aud + Txt & C\\
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-LAION-5B & 4,059 & CC BY 4.0 (meta.); Img: OC & Img + Cap + Sc & C\\
+LAION-5B~\cite{schuhmann2022laion5b} & 4,059 & CC BY 4.0 (meta.); Img: OC & Img + Cap + Sc & C\\
 \hline
-DiffusionDB & 349 & CC0-1.0 (data) / MIT (code) & Img + Pr + Sc & G\\
+DiffusionDB~\cite{wang2022diffusiondb} & 349 & CC0-1.0 (data) / MIT (code) & Img + Pr + Sc & G\\
 \hline
-TAD66K & 111 & Apache-2.0 & Img + Sc & R\\
+TAD66K~\cite{he2022tad66k} & 111 & Apache-2.0 & Img + Sc & R\\
 \hline
 
 \end{tabular}
@@ -672,11 +672,11 @@ TAD66K & 111 & Apache-2.0 & Img + Sc & R\\
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-MagicBrush & 391 & CC BY-SA 4.0 & Img pairs + edit Pr & E\\
+MagicBrush~\cite{zhang2023magicbrush} & 391 & CC BY-SA 4.0 & Img pairs + edit Pr & E\\
 \hline
-Pick-a-Pic & 559 & Unk. & Img + Pr + Pref & P\\
+Pick-a-Pic~\cite{kirstain2023pickapic} & 559 & Unk. & Img + Pr + Pref & P\\
 \hline
-InternVid & 411 & CC BY-NC-SA 4.0 & Vid + Cap & C\\
+InternVid~\cite{wang2023internvid} & 411 & CC BY-NC-SA 4.0 & Vid + Cap & C\\
 \hline
 
 \end{tabular}
@@ -689,11 +689,11 @@ InternVid & 411 & CC BY-NC-SA 4.0 & Vid + Cap & C\\
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-OpenVid-1M & 149 & Unk. & Vid + Pr + Cap & C + G\\
+OpenVid-1M~\cite{nan2024openvid} & 149 & Unk. & Vid + Pr + Cap & C + G\\
 \hline
-Visual CoT & 148 & CC BY-SA 4.0 & Img + BB + QA & A + B\\
+Visual CoT~\cite{shao2024visualcot} & 148 & CC BY-SA 4.0 & Img + BB + QA & A + B\\
 \hline
-HQ-Edit & 104 & CC BY-NC-4.0 & Img pairs + edit Pr & E\\
+HQ-Edit~\cite{hui2024hqedit} & 104 & CC BY-NC-4.0 & Img pairs + edit Pr & E\\
 \hline
 
 \end{tabular}
@@ -706,11 +706,11 @@ HQ-Edit & 104 & CC BY-NC-4.0 & Img pairs + edit Pr & E\\
 \hline
 \textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
 \hline
-BLIP3o-60k & 91 & Apache-2.0 & Img + Pr & G\\
+BLIP3o-60k~\cite{chen2025blip3o} & 91 & Apache-2.0 & Img + Pr & G\\
 \hline
-ImgEdit & 38 & Apache-2.0 & Img pairs + edit Pr & E\\
+ImgEdit~\cite{ye2025imgedit} & 38 & Apache-2.0 & Img pairs + edit Pr & E\\
 \hline
-ShareGPT-4o-Image & 27 & Apache-2.0 & Img + Pr & G + E\\
+ShareGPT-4o-Image~\cite{chen2025sharegpt} & 27 & Apache-2.0 & Img + Pr & G + E\\
 \hline
 \end{tabular}
 \end{table}
@@ -718,7 +718,7 @@ ShareGPT-4o-Image & 27 & Apache-2.0 & Img + Pr & G + E\\
 
 In the dataset summary tables, when images are grouped or classified into categories, we count this as having \bfit{labels}. Labels are category tags that describe what the image or video shows. For example, a picture of a dog in \textbf{ImageNet} has labels such as \texttt{dog}, \texttt{mammal}, \texttt{animal}, while a picture of a woman laughing in \textbf{UCF101} is labeled as \texttt{smiling}.  \bfit{Captions} go a step further by describing what is happening or what can be seen in the image or video, as seen in Figure~\ref{fig:conceptual-captions} for an image captioned "\texttt{pop artist performs at the festival in a city}" in the \textbf{Conceptual Captions} dataset.\bfit{Prompts} are pieces of text used to generate or edit images in datasets built around generative models. Examples can be seen in Figures~\ref{fig:diffusiondb} or \ref{fig:magicbrush} for the \textbf{DiffusionDB} or \textbf{MagicBrush} datasets respectively.\\
 
-\bfit{Bounding boxes} pinpoint specific object instances within an image by drawing rectangles around them (using coordinates such as $(x_{\min},y_{\min},x_{\max},y_{\max})$). See Figures \ref{fig:flickr30k} or \ref{fig:visual-genome} from \textbf{Flickr30K} or \textbf{Visual Genome} respectively as examples. \bfit{Segmentation} goes a step further by outlining the exact shape of each object, assigning every pixel to a class or instance. Semantic segmentation labels each pixel by class, while instance segmentation gives each object its own mask. See Figures \ref{fig:mscoco_ucf101} or \ref{fig:cityscapes} from \textbf{MS COCO} or \textbf{Cityscapes} respectively for examples.\\
+\bfit{Bounding boxes} pinpoint specific object instances within an image by drawing rectangles around them (using coordinates such as $(x_{\min},y_{\min},x_{\max},y_{\max})$). See Figures \ref{fig:flickr30k} or \ref{fig:visual-genome} from \textbf{Flickr30K} or \textbf{Visual Genome} respectively as examples. \bfit{Segmentation} goes a step further by outlining the exact shape of each object, assigning every pixel to a class or instance. Semantic segmentation labels each pixel by class, while instance segmentation gives each object its own mask. See Figures \ref{fig:mscoco} or \ref{fig:cityscapes} from \textbf{MS COCO} or \textbf{Cityscapes} respectively for examples.\\
 
 Finally, \textbf{Pick-a-Pic} captures human \bfit{preferences} for images generated by text-to-image diffusion models. Images in the dataset come in pairs, with one of the two image being preferred. Figure~\ref{fig:pickapic2} shows examples where the chosen image is highlighted and the rejected one is darkened. The term \bfit{scores} refers to any numerical metadata. For example, an aesthetic score as in \textbf{TAD66K} or an NSFW score as in \textbf{LAION-5B}. \bfit{QA-pairs} (question–answer pairs) are exactly what they sound like: a question about the image and its corresponding answer, such as “\texttt{What type of fruit in the image is round?}” and “\texttt{apple}”, as shown in Figure \ref{fig:gqa} for the \textbf{GQA} dataset.\\
 
@@ -790,7 +790,7 @@ highest-precision weights fit within a single NVIDIA B300 GPU (the GPU in RunPod
 single B300 will be evaluated using hosted inference whenever a suitable hosted
 endpoint is available.
 
-A single B300 GPU provides approximately 288 GB of VRAM. The VRAM estimates in
+A single NVIDIA B300 GPU provides 288 GB of HBM3e memory~\cite{nvidiaB300}. The VRAM estimates in
 Table~\ref{tab:open-weight-vram-plan} refer only to the memory required to store
 the model weights. They do not include inference overhead, KV cache, image-token
 memory, batching overhead, CUDA graphs, or framework-specific runtime memory.
@@ -956,6 +956,49 @@ metadata:
 \section{Conclusions and Future Work}
 
 \section{References}
+\begin{thebibliography}{99}
+\bibitem{deng2009imagenet} J. Deng et al., ``ImageNet: A Large-Scale Hierarchical Image Database,'' CVPR, 2009. \url{https://doi.org/10.1109/CVPR.2009.5206848}.
+\bibitem{soomro2012ucf101} K. Soomro, A. R. Zamir, and M. Shah, ``UCF101: A Dataset of 101 Human Actions Classes From Videos in the Wild,'' 2012. \url{https://arxiv.org/abs/1212.0402}.
+\bibitem{lin2014coco} T.-Y. Lin et al., ``Microsoft COCO: Common Objects in Context,'' ECCV, 2014. \url{https://arxiv.org/abs/1405.0312}.
+\bibitem{plummer2015flickr30k} B. A. Plummer et al., ``Flickr30k Entities: Collecting Region-to-Phrase Correspondences for Richer Image-to-Sentence Models,'' ICCV, 2015. \url{https://arxiv.org/abs/1505.04870}.
+\bibitem{mayer2016large} N. Mayer et al., ``A Large Dataset to Train Convolutional Networks for Disparity, Optical Flow, and Scene Flow Estimation,'' CVPR, 2016. \url{https://arxiv.org/abs/1512.02134}.
+\bibitem{yu2015lsun} F. Yu et al., ``LSUN: Construction of a Large-scale Image Dataset using Deep Learning with Humans in the Loop,'' 2015. \url{https://arxiv.org/abs/1506.03365}.
+\bibitem{cordts2016cityscapes} M. Cordts et al., ``The Cityscapes Dataset for Semantic Urban Scene Understanding,'' CVPR, 2016. \url{https://arxiv.org/abs/1604.01685}.
+\bibitem{krishna2017visualgenome} R. Krishna et al., ``Visual Genome: Connecting Language and Vision Using Crowdsourced Dense Image Annotations,'' IJCV, 2017. \url{https://arxiv.org/abs/1602.07332}.
+\bibitem{goyal2017vqa} Y. Goyal et al., ``Making the V in VQA Matter,'' CVPR, 2017. \url{https://arxiv.org/abs/1612.00837}.
+\bibitem{xiao2017fashionmnist} H. Xiao, K. Rasul, and R. Vollgraf, ``Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms,'' 2017. \url{https://arxiv.org/abs/1708.07747}.
+\bibitem{kay2017kinetics} W. Kay et al., ``The Kinetics Human Action Video Dataset,'' 2017. \url{https://arxiv.org/abs/1705.06950}.
+\bibitem{vanhorn2018inaturalist} G. Van Horn et al., ``The iNaturalist Species Classification and Detection Dataset,'' CVPR, 2018. \url{https://arxiv.org/abs/1707.06642}.
+\bibitem{zhou2017places} B. Zhou et al., ``Places: A 10 Million Image Database for Scene Recognition,'' TPAMI, 2017. \url{https://arxiv.org/abs/1610.02055}.
+\bibitem{sharma2018conceptual} P. Sharma et al., ``Conceptual Captions: A Cleaned, Hypernymed, Image Alt-text Dataset for Automatic Image Captioning,'' ACL, 2018. \url{https://aclanthology.org/P18-1238/}.
+\bibitem{kuznetsova2020openimages} A. Kuznetsova et al., ``The Open Images Dataset V4,'' IJCV, 2020. \url{https://arxiv.org/abs/1811.00982}.
+\bibitem{hudson2019gqa} D. A. Hudson and C. D. Manning, ``GQA: A New Dataset for Real-World Visual Reasoning and Compositional Question Answering,'' CVPR, 2019. \url{https://arxiv.org/abs/1902.09506}.
+\bibitem{bergmann2019mvtec} P. Bergmann et al., ``MVTec AD---A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection,'' CVPR, 2019. \url{https://arxiv.org/abs/1904.09665}.
+\bibitem{gupta2019lvis} A. Gupta, P. Dollar, and R. Girshick, ``LVIS: A Dataset for Large Vocabulary Instance Segmentation,'' CVPR, 2019. \url{https://arxiv.org/abs/1908.03195}.
+\bibitem{mathew2020docvqa} M. Mathew, D. Karatzas, and C. V. Jawahar, ``DocVQA: A Dataset for VQA on Document Images,'' WACV, 2021. \url{https://arxiv.org/abs/2007.00398}.
+\bibitem{dolhansky2020dfdc} B. Dolhansky et al., ``The DeepFake Detection Challenge (DFDC) Dataset,'' 2020. \url{https://arxiv.org/abs/2006.07397}.
+\bibitem{sidorov2020textcaps} O. Sidorov et al., ``TextCaps: a Dataset for Image Captioning with Reading Comprehension,'' ECCV, 2020. \url{https://arxiv.org/abs/2003.12462}.
+\bibitem{schuhmann2021laion400m} C. Schuhmann et al., ``LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs,'' 2021. \url{https://arxiv.org/abs/2111.02114}.
+\bibitem{karkkainen2021fairface} K. Karkkainen and J. Joo, ``FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age,'' WACV, 2021. \url{https://arxiv.org/abs/1908.04913}.
+\bibitem{zhang2021hdtf} Z. Zhang et al., ``Flow-guided One-shot Talking Face Generation with a High-Definition Talking Face Dataset,'' CVPR, 2021. \url{https://github.com/MRzzm/HDTF}.
+\bibitem{schuhmann2022laion5b} C. Schuhmann et al., ``LAION-5B: An Open Large-Scale Dataset for Training Next Generation Image-Text Models,'' NeurIPS Datasets and Benchmarks, 2022. \url{https://arxiv.org/abs/2210.08402}.
+\bibitem{wang2022diffusiondb} Z. J. Wang et al., ``DiffusionDB: A Large-scale Prompt Gallery Dataset for Text-to-Image Generative Models,'' ACL, 2023. \url{https://arxiv.org/abs/2210.14896}.
+\bibitem{he2022tad66k} S. He et al., ``Theme-Aware Visual Attribute Reasoning for Image Aesthetics Assessment,'' ACM MM, 2022. \url{https://github.com/woshidandan/TANet}.
+\bibitem{zhang2023magicbrush} K. Zhang et al., ``MagicBrush: A Manually Annotated Dataset for Instruction-Guided Image Editing,'' NeurIPS Datasets and Benchmarks, 2023. \url{https://arxiv.org/abs/2306.10012}.
+\bibitem{kirstain2023pickapic} Y. Kirstain et al., ``Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation,'' NeurIPS, 2023. \url{https://arxiv.org/abs/2305.01569}.
+\bibitem{wang2023internvid} Y. Wang et al., ``InternVid: A Large-scale Video-Text Dataset for Multimodal Understanding and Generation,'' 2023. \url{https://arxiv.org/abs/2307.06942}.
+\bibitem{nan2024openvid} K. Nan et al., ``OpenVid-1M: A Large-Scale High-Quality Dataset for Text-to-video Generation,'' 2024. \url{https://arxiv.org/abs/2407.02371}.
+\bibitem{shao2024visualcot} H. Shao et al., ``Visual CoT: Advancing Multi-Modal Language Models with a Comprehensive Dataset and Benchmark for Chain-of-Thought Reasoning,'' 2024. \url{https://arxiv.org/abs/2403.16999}.
+\bibitem{hui2024hqedit} M. Hui et al., ``HQ-Edit: A High-Quality Dataset for Instruction-based Image Editing,'' 2024. \url{https://arxiv.org/abs/2404.09990}.
+\bibitem{chen2025blip3o} J. Chen et al., ``BLIP3-o: A Family of Fully Open Unified Multimodal Models---Architecture, Training and Dataset,'' 2025. \url{https://arxiv.org/abs/2505.09568}.
+\bibitem{ye2025imgedit} Y. Ye et al., ``ImgEdit: A Unified Image Editing Dataset and Benchmark,'' 2025. \url{https://arxiv.org/abs/2505.20275}.
+\bibitem{chen2025sharegpt} J. Chen et al., ``ShareGPT-4o-Image: Aligning Multimodal Models with GPT-4o-Level Image Generation,'' 2025. \url{https://arxiv.org/abs/2506.18095}.
+\bibitem{kinney2023semanticscholar} R. Kinney et al., ``The Semantic Scholar Open Data Platform,'' 2023. \url{https://arxiv.org/abs/2301.10140}.
+\bibitem{yue2024mmmupro} X. Yue et al., ``MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark,'' 2024. \url{https://arxiv.org/abs/2409.02813}.
+\bibitem{chiang2024arena} W.-L. Chiang et al., ``Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference,'' ICML, 2024. \url{https://arxiv.org/abs/2403.04132}.
+\bibitem{lmarenaVision} LM Arena, ``Vision Arena Leaderboard.'' \url{https://lmarena.ai/leaderboard/vision}. Accessed June 10, 2026.
+\bibitem{nvidiaB300} NVIDIA, ``NVIDIA B300 Tensor Core GPU.'' \url{https://www.nvidia.com/en-us/data-center/b300/}. Accessed June 10, 2026.
+\end{thebibliography}
 
 \clearpage
 \appendix
@@ -969,7 +1012,7 @@ metadata:
     \caption{Example of ImageNet hierarchical organization, showing a path from \textit{mammal} to \textit{husky}.}
 \end{figure*}
 
-\textbf{ImageNet} is a large-scale database of human-annotated photographs organized into a hierarchy of visual concepts. Each category, or “synset,” groups together images of the same concept, such as "husky", and is linked to related categories within a larger hierarchy, such as "animal".  
+\textbf{ImageNet}~\cite{deng2009imagenet} is a large-scale database of human-annotated photographs organized into a hierarchy of visual concepts. Each category, or “synset,” groups together images of the same concept, such as "husky", and is linked to related categories within a larger hierarchy, such as "animal".  
 At the time of publication, ImageNet contained 12 major groups, covering 5,247 categories and about 3.2 million images.\\
 
 
@@ -994,10 +1037,10 @@ At the time of publication, ImageNet contained 12 major groups, covering 5,247 c
     \includegraphics[width=0.5\textwidth]{UCF101.JPG}
     \caption{Sample frames from UCF101 showing diverse action classes such as \textit{Apply Eye Makeup}, \textit{Playing Dhol}, and \textit{Baby Crawling}.}
     \vspace{-10pt}
-    \label{fig:mscoco_ucf101}
+    \label{fig:ucf101}
 \end{figure}
 
-\textbf{UCF101 (2012).} The University of Central Florida (UCF) compiled a total of 13,320 video clips amounting to about 27 hours of footage. Each clip was then labeled as one of 101 action classes, 51 of which preserved audio. The videos are stored at a resolution of 320×240 pixels and 25 frames per second. On average, clips are about 7 seconds long.\\ 
+\textbf{UCF101 (2012)}~\cite{soomro2012ucf101}. The University of Central Florida (UCF) compiled a total of 13,320 video clips amounting to about 27 hours of footage. Each clip was then labeled as one of 101 action classes, 51 of which preserved audio. The videos are stored at a resolution of 320×240 pixels and 25 frames per second. On average, clips are about 7 seconds long.\\ 
 
 
 
@@ -1023,11 +1066,11 @@ At the time of publication, ImageNet contained 12 major groups, covering 5,247 c
     \includegraphics[width=0.5\textwidth]{MSCOCO.JPG}
     \caption{Examples from the MS COCO dataset showing object segmentations for categories such as \textit{cow}, \textit{train}, and \textit{car}}
     \vspace{-10pt}
-    \label{fig:mscoco_ucf101}
+    \label{fig:mscoco}
 \end{figure}
 
 
-\textbf{Microsoft COCO (2014).} The Microsoft COCO, abbreviated MS COCO, dataset contains photographs of everyday environments filled with multiple objects in their natural context. Each object instance is carefully annotated with detailed segmentations, allowing precise localization within the image as shown in Figure ~\ref{fig:mscoco_ucf101}.
+\textbf{Microsoft COCO (2014)}~\cite{lin2014coco}. The Microsoft COCO, abbreviated MS COCO, dataset contains photographs of everyday environments filled with multiple objects in their natural context. Each object instance is carefully annotated with detailed segmentations, allowing precise localization within the image as shown in Figure~\ref{fig:mscoco}.
 
 MS COCO includes 91 common object categories that are easily recognizable, with over 2.5 million labeled instances across 328,000 images.\\
 
@@ -1082,7 +1125,7 @@ MS COCO includes 91 common object categories that are easily recognizable, with 
     \vspace{-10pt}
 \end{figure}
 
-\textbf{Flickr30k Entities} extends the Flickr30k dataset by providing detailed links between image regions and textual phrases. With 31{,}783 images and 158{,}915 captions, the dataset connects mentions that refer to the same entity across captions describing the same image, forming about 244{,}000 coreference chains, and associates these with roughly 276{,}000 manually drawn bounding boxes. An example of the final annotated data is shown in Figure~\ref{fig:flickr30k}, where color-coded phrases correspond to specific image regions.  These annotations enable the new task of \emph{phrase localization}: given an image and a caption, predict the region that corresponds to a particular entity mention.  
+\textbf{Flickr30k Entities}~\cite{plummer2015flickr30k} extends the Flickr30k dataset by providing detailed links between image regions and textual phrases. With 31{,}783 images and 158{,}915 captions, the dataset connects mentions that refer to the same entity across captions describing the same image, forming about 244{,}000 coreference chains, and associates these with roughly 276{,}000 manually drawn bounding boxes. An example of the final annotated data is shown in Figure~\ref{fig:flickr30k}, where color-coded phrases correspond to specific image regions.  These annotations enable the new task of \emph{phrase localization}: given an image and a caption, predict the region that corresponds to a particular entity mention.  
 
 
 
@@ -1139,7 +1182,7 @@ MS COCO includes 91 common object categories that are easily recognizable, with 
     \label{fig:lsun}
 \end{figure*}
 
-\textbf{LSUN} is a very large dataset consisting of about 69 million images belonging to 30 categories. Only a small portion of the images were labeled by humans, the rest being labeled by a trained classifier (e.g., for the \emph{train} category, less than $1/60$ of images were labeled by people), achieving ~90\% precision. Training popular convolutional networks on this larger, if noisier, data leads to noticeable gains; for example, fine-tuning with LSUN reduced a reported classification error from 28.6\% to 22.2\% on a related evaluation.\\
+\textbf{LSUN}~\cite{yu2015lsun} is a very large dataset consisting of about 69 million images belonging to 30 categories. Only a small portion of the images were labeled by humans, the rest being labeled by a trained classifier (e.g., for the \emph{train} category, less than $1/60$ of images were labeled by people), achieving ~90\% precision. Training popular convolutional networks on this larger, if noisier, data leads to noticeable gains; for example, fine-tuning with LSUN reduced a reported classification error from 28.6\% to 22.2\% on a related evaluation.\\
 
 
 
@@ -1176,7 +1219,7 @@ MS COCO includes 91 common object categories that are easily recognizable, with 
     \label{fig:cityscapes}
 \end{figure*}
 
-\textbf{Citiscapes} contains stereo video sequences recorded across 50 different cities, primarily in Germany. From these recordings, 5,000 images received high-quality fine annotations, while an additional 20,000 were annotated coarsely (less boundary precision) with a ~98\% accuracy after excluding ambiguous (void) regions. Figure~\ref{fig:cityscapes} illustrates examples of both fine and coarse annotations used for training, validation, and testing. The dataset is split into 2,975 training, 500 validation, and 1,525 test images, ensuring balance across geography, population size, and season. In total, 30 semantic classes (19 for evaluation) are grouped into eight high-level categories: flat, construction, nature, vehicle, sky, object, human, and void.  
+\textbf{Cityscapes}~\cite{cordts2016cityscapes} contains stereo video sequences recorded across 50 different cities, primarily in Germany. From these recordings, 5,000 images received high-quality fine annotations, while an additional 20,000 were annotated coarsely (less boundary precision) with a ~98\% accuracy after excluding ambiguous (void) regions. Figure~\ref{fig:cityscapes} illustrates examples of both fine and coarse annotations used for training, validation, and testing. The dataset is split into 2,975 training, 500 validation, and 1,525 test images, ensuring balance across geography, population size, and season. In total, 30 semantic classes (19 for evaluation) are grouped into eight high-level categories: flat, construction, nature, vehicle, sky, object, human, and void.  
 
 
 
@@ -1258,7 +1301,7 @@ MS COCO includes 91 common object categories that are easily recognizable, with 
 
 
 \noindent
-\textbf{VQA v2.0.} For each image in the Visual Question Answering (VQA) dataset, annotators tried to find a complementary image where the question still makes sense, but has a different answer. These image pairs with question-answers result in VQA v2.0, as shown in Figure ~\ref{fig:vqa-v2}. In total, they collected approximately 195K complementary images for train, 93K complementary images for val, and 191K complementary images for test set.
+\textbf{VQA v2.0}~\cite{goyal2017vqa}. For each image in the Visual Question Answering (VQA) dataset, annotators tried to find a complementary image where the question still makes sense, but has a different answer. These image pairs with question-answers result in VQA v2.0, as shown in Figure ~\ref{fig:vqa-v2}. In total, they collected approximately 195K complementary images for train, 93K complementary images for val, and 191K complementary images for test set.
 
 Benchmarking shows that state-of-the-art models trained on the original data perform significantly worse on the balanced set; clear evidence that they had exploited language regularities. Training on the balanced data improves results but the task remains challenging. 
 
@@ -1373,7 +1416,7 @@ The \textbf{Kinetics Human Action Video Dataset} consists of 400 action classes 
     \vspace{-10pt}
 \end{figure}
 
-\textbf{iNaturalist (2017)}, at time of publication, contained 859,000 images (579,184 train, 95,986 val, and 182,707 test images) spanning 5,089 plant and animal species. Labels reflect the consensus of informed contributors on the iNaturalist platform, and annotators drew boxes around the plant/animals that appear on the image. On classes with the most training examples, the best classifiers at the time could only reach 67\% accuracy.\\
+\textbf{iNaturalist (2017)}~\cite{vanhorn2018inaturalist}, at time of publication, contained 859,000 images (579,184 train, 95,986 val, and 182,707 test images) spanning 5,089 plant and animal species. Labels reflect the consensus of informed contributors on the iNaturalist platform, and annotators drew boxes around the plant/animals that appear on the image. On classes with the most training examples, the best classifiers at the time could only reach 67\% accuracy.\\
 
 
 
@@ -1632,7 +1675,7 @@ Unlike previous benchmarks, which exhaustively annotate a fixed set of categorie
 \end{figure}
 
 
-\textbf{DocVQA} is a large-scale dataset for \emph{visual question answering on document images}. It targets purpose-driven understanding of real documents (letters, forms, tables, lists, figures, and handwritten notes) to train systems that must both \emph{read} text and \emph{reason} over layout and structure. The dataset contains \textbf{12{,}767} pages drawn from \textbf{6{,}071} industry documents (spanning early 1900s–2018 and multiple domains) and \textbf{50{,}000} natural-language questions with one or more extractive answers.
+\textbf{DocVQA}~\cite{mathew2020docvqa} is a large-scale dataset for \emph{visual question answering on document images}. It targets purpose-driven understanding of real documents (letters, forms, tables, lists, figures, and handwritten notes) to train systems that must both \emph{read} text and \emph{reason} over layout and structure. The dataset contains \textbf{12{,}767} pages drawn from \textbf{6{,}071} industry documents (spanning early 1900s–2018 and multiple domains) and \textbf{50{,}000} natural-language questions with one or more extractive answers.
 
 
 Questions are answerable by copying spans \emph{verbatim} from the page (an extractive QA setting). Success therefore couples robust OCR with structural understanding: models must leverage cues like headings, seals, key–value pairs, table cells, and relative position (e.g. “at the top left”, “in the seal”, “ZIP code”). Data are split \textbf{80/10/10} into train/val/test: 39,463/5,349/5,188 questions over 10,194/1,286/1,287 images. Human accuracy is reported at \textbf{94.36\%}, leaving a substantial gap for current VQA/MRC baselines that struggle especially on structure-heavy queries.
@@ -1664,7 +1707,7 @@ Questions are answerable by copying spans \emph{verbatim} from the page (an extr
     \label{fig:dfdc}
 \end{figure*}
 
-The \textbf{DeepFake Detection Challenge (DFDC)} dataset is a large, consented face-swap corpus designed for training and benchmarking Deepfake detectors. It comprises 100k+ 10-second clips sourced from 3,426 paid actors (average 14.4 videos/subject; mostly 1080p), totaling 38.4 days of footage and 25TB of raw data. Relative to previous datasets, DFDC is orders-of-magnitude larger, higher quality, and ethically collected with explicit consent.
+The \textbf{DeepFake Detection Challenge (DFDC)} dataset~\cite{dolhansky2020dfdc} is a large, consented face-swap corpus designed for training and benchmarking Deepfake detectors. It comprises 100k+ 10-second clips sourced from 3,426 paid actors (average 14.4 videos/subject; mostly 1080p), totaling 38.4 days of footage and 25TB of raw data. Relative to previous datasets, DFDC is orders-of-magnitude larger, higher quality, and ethically collected with explicit consent.
 
 Multiple techniques (Deepfake Autoencoder, morphable-mask, Neural Talking Heads, and so on) were used to make the fake videos so that detection models wouldn’t just overfit to one kind of fake, but would learn to generalize to many.\\
 
@@ -1741,7 +1784,7 @@ The \textbf{TextCaps} dataset~\cite{sidorov2020textcaps} introduces the task of 
     \label{fig:laion400m}
 \end{figure*}
 
-The \textbf{LAION-400M} dataset contains an astounding 400 million image–text pairs, filtered using \textbf{CLIP} to ensure semantic alignment between images and captions. It was created as a community-driven effort to provide a large-scale, public alternative to proprietary datasets used to train models such as CLIP and DALL·E. Each entry includes an image URL, text caption, CLIP embeddings for both modalities, metadata (license type, image size, and NSFW tag), and precomputed kNN indices for efficient similarity search. 
+The \textbf{LAION-400M} dataset~\cite{schuhmann2021laion400m} contains an astounding 400 million image–text pairs, filtered using \textbf{CLIP} to ensure semantic alignment between images and captions. It was created as a community-driven effort to provide a large-scale, public alternative to proprietary datasets used to train models such as CLIP and DALL·E. Each entry includes an image URL, text caption, CLIP embeddings for both modalities, metadata (license type, image size, and NSFW tag), and precomputed kNN indices for efficient similarity search. 
 
 
 
@@ -1769,7 +1812,7 @@ The \textbf{LAION-400M} dataset contains an astounding 400 million image–text 
     \label{fig:fairface_grid}
 \end{figure*}
 
-\textbf{FairFace} introduces 108,501 in-the-wild face images with labels for race, gender, and age, constructed to be balanced over seven race groups: White, Black, Indian, East Asian, Southeast Asian, Middle Eastern, and Latino, which were annotated manually. 
+\textbf{FairFace}~\cite{karkkainen2021fairface} introduces 108,501 in-the-wild face images with labels for race, gender, and age, constructed to be balanced over seven race groups: White, Black, Indian, East Asian, Southeast Asian, Middle Eastern, and Latino, which were annotated manually. 
 
 The paper highlights that many widely used face datasets (e.g., celebrity or politician collections) are skewed toward lighter-skin/White faces, which leads to uneven accuracy across demographics. Models trained on FairFace yield higher and more consistent accuracy across race and gender on these novel sets, even when FairFace’s training subset is down-sampled. 
 
@@ -1804,7 +1847,7 @@ The paper highlights that many widely used face datasets (e.g., celebrity or pol
 \end{figure}
 
 \noindent
-\textbf{HDTF}'s authors note that prior systems top out around 256$\times$256, so that they introduce High-Definition Talking Face (HDTF), a high-definition, in-the-wild dataset ($\sim$16 hours of 720p--1080p video, 300+ subjects, 10k+ sentences) curated from recent YouTube content so the crops remain sharp after 512$\times$512 resizing. They synthesize high-definition, lip-synchronous videos (demonstrations include portraits and paintings) and report both objective and user-study gains over landmark-based baselines, especially at $512\times 512$.
+\textbf{HDTF}~\cite{zhang2021hdtf} authors note that prior systems top out around 256$\times$256, so that they introduce High-Definition Talking Face (HDTF), a high-definition, in-the-wild dataset ($\sim$16 hours of 720p--1080p video, 300+ subjects, 10k+ sentences) curated from recent YouTube content so the crops remain sharp after 512$\times$512 resizing. They synthesize high-definition, lip-synchronous videos (demonstrations include portraits and paintings) and report both objective and user-study gains over landmark-based baselines, especially at $512\times 512$.
 
 
 
@@ -1843,7 +1886,7 @@ The paper highlights that many widely used face datasets (e.g., celebrity or pol
     \caption{Nearest-neighbor examples from LAION-5B using CLIP embeddings. For each text query (Q), the corresponding top retrieved image and its caption (C) are shown.}
 \end{figure*}
 
-The LAION-5B dataset is the largest openly available image–text dataset ever released, designed to democratize research on large-scale multimodal models such as \textbf{CLIP}, \textbf{GLIDE}, and \textbf{Stable Diffusion}. It contains 5.85 billion CLIP-filtered image–text pairs collected from Common Crawl, including 2.32 billion English pairs, 2.26 billion multilingual pairs covering over a hundred languages, and 1.27 billion language-agnostic samples, which often describe products or places. Each entry is accompanied by metadata such as the image URL, caption text, image dimensions, cosine similarity between the image and text embeddings, and safety-related scores like watermark and NSFW probabilities.
+The LAION-5B dataset~\cite{schuhmann2022laion5b} is the largest openly available image–text dataset ever released, designed to democratize research on large-scale multimodal models such as \textbf{CLIP}, \textbf{GLIDE}, and \textbf{Stable Diffusion}. It contains 5.85 billion CLIP-filtered image–text pairs collected from Common Crawl, including 2.32 billion English pairs, 2.26 billion multilingual pairs covering over a hundred languages, and 1.27 billion language-agnostic samples, which often describe products or places. Each entry is accompanied by metadata such as the image URL, caption text, image dimensions, cosine similarity between the image and text embeddings, and safety-related scores like watermark and NSFW probabilities.
 
 The accompanying web interface allows interactive dataset exploration, nearest-neighbor search via CLIP embeddings, and flexible subset generation. The dataset has been validated through extensive experiments. Models trained on \textbf{LAION-400M} reproduce the zero-shot classification performance of OpenAI’s CLIP on ImageNet and other benchmarks, confirming that the filtering and scale of LAION-5B provide data of comparable quality. Subsets such as LAION-Aesthetics and LAION-High-Resolution have also been derived to train models like Stable Diffusion, which achieve state-of-the-art results in text-to-image generation. 
 
@@ -1878,7 +1921,7 @@ The accompanying web interface allows interactive dataset exploration, nearest-n
 \end{figure}
 
 \noindent
-\textbf{DiffusionDB} is the first large-scale, community-generated prompt dataset for text-to-image diffusion models. It contains over 14 million images, 1.8 million unique text prompts, and detailed \textbf{Stable Diffusion hyperparameters} including seed, step count, CFG scale, sampler type, image size, and timestamp. The dataset was collected from the official Stable Diffusion public Discord server, where users shared their generation results. To ensure safe and ethical use, the authors applied state-of-the-art NSFW detection models on both images and prompts, producing continuous safety scores that allow flexible filtering. Prompts were also analyzed linguistically and semantically: most are short (6–12 tokens) and in English, but the dataset spans over 30 languages.\\
+\textbf{DiffusionDB}~\cite{wang2022diffusiondb} is the first large-scale, community-generated prompt dataset for text-to-image diffusion models. It contains over 14 million images, 1.8 million unique text prompts, and detailed \textbf{Stable Diffusion hyperparameters} including seed, step count, CFG scale, sampler type, image size, and timestamp. The dataset was collected from the official Stable Diffusion public Discord server, where users shared their generation results. To ensure safe and ethical use, the authors applied state-of-the-art NSFW detection models on both images and prompts, producing continuous safety scores that allow flexible filtering. Prompts were also analyzed linguistically and semantically: most are short (6–12 tokens) and in English, but the dataset spans over 30 languages.\\
 
 
 
@@ -1933,10 +1976,10 @@ The accompanying web interface allows interactive dataset exploration, nearest-n
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.45\textwidth]{TAD66K.JPG}
-  \caption{Examples from the \textbf{TAD66K} dataset. Each pair shows images from the same theme with their average aesthetic scores (in red) and predicted scores in parentheses. Even when scores are similar, different themes correspond to distinct aesthetic criteria.}
+  \caption{Examples from the \textbf{TAD66K} dataset~\cite{he2022tad66k}. Each pair shows images from the same theme with their average aesthetic scores (in red) and predicted scores in parentheses. Even when scores are similar, different themes correspond to distinct aesthetic criteria.}
 \end{figure}
 
-The \textbf{TAD66K} dataset (Theme and Aesthetics Dataset) was created to address a key issue in image aesthetics assessment (IAA): different image themes follow distinct evaluation criteria, yet existing datasets and models generally ignore this fact. TAD66K contains approximately 66,327 carefully curated images covering 47 popular themes, organized into seven super-themes (plants, animals, artifacts, colors, humans, landscapes, and others). Each image was selected manually to ensure thematic clarity and diversity. Every image is annotated with an aesthetic score from 1 to 10, and unlike previous datasets that measure aesthetics, TAD66K provides theme-specific evaluation criteria. For instance, the aesthetic standards applied to images of trees differ from those for rivers or people. 
+The \textbf{TAD66K} dataset~\cite{he2022tad66k} (Theme and Aesthetics Dataset) was created to address a key issue in image aesthetics assessment (IAA): different image themes follow distinct evaluation criteria, yet existing datasets and models generally ignore this fact. TAD66K contains approximately 66,327 carefully curated images covering 47 popular themes, organized into seven super-themes (plants, animals, artifacts, colors, humans, landscapes, and others). Each image was selected manually to ensure thematic clarity and diversity. Every image is annotated with an aesthetic score from 1 to 10, and unlike previous datasets that measure aesthetics, TAD66K provides theme-specific evaluation criteria. For instance, the aesthetic standards applied to images of trees differ from those for rivers or people. 
 
 
 
@@ -1990,7 +2033,7 @@ The \textbf{TAD66K} dataset (Theme and Aesthetics Dataset) was created to addres
 \end{figure*}
 
 
-\textbf{MagicBrush} is a manually annotated dataset for instruction–guided real image editing. It contains 5,313 edit sessions and 10,388 turns (~10K triplets: source image from MS COCO, instruction, target image). Images are modified with DALL·E~2 until an instruction-consistent, photorealistic target was obtained. As shown in Figure~\ref{fig:magicbrush} some sessions are single-turn, others are multi-turn. 
+\textbf{MagicBrush}~\cite{zhang2023magicbrush} is a manually annotated dataset for instruction–guided real image editing. It contains 5,313 edit sessions and 10,388 turns (~10K triplets: source image from MS COCO, instruction, target image). Images are modified with DALL·E~2 until an instruction-consistent, photorealistic target was obtained. As shown in Figure~\ref{fig:magicbrush} some sessions are single-turn, others are multi-turn. 
 
 
 
@@ -2037,9 +2080,10 @@ The \textbf{TAD66K} dataset (Theme and Aesthetics Dataset) was created to addres
     \centering
     \includegraphics[width=0.35\textwidth]{PickAPic2.jpg}
     \caption{\textbf{Pick-a-Pic} web-app outputs. For each prompt the non-preferred image (left) is darkened and the user-preferred image (right) is highlighted.}
+    \label{fig:pickapic2}
 \end{figure}
 
-\textbf{Pick-a-Pic} is a dataset of human preferences for text-to-image generation, collected through a public web application in which users write prompts, generate images with modern diffusion models, and select which image they prefer (or declare a tie). Each datapoint contains a prompt, two model outputs, and a preference label. The initial release contains over $\sim$ 500K pairwise judgments drawn from $\sim$ 35K prompts (and continues to grow), with images produced by Stable Diffusion~2.1, Dreamlike Photoreal~2.0, and SDXL variants under multiple classifier-free guidance (CFG) scales. 
+\textbf{Pick-a-Pic}~\cite{kirstain2023pickapic} is a dataset of human preferences for text-to-image generation, collected through a public web application in which users write prompts, generate images with modern diffusion models, and select which image they prefer (or declare a tie). Each datapoint contains a prompt, two model outputs, and a preference label. The initial release contains over $\sim$ 500K pairwise judgments drawn from $\sim$ 35K prompts (and continues to grow), with images produced by Stable Diffusion~2.1, Dreamlike Photoreal~2.0, and SDXL variants under multiple classifier-free guidance (CFG) scales. 
 
 
 
@@ -2064,7 +2108,7 @@ The \textbf{TAD66K} dataset (Theme and Aesthetics Dataset) was created to addres
     \caption{Examples from \textbf{InternVid}. For each video clip (three frames shown), the dataset provides LLM-generated captions that emphasize nouns (blue) and verbs (green). Compared with raw ASR transcripts (grey), the captions are more visually grounded and descriptive.}
 \end{figure*}
 
-\textbf{InternVid} comprises \textasciitilde7.1M public YouTube videos spanning \textasciitilde760K hours and yields \textasciitilde234M trimmed clips (median \textasciitilde10\,s) paired with \textasciitilde4.1B caption words. Coverage is intentionally broad: 16 topical domains, \textasciitilde6,100 action phrases used as queries, and geographically diverse sources; \textasciitilde85\% of videos are 720p (remainder 360–512p). 
+\textbf{InternVid}~\cite{wang2023internvid} comprises \textasciitilde7.1M public YouTube videos spanning \textasciitilde760K hours and yields \textasciitilde234M trimmed clips (median \textasciitilde10\,s) paired with \textasciitilde4.1B caption words. Coverage is intentionally broad: 16 topical domains, \textasciitilde6,100 action phrases used as queries, and geographically diverse sources; \textasciitilde85\% of videos are 720p (remainder 360–512p). 
 
 
 
@@ -2104,7 +2148,7 @@ The \textbf{TAD66K} dataset (Theme and Aesthetics Dataset) was created to addres
     \label{fig:openvid1m}
 \end{figure*}
 
-\textbf{OpenVid-1M} is a large-scale open-scenario dataset containing over one million high-quality text–video pairs, each accompanied by very descriptive captions, as shown in Figure~\ref{fig:openvid1m}. Prior datasets such as WebVid-10M and Panda-70M prioritize size over fidelity and contain numerous low-resolution, watermarked, flickering, or blurry videos, such is the issue OpenVid-1M seeks to solve. 
+\textbf{OpenVid-1M}~\cite{nan2024openvid} is a large-scale open-scenario dataset containing over one million high-quality text–video pairs, each accompanied by very descriptive captions, as shown in Figure~\ref{fig:openvid1m}. Prior datasets such as WebVid-10M and Panda-70M prioritize size over fidelity and contain numerous low-resolution, watermarked, flickering, or blurry videos, such is the issue OpenVid-1M seeks to solve. 
 
 The dataset was built by processing large collections such as Panda-50M, ChronoMagic, CelebV-HQ, and Open-Sora-Plan. Videos were evaluated according to multiple criteria, such as using the LAION Aesthetics Predictor to retain only the top 20\% of visually appealing clips. The rather descriptive captions were then generated or rewritten via the multimodal model LLaVA-v1.6-34B.
 
@@ -2148,7 +2192,7 @@ Experimental results confirm that OpenVid-1M and MVDiT significantly outperform 
   \caption{\textbf{Visual CoT} examples across five domains. Each question–answer pair is accompanied by an intermediate bounding box (red) that highlights the key region used in reasoning.}
 \end{figure*}
 
-\textbf{Visual CoT} contains 438K question–answer pairs, each annotated with a grounding bounding box that marks the critical image region required to answer the question; approximately 98K pairs additionally include step-by-step visual–textual reasoning. Data span five domains: text/doc understanding, fine-grained recognition, charts, general VQA, and relation reasoning, and are built from twelve source corpora (e.g., TextVQA, DocVQA, TextCaps, Flickr30k,GQA, Open Images). \\
+\textbf{Visual CoT}~\cite{shao2024visualcot} contains 438K question–answer pairs, each annotated with a grounding bounding box that marks the critical image region required to answer the question; approximately 98K pairs additionally include step-by-step visual–textual reasoning. Data span five domains: text/doc understanding, fine-grained recognition, charts, general VQA, and relation reasoning, and are built from twelve source corpora (e.g., TextVQA, DocVQA, TextCaps, Flickr30k,GQA, Open Images). \\
 
 
 
@@ -2185,7 +2229,7 @@ Experimental results confirm that OpenVid-1M and MVDiT significantly outperform 
     \label{fig:hqedit}
 \end{figure*}
 
-\textbf{HQ-Edit} comprises approximately 200,000 instruction-based image edits. Unlike earlier datasets that rely on people to give feedback, HQ-Edit collects data automatically using advanced models: GPT-4V and DALL-E 3. This method creates clearer, higher-quality images and more accurate text instructions, making the link between the text and image much stronger.
+\textbf{HQ-Edit}~\cite{hui2024hqedit} comprises approximately 200,000 instruction-based image edits. Unlike earlier datasets that rely on people to give feedback, HQ-Edit collects data automatically using advanced models: GPT-4V and DALL-E 3. This method creates clearer, higher-quality images and more accurate text instructions, making the link between the text and image much stronger.
 
 In addition to automatic evaluation, a human study on 1,651 image pairs generated by DALL-E~3 was conducted to validate the proposed metrics. Participants rated how well the output images reflected the corresponding edit instructions on a five-point scale, ranging from “totally unrelated” to “perfectly aligned.” Pearson correlation analysis revealed that HQ-Edit’s Alignment metric strongly correlates with human judgments and significantly outperforms the commonly used CLIP Directional Similarity score, which often fails to capture nuanced, instruction-level edits. Furthermore, fine-tuning InstructPix2Pix on HQ-Edit results in a substantial performance boost, achieving a $12.3$-point increase in Alignment and a $5.64$-point improvement in Coherence over the vanilla model.\\
 
@@ -2201,7 +2245,7 @@ In addition to automatic evaluation, a human study on 1,651 image pairs generate
 
 
 
-\textbf{BLIP3o-60k} is a 60,000-sample instruction-tuning dataset built by prompting GPT-4o with textual inputs covering various visual domains, including scenes, everyday objects, artistic styles, lighting conditions, gestures, and compositions. Each example in BLIP3o-60k consists of an instruction prompt, a corresponding image, and the image’s CLIP feature embedding. The prompts are designed to mimic real-world creative instructions, such as “a person jumping in the rain wearing a yellow coat” or “an ancient city at sunset in watercolor style”.\\
+\textbf{BLIP3o-60k}~\cite{chen2025blip3o} is a 60,000-sample instruction-tuning dataset built by prompting GPT-4o with textual inputs covering various visual domains, including scenes, everyday objects, artistic styles, lighting conditions, gestures, and compositions. Each example in BLIP3o-60k consists of an instruction prompt, a corresponding image, and the image’s CLIP feature embedding. The prompts are designed to mimic real-world creative instructions, such as “a person jumping in the rain wearing a yellow coat” or “an ancient city at sunset in watercolor style”.\\
 
 
 
@@ -2237,7 +2281,7 @@ In addition to automatic evaluation, a human study on 1,651 image pairs generate
   \caption{\textbf{ImgEdit} illustrates single–turn edits (add, remove, replace, alter, background/style change, motion change, object extraction, visual and hybrid edits) and multi–turn behaviors (content memory, content understanding, version backtracking).}
 \end{figure*}
 
-The \textbf{ImgEdit} dataset contains 1.2M carefully curated edit pairs at high resolution (shorter side $\ge\!1280$), including 1.1M single–turn samples spanning 10 representative operations (local: add, remove, replace, alter, motion change, object extraction; global: background/style; visual edit via reference; hybrid edits that compose multiple local ops) and 110K multi–turn samples covering content memory, content understanding, and version backtracking. 
+The \textbf{ImgEdit} dataset~\cite{ye2025imgedit} contains 1.2M carefully curated edit pairs at high resolution (shorter side $\ge\!1280$), including 1.1M single–turn samples spanning 10 representative operations (local: add, remove, replace, alter, motion change, object extraction; global: background/style; visual edit via reference; hybrid edits that compose multiple local ops) and 110K multi–turn samples covering content memory, content understanding, and version backtracking. 
 
 The original images come from a high–aesthetics subset of LAION (aesthetic score $>\!4.75$ and resolution filtering). These go through multiple steps to generate the edits, including: the creation of concise captions and candidate edit targets with \textbf{GPT-4o}, validation of regions to be edited by CLIPScore and area thresholds (e.g., background edits must occupy $>\!40\%$ of the image), and prompt-guided post-filtering, returning quality scores.\\
 
@@ -2272,8 +2316,9 @@ The original images come from a high–aesthetics subset of LAION (aesthetic sco
   \caption{\textbf{ShareGPT-4o-Image}. Examples from the two splits: \emph{45K} text-to-image (left) and \emph{46K} text\&image-to-image (right) synthesized by GPT-4o-Image.}
 \end{figure*}
 
-\textbf{ShareGPT-4o-Image} contains 91K synthetic samples comprising 45K text-to-image pairs and 46K instruction-guided text\&image-to-image triplets, where every target image is produced by GPT-4o-Image. The two distinct sets go through specific pipelines to arrive at the result.
+\textbf{ShareGPT-4o-Image}~\cite{chen2025sharegpt} contains 91K synthetic samples comprising 45K text-to-image pairs and 46K instruction-guided text\&image-to-image triplets, where every target image is produced by GPT-4o-Image. The two distinct sets go through specific pipelines to arrive at the result.
 
 \end{multicols}
 
 \end{document}
+
