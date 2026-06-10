@@ -785,10 +785,13 @@ This benchmark takes one image and asks the model to assess its overall aestheti
 \subsection{Experimental Infrastructure and Deployment}
 
 \subsubsection{Execution Plan for Open-Weight Models}
-The open-weight models will be divided into two execution groups. Models whose
-highest-precision weights fit within a single NVIDIA B300 GPU (the GPU in RunPod with the highest available VRAM) will be evaluated locally on RunPod. Models whose highest-precision weights do not fit within a
-single B300 will be evaluated using hosted inference whenever a suitable hosted
-endpoint is available.
+The open-weight evaluation will use a single NVIDIA B300 GPU on RunPod. A model
+will be included only if its highest-precision checkpoint and the additional
+memory required for inference fit on that GPU. Models that require more than one
+B300 will not be evaluated: hosted inference, multi-GPU execution, and
+multi-node deployment are outside the scope of this study. The oversized models
+remain listed in Table~\ref{tab:open-weight-vram-plan} to document why they were
+excluded from the experimental results.
 
 A single NVIDIA B300 GPU provides 288 GB of HBM3e memory~\cite{nvidiaB300}. The VRAM estimates in
 Table~\ref{tab:open-weight-vram-plan} refer only to the memory required to store
@@ -889,62 +892,59 @@ RunPod, single B300, borderline \\
 \texttt{mimo-v2.5} &
 \(\sim 310\mathrm{B}\), native FP8 &
 \(\sim 310\) GB &
-Hosted inference or multi-GPU RunPod \\
+Excluded: exceeds one B300 \\
 
 \texttt{qwen3-vl-235b-a22b} &
 \(\sim 235\mathrm{B}\), 16-bit &
 \(\sim 470\) GB &
-Hosted inference \\
+Excluded: exceeds one B300 \\
 
 \texttt{kimi-k2.5-thinking} &
 \(\sim 1\mathrm{T}\), native mixed INT4 &
 \(\sim 550\)--\(600\) GB &
-Hosted inference \\
+Excluded: exceeds one B300 \\
 
 \texttt{kimi-k2.6} &
 \(\sim 1\mathrm{T}\), native mixed INT4/NVFP4 &
 \(\sim 600\)--\(714\) GB &
-Hosted inference \\
+Excluded: exceeds one B300 \\
 
 \texttt{dots.vlm1} &
 \(\sim 672\mathrm{B}\), FP8 deployment &
 \(\sim 672\) GB &
-Hosted inference if available; otherwise exclude or use multi-node deployment \\
+Excluded: exceeds one B300 \\
 
 \texttt{qwen3.5-397b-a17b} &
 \(\sim 397\mathrm{B}\), 16-bit &
 \(\sim 794\) GB &
-Hosted inference \\
+Excluded: exceeds one B300 \\
 
 \texttt{mimo-v2.5-pro} &
 \(\sim 1.02\mathrm{T}\), native FP8 &
 \(\sim 1020\) GB &
-Hosted inference \\
+Excluded: exceeds one B300 \\
 
 \end{longtable}
 
-Under this plan, the benchmark keeps a common evaluation procedure for all
-models: the same datasets, prompt templates, image preprocessing, answer
-extraction code, scoring metrics, and logging format are used regardless of
-the inference backend. The difference lies only in the execution backend. Models
-that fit within a single B300 are evaluated locally on RunPod, while larger
-models are evaluated through hosted inference when available.
-
-This distinction is important methodologically. Accuracy scores may still be
-compared across the full set of models, provided that the backend, precision,
-quantization format, and model identifier are recorded for each run. However,
-latency, throughput, and cost should not be treated as directly comparable
-between the RunPod-local group and the hosted-inference group, since those
-measurements depend strongly on the serving infrastructure.
+Under this plan, every included open-weight model is evaluated with the same
+datasets, prompt templates, image preprocessing, answer extraction code,
+scoring metrics, logging format, and single-B300 RunPod environment. A raw
+weight estimate below 288 GB does not guarantee inclusion, because inference
+also requires memory for the KV cache, image tokens, temporary activations, and
+framework overhead. Therefore, a borderline model such as
+\texttt{mistral-medium-3.5} will be included only if the complete inference
+pipeline runs successfully on one B300 without reducing the checkpoint below
+its stated native precision. If it does not, it will be reported as excluded
+rather than moved to a hosted or multi-GPU backend.
 
 For this reason, each benchmark result should include at least the following
 metadata:
 \[
 \begin{array}{ll}
-\text{model identifier} & \text{exact checkpoint or provider model name}, \\
-\text{backend} & \text{RunPod, hosted API, or multi-GPU deployment}, \\
-\text{precision} & \text{BF16, FP8, INT4, provider-declared, or unknown}, \\
-\text{hardware} & \text{single B300, hosted endpoint, or cluster}, \\
+\text{model identifier} & \text{exact checkpoint name}, \\
+\text{backend} & \text{self-managed inference on RunPod}, \\
+\text{precision} & \text{BF16, FP8, INT4, or checkpoint-declared}, \\
+\text{hardware} & \text{single NVIDIA B300}, \\
 \text{date tested} & \text{date on which the result was obtained}.
 \end{array}
 \]

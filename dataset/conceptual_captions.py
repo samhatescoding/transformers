@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 from io import BytesIO
-from urllib.request import urlopen
+from typing import Any, Dict, List
+from urllib.request import Request, urlopen
 
 from PIL import Image
 
@@ -31,11 +32,30 @@ class ConceptualCaptions(HFMultipleChoiceSourceDataset):
         answer = self.get_answer_from_row(row)
         return [answer] if answer else []
 
+    def get_available_samples(self, n: int) -> List[Dict[str, Any]]:
+        samples: List[Dict[str, Any]] = []
+        for raw_row in self.ds:
+            row = self._standardize_row(raw_row)
+            try:
+                row["image"] = self.get_image_from_row(row)
+            except Exception:
+                continue
+            samples.append(row)
+            if len(samples) >= n:
+                break
+        return samples
+
     def get_image_from_row(self, row) -> Image.Image:
+        if isinstance(row.get("image"), Image.Image):
+            return row["image"].convert("RGB")
         if row.get("image") is not None:
             return super().get_image_from_row(row)
         image_url = str(row.get("image_url", "")).strip()
         if not image_url:
             raise ValueError("Conceptual Captions row is missing image content.")
-        with urlopen(image_url, timeout=30) as response:
+        request = Request(
+            image_url,
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        with urlopen(request, timeout=10) as response:
             return Image.open(BytesIO(response.read())).convert("RGB")

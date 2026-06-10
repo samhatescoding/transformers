@@ -85,12 +85,18 @@ def export_examples(
     benchmark: Any,
     count: int,
     label_sample_size: int,
+    skip_examples: int = 0,
 ) -> list[dict[str, Any]]:
-    rows, labels = benchmark.prepare(n=count, label_sample_size=max(count, label_sample_size))
-    if len(rows) < count:
+    requested_count = count + skip_examples
+    rows, labels = benchmark.prepare(
+        n=requested_count,
+        label_sample_size=max(requested_count, label_sample_size),
+    )
+    if len(rows) < requested_count:
         raise ValueError(
-            f"{benchmark.name} produced {len(rows)} examples; {count} were requested"
+            f"{benchmark.name} produced {len(rows)} examples; {requested_count} were requested"
         )
+    rows = rows[skip_examples:]
     records: list[dict[str, Any]] = []
     for row in rows:
         image = benchmark.get_image_for_row(row)
@@ -143,6 +149,7 @@ def build_records(
     validation_examples: int,
     label_sample_size: int,
     streaming: bool,
+    skip_examples: int = 0,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     if validation_split is None or validation_split == train_split:
         benchmark = benchmark_cls(split=train_split, streaming=streaming)
@@ -150,12 +157,14 @@ def build_records(
             benchmark=benchmark,
             count=train_examples + validation_examples,
             label_sample_size=label_sample_size,
+            skip_examples=skip_examples,
         )
         return combined[:train_examples], combined[train_examples:]
     train_records = export_examples(
         benchmark=benchmark_cls(split=train_split, streaming=streaming),
         count=train_examples,
         label_sample_size=label_sample_size,
+        skip_examples=skip_examples,
     )
     validation_records = export_examples(
         benchmark=benchmark_cls(split=validation_split, streaming=streaming),
@@ -180,6 +189,12 @@ def main() -> None:
         help="Optional validation source split. By default it is held out from --train-split.",
     )
     parser.add_argument("--label-sample-size", type=int, default=512)
+    parser.add_argument(
+        "--skip-examples",
+        type=int,
+        default=0,
+        help="Reserve this many examples at the start of the training split for evaluation.",
+    )
     parser.add_argument("--non-streaming", action="store_true")
     parser.add_argument("--output-dir", required=True, type=Path)
     args = parser.parse_args()
@@ -187,6 +202,8 @@ def main() -> None:
         raise SystemExit("--train-examples and --validation-examples must be at least 1.")
     if args.label_sample_size < 1:
         raise SystemExit("--label-sample-size must be at least 1.")
+    if args.skip_examples < 0:
+        raise SystemExit("--skip-examples cannot be negative.")
 
     benchmark_cls = BENCHMARK_CLASSES[args.benchmark]
     validation_source = args.validation_split or args.train_split
@@ -198,6 +215,7 @@ def main() -> None:
         validation_examples=args.validation_examples,
         label_sample_size=args.label_sample_size,
         streaming=not args.non_streaming,
+        skip_examples=args.skip_examples,
     )
     args.output_dir.mkdir(parents=True, exist_ok=True)
     train_manifest = write_manifest(
@@ -212,6 +230,7 @@ def main() -> None:
         "train_split": args.train_split,
         "validation_split": validation_source,
         "validation_is_held_out_slice": args.validation_split is None,
+        "skipped_examples": args.skip_examples,
         "train_examples": len(train_records),
         "validation_examples": len(validation_records),
         "system_prompt": SYSTEM_PROMPT,

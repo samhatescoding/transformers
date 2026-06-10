@@ -61,6 +61,19 @@ class InternVid(HFVideoCaptionDataset):
                 )
         return samples
 
+    def get_available_samples(self, n: int) -> List[Dict[str, Any]]:
+        samples: List[Dict[str, Any]] = []
+        self._sample_iterator = iter(self)
+        for row in self._sample_iterator:
+            image = self._load_thumbnail(row)
+            if image is None:
+                continue
+            row["image"] = image
+            samples.append(row)
+            if len(samples) >= n:
+                break
+        return samples
+
     def set_preview_progress_callback(self, callback) -> None:
         self._preview_progress = callback
 

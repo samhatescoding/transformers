@@ -34,6 +34,21 @@ The selected datasets are:
 | P | Preference | Pick-a-Pic |
 | R | Rating | TAD66K |
 
+## LLaVA-OneVision 7B Eight-Type Workflow
+
+Use these notebooks as a matched before/after pair:
+
+```text
+fine_tuning/llava_onevision_qwen2_7b_eight_types_baseline.ipynb
+fine_tuning/llava_onevision_qwen2_7b_eight_types_finetuned.ipynb
+```
+
+The first evaluates the unmodified
+`llava-hf/llava-onevision-qwen2-7b-ov-hf` checkpoint. The second exports a
+balanced mixture for the same eight task types, trains a 4-bit QLoRA adapter
+with `train_llava_onevision_7b.py`, and evaluates the adapter with the same
+sample counts and split configuration.
+
 Before running, accept the Gemma license:
 <https://huggingface.co/google/gemma-4-31B-it>.
 

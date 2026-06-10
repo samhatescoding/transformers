@@ -177,6 +177,32 @@ class FineTuningPreparationTests(unittest.TestCase):
         self.assertFalse(set(train_answers) & set(validation_answers))
         self.assertEqual(set(train_answers + validation_answers), {"a", "b", "c"})
 
+    def test_generic_preparer_can_reserve_an_evaluation_prefix(self) -> None:
+        module = _load_script("prepare_benchmark.py")
+        export_examples = module["export_examples"]
+        image = Image.new("RGB", (4, 4), "white")
+        benchmark = CaptioningBenchmark(
+            dataset=_TrainingStubDataset(
+                [
+                    {"image": image, "captions": [caption]}
+                    for caption in ("reserved", "train-a", "train-b")
+                ]
+            ),
+            name="captioning",
+        )
+
+        records = export_examples(
+            benchmark=benchmark,
+            count=2,
+            label_sample_size=3,
+            skip_examples=1,
+        )
+
+        self.assertEqual(
+            [record["answer"] for record in records],
+            ["train-a", "train-b"],
+        )
+
     def test_generic_preparer_writes_manifest_with_system_prompt(self) -> None:
         module = _load_script("prepare_benchmark.py")
         with tempfile.TemporaryDirectory() as temp_dir:

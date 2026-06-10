@@ -12,5 +12,4 @@ class InternVidBenchmark(CaptioningBenchmark):
     )
 
     def prepare(self, n, label_sample_size):
-        del label_sample_size
-        return self.dataset.get_samples(n), []
+        return super().prepare(n, label_sample_size)

@@ -18,6 +18,13 @@ class CaptioningBenchmark(BaseBenchmark):
         del rows
         return []
 
+    def prepare(self, n: int, label_sample_size: int) -> Tuple[List[Dict[str, Any]], List[str]]:
+        del label_sample_size
+        available_samples = getattr(self.dataset, "get_available_samples", None)
+        if callable(available_samples):
+            return list(available_samples(n)), []
+        return self.dataset.get_samples(n), []
+
     def get_prompt_labels_for_row(self, row: Dict[str, Any], labels: List[str]) -> List[str]:
         del row
         del labels

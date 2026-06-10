@@ -11,11 +11,14 @@ import numpy as np
 from PIL import Image
 
 from benchmarks import BLIP3o60kBenchmark, ShareGPT4oImageBenchmark
+from benchmarks.captioning.conceptual_captions_caption import ConceptualCaptionsCaptionBenchmark
 from benchmarks.captioning.internvid import InternVidBenchmark
+from benchmarks.captioning.openvid1m import OpenVid1MCaptionBenchmark
 from benchmarks.detection._detection import DetectionBenchmark
 from benchmarks.detection.lvis import LVISBenchmark
 from dataset.blip3o_60k import BLIP3o60k
 from dataset.cityscapes import Cityscapes
+from dataset.conceptual_captions import ConceptualCaptions
 from dataset.docvqa import DocVQA
 from dataset.gqa import GQA
 from dataset.hdtf import HDTF
@@ -391,6 +394,92 @@ class DatasetIntegrationFixTests(unittest.TestCase):
         self.assertEqual([row["video_id"] for row in rows], ["video-a", "video-b"])
         self.assertEqual(replacement["video_id"], "video-c")
         self.assertIsInstance(replacement["image"], Image.Image)
+
+    def test_captioning_benchmark_prefers_available_samples(self) -> None:
+        class _Dataset:
+            name = "available"
+
+            def get_available_samples(self, n):
+                return [{"image": Image.new("RGB", (8, 8)), "captions": ["ok"]}][:n]
+
+            def get_samples(self, n):
+                raise AssertionError("get_samples should not be used")
+
+        for benchmark_cls in (
+            ConceptualCaptionsCaptionBenchmark,
+            InternVidBenchmark,
+            OpenVid1MCaptionBenchmark,
+        ):
+            with self.subTest(benchmark=benchmark_cls.__name__):
+                rows, labels = benchmark_cls(dataset=_Dataset()).prepare(1, 1)
+                self.assertEqual(len(rows), 1)
+                self.assertEqual(labels, [])
+
+    def test_conceptual_captions_skips_unavailable_images(self) -> None:
+        dataset = ConceptualCaptions.__new__(ConceptualCaptions)
+        dataset.name = "conceptual_captions"
+        dataset.question_keys = ("question", "prompt", "instruction")
+        dataset.answer_keys = ("caption", "captions", "text")
+        dataset.ds = [
+            {"image_url": "broken", "caption": "broken"},
+            {"image_url": "working", "caption": "working"},
+        ]
+
+        with patch.object(
+            dataset,
+            "get_image_from_row",
+            side_effect=[ValueError("unavailable"), Image.new("RGB", (8, 8), "red")],
+        ):
+            rows = dataset.get_available_samples(1)
+
+        self.assertEqual([row["answer"] for row in rows], ["working"])
+        self.assertIsInstance(rows[0]["image"], Image.Image)
+
+    def test_internvid_available_samples_replace_broken_thumbnails(self) -> None:
+        dataset = InternVid.__new__(InternVid)
+        dataset.name = "internvid"
+        dataset.frame_keys = ("image",)
+        dataset.max_frames = 1
+        dataset.caption_keys = ("captions", "Caption")
+        dataset.ds = [
+            {"YoutubeID": "broken", "Caption": "broken"},
+            {"YoutubeID": "working-a", "Caption": "first"},
+            {"YoutubeID": "working-b", "Caption": "second"},
+        ]
+
+        def load_thumbnail(row):
+            if row["video_id"] == "broken":
+                return None
+            return Image.new("RGB", (8, 8), "blue")
+
+        with patch.object(dataset, "_load_thumbnail", side_effect=load_thumbnail):
+            rows = dataset.get_available_samples(2)
+
+        self.assertEqual([row["video_id"] for row in rows], ["working-a", "working-b"])
+        self.assertTrue(all(isinstance(row["image"], Image.Image) for row in rows))
+
+    def test_openvid_available_samples_skip_broken_and_duplicate_videos(self) -> None:
+        dataset = OpenVid1M.__new__(OpenVid1M)
+        dataset.name = "openvid1m"
+        dataset.question_keys = ("question", "prompt", "instruction")
+        dataset.answer_keys = ("prompt", "caption", "text")
+        dataset.ds = [
+            {"video": "broken-video.mp4", "caption": "broken"},
+            {"video": "abcdefghijk_1.mp4", "caption": "first"},
+            {"video": "abcdefghijk_2.mp4", "caption": "duplicate"},
+            {"video": "lmnopqrstuv_1.mp4", "caption": "second"},
+        ]
+
+        def load_thumbnail(row):
+            if "broken-vid" in str(row["image"]):
+                return None
+            return Image.new("RGB", (8, 8), "green")
+
+        with patch.object(dataset, "_load_thumbnail", side_effect=load_thumbnail):
+            rows = dataset.get_available_samples(2)
+
+        self.assertEqual([row["answer"] for row in rows], ["first", "second"])
+        self.assertTrue(all(isinstance(row["image"], Image.Image) for row in rows))
 
     def test_http_image_values_decode_to_rgb(self) -> None:
         payload = BytesIO()
