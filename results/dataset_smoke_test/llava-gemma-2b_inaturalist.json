@@ -1,0 +1,79 @@
+{
+  "model": "llava-gemma-2b",
+  "benchmark": "inaturalist",
+  "report": {
+    "benchmark": "inaturalist",
+    "dataset": "inaturalist",
+    "task_type": null,
+    "num_samples": 1,
+    "num_candidate_labels": 5,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "Youngia japonica",
+          "Grindelia stricta",
+          "Commelina africana",
+          "Camponotus planatus",
+          "Gracupica nigricollis"
+        ],
+        "prediction": "Camponotus planatus",
+        "correct": false,
+        "valid_labels": [
+          "youngia japonica"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 64.4056508000358,
+          "generation_time_seconds": 64.37755949998973,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 12.875511899997946,
+          "output_tokens": 5,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 7480467456,
+          "cpu_utilization_percent": 793.9469756480754,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 64.40597399999388,
+      "wall_clock_time_per_sample_seconds_mean": 64.4056508000358,
+      "total_generation_time_seconds_mean": 64.37755949998973,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": 12.875511899997946,
+      "samples_per_second": 0.015526510009771687,
+      "number_of_output_tokens_mean": 5.0,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 1,
+      "success_count": 1,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 7480467456,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 793.9469756480754,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": 0.07766681494039546,
+      "model_load_time_seconds": 16.250638900033664
+    }
+  }
+}

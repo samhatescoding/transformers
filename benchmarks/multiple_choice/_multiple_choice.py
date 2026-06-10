@@ -32,7 +32,8 @@ class MultipleChoiceBenchmark(BaseBenchmark):
             right = self._coerce_image(row["target_image"])
             return self._make_pair_canvas(left, right, "Source", "Target")
         if row.get("frames"):
-            return self._make_contact_sheet([self._coerce_image(frame) for frame in row["frames"]])
+            frames = row["frames"]
+            return self._coerce_image(frames[len(frames) // 2])
         return self.dataset.get_image_from_row(row)
 
     def make_prompt(

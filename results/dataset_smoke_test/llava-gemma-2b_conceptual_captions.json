@@ -1,0 +1,86 @@
+{
+  "model": "llava-gemma-2b",
+  "benchmark": "conceptual_captions",
+  "report": {
+    "benchmark": "conceptual_captions",
+    "dataset": "conceptual_captions",
+    "task_type": null,
+    "num_samples": 1,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "author : a life in photography -- in pictures",
+          "an angler fishes river on a snowy day .",
+          "photograph of the sign being repaired by brave person",
+          "the player staring intently at a computer screen ."
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "author : a life in photography -- in pictures"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 70.4332089999807,
+          "generation_time_seconds": 69.906818700023,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 69.906818700023,
+          "output_tokens": 1,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5902553088,
+          "cpu_utilization_percent": 790.5061505065123,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "author : a life in photography -- in pictures",
+          "an angler fishes river on a snowy day .",
+          "photograph of the sign being repaired by brave person",
+          "the player staring intently at a computer screen ."
+        ],
+        "selected_choice": "author : a life in photography -- in pictures",
+        "answer": "author : a life in photography -- in pictures"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 70.43532789999153,
+      "wall_clock_time_per_sample_seconds_mean": 70.4332089999807,
+      "total_generation_time_seconds_mean": 69.906818700023,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": 69.906818700023,
+      "samples_per_second": 0.014197420950745943,
+      "number_of_output_tokens_mean": 1.0,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 1,
+      "success_count": 1,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 5902553088,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 790.5061505065123,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": 0.014304756225442012,
+      "model_load_time_seconds": 16.250638900033664
+    }
+  }
+}

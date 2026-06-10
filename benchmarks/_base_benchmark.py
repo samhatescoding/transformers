@@ -144,6 +144,111 @@ class BaseBenchmark(ABC):
         labels = self.get_candidate_labels(rows_for_labels)
         return rows, labels
 
+    def _prepare_label_diverse_rows(
+        self,
+        n: int,
+        label_sample_size: int,
+        *,
+        expanded_sample_size: int = 1000,
+    ) -> Tuple[List[Dict[str, Any]], List[str]]:
+        sample_size = max(n, label_sample_size)
+        spaced_getter = getattr(self.dataset, "get_spaced_samples", None)
+        if callable(spaced_getter):
+            try:
+                spaced_rows = list(spaced_getter(n))
+            except Exception:
+                spaced_rows = []
+            if spaced_rows:
+                spaced_labels = self.get_candidate_labels(spaced_rows)
+                expected_unique = min(n, len(spaced_labels))
+                if self._count_row_labels(spaced_rows) >= expected_unique:
+                    return self._select_label_diverse_rows(spaced_rows, n), spaced_labels
+
+        candidate_rows = self.dataset.get_samples(sample_size)
+        labels = self.get_candidate_labels(candidate_rows)
+
+        expected_unique = min(n, len(labels))
+        observed_unique = self._count_row_labels(candidate_rows)
+        if observed_unique < expected_unique and len(candidate_rows) >= sample_size:
+            spaced_rows: List[Dict[str, Any]] = []
+            if callable(spaced_getter):
+                try:
+                    spaced_rows = list(spaced_getter(max(n, expected_unique)))
+                except Exception:
+                    spaced_rows = []
+
+            if spaced_rows:
+                candidate_rows = spaced_rows
+            else:
+                expanded_size = max(sample_size, expanded_sample_size, n * 50)
+                candidate_rows = self.dataset.get_samples(expanded_size)
+            labels = self.get_candidate_labels(candidate_rows)
+
+        return self._select_label_diverse_rows(candidate_rows, n), labels
+
+    def _select_label_diverse_rows(
+        self,
+        rows: Sequence[Dict[str, Any]],
+        n: int,
+    ) -> List[Dict[str, Any]]:
+        if n <= 0 or not rows:
+            return []
+        if n == 1:
+            return [rows[0]]
+
+        shuffled_rows = list(rows)
+        random.Random(f"{self.name}|type-l-row-selection").shuffle(shuffled_rows)
+
+        rows_by_label: Dict[str, List[Dict[str, Any]]] = {}
+        label_order: List[str] = []
+        unlabeled_rows: List[Dict[str, Any]] = []
+        for row in shuffled_rows:
+            label = self._primary_row_label(row)
+            if not label:
+                unlabeled_rows.append(row)
+                continue
+            normalized = self.dataset.normalize_text(label)
+            if normalized not in rows_by_label:
+                rows_by_label[normalized] = []
+                label_order.append(normalized)
+            rows_by_label[normalized].append(row)
+
+        selected: List[Dict[str, Any]] = []
+        round_index = 0
+        while len(selected) < n:
+            added = False
+            for normalized in label_order:
+                label_rows = rows_by_label[normalized]
+                if round_index >= len(label_rows):
+                    continue
+                selected.append(label_rows[round_index])
+                added = True
+                if len(selected) >= n:
+                    break
+            if not added:
+                break
+            round_index += 1
+
+        if len(selected) < n:
+            selected.extend(unlabeled_rows[: n - len(selected)])
+        return selected[:n]
+
+    def _count_row_labels(self, rows: Sequence[Dict[str, Any]]) -> int:
+        return len(
+            {
+                self.dataset.normalize_text(label)
+                for row in rows
+                if (label := self._primary_row_label(row))
+            }
+        )
+
+    def _primary_row_label(self, row: Dict[str, Any]) -> str:
+        for label in self.get_valid_labels_for_row(row):
+            text = str(label).strip()
+            if text:
+                return text
+        return ""
+
     def evaluate_prediction(
         self,
         row: Dict[str, Any],
@@ -568,6 +673,7 @@ class BaseBenchmark(ABC):
         return {
             "benchmark": self.name,
             "dataset": self.dataset.name,
+            "task_type": getattr(self, "task_type", None),
             "num_samples": len(rows),
             "num_candidate_labels": len(labels),
             "results": results,

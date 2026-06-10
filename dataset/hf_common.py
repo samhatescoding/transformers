@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+from io import BytesIO
 from typing import Any, Dict, Iterable, List, Sequence
+from urllib.request import Request, urlopen
 
-from PIL import Image
+from PIL import Image, ImageDraw
 from datasets import load_dataset
 
 from ._base_dataset import BaseDataset
@@ -96,6 +98,10 @@ class HFBaseDataset(BaseDataset):
     def _coerce_image(self, value: Any) -> Image.Image:
         if isinstance(value, Image.Image):
             return value.convert("RGB")
+        if isinstance(value, str) and value.startswith(("http://", "https://")):
+            request = Request(value, headers={"User-Agent": "transformers-benchmark-input-browser/1.0"})
+            with urlopen(request, timeout=60) as response:
+                return Image.open(BytesIO(response.read())).convert("RGB")
         if hasattr(value, "convert"):
             try:
                 return value.convert("RGB")
@@ -103,7 +109,6 @@ class HFBaseDataset(BaseDataset):
                 pass
         if isinstance(value, dict):
             if value.get("bytes") is not None:
-                from io import BytesIO
                 return Image.open(BytesIO(value["bytes"])).convert("RGB")
             if value.get("path"):
                 return Image.open(value["path"]).convert("RGB")
@@ -114,6 +119,13 @@ class HFBaseDataset(BaseDataset):
         if isinstance(value, (list, tuple)) and value:
             return self._coerce_image(value[0])
         return Image.fromarray(value).convert("RGB")
+
+    @staticmethod
+    def _youtube_thumbnail_url(video_id: Any) -> str:
+        normalized = str(video_id or "").strip()
+        if not normalized:
+            raise ValueError("Could not determine the source YouTube video ID.")
+        return f"https://i.ytimg.com/vi/{normalized}/hqdefault.jpg"
 
     def _extract_image(self, row: Dict[str, Any], keys: Sequence[str]) -> Image.Image:
         value = self._get_first_present(row, keys)
@@ -129,11 +141,15 @@ class HFBaseDataset(BaseDataset):
                 return []
             return [self._coerce_image(image)]
         if isinstance(value, list):
+            if max_frames == 1 and value:
+                return [self._coerce_image(value[len(value) // 2])]
             return [self._coerce_image(item) for item in value[:max_frames]]
         if isinstance(value, dict):
             for nested_key in ("frames", "images", "video_frames"):
                 nested = value.get(nested_key)
                 if isinstance(nested, list):
+                    if max_frames == 1 and nested:
+                        return [self._coerce_image(nested[len(nested) // 2])]
                     return [self._coerce_image(item) for item in nested[:max_frames]]
         return [self._coerce_image(value)]
 
@@ -276,6 +292,32 @@ class HFCaptionDataset(HFBaseDataset):
         return self._get_text_list(row, self.caption_keys)
 
 
+class HFVideoCaptionDataset(HFCaptionDataset):
+    def __init__(
+        self,
+        *,
+        frame_keys: Sequence[str] = ("frames", "video_frames", "images", "image"),
+        max_frames: int = 1,
+        **kwargs: Any,
+    ) -> None:
+        super().__init__(image_keys=frame_keys, **kwargs)
+        self.frame_keys = tuple(frame_keys)
+        self.max_frames = max_frames
+
+    def _standardize_row(self, row: Dict[str, Any]) -> Dict[str, Any]:
+        out = super()._standardize_row(row)
+        out["frames"] = self._extract_frames(row, self.frame_keys, max_frames=self.max_frames)
+        return out
+
+    def get_image_from_row(self, row: Dict[str, Any]) -> Image.Image:
+        frames = row.get("frames")
+        if not isinstance(frames, list) or not frames:
+            frames = self._extract_frames(row, self.frame_keys, max_frames=self.max_frames)
+        if not frames:
+            raise ValueError("Could not extract a representative frame from the video row.")
+        return self._coerce_image(frames[len(frames) // 2])
+
+
 class HFVideoClassificationDataset(HFBaseDataset):
     def __init__(
         self,
@@ -287,7 +329,7 @@ class HFVideoClassificationDataset(HFBaseDataset):
         frame_keys: Sequence[str] = ("frames", "video_frames", "images", "image"),
         label_keys: Sequence[str] = ("label_text", "label", "class"),
         fallback_labels: Sequence[str] | None = None,
-        max_frames: int = 4,
+        max_frames: int = 1,
         **kwargs: Any,
     ) -> None:
         super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)
@@ -308,7 +350,7 @@ class HFVideoClassificationDataset(HFBaseDataset):
     def get_image_from_row(self, row: Dict[str, Any]) -> Image.Image:
         frames = row.get("frames")
         if isinstance(frames, list) and frames:
-            return self._coerce_image(frames[0])
+            return self._coerce_image(frames[len(frames) // 2])
         extracted = self._extract_frames(row, self.frame_keys, max_frames=1)
         if not extracted:
             raise ValueError("Could not extract a representative frame from the row.")
@@ -354,7 +396,7 @@ class HFMultipleChoiceSourceDataset(HFBaseDataset):
         frame_keys: Sequence[str] = ("frames", "video_frames", "images", "image"),
         question_keys: Sequence[str] = ("question", "prompt", "instruction"),
         answer_keys: Sequence[str] = ("answer", "caption", "text", "prompt"),
-        max_frames: int = 4,
+        max_frames: int = 1,
         **kwargs: Any,
     ) -> None:
         super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)

@@ -10,6 +10,7 @@ class DiffusionDB(HFMultipleChoiceSourceDataset):
             dataset_id=dataset_id,
             split=split,
             streaming=streaming,
+            revision="refs/convert/parquet",
             image_keys=("image",),
             question_keys=("question", "prompt"),
             answer_keys=("answer", "prompt", "text"),

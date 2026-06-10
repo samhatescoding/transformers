@@ -1,0 +1,85 @@
+{
+  "model": "llava-gemma-2b",
+  "benchmark": "mscoco_caption",
+  "report": {
+    "benchmark": "mscoco_caption",
+    "dataset": "mscoco_caption",
+    "task_type": null,
+    "num_samples": 1,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [],
+        "prediction": "A man is sitting on a motorcycle with a sidecar, riding down a dirt road.",
+        "correct": true,
+        "valid_labels": [
+          "A man with a red helmet on a small moped on a dirt road.",
+          "Man riding a motor bike on a dirt road on the countryside.",
+          "A man riding on the back of a motorcycle.",
+          "A dirt path with a young person on a motor bike rests to the foreground of a verdant area with a bridge and a background of cloud-wreathed mountains.",
+          "A man in a red shirt and a red hat is on a motorcycle on a hill side."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 66.00934009999037,
+          "generation_time_seconds": 65.09913450002205,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 3.6166185833345583,
+          "output_tokens": 18,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 7489306624,
+          "cpu_utilization_percent": 792.7213841368584,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.28117066259517454,
+        "reference_captions": [
+          "A man with a red helmet on a small moped on a dirt road.",
+          "Man riding a motor bike on a dirt road on the countryside.",
+          "A man riding on the back of a motorcycle.",
+          "A dirt path with a young person on a motor bike rests to the foreground of a verdant area with a bridge and a background of cloud-wreathed mountains.",
+          "A man in a red shirt and a red hat is on a motorcycle on a hill side."
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 66.0112656999845,
+      "wall_clock_time_per_sample_seconds_mean": 66.00934009999037,
+      "total_generation_time_seconds_mean": 65.09913450002205,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": 3.6166185833345583,
+      "samples_per_second": 0.015148929344044295,
+      "number_of_output_tokens_mean": 18.0,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 1,
+      "success_count": 1,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 7489306624,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 792.7213841368584,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": 0.2765013719190676,
+      "model_load_time_seconds": 16.250638900033664
+    }
+  }
+}

@@ -1,11 +1,10 @@
 from dataset import DiffusionDB
 
-from ._multiple_choice import MultipleChoiceBenchmark
+from ..prompt_reconstruction import PromptReconstructionBenchmark
 
 
-class DiffusionDBBenchmark(MultipleChoiceBenchmark):
+class DiffusionDBBenchmark(PromptReconstructionBenchmark):
     dataset_cls = DiffusionDB
     benchmark_name = "diffusiondb"
     default_split = "train"
-    default_instruction = "Choose the text-to-image prompt that best matches the generated image."
     fallback_distractors = ("a product catalog photo", "a street-view segmentation", "a handwritten invoice")

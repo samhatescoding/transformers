@@ -56,7 +56,8 @@ class Flickr30kEntities(BaseDataset):
         labels = self._parse_phrase_labels(str(row.get("caption", "")))
         annotations: List[Dict[str, Any]] = []
         for label, xyxy in zip(labels, boxes):
-            annotations.append({"label": label, "bbox": self._to_xywh(xyxy)})
+            scaled_xyxy = self._scale_box_to_image(xyxy, row)
+            annotations.append({"label": label, "bbox": self._to_xywh(scaled_xyxy)})
         return annotations
 
     def get_image_from_row(self, row: Dict[str, Any]) -> Image.Image:
@@ -78,7 +79,30 @@ class Flickr30kEntities(BaseDataset):
         return [fallback] if fallback else []
 
     def _parse_boxes(self, raw: Any) -> List[List[float]]:
+        if isinstance(raw, dict):
+            raw = raw.get("boxes")
+            if raw is None:
+                return []
+            if hasattr(raw, "tolist"):
+                raw = raw.tolist()
+            if isinstance(raw, list):
+                return [
+                    [float(value) for value in box]
+                    for box in raw
+                    if isinstance(box, (list, tuple)) and len(box) == 4
+                ]
+
         text = str(raw or "")
+        boxes_field = re.search(
+            r"['\"]boxes['\"]\s*:\s*(.*?)(?=,\s*['\"]caption['\"]\s*:)",
+            text,
+            flags=re.DOTALL,
+        )
+        if boxes_field is not None:
+            text = boxes_field.group(1)
+        if not text.strip() or text.strip() == "None":
+            return []
+
         matches = re.findall(
             r"\[\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\]",
             text,
@@ -89,6 +113,20 @@ class Flickr30kEntities(BaseDataset):
         for x0, y0, x1, y1 in matches:
             boxes.append([float(x0), float(y0), float(x1), float(y1)])
         return boxes
+
+    def _scale_box_to_image(
+        self,
+        xyxy: List[float],
+        row: Dict[str, Any],
+    ) -> List[float]:
+        image = row.get("image")
+        if not isinstance(image, Image.Image):
+            return list(xyxy)
+
+        # This dataset stores boxes on an aspect-preserving canvas whose longest
+        # edge is 500 pixels, while its decoded images have a different size.
+        scale = max(image.size) / 500.0
+        return [float(value) * scale for value in xyxy]
 
     def _to_xywh(self, xyxy: List[float]) -> List[float]:
         x0, y0, x1, y1 = xyxy

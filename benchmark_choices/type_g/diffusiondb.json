@@ -1,0 +1,429 @@
+{
+  "dataset": "diffusiondb",
+  "source": "poloclub/diffusiondb",
+  "split": "train",
+  "requested_rows": 20,
+  "exported_rows": 20,
+  "rows": [
+    {
+      "row_index": 0,
+      "correct_prompt": "a portrait of a female robot made from code, very intricate details, octane render, 8 k, trending on artstation",
+      "distractors": [
+        "a landscape of a female robot made from code, very intricate details, octane render, 8 k, trending on artstation",
+        "a portrait of a male android made from code, very intricate details, octane render, 8 k, trending on artstation",
+        "a landscape of a male android made from code, very intricate details, octane render, 8 k, trending on artstation"
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "portrait",
+          "replacement": "landscape"
+        },
+        {
+          "category": "person",
+          "source": "female robot",
+          "replacement": "male android"
+        }
+      ]
+    },
+    {
+      "row_index": 1,
+      "correct_prompt": "a portrait of a female robot made from a cloud of images being very grateful to the creator, very intricate details, futuristic steampunk, octane render, 8 k, trending on artstation",
+      "distractors": [
+        "a portrait of a female robot made from a cloud of images being very grateful to the creator, very intricate details, medieval steampunk, octane render, 8 k, trending on artstation",
+        "a portrait of a male android made from a cloud of images being very grateful to the creator, very intricate details, futuristic steampunk, octane render, 8 k, trending on artstation",
+        "a portrait of a male android made from a cloud of images being very grateful to the creator, very intricate details, medieval steampunk, octane render, 8 k, trending on artstation"
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "futuristic",
+          "replacement": "medieval"
+        },
+        {
+          "category": "person",
+          "source": "female robot",
+          "replacement": "male android"
+        }
+      ]
+    },
+    {
+      "row_index": 2,
+      "correct_prompt": "only memories remain, trending on artstation",
+      "distractors": [
+        "only dreams remain, trending on artstation",
+        "several memories remain, trending on artstation",
+        "several dreams remain, trending on artstation"
+      ],
+      "attributes": [
+        {
+          "category": "object",
+          "source": "memories",
+          "replacement": "dreams"
+        },
+        {
+          "category": "quantity",
+          "source": "only",
+          "replacement": "several"
+        }
+      ]
+    },
+    {
+      "row_index": 3,
+      "correct_prompt": "dream swimming pool with nobody",
+      "distractors": [
+        "dream ornate library with nobody",
+        "dream swimming pool with a large crowd",
+        "dream ornate library with a large crowd"
+      ],
+      "attributes": [
+        {
+          "category": "object",
+          "source": "swimming pool",
+          "replacement": "ornate library"
+        },
+        {
+          "category": "quantity",
+          "source": "nobody",
+          "replacement": "a large crowd"
+        }
+      ]
+    },
+    {
+      "row_index": 4,
+      "correct_prompt": "a dog doing weights. epic oil painting.",
+      "distractors": [
+        "a dog doing weights. epic photograph.",
+        "a cat doing weights. epic oil painting.",
+        "a cat doing weights. epic photograph."
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "oil painting",
+          "replacement": "photograph"
+        },
+        {
+          "category": "animal",
+          "source": "dog",
+          "replacement": "cat"
+        }
+      ]
+    },
+    {
+      "row_index": 5,
+      "correct_prompt": "a dog doing weights on fire. epic oil painting.",
+      "distractors": [
+        "a dog doing weights on fire. epic photograph.",
+        "a cat doing weights on fire. epic oil painting.",
+        "a cat doing weights on fire. epic photograph."
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "oil painting",
+          "replacement": "photograph"
+        },
+        {
+          "category": "animal",
+          "source": "dog",
+          "replacement": "cat"
+        }
+      ]
+    },
+    {
+      "row_index": 6,
+      "correct_prompt": "yoji shinkawa painting of a stylish sniper demon",
+      "distractors": [
+        "yoji shinkawa photograph of a stylish sniper demon",
+        "yoji shinkawa painting of a stylish guardian angel",
+        "yoji shinkawa photograph of a stylish guardian angel"
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "painting",
+          "replacement": "photograph"
+        },
+        {
+          "category": "object",
+          "source": "sniper demon",
+          "replacement": "guardian angel"
+        }
+      ]
+    },
+    {
+      "row_index": 7,
+      "correct_prompt": "a beautiful paint of cultists dancing surrounds a huge alpaca in desert at night, by zdzislaw beksinski, trending on artstation.",
+      "distractors": [
+        "a beautiful paint of cultists dancing surrounds a huge alpaca in desert at day, by zdzislaw beksinski, trending on artstation.",
+        "a beautiful paint of cultists dancing surrounds a huge camel in desert at night, by zdzislaw beksinski, trending on artstation.",
+        "a beautiful paint of cultists dancing surrounds a huge camel in desert at day, by zdzislaw beksinski, trending on artstation."
+      ],
+      "attributes": [
+        {
+          "category": "season",
+          "source": "night",
+          "replacement": "day"
+        },
+        {
+          "category": "animal",
+          "source": "alpaca",
+          "replacement": "camel"
+        }
+      ]
+    },
+    {
+      "row_index": 8,
+      "correct_prompt": "male king arthur and his squirrel wife",
+      "distractors": [
+        "male queen guinevere and his squirrel wife",
+        "male king arthur and his fox wife",
+        "male queen guinevere and his fox wife"
+      ],
+      "attributes": [
+        {
+          "category": "person",
+          "source": "king arthur",
+          "replacement": "queen guinevere"
+        },
+        {
+          "category": "animal",
+          "source": "squirrel",
+          "replacement": "fox"
+        }
+      ]
+    },
+    {
+      "row_index": 9,
+      "correct_prompt": "frontal portrait of ragged, worried twin women, by john singer sargent and j. c. leyendecker.",
+      "distractors": [
+        "frontal landscape of ragged, worried twin women, by john singer sargent and j. c. leyendecker.",
+        "profile portrait of ragged, worried twin women, by john singer sargent and j. c. leyendecker.",
+        "profile landscape of ragged, worried twin women, by john singer sargent and j. c. leyendecker."
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "portrait",
+          "replacement": "landscape"
+        },
+        {
+          "category": "view",
+          "source": "frontal",
+          "replacement": "profile"
+        }
+      ]
+    },
+    {
+      "row_index": 10,
+      "correct_prompt": "a stunning portrait of an asian samurai with long black hair by artgerm, dynamic lighting, ray tracing, tom bagshaw, alphonse mucha, donata giancola, mary jane ansell, ankh necklace, atmosphere, realism, octane render, dof, hyperdetailed, 8 k",
+      "distractors": [
+        "a stunning portrait of an asian samurai with long white hair by artgerm, dynamic lighting, ray tracing, tom bagshaw, alphonse mucha, donata giancola, mary jane ansell, ankh necklace, atmosphere, realism, octane render, dof, hyperdetailed, 8 k",
+        "a stunning landscape of an asian samurai with long black hair by artgerm, dynamic lighting, ray tracing, tom bagshaw, alphonse mucha, donata giancola, mary jane ansell, ankh necklace, atmosphere, realism, octane render, dof, hyperdetailed, 8 k",
+        "a stunning landscape of an asian samurai with long white hair by artgerm, dynamic lighting, ray tracing, tom bagshaw, alphonse mucha, donata giancola, mary jane ansell, ankh necklace, atmosphere, realism, octane render, dof, hyperdetailed, 8 k"
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "black",
+          "replacement": "white"
+        },
+        {
+          "category": "style",
+          "source": "portrait",
+          "replacement": "landscape"
+        }
+      ]
+    },
+    {
+      "row_index": 11,
+      "correct_prompt": "concept art of a silent hill monster. painted by edward hopper.",
+      "distractors": [
+        "documentary photograph of a silent hill monster. painted by edward hopper.",
+        "concept art of a sunny valley creature. painted by edward hopper.",
+        "documentary photograph of a sunny valley creature. painted by edward hopper."
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "concept art",
+          "replacement": "documentary photograph"
+        },
+        {
+          "category": "object",
+          "source": "silent hill monster",
+          "replacement": "sunny valley creature"
+        }
+      ]
+    },
+    {
+      "row_index": 12,
+      "correct_prompt": "concept art of a silent hill monster. painted by edward hopper.",
+      "distractors": [
+        "documentary photograph of a silent hill monster. painted by edward hopper.",
+        "concept art of a sunny valley creature. painted by edward hopper.",
+        "documentary photograph of a sunny valley creature. painted by edward hopper."
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "concept art",
+          "replacement": "documentary photograph"
+        },
+        {
+          "category": "object",
+          "source": "silent hill monster",
+          "replacement": "sunny valley creature"
+        }
+      ]
+    },
+    {
+      "row_index": 13,
+      "correct_prompt": "concept art of a silent hill monster. painted by edward hopper.",
+      "distractors": [
+        "documentary photograph of a silent hill monster. painted by edward hopper.",
+        "concept art of a sunny valley creature. painted by edward hopper.",
+        "documentary photograph of a sunny valley creature. painted by edward hopper."
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "concept art",
+          "replacement": "documentary photograph"
+        },
+        {
+          "category": "object",
+          "source": "silent hill monster",
+          "replacement": "sunny valley creature"
+        }
+      ]
+    },
+    {
+      "row_index": 14,
+      "correct_prompt": "an emo portrait painting. short dark brown messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, gold earring, by peter mohrbacher, by rebecca guay, by ron spencer",
+      "distractors": [
+        "an emo portrait painting. short platinum blonde messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, gold earring, by peter mohrbacher, by rebecca guay, by ron spencer",
+        "an emo landscape painting. short dark brown messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, gold earring, by peter mohrbacher, by rebecca guay, by ron spencer",
+        "an emo landscape painting. short platinum blonde messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, gold earring, by peter mohrbacher, by rebecca guay, by ron spencer"
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "dark brown",
+          "replacement": "platinum blonde"
+        },
+        {
+          "category": "style",
+          "source": "portrait",
+          "replacement": "landscape"
+        }
+      ]
+    },
+    {
+      "row_index": 15,
+      "correct_prompt": "an emo portrait painting. short dark brown messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black gauntlet, charcoal and bronze, highly detailed, photorealistic, 3 d shading, cgsociety",
+      "distractors": [
+        "an emo portrait painting. short platinum blonde messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black gauntlet, charcoal and bronze, highly detailed, photorealistic, 3 d shading, cgsociety",
+        "an emo portrait painting. short dark brown messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black gauntlet, charcoal and bronze, highly detailed, cubist, 3 d shading, cgsociety",
+        "an emo portrait painting. short platinum blonde messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black gauntlet, charcoal and bronze, highly detailed, cubist, 3 d shading, cgsociety"
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "dark brown",
+          "replacement": "platinum blonde"
+        },
+        {
+          "category": "style",
+          "source": "photorealistic",
+          "replacement": "cubist"
+        }
+      ]
+    },
+    {
+      "row_index": 16,
+      "correct_prompt": "an emo portrait painting. short dark brown messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, neon, pastel colors.",
+      "distractors": [
+        "an emo portrait painting. short platinum blonde messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, neon, pastel colors.",
+        "an emo landscape painting. short dark brown messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, neon, pastel colors.",
+        "an emo landscape painting. short platinum blonde messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, neon, pastel colors."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "dark brown",
+          "replacement": "platinum blonde"
+        },
+        {
+          "category": "style",
+          "source": "portrait",
+          "replacement": "landscape"
+        }
+      ]
+    },
+    {
+      "row_index": 17,
+      "correct_prompt": "a portrait painting. short dark brown messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black leather jacket, by oskar schlemmer, oil on canvas, edward hopper, don martin, ludwig deutsch",
+      "distractors": [
+        "a portrait painting. short platinum blonde messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black leather jacket, by oskar schlemmer, oil on canvas, edward hopper, don martin, ludwig deutsch",
+        "a landscape painting. short dark brown messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black leather jacket, by oskar schlemmer, oil on canvas, edward hopper, don martin, ludwig deutsch",
+        "a landscape painting. short platinum blonde messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black leather jacket, by oskar schlemmer, oil on canvas, edward hopper, don martin, ludwig deutsch"
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "dark brown",
+          "replacement": "platinum blonde"
+        },
+        {
+          "category": "style",
+          "source": "portrait",
+          "replacement": "landscape"
+        }
+      ]
+    },
+    {
+      "row_index": 18,
+      "correct_prompt": "an emo portrait painting by edward hopper. short dark brown messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black helmet, charcoal and ink splattered solarpunk portrait",
+      "distractors": [
+        "an emo portrait painting by edward hopper. short platinum blonde messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black helmet, charcoal and ink splattered solarpunk portrait",
+        "an emo landscape painting by edward hopper. short dark brown messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black helmet, charcoal and ink splattered solarpunk portrait",
+        "an emo landscape painting by edward hopper. short platinum blonde messy pixie haircut, large black eyes, antichrist eyes, slightly rounded face, pointed chin, thin lips, small nose, black tank top, black leather jacket, black knee - length skirt, black choker, black helmet, charcoal and ink splattered solarpunk portrait"
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "dark brown",
+          "replacement": "platinum blonde"
+        },
+        {
+          "category": "style",
+          "source": "portrait",
+          "replacement": "landscape"
+        }
+      ]
+    },
+    {
+      "row_index": 19,
+      "correct_prompt": "a painting by edward hopper of a group of men that are wearing spacesuits and the composition of the spacecraft is that of a planet.",
+      "distractors": [
+        "a photograph by edward hopper of a group of men that are wearing spacesuits and the composition of the spacecraft is that of a planet.",
+        "a painting by edward hopper of a group of women that are wearing spacesuits and the composition of the spacecraft is that of a planet.",
+        "a photograph by edward hopper of a group of women that are wearing spacesuits and the composition of the spacecraft is that of a planet."
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "painting",
+          "replacement": "photograph"
+        },
+        {
+          "category": "person",
+          "source": "men",
+          "replacement": "women"
+        }
+      ]
+    }
+  ]
+}

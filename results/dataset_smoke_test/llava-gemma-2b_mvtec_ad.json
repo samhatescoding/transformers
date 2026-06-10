@@ -1,0 +1,76 @@
+{
+  "model": "llava-gemma-2b",
+  "benchmark": "mvtec_ad",
+  "report": {
+    "benchmark": "mvtec_ad",
+    "dataset": "mvtec_ad",
+    "task_type": null,
+    "num_samples": 1,
+    "num_candidate_labels": 2,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "normal",
+          "defective"
+        ],
+        "prediction": "Defective",
+        "correct": true,
+        "valid_labels": [
+          "defective"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 62.431306799990125,
+          "generation_time_seconds": 62.41292739997152,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 31.20646369998576,
+          "output_tokens": 2,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 8244006912,
+          "cpu_utilization_percent": 794.6131386861314,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        }
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 62.43189170002006,
+      "wall_clock_time_per_sample_seconds_mean": 62.431306799990125,
+      "total_generation_time_seconds_mean": 62.41292739997152,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": 31.20646369998576,
+      "samples_per_second": 0.016017454745803877,
+      "number_of_output_tokens_mean": 2.0,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 1,
+      "success_count": 1,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 8244006912,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 794.6131386861314,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": 0.032044643366638696,
+      "model_load_time_seconds": 16.250638900033664
+    }
+  }
+}

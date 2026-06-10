@@ -1,11 +1,14 @@
 from dataset import BLIP3o60k
 
-from ._multiple_choice import MultipleChoiceBenchmark
+from ..prompt_reconstruction import PromptReconstructionBenchmark
 
 
-class BLIP3o60kBenchmark(MultipleChoiceBenchmark):
+class BLIP3o60kBenchmark(PromptReconstructionBenchmark):
     dataset_cls = BLIP3o60k
     benchmark_name = "blip3o_60k"
     default_split = "train"
-    default_instruction = "Choose the editing instruction that best explains the change."
-    fallback_distractors = ("add an object", "remove the object", "change the style")
+    fallback_distractors = (
+        "a studio photograph of a household object",
+        "a watercolor landscape at sunset",
+        "a busy city street at night",
+    )

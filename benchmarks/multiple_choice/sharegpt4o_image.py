@@ -1,11 +1,14 @@
 from dataset import ShareGPT4oImage
 
-from ._multiple_choice import MultipleChoiceBenchmark
+from ..prompt_reconstruction import PromptReconstructionBenchmark
 
 
-class ShareGPT4oImageBenchmark(MultipleChoiceBenchmark):
+class ShareGPT4oImageBenchmark(PromptReconstructionBenchmark):
     dataset_cls = ShareGPT4oImage
     benchmark_name = "sharegpt4o_image"
     default_split = "train"
-    default_instruction = "Choose the prompt or instruction that best matches the generated target image."
-    fallback_distractors = ("detect rare objects", "classify an action video", "segment a road scene")
+    fallback_distractors = (
+        "a product photograph on a white background",
+        "a handwritten note on a wooden desk",
+        "a mountain landscape during sunrise",
+    )

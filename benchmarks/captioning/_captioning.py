@@ -23,6 +23,9 @@ class CaptioningBenchmark(BaseBenchmark):
         del labels
         return []
 
+    def get_valid_labels_for_row(self, row: Dict[str, Any]) -> List[str]:
+        return self._get_captions(row)
+
     def make_prompt(
         self,
         labels: List[str],
@@ -34,7 +37,7 @@ class CaptioningBenchmark(BaseBenchmark):
         del image
         return (
             "USER: <image>\n"
-            "Write one concise caption that describes the image.\n"
+            "Write one concise caption that describes the image or representative video frame.\n"
             "Return only the caption text.\n"
             "ASSISTANT:"
         )

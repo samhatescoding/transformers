@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import base64
+import os
 from io import BytesIO
 from typing import Optional
 
@@ -31,7 +32,10 @@ class OpenAIResponsesVisionModel(BaseModel):
 
         from openai import OpenAI  # type: ignore
 
-        self.client = OpenAI(api_key=api_key)
+        resolved_api_key = api_key if api_key is not None else os.getenv("OPENAI_API_KEY")
+        if resolved_api_key is not None:
+            resolved_api_key = resolved_api_key.strip()
+        self.client = OpenAI(api_key=resolved_api_key)
 
     @staticmethod
     def _pil_to_data_url(image: Image.Image, fmt: str = "JPEG") -> str:

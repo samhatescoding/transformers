@@ -9,6 +9,7 @@ from .._base_benchmark import BaseBenchmark
 class DetectionBenchmark(BaseBenchmark):
     MAX_PROMPT_LABELS = 10
     PLACEHOLDER_LABELS = {"label", "<label_name>", "class", "object"}
+    TARGET_LABEL_KEY = "target_label"
     default_max_new_tokens = 32
 
     def get_predicted_boxes(self, prediction: str) -> List[Dict[str, Any]]:
@@ -88,11 +89,46 @@ class DetectionBenchmark(BaseBenchmark):
 
         return sorted(labels)
 
+    def _get_target_label(
+        self,
+        row: Dict[str, Any],
+        boxes: List[Dict[str, Any]] | None = None,
+    ) -> str | None:
+        cached = str(row.get(self.TARGET_LABEL_KEY, "")).strip()
+        if cached:
+            return cached
+
+        if boxes is None:
+            boxes = self._get_all_ground_truth_boxes_for_row(row)
+
+        candidates: List[str] = []
+        seen = set()
+        for box in boxes:
+            label = str(box.get("label", "")).strip()
+            normalized = self.dataset.normalize_text(label)
+            if label and normalized not in seen:
+                seen.add(normalized)
+                candidates.append(label)
+
+        if not candidates:
+            labels = self.dataset.get_labels_img(row) or self._labels_from_row_annotations(row)
+            for label in labels:
+                label = str(label).strip()
+                normalized = self.dataset.normalize_text(label)
+                if label and normalized not in seen:
+                    seen.add(normalized)
+                    candidates.append(label)
+
+        if not candidates:
+            return None
+
+        target_label = self.make_rng_for_row(row).choice(candidates)
+        row[self.TARGET_LABEL_KEY] = target_label
+        return target_label
+
     def get_valid_labels_for_row(self, row: Dict[str, Any]) -> List[str]:
-        ann_labels = self.dataset.get_labels_img(row)
-        if ann_labels:
-            return ann_labels
-        return self._labels_from_row_annotations(row)
+        target_label = self._get_target_label(row)
+        return [target_label] if target_label else []
 
     def get_candidate_labels(self, rows: List[Dict[str, Any]]) -> List[str]:
         labels: Set[str] = set()
@@ -102,7 +138,7 @@ class DetectionBenchmark(BaseBenchmark):
             return sorted(labels)
         return list(getattr(self.dataset, "labels", []))
 
-    def get_ground_truth_boxes_for_row(self, row: Dict[str, Any]) -> List[Dict[str, Any]]:
+    def _get_all_ground_truth_boxes_for_row(self, row: Dict[str, Any]) -> List[Dict[str, Any]]:
         getter = getattr(self.dataset, "get_annotations_for_row", None)
         if callable(getter):
             annotations = getter(row)
@@ -126,6 +162,18 @@ class DetectionBenchmark(BaseBenchmark):
             if existing is None or (label and not existing["label"]):
                 by_coords[coords] = {"label": label, "xyxy": list(coords)}
         return list(by_coords.values())
+
+    def get_ground_truth_boxes_for_row(self, row: Dict[str, Any]) -> List[Dict[str, Any]]:
+        boxes = self._get_all_ground_truth_boxes_for_row(row)
+        target_label = self._get_target_label(row, boxes=boxes)
+        if not target_label:
+            return []
+        target_normalized = self.dataset.normalize_text(target_label)
+        return [
+            box
+            for box in boxes
+            if self.dataset.normalize_text(str(box.get("label", ""))) == target_normalized
+        ]
 
     def postprocess_ground_truth_boxes(
         self,
@@ -151,10 +199,8 @@ class DetectionBenchmark(BaseBenchmark):
         return out
 
     def get_prompt_labels_for_row(self, row: Dict[str, Any], labels: List[str]) -> List[str]:
-        valid = self.get_valid_labels_for_row(row)
-        if valid:
-            return valid[: self.MAX_PROMPT_LABELS]
-        return labels[: self.MAX_PROMPT_LABELS]
+        del labels
+        return self.get_valid_labels_for_row(row)
 
     def make_prompt(
         self,
@@ -164,16 +210,41 @@ class DetectionBenchmark(BaseBenchmark):
     ) -> str:
         del row
         del image
-        label_text = ", ".join(labels)
-        example_label = labels[0] if labels else "object"
+        target_label = labels[0] if labels else "object"
         return (
-            "USER: <image>\n"
-            "Detect the objects in the image.\n"
-            "Return one line per detection using this exact format:\n"
-            f"{example_label}: [0.1, 0.2, 0.3, 0.4]\n"
-            "Coordinates must be normalized to 0..1.\n"
-            f"Only use labels from this list: {label_text}\n"
-            "Do not describe the image. Do not write full sentences.\n"
+            "USER: <image>\n\n"
+            f"Target class: {target_label}\n\n"
+            "Detect all visible instances of the target class in the image.\n\n"
+            "Return exactly one bounding box per detected instance, one per line, "
+            "using this exact structure:\n\n"
+            "[x_1, y_1, width_1, height_1]\n"
+            "[x_2, y_2, width_2, height_2]\n"
+            "...\n\n"
+            "x and y are the coordinates of the top-left corner of the box.\n"
+            "width and height are the dimensions of the box.\n"
+            "All four values must be normalized to the range 0..1 relative to the full image "
+            "width and height.\n"
+            "Use decimal numbers, not percentages.\n\n"
+            "For example, if one box covers the upper-right quadrant and another covers the "
+            "lower-left quadrant, write:\n\n"
+            "[0.5, 0.0, 0.5, 0.5]\n"
+            "[0.0, 0.5, 0.5, 0.5]\n\n"
+            "Use tight boxes around the visible part of each target-class instance.\n"
+            "If a target-class instance is partially outside the image, return the box for the "
+            "visible part only, clipped to the image boundaries.\n"
+            "If a target-class instance is partially occluded but still identifiable, return the "
+            "box around the visible part only.\n\n"
+            "Return boxes only for the target class.\n"
+            "Do not return boxes for nearby objects unless they are part of the visible "
+            "target-class instance.\n\n"
+            "If there are no visible instances of the target class, return exactly:\n\n"
+            "[]\n\n"
+            "Do not describe the image.\n"
+            "Do not explain your answer.\n"
+            "Do not include labels, confidence scores, markdown, code fences, commas between "
+            "boxes, or full sentences.\n"
+            "Separate boxes with line breaks, not commas or prose.\n"
+            "Return only the boxes, or [] if there are none.\n\n"
             "ASSISTANT:"
         )
 

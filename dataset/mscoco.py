@@ -14,6 +14,8 @@ from ._base_dataset import BaseDataset
 
 
 class MSCOCO(BaseDataset):
+    ANNOTATION_CACHE_DIR = Path(__file__).resolve().parents[1] / ".tmp" / "coco_annotations"
+
     COCO_CATEGORY_ID_TO_NAME = {
         1: "person",
         2: "bicycle",
@@ -271,7 +273,7 @@ class MSCOCO(BaseDataset):
 
         split_key = "val2017" if self.split.startswith("val") or self.split.startswith("validation") else "train2017"
         target_name = f"instances_{split_key}.json"
-        base_dir = Path(".tmp") / "coco_annotations"
+        base_dir = self.ANNOTATION_CACHE_DIR
         target_path = base_dir / target_name
         if target_path.exists():
             return target_path

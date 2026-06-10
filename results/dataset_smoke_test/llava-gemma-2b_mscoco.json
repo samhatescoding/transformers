@@ -1,0 +1,286 @@
+{
+  "model": "llava-gemma-2b",
+  "benchmark": "mscoco",
+  "report": {
+    "benchmark": "mscoco",
+    "dataset": "mscoco",
+    "task_type": null,
+    "num_samples": 1,
+    "num_candidate_labels": 80,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "bottle",
+          "bowl",
+          "broccoli",
+          "carrot",
+          "cup",
+          "dining table",
+          "knife",
+          "oven",
+          "person",
+          "sink"
+        ],
+        "prediction": "bottle: [0.1, 0.2, 0.3, 0.4]",
+        "correct": false,
+        "valid_labels": [
+          "bottle",
+          "bowl",
+          "broccoli",
+          "carrot",
+          "cup",
+          "dining table",
+          "knife",
+          "oven",
+          "person",
+          "sink",
+          "spoon"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "bottle",
+            "xyxy": [
+              217.62,
+              240.54,
+              256.61,
+              298.28999999999996
+            ]
+          },
+          {
+            "label": "dining table",
+            "xyxy": [
+              1.0,
+              240.24,
+              347.63,
+              427.0
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              388.66,
+              69.92,
+              498.07000000000005,
+              347.54
+            ]
+          },
+          {
+            "label": "knife",
+            "xyxy": [
+              135.57,
+              249.43,
+              157.89,
+              278.22
+            ]
+          },
+          {
+            "label": "bowl",
+            "xyxy": [
+              31.28,
+              344.0,
+              99.4,
+              384.83
+            ]
+          },
+          {
+            "label": "bowl",
+            "xyxy": [
+              59.63,
+              287.36,
+              135.7,
+              328.66
+            ]
+          },
+          {
+            "label": "oven",
+            "xyxy": [
+              1.36,
+              164.33,
+              193.92000000000002,
+              262.70000000000005
+            ]
+          },
+          {
+            "label": "person",
+            "xyxy": [
+              0.0,
+              262.81,
+              62.16,
+              299.58
+            ]
+          },
+          {
+            "label": "cup",
+            "xyxy": [
+              119.4,
+              272.51,
+              144.22,
+              306.76
+            ]
+          },
+          {
+            "label": "cup",
+            "xyxy": [
+              141.47,
+              267.91,
+              173.66,
+              303.77000000000004
+            ]
+          },
+          {
+            "label": "bowl",
+            "xyxy": [
+              155.97,
+              168.95,
+              182.0,
+              186.07999999999998
+            ]
+          },
+          {
+            "label": "bowl",
+            "xyxy": [
+              157.2,
+              114.15,
+              175.06,
+              129.97
+            ]
+          },
+          {
+            "label": "broccoli",
+            "xyxy": [
+              98.75,
+              304.78,
+              109.53,
+              310.34999999999997
+            ]
+          },
+          {
+            "label": "spoon",
+            "xyxy": [
+              166.03,
+              256.36,
+              174.85,
+              274.94
+            ]
+          },
+          {
+            "label": "broccoli",
+            "xyxy": [
+              86.41,
+              293.97,
+              110.37,
+              305.15000000000003
+            ]
+          },
+          {
+            "label": "broccoli",
+            "xyxy": [
+              70.14,
+              296.16,
+              79.42,
+              300.74
+            ]
+          },
+          {
+            "label": "oven",
+            "xyxy": [
+              0.0,
+              210.9,
+              191.36,
+              309.88
+            ]
+          },
+          {
+            "label": "carrot",
+            "xyxy": [
+              96.69,
+              297.09,
+              104.53,
+              301.95
+            ]
+          },
+          {
+            "label": "sink",
+            "xyxy": [
+              497.25,
+              203.4,
+              619.26,
+              232.01
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "bottle",
+            "xyxy": [
+              64.0,
+              85.4,
+              256.0,
+              256.20000000000005
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 427.1806069999584,
+          "generation_time_seconds": 69.45051950000925,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 3.156841795454966,
+          "output_tokens": 22,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 7505395712,
+          "cpu_utilization_percent": 793.3924927113702,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 19,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 19,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 427.18145470001036,
+      "wall_clock_time_per_sample_seconds_mean": 427.1806069999584,
+      "total_generation_time_seconds_mean": 69.45051950000925,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": 3.156841795454966,
+      "samples_per_second": 0.0023409255926202448,
+      "number_of_output_tokens_mean": 22.0,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 1,
+      "success_count": 1,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 7505395712,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 793.3924927113702,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 1,
+      "false_negative_count_total": 19,
+      "mean_number_of_predicted_detections": 1.0,
+      "tokens_per_second": 0.3167722885067414,
+      "model_load_time_seconds": 16.250638900033664
+    }
+  }
+}

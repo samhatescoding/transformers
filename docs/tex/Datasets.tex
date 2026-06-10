@@ -9,6 +9,7 @@
 \usepackage{longtable}
 \usepackage{wrapfig}
 \usepackage{multicol}
+\graphicspath{{images_datasets/}}
 
 
 % Hide the printed "EndFor" keyword (but the \EndFor token is still required)
@@ -147,111 +148,218 @@ Applying these rules, I retained, for each period, the top three qualifying data
 
 \subsection{Summary of the Datasets as a Whole}
 
-
-\begin{longtable}{p{2.7cm}p{1.7cm}p{4cm}p{4cm}}
-\caption{Summary of major multimodal / vision datasets (2009–2025). Terminology is explained in detail in the \textbf{Summary of Datasets as a Whole} section.}
-\label{tab:datasets} \\
-\hline
-\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Type of elements}\\
-\hline
-\endfirsthead
-\multicolumn{4}{l}{\textit{(continued from previous page)}}\\
-\hline
-\textbf{Name} & \textbf{Citations (approx.)} & \textbf{License} & \textbf{Type of elements}\\
-\hline
-\endhead
-\hline \multicolumn{4}{r}{\textit{Continued on next page}}\\
-\endfoot
-\hline
-\endlastfoot
-
-ImageNet (2009) & 66,633 & Free for non-commercial research & Images + labels\\
-\hline
-UCF101 (2012) & 6,460 & CC0 1.0 Universal & Videos + action labels\\
-\hline
-MS COCO (2014) & 46,361 & CC BY 4.0 & Images + object segmentation + captions\\
-\hline
-
-Flickr30k Entities (2015) & 2,226 & Free for non-commercial research & Images + captions + bounding boxes + relationships\\
-\hline
-FlyingThings3D (2015) & 2,758 & Free for non-commercial research & Images (pairs) + 3D data\\
-\hline
-LSUN (2015) & 2,436 & Free for non-commercial research + "certain condicions" & Images + labels\\
-\hline
-
-Cityscapes (2016) & 12,189 & Free for non-commercial research & Images + segmentation + labels\\
-\hline
-Visual Genome (2016) & 6,018 & CC BY 4.0* & Images + bounding boxes + relationships + QA pairs\\
-\hline
-VQA v2.0 (2016) & 3,558 & CC BY 4.0 & Images (paired) + QA pairs\\
-\hline
-
-Fashion-MNIST (2017) & 9,435 & MIT License & Images + labels\\
-\hline
-Kinetics Human Action Video Dataset (2017) & 3,981 & CC BY 4.0* & Videos + labels\\
-\hline
-iNaturalist (2017) & 1,763 & CC BY-NC (Creative Commons Non-Commercial) & Images + boudning boxes + labels\\
-\hline
-
-Places (2018) & 4,319 & Free for non-commercial research purposes & Images + labels\\
-\hline
-Conceptual Captions (2018) & 2,643 & Free for any purpose & Images + captions\\
-\hline
-Open Images V4 (2018) & 1,441 & CC BY 2.0 (images) / CC BY 4.0 (annotations) & Images + bounding boxes + labels + relationships\\
-\hline
-
-GQA (2019) & 2,402 & CC BY 4.0 & Images + QA pairs\\
-\hline
-MVTec AD (2019) & 1,549 & CC BY-NC-SA 4.0 & Images + segmentation\\
-\hline
-LVIS (2019) & 1,492 & CC BY 4.0 & Images + segmentation + labels\\
-\hline
-
-DocVQA (2020) & 930 & ? & Images + QA pairs\\
-\hline
-DFDC (2020) & 597 & Meta research license? & Videos + labels\\
-\hline
-TextCaps (2020) & 469 & CC BY 4.0 & Images + captions\\
-\hline
-
-LAION-400M (2021) & 1,486 & CC BY 4.0 (metadata); images under original copyright & Image + labels + scores\\
-\hline
-FairFace (2021) & 616 & CC BY 4.0 & Images + labels\\
-\hline
-HDTF (2021) & 413 & GNU GPLv3 & Videos + audio + spoken text\\
-\hline
-
-LAION-5B (2022) & 4,059 & CC BY 4.0 (metadata); images under original copyright & Images + captions + scores\\
-\hline
-DiffusionDB (2022) & 349 & CC0 1.0 (data) / MIT (code) & Images + prompts + scores\\
-\hline
-TAD66K (2022) & 111 & Apache License 2.0 & Images + scores\\
-\hline
-
-MagicBrush (2023) & 391 & CC BY-SA 4.0 & Images + prompts\\
-\hline
-Pick-a-Pic (2023) & 559 & ? & Images + prompts + preference\\
-\hline
-InternVid (2023) & 411 & CC BY-NC-SA 4.0 & Videos + captions\\
-\hline
-
-OpenVid-1M (2024) & 149 & ? & Videos + prompts + captions\\
-\hline
-Visual CoT (2024) & 148 & CC BY-SA 4.0 & Images + bounding boxes + QA pairs\\
-\hline
-HQ-Edit (2024) & 104 & CC BY-NC-4.0 & Images + prompts\\
-\hline
-
-BLIP3o-60k (2025) & 91 & Apache License 2.0 & Images + prompts\\
-\hline
-ImgEdit (2025) & 38 & Apache License 2.0 & Images + prompts\\
-\hline
-ShareGPT-4o-Image (2025) & 27 & Apache License 2.0 & Images + prompts\\
-\hline
-\end{longtable}
+\noindent\textbf{Abbreviations.}
+Licenses: \textbf{FNCR} = free for non-commercial research; \textbf{FAP} = free for any purpose; \textbf{MRL} = Meta Research License; \textbf{OC} = original copyright; \textbf{Unk.} = unknown. Standard license identifiers such as CC BY, CC0, MIT, Apache-2.0, and GPL-3.0 are retained.
+Elements: \textbf{Img} = images; \textbf{Vid} = videos; \textbf{Lbl} = labels; \textbf{Act} = action labels; \textbf{Seg} = segmentation; \textbf{Cap} = captions; \textbf{BB} = bounding boxes; \textbf{Rel} = relationships; \textbf{QA} = question--answer pairs; \textbf{Aud} = audio; \textbf{Txt} = text; \textbf{Pr} = prompts; \textbf{Sc} = scores; \textbf{Pref} = preference.
+Evaluation types: \textbf{A} = answering questions; \textbf{B} = bounding box object detection; \textbf{C} = captioning; \textbf{E} = editing prompt reconstruction; \textbf{G} = generating prompt reconstruction; \textbf{L} = labeling; \textbf{P} = preference; \textbf{R} = rating.
 
 
-In Table~\ref{tab:datasets}, when images are grouped or classified into categories, we count this as having \bfit{labels}. Labels are category tags that describe what the image or video shows. For example, a picture of a dog in \textbf{ImageNet} has labels such as \texttt{dog}, \texttt{mammal}, \texttt{animal}, while a picture of a woman laughing in \textbf{UCF101} is labeled as \texttt{smiling}.  \bfit{Captions} go a step further by describing what is happening or what can be seen in the image or video, as seen in Figure~\ref{fig:conceptual-captions} for an image captioned "\texttt{pop artist performs at the festival in a city}" in the \textbf{Conceptual Captions} dataset.\bfit{Prompts} are pieces of text used to generate or edit images in datasets built around generative models. Examples can be seen in Figures~\ref{fig:diffusiondb} or \ref{fig:magicbrush} for the \textbf{DiffusionDB} or \textbf{MagicBrush} datasets respectively.\\
+\begin{table}[H]
+\centering
+\caption{Pre-2015 publications.}
+\label{tab:datasets}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+ImageNet & 66,633 & FNCR & Img + Lbl & L\\
+\hline
+UCF101 & 6,460 & CC0-1.0 & Vid + Act & L\\
+\hline
+MS COCO & 46,361 & CC BY 4.0 & Img + Seg + Cap & B + C\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2015 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+Flickr30k Entities & 2,226 & FNCR & Img + Cap + BB + Rel & B + C\\
+\hline
+FlyingThings3D & 2,758 & FNCR & Img pairs + 3D & A\\
+\hline
+LSUN & 2,436 & FNCR + conditions & Img + Lbl & L\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2016 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+Cityscapes & 12,189 & FNCR & Img + Seg + Lbl & L\\
+\hline
+Visual Genome & 6,018 & CC BY 4.0* & Img + BB + Rel + QA & A\\
+\hline
+VQA v2.0 & 3,558 & CC BY 4.0 & Img pairs + QA & A\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2017 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+Fashion-MNIST & 9,435 & MIT & Img + Lbl & L\\
+\hline
+Kinetics Human Action Video Dataset & 3,981 & CC BY 4.0* & Vid + Lbl & L\\
+\hline
+iNaturalist & 1,763 & CC BY-NC & Img + BB + Lbl & L + B\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2018 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+Places & 4,319 & FNCR & Img + Lbl & L\\
+\hline
+Conceptual Captions & 2,643 & FAP & Img + Cap & C\\
+\hline
+Open Images V4 & 1,441 & CC BY 2.0 (Img) / 4.0 (ann.) & Img + BB + Lbl + Rel & L + B\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2019 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+GQA & 2,402 & CC BY 4.0 & Img + QA & A\\
+\hline
+MVTec AD & 1,549 & CC BY-NC-SA 4.0 & Img + Seg & L\\
+\hline
+LVIS & 1,492 & CC BY 4.0 & Img + Seg + Lbl & B\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2020 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+DocVQA & 930 & Unk. & Img + QA & A\\
+\hline
+DFDC & 597 & MRL? & Vid + Lbl & L\\
+\hline
+TextCaps & 469 & CC BY 4.0 & Img + Cap & C\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2021 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+LAION-400M & 1,486 & CC BY 4.0 (meta.); Img: OC & Img + Lbl + Sc & C\\
+\hline
+FairFace & 616 & CC BY 4.0 & Img + Lbl & L\\
+\hline
+HDTF & 413 & GPL-3.0 & Vid + Aud + Txt & C\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2022 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+LAION-5B & 4,059 & CC BY 4.0 (meta.); Img: OC & Img + Cap + Sc & C\\
+\hline
+DiffusionDB & 349 & CC0-1.0 (data) / MIT (code) & Img + Pr + Sc & G\\
+\hline
+TAD66K & 111 & Apache-2.0 & Img + Sc & R\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2023 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+MagicBrush & 391 & CC BY-SA 4.0 & Img pairs + edit Pr & E\\
+\hline
+Pick-a-Pic & 559 & Unk. & Img + Pr + Pref & P\\
+\hline
+InternVid & 411 & CC BY-NC-SA 4.0 & Vid + Cap & C\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2024 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+OpenVid-1M & 149 & Unk. & Vid + Pr + Cap & C + G\\
+\hline
+Visual CoT & 148 & CC BY-SA 4.0 & Img + BB + QA & A + B\\
+\hline
+HQ-Edit & 104 & CC BY-NC-4.0 & Img pairs + edit Pr & E\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2025 publications.}
+\begin{tabular}{p{2.5cm}p{1.65cm}p{3.05cm}p{3.2cm}p{2.15cm}}
+\hline
+\textbf{Name} & \textbf{Citations} & \textbf{License} & \textbf{Elements} & \textbf{Eval.}\\
+\hline
+BLIP3o-60k & 91 & Apache-2.0 & Img + Pr & G\\
+\hline
+ImgEdit & 38 & Apache-2.0 & Img pairs + edit Pr & E\\
+\hline
+ShareGPT-4o-Image & 27 & Apache-2.0 & Img + Pr & G + E\\
+\hline
+\end{tabular}
+\end{table}
+
+
+In the dataset summary tables, when images are grouped or classified into categories, we count this as having \bfit{labels}. Labels are category tags that describe what the image or video shows. For example, a picture of a dog in \textbf{ImageNet} has labels such as \texttt{dog}, \texttt{mammal}, \texttt{animal}, while a picture of a woman laughing in \textbf{UCF101} is labeled as \texttt{smiling}.  \bfit{Captions} go a step further by describing what is happening or what can be seen in the image or video, as seen in Figure~\ref{fig:conceptual-captions} for an image captioned "\texttt{pop artist performs at the festival in a city}" in the \textbf{Conceptual Captions} dataset.\bfit{Prompts} are pieces of text used to generate or edit images in datasets built around generative models. Examples can be seen in Figures~\ref{fig:diffusiondb} or \ref{fig:magicbrush} for the \textbf{DiffusionDB} or \textbf{MagicBrush} datasets respectively.\\
 
 \bfit{Bounding boxes} pinpoint specific object instances within an image by drawing rectangles around them (using coordinates such as $(x_{\min},y_{\min},x_{\max},y_{\max})$). See Figures \ref{fig:flickr30k} or \ref{fig:visual-genome} from \textbf{Flickr30K} or \textbf{Visual Genome} respectively as examples. \bfit{Segmentation} goes a step further by outlining the exact shape of each object, assigning every pixel to a class or instance. Semantic segmentation labels each pixel by class, while instance segmentation gives each object its own mask. See Figures \ref{fig:mscoco_ucf101} or \ref{fig:cityscapes} from \textbf{MS COCO} or \textbf{Cityscapes} respectively for examples.\\
 
@@ -293,19 +401,70 @@ Regarding the licenses,
 
 
 
+\section{The 8 Benchmarking Types}
+
+\subsection{\textbf{L}: Labeling}
+
+This benchmark takes one image and a list of possible labels. The model returns exactly one label describing the image. For video datasets, several frames are combined into a contact sheet and the model predicts the action or video label.
+
+The smallest context windows among the listed models appear to be those of
+\texttt{glm-4.5v-thinking} and \texttt{glm-4.1v-thinking}, both at 64k tokens.
+Depending on whether one uses the official serving configuration rather than
+the Hugging Face architectural config, \texttt{dots.vlm1} may also be treated
+as a 65,536-token model.
+
+Among the classification datasets considered in this study, the largest label spaces correspond to ImageNet-1K, iNaturalist, and Open Images V4. ImageNet-1K contains 1,000 classes, iNaturalist contains 5,089 species categories, and Open Images V4 provides approximately 20,000 image-level concepts. Since all evaluated models support context windows of at least 64k input tokens, the complete label set can be provided as part of the prompt for ImageNet-1K without difficulty.
+
+For iNaturalist, only the species-level labels will be included in the prompt. This reduces the required prompt length to approximately 20k--30k tokens while preserving the standard fine-grained classification task. Higher levels of the taxonomic hierarchy (e.g., genus, family, order, and class) will not be provided as candidate labels.
+
+For Open Images V4, the full image-level vocabulary is too large to be comfortably included within a 64k-token context window. Therefore, only the subset of images associated with bounding-box annotations will be used. This restricts the candidate label set to the 600 object categories employed by the detection benchmark, allowing all possible labels to be supplied in the prompt while maintaining a closed-set classification setting.
+
+\subsection{\textbf{A:} Answering Visual Multiple-choice Question}
+
+This benchmark takes an image, a natural-language question about its contents, and a set of possible answers. The model selects one answer, which is normalized and compared with the accepted reference answer.
+
+All VQA is multiple choice. For some dataset, distractor choices had to be manually created. For others, even the correct choices had to be created.
+
+The distractor choices must be created for \textbf{Visual Genome}, \textbf{VQA v2.0}, \textbf{GQA}, \textbf{DocVQA}, and \textbf{Visual CoT}. These datasets already provide each image, question, and accepted answer, so the accepted answer can be used as the correct choice; however, their dataset adapters do not provide a set of incorrect candidate answers. Consequently, plausible but incorrect distractors must be added to convert these open-answer questions into multiple-choice questions.
+
+\textbf{FlyingThings3D} requires more extensive construction because it is not originally a question--answer dataset. It provides rendered stereo scenes and geometric annotations rather than natural-language questions with accepted answers. For this dataset, the question and correct textual choice must first be derived from the available scene information; the incorrect choices must then also be created. Thus, only the distractors need to be added for the five existing QA datasets, whereas both the benchmark question/answer and its distractors need to be constructed for FlyingThings3D.
+
+Visual Genome has bouding boxes, but these are very inconsitent because they are human anotatesd without a standard list of labels, so we may get `pet dog` somewhere, but `small dog` elsewhere. That is why we will not measure it in terms of boudning boxes. Moreover, there are over 30k different types of annotated objects, which would not fit into our maximum of 64k labels.
+
+\subsection{\textbf{B}: Bounding Box Object Detection}
+
+This benchmark takes an image and a list of allowed object labels. The model returns every detected object as a label and normalized bounding box. Predictions are compared with annotated boxes using label agreement and intersection over union (IoU).
+
+\subsection{\textbf{C}: Captioning}
+
+This benchmark takes an image, or representative frames from a video, without answer choices. The model generates one concise natural-language description. It is compared with one or more reference captions using BLEU.
+
+\subsection{\textbf{E}: Editing Prompt Reconstruction}
+
+This benchmark takes a side-by-side pair containing the original image and its edited version, plus four candidate editing prompts. The model selects the prompt that best explains the transformation from the first image to the second.
+
+\subsection{\textbf{G}: Generating Prompt Reconstruction}
+
+This benchmark takes an image generated from text and four candidate generation prompts. The model selects the prompt that most likely produced the image, returning either its choice letter or the exact prompt.
+
+\subsection{\textbf{P}: Preference}
+
+This benchmark takes two images shown side by side. The model chooses which image is preferred by returning Image A or Image B. The choice is compared with the recorded human preference.
+
+\subsection{\textbf{R}: Rating}
+
+This benchmark takes one image and asks the model to assess its overall aesthetic quality. The model returns one integer from 1 to 10. Evaluation records exact agreement and the absolute difference from the reference rating.
 
 
 
-
-
-\subsection{Summary of each Datasets}
+\section{Summary of each Datasets}
 
 \begin{multicols}{2}
 \subsection{The Datasets}
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{ImageNet.jpg}
+    \includegraphics[width=\textwidth]{ImageNet.JPG}
     \caption{Example of ImageNet hierarchical organization, showing a path from \textit{mammal} to \textit{husky}.}
 \end{figure*}
 
@@ -331,7 +490,7 @@ At the time of publication, ImageNet contained 12 major groups, covering 5,247 c
 \begin{figure}[H]
     \centering
     \vspace{-10pt}
-    \includegraphics[width=0.5\textwidth]{UCF101.jpg}
+    \includegraphics[width=0.5\textwidth]{UCF101.JPG}
     \caption{Sample frames from UCF101 showing diverse action classes such as \textit{Apply Eye Makeup}, \textit{Playing Dhol}, and \textit{Baby Crawling}.}
     \vspace{-10pt}
     \label{fig:mscoco_ucf101}
@@ -360,7 +519,7 @@ At the time of publication, ImageNet contained 12 major groups, covering 5,247 c
 \begin{figure}[H]
     \centering
     \vspace{-10pt}
-    \includegraphics[width=0.5\textwidth]{MSCOCO.jpg}
+    \includegraphics[width=0.5\textwidth]{MSCOCO.JPG}
     \caption{Examples from the MS COCO dataset showing object segmentations for categories such as \textit{cow}, \textit{train}, and \textit{car}}
     \vspace{-10pt}
     \label{fig:mscoco_ucf101}
@@ -416,7 +575,7 @@ MS COCO includes 91 common object categories that are easily recognizable, with 
 \begin{figure}[H]
     \centering
     \vspace{-10pt}
-    \includegraphics[width=0.35\textwidth]{Flickr30k1.jpg}
+    \includegraphics[width=0.35\textwidth]{Flickr30k1.JPG}
     \caption{Example image with captions; phrases in the same color are coreferent and linked to their corresponding bounding boxes.}
     \label{fig:flickr30k}
     \vspace{-10pt}
@@ -472,6 +631,13 @@ MS COCO includes 91 common object categories that are easily recognizable, with 
 
 
 
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{LSUN.JPG}
+    \caption{Example images and scene categories from the \textit{LSUN} dataset.}
+    \label{fig:lsun}
+\end{figure*}
+
 \textbf{LSUN} is a very large dataset consisting of about 69 million images belonging to 30 categories. Only a small portion of the images were labeled by humans, the rest being labeled by a trained classifier (e.g., for the \emph{train} category, less than $1/60$ of images were labeled by people), achieving ~90\% precision. Training popular convolutional networks on this larger, if noisier, data leads to noticeable gains; for example, fine-tuning with LSUN reduced a reported classification error from 28.6\% to 22.2\% on a related evaluation.\\
 
 
@@ -504,7 +670,7 @@ MS COCO includes 91 common object categories that are easily recognizable, with 
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{Cityscapes.jpg}
+    \includegraphics[width=\textwidth]{Cityscapes.JPG}
     \caption{Example scenes from the \textit{Cityscapes} dataset. From left to right: fine annotations for training/validation (3,475 images), coarse annotations for training (20,000 images), and fine annotations for testing (1,525 images). Each image shows dense semantic and instance-level labeling of complex urban street scenes.}
     \label{fig:cityscapes}
 \end{figure*}
@@ -544,7 +710,7 @@ MS COCO includes 91 common object categories that are easily recognizable, with 
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{VisualGenome1.jpg}
+    \includegraphics[width=\textwidth]{VisualGenome1.JPG}
     \caption{Example image and scene graph from the \textbf{Visual Genome} dataset. The left side shows labeled objects with bounding boxes, while the right side illustrates the relationships between these objects in a graph.}
     \label{fig:visual-genome}
 \end{figure*}
@@ -583,7 +749,7 @@ MS COCO includes 91 common object categories that are easily recognizable, with 
 \begin{figure}[H]
     \centering
     \vspace{-10pt}
-    \includegraphics[width=0.5\textwidth]{VQAV2.jpg}
+    \includegraphics[width=0.5\textwidth]{VQAV2.JPG}
     \caption{Examples from the balanced \textbf{VQA v2.0} dataset. Each question is paired with images that are visually similar yet lead to different answers, encouraging models to use visual evidence rather than language priors.}
     \label{fig:vqa-v2}
     \vspace{-10pt}
@@ -626,7 +792,7 @@ Benchmarking shows that state-of-the-art models trained on the original data per
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{FASHION-MNIST.png}
+    \includegraphics[width=\textwidth]{Fashion-MNIST.png}
     \caption{The conversion pipeline used to generate the \textit{Fashion-MNIST} dataset. Each row shows an example from a product category (dress, sandal), with transformations applied sequentially until the final (rightmost) image that will be part of the dataset is created.}
     \label{fig:fashion-mnist}
 \end{figure*}
@@ -700,7 +866,7 @@ The \textbf{Kinetics Human Action Video Dataset} consists of 400 action classes 
 \begin{figure}[H]
     \centering
     \vspace{-10pt}
-    \includegraphics[width=0.5\textwidth]{iNaturalist.jpg}
+    \includegraphics[width=0.5\textwidth]{iNaturalist.JPG}
     \caption{Sample bounding-box annotations for the \textbf{iNaturalist} dataset. Annotators drew boxes for the \emph{super-class} (e.g., “box all birds”), up to ten instances per image; boxes could overlap, cover only visible parts when occluded, and a single box could enclose physically connected instances.}
     \label{fig:inat2017-fig3}
     \vspace{-10pt}
@@ -727,7 +893,7 @@ The \textbf{Kinetics Human Action Video Dataset} consists of 400 action classes 
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{Places.jpg}
+    \includegraphics[width=\textwidth]{places.JPG}
     \caption{Example scenes from the \textit{Places} dataset, illustrating variations across categories such as bedrooms, kitchens, forests, and coasts. Each scene combines structural and stylistic diversity captured through adjective-based search expansions.}
     \label{fig:places}
 \end{figure*}
@@ -754,7 +920,7 @@ The \textbf{Places} database~\cite{zhou2017places} comprises 10 million images l
 \begin{figure}[H]
     \centering
     \vspace{-10pt}
-    \includegraphics[width=0.5\textwidth]{ConceptualCaptions.jpg}
+    \includegraphics[width=0.5\textwidth]{ConceptualCaptions.JPG}
     \caption{Examples from the \textbf{Conceptual Captions} dataset. Original web \texttt{alt}-texts (top) are automatically cleaned and hypernymed into concise captions (bottom).}
     \label{fig:conceptual-captions}
     \vspace{-10pt}
@@ -788,7 +954,7 @@ The dataset was created through a multi-stage automatic pipeline that processed 
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{OpenImagesV4.jpg}
+    \includegraphics[width=\textwidth]{OpenImagesV4.JPG}
     \caption{Example annotations from the \textit{Open Images V4} dataset for image classification, object detection, and visual relationship detection. Green labels mark present classes, red labels absent ones. Dashed boxes group pairs of objects sharing a visual relationship.}
     \label{fig:openimages}
 \end{figure*}
@@ -834,7 +1000,7 @@ Compared to previous datasets such as MS-COCO or ImageNet, Open Images V4 offers
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.5\textwidth]{GQA.jpg}
+    \includegraphics[width=.5\textwidth]{GQA.JPG}
     \caption{Example GQA images and queries illustrating spatial reasoning, attributes, and compositional question answering.}
     \label{fig:gqa}
 \end{figure}
@@ -869,7 +1035,7 @@ A distinctive feature of GQA is its emphasis on compositionality: a single quest
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.5\textwidth]{MVTec AD.jpg}
+    \includegraphics[width=.5\textwidth]{MVTec AD.JPG}
     \caption{Examples from \textbf{MVTec AD}: each triplet shows a defect-free image (left), an anomalous image (middle), and the pixel-precise ground-truth mask overlaid on a zoomed region (right).}
     \label{fig:mvtec-ad}
 \end{figure}
@@ -959,7 +1125,7 @@ Unlike previous benchmarks, which exhaustively annotate a fixed set of categorie
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{DocVQA.jpg}
+  \includegraphics[width=0.5\textwidth]{DocVQA.JPG}
   \caption{\textbf{DocVQA example.} Sample document image with Q\&A pairs that require reading text and interpreting page layout/structure.}
   \label{fig:docvqa}
 \end{figure}
@@ -992,7 +1158,7 @@ Questions are answerable by copying spans \emph{verbatim} from the page (an extr
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{DFDC.jpg}
+    \includegraphics[width=\textwidth]{DFDC.JPG}
     \caption{\textbf{DFDC face mosaic.} Example frames from the DFDC dataset. All identities are consenting paid actors recorded specifically for creating and detecting face swaps.}
     \label{fig:dfdc}
 \end{figure*}
@@ -1069,7 +1235,7 @@ The \textbf{TextCaps} dataset~\cite{sidorov2020textcaps} introduces the task of 
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{laion-400m.jpg}
+    \includegraphics[width=\textwidth]{LAION-400M.JPG}
     \caption{Example image retrieval results for the query ``cat with blue eyes'' using the LAION-400M web demo. The dataset supports large-scale multimodal similarity search using CLIP embeddings.}
     \label{fig:laion400m}
 \end{figure*}
@@ -1097,7 +1263,7 @@ The \textbf{LAION-400M} dataset contains an astounding 400 million image–text 
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{FairFace.jpg}
+    \includegraphics[width=\textwidth]{FairFace.JPG}
     \caption{Example faces from (a) FairFace and (b–d) popular prior datasets. FairFace is designed to be racially balanced, unlike many existing sets that are dominated by White faces.}
     \label{fig:fairface_grid}
 \end{figure*}
@@ -1131,7 +1297,7 @@ The paper highlights that many widely used face datasets (e.g., celebrity or pol
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{hdtf.jpg}
+    \includegraphics[width=0.5\textwidth]{HDTF.JPG}
     \caption{Overview of one-shot high-resolution talking face generation from the HDTF dataset. Given a reference image and driving audio, the model synthesizes high-resolution videos with synchronized facial animation.}
     \label{fig:hdtf}
 \end{figure}
@@ -1172,7 +1338,7 @@ The paper highlights that many widely used face datasets (e.g., celebrity or pol
 
 \begin{figure*}[H]
     \centering
-    \includegraphics[width=\textwidth]{laion-5b.jpg}
+    \includegraphics[width=\textwidth]{LAION-5B.JPG}
     \caption{Nearest-neighbor examples from LAION-5B using CLIP embeddings. For each text query (Q), the corresponding top retrieved image and its caption (C) are shown.}
 \end{figure*}
 
@@ -1205,7 +1371,7 @@ The accompanying web interface allows interactive dataset exploration, nearest-n
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.35\textwidth]{diffusiondb2.jpg}
+    \includegraphics[width=0.35\textwidth]{DiffusionDB2.jpg}
     \caption{Examples from \textbf{DiffusionDB}, showing generated images with their corresponding prompts}
     \label{fig:diffusiondb}
 \end{figure}
@@ -1265,7 +1431,7 @@ The accompanying web interface allows interactive dataset exploration, nearest-n
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.45\textwidth]{tad66k.jpg}
+  \includegraphics[width=0.45\textwidth]{TAD66K.JPG}
   \caption{Examples from the \textbf{TAD66K} dataset. Each pair shows images from the same theme with their average aesthetic scores (in red) and predicted scores in parentheses. Even when scores are similar, different themes correspond to distinct aesthetic criteria.}
 \end{figure}
 
@@ -1317,7 +1483,7 @@ The \textbf{TAD66K} dataset (Theme and Aesthetics Dataset) was created to addres
 \begin{figure*}[t]
   \centering
   % Replace the filename below with your local path if needed
-  \includegraphics[width=\linewidth]{magicbrush.jpg}
+  \includegraphics[width=\linewidth]{MagicBrush.JPG}
   \caption{Illustration of \textsc{MagicBrush}: instruction–guided real image editing with both \emph{multi–turn} (left) and \emph{single–turn} (right) workflows. Each triplet consists of a source image, a natural–language instruction, and a target image.}
   \label{fig:magicbrush}
 \end{figure*}
@@ -1368,7 +1534,7 @@ The \textbf{TAD66K} dataset (Theme and Aesthetics Dataset) was created to addres
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.35\textwidth]{pickapic2.jpg}
+    \includegraphics[width=0.35\textwidth]{PickAPic2.jpg}
     \caption{\textbf{Pick-a-Pic} web-app outputs. For each prompt the non-preferred image (left) is darkened and the user-preferred image (right) is highlighted.}
 \end{figure}
 
@@ -1393,7 +1559,7 @@ The \textbf{TAD66K} dataset (Theme and Aesthetics Dataset) was created to addres
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{internvid.jpg}
+    \includegraphics[width=\textwidth]{InternVid.JPG}
     \caption{Examples from \textbf{InternVid}. For each video clip (three frames shown), the dataset provides LLM-generated captions that emphasize nouns (blue) and verbs (green). Compared with raw ASR transcripts (grey), the captions are more visually grounded and descriptive.}
 \end{figure*}
 
@@ -1432,7 +1598,7 @@ The \textbf{TAD66K} dataset (Theme and Aesthetics Dataset) was created to addres
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{openvid-1m.jpg}
+    \includegraphics[width=\textwidth]{OpenVid-1M.JPG}
     \caption{Comparison between existing text-to-video datasets and OpenVid-1M. Datasets such as UCF-101, WebVid-10M, and Panda-70M often contain low-resolution or low-quality videos with short captions, whereas OpenVid-1M features over one million high-quality clips with expressive, detailed textual descriptions highlighting both semantic and visual nuances.}
     \label{fig:openvid1m}
 \end{figure*}
@@ -1477,7 +1643,7 @@ Experimental results confirm that OpenVid-1M and MVDiT significantly outperform 
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{visual cot.jpg}
+  \includegraphics[width=\textwidth]{Visual CoT.JPG}
   \caption{\textbf{Visual CoT} examples across five domains. Each question–answer pair is accompanied by an intermediate bounding box (red) that highlights the key region used in reasoning.}
 \end{figure*}
 
@@ -1513,7 +1679,7 @@ Experimental results confirm that OpenVid-1M and MVDiT significantly outperform 
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]{hq-edit.jpg}
+    \includegraphics[width=\textwidth]{HQ-Edit.JPG}
     \caption{(a)–(d): example image edit pairs and instructions from HQ-Edit. (e): comparison of dataset quality between HQ-Edit and previous benchmarks. “Alignment” and “Coherence” are newly proposed metrics introduced in Section~3.4 to evaluate semantic and aesthetic quality.}
     \label{fig:hqedit}
 \end{figure*}
@@ -1566,7 +1732,7 @@ In addition to automatic evaluation, a human study on 1,651 image pairs generate
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{imgedit.jpg}
+  \includegraphics[width=\textwidth]{ImgEdit.JPG}
   \caption{\textbf{ImgEdit} illustrates single–turn edits (add, remove, replace, alter, background/style change, motion change, object extraction, visual and hybrid edits) and multi–turn behaviors (content memory, content understanding, version backtracking).}
 \end{figure*}
 
@@ -1601,7 +1767,7 @@ The original images come from a high–aesthetics subset of LAION (aesthetic sco
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{sharegpt4o.jpg}
+  \includegraphics[width=\textwidth]{sharegpt4o.JPG}
   \caption{\textbf{ShareGPT-4o-Image}. Examples from the two splits: \emph{45K} text-to-image (left) and \emph{46K} text\&image-to-image (right) synthesized by GPT-4o-Image.}
 \end{figure*}
 

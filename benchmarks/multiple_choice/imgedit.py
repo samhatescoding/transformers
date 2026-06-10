@@ -1,11 +1,10 @@
 from dataset import ImgEdit
 
-from ._multiple_choice import MultipleChoiceBenchmark
+from ..image_modification_vqa import ImageModificationVQABenchmark
 
 
-class ImgEditBenchmark(MultipleChoiceBenchmark):
+class ImgEditBenchmark(ImageModificationVQABenchmark):
     dataset_cls = ImgEdit
     benchmark_name = "imgedit"
     default_split = "train"
-    default_instruction = "Choose the image-edit instruction that best explains the change."
     fallback_distractors = ("classify the scene", "read the document", "describe video motion")

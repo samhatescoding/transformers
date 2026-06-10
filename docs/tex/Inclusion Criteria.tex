@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{booktabs}
@@ -84,9 +85,142 @@ stored in this repository\par}
 
 \chapter{Models}
 
-\begin{table}[htbp]
+\subsection{The Models Chosen}
+
+As mentioned in the report, the models chosen are:
+
+\noindent\textbf{Proprietary/API models}
+\begin{itemize}
+    \item \texttt{gpt-5.5}
+    \item \texttt{gpt-5.4}
+    \item \texttt{o3}
+    \item \texttt{o4-mini}
+
+    \item \texttt{claude-opus-4-8}
+    \item \texttt{claude-opus-4-7}
+    \item \texttt{claude-opus-4-6}
+    \item \texttt{claude-sonnet-4-6}
+    \item \texttt{claude-sonnet-4-5}
+
+    \item \texttt{gemini-3.1-pro-preview}
+    \item \texttt{gemini-3.5-flash}
+
+    \item \texttt{qwen3.7-plus-preview}
+    \item \texttt{qwen3.6-plus}
+\end{itemize}
+
+\noindent\textbf{Open-weight models}
+\begin{itemize}
+    \item \texttt{qwen3.6-27b}
+    \item \texttt{qwen3.5-397b-a17b}
+    \item \texttt{qwen3-vl-235b-a22b}
+
+    \item \texttt{kimi-k2.6}
+    \item \texttt{kimi-k2.5-thinking}
+
+    \item \texttt{gemma-4-31b}
+    \item \texttt{gemma-4-26b-a4b}
+
+    \item \texttt{mimo-v2.5}
+    \item \texttt{mimo-v2.5-pro}
+
+    \item \texttt{mistral-medium-3.5}
+    \item \texttt{mistral-small-4}
+
+    \item \texttt{dots.vlm1}
+    \item \texttt{dots.ocr}
+
+    \item \texttt{glm-4.5v-thinking}
+    \item \texttt{glm-4.1v-thinking}
+
+    \item \texttt{skywork-r1v3-38b}
+    \item \texttt{skywork-r1v2-38b}
+\end{itemize}
+
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+
+
+\section{The Procedure}
+
+\begin{enumerate}
+    \item Freeze the four leaderboard snapshots: Arena Vision proprietary,
+    Arena Vision open-weight, MMMU-Pro proprietary, and MMMU-Pro open-weight.
+
+    \item For each leaderboard, identify the five highest-ranked model families
+    by scanning the ranking from top to bottom. Skip models that cannot be
+    evaluated through a generally available API or downloadable checkpoint.
+    Claude Opus and Claude Sonnet are treated as distinct families because they
+    occupy different capability, cost, and deployment tiers.
+
+    \item For each selected family, choose two models:
+    \begin{enumerate}
+        \item the highest-ranked model from that family in the leaderboard. If
+        this model is no longer available through its provider, replace it with
+        the closest currently available model from the same family. For example,
+        Gemini 3.0 Pro appears in the leaderboard, but it is no longer available
+        in Google AI Studio; it is therefore replaced by Gemini 3.1 Pro Preview,
+        accessed through the endpoint \texttt{gemini-3.1-pro-preview};
+
+        \item the strongest currently available distinct model from the same
+        family. If the strongest current model coincides with the leaderboard-selected
+    model, choose the next strongest currently available distinct model from
+    that family.
+    \end{enumerate}
+
+    \item Collapse variants differing only by inference or serving mode, such as
+    \texttt{thinking}, \texttt{high}, \texttt{instant}, or \texttt{flash},
+    keeping the strongest or highest-ranked variant unless the distinction is
+    itself relevant to the experiment.
+
+    \item Remove duplicates across the four leaderboards and evaluate each
+    remaining model once.
+\end{enumerate}
+
+This procedure gives at least 10 models.
+
+When a provider exposes a model only through a preview endpoint, the
+    preview endpoint is treated as the implementation of the corresponding
+    leaderboard model, provided that it is the closest available version of the
+    same model family. For example, a leaderboard entry written as Gemini 3.1 Pro
+    is evaluated using \texttt{gemini-3.1-pro-preview}.
+
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+
+\section{The Leaderboards}
+
+\begin{table}[H]
 \centering
 \small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lccclll}
 \toprule
 \textbf{Model name} &
@@ -95,63 +229,405 @@ stored in this repository\par}
 \textbf{Score} &
 \textbf{Date} &
 \textbf{Family} &
-\textbf{Company} \
+\textbf{Company} \\
 \midrule
 GPT-5.4 Thinking w/ tools
-& 1 & 1 & 82.1 & 2026-03-05 & GPT-5.4 & OpenAI \
+& 1 & 1 & 82.1 & 2026-03-05 & GPT-5.4 & OpenAI \\
 GPT-5.4 Thinking w/o tools
-& 2 & 2 & 81.2 & 2026-03-05 & GPT-5.4 & OpenAI \
+& 2 & 2 & 81.2 & 2026-03-05 & GPT-5.4 & OpenAI \\
 Gemini 3.0 Pro
-& 3 & 3 & 81.0 & 2025-11-18 & Gemini 3 & Google DeepMind \
+& 3 & 3 & 81.0 & 2025-11-18 & Gemini 3 & Google DeepMind \\
 Gemini 3.1 Pro Thinking (High)
-& 4 & 4 & 80.5 & 2026-02-19 & Gemini 3.1 & Google DeepMind \
+& 4 & 4 & 80.5 & 2026-02-19 & Gemini 3.1 & Google DeepMind \\
 Muse Spark Thinking
-& 5 & 5 & 80.4 & 2026-04-08 & Muse Spark & Meta \
+& 5 & 5 & 80.4 & 2026-04-08 & Muse Spark & Meta \\
 GPT-5.2 Thinking w/o Python
-& 5 & 5 & 80.4 & 2025-12-11 & GPT-5.2 & OpenAI \
+& 5 & 5 & 80.4 & 2025-12-11 & GPT-5.2 & OpenAI \\
 GPT-5.2 Thinking w/o tools
-& 7 & 7 & 79.5 & 2025-12-11 & GPT-5.2 & OpenAI \
+& 7 & 7 & 79.5 & 2025-12-11 & GPT-5.2 & OpenAI \\
 GPT-5.1 Thinking
-& 8 & 8 & 79.0 & 2025-11-13 & GPT-5.1 & OpenAI \
+& 8 & 8 & 79.0 & 2025-11-13 & GPT-5.1 & OpenAI \\
 GPT-5 w/ thinking
-& 9 & 9 & 78.4 & 2025-08-07 & GPT-5 & OpenAI \
+& 9 & 9 & 78.4 & 2025-08-07 & GPT-5 & OpenAI \\
 Claude Opus 4.6 w/ tools
-& 10 & 10 & 77.3 & 2026-02-05 & Claude Opus 4.6 & Anthropic \
+& 10 & 10 & 77.3 & 2026-02-05 & Claude Opus 4.6 & Anthropic \\
 o3
-& 11 & 12 & 76.4 & 2025-04-16 & o3 & OpenAI \
+& 11 & 12 & 76.4 & 2025-04-16 & o3 & OpenAI \\
 GPT-5.1
-& 12 & 13 & 76.0 & 2025-11-13 & GPT-5.1 & OpenAI \
+& 12 & 13 & 76.0 & 2025-11-13 & GPT-5.1 & OpenAI \\
 Claude Sonnet 4.6 w/ tools
-& 13 & 14 & 75.6 & 2026-02-17 & Claude Sonnet 4.6 & Anthropic \
+& 13 & 14 & 75.6 & 2026-02-17 & Claude Sonnet 4.6 & Anthropic \\
 Claude Sonnet 4.6 w/o tools
-& 14 & 15 & 74.5 & 2026-02-17 & Claude Sonnet 4.6 & Anthropic \
+& 14 & 15 & 74.5 & 2026-02-17 & Claude Sonnet 4.6 & Anthropic \\
 Claude Opus 4.6 w/o tools
-& 15 & 16 & 73.9 & 2026-02-05 & Claude Opus 4.6 & Anthropic \
+& 15 & 16 & 73.9 & 2026-02-05 & Claude Opus 4.6 & Anthropic \\
 Claude Opus 4.5
-& 15 & 16 & 73.9 & 2025-11-24 & Claude Opus 4.5 & Anthropic \
+& 15 & 16 & 73.9 & 2025-11-24 & Claude Opus 4.5 & Anthropic \\
 Claude Sonnet 4.5
-& 17 & 20 & 68.9 & 2025-09-29 & Claude Sonnet 4.5 & Anthropic \
+& 17 & 20 & 68.9 & 2025-09-29 & Claude Sonnet 4.5 & Anthropic \\
 Gemini 2.5 Pro 05-06
-& 18 & 22 & 68.0 & 2025-05-06 & Gemini 2.5 & Google DeepMind \
+& 18 & 22 & 68.0 & 2025-05-06 & Gemini 2.5 & Google DeepMind \\
 Seed 1.5-VL Thinking
-& 19 & 23 & 67.6 & 2025-05-13 & Seed 1.5-VL & ByteDance \
+& 19 & 23 & 67.6 & 2025-05-13 & Seed 1.5-VL & ByteDance \\
 \bottomrule
 \end{tabular}
+}
 \caption{Highest-ranked proprietary/API models on the MMMU-Pro leaderboard, extended until five owning companies are represented. Ranks are model-only ranks, excluding human baselines. Tied scores share the same rank.}
 \label{tab:mmmu-pro-proprietary-five-companies}
 \end{table}
 
+%
+%
+%
+%
+%
+
+\begin{table}[H]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccclll}
+\toprule
+\textbf{Model name} &
+\textbf{Open-weight rank} &
+\textbf{Overall rank} &
+\textbf{Score} &
+\textbf{Date} &
+\textbf{Family} &
+\textbf{Company} \\
+\midrule
+Gemma 4 31B
+& 1 & 11 & 76.9 & 2026-04-02 & Gemma 4 & Google DeepMind \\
+Gemma 4 26B A4B
+& 2 & 18 & 73.8 & 2026-04-02 & Gemma 4 & Google DeepMind \\
+dots.vlm1
+& 3 & 19 & 70.1 & 2025-08-05 & dots.vlm & RedNote \\
+Qwen3-VL 235B-A22B
+& 4 & 21 & 68.1 & 2025-09-22 & Qwen3-VL & Alibaba Cloud \\
+GLM-4.5V w/ Thinking
+& 5 & 25 & 65.2 & 2025-08-11 & GLM-4.5V & Z.ai / Zhipu AI \\
+GLM-4.1V w/ Thinking
+& 6 & 29 & 57.1 & 2025-07-01 & GLM-4.1V & Z.ai / Zhipu AI \\
+Skywork-R1V3-38B
+& 7 & 30 & 55.4 & 2025-07-05 & Skywork-R1V & Skywork AI \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Highest-ranked open-weight models on MMMU-Pro, extended until five distinct owning companies are represented. Ranks are model-only ranks, excluding human baselines. Seed models are excluded because they are treated here as API-accessible rather than open-weight.}
+\label{tab:mmmu-pro-open-weight-five-companies}
+\end{table}
+
+%
+%
+%
+%
+%
+
+\begin{table}[H]
+    \centering
+    \small
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccrcll}
+        \toprule
+        \textbf{Model name} & \textbf{Prop. rank} & \textbf{Overall rank} & \textbf{Score} & \textbf{Date} & \textbf{Family} & \textbf{Company} \\
+        \midrule
+        claude-opus-4-7-thinking & 1 & 1 & $1308 \pm 8$ & 2026-04-16 & Claude Opus 4.7 & Anthropic \\
+        claude-opus-4-6-thinking & 2 & 2 & $1303 \pm 8$ & 2026-02-05 & Claude Opus 4.6 & Anthropic \\
+        claude-opus-4-7 & 3 & 3 & $1300 \pm 8$ & 2026-04-16 & Claude Opus 4.7 & Anthropic \\
+        claude-opus-4-6 & 4 & 4 & $1296 \pm 7$ & 2026-02-05 & Claude Opus 4.6 & Anthropic \\
+        muse-spark & 5 & 5 & $1295 \pm 10$ & 2026-04-08 & Muse Spark & Meta \\
+        claude-opus-4-8-thinking & 6 & 6 & $1294 \pm 13$ & 2026-05-28 & Claude Opus 4.8 & Anthropic \\
+        gemini-3-pro & 7 & 7 & $1289 \pm 8$ & 2025-11-18 & Gemini 3 & Google \\
+        gpt-5.5 & 8 & 8 & $1286 \pm 9$ & 2026-04-23 & GPT-5.5 & OpenAI \\
+        gpt-5.4-high & 9 & 9 & $1283 \pm 8$ & 2026-03-05 & GPT-5.4 & OpenAI \\
+        gpt-5.5-high & 10 & 10 & $1282 \pm 9$ & 2026-04-23 & GPT-5.5 & OpenAI \\
+        gpt-5.2-chat-latest-20260210 & 11 & 11 & $1279 \pm 7$ & 2025-12-11 & GPT-5.2 & OpenAI \\
+        claude-opus-4-8 & 12 & 12 & $1279 \pm 12$ & 2026-05-28 & Claude Opus 4.8 & Anthropic \\
+        gemini-3.1-pro-preview & 13 & 13 & $1278 \pm 6$ & 2026-02-19 & Gemini 3.1 & Google \\
+        claude-sonnet-4-6 & 14 & 14 & $1278 \pm 7$ & 2026-02-17 & Claude Sonnet 4.6 & Anthropic \\
+        gpt-5.4 & 15 & 15 & $1275 \pm 8$ & 2026-03-05 & GPT-5.4 & OpenAI \\
+        gpt-5.5-instant & 16 & 16 & $1275 \pm 9$ & 2026-04-23 & GPT-5.5 & OpenAI \\
+        gemini-3-flash & 17 & 17 & $1271 \pm 6$ & 2025-12-17 & Gemini 3 & Google \\
+        qwen3.7-plus-preview & 18 & 18 & $1263 \pm 11$ & 2026-05-19 & Qwen3.7 & Alibaba \\
+        \bottomrule
+    \end{tabular}%
+    }
+    \caption{Highest-ranked proprietary models on Arena Vision Overall, extended until five distinct companies are represented.}
+    \label{tab:arena-vision-proprietary-five-companies}
+\end{table}
+
+%
+%
+%
+%
+%
+
+\begin{table}[H]
+    \centering
+    \small
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccrclll}
+        \toprule
+        \textbf{Model name} & \textbf{Open rank} & \textbf{Overall rank} & \textbf{Score} & \textbf{Date} & \textbf{Family} & \textbf{License} & \textbf{Company} \\
+        \midrule
+        kimi-k2.6 & 1 & 19 & $1261 \pm 8$ & 2026-04-20 & Kimi K2.6 & Modified MIT & Moonshot \\
+        gemma-4-31b & 2 & 24 & $1253 \pm 7$ & 2026-04-02 & Gemma 4 & Apache 2.0 & Google \\
+        qwen3.5-397b-a17b & 3 & 26 & $1249 \pm 7$ & 2026-02-16 & Qwen3.5 & Apache 2.0 & Alibaba \\
+        kimi-k2.5-thinking & 4 & 28 & $1247 \pm 7$ & 2026-01-27 & Kimi K2.5 & Modified MIT & Moonshot \\
+        kimi-k2.5-instant & 5 & 34 & $1238 \pm 11$ & 2026-01-27 & Kimi K2.5 & Modified MIT & Moonshot \\
+        mimo-v2.5 & 6 & 35 & $1238 \pm 8$ & 2026-04-27 & MiMo-V2.5 & MIT & Xiaomi \\
+        gemma-4-26b-a4b & 7 & 36 & $1238 \pm 8$ & 2026-04-02 & Gemma 4 & Apache 2.0 & Google \\
+        qwen3.5-122b-a10b & 8 & 41 & $1226 \pm 7$ & 2026-02-24 & Qwen3.5 & Apache 2.0 & Alibaba \\
+        qwen3.5-27b & 9 & 45 & $1220 \pm 7$ & 2026-02-24 & Qwen3.5 & Apache 2.0 & Alibaba \\
+        qwen3-vl-235b-a22b-instruct & 10 & 49 & $1215 \pm 7$ & 2025-09-22 & Qwen3-VL & Apache 2.0 & Alibaba \\
+        \bottomrule
+    \end{tabular}%
+    }
+    \caption{Highest-ranked open-weight models visible in the provided Arena Vision Overall excerpt. The excerpt reaches four distinct companies: Moonshot, Google, Alibaba, and Xiaomi.}
+    \label{tab:arena-vision-open-visible}
+\end{table}
+
+%
+%
+%
+%
+%
 
 
+\section{Models Selected per Leaderboard}
 
+\noindent
+In the lists below, model names refer to the model identifiers or closest
+currently available implementation used in the experiments. When a leaderboard
+entry refers to an unavailable or superseded model, the closest currently
+available model from the same family is used instead. For example, Gemini Pro
+entries are evaluated through \texttt{gemini-3.1-pro-preview}. Similarly,
+labels such as \texttt{thinking}, \texttt{high}, or \texttt{w/ tools} are treated
+as inference or serving configurations rather than separate model families.
 
+\noindent\textbf{Models selected from Table~\ref{tab:mmmu-pro-proprietary-five-companies}.}
+The five selected families are GPT, Gemini, Claude Opus, o-series, and Claude Sonnet. The models included from this leaderboard are:
+\begin{itemize}
+    \item \textbf{GPT}: \texttt{gpt-5.4}; \texttt{gpt-5.5}.
+    \item \textbf{Gemini}: \texttt{gemini-3.1-pro-preview}; \texttt{gemini-3.5-flash}.
+    \item \textbf{Claude Opus}: \texttt{claude-opus-4-6}; \texttt{claude-opus-4-8}.
+    \item \textbf{o-series}: \texttt{o3}; \texttt{o4-mini}.
+    \item \textbf{Claude Sonnet}: \texttt{claude-sonnet-4-6}; \texttt{claude-sonnet-4-5}.
+\end{itemize}
 
+\noindent Muse Spark is excluded because its API is not generally available.
 
+\noindent\textbf{Models selected from Table~\ref{tab:mmmu-pro-open-weight-five-companies}.}
+The five selected families are Gemma, dots, Qwen, GLM, and Skywork. The models included from this leaderboard are:
+\begin{itemize}
+    \item \textbf{Gemma}: \texttt{gemma-4-31b}; \texttt{gemma-4-26b-a4b}.
+    \item \textbf{dots}: \texttt{dots.vlm1}; \texttt{dots.ocr}.
+    \item \textbf{Qwen}: \texttt{qwen3-vl-235b-a22b}; \texttt{qwen3.6-27b}.
+    \item \textbf{GLM}: \texttt{glm-4.5v-thinking}; \texttt{glm-4.1v-thinking}.
+    \item \textbf{Skywork}: \texttt{skywork-r1v3-38b}; \texttt{skywork-r1v2-38b}.
+\end{itemize}
 
+\noindent\textbf{Models selected from Table~\ref{tab:arena-vision-proprietary-five-companies}.}
+The five selected families are Claude Opus, Gemini, GPT, Qwen, and Claude Sonnet. The models included from this leaderboard are:
+\begin{itemize}
+    \item \textbf{Claude Opus}: \texttt{claude-opus-4-7}; \texttt{claude-opus-4-8}.
+    \item \textbf{Gemini}: \texttt{gemini-3.1-pro-preview}; \texttt{gemini-3.5-flash}.
+    \item \textbf{GPT}: \texttt{gpt-5.5}; \texttt{gpt-5.4}.
+    \item \textbf{Qwen}: \texttt{qwen3.7-plus-preview}; \texttt{qwen3.6-plus}.
+    \item \textbf{Claude Sonnet}: \texttt{claude-sonnet-4-6}; \texttt{claude-sonnet-4-5}.
+\end{itemize}
 
+\noindent Muse Spark is excluded because its API is not generally available.
 
+\noindent\textbf{Models selected from Table~\ref{tab:arena-vision-open-visible}.}
+The visible excerpt contains four selected families: Kimi, Gemma, Qwen, and MiMo.
+The fifth family is obtained by extending the leaderboard beyond the visible excerpt. The models included from this leaderboard are:
+\begin{itemize}
+    \item \textbf{Kimi}: \texttt{kimi-k2.6}; \texttt{kimi-k2.5-thinking}.
+    \item \textbf{Gemma}: \texttt{gemma-4-31b}; \texttt{gemma-4-26b-a4b}.
+    \item \textbf{Qwen}: \texttt{qwen3.5-397b-a17b}; \texttt{qwen3.6-27b}.
+    \item \textbf{MiMo}: \texttt{mimo-v2.5}; \texttt{mimo-v2.5-pro}.
+    \item \textbf{Mistral}: \texttt{mistral-medium-3.5}; \texttt{mistral-small-4}.
+\end{itemize}
 
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 
+\section{Execution Plan for Open-Weight Models}
+
+The open-weight models will be divided into two execution groups. Models whose
+highest-precision weights fit within a single NVIDIA B300 GPU (the GPU in RunPod with the highest available VRAM) will be evaluated locally on RunPod. Models whose highest-precision weights do not fit within a
+single B300 will be evaluated using hosted inference whenever a suitable hosted
+endpoint is available.
+
+A single B300 GPU provides approximately 288 GB of VRAM. The VRAM estimates in
+Table~\ref{tab:open-weight-vram-plan} refer only to the memory required to store
+the model weights. They do not include inference overhead, KV cache, image-token
+memory, batching overhead, CUDA graphs, or framework-specific runtime memory.
+Therefore, models whose weights are close to 288 GB are treated as borderline
+even if the raw weight estimate is technically below 288 GB.
+
+For a model with \(N\) parameters and \(b\) bits per parameter, the weight-only
+VRAM requirement is estimated as
+\[
+    \mathrm{VRAM}_{\mathrm{weights}}
+    \approx
+    N \cdot \frac{b}{8}.
+\]
+For mixture-of-experts models, the estimate uses the total number of parameters,
+not only the number of active parameters, since the full set of expert weights
+must normally be available during inference.
+
+\begin{longtable}{llll}
+\caption{Execution plan for open-weight models under a single-B300 RunPod setup.}
+\label{tab:open-weight-vram-plan} \\
+
+\toprule
+\textbf{Model} &
+\textbf{Native precision / size} &
+\textbf{Weight-only VRAM} &
+\textbf{Execution plan} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Model} &
+\textbf{Native precision / size} &
+\textbf{Weight-only VRAM} &
+\textbf{Execution plan} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{4}{r}{\emph{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\texttt{dots.ocr} &
+\(\sim 2.9\mathrm{B}\), 16-bit &
+\(\sim 5.8\) GB &
+RunPod, single B300 \\
+
+\texttt{glm-4.1v-thinking} &
+\(\sim 9\mathrm{B}\), 16-bit &
+\(\sim 18\) GB &
+RunPod, single B300 \\
+
+\texttt{gemma-4-26b-a4b} &
+\(\sim 26\mathrm{B}\), 16-bit &
+\(\sim 52\) GB &
+RunPod, single B300 \\
+
+\texttt{qwen3.6-27b} &
+\(\sim 27\mathrm{B}\), 16-bit &
+\(\sim 54\) GB &
+RunPod, single B300 \\
+
+\texttt{gemma-4-31b} &
+\(\sim 31\mathrm{B}\), 16-bit &
+\(\sim 62\) GB &
+RunPod, single B300 \\
+
+\texttt{skywork-r1v2-38b} &
+\(\sim 38\mathrm{B}\), 16-bit &
+\(\sim 76\) GB &
+RunPod, single B300 \\
+
+\texttt{skywork-r1v3-38b} &
+\(\sim 38\mathrm{B}\), 16-bit &
+\(\sim 76\) GB &
+RunPod, single B300 \\
+
+\texttt{mistral-small-4} &
+\(\sim 119\mathrm{B}\), native FP8 &
+\(\sim 119\) GB &
+RunPod, single B300 \\
+
+\texttt{glm-4.5v-thinking} &
+\(\sim 106\mathrm{B}\), 16-bit &
+\(\sim 212\) GB &
+RunPod, single B300 \\
+
+\texttt{mistral-medium-3.5} &
+\(\sim 128\mathrm{B}\), 16-bit &
+\(\sim 256\) GB &
+RunPod, single B300, borderline \\
+
+\texttt{mimo-v2.5} &
+\(\sim 310\mathrm{B}\), native FP8 &
+\(\sim 310\) GB &
+Hosted inference or multi-GPU RunPod \\
+
+\texttt{qwen3-vl-235b-a22b} &
+\(\sim 235\mathrm{B}\), 16-bit &
+\(\sim 470\) GB &
+Hosted inference \\
+
+\texttt{kimi-k2.5-thinking} &
+\(\sim 1\mathrm{T}\), native mixed INT4 &
+\(\sim 550\)--\(600\) GB &
+Hosted inference \\
+
+\texttt{kimi-k2.6} &
+\(\sim 1\mathrm{T}\), native mixed INT4/NVFP4 &
+\(\sim 600\)--\(714\) GB &
+Hosted inference \\
+
+\texttt{dots.vlm1} &
+\(\sim 672\mathrm{B}\), FP8 deployment &
+\(\sim 672\) GB &
+Hosted inference if available; otherwise exclude or use multi-node deployment \\
+
+\texttt{qwen3.5-397b-a17b} &
+\(\sim 397\mathrm{B}\), 16-bit &
+\(\sim 794\) GB &
+Hosted inference \\
+
+\texttt{mimo-v2.5-pro} &
+\(\sim 1.02\mathrm{T}\), native FP8 &
+\(\sim 1020\) GB &
+Hosted inference \\
+
+\end{longtable}
+
+Under this plan, the benchmark keeps a common evaluation procedure for all
+models: the same datasets, prompt templates, image preprocessing, answer
+extraction code, scoring metrics, and logging format are used regardless of
+the inference backend. The difference lies only in the execution backend. Models
+that fit within a single B300 are evaluated locally on RunPod, while larger
+models are evaluated through hosted inference when available.
+
+This distinction is important methodologically. Accuracy scores may still be
+compared across the full set of models, provided that the backend, precision,
+quantization format, and model identifier are recorded for each run. However,
+latency, throughput, and cost should not be treated as directly comparable
+between the RunPod-local group and the hosted-inference group, since those
+measurements depend strongly on the serving infrastructure.
+
+For this reason, each benchmark result should include at least the following
+metadata:
+\[
+\begin{array}{ll}
+\text{model identifier} & \text{exact checkpoint or provider model name}, \\
+\text{backend} & \text{RunPod, hosted API, or multi-GPU deployment}, \\
+\text{precision} & \text{BF16, FP8, INT4, provider-declared, or unknown}, \\
+\text{hardware} & \text{single B300, hosted endpoint, or cluster}, \\
+\text{date tested} & \text{date on which the result was obtained}.
+\end{array}
+\]
 
 
 

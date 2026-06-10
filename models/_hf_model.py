@@ -103,19 +103,24 @@ class AutoImageTextToTextModelBase(AutoProcessorModelBase):
 
     default_model_id: str
     display_name = "Vision-language model"
+    default_trust_remote_code = False
 
     def __init__(
         self,
         model_id: str | None = None,
         max_new_tokens: int = 100,
         temperature: float = 0.0,
-        trust_remote_code: bool = False,
+        trust_remote_code: bool | None = None,
     ) -> None:
         self.model_id = model_id or self.default_model_id
         self.name = self.model_id.rsplit("/", 1)[-1].lower().replace("_", "-")
         self.max_new_tokens = max_new_tokens
         self.temperature = temperature
-        self.trust_remote_code = trust_remote_code
+        self.trust_remote_code = (
+            self.default_trust_remote_code
+            if trust_remote_code is None
+            else trust_remote_code
+        )
         self._load_input_artifact_and_model()
 
     def _load_input_artifact(self) -> Any:

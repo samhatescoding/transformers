@@ -11,8 +11,8 @@ class MagicBrush(HFMultipleChoiceSourceDataset):
             split=split,
             streaming=streaming,
             mode="pair",
-            source_image_keys=("source_image", "input_image", "image", "src_img"),
-            target_image_keys=("target_image", "edited_image", "output_image", "tgt_img"),
+            source_image_keys=("source_image", "source_img", "input_image", "image", "src_img"),
+            target_image_keys=("target_image", "target_img", "edited_image", "output_image", "tgt_img"),
             question_keys=("question", "instruction", "edit_instruction"),
             answer_keys=("answer", "instruction", "edit_instruction"),
         )

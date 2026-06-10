@@ -1,0 +1,429 @@
+{
+  "dataset": "blip3o_60k",
+  "source": "BLIP3o/BLIP3o-60k",
+  "split": "train",
+  "requested_rows": 20,
+  "exported_rows": 20,
+  "rows": [
+    {
+      "row_index": 0,
+      "correct_prompt": "An urban street scene features a wood crate with tiny strawberries, a priced stuffed animal, a drink cup, passersby, stores, and signs in Japanese.",
+      "distractors": [
+        "An urban street scene features a stone crate with tiny strawberries, a priced stuffed animal, a drink cup, passersby, stores, and signs in Japanese.",
+        "An urban street scene features a wood crate with large strawberries, a priced stuffed animal, a drink cup, passersby, stores, and signs in Japanese.",
+        "An urban street scene features a stone crate with large strawberries, a priced stuffed animal, a drink cup, passersby, stores, and signs in Japanese."
+      ],
+      "attributes": [
+        {
+          "category": "material",
+          "source": "wood",
+          "replacement": "stone"
+        },
+        {
+          "category": "size",
+          "source": "tiny",
+          "replacement": "large"
+        }
+      ]
+    },
+    {
+      "row_index": 1,
+      "correct_prompt": "Scene features a gothic-clad woman holding a skull amidst a graveyard scene beneath a starlit sky; a moonlit castle or church looms in the background amidst fluttering bats.",
+      "distractors": [
+        "Scene features a gothic-clad woman holding a skull amidst a flower garden scene beneath a starlit sky; a moonlit castle or church looms in the background amidst fluttering bats.",
+        "Scene features a gothic-clad man holding a skull amidst a graveyard scene beneath a starlit sky; a moonlit castle or church looms in the background amidst fluttering bats.",
+        "Scene features a gothic-clad man holding a skull amidst a flower garden scene beneath a starlit sky; a moonlit castle or church looms in the background amidst fluttering bats."
+      ],
+      "attributes": [
+        {
+          "category": "setting",
+          "source": "graveyard",
+          "replacement": "flower garden"
+        },
+        {
+          "category": "person",
+          "source": "woman",
+          "replacement": "man"
+        }
+      ]
+    },
+    {
+      "row_index": 2,
+      "correct_prompt": "An animated girl wearing a school uniform stands amidst a grand room full of hanging clocks of varying sizes and styles, illuminated by natural light filtering in through a circular window.",
+      "distractors": [
+        "An animated girl wearing a school uniform stands amidst a grand room full of hanging clocks of varying sizes and styles, illuminated by neon light filtering in through a circular window.",
+        "An animated boy wearing a school uniform stands amidst a grand room full of hanging clocks of varying sizes and styles, illuminated by natural light filtering in through a circular window.",
+        "An animated boy wearing a school uniform stands amidst a grand room full of hanging clocks of varying sizes and styles, illuminated by neon light filtering in through a circular window."
+      ],
+      "attributes": [
+        {
+          "category": "lighting",
+          "source": "natural light",
+          "replacement": "neon light"
+        },
+        {
+          "category": "person",
+          "source": "girl",
+          "replacement": "boy"
+        }
+      ]
+    },
+    {
+      "row_index": 3,
+      "correct_prompt": "An illustrated robotic head dominates the scene, its metal body aglow with blues and reds, set against a towering night cityscape beneath a starry sky.",
+      "distractors": [
+        "An illustrated robotic head dominates the scene, its metal body aglow with blues and reds, set against a towering day cityscape beneath a starry sky.",
+        "An illustrated robotic head dominates the scene, its glass body aglow with blues and reds, set against a towering night cityscape beneath a starry sky.",
+        "An illustrated robotic head dominates the scene, its glass body aglow with blues and reds, set against a towering day cityscape beneath a starry sky."
+      ],
+      "attributes": [
+        {
+          "category": "season",
+          "source": "night",
+          "replacement": "day"
+        },
+        {
+          "category": "material",
+          "source": "metal",
+          "replacement": "glass"
+        }
+      ]
+    },
+    {
+      "row_index": 4,
+      "correct_prompt": "A woman stands on a platform in a blue dress, holding a brown bag; behind her, a fast-moving gray train passes, leaving a blurry streak while she remains still.",
+      "distractors": [
+        "A woman stands on a platform in a red dress, holding a brown bag; behind her, a fast-moving gray train passes, leaving a blurry streak while she remains still.",
+        "A man stands on a platform in a blue dress, holding a brown bag; behind her, a fast-moving gray train passes, leaving a blurry streak while she remains still.",
+        "A man stands on a platform in a red dress, holding a brown bag; behind her, a fast-moving gray train passes, leaving a blurry streak while she remains still."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "blue",
+          "replacement": "red"
+        },
+        {
+          "category": "person",
+          "source": "woman",
+          "replacement": "man"
+        }
+      ]
+    },
+    {
+      "row_index": 5,
+      "correct_prompt": "The image showcases a scene with four individuals. The central figure is a woman wearing a white rabbit mask, with large pink ears and a nose cutout. She has a white outfit with ruffled details. To her right, there's an older man with white hair and a beard, wearing a gas mask and holding a microphone. Behind them, there are two other individuals wearing similar rabbit masks, but in different colors - one is white and the other is beige. The setting appears to be indoors, with a brownish background and some equipment or machinery in the background.",
+      "distractors": [
+        "The image showcases a scene with four individuals. The central figure is a woman wearing a white rabbit mask, with large turquoise ears and a nose cutout. She has a white outfit with ruffled details. To her right, there's an older man with white hair and a beard, wearing a gas mask and holding a microphone. Behind them, there are two other individuals wearing similar rabbit masks, but in different colors - one is white and the other is beige. The setting appears to be indoors, with a brownish background and some equipment or machinery in the background.",
+        "The image showcases a scene with four individuals. The central figure is a woman wearing a white rabbit mask, with small pink ears and a nose cutout. She has a white outfit with ruffled details. To her right, there's an older man with white hair and a beard, wearing a gas mask and holding a microphone. Behind them, there are two other individuals wearing similar rabbit masks, but in different colors - one is white and the other is beige. The setting appears to be indoors, with a brownish background and some equipment or machinery in the background.",
+        "The image showcases a scene with four individuals. The central figure is a woman wearing a white rabbit mask, with small turquoise ears and a nose cutout. She has a white outfit with ruffled details. To her right, there's an older man with white hair and a beard, wearing a gas mask and holding a microphone. Behind them, there are two other individuals wearing similar rabbit masks, but in different colors - one is white and the other is beige. The setting appears to be indoors, with a brownish background and some equipment or machinery in the background."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "pink",
+          "replacement": "turquoise"
+        },
+        {
+          "category": "size",
+          "source": "large",
+          "replacement": "small"
+        }
+      ]
+    },
+    {
+      "row_index": 6,
+      "correct_prompt": "The image is a vintage-style poster that appears to be inspired by the horror genre. At the top, there's a large, looming hand reaching out from behind a moon, with sharp claws extended. Below the hand, there's a desk with an old-fashioned typewriter. On the typewriter's paper, there's a message that reads, 'DON'T COPY AND PASTE, ... OR YOU WILL REGRET IT'. The desk also has a lamp, some papers, and a few other small objects. The overall color palette is dark with shades of blue, black, and gold, giving it a mysterious and eerie ambiance.",
+      "distractors": [
+        "The image is a vintage-style poster that appears to be inspired by the horror genre. At the top, there's a large, looming hand reaching out from behind a moon, with sharp claws extended. Below the hand, there's a desk with an old-fashioned typewriter. On the typewriter's paper, there's a message that reads, 'DON'T COPY AND PASTE, ... OR YOU WILL REGRET IT'. The desk also has a lamp, some papers, and a few other small objects. The overall color palette is dark with shades of red, black, and gold, giving it a mysterious and eerie ambiance.",
+        "The image is a futuristic poster that appears to be inspired by the horror genre. At the top, there's a large, looming hand reaching out from behind a moon, with sharp claws extended. Below the hand, there's a desk with an old-fashioned typewriter. On the typewriter's paper, there's a message that reads, 'DON'T COPY AND PASTE, ... OR YOU WILL REGRET IT'. The desk also has a lamp, some papers, and a few other small objects. The overall color palette is dark with shades of blue, black, and gold, giving it a mysterious and eerie ambiance.",
+        "The image is a futuristic poster that appears to be inspired by the horror genre. At the top, there's a large, looming hand reaching out from behind a moon, with sharp claws extended. Below the hand, there's a desk with an old-fashioned typewriter. On the typewriter's paper, there's a message that reads, 'DON'T COPY AND PASTE, ... OR YOU WILL REGRET IT'. The desk also has a lamp, some papers, and a few other small objects. The overall color palette is dark with shades of red, black, and gold, giving it a mysterious and eerie ambiance."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "blue",
+          "replacement": "red"
+        },
+        {
+          "category": "style",
+          "source": "vintage-style",
+          "replacement": "futuristic"
+        }
+      ]
+    },
+    {
+      "row_index": 7,
+      "correct_prompt": "This image is a creative representation of a family tree, showcasing various characters that are reminiscent of the 'Pepe the Frog' meme. At the center of the tree is a large Pepe the Frog figure, and branching out from it are smaller Pepe figures, each with unique expressions and names. Some of these names include 'Pepefrog', 'Bone', 'Trollin', 'Woglin', 'Miguita', 'Trollz', 'Wogz', and 'Miguita'. Additionally, there are objects like a banana and a mushroom intertwined with the tree, further adding to the whimsical nature of the image.",
+      "distractors": [
+        "This image is a creative representation of a family tree, showcasing various characters that are reminiscent of the 'Pepe the Frog' meme. At the center of the tree is a small Pepe the Frog figure, and branching out from it are smaller Pepe figures, each with unique expressions and names. Some of these names include 'Pepefrog', 'Bone', 'Trollin', 'Woglin', 'Miguita', 'Trollz', 'Wogz', and 'Miguita'. Additionally, there are objects like a banana and a mushroom intertwined with the tree, further adding to the whimsical nature of the image.",
+        "This image is a creative representation of a family lamp post, showcasing various characters that are reminiscent of the 'Pepe the Frog' meme. At the center of the tree is a large Pepe the Frog figure, and branching out from it are smaller Pepe figures, each with unique expressions and names. Some of these names include 'Pepefrog', 'Bone', 'Trollin', 'Woglin', 'Miguita', 'Trollz', 'Wogz', and 'Miguita'. Additionally, there are objects like a banana and a mushroom intertwined with the tree, further adding to the whimsical nature of the image.",
+        "This image is a creative representation of a family lamp post, showcasing various characters that are reminiscent of the 'Pepe the Frog' meme. At the center of the tree is a small Pepe the Frog figure, and branching out from it are smaller Pepe figures, each with unique expressions and names. Some of these names include 'Pepefrog', 'Bone', 'Trollin', 'Woglin', 'Miguita', 'Trollz', 'Wogz', and 'Miguita'. Additionally, there are objects like a banana and a mushroom intertwined with the tree, further adding to the whimsical nature of the image."
+      ],
+      "attributes": [
+        {
+          "category": "size",
+          "source": "large",
+          "replacement": "small"
+        },
+        {
+          "category": "flora",
+          "source": "tree",
+          "replacement": "lamp post"
+        }
+      ]
+    },
+    {
+      "row_index": 8,
+      "correct_prompt": "An elf-like woman picks oranges at a bustling coastal market with vendors selling fruits and veggies; serene seascape with clear sky and fluffy clouds complete the scene.",
+      "distractors": [
+        "An elf-like woman picks oranges at a bustling coastal market with vendors selling fruits and veggies; serene seascape with clear sky and wispy fog complete the scene.",
+        "An elf-like woman picks oranges at a bustling mountain village with vendors selling fruits and veggies; serene seascape with clear sky and fluffy clouds complete the scene.",
+        "An elf-like woman picks oranges at a bustling mountain village with vendors selling fruits and veggies; serene seascape with clear sky and wispy fog complete the scene."
+      ],
+      "attributes": [
+        {
+          "category": "weather",
+          "source": "fluffy clouds",
+          "replacement": "wispy fog"
+        },
+        {
+          "category": "setting",
+          "source": "coastal market",
+          "replacement": "mountain village"
+        }
+      ]
+    },
+    {
+      "row_index": 9,
+      "correct_prompt": "In an ominous scene, a woman wielding a long weapon amidst destruction in a metropolitan background, surrounded by whirlwinds of azure hues.",
+      "distractors": [
+        "In an ominous scene, a woman wielding a long weapon amidst destruction in a rural background, surrounded by whirlwinds of azure hues.",
+        "In an ominous scene, a man wielding a long weapon amidst destruction in a metropolitan background, surrounded by whirlwinds of azure hues.",
+        "In an ominous scene, a man wielding a long weapon amidst destruction in a rural background, surrounded by whirlwinds of azure hues."
+      ],
+      "attributes": [
+        {
+          "category": "setting",
+          "source": "metropolitan",
+          "replacement": "rural"
+        },
+        {
+          "category": "person",
+          "source": "woman",
+          "replacement": "man"
+        }
+      ]
+    },
+    {
+      "row_index": 10,
+      "correct_prompt": "The image showcases a fantasy-themed illustration of a female character with short, silver hair and elf-like ears. She has striking purple eyes and is seen blowing a bubble gum bubble. The character is adorned with intricate jewelry, including earrings and a necklace. She wears a detailed, ornate outfit with a high collar. The background depicts a mystical forest with tall trees, and there's a glimpse of a castle or a mansion in the distance. The atmosphere is enhanced by the presence of luminescent, purple flames or energy surrounding the character.",
+      "distractors": [
+        "The image showcases a fantasy-themed illustration of a female character with short, copper hair and elf-like ears. She has striking purple eyes and is seen blowing a bubble gum bubble. The character is adorned with intricate jewelry, including earrings and a necklace. She wears a detailed, ornate outfit with a high collar. The background depicts a mystical forest with tall trees, and there's a glimpse of a castle or a mansion in the distance. The atmosphere is enhanced by the presence of luminescent, purple flames or energy surrounding the character.",
+        "The image showcases a science-fiction illustration of a female character with short, silver hair and elf-like ears. She has striking purple eyes and is seen blowing a bubble gum bubble. The character is adorned with intricate jewelry, including earrings and a necklace. She wears a detailed, ornate outfit with a high collar. The background depicts a mystical forest with tall trees, and there's a glimpse of a castle or a mansion in the distance. The atmosphere is enhanced by the presence of luminescent, purple flames or energy surrounding the character.",
+        "The image showcases a science-fiction illustration of a female character with short, copper hair and elf-like ears. She has striking purple eyes and is seen blowing a bubble gum bubble. The character is adorned with intricate jewelry, including earrings and a necklace. She wears a detailed, ornate outfit with a high collar. The background depicts a mystical forest with tall trees, and there's a glimpse of a castle or a mansion in the distance. The atmosphere is enhanced by the presence of luminescent, purple flames or energy surrounding the character."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "silver",
+          "replacement": "copper"
+        },
+        {
+          "category": "style",
+          "source": "fantasy-themed",
+          "replacement": "science-fiction"
+        }
+      ]
+    },
+    {
+      "row_index": 11,
+      "correct_prompt": "A woman sits cross-legged in a Japanese-style interior with wooden beams, paneling, and windows displaying a serene winter scene. Warm light comes from lanterns and a fireplace. Traditional items include a table with a teapot.",
+      "distractors": [
+        "A woman sits cross-legged in a Japanese-style interior with wooden beams, paneling, and windows displaying a serene summer scene. Warm light comes from lanterns and a fireplace. Traditional items include a table with a teapot.",
+        "A woman sits cross-legged in a Japanese-style interior with metal beams, paneling, and windows displaying a serene winter scene. Warm light comes from lanterns and a fireplace. Traditional items include a table with a teapot.",
+        "A woman sits cross-legged in a Japanese-style interior with metal beams, paneling, and windows displaying a serene summer scene. Warm light comes from lanterns and a fireplace. Traditional items include a table with a teapot."
+      ],
+      "attributes": [
+        {
+          "category": "season",
+          "source": "winter",
+          "replacement": "summer"
+        },
+        {
+          "category": "material",
+          "source": "wooden",
+          "replacement": "metal"
+        }
+      ]
+    },
+    {
+      "row_index": 12,
+      "correct_prompt": "An image displays a person holding a T-shirt featuring an intricately drawn Homer Simpson playing a guitar alongside various Simpsons characters against a leafy outdoor backdrop.",
+      "distractors": [
+        "An image displays a robot holding a T-shirt featuring an intricately drawn Homer Simpson playing a guitar alongside various Simpsons characters against a leafy outdoor backdrop.",
+        "An image displays a person holding a T-shirt featuring an intricately drawn Homer Simpson playing a violin alongside various Simpsons characters against a leafy outdoor backdrop.",
+        "An image displays a robot holding a T-shirt featuring an intricately drawn Homer Simpson playing a violin alongside various Simpsons characters against a leafy outdoor backdrop."
+      ],
+      "attributes": [
+        {
+          "category": "person",
+          "source": "person",
+          "replacement": "robot"
+        },
+        {
+          "category": "object",
+          "source": "guitar",
+          "replacement": "violin"
+        }
+      ]
+    },
+    {
+      "row_index": 13,
+      "correct_prompt": "An American football player kneels in the rain at a stadium in his bright red jersey with '55', as the stormy night illuminates through the bright stadium lights.",
+      "distractors": [
+        "An American football player kneels in the rain at a stadium in his deep blue jersey with '55', as the stormy night illuminates through the bright stadium lights.",
+        "An American football player kneels in the rain at a stadium in his bright red jersey with '55', as the clear night illuminates through the bright stadium lights.",
+        "An American football player kneels in the rain at a stadium in his deep blue jersey with '55', as the clear night illuminates through the bright stadium lights."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "bright red",
+          "replacement": "deep blue"
+        },
+        {
+          "category": "weather",
+          "source": "stormy",
+          "replacement": "clear"
+        }
+      ]
+    },
+    {
+      "row_index": 14,
+      "correct_prompt": "The image showcases a character with a striking appearance. The character has a mohawk-style hairstyle with a vibrant pink hue. The side of their head is shaved, adorned with a metallic band that has a unique symbol on it. Their face is painted with bold red streaks, and they have piercings on their ears. The character is draped in a shiny, red cloak or garment. The background is a dilapidated, post-apocalyptic setting with rusted metal, broken windows, and a hazy atmosphere.",
+      "distractors": [
+        "The image showcases a character with a striking appearance. The character has a mohawk-style hairstyle with a vibrant turquoise hue. The side of their head is shaved, adorned with a metallic band that has a unique symbol on it. Their face is painted with bold red streaks, and they have piercings on their ears. The character is draped in a shiny, red cloak or garment. The background is a dilapidated, post-apocalyptic setting with rusted metal, broken windows, and a hazy atmosphere.",
+        "The image showcases a character with a striking appearance. The character has a mohawk-style hairstyle with a vibrant pink hue. The side of their head is shaved, adorned with a wooden band that has a unique symbol on it. Their face is painted with bold red streaks, and they have piercings on their ears. The character is draped in a shiny, red cloak or garment. The background is a dilapidated, post-apocalyptic setting with rusted metal, broken windows, and a hazy atmosphere.",
+        "The image showcases a character with a striking appearance. The character has a mohawk-style hairstyle with a vibrant turquoise hue. The side of their head is shaved, adorned with a wooden band that has a unique symbol on it. Their face is painted with bold red streaks, and they have piercings on their ears. The character is draped in a shiny, red cloak or garment. The background is a dilapidated, post-apocalyptic setting with rusted metal, broken windows, and a hazy atmosphere."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "pink",
+          "replacement": "turquoise"
+        },
+        {
+          "category": "material",
+          "source": "metallic",
+          "replacement": "wooden"
+        }
+      ]
+    },
+    {
+      "row_index": 15,
+      "correct_prompt": "The image is a vibrant and intricate artwork that appears to be a fusion of abstract and geometric elements. At the center, there's a profile of a woman's face, adorned with a variety of flowers and patterns. The background consists of a mosaic of geometric shapes, colors, and abstract designs, including lines, circles, and other geometric forms. The color palette is diverse, with a mix of blues, reds, yellows, and greens. The overall feel of the artwork is both dreamy and structured, with the woman's face serving as a focal point amidst the chaotic backdrop.",
+      "distractors": [
+        "The image is a vibrant and intricate artwork that appears to be a fusion of photorealistic and geometric elements. At the center, there's a profile of a woman's face, adorned with a variety of flowers and patterns. The background consists of a mosaic of geometric shapes, colors, and abstract designs, including lines, circles, and other geometric forms. The color palette is diverse, with a mix of blues, reds, yellows, and greens. The overall feel of the artwork is both dreamy and structured, with the woman's face serving as a focal point amidst the chaotic backdrop.",
+        "The image is a vibrant and intricate artwork that appears to be a fusion of abstract and geometric elements. At the center, there's a front-facing of a woman's face, adorned with a variety of flowers and patterns. The background consists of a mosaic of geometric shapes, colors, and abstract designs, including lines, circles, and other geometric forms. The color palette is diverse, with a mix of blues, reds, yellows, and greens. The overall feel of the artwork is both dreamy and structured, with the woman's face serving as a focal point amidst the chaotic backdrop.",
+        "The image is a vibrant and intricate artwork that appears to be a fusion of photorealistic and geometric elements. At the center, there's a front-facing of a woman's face, adorned with a variety of flowers and patterns. The background consists of a mosaic of geometric shapes, colors, and abstract designs, including lines, circles, and other geometric forms. The color palette is diverse, with a mix of blues, reds, yellows, and greens. The overall feel of the artwork is both dreamy and structured, with the woman's face serving as a focal point amidst the chaotic backdrop."
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "abstract",
+          "replacement": "photorealistic"
+        },
+        {
+          "category": "view",
+          "source": "profile",
+          "replacement": "front-facing"
+        }
+      ]
+    },
+    {
+      "row_index": 16,
+      "correct_prompt": "The image depicts a serene winter scene with a young female character with striking blue hair. She is seated against a tree, her eyes closed, seemingly enjoying the snowfall. Her hair is voluminous and curls beautifully, cascading down her back and shoulders. She wears a dark dress adorned with white fur trim and large black bows on either side of her head. The background showcases a snowy landscape with a clear night sky filled with stars. The ground is covered in snow, and there are dried grasses peeking through in some areas.",
+      "distractors": [
+        "The image depicts a serene winter scene with a young female character with striking red hair. She is seated against a tree, her eyes closed, seemingly enjoying the snowfall. Her hair is voluminous and curls beautifully, cascading down her back and shoulders. She wears a dark dress adorned with white fur trim and large black bows on either side of her head. The background showcases a snowy landscape with a clear night sky filled with stars. The ground is covered in snow, and there are dried grasses peeking through in some areas.",
+        "The image depicts a serene winter scene with a young female character with striking blue hair. She is seated against a tree, her eyes closed, seemingly enjoying the snowfall. Her hair is voluminous and curls beautifully, cascading down her back and shoulders. She wears a dark dress adorned with white fur trim and large black bows on either side of her head. The background showcases a tropical landscape with a clear night sky filled with stars. The ground is covered in snow, and there are dried grasses peeking through in some areas.",
+        "The image depicts a serene winter scene with a young female character with striking red hair. She is seated against a tree, her eyes closed, seemingly enjoying the snowfall. Her hair is voluminous and curls beautifully, cascading down her back and shoulders. She wears a dark dress adorned with white fur trim and large black bows on either side of her head. The background showcases a tropical landscape with a clear night sky filled with stars. The ground is covered in snow, and there are dried grasses peeking through in some areas."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "blue",
+          "replacement": "red"
+        },
+        {
+          "category": "weather",
+          "source": "snowy",
+          "replacement": "tropical"
+        }
+      ]
+    },
+    {
+      "row_index": 17,
+      "correct_prompt": "The image showcases a surreal scene where a humanoid figure with a grasshopper's head stands against a backdrop of a serene beach. The figure is wearing a blue bikini top and a striped shirt, paired with a denim belt. The grasshopper's head is vibrant with colors, predominantly green and red, and it has large, bulbous eyes. In the background, there's a beautiful view of the ocean with clear blue waters, and a rocky cliff can be seen on the right. The sky is clear with a few clouds, suggesting a sunny day.",
+      "distractors": [
+        "The image showcases a surreal scene where a humanoid figure with a grasshopper's head stands against a backdrop of a serene beach. The figure is wearing a blue bikini top and a striped shirt, paired with a denim belt. The grasshopper's head is vibrant with colors, predominantly purple and red, and it has large, bulbous eyes. In the background, there's a beautiful view of the ocean with clear blue waters, and a rocky cliff can be seen on the right. The sky is clear with a few clouds, suggesting a sunny day.",
+        "The image showcases a surreal scene where a humanoid figure with a grasshopper's head stands against a backdrop of a serene beach. The figure is wearing a blue bikini top and a striped shirt, paired with a denim belt. The grasshopper's head is vibrant with colors, predominantly green and red, and it has large, bulbous eyes. In the background, there's a beautiful view of the ocean with clear blue waters, and a rocky cliff can be seen on the right. The sky is clear with heavy storm clouds, suggesting a sunny day.",
+        "The image showcases a surreal scene where a humanoid figure with a grasshopper's head stands against a backdrop of a serene beach. The figure is wearing a blue bikini top and a striped shirt, paired with a denim belt. The grasshopper's head is vibrant with colors, predominantly purple and red, and it has large, bulbous eyes. In the background, there's a beautiful view of the ocean with clear blue waters, and a rocky cliff can be seen on the right. The sky is clear with heavy storm clouds, suggesting a sunny day."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "green",
+          "replacement": "purple"
+        },
+        {
+          "category": "weather",
+          "source": "a few clouds",
+          "replacement": "heavy storm clouds"
+        }
+      ]
+    },
+    {
+      "row_index": 18,
+      "correct_prompt": "An elven figure pours a reddish substance from a clay pot onto steps beneath a stone arch, donning elaborate jewelry and a floral headdress.",
+      "distractors": [
+        "An elven figure pours a reddish substance from a glass pot onto steps beneath a stone arch, donning elaborate jewelry and a floral headdress.",
+        "An elven figure catches a reddish substance from a clay pot onto steps beneath a stone arch, donning elaborate jewelry and a floral headdress.",
+        "An elven figure catches a reddish substance from a glass pot onto steps beneath a stone arch, donning elaborate jewelry and a floral headdress."
+      ],
+      "attributes": [
+        {
+          "category": "material",
+          "source": "clay",
+          "replacement": "glass"
+        },
+        {
+          "category": "action",
+          "source": "pours",
+          "replacement": "catches"
+        }
+      ]
+    },
+    {
+      "row_index": 19,
+      "correct_prompt": "In a futuristic setting, a person oversees a large, transparent dome housing an immense creature, while advanced technology fills the surroundings.",
+      "distractors": [
+        "In a medieval setting, a person oversees a large, transparent dome housing an immense creature, while advanced technology fills the surroundings.",
+        "In a futuristic setting, a person oversees a large, transparent dome housing an tiny creature, while advanced technology fills the surroundings.",
+        "In a medieval setting, a person oversees a large, transparent dome housing an tiny creature, while advanced technology fills the surroundings."
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "futuristic",
+          "replacement": "medieval"
+        },
+        {
+          "category": "size",
+          "source": "immense",
+          "replacement": "tiny"
+        }
+      ]
+    }
+  ]
+}

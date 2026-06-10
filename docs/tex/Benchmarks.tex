@@ -1,0 +1,189 @@
+\documentclass{article}
+
+\usepackage{standards}
+\usepackage{float}
+\usepackage{listings}
+
+\geometry{margin=1in}
+\graphicspath{{images_benchmarks/}}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=fullflexible,
+  frame=single,
+  keepspaces=true,
+  showstringspaces=false,
+  literate={‘}{{\textquoteleft}}1 {’}{{\textquoteright}}1
+}
+
+\title{Benchmarks}
+\author{Sam}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Type A: Answering Questions}
+
+This document records the first actual model input produced by the benchmark
+input browser for every Type A benchmark. Each image is the exact RGB image
+passed to the model, and each prompt is the exact corresponding text prompt.
+
+\subsection{FlyingThings3D}
+
+\noindent\textbf{Source:}
+\texttt{\detokenize{ssbai/flyingthings3d}},
+\textbf{split:} \texttt{train},
+\textbf{input dimensions:} $1920 \times 564$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{flyingthings3d.png}
+  \caption{First FlyingThings3D benchmark input. The left and right
+  clean-pass RGB frames are presented as a labeled stereo pair.}
+\end{figure}
+
+\begin{lstlisting}
+USER: <image>
+Choose the description that best matches the rendered stereo scene.
+Question: Which panel shows the right-camera view of the stereo scene?
+Choices:
+A. right panel
+B. left panel
+Return either the choice letter or the exact choice text.
+ASSISTANT:
+\end{lstlisting}
+
+\subsection{Visual Genome}
+
+\noindent\textbf{Source:}
+\texttt{\detokenize{dipta007/bengali-visual-genome-1.0-prompt}},
+\textbf{split:} \texttt{train},
+\textbf{input dimensions:} $800 \times 600$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{visual_genome.png}
+  \caption{First Visual Genome benchmark input.}
+\end{figure}
+
+\begin{lstlisting}
+USER: <image>
+Answer the question about the image.
+Question: What is shown in the highlighted region of the image?
+Choices:
+A. it is an indoor scene
+B. it is an outdoor sports field
+C. it is a beach scene
+D. it is a forest trail
+Return either the choice letter or the exact choice text.
+ASSISTANT:
+\end{lstlisting}
+
+\subsection{VQA v2.0}
+
+\noindent\textbf{Source:}
+\texttt{\detokenize{merve/vqav2-small}},
+\textbf{split:} \texttt{validation},
+\textbf{input dimensions:} $640 \times 424$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{vqa_v20.png}
+  \caption{First VQA v2.0 benchmark input.}
+\end{figure}
+
+\begin{lstlisting}
+USER: <image>
+Answer the question about the image.
+Question: Where are the kids riding?
+Choices:
+A. carnival ride
+B. playground
+C. school bus
+D. bicycle
+Return either the choice letter or the exact choice text.
+ASSISTANT:
+\end{lstlisting}
+
+\subsection{GQA}
+
+\noindent\textbf{Source:}
+\texttt{\detokenize{lmms-lab/GQA}},
+\textbf{split:} \texttt{validation},
+\textbf{input dimensions:} $500 \times 375$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.72\textwidth]{gqa.png}
+  \caption{First GQA benchmark input.}
+\end{figure}
+
+\begin{lstlisting}
+USER: <image>
+Answer the question about the image.
+Question: What is this bird called?
+Choices:
+A. parrot
+B. eagle
+C. pigeon
+D. sparrow
+Return either the choice letter or the exact choice text.
+ASSISTANT:
+\end{lstlisting}
+
+\subsection{DocVQA}
+
+\noindent\textbf{Source:}
+\texttt{\detokenize{lmms-lab/DocVQA}},
+\textbf{split:} \texttt{validation},
+\textbf{input dimensions:} $808 \times 1077$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{docvqa.png}
+  \caption{First DocVQA benchmark input.}
+\end{figure}
+
+\begin{lstlisting}
+USER: <image>
+Answer the question about the image.
+Question: What is name of university?
+Choices:
+A. University of California
+B. Stanford University
+C. University of Washington
+D. University of Michigan
+Return either the choice letter or the exact choice text.
+ASSISTANT:
+\end{lstlisting}
+
+\subsection{Visual CoT}
+
+\noindent\textbf{Source:}
+\texttt{\detokenize{deepcs233/Visual-CoT}},
+\textbf{split:} \texttt{train},
+\textbf{input dimensions:} $333 \times 500$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.55\textheight]{visual_cot.png}
+  \caption{First Visual CoT benchmark input.}
+\end{figure}
+
+\begin{lstlisting}
+USER: <image>
+Answer the question about the image.
+Question: Can you tell me about the hairstyles of the individuals in the image?
+Choices:
+A. They have shaggy hair.
+B. They have closely cropped hair.
+C. They have long braided hair.
+D. They are wearing hats that hide their hair.
+Return either the choice letter or the exact choice text.
+ASSISTANT:
+\end{lstlisting}
+
+\end{document}

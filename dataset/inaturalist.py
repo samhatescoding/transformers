@@ -1,7 +1,11 @@
 from __future__ import annotations
 
+import json
+from concurrent.futures import ThreadPoolExecutor
 from io import BytesIO
 from typing import Any, Dict, Iterable, List, Optional
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 
 from PIL import Image
 from datasets import load_dataset
@@ -54,7 +58,7 @@ class INaturalist(BaseDataset):
         self.default_label = self._infer_default_label()
         self.labels = list(self.class_labels)
 
-        if not self.labels:
+        if not self.labels and not streaming:
             inferred = self._bootstrap_labels_from_rows(sample_size=256)
             if inferred:
                 self.labels = inferred
@@ -75,6 +79,47 @@ class INaturalist(BaseDataset):
                 break
             samples.append(row)
         return samples
+
+    def get_spaced_samples(self, n: int) -> List[Dict[str, Any]]:
+        if n <= 0:
+            return []
+
+        split_info = getattr(getattr(self.ds, "info", None), "splits", {}).get(self.split)
+        total_rows = int(getattr(split_info, "num_examples", 0) or 0)
+        if total_rows <= 0:
+            return []
+
+        count = min(n, total_rows)
+        offsets = [
+            min(total_rows - 1, int((index + 0.5) * total_rows / count))
+            for index in range(count)
+        ]
+
+        def fetch_row(offset: int) -> Dict[str, Any] | None:
+            query = urlencode(
+                {
+                    "dataset": self.dataset_id,
+                    "config": self.config_name or "default",
+                    "split": self.split,
+                    "offset": offset,
+                    "length": 1,
+                }
+            )
+            request = Request(
+                f"https://datasets-server.huggingface.co/rows?{query}",
+                headers={"User-Agent": "transformers-benchmark-input-browser/1.0"},
+            )
+            with urlopen(request, timeout=60) as response:
+                payload = json.load(response)
+            rows = payload.get("rows") or []
+            if not rows:
+                return None
+            row = rows[0].get("row")
+            return dict(row) if isinstance(row, dict) else None
+
+        with ThreadPoolExecutor(max_workers=min(8, count)) as executor:
+            rows = list(executor.map(fetch_row, offsets))
+        return [row for row in rows if row is not None]
 
     # ---------------------------------------------------------------------
     # Label Extraction
@@ -408,6 +453,13 @@ class INaturalist(BaseDataset):
                 return Image.open(BytesIO(obj["bytes"]))
             if "path" in obj and obj["path"]:
                 return Image.open(obj["path"])
+            if "src" in obj and obj["src"]:
+                request = Request(
+                    str(obj["src"]),
+                    headers={"User-Agent": "transformers-benchmark-input-browser/1.0"},
+                )
+                with urlopen(request, timeout=60) as response:
+                    return Image.open(BytesIO(response.read()))
         if isinstance(obj, str):
             return Image.open(obj)
         if isinstance(obj, (list, tuple)) and obj:

@@ -1,0 +1,76 @@
+{
+  "model": "llava-gemma-2b",
+  "benchmark": "vqav2",
+  "report": {
+    "benchmark": "vqav2",
+    "dataset": "vqav2",
+    "task_type": null,
+    "num_samples": 1,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [],
+        "prediction": "Car",
+        "correct": false,
+        "valid_labels": [
+          "carnival ride"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 62.964561000000685,
+          "generation_time_seconds": 62.92178869998315,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": 62.92178869998315,
+          "output_tokens": 1,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 6350999552,
+          "cpu_utilization_percent": 794.181979082864,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "carnival ride"
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 62.96484699996654,
+      "wall_clock_time_per_sample_seconds_mean": 62.964561000000685,
+      "total_generation_time_seconds_mean": 62.92178869998315,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": 62.92178869998315,
+      "samples_per_second": 0.01588187770869246,
+      "number_of_output_tokens_mean": 1.0,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 1,
+      "success_count": 1,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 6350999552,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 794.181979082864,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": 0.015892745909816573,
+      "model_load_time_seconds": 16.250638900033664
+    }
+  }
+}

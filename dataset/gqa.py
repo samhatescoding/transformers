@@ -36,11 +36,16 @@ class GQA(BaseDataset):
             image_id = str(row.get("imageId", "")).strip()
             question = str(row.get("question", "")).strip()
             answer = str(row.get("answer", "")).strip()
-            if not image_id or not question or not answer:
+            if (
+                not image_id
+                or not question
+                or not answer
+                or image_id in needed_image_ids
+            ):
                 continue
             instructions.append(dict(row))
             needed_image_ids.add(image_id)
-            if len(instructions) >= max(n * 4, n):
+            if len(instructions) >= n:
                 break
 
         images_by_id: Dict[str, Image.Image] = {}

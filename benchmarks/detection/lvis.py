@@ -1,9 +1,9 @@
 from dataset import LVIS
 
-from .mscoco import MSCOCOBenchmark
+from ._detection import DetectionBenchmark
 
 
-class LVISBenchmark(MSCOCOBenchmark):
+class LVISBenchmark(DetectionBenchmark):
     dataset_cls = LVIS
     benchmark_name = "lvis"
     default_split = "validation"

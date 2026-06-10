@@ -13,6 +13,6 @@ class HQEdit(HFMultipleChoiceSourceDataset):
             mode="pair",
             source_image_keys=("source_image", "input_image", "image", "src_img"),
             target_image_keys=("target_image", "edited_image", "output_image", "tgt_img"),
-            question_keys=("question", "instruction", "edit_instruction", "prompt"),
-            answer_keys=("answer", "instruction", "edit_instruction", "prompt"),
+            question_keys=("question", "edit", "instruction", "edit_instruction", "prompt"),
+            answer_keys=("answer", "edit", "instruction", "edit_instruction", "prompt"),
         )

@@ -42,21 +42,19 @@ class UCF101Benchmark(VideoClassificationBenchmark):
         prepared_rows: List[Dict[str, Any]] = []
         for key in ordered_groups:
             clip_rows = grouped[key]
-            if len(clip_rows) < self.frames_per_clip:
-                continue
-            selected = self._sample_clip_frames(clip_rows)
+            representative = clip_rows[len(clip_rows) // 2]
             prepared_rows.append(
                 {
                     "clip_id": key,
                     "video_id": clip_rows[0].get("video_id"),
-                    "frames": [self._resize_image(self.dataset.get_image_from_row(frame_row)) for frame_row in selected],
+                    "image": self._resize_image(self.dataset.get_image_from_row(representative)),
                     "label": clip_rows[0].get("label"),
                     "label_text": self.dataset.get_labels_img(clip_rows[0])[0],
                 }
             )
             if len(prepared_rows) >= target:
                 break
-        rows = prepared_rows[:n]
+        rows = self._select_label_diverse_rows(prepared_rows, n)
         labels = self.get_candidate_labels(prepared_rows[:target])
         return rows, labels
 
@@ -79,25 +77,19 @@ class UCF101Benchmark(VideoClassificationBenchmark):
         return [label] if label else []
 
     def get_image_for_row(self, row: Dict[str, Any]) -> Image.Image:
-        frames = row.get("frames") or []
-        if not frames:
-            raise ValueError("UCF101Benchmark row is missing frames.")
-        return self._make_contact_sheet(frames)
+        image = row.get("image")
+        if image is None:
+            raise ValueError("UCF101Benchmark row is missing its representative frame.")
+        return self._coerce_image(image)
 
     def make_prompt(self, labels: List[str], row: Dict[str, Any] | None = None, image: Any | None = None) -> str:
         del row
         del image
         return (
             "USER: <image>\n"
-            "The image shows multiple frames from the same video clip.\n"
-            "Return exactly ONE action label from this list:\n"
-            f"{', '.join(labels)}\n"
+            "The image is one representative frame from a video clip.\n"
+            "Return exactly ONE action label from the complete list below.\n"
+            "Complete label list:\n"
+            f"{'\n'.join(labels)}\n"
             "ASSISTANT:"
         )
-
-    def _sample_clip_frames(self, clip_rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        if len(clip_rows) <= self.frames_per_clip:
-            return clip_rows[: self.frames_per_clip]
-        step = (len(clip_rows) - 1) / (self.frames_per_clip - 1)
-        indices = [round(step * i) for i in range(self.frames_per_clip)]
-        return [clip_rows[i] for i in indices]

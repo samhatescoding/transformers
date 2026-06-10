@@ -1,0 +1,430 @@
+{
+  "dataset": "flyingthings3d",
+  "source": "ssbai/flyingthings3d",
+  "config": null,
+  "split": "train",
+  "selection": "Complete stereo pairs at archive indices 0, 100, 200, ..., 1900.",
+  "annotation_instructions": "Fill object_a and object_b, write the exact question, choose one answer from above/below/right/left, set correct_choice_index, then change annotation_status from draft to ready.",
+  "rows": [
+    {
+      "row_index": 0,
+      "source_row_index": 0,
+      "source_id": "frames_cleanpass/TRAIN/C/0087/0007.png",
+      "left_image": "flyingthings3d_images/pair_00/left.png",
+      "right_image": "flyingthings3d_images/pair_00/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_00/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What is the color of the chair?",
+      "question": "What is the color of the chair?",
+      "answer": "red",
+      "choices": [
+        "blue",
+        "green",
+        "red",
+        "yellow"
+      ],
+      "correct_choice_index": 2,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 1,
+      "source_row_index": 100,
+      "source_id": "frames_cleanpass/TRAIN/C/0150/0007.png",
+      "left_image": "flyingthings3d_images/pair_01/left.png",
+      "right_image": "flyingthings3d_images/pair_01/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_01/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "How many spindles are in the back of the light blue chair?",
+      "question": "How many spindles are in the back of the light blue chair?",
+      "answer": "7",
+      "choices": [
+        "7",
+        "8",
+        "5",
+        "9"
+      ],
+      "correct_choice_index": 0,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 2,
+      "source_row_index": 200,
+      "source_id": "frames_cleanpass/TRAIN/C/0659/0007.png",
+      "left_image": "flyingthings3d_images/pair_02/left.png",
+      "right_image": "flyingthings3d_images/pair_02/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_02/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What part of the gray car is most visible?",
+      "question": "What part of the gray car is most visible?",
+      "answer": "the back",
+      "choices": [
+        "the front",
+        "the back",
+        "the side",
+        "the top"
+      ],
+      "correct_choice_index": 1,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 3,
+      "source_row_index": 300,
+      "source_id": "frames_cleanpass/TRAIN/C/0110/0007.png",
+      "left_image": "flyingthings3d_images/pair_03/left.png",
+      "right_image": "flyingthings3d_images/pair_03/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_03/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What option describes the number and types of vehicles in the picture?",
+      "question": "What option describes the number and types of vehicles in the picture?",
+      "answer": "3 planes and 1 car",
+      "choices": [
+        "3 planes and no car",
+        "3 planes and 1 car",
+        "2 planes and no car",
+        "2 planes and 1 car"
+      ],
+      "correct_choice_index": 1,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 4,
+      "source_row_index": 400,
+      "source_id": "frames_cleanpass/TRAIN/C/0426/0007.png",
+      "left_image": "flyingthings3d_images/pair_04/left.png",
+      "right_image": "flyingthings3d_images/pair_04/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_04/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "How many aerospace vehicles are in the picture?",
+      "question": "How many aerospace vehicles are in the picture?",
+      "answer": "3",
+      "choices": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_choice_index": 2,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 5,
+      "source_row_index": 500,
+      "source_id": "frames_cleanpass/TRAIN/C/0244/0007.png",
+      "left_image": "flyingthings3d_images/pair_05/left.png",
+      "right_image": "flyingthings3d_images/pair_05/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_05/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "How many vehicles are in the picture?",
+      "question": "How many vehicles are in the picture?",
+      "answer": "3",
+      "choices": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_choice_index": 2,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 6,
+      "source_row_index": 600,
+      "source_id": "frames_cleanpass/TRAIN/C/0670/0007.png",
+      "left_image": "flyingthings3d_images/pair_06/left.png",
+      "right_image": "flyingthings3d_images/pair_06/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_06/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What color is the car?",
+      "question": "What color is the car?",
+      "answer": "yellow",
+      "choices": [
+        "yellow",
+        "red",
+        "blue",
+        "green"
+      ],
+      "correct_choice_index": 0,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 7,
+      "source_row_index": 700,
+      "source_id": "frames_cleanpass/TRAIN/C/0187/0007.png",
+      "left_image": "flyingthings3d_images/pair_07/left.png",
+      "right_image": "flyingthings3d_images/pair_07/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_07/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What color is the car?",
+      "question": "What color is the car?",
+      "answer": "white",
+      "choices": [
+        "black",
+        "white",
+        "brown",
+        "gray"
+      ],
+      "correct_choice_index": 1,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 8,
+      "source_row_index": 800,
+      "source_id": "frames_cleanpass/TRAIN/C/0411/0007.png",
+      "left_image": "flyingthings3d_images/pair_08/left.png",
+      "right_image": "flyingthings3d_images/pair_08/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_08/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What color is the car?",
+      "question": "What color is the car?",
+      "answer": "white",
+      "choices": [
+        "black",
+        "white",
+        "brown",
+        "gray"
+      ],
+      "correct_choice_index": 1,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 9,
+      "source_row_index": 900,
+      "source_id": "frames_cleanpass/TRAIN/C/0057/0007.png",
+      "left_image": "flyingthings3d_images/pair_09/left.png",
+      "right_image": "flyingthings3d_images/pair_09/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_09/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What is the color of the airplane?",
+      "question": "What is the color of the airplane?",
+      "answer": "brown",
+      "choices": [
+        "black",
+        "white",
+        "brown",
+        "gray"
+      ],
+      "correct_choice_index": 2,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 10,
+      "source_row_index": 1000,
+      "source_id": "frames_cleanpass/TRAIN/C/0665/0007.png",
+      "left_image": "flyingthings3d_images/pair_10/left.png",
+      "right_image": "flyingthings3d_images/pair_10/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_10/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What object is closest to the camera?",
+      "question": "What object is closest to the camera?",
+      "answer": "a lightbulb",
+      "choices": [
+        "a lightbulb",
+        "a tree",
+        "a building",
+        "a car"
+      ],
+      "correct_choice_index": 0,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 11,
+      "source_row_index": 1100,
+      "source_id": "frames_cleanpass/TRAIN/C/0675/0007.png",
+      "left_image": "flyingthings3d_images/pair_11/left.png",
+      "right_image": "flyingthings3d_images/pair_11/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_11/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "How many cars are there?",
+      "question": "How many cars are there?",
+      "answer": "3",
+      "choices": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_choice_index": 2,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 12,
+      "source_row_index": 1200,
+      "source_id": "frames_cleanpass/TRAIN/C/0321/0007.png",
+      "left_image": "flyingthings3d_images/pair_12/left.png",
+      "right_image": "flyingthings3d_images/pair_12/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_12/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What is the object at the top of the picture?",
+      "question": "What is the object at the top of the picture?",
+      "answer": "a plane",
+      "choices": [
+        "a car",
+        "a tree",
+        "a building",
+        "a plane"
+      ],
+      "correct_choice_index": 3,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 13,
+      "source_row_index": 1300,
+      "source_id": "frames_cleanpass/TRAIN/C/0493/0007.png",
+      "left_image": "flyingthings3d_images/pair_13/left.png",
+      "right_image": "flyingthings3d_images/pair_13/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_13/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What color is the car?",
+      "question": "What color is the car?",
+      "answer": "purple",
+      "choices": [
+        "gray",
+        "orange",
+        "purple",
+        "brown"
+      ],
+      "correct_choice_index": 2,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 14,
+      "source_row_index": 1400,
+      "source_id": "frames_cleanpass/TRAIN/C/0234/0007.png",
+      "left_image": "flyingthings3d_images/pair_14/left.png",
+      "right_image": "flyingthings3d_images/pair_14/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_14/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "In what quadrant is the lamp?",
+      "question": "In what quadrant is the lamp?",
+      "answer": "upper left",
+      "choices": [
+        "upper right",
+        "upper left",
+        "lower right",
+        "lower left"
+      ],
+      "correct_choice_index": 1,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 15,
+      "source_row_index": 1500,
+      "source_id": "frames_cleanpass/TRAIN/C/0349/0007.png",
+      "left_image": "flyingthings3d_images/pair_15/left.png",
+      "right_image": "flyingthings3d_images/pair_15/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_15/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What is the position of the car relative to the ship?",
+      "question": "What is the position of the car relative to the ship?",
+      "answer": "left",
+      "choices": [
+        "above",
+        "below",
+        "right",
+        "left"
+      ],
+      "correct_choice_index": 3,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 16,
+      "source_row_index": 1600,
+      "source_id": "frames_cleanpass/TRAIN/C/0499/0007.png",
+      "left_image": "flyingthings3d_images/pair_16/left.png",
+      "right_image": "flyingthings3d_images/pair_16/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_16/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "How many cars are there?",
+      "question": "How many cars are there?",
+      "answer": "1",
+      "choices": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_choice_index": 0,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 17,
+      "source_row_index": 1700,
+      "source_id": "frames_cleanpass/TRAIN/C/0166/0007.png",
+      "left_image": "flyingthings3d_images/pair_17/left.png",
+      "right_image": "flyingthings3d_images/pair_17/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_17/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "In what quadrant is the airplane?",
+      "question": "In what quadrant is the airplane?",
+      "answer": "upper right",
+      "choices": [
+        "upper right",
+        "upper left",
+        "lower right",
+        "lower left"
+      ],
+      "correct_choice_index": 0,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 18,
+      "source_row_index": 1800,
+      "source_id": "frames_cleanpass/TRAIN/C/0570/0007.png",
+      "left_image": "flyingthings3d_images/pair_18/left.png",
+      "right_image": "flyingthings3d_images/pair_18/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_18/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "What part of the purple car is most visible?",
+      "question": "What part of the purple car is most visible?",
+      "answer": "the bottom",
+      "choices": [
+        "the front",
+        "the side",
+        "the top",
+        "the bottom"
+      ],
+      "correct_choice_index": 3,
+      "annotation_status": "ready"
+    },
+    {
+      "row_index": 19,
+      "source_row_index": 1900,
+      "source_id": "frames_cleanpass/TRAIN/C/0267/0007.png",
+      "left_image": "flyingthings3d_images/pair_19/left.png",
+      "right_image": "flyingthings3d_images/pair_19/right.png",
+      "stereo_preview": "flyingthings3d_images/pair_19/stereo.png",
+      "object_a": "",
+      "object_b": "",
+      "question_template": "Where is the sailboat?",
+      "question": "Where is the sailboat?",
+      "answer": "bottom (horizontal) center",
+      "choices": [
+        "upper (horizontal) center",
+        "right (vertical) center",
+        "left (vertical) center",
+        "bottom (horizontal) center"
+      ],
+      "correct_choice_index": 3,
+      "annotation_status": "ready"
+    }
+  ]
+}

@@ -1,11 +1,10 @@
 from dataset import MagicBrush
 
-from ._multiple_choice import MultipleChoiceBenchmark
+from ..image_modification_vqa import ImageModificationVQABenchmark
 
 
-class MagicBrushBenchmark(MultipleChoiceBenchmark):
+class MagicBrushBenchmark(ImageModificationVQABenchmark):
     dataset_cls = MagicBrush
     benchmark_name = "magicbrush"
     default_split = "train"
-    default_instruction = "Choose the editing instruction that best explains the change."
     fallback_distractors = ("remove the main object", "change the background", "add a new object")

@@ -12,7 +12,7 @@ import pandas as pd
 
 
 BENCHMARK_FAMILY = {
-    "blip3o_60k": "captioning",
+    "blip3o_60k": "prompt_reconstruction",
     "conceptual_captions": "labeling",
     "conceptual_captions_caption": "captioning",
     "flickr30k": "captioning",
@@ -42,6 +42,13 @@ BENCHMARK_FAMILY = {
     "lvis": "detection",
     "mscoco": "detection",
     "openimages_v4_detection": "detection",
+    "hq_edit": "image_modification_vqa",
+    "imgedit": "image_modification_vqa",
+    "magicbrush": "image_modification_vqa",
+    "sharegpt4o_image": "prompt_reconstruction",
+    "pick_a_pic": "image_preference",
+    "tad66k": "aesthetic_rating",
+    "diffusiondb": "prompt_reconstruction",
 }
 
 PRIMARY_METRIC_BY_FAMILY = {
@@ -49,14 +56,32 @@ PRIMARY_METRIC_BY_FAMILY = {
     "qa": "accuracy",
     "labeling": "accuracy",
     "detection": "mean_f1",
+    "image_modification_vqa": "accuracy",
+    "image_preference": "accuracy",
+    "aesthetic_rating": "aesthetic_score",
+    "prompt_reconstruction": "accuracy",
 }
 
-FAMILY_ORDER = ["captioning", "qa", "labeling", "detection", "other"]
+FAMILY_ORDER = [
+    "captioning",
+    "qa",
+    "labeling",
+    "detection",
+    "image_modification_vqa",
+    "image_preference",
+    "aesthetic_rating",
+    "prompt_reconstruction",
+    "other",
+]
 FAMILY_COLORS = {
     "captioning": "#c7681d",
     "qa": "#238b68",
     "labeling": "#2a6fbb",
     "detection": "#8a49b8",
+    "image_modification_vqa": "#b33c86",
+    "image_preference": "#d18f00",
+    "aesthetic_rating": "#7a8f00",
+    "prompt_reconstruction": "#008f95",
     "other": "#6e6e6e",
 }
 MODEL_COLORS = [
@@ -99,11 +124,14 @@ def _load_rows(results_dir: Path) -> pd.DataFrame:
         mean_precision = _mean(_coerce_float(item.get("precision")) for item in results)
         mean_recall = _mean(_coerce_float(item.get("recall")) for item in results)
         mean_iou = _mean(_coerce_float(item.get("mean_iou_all_predictions")) for item in results)
+        mean_absolute_error = _mean(_coerce_float(item.get("absolute_error")) for item in results)
+        aesthetic_score = max(0.0, 1.0 - (mean_absolute_error / 9.0))
         primary_metric = PRIMARY_METRIC_BY_FAMILY.get(family, "accuracy")
         score = {
             "accuracy": accuracy,
             "mean_bleu": mean_bleu,
             "mean_f1": mean_f1,
+            "aesthetic_score": aesthetic_score,
         }.get(primary_metric, accuracy)
         rows.append(
             {
@@ -118,6 +146,8 @@ def _load_rows(results_dir: Path) -> pd.DataFrame:
                 "mean_precision": mean_precision,
                 "mean_recall": mean_recall,
                 "mean_iou_all_predictions": mean_iou,
+                "mean_absolute_error": mean_absolute_error,
+                "aesthetic_score": aesthetic_score,
                 "primary_metric": primary_metric,
                 "score": score,
                 "stats_source": str(report_stats.get("stats_source", "measured")),

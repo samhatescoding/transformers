@@ -1,0 +1,231 @@
+[
+  {
+    "category": "color",
+    "replacements": {
+      "red": ["blue", "green"],
+      "blue": ["red", "yellow"],
+      "green": ["purple", "orange"],
+      "yellow": ["blue", "red"],
+      "purple": ["green", "orange"],
+      "orange": ["blue", "purple"],
+      "black": ["white", "brown"],
+      "white": ["black", "gray"],
+      "gray": ["brown", "white"],
+      "silver": ["gold", "black"],
+      "gold": ["silver", "bronze"]
+    }
+  },
+  {
+    "category": "weather",
+    "replacements": {
+      "rainy": ["sunny", "snowy"],
+      "sunny": ["rainy", "cloudy"],
+      "cloudy": ["clear", "stormy"],
+      "stormy": ["sunny", "foggy"],
+      "snowy": ["rainy", "sunny"],
+      "foggy": ["clear", "rainy"]
+    }
+  },
+  {
+    "category": "time",
+    "replacements": {
+      "at night": ["in daylight", "at sunset"],
+      "nighttime": ["daytime", "sunset"],
+      "daytime": ["nighttime", "dawn"],
+      "morning": ["evening", "night"],
+      "evening": ["morning", "midday"],
+      "sunset": ["sunrise", "midday"],
+      "sunrise": ["sunset", "night"]
+    }
+  },
+  {
+    "category": "setting",
+    "replacements": {
+      "city": ["forest", "beach"],
+      "street": ["field", "riverbank"],
+      "forest": ["desert", "city"],
+      "beach": ["mountain", "city"],
+      "kitchen": ["workshop", "garden"],
+      "room": ["courtyard", "street"],
+      "mountain": ["coast", "plain"],
+      "ocean": ["lake", "desert"]
+    }
+  },
+  {
+    "category": "vehicle",
+    "replacements": {
+      "car": ["bicycle", "motorcycle"],
+      "truck": ["van", "bus"],
+      "bus": ["train", "car"],
+      "bicycle": ["motorcycle", "scooter"],
+      "motorcycle": ["bicycle", "car"],
+      "boat": ["sailboat", "canoe"],
+      "train": ["bus", "truck"]
+    }
+  },
+  {
+    "category": "animal",
+    "replacements": {
+      "dog": ["cat", "fox"],
+      "cat": ["dog", "rabbit"],
+      "horse": ["cow", "deer"],
+      "bird": ["butterfly", "airplane"],
+      "butterfly": ["bee", "bird"],
+      "dragon": ["eagle", "griffin"]
+    }
+  },
+  {
+    "category": "person",
+    "replacements": {
+      "child": ["adult", "elderly person"],
+      "man": ["woman", "child"],
+      "woman": ["man", "child"],
+      "person": ["robot", "animal"],
+      "chef": ["mechanic", "artist"],
+      "astronaut": ["firefighter", "pilot"]
+    }
+  },
+  {
+    "category": "action",
+    "replacements": {
+      "running": ["walking", "sitting"],
+      "walking": ["running", "standing"],
+      "sitting": ["standing", "running"],
+      "standing": ["sitting", "lying down"],
+      "flying": ["resting", "swimming"],
+      "sleeping": ["sitting", "playing"],
+      "cooking": ["serving", "eating"],
+      "driving": ["parked", "crashing"]
+    }
+  },
+  {
+    "category": "art_style",
+    "replacements": {
+      "photograph": ["watercolor painting", "pencil drawing"],
+      "photo": ["oil painting", "digital illustration"],
+      "watercolor": ["oil painting", "charcoal drawing"],
+      "oil painting": ["photograph", "watercolor painting"],
+      "realistic": ["cartoon", "abstract"],
+      "minimalist": ["ornate", "rustic"]
+    }
+  },
+  {
+    "category": "material",
+    "replacements": {
+      "wooden": ["metal", "glass"],
+      "wood": ["metal", "stone"],
+      "metal": ["wood", "glass"],
+      "glass": ["ceramic", "wood"],
+      "ceramic": ["glass", "metal"],
+      "stone": ["wood", "brick"],
+      "marble": ["wood", "concrete"]
+    }
+  },
+  {
+    "category": "lighting",
+    "replacements": {
+      "warm light": ["cool light", "harsh light"],
+      "warm lighting": ["cool lighting", "dim lighting"],
+      "candlelight": ["daylight", "neon light"],
+      "neon-lit": ["sunlit", "candlelit"],
+      "bright": ["dim", "shadowy"],
+      "dark": ["bright", "pastel"]
+    }
+  },
+  {
+    "category": "size",
+    "replacements": {
+      "large": ["small", "tiny"],
+      "small": ["large", "massive"],
+      "tall": ["short", "wide"],
+      "wide": ["narrow", "tall"],
+      "close-up": ["wide-angle", "distant"],
+      "macro": ["wide-angle", "aerial"]
+    }
+  },
+  {
+    "category": "position",
+    "replacements": {
+      "left": ["right", "center"],
+      "right": ["left", "center"],
+      "center": ["left", "background"],
+      "foreground": ["background", "center"],
+      "background": ["foreground", "left"],
+      "above": ["below", "beside"],
+      "beside": ["behind", "above"]
+    }
+  },
+  {
+    "category": "expression",
+    "replacements": {
+      "smiling": ["frowning", "surprised"],
+      "happy": ["sad", "angry"],
+      "sad": ["happy", "surprised"],
+      "angry": ["calm", "happy"],
+      "surprised": ["calm", "sad"]
+    }
+  },
+  {
+    "category": "season",
+    "replacements": {
+      "winter": ["summer", "autumn"],
+      "summer": ["winter", "spring"],
+      "autumn": ["spring", "summer"],
+      "spring": ["autumn", "winter"],
+      "snow-covered": ["sunlit", "rain-soaked"]
+    }
+  },
+  {
+    "category": "clothing",
+    "replacements": {
+      "hat": ["helmet", "scarf"],
+      "helmet": ["hat", "hood"],
+      "shirt": ["jacket", "sweater"],
+      "dress": ["suit", "coat"],
+      "jacket": ["shirt", "vest"]
+    }
+  },
+  {
+    "category": "shape",
+    "replacements": {
+      "square": ["circle", "triangle"],
+      "circle": ["square", "triangle"],
+      "round": ["rectangular", "triangular"],
+      "rectangular": ["round", "triangular"]
+    }
+  },
+  {
+    "category": "flora",
+    "replacements": {
+      "flowers": ["rocks", "mushrooms"],
+      "flower": ["leaf", "stone"],
+      "tree": ["lamp post", "statue"],
+      "trees": ["buildings", "rocks"],
+      "grass": ["sand", "snow"],
+      "pine trees": ["palm trees", "bare trees"]
+    }
+  },
+  {
+    "category": "food",
+    "replacements": {
+      "strawberries": ["cherries", "oranges"],
+      "fruit": ["bread", "vegetables"],
+      "pasta": ["rice", "soup"],
+      "coffee": ["tea", "juice"],
+      "cake": ["salad", "sandwich"]
+    }
+  },
+  {
+    "category": "edit_operation",
+    "replacements": {
+      "add": ["remove", "replace"],
+      "remove": ["add", "move"],
+      "replace": ["remove", "add"],
+      "change": ["remove", "add"],
+      "make": ["keep", "remove"],
+      "open": ["close", "remove"],
+      "close": ["open", "remove"],
+      "blur": ["sharpen", "darken"]
+    }
+  }
+]

@@ -1,0 +1,960 @@
+{
+  "model": "claude-sonnet-4-5",
+  "benchmark": "flyingthings3d",
+  "report": {
+    "benchmark": "flyingthings3d",
+    "dataset": "flyingthings3d",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "blue",
+          "green",
+          "red",
+          "yellow"
+        ],
+        "prediction": "A. blue",
+        "correct": false,
+        "valid_labels": [
+          "red"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.040094900061376,
+          "generation_time_seconds": 5.033530400018208,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 654417920,
+          "cpu_utilization_percent": 0.3163265306122449,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "blue",
+          "green",
+          "red",
+          "yellow"
+        ],
+        "selected_choice": "blue",
+        "answer": "red"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "7",
+          "8",
+          "5",
+          "9"
+        ],
+        "prediction": "I need to locate the light blue chair in the image and count the spindles",
+        "correct": false,
+        "valid_labels": [
+          "7"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.554639899986796,
+          "generation_time_seconds": 3.543874999973923,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 659677184,
+          "cpu_utilization_percent": 0.45072463768115945,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "7",
+          "8",
+          "5",
+          "9"
+        ],
+        "selected_choice": "I need to locate the light blue chair in the image and count the spindles",
+        "answer": "7"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "the front",
+          "the back",
+          "the side",
+          "the top"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I can see a gray/silver colored",
+        "correct": false,
+        "valid_labels": [
+          "the back"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.302166700013913,
+          "generation_time_seconds": 3.290694999974221,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 659849216,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "the front",
+          "the back",
+          "the side",
+          "the top"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I can see a gray/silver colored",
+        "answer": "the back"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "3 planes and no car",
+          "3 planes and 1 car",
+          "2 planes and no car",
+          "2 planes and 1 car"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I need to count the planes and cars",
+        "correct": false,
+        "valid_labels": [
+          "3 planes and 1 car"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.689535000012256,
+          "generation_time_seconds": 2.6555097000673413,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 660463616,
+          "cpu_utilization_percent": 0.5792452830188679,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "3 planes and no car",
+          "3 planes and 1 car",
+          "2 planes and no car",
+          "2 planes and 1 car"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I need to count the planes and cars",
+        "answer": "3 planes and 1 car"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I can identify aerospace vehicles (helicopters",
+        "correct": false,
+        "valid_labels": [
+          "3"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.598253400065005,
+          "generation_time_seconds": 3.572191399987787,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 660656128,
+          "cpu_utilization_percent": 0.43802816901408453,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I can identify aerospace vehicles (helicopters",
+        "answer": "3"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I can identify the following vehicles:",
+        "correct": false,
+        "valid_labels": [
+          "3"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.7091097999364138,
+          "generation_time_seconds": 3.6799120999639854,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661045248,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I can identify the following vehicles:",
+        "answer": "3"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "yellow",
+          "red",
+          "blue",
+          "green"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I can see a vehicle/car in",
+        "correct": false,
+        "valid_labels": [
+          "yellow"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.348555300035514,
+          "generation_time_seconds": 3.311289200093597,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661090304,
+          "cpu_utilization_percent": 0.46818181818181814,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "yellow",
+          "red",
+          "blue",
+          "green"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I can see a vehicle/car in",
+        "answer": "yellow"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "prediction": "I cannot determine the color of a car from these images. The images show a",
+        "correct": false,
+        "valid_labels": [
+          "white"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.920981799950823,
+          "generation_time_seconds": 3.868486599996686,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661155840,
+          "cpu_utilization_percent": 0.40921052631578947,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "selected_choice": "I cannot determine the color of a car from these images. The images show a",
+        "answer": "white"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "prediction": "I can see a stereo scene with various 3D objects and textures",
+        "correct": false,
+        "valid_labels": [
+          "white"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.1031258000293747,
+          "generation_time_seconds": 3.069199499906972,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661508096,
+          "cpu_utilization_percent": 0.5114754098360655,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "selected_choice": "I can see a stereo scene with various 3D objects and textures",
+        "answer": "white"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I can see an airplane among various objects",
+        "correct": false,
+        "valid_labels": [
+          "brown"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.4667022000066936,
+          "generation_time_seconds": 3.4235899000195786,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 662032384,
+          "cpu_utilization_percent": 0.45735294117647063,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I can see an airplane among various objects",
+        "answer": "brown"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "a lightbulb",
+          "a tree",
+          "a building",
+          "a car"
+        ],
+        "prediction": "Looking at both the source and target images of this stereo scene, I need",
+        "correct": false,
+        "valid_labels": [
+          "a lightbulb"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.5233017000136897,
+          "generation_time_seconds": 3.5072321000043303,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 662036480,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "a lightbulb",
+          "a tree",
+          "a building",
+          "a car"
+        ],
+        "selected_choice": "Looking at both the source and target images of this stereo scene, I need",
+        "answer": "a lightbulb"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "Looking at both the source and target images of this stereo scene, I can",
+        "correct": false,
+        "valid_labels": [
+          "3"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.6522702000802383,
+          "generation_time_seconds": 3.6028518999228254,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 662224896,
+          "cpu_utilization_percent": 0.43194444444444446,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "selected_choice": "Looking at both the source and target images of this stereo scene, I can",
+        "answer": "3"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "a car",
+          "a tree",
+          "a building",
+          "a plane"
+        ],
+        "prediction": "Looking at the top portion of both the source and target images, I can see",
+        "correct": false,
+        "valid_labels": [
+          "a plane"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.770997600047849,
+          "generation_time_seconds": 3.738623999990523,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 662650880,
+          "cpu_utilization_percent": 0.4216216216216216,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "a car",
+          "a tree",
+          "a building",
+          "a plane"
+        ],
+        "selected_choice": "Looking at the top portion of both the source and target images, I can see",
+        "answer": "a plane"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "gray",
+          "orange",
+          "purple",
+          "brown"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I can see various objects including furniture,",
+        "correct": false,
+        "valid_labels": [
+          "purple"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.663638400030322,
+          "generation_time_seconds": 6.633020999957807,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 662638592,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "gray",
+          "orange",
+          "purple",
+          "brown"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I can see various objects including furniture,",
+        "answer": "purple"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "upper right",
+          "upper left",
+          "lower right",
+          "lower left"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I need to identify where the lamp is",
+        "correct": false,
+        "valid_labels": [
+          "upper left"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.5301918999757618,
+          "generation_time_seconds": 2.4881221000105143,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 662716416,
+          "cpu_utilization_percent": 0.622,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "upper right",
+          "upper left",
+          "lower right",
+          "lower left"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I need to identify where the lamp is",
+        "answer": "upper left"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "above",
+          "below",
+          "right",
+          "left"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I need to identify the car and ship",
+        "correct": false,
+        "valid_labels": [
+          "left"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.3487139999633655,
+          "generation_time_seconds": 3.3222060999833047,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 662892544,
+          "cpu_utilization_percent": 0.4636363636363637,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "above",
+          "below",
+          "right",
+          "left"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I need to identify the car and ship",
+        "answer": "left"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "Looking at both the source and target stereo images, I can count the cars",
+        "correct": false,
+        "valid_labels": [
+          "1"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.3124025999568403,
+          "generation_time_seconds": 3.304479300044477,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 663838720,
+          "cpu_utilization_percent": 0.47692307692307695,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "selected_choice": "Looking at both the source and target stereo images, I can count the cars",
+        "answer": "1"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "upper right",
+          "upper left",
+          "lower right",
+          "lower left"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I need to identify where the airplane is",
+        "correct": false,
+        "valid_labels": [
+          "upper right"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.50892459996976,
+          "generation_time_seconds": 4.469435500097461,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 663932928,
+          "cpu_utilization_percent": 25.72696629213483,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "upper right",
+          "upper left",
+          "lower right",
+          "lower left"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I need to identify where the airplane is",
+        "answer": "upper right"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "the front",
+          "the side",
+          "the top",
+          "the bottom"
+        ],
+        "prediction": "Looking at the rendered stereo scene, I can see a purple/magenta",
+        "correct": false,
+        "valid_labels": [
+          "the bottom"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.4708336000330746,
+          "generation_time_seconds": 3.4483532999875024,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 663937024,
+          "cpu_utilization_percent": 0.4588235294117647,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "the front",
+          "the side",
+          "the top",
+          "the bottom"
+        ],
+        "selected_choice": "Looking at the rendered stereo scene, I can see a purple/magenta",
+        "answer": "the bottom"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "upper (horizontal) center",
+          "right (vertical) center",
+          "left (vertical) center",
+          "bottom (horizontal) center"
+        ],
+        "prediction": "Looking at the stereo scene, I need to identify where the sailboat is",
+        "correct": false,
+        "valid_labels": [
+          "bottom (horizontal) center"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.079450299963355,
+          "generation_time_seconds": 2.0569703000364825,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 664494080,
+          "cpu_utilization_percent": 0.7560975609756098,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "upper (horizontal) center",
+          "right (vertical) center",
+          "left (vertical) center",
+          "bottom (horizontal) center"
+        ],
+        "selected_choice": "Looking at the stereo scene, I need to identify where the sailboat is",
+        "answer": "bottom (horizontal) center"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 72.60587349999696,
+      "wall_clock_time_per_sample_seconds_mean": 3.6296944850066213,
+      "total_generation_time_seconds_mean": 3.6009787200018764,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.2754598083583532,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 664494080,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.6494279102492104,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.8560027999337763
+    }
+  }
+}

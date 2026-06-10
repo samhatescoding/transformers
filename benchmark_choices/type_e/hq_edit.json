@@ -1,0 +1,429 @@
+{
+  "dataset": "hq_edit",
+  "source": "UCSC-VLAA/HQ-Edit",
+  "split": "train",
+  "requested_rows": 20,
+  "exported_rows": 20,
+  "rows": [
+    {
+      "row_index": 0,
+      "correct_prompt": "Add futuristic elements such as holographic displays and floating platforms while maintaining the market's traditional structure.",
+      "distractors": [
+        "Add medieval elements such as holographic displays and floating platforms while maintaining the market's traditional structure.",
+        "Add futuristic elements such as holographic displays and floating platforms while maintaining the library's traditional structure.",
+        "Add medieval elements such as holographic displays and floating platforms while maintaining the library's traditional structure."
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "futuristic",
+          "replacement": "medieval"
+        },
+        {
+          "category": "setting",
+          "source": "market",
+          "replacement": "library"
+        }
+      ]
+    },
+    {
+      "row_index": 1,
+      "correct_prompt": "replace the wooden mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+      "distractors": [
+        "replace the wooden mallet with a metal hammer, add a blue pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+        "replace the metal mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+        "replace the metal mallet with a metal hammer, add a blue pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "red",
+          "replacement": "blue"
+        },
+        {
+          "category": "material",
+          "source": "wooden",
+          "replacement": "metal"
+        }
+      ]
+    },
+    {
+      "row_index": 2,
+      "correct_prompt": "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+      "distractors": [
+        "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new metal one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+        "Remove the rust from the wrench, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+        "Remove the rust from the wrench, polish the metal to a shine, and replace the worn handle with a new metal one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay."
+      ],
+      "attributes": [
+        {
+          "category": "material",
+          "source": "wooden",
+          "replacement": "metal"
+        },
+        {
+          "category": "object",
+          "source": "hammer",
+          "replacement": "wrench"
+        }
+      ]
+    },
+    {
+      "row_index": 3,
+      "correct_prompt": "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the background.",
+      "distractors": [
+        "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the foreground.",
+        "Replace the skateboard with a skateboard and add multiple BMX riders performing tricks in the background.",
+        "Replace the skateboard with a skateboard and add multiple BMX riders performing tricks in the foreground."
+      ],
+      "attributes": [
+        {
+          "category": "setting",
+          "source": "background",
+          "replacement": "foreground"
+        },
+        {
+          "category": "object",
+          "source": "BMX bike",
+          "replacement": "skateboard"
+        }
+      ]
+    },
+    {
+      "row_index": 4,
+      "correct_prompt": "Replace the soccer ball with a giant sunflower that the puppy is holding in the same manner as the soccer ball.",
+      "distractors": [
+        "Replace the soccer ball with a miniature sunflower that the puppy is holding in the same manner as the soccer ball.",
+        "Replace the soccer ball with a giant sunflower that the kitten is holding in the same manner as the soccer ball.",
+        "Replace the soccer ball with a miniature sunflower that the kitten is holding in the same manner as the soccer ball."
+      ],
+      "attributes": [
+        {
+          "category": "size",
+          "source": "giant",
+          "replacement": "miniature"
+        },
+        {
+          "category": "animal",
+          "source": "puppy",
+          "replacement": "kitten"
+        }
+      ]
+    },
+    {
+      "row_index": 5,
+      "correct_prompt": "change the reflection on the teapot to show a clear blue sky with clouds instead of the bright kitchen window",
+      "distractors": [
+        "change the reflection on the teapot to show a clear red sky with clouds instead of the bright kitchen window",
+        "change the reflection on the teapot to show a clear blue sky with a cloudless sky instead of the bright kitchen window",
+        "change the reflection on the teapot to show a clear red sky with a cloudless sky instead of the bright kitchen window"
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "blue",
+          "replacement": "red"
+        },
+        {
+          "category": "weather",
+          "source": "clouds",
+          "replacement": "a cloudless sky"
+        }
+      ]
+    },
+    {
+      "row_index": 6,
+      "correct_prompt": "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a foggy, early morning atmosphere.",
+      "distractors": [
+        "Change the setting to autumn with a ground covered in fallen leaves, add a tree with blue leaves above the swing, and apply a foggy, early morning atmosphere.",
+        "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a crisp and clear, early morning atmosphere.",
+        "Change the setting to autumn with a ground covered in fallen leaves, add a tree with blue leaves above the swing, and apply a crisp and clear, early morning atmosphere."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "red",
+          "replacement": "blue"
+        },
+        {
+          "category": "weather",
+          "source": "foggy",
+          "replacement": "crisp and clear"
+        }
+      ]
+    },
+    {
+      "row_index": 7,
+      "correct_prompt": "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, snow-covered trees, and polar bears on ice floes",
+      "distractors": [
+        "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, sun-baked trees, and polar bears on ice floes",
+        "remove the parrots and change the background to a lush tropical rainforest with icy cliffs, snow-covered trees, and polar bears on ice floes",
+        "remove the parrots and change the background to a lush tropical rainforest with icy cliffs, sun-baked trees, and polar bears on ice floes"
+      ],
+      "attributes": [
+        {
+          "category": "weather",
+          "source": "snow-covered",
+          "replacement": "sun-baked"
+        },
+        {
+          "category": "setting",
+          "source": "snowy arctic landscape",
+          "replacement": "lush tropical rainforest"
+        }
+      ]
+    },
+    {
+      "row_index": 8,
+      "correct_prompt": "show the butterfly with its wings open as if it is about to take off",
+      "distractors": [
+        "show the dragonfly with its wings open as if it is about to take off",
+        "show the butterfly with its wings closed as if it is about to take off",
+        "show the dragonfly with its wings closed as if it is about to take off"
+      ],
+      "attributes": [
+        {
+          "category": "animal",
+          "source": "butterfly",
+          "replacement": "dragonfly"
+        },
+        {
+          "category": "action",
+          "source": "open",
+          "replacement": "closed"
+        }
+      ]
+    },
+    {
+      "row_index": 9,
+      "correct_prompt": "Change the background to show a mountainous landscape outside the window and add a potted plant next to the cat.",
+      "distractors": [
+        "Change the background to show a flat coastal plain outside the window and add a potted plant next to the cat.",
+        "Change the background to show a mountainous landscape outside the window and add a potted plant next to the rabbit.",
+        "Change the background to show a flat coastal plain outside the window and add a potted plant next to the rabbit."
+      ],
+      "attributes": [
+        {
+          "category": "setting",
+          "source": "mountainous landscape",
+          "replacement": "flat coastal plain"
+        },
+        {
+          "category": "animal",
+          "source": "cat",
+          "replacement": "rabbit"
+        }
+      ]
+    },
+    {
+      "row_index": 10,
+      "correct_prompt": "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk background for the laptop screen.",
+      "distractors": [
+        "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous metal desk background for the laptop screen.",
+        "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk foreground for the laptop screen.",
+        "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous metal desk foreground for the laptop screen."
+      ],
+      "attributes": [
+        {
+          "category": "material",
+          "source": "wooden",
+          "replacement": "metal"
+        },
+        {
+          "category": "setting",
+          "source": "background",
+          "replacement": "foreground"
+        }
+      ]
+    },
+    {
+      "row_index": 11,
+      "correct_prompt": "Change the time of day to night, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+      "distractors": [
+        "Change the time of day to day, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+        "Change the time of day to night, remove the crowd to make the library appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+        "Change the time of day to day, remove the crowd to make the library appear closed, and adjust the lighting to reflect a quieter atmosphere."
+      ],
+      "attributes": [
+        {
+          "category": "season",
+          "source": "night",
+          "replacement": "day"
+        },
+        {
+          "category": "setting",
+          "source": "market",
+          "replacement": "library"
+        }
+      ]
+    },
+    {
+      "row_index": 12,
+      "correct_prompt": "change the person into a young individual wearing a denim jacket and jeans, with a bright yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+      "distractors": [
+        "change the person into a young individual wearing a denim jacket and jeans, with a bright blue backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+        "change the person into a young individual wearing a denim jacket and jeans, with a dim yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+        "change the person into a young individual wearing a denim jacket and jeans, with a dim blue backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "yellow",
+          "replacement": "blue"
+        },
+        {
+          "category": "lighting",
+          "source": "bright",
+          "replacement": "dim"
+        }
+      ]
+    },
+    {
+      "row_index": 13,
+      "correct_prompt": "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit.",
+      "distractors": [
+        "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, cream white winter jacket over her Tai Chi outfit.",
+        "Change the season to summer by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit.",
+        "Change the season to summer by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, cream white winter jacket over her Tai Chi outfit."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "dark blue",
+          "replacement": "cream white"
+        },
+        {
+          "category": "season",
+          "source": "winter",
+          "replacement": "summer"
+        }
+      ]
+    },
+    {
+      "row_index": 14,
+      "correct_prompt": "Change the time of day from evening to sunset, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+      "distractors": [
+        "Change the time of day from evening to sunset, casting a warm silver light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+        "Change the time of day from evening to sunrise, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+        "Change the time of day from evening to sunrise, casting a warm silver light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "golden",
+          "replacement": "silver"
+        },
+        {
+          "category": "season",
+          "source": "sunset",
+          "replacement": "sunrise"
+        }
+      ]
+    },
+    {
+      "row_index": 15,
+      "correct_prompt": "Remove the young girl standing next to her.",
+      "distractors": [
+        "Remove the elderly man standing next to her.",
+        "add the young girl standing next to her.",
+        "add the elderly man standing next to her."
+      ],
+      "attributes": [
+        {
+          "category": "person",
+          "source": "young girl",
+          "replacement": "elderly man"
+        },
+        {
+          "category": "edit",
+          "source": "Remove",
+          "replacement": "add"
+        }
+      ]
+    },
+    {
+      "row_index": 16,
+      "correct_prompt": "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the background.",
+      "distractors": [
+        "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the foreground.",
+        "Add a watering hole with reflections, additional zebras, elephants, and acacia trees in the background.",
+        "Add a watering hole with reflections, additional zebras, elephants, and acacia trees in the foreground."
+      ],
+      "attributes": [
+        {
+          "category": "setting",
+          "source": "background",
+          "replacement": "foreground"
+        },
+        {
+          "category": "animal",
+          "source": "giraffes",
+          "replacement": "elephants"
+        }
+      ]
+    },
+    {
+      "row_index": 17,
+      "correct_prompt": "Remove the rust and grime from the screwdriver, making it look new and unused.",
+      "distractors": [
+        "Remove the rust and grime from the paintbrush, making it look new and unused.",
+        "add the rust and grime from the screwdriver, making it look new and unused.",
+        "add the rust and grime from the paintbrush, making it look new and unused."
+      ],
+      "attributes": [
+        {
+          "category": "object",
+          "source": "screwdriver",
+          "replacement": "paintbrush"
+        },
+        {
+          "category": "edit",
+          "source": "Remove",
+          "replacement": "add"
+        }
+      ]
+    },
+    {
+      "row_index": 18,
+      "correct_prompt": "apply a filter to create a hand-drawn, crosshatched effect",
+      "distractors": [
+        "apply a filter to create a smooth photorealistic effect",
+        "remove a filter to create a hand-drawn, crosshatched effect",
+        "remove a filter to create a smooth photorealistic effect"
+      ],
+      "attributes": [
+        {
+          "category": "style",
+          "source": "hand-drawn, crosshatched",
+          "replacement": "smooth photorealistic"
+        },
+        {
+          "category": "edit",
+          "source": "apply",
+          "replacement": "remove"
+        }
+      ]
+    },
+    {
+      "row_index": 19,
+      "correct_prompt": "Replace the green fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+      "distractors": [
+        "Replace the purple fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+        "Replace the green fields with vibrant, colorful sunflower fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+        "Replace the purple fields with vibrant, colorful sunflower fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival."
+      ],
+      "attributes": [
+        {
+          "category": "color",
+          "source": "green",
+          "replacement": "purple"
+        },
+        {
+          "category": "flora",
+          "source": "tulip fields",
+          "replacement": "sunflower fields"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+[
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "blip3o_60k",
+    "status": "error",
+    "error": "ValueError: Could not find two curated attribute substitutions for row 0 of blip3o_60k: ''",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 23, in <module>\n    pair_summary = run_benchmark_matrix(\n                   ~~~~~~~~~~~~~~~~~~~~^\n        models=[model_run],\n        ^^^^^^^^^^^^^^^^^^^\n        benchmark_runs=[BenchmarkRun(benchmark=benchmark, num_samples=sample_count)],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        output_dir=OUTPUT_DIR,\n        ^^^^^^^^^^^^^^^^^^^^^^\n    )[0]\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\runners\\execution.py\", line 35, in run_benchmark_matrix\n    report = benchmark.run(\n        model=model,\n    ...<2 lines>...\n        show_progress=False,\n    )\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 451, in run\n    rows, labels = self.prepare(n=n, label_sample_size=label_sample_size)\n                   ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\prompt_reconstruction\\_prompt_reconstruction.py\", line 19, in prepare\n    self._finalize_prompt_choices(row, row_index)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\prompt_reconstruction\\_prompt_reconstruction.py\", line 42, in _finalize_prompt_choices\n    curated = get_curated_distractors(self.dataset.name, row_index, answer)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\curated_distractors.py\", line 94, in get_curated_distractors\n    raise ValueError(\n    ...<2 lines>...\n    )\nValueError: Could not find two curated attribute substitutions for row 0 of blip3o_60k: ''\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "conceptual_captions",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_conceptual_captions.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "conceptual_captions_caption",
+    "num_samples": 1,
+    "max_new_tokens": 24,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_conceptual_captions_caption.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "cityscapes",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_cityscapes.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "dfdc",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_dfdc.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "diffusiondb",
+    "status": "error",
+    "error": "RuntimeError: Dataset scripts are no longer supported, but found diffusiondb.py",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 20, in <module>\n    benchmark = benchmark_class(streaming=True)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\diffusiondb.py\", line 8, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        name=\"diffusiondb\",\n        ^^^^^^^^^^^^^^^^^^^\n    ...<5 lines>...\n        answer_keys=(\"answer\", \"prompt\", \"text\"),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 401, in __init__\n    super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 39, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1029, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 989, in dataset_module_factory\n    raise RuntimeError(f\"Dataset scripts are no longer supported, but found {filename}\")\nRuntimeError: Dataset scripts are no longer supported, but found diffusiondb.py\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "docvqa",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_docvqa.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "fairface",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_fairface.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "fashion_mnist",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_fashion_mnist.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "flickr30k",
+    "num_samples": 1,
+    "max_new_tokens": 24,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_flickr30k.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "flickr30k_entities",
+    "num_samples": 1,
+    "max_new_tokens": 32,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_flickr30k_entities.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "flyingthings3d",
+    "status": "error",
+    "error": "ValueError: Could not find image data in row for keys: ['image', 'left_image', 'frame', 'rgb']",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 23, in <module>\n    pair_summary = run_benchmark_matrix(\n                   ~~~~~~~~~~~~~~~~~~~~^\n        models=[model_run],\n        ^^^^^^^^^^^^^^^^^^^\n        benchmark_runs=[BenchmarkRun(benchmark=benchmark, num_samples=sample_count)],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        output_dir=OUTPUT_DIR,\n        ^^^^^^^^^^^^^^^^^^^^^^\n    )[0]\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\runners\\execution.py\", line 35, in run_benchmark_matrix\n    report = benchmark.run(\n        model=model,\n    ...<2 lines>...\n        show_progress=False,\n    )\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 451, in run\n    rows, labels = self.prepare(n=n, label_sample_size=label_sample_size)\n                   ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\multiple_choice\\_multiple_choice.py\", line 17, in prepare\n    rows_for_labels = self.dataset.get_samples(max(n, label_sample_size))\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 53, in get_samples\n    samples.append(self._standardize_row(row))\n                   ~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 419, in _standardize_row\n    out[\"image\"] = self._extract_image(row, self.image_keys)\n                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 121, in _extract_image\n    raise ValueError(f\"Could not find image data in row for keys: {list(keys)}\")\nValueError: Could not find image data in row for keys: ['image', 'left_image', 'frame', 'rgb']\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "gqa",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_gqa.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "hdtf",
+    "status": "error",
+    "error": "DatasetNotFoundError: Dataset 'HDTF/HDTF' doesn't exist on the Hub or cannot be accessed.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 20, in <module>\n    benchmark = benchmark_class(streaming=True)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\captioning\\_captioning.py\", line 14, in __init__\n    super().__init__(dataset=dataset, name=name, **dataset_kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hdtf.py\", line 8, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        name=\"hdtf\",\n        ^^^^^^^^^^^^\n    ...<4 lines>...\n        caption_keys=(\"caption\", \"captions\", \"text\", \"transcript\"),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 287, in __init__\n    super().__init__(image_keys=frame_keys, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 256, in __init__\n    super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 39, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1023, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 980, in dataset_module_factory\n    raise DatasetNotFoundError(f\"Dataset '{path}' doesn't exist on the Hub or cannot be accessed.\") from e\ndatasets.exceptions.DatasetNotFoundError: Dataset 'HDTF/HDTF' doesn't exist on the Hub or cannot be accessed.\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "hq_edit",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_hq_edit.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "imagenet1k",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_imagenet1k.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "imgedit",
+    "status": "error",
+    "error": "DatasetNotFoundError: Dataset 'ImagenHub/ImgEdit' doesn't exist on the Hub or cannot be accessed.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 20, in <module>\n    benchmark = benchmark_class(streaming=True)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\imgedit.py\", line 8, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        name=\"imgedit\",\n        ^^^^^^^^^^^^^^^\n    ...<7 lines>...\n        answer_keys=(\"answer\", \"instruction\", \"edit_instruction\", \"prompt\"),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 401, in __init__\n    super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 39, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1023, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 980, in dataset_module_factory\n    raise DatasetNotFoundError(f\"Dataset '{path}' doesn't exist on the Hub or cannot be accessed.\") from e\ndatasets.exceptions.DatasetNotFoundError: Dataset 'ImagenHub/ImgEdit' doesn't exist on the Hub or cannot be accessed.\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "inaturalist",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_inaturalist.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "internvid",
+    "status": "error",
+    "error": "DatasetNotFoundError: Dataset 'OpenGVLab/InternVid' is a gated dataset on the Hub. Visit the dataset page at https://huggingface.co/datasets/OpenGVLab/InternVid to ask for access.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 20, in <module>\n    benchmark = benchmark_class(streaming=True)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\captioning\\_captioning.py\", line 14, in __init__\n    super().__init__(dataset=dataset, name=name, **dataset_kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\internvid.py\", line 8, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        name=\"internvid\",\n        ^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n        caption_keys=(\"caption\", \"captions\", \"text\", \"answer\"),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 287, in __init__\n    super().__init__(image_keys=frame_keys, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 256, in __init__\n    super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 39, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1023, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1011, in dataset_module_factory\n    raise DatasetNotFoundError(message) from e\ndatasets.exceptions.DatasetNotFoundError: Dataset 'OpenGVLab/InternVid' is a gated dataset on the Hub. Visit the dataset page at https://huggingface.co/datasets/OpenGVLab/InternVid to ask for access.\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "kinetics",
+    "status": "error",
+    "error": "DatasetNotFoundError: Dataset 'google/kinetics700' doesn't exist on the Hub or cannot be accessed.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 20, in <module>\n    benchmark = benchmark_class(streaming=True)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\kinetics.py\", line 8, in __init__\n    super().__init__(name=\"kinetics\", dataset_id=dataset_id, split=split, streaming=streaming)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 334, in __init__\n    super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 39, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1023, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 980, in dataset_module_factory\n    raise DatasetNotFoundError(f\"Dataset '{path}' doesn't exist on the Hub or cannot be accessed.\") from e\ndatasets.exceptions.DatasetNotFoundError: Dataset 'google/kinetics700' doesn't exist on the Hub or cannot be accessed.\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "laion400m",
+    "status": "error",
+    "error": "DatasetNotFoundError: Dataset 'laion/laion400m' is a gated dataset on the Hub. Visit the dataset page at https://huggingface.co/datasets/laion/laion400m to ask for access.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 20, in <module>\n    benchmark = benchmark_class(streaming=True)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\captioning\\_captioning.py\", line 14, in __init__\n    super().__init__(dataset=dataset, name=name, **dataset_kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\laion400m.py\", line 8, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        name=\"laion400m\",\n        ^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n        caption_keys=(\"caption\", \"captions\", \"text\", \"TEXT\"),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 256, in __init__\n    super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 39, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1023, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1011, in dataset_module_factory\n    raise DatasetNotFoundError(message) from e\ndatasets.exceptions.DatasetNotFoundError: Dataset 'laion/laion400m' is a gated dataset on the Hub. Visit the dataset page at https://huggingface.co/datasets/laion/laion400m to ask for access.\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "laion5b",
+    "status": "error",
+    "error": "DatasetNotFoundError: Dataset 'laion/laion5b' doesn't exist on the Hub or cannot be accessed.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 20, in <module>\n    benchmark = benchmark_class(streaming=True)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\captioning\\_captioning.py\", line 14, in __init__\n    super().__init__(dataset=dataset, name=name, **dataset_kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\laion5b.py\", line 8, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        name=\"laion5b\",\n        ^^^^^^^^^^^^^^^\n    ...<4 lines>...\n        caption_keys=(\"caption\", \"captions\", \"text\", \"TEXT\"),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 256, in __init__\n    super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 39, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1023, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 980, in dataset_module_factory\n    raise DatasetNotFoundError(f\"Dataset '{path}' doesn't exist on the Hub or cannot be accessed.\") from e\ndatasets.exceptions.DatasetNotFoundError: Dataset 'laion/laion5b' doesn't exist on the Hub or cannot be accessed.\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "lsun",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_lsun.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "lvis",
+    "status": "error",
+    "error": "RuntimeError: Dataset scripts are no longer supported, but found lvis.py",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 20, in <module>\n    benchmark = benchmark_class(streaming=True)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\lvis.py\", line 10, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        name=\"lvis\",\n        ^^^^^^^^^^^^\n    ...<2 lines>...\n        streaming=streaming,\n        ^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 39, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1029, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 989, in dataset_module_factory\n    raise RuntimeError(f\"Dataset scripts are no longer supported, but found {filename}\")\nRuntimeError: Dataset scripts are no longer supported, but found lvis.py\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "mscoco",
+    "num_samples": 1,
+    "max_new_tokens": 32,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_mscoco.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "mscoco_caption",
+    "num_samples": 1,
+    "max_new_tokens": 32,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_mscoco_caption.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "mvtec_ad",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_mvtec_ad.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "magicbrush",
+    "status": "error",
+    "error": "ValueError: Could not find image data in row for keys: ['source_image', 'input_image', 'image', 'src_img']",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 23, in <module>\n    pair_summary = run_benchmark_matrix(\n                   ~~~~~~~~~~~~~~~~~~~~^\n        models=[model_run],\n        ^^^^^^^^^^^^^^^^^^^\n        benchmark_runs=[BenchmarkRun(benchmark=benchmark, num_samples=sample_count)],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        output_dir=OUTPUT_DIR,\n        ^^^^^^^^^^^^^^^^^^^^^^\n    )[0]\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\runners\\execution.py\", line 35, in run_benchmark_matrix\n    report = benchmark.run(\n        model=model,\n    ...<2 lines>...\n        show_progress=False,\n    )\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 451, in run\n    rows, labels = self.prepare(n=n, label_sample_size=label_sample_size)\n                   ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\image_modification_vqa\\_image_modification_vqa.py\", line 17, in prepare\n    rows, labels = super().prepare(n=n, label_sample_size=label_sample_size)\n                   ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\multiple_choice\\_multiple_choice.py\", line 17, in prepare\n    rows_for_labels = self.dataset.get_samples(max(n, label_sample_size))\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 53, in get_samples\n    samples.append(self._standardize_row(row))\n                   ~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 414, in _standardize_row\n    out[\"source_image\"] = self._extract_image(row, self.source_image_keys)\n                          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 121, in _extract_image\n    raise ValueError(f\"Could not find image data in row for keys: {list(keys)}\")\nValueError: Could not find image data in row for keys: ['source_image', 'input_image', 'image', 'src_img']\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "openimages_v4",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_openimages_v4.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "openimages_v4_detection",
+    "num_samples": 1,
+    "max_new_tokens": 32,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_openimages_v4_detection.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "openvid1m",
+    "status": "error",
+    "error": "DatasetNotFoundError: Dataset 'OpenGVLab/OpenVid-1M' doesn't exist on the Hub or cannot be accessed.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 20, in <module>\n    benchmark = benchmark_class(streaming=True)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\openvid1m.py\", line 8, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        name=\"openvid1m\",\n        ^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n        answer_keys=(\"prompt\", \"caption\", \"text\"),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 401, in __init__\n    super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 39, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1023, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 980, in dataset_module_factory\n    raise DatasetNotFoundError(f\"Dataset '{path}' doesn't exist on the Hub or cannot be accessed.\") from e\ndatasets.exceptions.DatasetNotFoundError: Dataset 'OpenGVLab/OpenVid-1M' doesn't exist on the Hub or cannot be accessed.\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "pick_a_pic",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_pick_a_pic.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "places",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_places.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "sharegpt4o_image",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_sharegpt4o_image.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "tad66k",
+    "num_samples": 1,
+    "max_new_tokens": 4,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_tad66k.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "textcaps",
+    "num_samples": 1,
+    "max_new_tokens": 24,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_textcaps.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "ucf101",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_ucf101.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "visual_cot",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_visual_cot.json",
+    "status": "ok"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "visual_genome",
+    "status": "error",
+    "error": "RuntimeError: Dataset scripts are no longer supported, but found visual_genome.py",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_15884\\3557268627.py\", line 20, in <module>\n    benchmark = benchmark_class(streaming=True)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\visual_genome.py\", line 8, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        name=\"visual_genome\",\n        ^^^^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n        answer_keys=(\"answer\", \"relationship\", \"triplet\"),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 216, in __init__\n    super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 39, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1029, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 989, in dataset_module_factory\n    raise RuntimeError(f\"Dataset scripts are no longer supported, but found {filename}\")\nRuntimeError: Dataset scripts are no longer supported, but found visual_genome.py\n"
+  },
+  {
+    "model": "llava-gemma-2b",
+    "benchmark": "vqav2",
+    "num_samples": 1,
+    "max_new_tokens": 16,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\dataset_smoke_test\\llava-gemma-2b_vqav2.json",
+    "status": "ok"
+  }
+]
