@@ -1,178 +1,146 @@
 {
-  "model": "gemini-3.5-flash",
-  "benchmark": "flyingthings3d",
+  "model": "gpt-4o",
+  "benchmark": "hdtf",
   "report": {
-    "benchmark": "flyingthings3d",
-    "dataset": "flyingthings3d",
+    "benchmark": "hdtf",
+    "dataset": "hdtf",
     "task_type": null,
     "num_samples": 20,
     "num_candidate_labels": 0,
     "results": [
       {
         "index": 1,
-        "prompt_labels": [
-          "blue",
-          "green",
-          "red",
-          "yellow"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered human face with blue eyes and a neutral expression.",
         "correct": false,
         "valid_labels": [
-          "red"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000001"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 41.057143600075506,
-          "generation_time_seconds": 41.04318569996394,
+          "wall_clock_time_seconds": 5.101040500099771,
+          "generation_time_seconds": 5.072111300076358,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 681328640,
-          "cpu_utilization_percent": 0.3045679012345679,
+          "peak_cpu_ram_bytes": 1760833536,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "blue",
-          "green",
-          "red",
-          "yellow"
-        ],
-        "selected_choice": "",
-        "answer": "red"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000001"
+        ]
       },
       {
         "index": 2,
-        "prompt_labels": [
-          "7",
-          "8",
-          "5",
-          "9"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered face with blue eyes and a neutral expression.",
         "correct": false,
         "valid_labels": [
-          "7"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000002"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 71.15819430002011,
-          "generation_time_seconds": 71.12346749997232,
+          "wall_clock_time_seconds": 2.7556211999617517,
+          "generation_time_seconds": 2.718838300090283,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 687509504,
-          "cpu_utilization_percent": 0.19428571428571428,
+          "peak_cpu_ram_bytes": 1762402304,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "7",
-          "8",
-          "5",
-          "9"
-        ],
-        "selected_choice": "",
-        "answer": "7"
+        "bleu": 0.09578464408619825,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000002"
+        ]
       },
       {
         "index": 3,
-        "prompt_labels": [
-          "the front",
-          "the back",
-          "the side",
-          "the top"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered face with a smooth, bald head and blue eyes.",
         "correct": false,
         "valid_labels": [
-          "the back"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000003"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 20.62395599996671,
-          "generation_time_seconds": 20.607145999907516,
+          "wall_clock_time_seconds": 2.802047200035304,
+          "generation_time_seconds": 2.758976500015706,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 689123328,
-          "cpu_utilization_percent": 0.7584158415841583,
+          "peak_cpu_ram_bytes": 1762406400,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "the front",
-          "the back",
-          "the side",
-          "the top"
-        ],
-        "selected_choice": "",
-        "answer": "the back"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000003"
+        ]
       },
       {
         "index": 4,
-        "prompt_labels": [
-          "3 planes and no car",
-          "3 planes and 1 car",
-          "2 planes and no car",
-          "2 planes and 1 car"
-        ],
-        "prediction": "To",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered human face with a smooth, bald head and blue eyes.",
         "correct": false,
         "valid_labels": [
-          "3 planes and 1 car"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000004"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 16.95247100002598,
-          "generation_time_seconds": 16.89882140001282,
+          "wall_clock_time_seconds": 2.3982572000240907,
+          "generation_time_seconds": 2.3896176000125706,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 691052544,
-          "cpu_utilization_percent": 0.9105105105105105,
+          "peak_cpu_ram_bytes": 1762430976,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -183,364 +151,292 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "3 planes and no car",
-          "3 planes and 1 car",
-          "2 planes and no car",
-          "2 planes and 1 car"
-        ],
-        "selected_choice": "To",
-        "answer": "3 planes and 1 car"
+        "bleu": 0.08032276872815308,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000004"
+        ]
       },
       {
         "index": 5,
-        "prompt_labels": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered face with a smooth, bald head and blue eyes.",
         "correct": false,
         "valid_labels": [
-          "3"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000005"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 10.457274399930611,
-          "generation_time_seconds": 10.410171200055629,
+          "wall_clock_time_seconds": 2.1297502999659628,
+          "generation_time_seconds": 2.095393699943088,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 693579776,
-          "cpu_utilization_percent": 1.204390243902439,
+          "peak_cpu_ram_bytes": 1762430976,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "selected_choice": "",
-        "answer": "3"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000005"
+        ]
       },
       {
         "index": 6,
-        "prompt_labels": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered face with a smooth, bald head and blue eyes.",
         "correct": false,
         "valid_labels": [
-          "3"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000006"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 13.61178410006687,
-          "generation_time_seconds": 13.566633100039326,
+          "wall_clock_time_seconds": 1.825875599985011,
+          "generation_time_seconds": 1.774497599923052,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 695504896,
-          "cpu_utilization_percent": 1.0399253731343283,
+          "peak_cpu_ram_bytes": 1762430976,
+          "cpu_utilization_percent": 0.8666666666666667,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "selected_choice": "",
-        "answer": "3"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000006"
+        ]
       },
       {
         "index": 7,
-        "prompt_labels": [
-          "yellow",
-          "red",
-          "blue",
-          "green"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered face with a smooth, bald head and blue eyes.",
         "correct": false,
         "valid_labels": [
-          "yellow"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000007"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 6.401769699994475,
-          "generation_time_seconds": 6.36951540003065,
+          "wall_clock_time_seconds": 2.9406445999629796,
+          "generation_time_seconds": 2.9148126000072807,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 697012224,
-          "cpu_utilization_percent": 2.2079365079365076,
+          "peak_cpu_ram_bytes": 1762430976,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "yellow",
-          "red",
-          "blue",
-          "green"
-        ],
-        "selected_choice": "",
-        "answer": "yellow"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000007"
+        ]
       },
       {
         "index": 8,
-        "prompt_labels": [
-          "black",
-          "white",
-          "brown",
-          "gray"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered face with exaggerated features on a plain background.",
         "correct": false,
         "valid_labels": [
-          "white"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000008"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 6.404082200024277,
-          "generation_time_seconds": 6.39684339996893,
+          "wall_clock_time_seconds": 1.6228479000274092,
+          "generation_time_seconds": 1.584292000043206,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 699195392,
-          "cpu_utilization_percent": 1.9563492063492063,
+          "peak_cpu_ram_bytes": 1762430976,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "black",
-          "white",
-          "brown",
-          "gray"
-        ],
-        "selected_choice": "",
-        "answer": "white"
+        "bleu": 0.09578464408619825,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000008"
+        ]
       },
       {
         "index": 9,
-        "prompt_labels": [
-          "black",
-          "white",
-          "brown",
-          "gray"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered face with exaggerated features and a neutral expression.",
         "correct": false,
         "valid_labels": [
-          "white"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000009"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 3.6502382000908256,
-          "generation_time_seconds": 3.622258299961686,
+          "wall_clock_time_seconds": 3.2031194999581203,
+          "generation_time_seconds": 3.199400700046681,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 700952576,
-          "cpu_utilization_percent": 3.841666666666667,
+          "peak_cpu_ram_bytes": 1762430976,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "black",
-          "white",
-          "brown",
-          "gray"
-        ],
-        "selected_choice": "",
-        "answer": "white"
+        "bleu": 0.09578464408619825,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000009"
+        ]
       },
       {
         "index": 10,
-        "prompt_labels": [
-          "black",
-          "white",
-          "brown",
-          "gray"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered face with exaggerated features and a neutral expression.",
         "correct": false,
         "valid_labels": [
-          "brown"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000010"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 4.217555799987167,
-          "generation_time_seconds": 4.200482900021598,
+          "wall_clock_time_seconds": 2.038792400038801,
+          "generation_time_seconds": 2.036880199913867,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 703549440,
-          "cpu_utilization_percent": 3.334939759036145,
+          "peak_cpu_ram_bytes": 1762430976,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "black",
-          "white",
-          "brown",
-          "gray"
-        ],
-        "selected_choice": "",
-        "answer": "brown"
+        "bleu": 0.09578464408619825,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000010"
+        ]
       },
       {
         "index": 11,
-        "prompt_labels": [
-          "a lightbulb",
-          "a tree",
-          "a building",
-          "a car"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered face with a smooth, bald head and blue eyes.",
         "correct": false,
         "valid_labels": [
-          "a lightbulb"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000011"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 4.0595575999468565,
-          "generation_time_seconds": 4.026286500040442,
+          "wall_clock_time_seconds": 2.991511099971831,
+          "generation_time_seconds": 2.9641422999557108,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 705114112,
-          "cpu_utilization_percent": 3.4837499999999997,
+          "peak_cpu_ram_bytes": 1762439168,
+          "cpu_utilization_percent": 0.5169491525423728,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "a lightbulb",
-          "a tree",
-          "a building",
-          "a car"
-        ],
-        "selected_choice": "",
-        "answer": "a lightbulb"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000011"
+        ]
       },
       {
         "index": 12,
-        "prompt_labels": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "prediction": "Based",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered human face with blue eyes and a neutral expression.",
         "correct": false,
         "valid_labels": [
-          "3"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000012"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 6.614258499932475,
-          "generation_time_seconds": 6.6071606000186875,
+          "wall_clock_time_seconds": 1.6206072999630123,
+          "generation_time_seconds": 1.6020417000399902,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 707203072,
-          "cpu_utilization_percent": 2.1292307692307695,
+          "peak_cpu_ram_bytes": 1762439168,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -551,226 +447,33 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "selected_choice": "Based",
-        "answer": "3"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000012"
+        ]
       },
       {
         "index": 13,
-        "prompt_labels": [
-          "a car",
-          "a tree",
-          "a building",
-          "a plane"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered human face with a smooth, bald head and blue eyes.",
         "correct": false,
         "valid_labels": [
-          "a plane"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000013"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 10.289691100013442,
-          "generation_time_seconds": 10.27205110003706,
+          "wall_clock_time_seconds": 4.912833199952729,
+          "generation_time_seconds": 4.889810199965723,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 709206016,
-          "cpu_utilization_percent": 1.5157635467980295,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "choices": [
-          "a car",
-          "a tree",
-          "a building",
-          "a plane"
-        ],
-        "selected_choice": "",
-        "answer": "a plane"
-      },
-      {
-        "index": 14,
-        "prompt_labels": [
-          "gray",
-          "orange",
-          "purple",
-          "brown"
-        ],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "purple"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": true,
-          "error": null,
-          "wall_clock_time_seconds": 5.9584009000100195,
-          "generation_time_seconds": 5.920704199932516,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": 711061504,
-          "cpu_utilization_percent": 2.635897435897436,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "choices": [
-          "gray",
-          "orange",
-          "purple",
-          "brown"
-        ],
-        "selected_choice": "",
-        "answer": "purple"
-      },
-      {
-        "index": 15,
-        "prompt_labels": [
-          "upper right",
-          "upper left",
-          "lower right",
-          "lower left"
-        ],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "upper left"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": true,
-          "error": null,
-          "wall_clock_time_seconds": 3.579313699970953,
-          "generation_time_seconds": 3.5520163000328466,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": 712241152,
-          "cpu_utilization_percent": 3.551428571428571,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "choices": [
-          "upper right",
-          "upper left",
-          "lower right",
-          "lower left"
-        ],
-        "selected_choice": "",
-        "answer": "upper left"
-      },
-      {
-        "index": 16,
-        "prompt_labels": [
-          "above",
-          "below",
-          "right",
-          "left"
-        ],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "left"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": true,
-          "error": null,
-          "wall_clock_time_seconds": 3.281309200101532,
-          "generation_time_seconds": 3.251483100000769,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": 714653696,
-          "cpu_utilization_percent": 5.290625,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "choices": [
-          "above",
-          "below",
-          "right",
-          "left"
-        ],
-        "selected_choice": "",
-        "answer": "left"
-      },
-      {
-        "index": 17,
-        "prompt_labels": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "prediction": "Based",
-        "correct": false,
-        "valid_labels": [
-          "1"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": true,
-          "error": null,
-          "wall_clock_time_seconds": 3.8611453999765217,
-          "generation_time_seconds": 3.852233699988574,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": 717049856,
-          "cpu_utilization_percent": 3.6578947368421053,
+          "peak_cpu_ram_bytes": 1762439168,
+          "cpu_utilization_percent": 0.9505154639175258,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -781,170 +484,287 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "1",
-          "2",
-          "3",
-          "4"
+        "bleu": 0.08032276872815308,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000013"
+        ]
+      },
+      {
+        "index": 14,
+        "prompt_labels": [],
+        "prediction": "A digitally rendered human face with blue eyes and a neutral expression.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000014"
         ],
-        "selected_choice": "Based",
-        "answer": "1"
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.7675739000551403,
+          "generation_time_seconds": 1.718893300043419,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1762439168,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000014"
+        ]
+      },
+      {
+        "index": 15,
+        "prompt_labels": [],
+        "prediction": "A digitally rendered human face with a smooth, bald head and blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000015"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0216119000688195,
+          "generation_time_seconds": 2.009864299907349,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1762435072,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08032276872815308,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000015"
+        ]
+      },
+      {
+        "index": 16,
+        "prompt_labels": [],
+        "prediction": "A digitally rendered human face with a smooth, bald head and blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000016"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.3760693999938667,
+          "generation_time_seconds": 2.371832299977541,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1762439168,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08032276872815308,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000016"
+        ]
+      },
+      {
+        "index": 17,
+        "prompt_labels": [],
+        "prediction": "A digitally rendered, bald human face with blue eyes on a neutral background.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000017"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4689375000307336,
+          "generation_time_seconds": 1.46561539999675,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1762119680,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08032276872815308,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000017"
+        ]
       },
       {
         "index": 18,
-        "prompt_labels": [
-          "upper right",
-          "upper left",
-          "lower right",
-          "lower left"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered face with exaggerated features on a plain background.",
         "correct": false,
         "valid_labels": [
-          "upper right"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000018"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 3.618830500054173,
-          "generation_time_seconds": 3.5778961000032723,
+          "wall_clock_time_seconds": 1.9738618000410497,
+          "generation_time_seconds": 1.9255466000176966,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 718516224,
-          "cpu_utilization_percent": 3.4690140845070423,
+          "peak_cpu_ram_bytes": 1762115584,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "upper right",
-          "upper left",
-          "lower right",
-          "lower left"
-        ],
-        "selected_choice": "",
-        "answer": "upper right"
+        "bleu": 0.09578464408619825,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000018"
+        ]
       },
       {
         "index": 19,
-        "prompt_labels": [
-          "the front",
-          "the side",
-          "the top",
-          "the bottom"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A digitally rendered human face with a smooth, bald head and blue eyes.",
         "correct": false,
         "valid_labels": [
-          "the bottom"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000019"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 4.455955900019035,
-          "generation_time_seconds": 4.419586799922399,
+          "wall_clock_time_seconds": 2.268477899953723,
+          "generation_time_seconds": 2.2332634000340477,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 720515072,
-          "cpu_utilization_percent": 3.1556818181818183,
+          "peak_cpu_ram_bytes": 1762119680,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "the front",
-          "the side",
-          "the top",
-          "the bottom"
-        ],
-        "selected_choice": "",
-        "answer": "the bottom"
+        "bleu": 0.08032276872815308,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000019"
+        ]
       },
       {
         "index": 20,
-        "prompt_labels": [
-          "upper (horizontal) center",
-          "right (vertical) center",
-          "left (vertical) center",
-          "bottom (horizontal) center"
-        ],
-        "prediction": "",
+        "prompt_labels": [],
+        "prediction": "A distorted, bald human face with an exaggerated expression.",
         "correct": false,
         "valid_labels": [
-          "bottom (horizontal) center"
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000020"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 4.924122700002044,
-          "generation_time_seconds": 4.915886899922043,
+          "wall_clock_time_seconds": 1.6698356999550015,
+          "generation_time_seconds": 1.6383782000048086,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 722837504,
-          "cpu_utilization_percent": 2.8773195876288664,
+          "peak_cpu_ram_bytes": 1762119680,
+          "cpu_utilization_percent": 66.5848484848485,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "choices": [
-          "upper (horizontal) center",
-          "right (vertical) center",
-          "left (vertical) center",
-          "bottom (horizontal) center"
-        ],
-        "selected_choice": "",
-        "answer": "bottom (horizontal) center"
+        "bleu": 0.11868405219520975,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000020"
+        ]
       }
     ],
     "stats": {
-      "wall_clock_time_seconds": 245.18685719999485,
-      "wall_clock_time_per_sample_seconds_mean": 12.258852740010479,
-      "total_generation_time_seconds_mean": 12.231691509991652,
+      "wall_clock_time_seconds": 49.89893169992138,
+      "wall_clock_time_per_sample_seconds_mean": 2.4944658050022555,
+      "total_generation_time_seconds_mean": 2.4682104100007565,
       "first_token_latency_seconds_mean": null,
       "time_per_output_token_seconds_mean": null,
-      "samples_per_second": 0.08157044071773525,
+      "samples_per_second": 0.4008101840791817,
       "number_of_output_tokens_mean": null,
-      "number_of_generated_outputs_mean": 0.15,
+      "number_of_generated_outputs_mean": 1.0,
       "number_of_benchmark_samples_completed": 20,
       "success_count": 20,
       "failure_count": 0,
       "retry_count": 0,
-      "peak_cpu_ram_bytes": 722837504,
+      "peak_cpu_ram_bytes": 1762439168,
       "peak_gpu_memory_bytes": null,
-      "cpu_utilization_percent_mean": 2.375979663757744,
+      "cpu_utilization_percent_mean": 3.445948988398753,
       "gpu_utilization_percent_mean": null,
       "vram_allocation_over_time_bytes": null,
       "disk_offload_volume_bytes": null,
@@ -954,7 +774,7 @@
       "false_negative_count_total": 0,
       "mean_number_of_predicted_detections": 0.0,
       "tokens_per_second": null,
-      "model_load_time_seconds": 1.926145000034012
+      "model_load_time_seconds": 0.9364597999956459
     }
   }
 }

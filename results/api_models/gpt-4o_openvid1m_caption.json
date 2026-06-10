@@ -1,0 +1,777 @@
+{
+  "model": "gpt-4o",
+  "benchmark": "openvid1m_caption",
+  "report": {
+    "benchmark": "openvid1m_caption",
+    "dataset": "openvid1m",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [],
+        "prediction": "A man in a holster aims a gun at a laptop in a large, industrial setting.",
+        "correct": false,
+        "valid_labels": [
+          "In the video, a man is seen in a living room setting, standing in front of a window with blinds. He is wearing a black sweater and appears to be in the middle of a conversation. The room is dimly lit, with a lamp providing a soft glow in the background. The man's expression is serious, suggesting that the conversation is of importance. The overall style of the video is realistic and naturalistic, capturing a candid moment in the man's life."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.155709399958141,
+          "generation_time_seconds": 1.6895330001134425,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726017536,
+          "cpu_utilization_percent": 0.9088235294117647,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.0026047253170739604,
+        "reference_captions": [
+          "In the video, a man is seen in a living room setting, standing in front of a window with blinds. He is wearing a black sweater and appears to be in the middle of a conversation. The room is dimly lit, with a lamp providing a soft glow in the background. The man's expression is serious, suggesting that the conversation is of importance. The overall style of the video is realistic and naturalistic, capturing a candid moment in the man's life."
+        ]
+      },
+      {
+        "index": 2,
+        "prompt_labels": [],
+        "prediction": "Custom-painted minivan parked outside a CarMax dealership.",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a man standing next to a purple van with a floral design on the side. The man is wearing a black t-shirt and jeans, and he is smiling and waving his hands in the air. The van has pink rims and a black roof rack. The van is parked in front of a building with a glass door. The man appears to be happy and excited about the van. The video is likely a short clip of a man showing off his van."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.1897416999563575,
+          "generation_time_seconds": 1.8804258999880403,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726042112,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 2.5800585083145456e-06,
+        "reference_captions": [
+          "The video shows a man standing next to a purple van with a floral design on the side. The man is wearing a black t-shirt and jeans, and he is smiling and waving his hands in the air. The van has pink rims and a black roof rack. The van is parked in front of a building with a glass door. The man appears to be happy and excited about the van. The video is likely a short clip of a man showing off his van."
+        ]
+      },
+      {
+        "index": 3,
+        "prompt_labels": [],
+        "prediction": "Event honoring lost submarines and veterans near the World Peace Bell in Newport.",
+        "correct": false,
+        "valid_labels": [
+          "The video is a news segment featuring a man in a red baseball cap and a blue vest, standing in front of a statue of a soldier and two children. The man appears to be a veteran, as indicated by the cap and the context of the event. The event is an honorary ceremony for lost submarines and submarine veterans, taking place near the World Peace Bell in Newport. The news segment is titled \"Connected to the Community\" and is scheduled to air at 11:10 PM on ABC 9. The style of the video is informative and respectful, focusing on the man and the event, with a clear and concise presentation of the details."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.4366312000202015,
+          "generation_time_seconds": 1.9421862000599504,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726042112,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.0002714989129203886,
+        "reference_captions": [
+          "The video is a news segment featuring a man in a red baseball cap and a blue vest, standing in front of a statue of a soldier and two children. The man appears to be a veteran, as indicated by the cap and the context of the event. The event is an honorary ceremony for lost submarines and submarine veterans, taking place near the World Peace Bell in Newport. The news segment is titled \"Connected to the Community\" and is scheduled to air at 11:10 PM on ABC 9. The style of the video is informative and respectful, focusing on the man and the event, with a clear and concise presentation of the details."
+        ]
+      },
+      {
+        "index": 4,
+        "prompt_labels": [],
+        "prediction": "Street performers entertain a lively crowd in Peru.",
+        "correct": false,
+        "valid_labels": [
+          "The video features a man in a pink shirt and a black bucket hat, wearing glasses and a necklace. He is holding a spoon and making a playful face, as if he is about to eat something. The background shows a lush garden with trees and a wooden structure. The man's expression and the spoon suggest that he is about to taste something, possibly food. The overall style of the video is casual and fun, with a focus on the man's reaction to the food."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5418790000258014,
+          "generation_time_seconds": 1.2224604999646544,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726038016,
+          "cpu_utilization_percent": 2.488,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 1.1723316193699634e-05,
+        "reference_captions": [
+          "The video features a man in a pink shirt and a black bucket hat, wearing glasses and a necklace. He is holding a spoon and making a playful face, as if he is about to eat something. The background shows a lush garden with trees and a wooden structure. The man's expression and the spoon suggest that he is about to taste something, possibly food. The overall style of the video is casual and fun, with a focus on the man's reaction to the food."
+        ]
+      },
+      {
+        "index": 5,
+        "prompt_labels": [],
+        "prediction": "Two people pose at a mini-golf course for a YouTube episode.",
+        "correct": false,
+        "valid_labels": [
+          "The video shows two men engaged in a conversation outdoors. The man on the left is wearing a black cap with a red logo, glasses, and a black jacket with a fur-lined hood. He has his hands clasped together in front of him. The man on the right is wearing a black cap with a white logo, a black jacket, and has his hands raised as if he is making a point or gesture. They are standing in front of a green field with a fence and trees in the background. The sky is partly cloudy, suggesting it might be a cool or overcast day. The style of the video is casual and candid, capturing a moment of interaction between the two men."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.5429144999943674,
+          "generation_time_seconds": 1.5060514999786392,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726042112,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 5.127473630527488e-06,
+        "reference_captions": [
+          "The video shows two men engaged in a conversation outdoors. The man on the left is wearing a black cap with a red logo, glasses, and a black jacket with a fur-lined hood. He has his hands clasped together in front of him. The man on the right is wearing a black cap with a white logo, a black jacket, and has his hands raised as if he is making a point or gesture. They are standing in front of a green field with a fence and trees in the background. The sky is partly cloudy, suggesting it might be a cool or overcast day. The style of the video is casual and candid, capturing a moment of interaction between the two men."
+        ]
+      },
+      {
+        "index": 6,
+        "prompt_labels": [],
+        "prediction": "Microbreweries may soon increase beer distribution under new proposals.",
+        "correct": false,
+        "valid_labels": [
+          "The video is a news segment about microbreweries. The style of the video is a combination of a man speaking to the camera and a news ticker at the bottom. The man is wearing a gray baseball cap and a gray jacket. He is standing in a room with a counter and a bar. There are other people in the background, but they are not the focus of the video. The news ticker at the bottom of the screen provides information about the topic being discussed. The overall style of the video is informative and casual."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0337728000013158,
+          "generation_time_seconds": 1.3455185000784695,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 1.151851851851852,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 8.942724942654777e-06,
+        "reference_captions": [
+          "The video is a news segment about microbreweries. The style of the video is a combination of a man speaking to the camera and a news ticker at the bottom. The man is wearing a gray baseball cap and a gray jacket. He is standing in a room with a counter and a bar. There are other people in the background, but they are not the focus of the video. The news ticker at the bottom of the screen provides information about the topic being discussed. The overall style of the video is informative and casual."
+        ]
+      },
+      {
+        "index": 7,
+        "prompt_labels": [],
+        "prediction": "Vintage tools and supplies on a workbench with \"NOOBS ONLY!\" text overlay.",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a man in a black jacket and glasses standing on a construction site. He is holding a blue bottle and appears to be speaking or explaining something. The construction site is filled with various construction materials such as bricks, wooden planks, and tools. In the background, there is a large excavator and a wall under construction. The man seems to be a construction worker or a site manager, providing information or instructions about the ongoing construction work. The style of the video is informative and educational, likely aimed at teaching viewers about construction techniques or safety measures."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.303338700090535,
+          "generation_time_seconds": 1.6032492000376806,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.00010625265479703961,
+        "reference_captions": [
+          "The video shows a man in a black jacket and glasses standing on a construction site. He is holding a blue bottle and appears to be speaking or explaining something. The construction site is filled with various construction materials such as bricks, wooden planks, and tools. In the background, there is a large excavator and a wall under construction. The man seems to be a construction worker or a site manager, providing information or instructions about the ongoing construction work. The style of the video is informative and educational, likely aimed at teaching viewers about construction techniques or safety measures."
+        ]
+      },
+      {
+        "index": 8,
+        "prompt_labels": [],
+        "prediction": "\"AWD Challenger powers through snowy terrain.\"",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a black muscle car driving down a snowy road. The car is sleek and shiny, with a prominent front grille and large headlights. The road is covered in a layer of snow, and the car's tires leave a trail of snow behind as it moves. The surrounding landscape is filled with snow-covered trees and mountains in the distance. The car's speed is indicated by the motion blur of the background, creating a sense of movement and excitement. The overall style of the video is dynamic and action-packed, capturing the thrill of driving a powerful car in a winter wonderland."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0524985999800265,
+          "generation_time_seconds": 1.555575600010343,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.996774193548387,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 2.4858559977594546e-08,
+        "reference_captions": [
+          "The video shows a black muscle car driving down a snowy road. The car is sleek and shiny, with a prominent front grille and large headlights. The road is covered in a layer of snow, and the car's tires leave a trail of snow behind as it moves. The surrounding landscape is filled with snow-covered trees and mountains in the distance. The car's speed is indicated by the motion blur of the background, creating a sense of movement and excitement. The overall style of the video is dynamic and action-packed, capturing the thrill of driving a powerful car in a winter wonderland."
+        ]
+      },
+      {
+        "index": 9,
+        "prompt_labels": [],
+        "prediction": "A man appears on \"Good Morning Britain\" set.",
+        "correct": false,
+        "valid_labels": [
+          "The video is a news segment featuring a man in a suit sitting in front of a cityscape. The man is speaking about the Holocaust Memorial Day, which takes place on the 27th of January every year. The cityscape in the background is blurred, but it appears to be a modern city with tall buildings. The man is wearing a dark suit and a white shirt. The news segment is likely informative and serious in tone."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.5665000999579206,
+          "generation_time_seconds": 1.5135639999061823,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 4.8792318705201915e-05,
+        "reference_captions": [
+          "The video is a news segment featuring a man in a suit sitting in front of a cityscape. The man is speaking about the Holocaust Memorial Day, which takes place on the 27th of January every year. The cityscape in the background is blurred, but it appears to be a modern city with tall buildings. The man is wearing a dark suit and a white shirt. The news segment is likely informative and serious in tone."
+        ]
+      },
+      {
+        "index": 10,
+        "prompt_labels": [],
+        "prediction": "Man demonstrating sous vide cooking with a precision cooker and vacuum-sealed meat.",
+        "correct": false,
+        "valid_labels": [
+          "In the video, a man is seen sitting at a table in a kitchen, engaging in a chocolate tasting session. He is wearing a brown jacket and a scarf, and he has glasses on. The table is made of wood and has a few items on it, including a plate with chocolate squares and a cup of coffee. The kitchen is well-equipped, with a refrigerator, a sink, and a microwave visible in the background. The man appears to be enjoying his time, savoring the taste of the chocolate. The overall atmosphere of the video is cozy and relaxed, with the man taking his time to appreciate the chocolate."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.8384781000204384,
+          "generation_time_seconds": 1.1973511000396684,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 5.2121250149450224e-05,
+        "reference_captions": [
+          "In the video, a man is seen sitting at a table in a kitchen, engaging in a chocolate tasting session. He is wearing a brown jacket and a scarf, and he has glasses on. The table is made of wood and has a few items on it, including a plate with chocolate squares and a cup of coffee. The kitchen is well-equipped, with a refrigerator, a sink, and a microwave visible in the background. The man appears to be enjoying his time, savoring the taste of the chocolate. The overall atmosphere of the video is cozy and relaxed, with the man taking his time to appreciate the chocolate."
+        ]
+      },
+      {
+        "index": 11,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "In the video, a man and a woman are engaged in a conversation. The man is wearing a white shirt and the woman is dressed in a beige top. They are standing in front of a pink backdrop that features the repeated pattern of a cupcake. The woman is gesturing with her hand, indicating that she is in the middle of speaking. The man is attentively listening to her, suggesting a friendly and engaging interaction between the two. The overall style of the video is casual and relaxed, capturing a moment of everyday life."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "wall_clock_time_seconds": 0.3246337999589741,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "HTTPError: HTTP Error 404: Not Found"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [],
+        "prediction": "Assorted trays of colorful ingredients prepared for cooking.",
+        "correct": false,
+        "valid_labels": [
+          "The video captures a lively street food scene in a bustling city. A woman, donned in a traditional conical hat and a face mask, stands behind a cart filled with fresh produce. She is in the process of preparing a dish, her hands skillfully handling the ingredients. The cart is adorned with a vibrant display of fruits and vegetables, adding a splash of color to the scene.  In the background, the city continues its rhythm. People are seen walking by, their figures slightly blurred, adding a sense of motion to the scene. Motorcycles are parked nearby, hinting at the city's busy traffic. The buildings in the distance, though not clearly visible, provide a sense of depth and scale to the scene.  The video is a snapshot of everyday life in the city, capturing the hustle and bustle of the street food scene. It's a blend of tradition and modernity, with the woman's traditional attire contrasting against the backdrop of the modern cityscape. The colors are bright and vivid, reflecting the vibrancy of the city and its people. The overall style of the video is candid and unposed, capturing the authenticity of the moment."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9611323999706656,
+          "generation_time_seconds": 1.2468628999777138,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 1.6072186858306192e-11,
+        "reference_captions": [
+          "The video captures a lively street food scene in a bustling city. A woman, donned in a traditional conical hat and a face mask, stands behind a cart filled with fresh produce. She is in the process of preparing a dish, her hands skillfully handling the ingredients. The cart is adorned with a vibrant display of fruits and vegetables, adding a splash of color to the scene.  In the background, the city continues its rhythm. People are seen walking by, their figures slightly blurred, adding a sense of motion to the scene. Motorcycles are parked nearby, hinting at the city's busy traffic. The buildings in the distance, though not clearly visible, provide a sense of depth and scale to the scene.  The video is a snapshot of everyday life in the city, capturing the hustle and bustle of the street food scene. It's a blend of tradition and modernity, with the woman's traditional attire contrasting against the backdrop of the modern cityscape. The colors are bright and vivid, reflecting the vibrancy of the city and its people. The overall style of the video is candid and unposed, capturing the authenticity of the moment."
+        ]
+      },
+      {
+        "index": 13,
+        "prompt_labels": [],
+        "prediction": "Vintage photographs overlay a scenic view of a ship near the Galapagos Islands.",
+        "correct": false,
+        "valid_labels": [
+          "In the video, a woman in a black dress stands on a wooden deck of a boat, looking out over the ocean. She leans on the white railing, her gaze fixed on the horizon. The boat is sailing on calm waters, and the sun casts a warm glow on the scene. The woman's dress contrasts with the natural colors of the ocean and the boat, creating a striking image. The video captures a moment of quiet contemplation, as the woman takes in the beauty of the sea."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.276978199952282,
+          "generation_time_seconds": 1.634272399940528,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.0004816159376091489,
+        "reference_captions": [
+          "In the video, a woman in a black dress stands on a wooden deck of a boat, looking out over the ocean. She leans on the white railing, her gaze fixed on the horizon. The boat is sailing on calm waters, and the sun casts a warm glow on the scene. The woman's dress contrasts with the natural colors of the ocean and the boat, creating a striking image. The video captures a moment of quiet contemplation, as the woman takes in the beauty of the sea."
+        ]
+      },
+      {
+        "index": 14,
+        "prompt_labels": [],
+        "prediction": "Group of kids holding basketballs with one holding cash, titled \"Last 2 Leave.\"",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a group of young children in a gymnasium, each holding a basketball. The children are dressed in casual sportswear, and they are arranged in a circle formation. The gymnasium has a polished wooden floor and a high ceiling with exposed beams. The lighting in the gym is bright, and the walls are painted in a neutral color. The children appear to be in a playful mood, and they are holding the basketballs in various ways, some are holding them with both hands, while others are holding them with one hand. The video captures the children's energy and enthusiasm for the sport."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.38416610006243,
+          "generation_time_seconds": 1.3834547000005841,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.00016211757816826303,
+        "reference_captions": [
+          "The video shows a group of young children in a gymnasium, each holding a basketball. The children are dressed in casual sportswear, and they are arranged in a circle formation. The gymnasium has a polished wooden floor and a high ceiling with exposed beams. The lighting in the gym is bright, and the walls are painted in a neutral color. The children appear to be in a playful mood, and they are holding the basketballs in various ways, some are holding them with both hands, while others are holding them with one hand. The video captures the children's energy and enthusiasm for the sport."
+        ]
+      },
+      {
+        "index": 15,
+        "prompt_labels": [],
+        "prediction": "Group of kids holding basketballs with one holding cash, titled \"Last 2 Leave.\"",
+        "correct": false,
+        "valid_labels": [
+          "The video captures a lively scene in a gymnasium where a group of children are engaged in a basketball game. The central figure, a young boy, is holding a basketball with the word \"JAZZ\" written on it. He is surrounded by other children, each holding their own basketballs. The gymnasium is filled with the energy of the game, with the children actively participating and enjoying themselves. The video is a snapshot of a moment filled with fun, camaraderie, and the spirit of sportsmanship."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.0117508999537677,
+          "generation_time_seconds": 1.6581372000509873,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.0007126264380681301,
+        "reference_captions": [
+          "The video captures a lively scene in a gymnasium where a group of children are engaged in a basketball game. The central figure, a young boy, is holding a basketball with the word \"JAZZ\" written on it. He is surrounded by other children, each holding their own basketballs. The gymnasium is filled with the energy of the game, with the children actively participating and enjoying themselves. The video is a snapshot of a moment filled with fun, camaraderie, and the spirit of sportsmanship."
+        ]
+      },
+      {
+        "index": 16,
+        "prompt_labels": [],
+        "prediction": "\"Illustration showing muscle growth before and after, with tips for building muscle in your 20s.\"",
+        "correct": false,
+        "valid_labels": [
+          "The video features a man in glasses with his hands clasped together, contemplating something. In the background, there is a muscular man holding dumbbells, suggesting a theme of fitness or bodybuilding. The style of the video is a split-screen, with the man in glasses on the left and the muscular man on the right. The overall tone of the video is contemplative and introspective, with a focus on the contrast between the two men."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.2835430999984965,
+          "generation_time_seconds": 1.5613911000546068,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.0019152231309724846,
+        "reference_captions": [
+          "The video features a man in glasses with his hands clasped together, contemplating something. In the background, there is a muscular man holding dumbbells, suggesting a theme of fitness or bodybuilding. The style of the video is a split-screen, with the man in glasses on the left and the muscular man on the right. The overall tone of the video is contemplative and introspective, with a focus on the contrast between the two men."
+        ]
+      },
+      {
+        "index": 17,
+        "prompt_labels": [],
+        "prediction": "Two women engaged in a discussion on \"Good Morning Britain.\"",
+        "correct": false,
+        "valid_labels": [
+          "The video is a news segment featuring two women in a studio setting. The women are seated at a desk with microphones, suggesting they are discussing a topic. The studio has a large screen in the background displaying a news headline. The women are dressed in casual attire, and there are cups and a book on the desk. The overall style of the video is professional and informative, typical of a news broadcast."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0379180000163615,
+          "generation_time_seconds": 1.6406416000099853,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.00040094203921002894,
+        "reference_captions": [
+          "The video is a news segment featuring two women in a studio setting. The women are seated at a desk with microphones, suggesting they are discussing a topic. The studio has a large screen in the background displaying a news headline. The women are dressed in casual attire, and there are cups and a book on the desk. The overall style of the video is professional and informative, typical of a news broadcast."
+        ]
+      },
+      {
+        "index": 18,
+        "prompt_labels": [],
+        "prediction": "A person with blue hair and tattoos is pouring a substance from a shaker.",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a man sitting at a table in a restaurant. He is wearing a blue shirt and has a beard. He is holding a bottle of water in his hand. The restaurant has a rustic decor with wooden tables and chairs. There is a TV in the background and a window that lets in natural light. The man appears to be enjoying his meal and the atmosphere of the restaurant."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.096115199965425,
+          "generation_time_seconds": 1.6379278000677004,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.0019847989751641615,
+        "reference_captions": [
+          "The video shows a man sitting at a table in a restaurant. He is wearing a blue shirt and has a beard. He is holding a bottle of water in his hand. The restaurant has a rustic decor with wooden tables and chairs. There is a TV in the background and a window that lets in natural light. The man appears to be enjoying his meal and the atmosphere of the restaurant."
+        ]
+      },
+      {
+        "index": 19,
+        "prompt_labels": [],
+        "prediction": "Child excitedly stands next to a black convertible outside an auto body shop.",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a purple convertible sports car parked in front of a garage. The car is sleek and shiny, with a black interior. The garage door is closed, and the car is parked on a concrete driveway. The car is the main focus of the video, and there are no other objects or people in the scene. The style of the video is straightforward and simple, with no additional elements or actions. The car is stationary, and there is no movement or interaction with other objects or people. The video is likely a promotional or sales video for the car, showcasing its design and color."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.122592099942267,
+          "generation_time_seconds": 2.6047325999243185,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.00010561734789856804,
+        "reference_captions": [
+          "The video shows a purple convertible sports car parked in front of a garage. The car is sleek and shiny, with a black interior. The garage door is closed, and the car is parked on a concrete driveway. The car is the main focus of the video, and there are no other objects or people in the scene. The style of the video is straightforward and simple, with no additional elements or actions. The car is stationary, and there is no movement or interaction with other objects or people. The video is likely a promotional or sales video for the car, showcasing its design and color."
+        ]
+      },
+      {
+        "index": 20,
+        "prompt_labels": [],
+        "prediction": "\"7-Year-Old Picks Color for Car at Maaco Bodyshop\"",
+        "correct": false,
+        "valid_labels": [
+          "The video features a man standing in front of a purple sports car, which is parked in a driveway. The man is wearing a gray t-shirt and appears to be speaking into a microphone, suggesting that he might be conducting a car review or interview. The car is sleek and shiny, with a distinctive purple color that stands out against the backdrop of the house. The house itself is a large, two-story structure with a garage and a driveway. The man's body language and the microphone suggest that he is engaged in a conversation or presentation, possibly about the car or the house. The overall style of the video is casual and informative, with a focus on the car and the man's commentary."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6452039999421686,
+          "generation_time_seconds": 1.1551654000068083,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1726046208,
+          "cpu_utilization_percent": 1.3565217391304347,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 1.0142655847769758e-07,
+        "reference_captions": [
+          "The video features a man standing in front of a purple sports car, which is parked in a driveway. The man is wearing a gray t-shirt and appears to be speaking into a microphone, suggesting that he might be conducting a car review or interview. The car is sleek and shiny, with a distinctive purple color that stands out against the backdrop of the house. The house itself is a large, two-story structure with a garage and a driveway. The man's body language and the microphone suggest that he is engaged in a conversation or presentation, possibly about the car or the house. The overall style of the video is casual and informative, with a focus on the car and the man's commentary."
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 43.8177215999458,
+      "wall_clock_time_per_sample_seconds_mean": 2.1902748949883972,
+      "total_generation_time_seconds_mean": 1.498925060010515,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.45643632917747917,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 0.95,
+      "number_of_benchmark_samples_completed": 19,
+      "success_count": 19,
+      "failure_count": 1,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1726046208,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.36326164810223355,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 0.9364597999956459
+    }
+  }
+}
