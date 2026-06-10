@@ -1,0 +1,1000 @@
+{
+  "model": "qwen3.5-plus",
+  "benchmark": "visual_genome",
+  "report": {
+    "benchmark": "visual_genome",
+    "dataset": "visual_genome",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "it is an indoor scene",
+          "it is an outdoor sports field",
+          "it is a beach scene",
+          "it is a forest trail"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "it is an indoor scene"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.397109300014563,
+          "generation_time_seconds": 9.354636700008996,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 362876928,
+          "cpu_utilization_percent": 0.8318918918918919,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "it is an indoor scene"
+        ],
+        "choices": [
+          "it is an indoor scene",
+          "it is an outdoor sports field",
+          "it is a beach scene",
+          "it is a forest trail"
+        ],
+        "selected_choice": "it is an indoor scene"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "Computer screens turned off",
+          "A stack of paper folders",
+          "A row of empty chairs",
+          "Computer screens turned on"
+        ],
+        "prediction": "D. Computer screens turned on",
+        "correct": true,
+        "valid_labels": [
+          "computer screens turned on"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.558913200045936,
+          "generation_time_seconds": 6.544570200028829,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 365817856,
+          "cpu_utilization_percent": 0.24031007751937986,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Computer screens turned on"
+        ],
+        "choices": [
+          "Computer screens turned off",
+          "A stack of paper folders",
+          "A row of empty chairs",
+          "Computer screens turned on"
+        ],
+        "selected_choice": "Computer screens turned on"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "man is bald",
+          "man is wearing a hat",
+          "man has short hair",
+          "man has long hair"
+        ],
+        "prediction": "C. man has short hair",
+        "correct": true,
+        "valid_labels": [
+          "man has short hair"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.234006999991834,
+          "generation_time_seconds": 6.211664900067262,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 367329280,
+          "cpu_utilization_percent": 0.5016260162601627,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "man has short hair"
+        ],
+        "choices": [
+          "man is bald",
+          "man is wearing a hat",
+          "man has short hair",
+          "man has long hair"
+        ],
+        "selected_choice": "man has short hair"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "book closed on a shelf",
+          "photo album open on an adult's lap",
+          "laptop open on a desk",
+          "newspaper folded on a chair"
+        ],
+        "prediction": "B. photo album open on an adult's lap",
+        "correct": true,
+        "valid_labels": [
+          "photo album open on an adults lap"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.738393099978566,
+          "generation_time_seconds": 6.717276600073092,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 367976448,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "photo album open on an adult's lap"
+        ],
+        "choices": [
+          "book closed on a shelf",
+          "photo album open on an adult's lap",
+          "laptop open on a desk",
+          "newspaper folded on a chair"
+        ],
+        "selected_choice": "photo album open on an adult's lap"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "there is a group of girls beside the black car",
+          "there is one man inside the black car",
+          "there is a cyclist behind the black car",
+          "there is an empty road beside the black car"
+        ],
+        "prediction": "A. there is a group of girls beside the black car",
+        "correct": true,
+        "valid_labels": [
+          "there is a group of girls beside the black car"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.119362600031309,
+          "generation_time_seconds": 9.101221499964595,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 371224576,
+          "cpu_utilization_percent": 0.8611111111111112,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "there is a group of girls beside the black car"
+        ],
+        "choices": [
+          "there is a group of girls beside the black car",
+          "there is one man inside the black car",
+          "there is a cyclist behind the black car",
+          "there is an empty road beside the black car"
+        ],
+        "selected_choice": "there is a group of girls beside the black car"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "Dog in a wagon",
+          "Adult on a bicycle",
+          "Child standing by a bench",
+          "Child in a stroller"
+        ],
+        "prediction": "D. Child in a stroller",
+        "correct": true,
+        "valid_labels": [
+          "child in a stroller"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.6291576999938115,
+          "generation_time_seconds": 7.5926230000332,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 374833152,
+          "cpu_utilization_percent": 1.0266666666666666,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Child in a stroller"
+        ],
+        "choices": [
+          "Dog in a wagon",
+          "Adult on a bicycle",
+          "Child standing by a bench",
+          "Child in a stroller"
+        ],
+        "selected_choice": "Child in a stroller"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "Large traffic sign",
+          "Stone building column",
+          "Tall metal lightpost",
+          "Short wooden fence"
+        ],
+        "prediction": "C. Tall metal lightpost",
+        "correct": true,
+        "valid_labels": [
+          "tall metal lightpost"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.9574593000579625,
+          "generation_time_seconds": 6.922859000042081,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 376762368,
+          "cpu_utilization_percent": 0.4529411764705882,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Tall metal lightpost"
+        ],
+        "choices": [
+          "Large traffic sign",
+          "Stone building column",
+          "Tall metal lightpost",
+          "Short wooden fence"
+        ],
+        "selected_choice": "Tall metal lightpost"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "wall is covered with wood panels",
+          "wall is painted white",
+          "wall is painted blue",
+          "wall is covered with brick"
+        ],
+        "prediction": "B. wall is painted white",
+        "correct": true,
+        "valid_labels": [
+          "wall is painted white"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.732276099966839,
+          "generation_time_seconds": 6.722457099938765,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 378679296,
+          "cpu_utilization_percent": 0.46766917293233085,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "wall is painted white"
+        ],
+        "choices": [
+          "wall is covered with wood panels",
+          "wall is painted white",
+          "wall is painted blue",
+          "wall is covered with brick"
+        ],
+        "selected_choice": "wall is painted white"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "there are several pictures on the wall",
+          "there is one clock on the wall",
+          "there are shelves full of books",
+          "there is a television mounted on the wall"
+        ],
+        "prediction": "A. there are several pictures on the wall",
+        "correct": true,
+        "valid_labels": [
+          "there are several pictures on the wall"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.638592200004496,
+          "generation_time_seconds": 6.625327500049025,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 381427712,
+          "cpu_utilization_percent": 17.906870229007634,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "there are several pictures on the wall"
+        ],
+        "choices": [
+          "there are several pictures on the wall",
+          "there is one clock on the wall",
+          "there are shelves full of books",
+          "there is a television mounted on the wall"
+        ],
+        "selected_choice": "there are several pictures on the wall"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "woman facing a building",
+          "woman sitting in a car",
+          "woman facing the camera",
+          "woman facing the ocean"
+        ],
+        "prediction": "D. woman facing the ocean",
+        "correct": true,
+        "valid_labels": [
+          "woman facing the ocean"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.8346161000663415,
+          "generation_time_seconds": 7.793839000049047,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 384442368,
+          "cpu_utilization_percent": 0.6019354838709678,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "woman facing the ocean"
+        ],
+        "choices": [
+          "woman facing a building",
+          "woman sitting in a car",
+          "woman facing the camera",
+          "woman facing the ocean"
+        ],
+        "selected_choice": "woman facing the ocean"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "this is a hospital room",
+          "this is a school gym",
+          "this is an office layout",
+          "this is a restaurant kitchen"
+        ],
+        "prediction": "C. this is an office layout",
+        "correct": true,
+        "valid_labels": [
+          "this is an office layout"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.542159100063145,
+          "generation_time_seconds": 7.496413300046697,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 386658304,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "this is an office layout"
+        ],
+        "choices": [
+          "this is a hospital room",
+          "this is a school gym",
+          "this is an office layout",
+          "this is a restaurant kitchen"
+        ],
+        "selected_choice": "this is an office layout"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "one upholstered sofa",
+          "four metallic chairs",
+          "two wooden tables",
+          "three plastic stools"
+        ],
+        "prediction": "B. four metallic chairs",
+        "correct": true,
+        "valid_labels": [
+          "four metallic chairs"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 20.309136099996977,
+          "generation_time_seconds": 20.2622626000084,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 392781824,
+          "cpu_utilization_percent": 0.5369077306733168,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "four metallic chairs"
+        ],
+        "choices": [
+          "one upholstered sofa",
+          "four metallic chairs",
+          "two wooden tables",
+          "three plastic stools"
+        ],
+        "selected_choice": "four metallic chairs"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "Clutter is on a table",
+          "Food is arranged on a plate",
+          "Books are lined up on a shelf",
+          "Clothing is folded in a drawer"
+        ],
+        "prediction": "B. Food is arranged on a plate",
+        "correct": false,
+        "valid_labels": [
+          "clutter is on a table"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 32.13902590004727,
+          "generation_time_seconds": 32.114738700096495,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 392945664,
+          "cpu_utilization_percent": 0.1952755905511811,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Clutter is on a table"
+        ],
+        "choices": [
+          "Clutter is on a table",
+          "Food is arranged on a plate",
+          "Books are lined up on a shelf",
+          "Clothing is folded in a drawer"
+        ],
+        "selected_choice": "Food is arranged on a plate"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "a white toaster",
+          "a white refrigerator",
+          "a white washing machine",
+          "a white microwave oven"
+        ],
+        "prediction": "D. a white microwave oven",
+        "correct": true,
+        "valid_labels": [
+          "a white microwave oven"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.112544900039211,
+          "generation_time_seconds": 9.104665799997747,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 361848832,
+          "cpu_utilization_percent": 0.5116666666666666,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "a white microwave oven"
+        ],
+        "choices": [
+          "a white toaster",
+          "a white refrigerator",
+          "a white washing machine",
+          "a white microwave oven"
+        ],
+        "selected_choice": "a white microwave oven"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "White bicycle crossing a sidewalk",
+          "White truck stopped in a garage",
+          "White SUV driving through intersection",
+          "White bus parked beside a curb"
+        ],
+        "prediction": "C. White SUV driving through intersection",
+        "correct": true,
+        "valid_labels": [
+          "white suv driving through intersection"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.209484399994835,
+          "generation_time_seconds": 8.1583488000324,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 362450944,
+          "cpu_utilization_percent": 0.18944099378881987,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "White SUV driving through intersection"
+        ],
+        "choices": [
+          "White bicycle crossing a sidewalk",
+          "White truck stopped in a garage",
+          "White SUV driving through intersection",
+          "White bus parked beside a curb"
+        ],
+        "selected_choice": "White SUV driving through intersection"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "Driver standing beside a car",
+          "Person crossing street with umbrella",
+          "Person waiting at a bus stop",
+          "Cyclist riding across the street"
+        ],
+        "prediction": "B. Person crossing street with umbrella",
+        "correct": true,
+        "valid_labels": [
+          "person crossing street with umbrella"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.5417486999649554,
+          "generation_time_seconds": 7.5152038999367505,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 362733568,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Person crossing street with umbrella"
+        ],
+        "choices": [
+          "Driver standing beside a car",
+          "Person crossing street with umbrella",
+          "Person waiting at a bus stop",
+          "Cyclist riding across the street"
+        ],
+        "selected_choice": "Person crossing street with umbrella"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "man in gray pants leaning on building",
+          "woman in a white dress entering a car",
+          "man in black shorts sitting on a bench",
+          "child in blue jeans running on grass"
+        ],
+        "prediction": "A. man in gray pants leaning on building",
+        "correct": true,
+        "valid_labels": [
+          "man in gray pants leaning on building"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.281988700036891,
+          "generation_time_seconds": 7.232806799933314,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 362758144,
+          "cpu_utilization_percent": 0.2152777777777778,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "man in gray pants leaning on building"
+        ],
+        "choices": [
+          "man in gray pants leaning on building",
+          "woman in a white dress entering a car",
+          "man in black shorts sitting on a bench",
+          "child in blue jeans running on grass"
+        ],
+        "selected_choice": "man in gray pants leaning on building"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "door in a fence",
+          "sign above a store",
+          "mirror on an interior wall",
+          "window on the building"
+        ],
+        "prediction": "D. window on the building",
+        "correct": true,
+        "valid_labels": [
+          "window on the building"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.948616800014861,
+          "generation_time_seconds": 5.911084599909373,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 363085824,
+          "cpu_utilization_percent": 0.2672413793103448,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "window on the building"
+        ],
+        "choices": [
+          "door in a fence",
+          "sign above a store",
+          "mirror on an interior wall",
+          "window on the building"
+        ],
+        "selected_choice": "window on the building"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "A child riding between bicycles",
+          "A man walking beside a bus",
+          "A man standing in between cars",
+          "A man sitting inside a car"
+        ],
+        "prediction": "C. A man standing in between cars",
+        "correct": true,
+        "valid_labels": [
+          "a man standing in between cars"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 10.836003899923526,
+          "generation_time_seconds": 10.81970029999502,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 363200512,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "A man standing in between cars"
+        ],
+        "choices": [
+          "A child riding between bicycles",
+          "A man walking beside a bus",
+          "A man standing in between cars",
+          "A man sitting inside a car"
+        ],
+        "selected_choice": "A man standing in between cars"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "poster lying on the floor",
+          "painting hanging on wall",
+          "mirror resting on a table",
+          "television mounted on a ceiling"
+        ],
+        "prediction": "B. painting hanging on wall",
+        "correct": true,
+        "valid_labels": [
+          "painting hanging on wall"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.090119100059383,
+          "generation_time_seconds": 7.079717400018126,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 362422272,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "painting hanging on wall"
+        ],
+        "choices": [
+          "poster lying on the floor",
+          "painting hanging on wall",
+          "mirror resting on a table",
+          "television mounted on a ceiling"
+        ],
+        "selected_choice": "painting hanging on wall"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 189.8565724999644,
+      "wall_clock_time_per_sample_seconds_mean": 9.492535710014636,
+      "total_generation_time_seconds_mean": 9.464070885011461,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.10534267914271839,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 392945664,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.240341598224942,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.2961262000026181
+    }
+  }
+}

@@ -7,7 +7,10 @@ from .hf_common import HFQADataset
 
 class DocVQA(HFQADataset):
     def __init__(self, split: str = "validation", streaming: bool = True, dataset_id: str = "lmms-lab/DocVQA") -> None:
-        actual_split = "validation" if split.startswith("val") else split
+        # The lmms-lab mirror exposes only validation and test. Use validation
+        # as the source pool when callers request training examples, then let
+        # the fine-tuning exporter create disjoint train/validation slices.
+        actual_split = "validation" if split == "train" or split.startswith("val") else split
         super().__init__(name="docvqa", dataset_id=dataset_id, config_name="DocVQA", split=actual_split, streaming=streaming)
 
     def __iter__(self) -> Iterable[Dict[str, Any]]:

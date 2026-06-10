@@ -6,6 +6,7 @@ from pathlib import Path
 
 import models
 from models import BaseModel
+from models.internvl2_5_8b import InternVL25
 
 
 MODEL_CATALOG = {
@@ -68,10 +69,13 @@ class InclusionCriteriaModelTests(unittest.TestCase):
             "DotsOCR",
             "GLM45VThinking",
             "GLM41VThinking",
-            "SkyworkR1V3_38B",
-            "SkyworkR1V2_38B",
         ):
             self.assertTrue(getattr(models, public_name).default_trust_remote_code, public_name)
+
+    def test_skywork_uses_internvl_chat_loading(self) -> None:
+        for public_name in ("SkyworkR1V3_38B", "SkyworkR1V2_38B"):
+            model_class = getattr(models, public_name)
+            self.assertTrue(issubclass(model_class, InternVL25), public_name)
 
 
 if __name__ == "__main__":

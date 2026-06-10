@@ -37,6 +37,11 @@ The selected datasets are:
 Before running, accept the Gemma license:
 <https://huggingface.co/google/gemma-4-31B-it>.
 
+The configured DocVQA mirror has no `train` split. Its `validation` split is
+used as a source pool and divided into disjoint fine-tuning training and
+validation slices. Do not use the remaining default DocVQA validation stream
+as a final evaluation set; reserve `test` for evaluation.
+
 The pod should have at least 150 GB of persistent disk. Dataset availability
 and gated access can change, so an inaccessible dataset will stop its export
 cell rather than silently omit a task type.

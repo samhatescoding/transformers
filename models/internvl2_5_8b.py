@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.util
 from itertools import product
 from math import inf
 
@@ -48,6 +49,7 @@ class InternVL25(HuggingFaceModelBase):
         )
 
     def _load_model(self):
+        use_flash_attn = importlib.util.find_spec("flash_attn") is not None
         return self._load_with_cache_first(
             AutoModel.from_pretrained,
             self.model_id,
@@ -55,7 +57,7 @@ class InternVL25(HuggingFaceModelBase):
             trust_remote_code=True,
             low_cpu_mem_usage=True,
             torch_dtype=torch.bfloat16,
-            use_flash_attn=True,
+            use_flash_attn=use_flash_attn,
         )
 
     @staticmethod
