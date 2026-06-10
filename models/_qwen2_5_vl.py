@@ -34,7 +34,7 @@ class _Qwen25VLBase(AutoProcessorModelBase):
         except ImportError as exc:
             raise ImportError(
                 "Loading a Qwen2.5-VL LoRA adapter requires peft. "
-                "Install fine-tuning/requirements-qwen.txt."
+                "Install fine_tuning/requirements-qwen.txt."
             ) from exc
         try:
             return PeftModel.from_pretrained(model, self.adapter_path)

@@ -14,7 +14,7 @@ if [[ -z "${HF_TOKEN:-}" ]]; then
 fi
 
 if [[ ! -f "${DATA_DIR}/train_manifest.jsonl" || ! -f "${DATA_DIR}/validation_manifest.jsonl" ]]; then
-  python fine-tuning/prepare_benchmark.py \
+  python fine_tuning/prepare_benchmark.py \
     --benchmark "${BENCHMARK}" \
     --train-split "${TRAIN_SPLIT}" \
     --train-examples "${TRAIN_EXAMPLES}" \

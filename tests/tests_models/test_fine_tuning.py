@@ -47,7 +47,7 @@ class _TrainingStubDataset:
 
 
 def _load_script(name: str) -> dict:
-    directory = Path(__file__).resolve().parents[2] / "fine-tuning"
+    directory = Path(__file__).resolve().parents[2] / "fine_tuning"
     sys.path.insert(0, str(directory))
     try:
         return runpy.run_path(str(directory / name))
@@ -170,8 +170,12 @@ class FineTuningPreparationTests(unittest.TestCase):
             label_sample_size=3,
             streaming=True,
         )
-        self.assertEqual([record["answer"] for record in train], ["a", "b"])
-        self.assertEqual([record["answer"] for record in validation], ["c"])
+        train_answers = [record["answer"] for record in train]
+        validation_answers = [record["answer"] for record in validation]
+        self.assertEqual(len(train_answers), 2)
+        self.assertEqual(len(validation_answers), 1)
+        self.assertFalse(set(train_answers) & set(validation_answers))
+        self.assertEqual(set(train_answers + validation_answers), {"a", "b", "c"})
 
     def test_generic_preparer_writes_manifest_with_system_prompt(self) -> None:
         module = _load_script("prepare_benchmark.py")

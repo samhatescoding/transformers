@@ -1,60 +1,70 @@
-# Gemma 4 31B Fine-Tuning
+# Fine-Tuning
 
-This directory provides a single-GPU BF16 LoRA workflow for
-`google/gemma-4-31B-it` on a RunPod B300. It uses the repository's existing
-benchmark exporter and trains only on assistant responses. The vision tower is
-frozen by default; LoRA adapters are trained in the language model and
-multimodal projection layers.
+All fine-tuning utilities now live in this directory.
 
-## RunPod setup
+## Gemma 4 31B on RunPod
 
-1. Create a B300 pod with at least 150 GB of persistent disk.
-2. Accept the model license at:
-   <https://huggingface.co/google/gemma-4-31B-it>
-3. Clone this repository and run:
+The main entry point is:
+
+```text
+fine_tuning/gemma4_31b_eight_types.ipynb
+```
+
+Open that notebook from a clone stored on persistent RunPod storage and run
+all cells. It:
+
+1. Installs the required packages.
+2. Requests a Hugging Face token.
+3. Exports balanced training and validation slices for eight task types.
+4. Combines and shuffles those slices.
+5. Fine-tunes `google/gemma-4-31B-it` with BF16 LoRA.
+6. Saves checkpoints and the final adapter under
+   `fine_tuning/output/gemma-4-31b-eight-types-lora`.
+
+The selected datasets are:
+
+| Type | Task | Benchmark |
+|---|---|---|
+| L | Labeling | Fashion-MNIST |
+| A | Visual question answering | DocVQA |
+| B | Bounding-box detection | Open Images V4 |
+| C | Captioning | MS COCO captions |
+| E | Editing prompt reconstruction | MagicBrush |
+| G | Generation prompt reconstruction | DiffusionDB |
+| P | Preference | Pick-a-Pic |
+| R | Rating | TAD66K |
+
+Before running, accept the Gemma license:
+<https://huggingface.co/google/gemma-4-31B-it>.
+
+The pod should have at least 150 GB of persistent disk. Dataset availability
+and gated access can change, so an inaccessible dataset will stop its export
+cell rather than silently omit a task type.
+
+## Command-Line Gemma Workflow
+
+For a single benchmark:
 
 ```bash
-cd transformers
 export HF_TOKEN=hf_your_token
 bash fine_tuning/setup_runpod.sh
 bash fine_tuning/run_finetuning.sh flickr30k
 ```
 
-The launcher creates 1,000 training and 200 validation examples from the
-requested benchmark if manifests do not already exist. It then writes the LoRA
-adapter to:
+The underlying trainer is `train_gemma4_31b.py`. It uses BF16 LoRA by default,
+freezes the vision tower, and masks prompt tokens from the loss. Use
+`--quantization 4bit` only if BF16 training runs out of memory.
 
-```text
-fine_tuning/output/gemma-4-31b-flickr30k-lora
+## Data Format
+
+`prepare_benchmark.py` exports JSONL records with paths relative to the
+manifest:
+
+```json
+{"image_path":"images/00001.png","prompt":"Describe the image.","answer":"A red car.","system":"Return only the answer."}
 ```
 
-Change the defaults with environment variables:
-
-```bash
-TRAIN_EXAMPLES=5000 \
-VALIDATION_EXAMPLES=500 \
-TRAIN_SPLIT=train \
-OUTPUT_DIR=/workspace/gemma4-flickr30k-lora \
-bash fine_tuning/run_finetuning.sh flickr30k \
-  --epochs 2 \
-  --learning-rate 1e-4 \
-  --gradient-accumulation-steps 16
-```
-
-Arguments after the benchmark name are passed to `train_gemma4_31b.py`.
-
-## Supported data
-
-The first launcher argument must be a benchmark accepted by:
-
-```bash
-python fine-tuning/prepare_benchmark.py --help
-```
-
-Examples include `flickr30k`, `docvqa`, `mscoco`,
-`openimages_v4_detection`, `ucf101`, and `conceptual_captions`.
-
-You can also provide your own JSONL manifests and run the trainer directly:
+Custom manifests can be passed directly:
 
 ```bash
 python fine_tuning/train_gemma4_31b.py \
@@ -63,36 +73,15 @@ python fine_tuning/train_gemma4_31b.py \
   --output-dir /workspace/output/gemma4-lora
 ```
 
-Each JSONL row must contain paths relative to the manifest:
+Keep final evaluation data separate from both manifests.
 
-```json
-{"image_path":"images/00001.png","prompt":"Describe the image.","answer":"A red car.","system":"Return only the answer."}
-```
+## Other Workflows
 
-Keep the final test split completely separate from the training and validation
-manifests.
+The directory also retains the existing:
 
-## Memory settings
+- Qwen2.5-VL benchmark and Fashion-MNIST QLoRA trainers.
+- GPT-4o vision fine-tuning JSONL builder and submission tools.
+- Base and adapter evaluation scripts.
 
-The default is BF16 LoRA, which is appropriate for a 288 GB B300. If a
-high-resolution dataset still runs out of memory, retry with:
-
-```bash
-bash fine_tuning/run_finetuning.sh docvqa --quantization 4bit
-```
-
-Other useful controls:
-
-```text
---lora-rank 32
---batch-size 1
---gradient-accumulation-steps 16
---dataloader-workers 4
---resume-from-checkpoint
-```
-
-Do not enable `--train-vision-tower` for the first experiment. It increases
-memory use and the risk of degrading general visual representations.
-
-The output directory contains a PEFT adapter, not a second copy of the 62.6 GB
-base model. Load it together with `google/gemma-4-31B-it` for evaluation.
+Use `python fine_tuning/prepare_benchmark.py --help` to list supported
+repository benchmarks.

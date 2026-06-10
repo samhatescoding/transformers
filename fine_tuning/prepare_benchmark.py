@@ -1,4 +1,4 @@
-"""Export Qwen vision fine-tuning manifests from any repository benchmark."""
+"""Export vision fine-tuning manifests from any repository benchmark."""
 
 from __future__ import annotations
 

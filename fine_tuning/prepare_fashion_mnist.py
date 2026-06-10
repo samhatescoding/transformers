@@ -101,7 +101,7 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("fine-tuning/data/fashion_mnist"),
+        default=Path("fine_tuning/data/fashion_mnist"),
     )
     args = parser.parse_args()
     if args.train_per_class < 1:

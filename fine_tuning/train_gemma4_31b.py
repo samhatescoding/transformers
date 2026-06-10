@@ -61,7 +61,7 @@ def validate_args(args: argparse.Namespace) -> None:
         if not manifest_path.is_file():
             raise SystemExit(
                 f"Missing manifest: {manifest_path}\n"
-                "Create it with fine-tuning/prepare_benchmark.py or provide a compatible JSONL file."
+                "Create it with fine_tuning/prepare_benchmark.py or provide a compatible JSONL file."
             )
     if args.epochs <= 0:
         raise SystemExit("--epochs must be positive.")

@@ -1,10 +1,9 @@
-"""QLoRA fine-tune Qwen2.5-VL-3B-Instruct on prepared Fashion-MNIST examples."""
+"""QLoRA fine-tune Qwen2.5-VL-3B-Instruct on a prepared benchmark manifest."""
 
 from __future__ import annotations
 
 import argparse
 import json
-import sys
 from pathlib import Path
 from typing import Any
 
@@ -20,8 +19,10 @@ from transformers import (
 )
 
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
 MODEL_ID = "Qwen/Qwen2.5-VL-3B-Instruct"
+DEFAULT_SYSTEM_PROMPT = (
+    "Follow the visual task instructions and return only the requested answer format."
+)
 
 
 class ManifestDataset(Dataset):
@@ -43,13 +44,16 @@ class ManifestDataset(Dataset):
 
 
 class QwenVisionCollator:
-    def __init__(self, processor: Any, system_prompt: str) -> None:
+    def __init__(self, processor: Any, default_system_prompt: str) -> None:
         self.processor = processor
-        self.system_prompt = system_prompt
+        self.default_system_prompt = default_system_prompt
 
     def _conversation(self, example: dict[str, Any], include_answer: bool) -> list[dict]:
+        system_prompt = str(
+            example.get("system") or self.default_system_prompt
+        ).strip()
         messages = [
-            {"role": "system", "content": self.system_prompt},
+            {"role": "system", "content": system_prompt},
             {
                 "role": "user",
                 "content": [
@@ -97,21 +101,9 @@ class QwenVisionCollator:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--train-manifest",
-        type=Path,
-        default=Path("fine-tuning/data/fashion_mnist/train_manifest.jsonl"),
-    )
-    parser.add_argument(
-        "--validation-manifest",
-        type=Path,
-        default=Path("fine-tuning/data/fashion_mnist/validation_manifest.jsonl"),
-    )
-    parser.add_argument(
-        "--output-dir",
-        type=Path,
-        default=Path("fine-tuning/output/qwen2.5-vl-3b-fashion-mnist-lora"),
-    )
+    parser.add_argument("--train-manifest", required=True, type=Path)
+    parser.add_argument("--validation-manifest", required=True, type=Path)
+    parser.add_argument("--output-dir", required=True, type=Path)
     parser.add_argument("--epochs", type=float, default=2.0)
     parser.add_argument("--learning-rate", type=float, default=1e-4)
     parser.add_argument("--batch-size", type=int, default=1)
@@ -127,9 +119,7 @@ def main() -> None:
         )
     for manifest_path in (args.train_manifest, args.validation_manifest):
         if not manifest_path.is_file():
-            raise SystemExit(
-                f"Missing {manifest_path}. Run fine-tuning/prepare_fashion_mnist.py first."
-            )
+            raise SystemExit(f"Missing manifest: {manifest_path}")
 
     try:
         from peft import (
@@ -140,14 +130,10 @@ def main() -> None:
     except ImportError as exc:
         raise SystemExit(
             "Install Qwen fine-tuning dependencies: "
-            "pip install -r fine-tuning/requirements-qwen.txt"
+            "pip install -r fine_tuning/requirements-qwen.txt"
         ) from exc
 
-    compute_dtype = (
-        torch.bfloat16
-        if torch.cuda.is_bf16_supported()
-        else torch.float16
-    )
+    compute_dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
     processor = AutoProcessor.from_pretrained(MODEL_ID)
     processor.tokenizer.padding_side = "right"
     quantization = BitsAndBytesConfig(
@@ -178,10 +164,6 @@ def main() -> None:
         ),
     )
     model.print_trainable_parameters()
-
-    system_prompt = (
-        "Classify Fashion-MNIST clothing images using exactly one allowed label."
-    )
     trainer = Trainer(
         model=model,
         args=TrainingArguments(
@@ -209,7 +191,7 @@ def main() -> None:
         ),
         train_dataset=ManifestDataset(args.train_manifest),
         eval_dataset=ManifestDataset(args.validation_manifest),
-        data_collator=QwenVisionCollator(processor, system_prompt),
+        data_collator=QwenVisionCollator(processor, DEFAULT_SYSTEM_PROMPT),
         processing_class=processor,
     )
     trainer.train()
@@ -219,5 +201,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    sys.path.insert(0, str(REPO_ROOT))
     main()

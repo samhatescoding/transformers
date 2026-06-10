@@ -176,7 +176,7 @@ model name.
 \toprule
 Layer & Evidence & What it supports \\
 \midrule
-Implementation & \code{models/}, \code{benchmarks/}, \code{fine-tuning/} &
+Implementation & \code{models/}, \code{benchmarks/}, \code{fine\_tuning/} &
 Prompt, input, generation, parsing, and adaptation workflow statements. \\
 Main results & CSV tables and PNG plots in \code{comparison/output/} &
 Aggregate, family, benchmark, pairwise, uncertainty, and telemetry claims. \\
@@ -1044,7 +1044,7 @@ easy as it looks for a language-generating vision model.  Classes such as
 enough visually that class collapse appears quickly.
 
 \section{QLoRA workflow}
-The generic script in \code{fine-tuning/train\_qwen25vl\_benchmark.py} reads
+The generic script in \code{fine\_tuning/train\_qwen25vl\_benchmark.py} reads
 manifest records with images, prompts, and target answers.  The collator
 formats each example as a Qwen conversation and masks the prompt tokens so the
 loss is applied to the assistant answer rather than the instruction.  The base
@@ -1288,7 +1288,7 @@ API and generic local inference pathways. \\
 Family-specific wrapper behavior discussed in Chapter 3. \\
 \path{benchmarks/_base_benchmark.py} &
 Prompt, image, label, and evaluation contract. \\
-\path{fine-tuning/train_qwen25vl_benchmark.py} &
+\path{fine_tuning/train_qwen25vl_benchmark.py} &
 QLoRA configuration and manifest-driven training behavior. \\
 \path{results/fine-tuning/*.json} &
 Stored 50-example Fashion-MNIST paired evaluations. \\

@@ -1,5 +1,5 @@
 {
-  "model": "gemini-3.5-flash",
+  "model": "gpt-5",
   "benchmark": "gqa",
   "report": {
     "benchmark": "gqa",
@@ -16,8 +16,8 @@
           "pigeon",
           "sparrow"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "A. parrot",
+        "correct": true,
         "valid_labels": [
           "parrot"
         ],
@@ -26,20 +26,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 5.157001100014895,
-          "generation_time_seconds": 5.115949300001375,
+          "wall_clock_time_seconds": 2.3933156999992207,
+          "generation_time_seconds": 2.365318800089881,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1029292032,
-          "cpu_utilization_percent": 1.8186274509803921,
+          "peak_cpu_ram_bytes": 950009856,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -54,7 +54,7 @@
           "pigeon",
           "sparrow"
         ],
-        "selected_choice": ""
+        "selected_choice": "parrot"
       },
       {
         "index": 2,
@@ -64,8 +64,8 @@
           "gray",
           "light blue"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "D",
+        "correct": true,
         "valid_labels": [
           "light blue"
         ],
@@ -74,20 +74,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 8.026474900078028,
-          "generation_time_seconds": 8.009957100031897,
+          "wall_clock_time_seconds": 1.4054759999271482,
+          "generation_time_seconds": 1.3869079999858513,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1040949248,
-          "cpu_utilization_percent": 0.3924050632911392,
+          "peak_cpu_ram_bytes": 950759424,
+          "cpu_utilization_percent": 4.5888888888888895,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -102,7 +102,7 @@
           "gray",
           "light blue"
         ],
-        "selected_choice": ""
+        "selected_choice": "light blue"
       },
       {
         "index": 3,
@@ -110,8 +110,8 @@
           "indoors",
           "outdoors"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "A",
+        "correct": true,
         "valid_labels": [
           "indoors"
         ],
@@ -120,20 +120,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 6.358904599910602,
-          "generation_time_seconds": 6.31324690009933,
+          "wall_clock_time_seconds": 2.737516099936329,
+          "generation_time_seconds": 2.705404800013639,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1046007808,
-          "cpu_utilization_percent": 0.492,
+          "peak_cpu_ram_bytes": 951455744,
+          "cpu_utilization_percent": 0.5648148148148148,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -146,7 +146,7 @@
           "indoors",
           "outdoors"
         ],
-        "selected_choice": ""
+        "selected_choice": "indoors"
       },
       {
         "index": 4,
@@ -154,8 +154,8 @@
           "no",
           "yes"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B",
+        "correct": true,
         "valid_labels": [
           "yes"
         ],
@@ -164,20 +164,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 2.5351250000530854,
-          "generation_time_seconds": 2.523923500091769,
+          "wall_clock_time_seconds": 1.4230726000387222,
+          "generation_time_seconds": 1.3930475999368355,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1049985024,
-          "cpu_utilization_percent": 1.8560000000000003,
+          "peak_cpu_ram_bytes": 952365056,
+          "cpu_utilization_percent": 1.0571428571428572,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -190,7 +190,7 @@
           "no",
           "yes"
         ],
-        "selected_choice": ""
+        "selected_choice": "yes"
       },
       {
         "index": 5,
@@ -198,7 +198,7 @@
           "left",
           "right"
         ],
-        "prediction": "",
+        "prediction": "B",
         "correct": false,
         "valid_labels": [
           "left"
@@ -208,20 +208,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 3.649287400068715,
-          "generation_time_seconds": 3.6052790000103414,
+          "wall_clock_time_seconds": 1.416333300061524,
+          "generation_time_seconds": 1.4087244000984356,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1021431808,
-          "cpu_utilization_percent": 0.8555555555555556,
+          "peak_cpu_ram_bytes": 954212352,
+          "cpu_utilization_percent": 109.76071428571427,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -234,7 +234,7 @@
           "left",
           "right"
         ],
-        "selected_choice": ""
+        "selected_choice": "right"
       },
       {
         "index": 6,
@@ -244,8 +244,8 @@
           "field",
           "shore"
         ],
-        "prediction": "Based",
-        "correct": false,
+        "prediction": "D",
+        "correct": true,
         "valid_labels": [
           "shore"
         ],
@@ -254,15 +254,15 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 4.465862200013362,
-          "generation_time_seconds": 4.422792500001378,
+          "wall_clock_time_seconds": 1.8808143000351265,
+          "generation_time_seconds": 1.8554197000339627,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1020784640,
-          "cpu_utilization_percent": 0.35517241379310344,
+          "peak_cpu_ram_bytes": 954597376,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -282,7 +282,7 @@
           "field",
           "shore"
         ],
-        "selected_choice": "Based"
+        "selected_choice": "shore"
       },
       {
         "index": 7,
@@ -292,8 +292,8 @@
           "statue",
           "building"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "C",
+        "correct": true,
         "valid_labels": [
           "statue"
         ],
@@ -302,20 +302,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 6.0821433999808505,
-          "generation_time_seconds": 6.041999400011264,
+          "wall_clock_time_seconds": 2.834407399990596,
+          "generation_time_seconds": 2.792972799972631,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1021845504,
-          "cpu_utilization_percent": 24.805833333333336,
+          "peak_cpu_ram_bytes": 956002304,
+          "cpu_utilization_percent": 56.75892857142857,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -330,7 +330,7 @@
           "statue",
           "building"
         ],
-        "selected_choice": ""
+        "selected_choice": "statue"
       },
       {
         "index": 8,
@@ -338,8 +338,8 @@
           "no",
           "yes"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "A",
+        "correct": true,
         "valid_labels": [
           "no"
         ],
@@ -348,20 +348,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 1.9046485000289977,
-          "generation_time_seconds": 1.8747328000608832,
+          "wall_clock_time_seconds": 2.123361299978569,
+          "generation_time_seconds": 2.10909309994895,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1022824448,
-          "cpu_utilization_percent": 0.8432432432432432,
+          "peak_cpu_ram_bytes": 956624896,
+          "cpu_utilization_percent": 0.7380952380952381,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -374,7 +374,7 @@
           "no",
           "yes"
         ],
-        "selected_choice": ""
+        "selected_choice": "no"
       },
       {
         "index": 9,
@@ -384,8 +384,8 @@
           "boy",
           "girl"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "A. man",
+        "correct": true,
         "valid_labels": [
           "man"
         ],
@@ -394,20 +394,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 5.837802900001407,
-          "generation_time_seconds": 5.826760399970226,
+          "wall_clock_time_seconds": 2.3259144000476226,
+          "generation_time_seconds": 2.3069716999307275,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1022889984,
-          "cpu_utilization_percent": 0.26608695652173914,
+          "peak_cpu_ram_bytes": 956694528,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -422,7 +422,7 @@
           "boy",
           "girl"
         ],
-        "selected_choice": ""
+        "selected_choice": "man"
       },
       {
         "index": 10,
@@ -430,8 +430,8 @@
           "no",
           "yes"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B. yes",
+        "correct": true,
         "valid_labels": [
           "yes"
         ],
@@ -440,20 +440,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 1.5212085999082774,
-          "generation_time_seconds": 1.5040273000486195,
+          "wall_clock_time_seconds": 2.229950200067833,
+          "generation_time_seconds": 2.21535039995797,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1023459328,
-          "cpu_utilization_percent": 2.0466666666666664,
+          "peak_cpu_ram_bytes": 957530112,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -466,7 +466,7 @@
           "no",
           "yes"
         ],
-        "selected_choice": ""
+        "selected_choice": "yes"
       },
       {
         "index": 11,
@@ -474,8 +474,8 @@
           "yes",
           "no"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B",
+        "correct": true,
         "valid_labels": [
           "no"
         ],
@@ -484,20 +484,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 1.6736380000365898,
-          "generation_time_seconds": 1.6340672000078484,
+          "wall_clock_time_seconds": 2.4307472000364214,
+          "generation_time_seconds": 2.415025800000876,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1023680512,
-          "cpu_utilization_percent": 0.9303030303030303,
+          "peak_cpu_ram_bytes": 958205952,
+          "cpu_utilization_percent": 0.6437499999999999,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -510,7 +510,7 @@
           "yes",
           "no"
         ],
-        "selected_choice": ""
+        "selected_choice": "no"
       },
       {
         "index": 12,
@@ -518,8 +518,8 @@
           "left",
           "right"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B",
+        "correct": true,
         "valid_labels": [
           "right"
         ],
@@ -528,20 +528,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 5.567760500009172,
-          "generation_time_seconds": 5.552775499993004,
+          "wall_clock_time_seconds": 2.1770355999469757,
+          "generation_time_seconds": 2.1362759999465197,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1023942656,
-          "cpu_utilization_percent": 0.2809090909090909,
+          "peak_cpu_ram_bytes": 958877696,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -554,7 +554,7 @@
           "left",
           "right"
         ],
-        "selected_choice": ""
+        "selected_choice": "right"
       },
       {
         "index": 13,
@@ -564,8 +564,8 @@
           "red",
           "blue"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "A",
+        "correct": true,
         "valid_labels": [
           "black"
         ],
@@ -574,20 +574,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 1.7756147000472993,
-          "generation_time_seconds": 1.7343078000703827,
+          "wall_clock_time_seconds": 2.277646700036712,
+          "generation_time_seconds": 2.2410919999238104,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1025179648,
-          "cpu_utilization_percent": 1.7514285714285713,
+          "peak_cpu_ram_bytes": 959229952,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -602,7 +602,7 @@
           "red",
           "blue"
         ],
-        "selected_choice": ""
+        "selected_choice": "black"
       },
       {
         "index": 14,
@@ -610,8 +610,8 @@
           "no",
           "yes"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B",
+        "correct": true,
         "valid_labels": [
           "yes"
         ],
@@ -620,20 +620,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 1.8787642000243068,
-          "generation_time_seconds": 1.8487170999869704,
+          "wall_clock_time_seconds": 5.567548600025475,
+          "generation_time_seconds": 5.547232900047675,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1026224128,
-          "cpu_utilization_percent": 0.835135135135135,
+          "peak_cpu_ram_bytes": 961560576,
+          "cpu_utilization_percent": 1.4081818181818182,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -646,7 +646,7 @@
           "no",
           "yes"
         ],
-        "selected_choice": ""
+        "selected_choice": "yes"
       },
       {
         "index": 15,
@@ -654,8 +654,8 @@
           "yes",
           "no"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "A",
+        "correct": true,
         "valid_labels": [
           "yes"
         ],
@@ -664,20 +664,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 3.537992600002326,
-          "generation_time_seconds": 3.532980600022711,
+          "wall_clock_time_seconds": 2.383378200000152,
+          "generation_time_seconds": 2.353194799972698,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1026650112,
-          "cpu_utilization_percent": 0.4434782608695652,
+          "peak_cpu_ram_bytes": 961892352,
+          "cpu_utilization_percent": 0.6617021276595745,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -690,7 +690,7 @@
           "yes",
           "no"
         ],
-        "selected_choice": ""
+        "selected_choice": "yes"
       },
       {
         "index": 16,
@@ -700,8 +700,8 @@
           "poles",
           "snowboard"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B",
+        "correct": true,
         "valid_labels": [
           "skis"
         ],
@@ -710,20 +710,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 2.7863384999800473,
-          "generation_time_seconds": 2.765973399975337,
+          "wall_clock_time_seconds": 2.838778000092134,
+          "generation_time_seconds": 2.796039400040172,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1026736128,
-          "cpu_utilization_percent": 1.1163636363636364,
+          "peak_cpu_ram_bytes": 961896448,
+          "cpu_utilization_percent": 0.5517857142857142,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -738,7 +738,7 @@
           "poles",
           "snowboard"
         ],
-        "selected_choice": ""
+        "selected_choice": "skis"
       },
       {
         "index": 17,
@@ -746,8 +746,8 @@
           "yes",
           "no"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B",
+        "correct": true,
         "valid_labels": [
           "no"
         ],
@@ -756,20 +756,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 7.976215899921954,
-          "generation_time_seconds": 7.965778499958105,
+          "wall_clock_time_seconds": 5.376749700051732,
+          "generation_time_seconds": 5.35707269993145,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1027350528,
-          "cpu_utilization_percent": 0.1980891719745223,
+          "peak_cpu_ram_bytes": 962650112,
+          "cpu_utilization_percent": 0.5801886792452831,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -782,7 +782,7 @@
           "yes",
           "no"
         ],
-        "selected_choice": ""
+        "selected_choice": "no"
       },
       {
         "index": 18,
@@ -790,8 +790,8 @@
           "no",
           "yes"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B",
+        "correct": true,
         "valid_labels": [
           "yes"
         ],
@@ -800,20 +800,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 2.1782067999010906,
-          "generation_time_seconds": 2.132872100104578,
+          "wall_clock_time_seconds": 2.245807599974796,
+          "generation_time_seconds": 2.205121299950406,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1030799360,
-          "cpu_utilization_percent": 2.1465116279069765,
+          "peak_cpu_ram_bytes": 964804608,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -826,7 +826,7 @@
           "no",
           "yes"
         ],
-        "selected_choice": ""
+        "selected_choice": "yes"
       },
       {
         "index": 19,
@@ -836,8 +836,8 @@
           "lettuce",
           "carrot"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "C. lettuce",
+        "correct": true,
         "valid_labels": [
           "lettuce"
         ],
@@ -846,20 +846,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 4.764759099925868,
-          "generation_time_seconds": 4.7284605000168085,
+          "wall_clock_time_seconds": 3.0913947999943048,
+          "generation_time_seconds": 3.0789257999276742,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1029922816,
-          "cpu_utilization_percent": 0.33085106382978724,
+          "peak_cpu_ram_bytes": 966778880,
+          "cpu_utilization_percent": 0.5016393442622951,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -874,7 +874,7 @@
           "lettuce",
           "carrot"
         ],
-        "selected_choice": ""
+        "selected_choice": "lettuce"
       },
       {
         "index": 20,
@@ -882,8 +882,8 @@
           "tall",
           "short"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B",
+        "correct": true,
         "valid_labels": [
           "short"
         ],
@@ -892,20 +892,20 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 1.5187043000478297,
-          "generation_time_seconds": 1.4762763999169692,
+          "wall_clock_time_seconds": 2.1774869000073522,
+          "generation_time_seconds": 2.1537048999452963,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1028296704,
-          "cpu_utilization_percent": 1.0333333333333334,
+          "peak_cpu_ram_bytes": 966381568,
+          "cpu_utilization_percent": 0.7209302325581395,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
@@ -918,25 +918,25 @@
           "tall",
           "short"
         ],
-        "selected_choice": ""
+        "selected_choice": "short"
       }
     ],
     "stats": {
-      "wall_clock_time_seconds": 79.19887239998206,
-      "wall_clock_time_per_sample_seconds_mean": 3.959822659997735,
-      "total_generation_time_seconds_mean": 3.93054386501899,
+      "wall_clock_time_seconds": 51.338799500023015,
+      "wall_clock_time_per_sample_seconds_mean": 2.5668367300124375,
+      "total_generation_time_seconds_mean": 2.541144844982773,
       "first_token_latency_seconds_mean": null,
       "time_per_output_token_seconds_mean": null,
-      "samples_per_second": 0.25252884787289637,
+      "samples_per_second": 0.3895689068458064,
       "number_of_output_tokens_mean": null,
-      "number_of_generated_outputs_mean": 0.05,
+      "number_of_generated_outputs_mean": 1.0,
       "number_of_benchmark_samples_completed": 20,
       "success_count": 20,
       "failure_count": 0,
       "retry_count": 0,
-      "peak_cpu_ram_bytes": 1049985024,
+      "peak_cpu_ram_bytes": 966778880,
       "peak_gpu_memory_bytes": null,
-      "cpu_utilization_percent_mean": 2.139899680271941,
+      "cpu_utilization_percent_mean": 8.926838128613873,
       "gpu_utilization_percent_mean": null,
       "vram_allocation_over_time_bytes": null,
       "disk_offload_volume_bytes": null,
@@ -946,7 +946,7 @@
       "false_negative_count_total": 0,
       "mean_number_of_predicted_detections": 0.0,
       "tokens_per_second": null,
-      "model_load_time_seconds": 1.926145000034012
+      "model_load_time_seconds": 1.4093711000168696
     }
   }
 }

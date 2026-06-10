@@ -161,8 +161,8 @@ class BenchmarkRunnerTests(unittest.TestCase):
 
     def test_qwen_checkpoint_can_record_lora_adapter_path(self) -> None:
         with patch.object(_Qwen25VLBase, "_load_input_artifact_and_model"):
-            model = Qwen25VL3B(adapter_path="fine-tuning/output/adapter")
-        self.assertEqual(model.adapter_path, "fine-tuning/output/adapter")
+            model = Qwen25VL3B(adapter_path="fine_tuning/output/adapter")
+        self.assertEqual(model.adapter_path, "fine_tuning/output/adapter")
 
     def test_default_checkpoint_names_are_specific(self) -> None:
         self.assertEqual(Llava._name_from_model_id("llava-hf/llava-1.5-7b-hf"), "llava-1.5-7b-hf")
