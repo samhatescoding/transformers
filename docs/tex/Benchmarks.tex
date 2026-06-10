@@ -3,9 +3,14 @@
 \usepackage{standards}
 \usepackage{float}
 \usepackage{listings}
+\usepackage{longtable}
+\usepackage{array}
 
 \geometry{margin=1in}
-\graphicspath{{images_benchmarks/}}
+\graphicspath{{images_benchmarks/}{images_datasets/}}
+
+\newcommand{\exampleimage}[1]{%
+  \includegraphics[width=24mm,height=18mm,keepaspectratio]{#1}}
 
 \lstset{
   basicstyle=\ttfamily\small,
@@ -185,5 +190,352 @@ D. They are wearing hats that hide their hair.
 Return either the choice letter or the exact choice text.
 ASSISTANT:
 \end{lstlisting}
+
+\clearpage
+\section{Examples for the Complete Benchmark Registry}
+
+The repository currently registers 44 benchmarks across eight task types.
+The six Type A examples above preserve the exact rendered model input and full
+prompt.  The tables below cover the remaining 38 benchmarks.  Each row combines
+a representative image already stored with the repository documentation and
+an actual target, reference caption, class, edit instruction, generation
+prompt, box target, preference, or rating taken from the first saved benchmark
+sample.  When two benchmarks use the same dataset for different tasks, the
+same representative image is intentionally repeated.
+
+The result JSON files do not serialize the input bitmap or full prompt.
+Consequently, the images below illustrate the correct source dataset but are
+not claimed to be the exact pixel array associated with every saved row.  The
+sample targets are real benchmark records, and the prompt listings are the
+exact task-family templates implemented in \texttt{benchmarks/}.
+
+\subsection{Type B Prompt: Bounding Box Detection}
+
+\begin{lstlisting}
+USER: <image>
+
+Target class: <target class>
+
+Detect all visible instances of the target class in the image.
+Return exactly one normalized [x, y, width, height] box per line.
+Return only the boxes, or [] if there are none.
+
+ASSISTANT:
+\end{lstlisting}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{31mm}
+                  >{\centering\arraybackslash}p{29mm}
+                  >{\raggedright\arraybackslash}p{86mm}}
+\caption{Concrete Type B benchmark examples.}\\
+\toprule
+\textbf{Benchmark} & \textbf{Dataset image} & \textbf{Actual saved sample target} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Benchmark} & \textbf{Dataset image} & \textbf{Actual saved sample target} \\
+\midrule
+\endhead
+Flickr30k Entities &
+\exampleimage{Flickr30k1.JPG} &
+Target class \texttt{a cliff face}; ground-truth box
+\texttt{[2.83, 400.30, 1065.48, 798.72]}. \\
+MS COCO &
+\exampleimage{MSCOCO.JPG} &
+Target class \texttt{sink}; ground-truth box
+\texttt{[497.25, 203.40, 619.26, 232.01]}. \\
+LVIS &
+\exampleimage{LVIS.JPG} &
+Target class \texttt{license\_plate}; ground-truth box
+\texttt{[387.86, 192.05, 448.61, 231.88]}. \\
+OpenImages V4 &
+\exampleimage{OpenImagesV4.JPG} &
+Target class \texttt{Fixed-wing aircraft}; ground-truth box
+\texttt{[23.22, 31.75, 987.34, 357.84]}. \\
+iNaturalist &
+\exampleimage{iNaturalist.JPG} &
+Target class \textit{Philodendron hederaceum}; the saved row contains seven
+annotated plant boxes. \\
+Visual CoT &
+\exampleimage{Visual CoT.JPG} &
+Target class \texttt{answer-relevant region}; ground-truth box
+\texttt{[187.15, 114.00, 215.12, 146.00]}. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Type C Prompt: Captioning}
+
+\begin{lstlisting}
+USER: <image>
+Write one concise caption that describes the image or representative video frame.
+Return only the caption text.
+ASSISTANT:
+\end{lstlisting}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{31mm}
+                  >{\centering\arraybackslash}p{29mm}
+                  >{\raggedright\arraybackslash}p{86mm}}
+\caption{Concrete Type C benchmark examples.}\\
+\toprule
+\textbf{Benchmark} & \textbf{Dataset image} & \textbf{Actual saved reference caption} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Benchmark} & \textbf{Dataset image} & \textbf{Actual saved reference caption} \\
+\midrule
+\endhead
+Flickr30k &
+\exampleimage{Flickr30k1.JPG} &
+``Two young guys with shaggy hair look at their hands while hanging out in
+the yard.'' \\
+MS COCO Captions &
+\exampleimage{MSCOCO.JPG} &
+``A man with a red helmet on a small moped on a dirt road.'' \\
+TextCaps &
+\exampleimage{TextCaps2.JPG} &
+``A book about CEOs is sitting on top of a box.'' \\
+Conceptual Captions &
+\exampleimage{ConceptualCaptions.JPG} &
+``author: a life in photography -- in pictures'' \\
+HDTF &
+\exampleimage{HDTF.JPG} &
+The stored reference identifies frame
+\texttt{M003\_angry\_level\_1\_001/000001}. \\
+InternVid &
+\exampleimage{InternVid.JPG} &
+``an image of the inside of a auditorium with the words enstep on the screen'' \\
+LAION-400M &
+\exampleimage{LAION-400M.JPG} &
+``Beautiful happy smiling woman in kitchen interior. -- Stock Photo'' \\
+LAION-5B &
+\exampleimage{LAION-5B.JPG} &
+The stored reference identifies source image \texttt{images/photo\_16320}. \\
+OpenVid-1M &
+\exampleimage{OpenVid-1M.JPG} &
+``A man is seen in a living room, standing in front of a window with blinds,
+wearing a black sweater and appearing to be in conversation.'' \\
+\bottomrule
+\end{longtable}
+
+\subsection{Type E Prompt: Editing Reconstruction}
+
+\begin{lstlisting}
+USER: <image>
+Choose the edit instruction that best explains the transformation from
+the source image to the edited image.
+Choices:
+A. <instruction>
+B. <instruction>
+C. <instruction>
+D. <instruction>
+Return either the choice letter or the exact choice text.
+ASSISTANT:
+\end{lstlisting}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{31mm}
+                  >{\centering\arraybackslash}p{29mm}
+                  >{\raggedright\arraybackslash}p{86mm}}
+\caption{Concrete Type E benchmark examples.}\\
+\toprule
+\textbf{Benchmark} & \textbf{Dataset image} & \textbf{Actual correct instruction} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Benchmark} & \textbf{Dataset image} & \textbf{Actual correct instruction} \\
+\midrule
+\endhead
+HQ-Edit &
+\exampleimage{HQ-Edit.JPG} &
+``Add futuristic elements such as holographic displays and floating
+platforms while maintaining the market's traditional structure.'' \\
+ImgEdit &
+\exampleimage{ImgEdit.JPG} &
+``The person lowers the record closer to their chest.'' \\
+MagicBrush &
+\exampleimage{MagicBrush.JPG} &
+``change the table for a dog'' \\
+ShareGPT-4o-Image &
+\exampleimage{sharegpt4o.JPG} &
+``Make the white background transparent, precisely isolating the black serif
+text and adjoining maroon emblem.'' \\
+\bottomrule
+\end{longtable}
+
+\subsection{Type G Prompt: Generation Reconstruction}
+
+\begin{lstlisting}
+USER: <image>
+Choose the description that most likely generated the image.
+Choices:
+A. <candidate prompt>
+B. <candidate prompt>
+C. <candidate prompt>
+D. <candidate prompt>
+Return either the choice letter or the exact choice text.
+ASSISTANT:
+\end{lstlisting}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{31mm}
+                  >{\centering\arraybackslash}p{29mm}
+                  >{\raggedright\arraybackslash}p{86mm}}
+\caption{Concrete Type G benchmark examples.}\\
+\toprule
+\textbf{Benchmark} & \textbf{Dataset image} & \textbf{Actual correct generation prompt} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Benchmark} & \textbf{Dataset image} & \textbf{Actual correct generation prompt} \\
+\midrule
+\endhead
+BLIP3o-60k &
+\exampleimage{DiffusionDB.JPG} &
+``Another world figure with a skeletal appearance, red horns, and glowing
+green eyes stands in an apothecary environment.'' \\
+Conceptual Captions &
+\exampleimage{ConceptualCaptions.JPG} &
+``author: a life in photography -- in pictures'' \\
+DiffusionDB &
+\exampleimage{DiffusionDB.JPG} &
+``a renaissance portrait of dwayne johnson, art in the style of rembrandt,
+ultra detailed, oil on canvas'' \\
+OpenVid-1M &
+\exampleimage{OpenVid-1M.JPG} &
+The correct prompt describes a serious man in a black sweater conversing in a
+dimly lit living room in front of window blinds. \\
+ShareGPT4o-Image &
+\exampleimage{sharegpt4o.JPG} &
+The correct prompt requests a clean, grid-based weekly fitness progress
+infographic using earthy green and brown colors. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Type L Prompt: Labeling}
+
+For image datasets, the exact template is:
+
+\begin{lstlisting}
+USER: <image>
+Return exactly ONE label from the complete list below
+(one item only, no extra words).
+Complete label list:
+<all labels for the dataset>
+ASSISTANT:
+\end{lstlisting}
+
+For video datasets, the prompt additionally states that the image is a
+representative frame and requests one action label.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{31mm}
+                  >{\centering\arraybackslash}p{29mm}
+                  >{\raggedright\arraybackslash}p{86mm}}
+\caption{Concrete Type L benchmark examples.}\\
+\toprule
+\textbf{Benchmark} & \textbf{Dataset image} & \textbf{Actual saved class target} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Benchmark} & \textbf{Dataset image} & \textbf{Actual saved class target} \\
+\midrule
+\endhead
+Cityscapes &
+\exampleimage{Cityscapes.JPG} &
+The multi-label source row contains \texttt{building}, \texttt{car},
+\texttt{road}, \texttt{sidewalk}, \texttt{sky}, and vegetation-related
+classes; the benchmark requests one exact label. \\
+FairFace &
+\exampleimage{FairFace.JPG} &
+\texttt{30-39}. \\
+Fashion-MNIST &
+\exampleimage{Fashion-MNIST.png} &
+\texttt{coat}. \\
+ImageNet-1K &
+\exampleimage{ImageNet.JPG} &
+One exact ImageNet synset label is selected from the complete 1,000-class
+list; examples include \texttt{goldfish, Carassius auratus}. \\
+iNaturalist &
+\exampleimage{iNaturalist.JPG} &
+One exact species name is selected from the complete list; the saved sample
+label set includes \textit{Marmota flaviventris}. \\
+LSUN &
+\exampleimage{LSUN.JPG} &
+\texttt{church outdoor}. \\
+MVTec AD &
+\exampleimage{MVTec AD.JPG} &
+\texttt{defective}. \\
+OpenImages V4 &
+\exampleimage{OpenImagesV4.JPG} &
+The saved row contains \texttt{cake}, \texttt{dairy product},
+\texttt{pastry}, \texttt{person}, and \texttt{table}; the benchmark requests
+one exact label. \\
+Places &
+\exampleimage{places.JPG} &
+\texttt{greenhouse indoor}. \\
+DFDC &
+\exampleimage{DFDC.JPG} &
+\texttt{fake}. \\
+Kinetics &
+\exampleimage{UCF101.JPG} &
+One action class from the complete Kinetics label list.  The representative
+video-frame input follows the same action-label prompt as UCF101. \\
+UCF101 &
+\exampleimage{UCF101.JPG} &
+\texttt{ApplyEyeMakeup}. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Type P Prompt: Image Preference}
+
+\begin{lstlisting}
+USER: <image>
+Which image is more aesthetically pleasing overall?
+A. Image A
+B. Image B
+Return only A or B.
+ASSISTANT:
+\end{lstlisting}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.72\textwidth]{PickAPic2.jpg}
+  \caption{Representative Pick-a-Pic comparison.  In the first saved
+  benchmark row, the correct preference is \texttt{Image A}.}
+\end{figure}
+
+\subsection{Type R Prompt: Aesthetic Rating}
+
+\begin{lstlisting}
+USER: <image>
+Rate the overall aesthetic quality of this image from 1 to 10,
+where 1 is very poor and 10 is exceptional.
+Return exactly one integer from 1 to 10.
+ASSISTANT:
+\end{lstlisting}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.72\textwidth]{TAD66K.JPG}
+  \caption{Representative TAD66K image.  The first saved benchmark sample has
+  the rounded target rating \texttt{2}.}
+\end{figure}
+
+\section{Coverage Summary}
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+\textbf{Type} & \textbf{Registered benchmarks} & \textbf{Examples documented} \\
+\midrule
+A: Answering Questions & 6 & 6 \\
+B: Bounding Box Detection & 6 & 6 \\
+C: Captioning & 9 & 9 \\
+E: Editing Reconstruction & 4 & 4 \\
+G: Generating Reconstruction & 5 & 5 \\
+L: Labeling & 12 & 12 \\
+P: Preference & 1 & 1 \\
+R: Rating & 1 & 1 \\
+\midrule
+\textbf{Total} & \textbf{44} & \textbf{44} \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \end{document}

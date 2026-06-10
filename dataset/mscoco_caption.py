@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import time
 from io import BytesIO
 from typing import Any, Dict, Iterable, List
-from urllib.request import urlopen
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlsplit, urlunsplit
+from urllib.request import Request, urlopen
 
 from datasets import load_dataset
 from PIL import Image
@@ -11,6 +14,9 @@ from ._base_dataset import BaseDataset
 
 
 class MSCOCOCaption(BaseDataset):
+    IMAGE_DOWNLOAD_ATTEMPTS = 5
+    RETRYABLE_HTTP_CODES = frozenset({429, 500, 502, 503, 504})
+
     def __init__(
         self,
         split: str = "test",
@@ -59,8 +65,27 @@ class MSCOCOCaption(BaseDataset):
         url = str(row.get("url", "")).strip()
         if not url:
             raise ValueError("MSCOCO caption row is missing an image URL.")
-        with urlopen(url, timeout=30) as response:
-            return Image.open(BytesIO(response.read())).convert("RGB")
+        parts = urlsplit(url)
+        if parts.scheme == "http" and parts.netloc == "images.cocodataset.org":
+            url = urlunsplit(
+                ("https", parts.netloc, parts.path, parts.query, parts.fragment)
+            )
+        request = Request(url, headers={"User-Agent": "transformers-benchmark/1.0"})
+        for attempt in range(self.IMAGE_DOWNLOAD_ATTEMPTS):
+            try:
+                with urlopen(request, timeout=30) as response:
+                    return Image.open(BytesIO(response.read())).convert("RGB")
+            except HTTPError as exc:
+                if (
+                    exc.code not in self.RETRYABLE_HTTP_CODES
+                    or attempt == self.IMAGE_DOWNLOAD_ATTEMPTS - 1
+                ):
+                    raise
+            except (URLError, TimeoutError):
+                if attempt == self.IMAGE_DOWNLOAD_ATTEMPTS - 1:
+                    raise
+            time.sleep(2**attempt)
+        raise RuntimeError("unreachable")
 
     def _standardize_row(self, row: Dict[str, Any]) -> Dict[str, Any]:
         out = dict(row)

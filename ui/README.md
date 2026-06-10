@@ -62,3 +62,29 @@ filter:
 $env:INPUT_BROWSER_LIVE_BENCHMARK="MS COCO"
 python -m unittest tests.tests_datasets.test_input_browser_live -v
 ```
+
+## Benchmark results browser
+
+Run the results dashboard from the repository root:
+
+```powershell
+python -m ui.results_browser
+```
+
+The browser loads current JSON reports below `results/`, excluding
+`results/old_results`. It provides filters for model, benchmark, and result
+group; task-aware primary scores; run health and latency summaries; and a
+per-sample inspector for predictions, references, evaluation fields, and
+runtime telemetry.
+
+To inspect a different result directory, pass it as the first argument:
+
+```powershell
+python -m ui.results_browser C:\path\to\results
+```
+
+The legacy launcher remains available and now opens the same dashboard:
+
+```powershell
+python -m ui.replay_ui
+```

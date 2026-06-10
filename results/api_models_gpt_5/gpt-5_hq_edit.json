@@ -1,0 +1,820 @@
+{
+  "model": "gpt-5",
+  "benchmark": "hq_edit",
+  "report": {
+    "benchmark": "hq_edit",
+    "dataset": "hq_edit",
+    "task_type": "image_modification_vqa",
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "Add medieval elements such as holographic displays and floating platforms while maintaining the market's traditional structure.",
+          "Add medieval elements such as holographic displays and floating platforms while maintaining the library's traditional structure.",
+          "Add futuristic elements such as holographic displays and floating platforms while maintaining the market's traditional structure.",
+          "Add futuristic elements such as holographic displays and floating platforms while maintaining the library's traditional structure."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Add futuristic elements such as holographic displays and floating platforms while maintaining the market's traditional structure."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 6.919959000078961,
+          "generation_time_seconds": 6.858710000058636,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 399060992,
+          "cpu_utilization_percent": 0.6816176470588236,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "replace the wooden mallet with a metal hammer, add a blue pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+          "replace the metal mallet with a metal hammer, add a blue pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+          "replace the wooden mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+          "replace the metal mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "replace the wooden mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.9108038999838755,
+          "generation_time_seconds": 4.887814299901947,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 409870336,
+          "cpu_utilization_percent": 0.3154639175257732,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new metal one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+          "Remove the rust from the wrench, polish the metal to a shine, and replace the worn handle with a new metal one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+          "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+          "Remove the rust from the wrench, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.723270699963905,
+          "generation_time_seconds": 4.6840169000206515,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 414392320,
+          "cpu_utilization_percent": 0.33440860215053764,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the foreground.",
+          "Replace the skateboard with a skateboard and add multiple BMX riders performing tricks in the foreground.",
+          "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the background.",
+          "Replace the skateboard with a skateboard and add multiple BMX riders performing tricks in the background."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the background."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 5.767762999981642,
+          "generation_time_seconds": 5.738710299949162,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 415719424,
+          "cpu_utilization_percent": 0.5415929203539823,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "Replace the soccer ball with a miniature sunflower that the puppy is holding in the same manner as the soccer ball.",
+          "Replace the soccer ball with a miniature sunflower that the kitten is holding in the same manner as the soccer ball.",
+          "Replace the soccer ball with a giant sunflower that the puppy is holding in the same manner as the soccer ball.",
+          "Replace the soccer ball with a giant sunflower that the kitten is holding in the same manner as the soccer ball."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Replace the soccer ball with a giant sunflower that the puppy is holding in the same manner as the soccer ball."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 3.801770200021565,
+          "generation_time_seconds": 3.743206600076519,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 416964608,
+          "cpu_utilization_percent": 1.2333333333333334,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "change the reflection on the teapot to show a clear red sky with clouds instead of the bright kitchen window",
+          "change the reflection on the teapot to show a clear red sky with a cloudless sky instead of the bright kitchen window",
+          "change the reflection on the teapot to show a clear blue sky with clouds instead of the bright kitchen window",
+          "change the reflection on the teapot to show a clear blue sky with a cloudless sky instead of the bright kitchen window"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "change the reflection on the teapot to show a clear blue sky with clouds instead of the bright kitchen window"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 3.7685319000156596,
+          "generation_time_seconds": 3.7258588999975473,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 417910784,
+          "cpu_utilization_percent": 0.835135135135135,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with blue leaves above the swing, and apply a foggy, early morning atmosphere.",
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with blue leaves above the swing, and apply a crisp and clear, early morning atmosphere.",
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a foggy, early morning atmosphere.",
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a crisp and clear, early morning atmosphere."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a foggy, early morning atmosphere."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.1066112000262365,
+          "generation_time_seconds": 4.083344999933615,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 419270656,
+          "cpu_utilization_percent": 0.3802469135802469,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, sun-baked trees, and polar bears on ice floes",
+          "remove the parrots and change the background to a lush tropical rainforest with icy cliffs, sun-baked trees, and polar bears on ice floes",
+          "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, snow-covered trees, and polar bears on ice floes",
+          "remove the parrots and change the background to a lush tropical rainforest with icy cliffs, snow-covered trees, and polar bears on ice floes"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, snow-covered trees, and polar bears on ice floes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.918605900020339,
+          "generation_time_seconds": 4.900769100058824,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 421453824,
+          "cpu_utilization_percent": 0.31752577319587627,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "show the dragonfly with its wings open as if it is about to take off",
+          "show the dragonfly with its wings closed as if it is about to take off",
+          "show the butterfly with its wings open as if it is about to take off",
+          "show the butterfly with its wings closed as if it is about to take off"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "show the butterfly with its wings open as if it is about to take off"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 5.034132500062697,
+          "generation_time_seconds": 5.00319540000055,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 423092224,
+          "cpu_utilization_percent": 0.6282828282828283,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "Change the background to show a flat coastal plain outside the window and add a potted plant next to the cat.",
+          "Change the background to show a flat coastal plain outside the window and add a potted plant next to the rabbit.",
+          "Change the background to show a mountainous landscape outside the window and add a potted plant next to the cat.",
+          "Change the background to show a mountainous landscape outside the window and add a potted plant next to the rabbit."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Change the background to show a mountainous landscape outside the window and add a potted plant next to the cat."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 5.755180999985896,
+          "generation_time_seconds": 5.7430723999859765,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 424390656,
+          "cpu_utilization_percent": 0.26991150442477874,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous metal desk background for the laptop screen.",
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous metal desk foreground for the laptop screen.",
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk background for the laptop screen.",
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk foreground for the laptop screen."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk background for the laptop screen."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 7.775075100013055,
+          "generation_time_seconds": 7.739015799947083,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 426795008,
+          "cpu_utilization_percent": 0.20326797385620915,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "Change the time of day to day, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+          "Change the time of day to day, remove the crowd to make the library appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+          "Change the time of day to night, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+          "Change the time of day to night, remove the crowd to make the library appear closed, and adjust the lighting to reflect a quieter atmosphere."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Change the time of day to night, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 5.471989199984819,
+          "generation_time_seconds": 5.436573700048029,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 428625920,
+          "cpu_utilization_percent": 0.575,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "change the person into a young individual wearing a denim jacket and jeans, with a bright blue backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+          "change the person into a young individual wearing a denim jacket and jeans, with a dim blue backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+          "change the person into a young individual wearing a denim jacket and jeans, with a bright yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+          "change the person into a young individual wearing a denim jacket and jeans, with a dim yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "change the person into a young individual wearing a denim jacket and jeans, with a bright yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 3.9637756999582052,
+          "generation_time_seconds": 3.932253999984823,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 429453312,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, cream white winter jacket over her Tai Chi outfit.",
+          "Change the season to summer by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, cream white winter jacket over her Tai Chi outfit.",
+          "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit.",
+          "Change the season to summer by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.0617494999896735,
+          "generation_time_seconds": 4.006675999960862,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 431140864,
+          "cpu_utilization_percent": 0.38375,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "Change the time of day from evening to sunset, casting a warm silver light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+          "Change the time of day from evening to sunrise, casting a warm silver light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+          "Change the time of day from evening to sunset, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+          "Change the time of day from evening to sunrise, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Change the time of day from evening to sunset, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.25590160000138,
+          "generation_time_seconds": 4.235671299975365,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 430272512,
+          "cpu_utilization_percent": 0.3666666666666667,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "Remove the elderly man standing next to her.",
+          "add the elderly man standing next to her.",
+          "Remove the young girl standing next to her.",
+          "add the young girl standing next to her."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Remove the young girl standing next to her."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 8.998538599931635,
+          "generation_time_seconds": 8.988592099980451,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 431828992,
+          "cpu_utilization_percent": 0.5231638418079095,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the foreground.",
+          "Add a watering hole with reflections, additional zebras, elephants, and acacia trees in the foreground.",
+          "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the background.",
+          "Add a watering hole with reflections, additional zebras, elephants, and acacia trees in the background."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the background."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.117046399973333,
+          "generation_time_seconds": 4.105164699954912,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 434909184,
+          "cpu_utilization_percent": 0.38395061728395063,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "Remove the rust and grime from the paintbrush, making it look new and unused.",
+          "add the rust and grime from the paintbrush, making it look new and unused.",
+          "Remove the rust and grime from the screwdriver, making it look new and unused.",
+          "add the rust and grime from the screwdriver, making it look new and unused."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Remove the rust and grime from the screwdriver, making it look new and unused."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 6.4777968999696895,
+          "generation_time_seconds": 6.424590100068599,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 436994048,
+          "cpu_utilization_percent": 0.2421875,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "apply a filter to create a smooth photorealistic effect",
+          "remove a filter to create a smooth photorealistic effect",
+          "apply a filter to create a hand-drawn, crosshatched effect",
+          "remove a filter to create a hand-drawn, crosshatched effect"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "apply a filter to create a hand-drawn, crosshatched effect"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 5.288041100022383,
+          "generation_time_seconds": 5.263823200017214,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 438763520,
+          "cpu_utilization_percent": 0.5913461538461539,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "Replace the purple fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+          "Replace the purple fields with vibrant, colorful sunflower fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+          "Replace the green fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+          "Replace the green fields with vibrant, colorful sunflower fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "Replace the green fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.311800199910067,
+          "generation_time_seconds": 4.294709800044075,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 440471552,
+          "cpu_utilization_percent": 0.6976470588235294,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 104.44286710000597,
+      "wall_clock_time_per_sample_seconds_mean": 5.22141717999475,
+      "total_generation_time_seconds_mean": 5.189788479998242,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.19149225366294886,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 0.0,
+      "number_of_benchmark_samples_completed": 0,
+      "success_count": 0,
+      "failure_count": 20,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 440471552,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.4752249193662867,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.4093711000168696
+    }
+  }
+}

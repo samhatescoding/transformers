@@ -1,0 +1,815 @@
+{
+  "model": "gpt-5",
+  "benchmark": "openvid1m",
+  "report": {
+    "benchmark": "openvid1m",
+    "dataset": "openvid1m",
+    "task_type": "prompt_reconstruction",
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "In the video, a man is seen in a living room setting, standing in front of a window with blinds. He is wearing a black sweater and appears to be in the middle of a conversation. The room is dimly lit, with a lamp providing a soft glow in the background. The man's expression is thoughtful, suggesting that the conversation is of importance. The overall style of the video is realistic and naturalistic, capturing a candid moment in the man's life.",
+          "In the video, a man is seen in a living room setting, standing in front of a window with blinds. He is wearing a navy sweater and appears to be in the middle of a conversation. The room is dimly lit, with a lamp providing a soft glow in the background. The man's expression is thoughtful, suggesting that the conversation is of importance. The overall style of the video is realistic and naturalistic, capturing a candid moment in the man's life.",
+          "In the video, a man is seen in a living room setting, standing in front of a window with blinds. He is wearing a navy sweater and appears to be in the middle of a conversation. The room is dimly lit, with a lamp providing a soft glow in the background. The man's expression is serious, suggesting that the conversation is of importance. The overall style of the video is realistic and naturalistic, capturing a candid moment in the man's life.",
+          "In the video, a man is seen in a living room setting, standing in front of a window with blinds. He is wearing a black sweater and appears to be in the middle of a conversation. The room is dimly lit, with a lamp providing a soft glow in the background. The man's expression is serious, suggesting that the conversation is of importance. The overall style of the video is realistic and naturalistic, capturing a candid moment in the man's life."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "In the video, a man is seen in a living room setting, standing in front of a window with blinds. He is wearing a black sweater and appears to be in the middle of a conversation. The room is dimly lit, with a lamp providing a soft glow in the background. The man's expression is serious, suggesting that the conversation is of importance. The overall style of the video is realistic and naturalistic, capturing a candid moment in the man's life."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.125542700057849,
+          "generation_time_seconds": 3.572005199966952,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 683171840,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "The video shows a man standing next to a purple van with a floral design on the side. The man is wearing a black t-shirt and jeans, and he is smiling and waving his hands in the air. The van has silver rims and a black roof rack. The van is parked in front of a building with a glass door. The man appears to be happy and excited about the van. The video is likely a short clip of a man showing off his van.",
+          "The video shows a man standing next to a blue van with a floral design on the side. The man is wearing a black t-shirt and jeans, and he is smiling and waving his hands in the air. The van has silver rims and a black roof rack. The van is parked in front of a building with a glass door. The man appears to be happy and excited about the van. The video is likely a short clip of a man showing off his van.",
+          "The video shows a man standing next to a blue van with a floral design on the side. The man is wearing a black t-shirt and jeans, and he is smiling and waving his hands in the air. The van has pink rims and a black roof rack. The van is parked in front of a building with a glass door. The man appears to be happy and excited about the van. The video is likely a short clip of a man showing off his van.",
+          "The video shows a man standing next to a purple van with a floral design on the side. The man is wearing a black t-shirt and jeans, and he is smiling and waving his hands in the air. The van has pink rims and a black roof rack. The van is parked in front of a building with a glass door. The man appears to be happy and excited about the van. The video is likely a short clip of a man showing off his van."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a man standing next to a purple van with a floral design on the side. The man is wearing a black t-shirt and jeans, and he is smiling and waving his hands in the air. The van has pink rims and a black roof rack. The van is parked in front of a building with a glass door. The man appears to be happy and excited about the van. The video is likely a short clip of a man showing off his van."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 3.7466582000488415,
+          "generation_time_seconds": 2.900323100038804,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 683880448,
+          "cpu_utilization_percent": 3.1982758620689653,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "The video is a news segment featuring a man in a red baseball cap and a blue vest, standing in front of a statue of a soldier and two children. The man appears to be a veteran, as indicated by the cap and the context of the event. The event is an honorary ceremony for lost submarines and submarine veterans, taking place near the World Peace Bell in Newport. The news segment is titled \"Connected to the Community\" and is scheduled to air at 10:10 PM on ABC 9. The style of the video is informative and respectful, focusing on the man and the event, with a clear and concise presentation of the details.",
+          "The video is a news segment featuring a man in a navy baseball cap and a blue vest, standing in front of a statue of a soldier and two children. The man appears to be a veteran, as indicated by the cap and the context of the event. The event is an honorary ceremony for lost submarines and submarine veterans, taking place near the World Peace Bell in Newport. The news segment is titled \"Connected to the Community\" and is scheduled to air at 10:10 PM on ABC 9. The style of the video is informative and respectful, focusing on the man and the event, with a clear and concise presentation of the details.",
+          "The video is a news segment featuring a man in a navy baseball cap and a blue vest, standing in front of a statue of a soldier and two children. The man appears to be a veteran, as indicated by the cap and the context of the event. The event is an honorary ceremony for lost submarines and submarine veterans, taking place near the World Peace Bell in Newport. The news segment is titled \"Connected to the Community\" and is scheduled to air at 11:10 PM on ABC 9. The style of the video is informative and respectful, focusing on the man and the event, with a clear and concise presentation of the details.",
+          "The video is a news segment featuring a man in a red baseball cap and a blue vest, standing in front of a statue of a soldier and two children. The man appears to be a veteran, as indicated by the cap and the context of the event. The event is an honorary ceremony for lost submarines and submarine veterans, taking place near the World Peace Bell in Newport. The news segment is titled \"Connected to the Community\" and is scheduled to air at 11:10 PM on ABC 9. The style of the video is informative and respectful, focusing on the man and the event, with a clear and concise presentation of the details."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video is a news segment featuring a man in a red baseball cap and a blue vest, standing in front of a statue of a soldier and two children. The man appears to be a veteran, as indicated by the cap and the context of the event. The event is an honorary ceremony for lost submarines and submarine veterans, taking place near the World Peace Bell in Newport. The news segment is titled \"Connected to the Community\" and is scheduled to air at 11:10 PM on ABC 9. The style of the video is informative and respectful, focusing on the man and the event, with a clear and concise presentation of the details."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 5.37808589998167,
+          "generation_time_seconds": 4.468770899926312,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 684371968,
+          "cpu_utilization_percent": 1.3910112359550562,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "The video features a man in a pink shirt and a black bucket hat, wearing glasses and a necklace. He is holding a fork and making a playful face, as if he is about to eat something. The background shows a lush garden with trees and a wooden structure. The man's expression and the spoon suggest that he is about to taste something, possibly food. The overall style of the video is casual and fun, with a focus on the man's reaction to the food.",
+          "The video features a man in a orange shirt and a black bucket hat, wearing glasses and a necklace. He is holding a fork and making a playful face, as if he is about to eat something. The background shows a lush garden with trees and a wooden structure. The man's expression and the spoon suggest that he is about to taste something, possibly food. The overall style of the video is casual and fun, with a focus on the man's reaction to the food.",
+          "The video features a man in a orange shirt and a black bucket hat, wearing glasses and a necklace. He is holding a spoon and making a playful face, as if he is about to eat something. The background shows a lush garden with trees and a wooden structure. The man's expression and the spoon suggest that he is about to taste something, possibly food. The overall style of the video is casual and fun, with a focus on the man's reaction to the food.",
+          "The video features a man in a pink shirt and a black bucket hat, wearing glasses and a necklace. He is holding a spoon and making a playful face, as if he is about to eat something. The background shows a lush garden with trees and a wooden structure. The man's expression and the spoon suggest that he is about to taste something, possibly food. The overall style of the video is casual and fun, with a focus on the man's reaction to the food."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video features a man in a pink shirt and a black bucket hat, wearing glasses and a necklace. He is holding a spoon and making a playful face, as if he is about to eat something. The background shows a lush garden with trees and a wooden structure. The man's expression and the spoon suggest that he is about to taste something, possibly food. The overall style of the video is casual and fun, with a focus on the man's reaction to the food."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 3.8958729000296444,
+          "generation_time_seconds": 3.465134199941531,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 686686208,
+          "cpu_utilization_percent": 0.8942028985507247,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "The video shows two men engaged in a conversation outdoors. The man on the left is wearing a black cap with a red logo, glasses, and a black jacket with a fur-lined hood. He has his hands clasped together in front of him. The man on the right is wearing a black cap with a white logo, a black jacket, and has his hands raised as if he is making a point or gesture. They are standing in front of a green field with a fence and trees in the background. The sky is clear, suggesting it might be a cool or overcast day. The style of the video is casual and candid, capturing a moment of interaction between the two men.",
+          "The video shows two men engaged in a conversation outdoors. The man on the left is wearing a black cap with a blue logo, glasses, and a black jacket with a fur-lined hood. He has his hands clasped together in front of him. The man on the right is wearing a black cap with a white logo, a black jacket, and has his hands raised as if he is making a point or gesture. They are standing in front of a green field with a fence and trees in the background. The sky is clear, suggesting it might be a cool or overcast day. The style of the video is casual and candid, capturing a moment of interaction between the two men.",
+          "The video shows two men engaged in a conversation outdoors. The man on the left is wearing a black cap with a blue logo, glasses, and a black jacket with a fur-lined hood. He has his hands clasped together in front of him. The man on the right is wearing a black cap with a white logo, a black jacket, and has his hands raised as if he is making a point or gesture. They are standing in front of a green field with a fence and trees in the background. The sky is partly cloudy, suggesting it might be a cool or overcast day. The style of the video is casual and candid, capturing a moment of interaction between the two men.",
+          "The video shows two men engaged in a conversation outdoors. The man on the left is wearing a black cap with a red logo, glasses, and a black jacket with a fur-lined hood. He has his hands clasped together in front of him. The man on the right is wearing a black cap with a white logo, a black jacket, and has his hands raised as if he is making a point or gesture. They are standing in front of a green field with a fence and trees in the background. The sky is partly cloudy, suggesting it might be a cool or overcast day. The style of the video is casual and candid, capturing a moment of interaction between the two men."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video shows two men engaged in a conversation outdoors. The man on the left is wearing a black cap with a red logo, glasses, and a black jacket with a fur-lined hood. He has his hands clasped together in front of him. The man on the right is wearing a black cap with a white logo, a black jacket, and has his hands raised as if he is making a point or gesture. They are standing in front of a green field with a fence and trees in the background. The sky is partly cloudy, suggesting it might be a cool or overcast day. The style of the video is casual and candid, capturing a moment of interaction between the two men."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 3.476736200042069,
+          "generation_time_seconds": 3.1000419000629336,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 752508928,
+          "cpu_utilization_percent": 1.9725806451612902,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "The video is a news segment about coffee roasters. The style of the video is a combination of a man speaking to the camera and a news ticker at the bottom. The man is wearing a gray baseball cap and a gray jacket. He is standing in a room with a counter and a bar. There are other people in the background, but they are not the focus of the video. The news ticker at the bottom of the screen provides information about the topic being discussed. The overall style of the video is informative and casual.",
+          "The video is a news segment about coffee roasters. The style of the video is a combination of a man speaking to the camera and a news ticker at the bottom. The man is wearing a black baseball cap and a gray jacket. He is standing in a room with a counter and a bar. There are other people in the background, but they are not the focus of the video. The news ticker at the bottom of the screen provides information about the topic being discussed. The overall style of the video is informative and casual.",
+          "The video is a news segment about microbreweries. The style of the video is a combination of a man speaking to the camera and a news ticker at the bottom. The man is wearing a black baseball cap and a gray jacket. He is standing in a room with a counter and a bar. There are other people in the background, but they are not the focus of the video. The news ticker at the bottom of the screen provides information about the topic being discussed. The overall style of the video is informative and casual.",
+          "The video is a news segment about microbreweries. The style of the video is a combination of a man speaking to the camera and a news ticker at the bottom. The man is wearing a gray baseball cap and a gray jacket. He is standing in a room with a counter and a bar. There are other people in the background, but they are not the focus of the video. The news ticker at the bottom of the screen provides information about the topic being discussed. The overall style of the video is informative and casual."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video is a news segment about microbreweries. The style of the video is a combination of a man speaking to the camera and a news ticker at the bottom. The man is wearing a gray baseball cap and a gray jacket. He is standing in a room with a counter and a bar. There are other people in the background, but they are not the focus of the video. The news ticker at the bottom of the screen provides information about the topic being discussed. The overall style of the video is informative and casual."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.4953796999761835,
+          "generation_time_seconds": 3.1201419999124482,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 544325632,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "The video shows a man in a black jacket and glasses standing on a construction site. He is holding a blue bottle and appears to be speaking or explaining something. The construction site is filled with various construction materials such as bricks, wooden planks, and tools. In the background, there is a large bulldozer and a wall under construction. The man seems to be a construction worker or a site manager, providing information or instructions about the ongoing construction work. The style of the video is informative and educational, likely aimed at teaching viewers about construction techniques or safety measures.",
+          "The video shows a man in a black jacket and glasses standing on a construction site. He is holding a green bottle and appears to be speaking or explaining something. The construction site is filled with various construction materials such as bricks, wooden planks, and tools. In the background, there is a large bulldozer and a wall under construction. The man seems to be a construction worker or a site manager, providing information or instructions about the ongoing construction work. The style of the video is informative and educational, likely aimed at teaching viewers about construction techniques or safety measures.",
+          "The video shows a man in a black jacket and glasses standing on a construction site. He is holding a green bottle and appears to be speaking or explaining something. The construction site is filled with various construction materials such as bricks, wooden planks, and tools. In the background, there is a large excavator and a wall under construction. The man seems to be a construction worker or a site manager, providing information or instructions about the ongoing construction work. The style of the video is informative and educational, likely aimed at teaching viewers about construction techniques or safety measures.",
+          "The video shows a man in a black jacket and glasses standing on a construction site. He is holding a blue bottle and appears to be speaking or explaining something. The construction site is filled with various construction materials such as bricks, wooden planks, and tools. In the background, there is a large excavator and a wall under construction. The man seems to be a construction worker or a site manager, providing information or instructions about the ongoing construction work. The style of the video is informative and educational, likely aimed at teaching viewers about construction techniques or safety measures."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a man in a black jacket and glasses standing on a construction site. He is holding a blue bottle and appears to be speaking or explaining something. The construction site is filled with various construction materials such as bricks, wooden planks, and tools. In the background, there is a large excavator and a wall under construction. The man seems to be a construction worker or a site manager, providing information or instructions about the ongoing construction work. The style of the video is informative and educational, likely aimed at teaching viewers about construction techniques or safety measures."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.4557391999987885,
+          "generation_time_seconds": 3.6479778999928385,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 544342016,
+          "cpu_utilization_percent": 0.8424657534246576,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "The video shows a black muscle car driving down a wet road. The car is sleek and shiny, with a prominent front grille and large headlights. The road is covered in a layer of snow, and the car's tires leave a trail of snow behind as it moves. The surrounding landscape is filled with snow-covered trees and mountains in the distance. The car's speed is indicated by the motion blur of the background, creating a sense of movement and excitement. The overall style of the video is dynamic and action-packed, capturing the thrill of driving a powerful car in a winter wonderland.",
+          "The video shows a dark blue muscle car driving down a wet road. The car is sleek and shiny, with a prominent front grille and large headlights. The road is covered in a layer of snow, and the car's tires leave a trail of snow behind as it moves. The surrounding landscape is filled with snow-covered trees and mountains in the distance. The car's speed is indicated by the motion blur of the background, creating a sense of movement and excitement. The overall style of the video is dynamic and action-packed, capturing the thrill of driving a powerful car in a winter wonderland.",
+          "The video shows a dark blue muscle car driving down a snowy road. The car is sleek and shiny, with a prominent front grille and large headlights. The road is covered in a layer of snow, and the car's tires leave a trail of snow behind as it moves. The surrounding landscape is filled with snow-covered trees and mountains in the distance. The car's speed is indicated by the motion blur of the background, creating a sense of movement and excitement. The overall style of the video is dynamic and action-packed, capturing the thrill of driving a powerful car in a winter wonderland.",
+          "The video shows a black muscle car driving down a snowy road. The car is sleek and shiny, with a prominent front grille and large headlights. The road is covered in a layer of snow, and the car's tires leave a trail of snow behind as it moves. The surrounding landscape is filled with snow-covered trees and mountains in the distance. The car's speed is indicated by the motion blur of the background, creating a sense of movement and excitement. The overall style of the video is dynamic and action-packed, capturing the thrill of driving a powerful car in a winter wonderland."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a black muscle car driving down a snowy road. The car is sleek and shiny, with a prominent front grille and large headlights. The road is covered in a layer of snow, and the car's tires leave a trail of snow behind as it moves. The surrounding landscape is filled with snow-covered trees and mountains in the distance. The car's speed is indicated by the motion blur of the background, creating a sense of movement and excitement. The overall style of the video is dynamic and action-packed, capturing the thrill of driving a powerful car in a winter wonderland."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 3.8715347999241203,
+          "generation_time_seconds": 3.0248152000131086,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 542199808,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "The video is a news segment featuring a man in a suit sitting in front of a cityscape. The man is speaking about the Holocaust Memorial Day, which takes place on the 27th of January every year. The cityscape in the background is blurred, but it appears to be a modern city with tall buildings. The man is wearing a navy suit and a white shirt. The news segment is likely informative and serious in tone.",
+          "The video is a news segment featuring a man in a suit sitting in front of a cityscape. The man is speaking about the Holocaust Memorial Day, which takes place on the 26th of January every year. The cityscape in the background is blurred, but it appears to be a modern city with tall buildings. The man is wearing a navy suit and a white shirt. The news segment is likely informative and serious in tone.",
+          "The video is a news segment featuring a man in a suit sitting in front of a cityscape. The man is speaking about the Holocaust Memorial Day, which takes place on the 26th of January every year. The cityscape in the background is blurred, but it appears to be a modern city with tall buildings. The man is wearing a dark suit and a white shirt. The news segment is likely informative and serious in tone.",
+          "The video is a news segment featuring a man in a suit sitting in front of a cityscape. The man is speaking about the Holocaust Memorial Day, which takes place on the 27th of January every year. The cityscape in the background is blurred, but it appears to be a modern city with tall buildings. The man is wearing a dark suit and a white shirt. The news segment is likely informative and serious in tone."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video is a news segment featuring a man in a suit sitting in front of a cityscape. The man is speaking about the Holocaust Memorial Day, which takes place on the 27th of January every year. The cityscape in the background is blurred, but it appears to be a modern city with tall buildings. The man is wearing a dark suit and a white shirt. The news segment is likely informative and serious in tone."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.60088399995584,
+          "generation_time_seconds": 4.024572400026955,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 574205952,
+          "cpu_utilization_percent": 5.464788732394366,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "In the video, a man is seen sitting at a table in a kitchen, engaging in a chocolate tasting session. He is wearing a brown jacket and a scarf, and he has glasses on. The table is made of wood and has a few items on it, including a plate with chocolate squares and a cup of tea. The kitchen is well-equipped, with a refrigerator, a sink, and a microwave visible in the background. The man appears to be enjoying his time, savoring the taste of the chocolate. The overall atmosphere of the video is cozy and relaxed, with the man taking his time to appreciate the chocolate.",
+          "In the video, a man is seen sitting at a table in a kitchen, engaging in a chocolate tasting session. He is wearing a black jacket and a scarf, and he has glasses on. The table is made of wood and has a few items on it, including a plate with chocolate squares and a cup of tea. The kitchen is well-equipped, with a refrigerator, a sink, and a microwave visible in the background. The man appears to be enjoying his time, savoring the taste of the chocolate. The overall atmosphere of the video is cozy and relaxed, with the man taking his time to appreciate the chocolate.",
+          "In the video, a man is seen sitting at a table in a kitchen, engaging in a chocolate tasting session. He is wearing a black jacket and a scarf, and he has glasses on. The table is made of wood and has a few items on it, including a plate with chocolate squares and a cup of coffee. The kitchen is well-equipped, with a refrigerator, a sink, and a microwave visible in the background. The man appears to be enjoying his time, savoring the taste of the chocolate. The overall atmosphere of the video is cozy and relaxed, with the man taking his time to appreciate the chocolate.",
+          "In the video, a man is seen sitting at a table in a kitchen, engaging in a chocolate tasting session. He is wearing a brown jacket and a scarf, and he has glasses on. The table is made of wood and has a few items on it, including a plate with chocolate squares and a cup of coffee. The kitchen is well-equipped, with a refrigerator, a sink, and a microwave visible in the background. The man appears to be enjoying his time, savoring the taste of the chocolate. The overall atmosphere of the video is cozy and relaxed, with the man taking his time to appreciate the chocolate."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "In the video, a man is seen sitting at a table in a kitchen, engaging in a chocolate tasting session. He is wearing a brown jacket and a scarf, and he has glasses on. The table is made of wood and has a few items on it, including a plate with chocolate squares and a cup of coffee. The kitchen is well-equipped, with a refrigerator, a sink, and a microwave visible in the background. The man appears to be enjoying his time, savoring the taste of the chocolate. The overall atmosphere of the video is cozy and relaxed, with the man taking his time to appreciate the chocolate."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.362908600014634,
+          "generation_time_seconds": 3.4442840999690816,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 143073280,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "In the video, a man and a woman are engaged in a conversation. The man is wearing a white shirt and the woman is dressed in a beige top. They are standing in front of a pink backdrop that features the repeated pattern of a cupcake. The woman is gesturing with her hand, indicating that she is in the middle of speaking. The man is attentively listening to her, suggesting a friendly and engaging interaction between the two. The overall style of the video is casual and relaxed, capturing a moment of everyday life."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "wall_clock_time_seconds": 0.8029819999355823,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "HTTPError: HTTP Error 404: Not Found"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "The video captures a lively street food scene in a bustling city. A woman, donned in a traditional conical hat and a face mask, stands behind a cart filled with fresh produce. She is in the process of preparing a dish, her hands skillfully handling the ingredients. The cart is adorned with a vibrant display of flowers and herbs, adding a splash of color to the scene.  In the background, the city continues its rhythm. People are seen walking by, their figures slightly blurred, adding a sense of motion to the scene. Motorcycles are parked nearby, hinting at the city's busy traffic. The buildings in the distance, though not clearly visible, provide a sense of depth and scale to the scene.  The video is a snapshot of everyday life in the city, capturing the hustle and bustle of the street food scene. It's a blend of tradition and modernity, with the woman's traditional attire contrasting against the backdrop of the modern cityscape. The colors are bright and vivid, reflecting the vibrancy of the city and its people. The overall style of the video is candid and unposed, capturing the authenticity of the moment.",
+          "The video captures a lively street food scene in a bustling city. A woman, donned in a traditional wide-brimmed hat and a face mask, stands behind a cart filled with fresh produce. She is in the process of preparing a dish, her hands skillfully handling the ingredients. The cart is adorned with a vibrant display of flowers and herbs, adding a splash of color to the scene.  In the background, the city continues its rhythm. People are seen walking by, their figures slightly blurred, adding a sense of motion to the scene. Motorcycles are parked nearby, hinting at the city's busy traffic. The buildings in the distance, though not clearly visible, provide a sense of depth and scale to the scene.  The video is a snapshot of everyday life in the city, capturing the hustle and bustle of the street food scene. It's a blend of tradition and modernity, with the woman's traditional attire contrasting against the backdrop of the modern cityscape. The colors are bright and vivid, reflecting the vibrancy of the city and its people. The overall style of the video is candid and unposed, capturing the authenticity of the moment.",
+          "The video captures a lively street food scene in a bustling city. A woman, donned in a traditional wide-brimmed hat and a face mask, stands behind a cart filled with fresh produce. She is in the process of preparing a dish, her hands skillfully handling the ingredients. The cart is adorned with a vibrant display of fruits and vegetables, adding a splash of color to the scene.  In the background, the city continues its rhythm. People are seen walking by, their figures slightly blurred, adding a sense of motion to the scene. Motorcycles are parked nearby, hinting at the city's busy traffic. The buildings in the distance, though not clearly visible, provide a sense of depth and scale to the scene.  The video is a snapshot of everyday life in the city, capturing the hustle and bustle of the street food scene. It's a blend of tradition and modernity, with the woman's traditional attire contrasting against the backdrop of the modern cityscape. The colors are bright and vivid, reflecting the vibrancy of the city and its people. The overall style of the video is candid and unposed, capturing the authenticity of the moment.",
+          "The video captures a lively street food scene in a bustling city. A woman, donned in a traditional conical hat and a face mask, stands behind a cart filled with fresh produce. She is in the process of preparing a dish, her hands skillfully handling the ingredients. The cart is adorned with a vibrant display of fruits and vegetables, adding a splash of color to the scene.  In the background, the city continues its rhythm. People are seen walking by, their figures slightly blurred, adding a sense of motion to the scene. Motorcycles are parked nearby, hinting at the city's busy traffic. The buildings in the distance, though not clearly visible, provide a sense of depth and scale to the scene.  The video is a snapshot of everyday life in the city, capturing the hustle and bustle of the street food scene. It's a blend of tradition and modernity, with the woman's traditional attire contrasting against the backdrop of the modern cityscape. The colors are bright and vivid, reflecting the vibrancy of the city and its people. The overall style of the video is candid and unposed, capturing the authenticity of the moment."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video captures a lively street food scene in a bustling city. A woman, donned in a traditional conical hat and a face mask, stands behind a cart filled with fresh produce. She is in the process of preparing a dish, her hands skillfully handling the ingredients. The cart is adorned with a vibrant display of fruits and vegetables, adding a splash of color to the scene.  In the background, the city continues its rhythm. People are seen walking by, their figures slightly blurred, adding a sense of motion to the scene. Motorcycles are parked nearby, hinting at the city's busy traffic. The buildings in the distance, though not clearly visible, provide a sense of depth and scale to the scene.  The video is a snapshot of everyday life in the city, capturing the hustle and bustle of the street food scene. It's a blend of tradition and modernity, with the woman's traditional attire contrasting against the backdrop of the modern cityscape. The colors are bright and vivid, reflecting the vibrancy of the city and its people. The overall style of the video is candid and unposed, capturing the authenticity of the moment."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 5.616183900041506,
+          "generation_time_seconds": 5.161049399990588,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 143474688,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "In the video, a woman in a black dress stands on a wooden deck of a boat, looking out over the ocean. She leans on the wooden railing, her gaze fixed on the horizon. The boat is sailing on calm waters, and the sun casts a warm glow on the scene. The woman's dress contrasts with the natural colors of the ocean and the boat, creating a striking image. The video captures a moment of quiet contemplation, as the woman takes in the beauty of the sea.",
+          "In the video, a woman in a navy dress stands on a wooden deck of a boat, looking out over the ocean. She leans on the wooden railing, her gaze fixed on the horizon. The boat is sailing on calm waters, and the sun casts a warm glow on the scene. The woman's dress contrasts with the natural colors of the ocean and the boat, creating a striking image. The video captures a moment of quiet contemplation, as the woman takes in the beauty of the sea.",
+          "In the video, a woman in a navy dress stands on a wooden deck of a boat, looking out over the ocean. She leans on the white railing, her gaze fixed on the horizon. The boat is sailing on calm waters, and the sun casts a warm glow on the scene. The woman's dress contrasts with the natural colors of the ocean and the boat, creating a striking image. The video captures a moment of quiet contemplation, as the woman takes in the beauty of the sea.",
+          "In the video, a woman in a black dress stands on a wooden deck of a boat, looking out over the ocean. She leans on the white railing, her gaze fixed on the horizon. The boat is sailing on calm waters, and the sun casts a warm glow on the scene. The woman's dress contrasts with the natural colors of the ocean and the boat, creating a striking image. The video captures a moment of quiet contemplation, as the woman takes in the beauty of the sea."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "In the video, a woman in a black dress stands on a wooden deck of a boat, looking out over the ocean. She leans on the white railing, her gaze fixed on the horizon. The boat is sailing on calm waters, and the sun casts a warm glow on the scene. The woman's dress contrasts with the natural colors of the ocean and the boat, creating a striking image. The video captures a moment of quiet contemplation, as the woman takes in the beauty of the sea."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.01302279997617,
+          "generation_time_seconds": 3.288306999951601,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 143560704,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "The video shows a group of young children in a gymnasium, each holding a soccer ball. The children are dressed in casual sportswear, and they are arranged in a circle formation. The gymnasium has a polished wooden floor and a high ceiling with exposed beams. The lighting in the gym is bright, and the walls are painted in a neutral color. The children appear to be in a playful mood, and they are holding the basketballs in various ways, some are holding them with both hands, while others are holding them with one hand. The video captures the children's energy and enthusiasm for the sport.",
+          "The video shows a group of young children in a gymnasium, each holding a soccer ball. The children are dressed in casual sportswear, and they are arranged in a two rows. The gymnasium has a polished wooden floor and a high ceiling with exposed beams. The lighting in the gym is bright, and the walls are painted in a neutral color. The children appear to be in a playful mood, and they are holding the basketballs in various ways, some are holding them with both hands, while others are holding them with one hand. The video captures the children's energy and enthusiasm for the sport.",
+          "The video shows a group of young children in a gymnasium, each holding a basketball. The children are dressed in casual sportswear, and they are arranged in a two rows. The gymnasium has a polished wooden floor and a high ceiling with exposed beams. The lighting in the gym is bright, and the walls are painted in a neutral color. The children appear to be in a playful mood, and they are holding the basketballs in various ways, some are holding them with both hands, while others are holding them with one hand. The video captures the children's energy and enthusiasm for the sport.",
+          "The video shows a group of young children in a gymnasium, each holding a basketball. The children are dressed in casual sportswear, and they are arranged in a circle formation. The gymnasium has a polished wooden floor and a high ceiling with exposed beams. The lighting in the gym is bright, and the walls are painted in a neutral color. The children appear to be in a playful mood, and they are holding the basketballs in various ways, some are holding them with both hands, while others are holding them with one hand. The video captures the children's energy and enthusiasm for the sport."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a group of young children in a gymnasium, each holding a basketball. The children are dressed in casual sportswear, and they are arranged in a circle formation. The gymnasium has a polished wooden floor and a high ceiling with exposed beams. The lighting in the gym is bright, and the walls are painted in a neutral color. The children appear to be in a playful mood, and they are holding the basketballs in various ways, some are holding them with both hands, while others are holding them with one hand. The video captures the children's energy and enthusiasm for the sport."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 3.4498261000262573,
+          "generation_time_seconds": 3.085421200026758,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 143732736,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "The video captures a lively scene in a gymnasium where a group of children are engaged in a basketball game. The central figure, a young boy, is holding a basketball with the word \"STARS\" written on it. He is surrounded by other children, each holding their own basketballs. The gymnasium is filled with the energy of the game, with the children actively participating and enjoying themselves. The video is a snapshot of a moment filled with fun, camaraderie, and the spirit of sportsmanship.",
+          "The video captures a lively scene in a gymnasium where a group of children are engaged in a basketball game. The central figure, a young girl, is holding a basketball with the word \"STARS\" written on it. He is surrounded by other children, each holding their own basketballs. The gymnasium is filled with the energy of the game, with the children actively participating and enjoying themselves. The video is a snapshot of a moment filled with fun, camaraderie, and the spirit of sportsmanship.",
+          "The video captures a lively scene in a gymnasium where a group of children are engaged in a basketball game. The central figure, a young girl, is holding a basketball with the word \"JAZZ\" written on it. He is surrounded by other children, each holding their own basketballs. The gymnasium is filled with the energy of the game, with the children actively participating and enjoying themselves. The video is a snapshot of a moment filled with fun, camaraderie, and the spirit of sportsmanship.",
+          "The video captures a lively scene in a gymnasium where a group of children are engaged in a basketball game. The central figure, a young boy, is holding a basketball with the word \"JAZZ\" written on it. He is surrounded by other children, each holding their own basketballs. The gymnasium is filled with the energy of the game, with the children actively participating and enjoying themselves. The video is a snapshot of a moment filled with fun, camaraderie, and the spirit of sportsmanship."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video captures a lively scene in a gymnasium where a group of children are engaged in a basketball game. The central figure, a young boy, is holding a basketball with the word \"JAZZ\" written on it. He is surrounded by other children, each holding their own basketballs. The gymnasium is filled with the energy of the game, with the children actively participating and enjoying themselves. The video is a snapshot of a moment filled with fun, camaraderie, and the spirit of sportsmanship."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 6.550769799971022,
+          "generation_time_seconds": 5.690581600065343,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 143749120,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "The video features a man in glasses with his hands clasped together, contemplating something. In the background, there is a muscular man holding a barbell, suggesting a theme of fitness or bodybuilding. The style of the video is a split-screen, with the man in glasses on the left and the muscular man on the right. The overall tone of the video is contemplative and introspective, with a focus on the contrast between the two men.",
+          "The video features a man in sunglasses with his hands clasped together, contemplating something. In the background, there is a muscular man holding a barbell, suggesting a theme of fitness or bodybuilding. The style of the video is a split-screen, with the man in glasses on the left and the muscular man on the right. The overall tone of the video is contemplative and introspective, with a focus on the contrast between the two men.",
+          "The video features a man in sunglasses with his hands clasped together, contemplating something. In the background, there is a muscular man holding dumbbells, suggesting a theme of fitness or bodybuilding. The style of the video is a split-screen, with the man in glasses on the left and the muscular man on the right. The overall tone of the video is contemplative and introspective, with a focus on the contrast between the two men.",
+          "The video features a man in glasses with his hands clasped together, contemplating something. In the background, there is a muscular man holding dumbbells, suggesting a theme of fitness or bodybuilding. The style of the video is a split-screen, with the man in glasses on the left and the muscular man on the right. The overall tone of the video is contemplative and introspective, with a focus on the contrast between the two men."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video features a man in glasses with his hands clasped together, contemplating something. In the background, there is a muscular man holding dumbbells, suggesting a theme of fitness or bodybuilding. The style of the video is a split-screen, with the man in glasses on the left and the muscular man on the right. The overall tone of the video is contemplative and introspective, with a focus on the contrast between the two men."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.254907700000331,
+          "generation_time_seconds": 3.0866495000664145,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 143818752,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "The video is a news segment featuring two women in a studio setting. The women are seated at a desk with microphones, suggesting they are discussing a topic. The studio has a large screen in the background displaying a news headline. The women are dressed in casual attire, and there are notebooks and a tablet on the desk. The overall style of the video is professional and informative, typical of a news broadcast.",
+          "The video is a news segment featuring two men in a studio setting. The women are seated at a desk with microphones, suggesting they are discussing a topic. The studio has a large screen in the background displaying a news headline. The women are dressed in casual attire, and there are notebooks and a tablet on the desk. The overall style of the video is professional and informative, typical of a news broadcast.",
+          "The video is a news segment featuring two men in a studio setting. The women are seated at a desk with microphones, suggesting they are discussing a topic. The studio has a large screen in the background displaying a news headline. The women are dressed in casual attire, and there are cups and a book on the desk. The overall style of the video is professional and informative, typical of a news broadcast.",
+          "The video is a news segment featuring two women in a studio setting. The women are seated at a desk with microphones, suggesting they are discussing a topic. The studio has a large screen in the background displaying a news headline. The women are dressed in casual attire, and there are cups and a book on the desk. The overall style of the video is professional and informative, typical of a news broadcast."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video is a news segment featuring two women in a studio setting. The women are seated at a desk with microphones, suggesting they are discussing a topic. The studio has a large screen in the background displaying a news headline. The women are dressed in casual attire, and there are cups and a book on the desk. The overall style of the video is professional and informative, typical of a news broadcast."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.155201200046577,
+          "generation_time_seconds": 3.53322930005379,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 143855616,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "The video shows a man sitting at a table in a restaurant. He is wearing a blue shirt and has a beard. He is holding a cup of coffee in his hand. The restaurant has a rustic decor with wooden tables and chairs. There is a TV in the background and a window that lets in natural light. The man appears to be enjoying his meal and the atmosphere of the restaurant.",
+          "The video shows a man sitting at a table in a restaurant. He is wearing a green shirt and has a beard. He is holding a cup of coffee in his hand. The restaurant has a rustic decor with wooden tables and chairs. There is a TV in the background and a window that lets in natural light. The man appears to be enjoying his meal and the atmosphere of the restaurant.",
+          "The video shows a man sitting at a table in a restaurant. He is wearing a green shirt and has a beard. He is holding a bottle of water in his hand. The restaurant has a rustic decor with wooden tables and chairs. There is a TV in the background and a window that lets in natural light. The man appears to be enjoying his meal and the atmosphere of the restaurant.",
+          "The video shows a man sitting at a table in a restaurant. He is wearing a blue shirt and has a beard. He is holding a bottle of water in his hand. The restaurant has a rustic decor with wooden tables and chairs. There is a TV in the background and a window that lets in natural light. The man appears to be enjoying his meal and the atmosphere of the restaurant."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a man sitting at a table in a restaurant. He is wearing a blue shirt and has a beard. He is holding a bottle of water in his hand. The restaurant has a rustic decor with wooden tables and chairs. There is a TV in the background and a window that lets in natural light. The man appears to be enjoying his meal and the atmosphere of the restaurant."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.20867800002452,
+          "generation_time_seconds": 3.1211806000210345,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 143970304,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "The video shows a purple convertible sports car parked in front of a garage. The car is sleek and shiny, with a tan interior. The garage door is closed, and the car is parked on a concrete driveway. The car is the main focus of the video, and there are no other objects or people in the scene. The style of the video is straightforward and simple, with no additional elements or actions. The car is stationary, and there is no movement or interaction with other objects or people. The video is likely a promotional or sales video for the car, showcasing its design and color.",
+          "The video shows a red convertible sports car parked in front of a garage. The car is sleek and shiny, with a tan interior. The garage door is closed, and the car is parked on a concrete driveway. The car is the main focus of the video, and there are no other objects or people in the scene. The style of the video is straightforward and simple, with no additional elements or actions. The car is stationary, and there is no movement or interaction with other objects or people. The video is likely a promotional or sales video for the car, showcasing its design and color.",
+          "The video shows a red convertible sports car parked in front of a garage. The car is sleek and shiny, with a black interior. The garage door is closed, and the car is parked on a concrete driveway. The car is the main focus of the video, and there are no other objects or people in the scene. The style of the video is straightforward and simple, with no additional elements or actions. The car is stationary, and there is no movement or interaction with other objects or people. The video is likely a promotional or sales video for the car, showcasing its design and color.",
+          "The video shows a purple convertible sports car parked in front of a garage. The car is sleek and shiny, with a black interior. The garage door is closed, and the car is parked on a concrete driveway. The car is the main focus of the video, and there are no other objects or people in the scene. The style of the video is straightforward and simple, with no additional elements or actions. The car is stationary, and there is no movement or interaction with other objects or people. The video is likely a promotional or sales video for the car, showcasing its design and color."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video shows a purple convertible sports car parked in front of a garage. The car is sleek and shiny, with a black interior. The garage door is closed, and the car is parked on a concrete driveway. The car is the main focus of the video, and there are no other objects or people in the scene. The style of the video is straightforward and simple, with no additional elements or actions. The car is stationary, and there is no movement or interaction with other objects or people. The video is likely a promotional or sales video for the car, showcasing its design and color."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 3.8902653000550345,
+          "generation_time_seconds": 3.6724521999713033,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 144089088,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "The video features a man standing in front of a blue sports car, which is parked in a driveway. The man is wearing a gray t-shirt and appears to be speaking into a microphone, suggesting that he might be conducting a car review or interview. The car is sleek and shiny, with a distinctive purple color that stands out against the backdrop of the house. The house itself is a large, two-story structure with a garage and a driveway. The man's body language and the microphone suggest that he is engaged in a conversation or presentation, possibly about the car or the house. The overall style of the video is casual and informative, with a focus on the car and the man's commentary.",
+          "The video features a man standing in front of a blue sports car, which is parked in a driveway. The man is wearing a black t-shirt and appears to be speaking into a microphone, suggesting that he might be conducting a car review or interview. The car is sleek and shiny, with a distinctive purple color that stands out against the backdrop of the house. The house itself is a large, two-story structure with a garage and a driveway. The man's body language and the microphone suggest that he is engaged in a conversation or presentation, possibly about the car or the house. The overall style of the video is casual and informative, with a focus on the car and the man's commentary.",
+          "The video features a man standing in front of a purple sports car, which is parked in a driveway. The man is wearing a black t-shirt and appears to be speaking into a microphone, suggesting that he might be conducting a car review or interview. The car is sleek and shiny, with a distinctive purple color that stands out against the backdrop of the house. The house itself is a large, two-story structure with a garage and a driveway. The man's body language and the microphone suggest that he is engaged in a conversation or presentation, possibly about the car or the house. The overall style of the video is casual and informative, with a focus on the car and the man's commentary.",
+          "The video features a man standing in front of a purple sports car, which is parked in a driveway. The man is wearing a gray t-shirt and appears to be speaking into a microphone, suggesting that he might be conducting a car review or interview. The car is sleek and shiny, with a distinctive purple color that stands out against the backdrop of the house. The house itself is a large, two-story structure with a garage and a driveway. The man's body language and the microphone suggest that he is engaged in a conversation or presentation, possibly about the car or the house. The overall style of the video is casual and informative, with a focus on the car and the man's commentary."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The video features a man standing in front of a purple sports car, which is parked in a driveway. The man is wearing a gray t-shirt and appears to be speaking into a microphone, suggesting that he might be conducting a car review or interview. The car is sleek and shiny, with a distinctive purple color that stands out against the backdrop of the house. The house itself is a large, two-story structure with a garage and a driveway. The man's body language and the microphone suggest that he is engaged in a conversation or presentation, possibly about the car or the house. The overall style of the video is casual and informative, with a focus on the car and the man's commentary."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "wall_clock_time_seconds": 4.378439099993557,
+          "generation_time_seconds": 3.3266938000451773,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 144265216,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 83.73391980002634,
+      "wall_clock_time_per_sample_seconds_mean": 4.18648090500501,
+      "total_generation_time_seconds_mean": 3.4366815750021487,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.23885183027098306,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 0.0,
+      "number_of_benchmark_samples_completed": 0,
+      "success_count": 0,
+      "failure_count": 20,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 752508928,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.7243855330292137,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.4093711000168696
+    }
+  }
+}

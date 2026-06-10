@@ -1,0 +1,542 @@
+[
+  {
+    "type": "A",
+    "name": "FlyingThings3D",
+    "module": "benchmarks.multiple_choice.flyingthings3d",
+    "class": "FlyingThings3DBenchmark",
+    "benchmark_name": "flyingthings3d",
+    "dataset_name": "flyingthings3d",
+    "source": "ssbai/flyingthings3d",
+    "split": "train",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 1920,
+    "height": 564,
+    "image_path": "images/a_flyingthings3d.png",
+    "prompt": "USER: <image>\nChoose the description that best matches the rendered stereo scene.\nQuestion: What is the color of the chair?\nChoices:\nA. blue\nB. green\nC. red\nD. yellow\nReturn either the choice letter or the exact choice text.\nASSISTANT:",
+    "prompt_labels": [
+      "blue",
+      "green",
+      "red",
+      "yellow"
+    ],
+    "correct_answers": [
+      "red"
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "A",
+    "name": "Visual Genome",
+    "module": "benchmarks.visual_qa.visual_genome",
+    "class": "VisualGenomeBenchmark",
+    "benchmark_name": "visual_genome",
+    "dataset_name": "visual_genome",
+    "source": "dipta007/bengali-visual-genome-1.0-prompt",
+    "split": "train",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 800,
+    "height": 600,
+    "image_path": "images/a_visual_genome.png",
+    "prompt": "USER: <image>\nAnswer the question about the image.\nQuestion: What is shown in the highlighted region of the image?\nChoices:\nA. it is an indoor scene\nB. it is an outdoor sports field\nC. it is a beach scene\nD. it is a forest trail\nReturn either the choice letter or the exact choice text.\nASSISTANT:",
+    "prompt_labels": [
+      "it is an indoor scene",
+      "it is an outdoor sports field",
+      "it is a beach scene",
+      "it is a forest trail"
+    ],
+    "correct_answers": [
+      "it is an indoor scene"
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "A",
+    "name": "VQA v2.0",
+    "module": "benchmarks.visual_qa.vqa_v2",
+    "class": "VQAv2Benchmark",
+    "benchmark_name": "vqav2",
+    "dataset_name": "vqav2",
+    "source": "merve/vqav2-small",
+    "split": "validation",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 640,
+    "height": 424,
+    "image_path": "images/a_vqa_v2_0.png",
+    "prompt": "USER: <image>\nAnswer the question about the image.\nQuestion: Where are the kids riding?\nChoices:\nA. carnival ride\nB. playground\nC. school bus\nD. bicycle\nReturn either the choice letter or the exact choice text.\nASSISTANT:",
+    "prompt_labels": [
+      "carnival ride",
+      "playground",
+      "school bus",
+      "bicycle"
+    ],
+    "correct_answers": [
+      "carnival ride"
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "A",
+    "name": "GQA",
+    "module": "benchmarks.visual_qa.gqa",
+    "class": "GQABenchmark",
+    "benchmark_name": "gqa",
+    "dataset_name": "gqa",
+    "source": "lmms-lab/GQA",
+    "split": "validation",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 500,
+    "height": 375,
+    "image_path": "images/a_gqa.png",
+    "prompt": "USER: <image>\nAnswer the question about the image.\nQuestion: What is this bird called?\nChoices:\nA. parrot\nB. eagle\nC. pigeon\nD. sparrow\nReturn either the choice letter or the exact choice text.\nASSISTANT:",
+    "prompt_labels": [
+      "parrot",
+      "eagle",
+      "pigeon",
+      "sparrow"
+    ],
+    "correct_answers": [
+      "parrot"
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "A",
+    "name": "DocVQA",
+    "module": "benchmarks.visual_qa.docvqa",
+    "class": "DocVQABenchmark",
+    "benchmark_name": "docvqa",
+    "dataset_name": "docvqa",
+    "source": "lmms-lab/DocVQA",
+    "split": "validation",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 808,
+    "height": 1077,
+    "image_path": "images/a_docvqa.png",
+    "prompt": "USER: <image>\nAnswer the question about the image.\nQuestion: What is name of university?\nChoices:\nA. University of California\nB. Stanford University\nC. University of Washington\nD. University of Michigan\nReturn either the choice letter or the exact choice text.\nASSISTANT:",
+    "prompt_labels": [
+      "University of California",
+      "Stanford University",
+      "University of Washington",
+      "University of Michigan"
+    ],
+    "correct_answers": [
+      "University of California"
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "A",
+    "name": "Visual CoT",
+    "module": "benchmarks.visual_qa.visual_cot",
+    "class": "VisualCoTBenchmark",
+    "benchmark_name": "visual_cot",
+    "dataset_name": "visual_cot",
+    "source": "deepcs233/Visual-CoT",
+    "split": "train",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 333,
+    "height": 500,
+    "image_path": "images/a_visual_cot.png",
+    "prompt": "USER: <image>\nAnswer the question about the image.\nQuestion: Can you tell me about the hairstyles of the individuals in the image?\nChoices:\nA. They have shaggy hair.\nB. They have closely cropped hair.\nC. They have long braided hair.\nD. They are wearing hats that hide their hair.\nReturn either the choice letter or the exact choice text.\nASSISTANT:",
+    "prompt_labels": [
+      "They have shaggy hair.",
+      "They have closely cropped hair.",
+      "They have long braided hair.",
+      "They are wearing hats that hide their hair."
+    ],
+    "correct_answers": [
+      "They have shaggy hair."
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "B",
+    "name": "Flickr30k Entities",
+    "module": "benchmarks.detection.flickr30k_entities",
+    "class": "Flickr30kEntitiesBenchmark",
+    "benchmark_name": "flickr30k_entities",
+    "dataset_name": "flickr30k_entities",
+    "source": "Rajarshi-Roy-research/Flickr30k_Grounding_Som",
+    "split": "train",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 1066,
+    "height": 800,
+    "image_path": "images/b_flickr30k_entities.png",
+    "prompt": "USER: <image>\n\nTarget class: a cliff face\n\nDetect all visible instances of the target class in the image.\n\nReturn exactly one bounding box per detected instance, one per line, using this exact structure:\n\n[x_1, y_1, width_1, height_1]\n[x_2, y_2, width_2, height_2]\n...\n\nx and y are the coordinates of the top-left corner of the box.\nwidth and height are the dimensions of the box.\nAll four values must be normalized to the range 0..1 relative to the full image width and height.\nUse decimal numbers, not percentages.\n\nFor example, if one box covers the upper-right quadrant and another covers the lower-left quadrant, write:\n\n[0.5, 0.0, 0.5, 0.5]\n[0.0, 0.5, 0.5, 0.5]\n\nUse tight boxes around the visible part of each target-class instance.\nIf a target-class instance is partially outside the image, return the box for the visible part only, clipped to the image boundaries.\nIf a target-class instance is partially occluded but still identifiable, return the box around the visible part only.\n\nReturn boxes only for the target class.\nDo not return boxes for nearby objects unless they are part of the visible target-class instance.\n\nIf there are no visible instances of the target class, return exactly:\n\n[]\n\nDo not describe the image.\nDo not explain your answer.\nDo not include labels, confidence scores, markdown, code fences, commas between boxes, or full sentences.\nSeparate boxes with line breaks, not commas or prose.\nReturn only the boxes, or [] if there are none.\n\nASSISTANT:",
+    "prompt_labels": [
+      "a cliff face"
+    ],
+    "correct_answers": [
+      "a cliff face"
+    ],
+    "show_correct_answer": false,
+    "displayed_box_count": 1,
+    "status": "ok"
+  },
+  {
+    "type": "B",
+    "name": "MS COCO",
+    "module": "benchmarks.detection.mscoco",
+    "class": "MSCOCOBenchmark",
+    "benchmark_name": "mscoco",
+    "dataset_name": "mscoco",
+    "source": "phiyodr/coco2017",
+    "split": "validation",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 640,
+    "height": 427,
+    "image_path": "images/b_ms_coco.png",
+    "prompt": "USER: <image>\n\nTarget class: sink\n\nDetect all visible instances of the target class in the image.\n\nReturn exactly one bounding box per detected instance, one per line, using this exact structure:\n\n[x_1, y_1, width_1, height_1]\n[x_2, y_2, width_2, height_2]\n...\n\nx and y are the coordinates of the top-left corner of the box.\nwidth and height are the dimensions of the box.\nAll four values must be normalized to the range 0..1 relative to the full image width and height.\nUse decimal numbers, not percentages.\n\nFor example, if one box covers the upper-right quadrant and another covers the lower-left quadrant, write:\n\n[0.5, 0.0, 0.5, 0.5]\n[0.0, 0.5, 0.5, 0.5]\n\nUse tight boxes around the visible part of each target-class instance.\nIf a target-class instance is partially outside the image, return the box for the visible part only, clipped to the image boundaries.\nIf a target-class instance is partially occluded but still identifiable, return the box around the visible part only.\n\nReturn boxes only for the target class.\nDo not return boxes for nearby objects unless they are part of the visible target-class instance.\n\nIf there are no visible instances of the target class, return exactly:\n\n[]\n\nDo not describe the image.\nDo not explain your answer.\nDo not include labels, confidence scores, markdown, code fences, commas between boxes, or full sentences.\nSeparate boxes with line breaks, not commas or prose.\nReturn only the boxes, or [] if there are none.\n\nASSISTANT:",
+    "prompt_labels": [
+      "sink"
+    ],
+    "correct_answers": [
+      "sink"
+    ],
+    "show_correct_answer": false,
+    "displayed_box_count": 1,
+    "status": "ok"
+  },
+  {
+    "type": "B",
+    "name": "LVIS",
+    "module": "benchmarks.detection.lvis",
+    "class": "LVISBenchmark",
+    "benchmark_name": "lvis",
+    "dataset_name": "lvis",
+    "source": "fw407/lvis",
+    "split": "train",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 640,
+    "height": 360,
+    "image_path": "images/b_lvis.png",
+    "prompt": "USER: <image>\n\nTarget class: license_plate\n\nDetect all visible instances of the target class in the image.\n\nReturn exactly one bounding box per detected instance, one per line, using this exact structure:\n\n[x_1, y_1, width_1, height_1]\n[x_2, y_2, width_2, height_2]\n...\n\nx and y are the coordinates of the top-left corner of the box.\nwidth and height are the dimensions of the box.\nAll four values must be normalized to the range 0..1 relative to the full image width and height.\nUse decimal numbers, not percentages.\n\nFor example, if one box covers the upper-right quadrant and another covers the lower-left quadrant, write:\n\n[0.5, 0.0, 0.5, 0.5]\n[0.0, 0.5, 0.5, 0.5]\n\nUse tight boxes around the visible part of each target-class instance.\nIf a target-class instance is partially outside the image, return the box for the visible part only, clipped to the image boundaries.\nIf a target-class instance is partially occluded but still identifiable, return the box around the visible part only.\n\nReturn boxes only for the target class.\nDo not return boxes for nearby objects unless they are part of the visible target-class instance.\n\nIf there are no visible instances of the target class, return exactly:\n\n[]\n\nDo not describe the image.\nDo not explain your answer.\nDo not include labels, confidence scores, markdown, code fences, commas between boxes, or full sentences.\nSeparate boxes with line breaks, not commas or prose.\nReturn only the boxes, or [] if there are none.\n\nASSISTANT:",
+    "prompt_labels": [
+      "license_plate"
+    ],
+    "correct_answers": [
+      "license_plate"
+    ],
+    "show_correct_answer": false,
+    "displayed_box_count": 1,
+    "status": "ok"
+  },
+  {
+    "type": "B",
+    "name": "OpenImages V4",
+    "module": "benchmarks.detection.openimages_v4_detection",
+    "class": "OpenImagesV4DetectionBenchmark",
+    "benchmark_name": "openimages_v4_detection",
+    "dataset_name": "openimages_v4",
+    "source": "vikhyatk/openimages-bbox",
+    "split": "validation",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 1024,
+    "height": 447,
+    "image_path": "images/b_openimages_v4.png",
+    "prompt": "USER: <image>\n\nTarget class: Fixed-wing aircraft\n\nDetect all visible instances of the target class in the image.\n\nReturn exactly one bounding box per detected instance, one per line, using this exact structure:\n\n[x_1, y_1, width_1, height_1]\n[x_2, y_2, width_2, height_2]\n...\n\nx and y are the coordinates of the top-left corner of the box.\nwidth and height are the dimensions of the box.\nAll four values must be normalized to the range 0..1 relative to the full image width and height.\nUse decimal numbers, not percentages.\n\nFor example, if one box covers the upper-right quadrant and another covers the lower-left quadrant, write:\n\n[0.5, 0.0, 0.5, 0.5]\n[0.0, 0.5, 0.5, 0.5]\n\nUse tight boxes around the visible part of each target-class instance.\nIf a target-class instance is partially outside the image, return the box for the visible part only, clipped to the image boundaries.\nIf a target-class instance is partially occluded but still identifiable, return the box around the visible part only.\n\nReturn boxes only for the target class.\nDo not return boxes for nearby objects unless they are part of the visible target-class instance.\n\nIf there are no visible instances of the target class, return exactly:\n\n[]\n\nDo not describe the image.\nDo not explain your answer.\nDo not include labels, confidence scores, markdown, code fences, commas between boxes, or full sentences.\nSeparate boxes with line breaks, not commas or prose.\nReturn only the boxes, or [] if there are none.\n\nASSISTANT:",
+    "prompt_labels": [
+      "Fixed-wing aircraft"
+    ],
+    "correct_answers": [
+      "Fixed-wing aircraft"
+    ],
+    "show_correct_answer": false,
+    "displayed_box_count": 1,
+    "status": "ok"
+  },
+  {
+    "type": "B",
+    "name": "iNaturalist",
+    "module": "benchmarks.detection.inaturalist",
+    "class": "INaturalistDetectionBenchmark",
+    "benchmark_name": "inaturalist_detection",
+    "dataset_name": "inaturalist_detection",
+    "source": "philipp-zettl/inaturalist-bbs",
+    "split": "train",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 375,
+    "height": 500,
+    "image_path": "images/b_inaturalist.png",
+    "prompt": "USER: <image>\n\nTarget class: Philodendron hederaceum\n\nDetect all visible instances of the target class in the image.\n\nReturn exactly one bounding box per detected instance, one per line, using this exact structure:\n\n[x_1, y_1, width_1, height_1]\n[x_2, y_2, width_2, height_2]\n...\n\nx and y are the coordinates of the top-left corner of the box.\nwidth and height are the dimensions of the box.\nAll four values must be normalized to the range 0..1 relative to the full image width and height.\nUse decimal numbers, not percentages.\n\nFor example, if one box covers the upper-right quadrant and another covers the lower-left quadrant, write:\n\n[0.5, 0.0, 0.5, 0.5]\n[0.0, 0.5, 0.5, 0.5]\n\nUse tight boxes around the visible part of each target-class instance.\nIf a target-class instance is partially outside the image, return the box for the visible part only, clipped to the image boundaries.\nIf a target-class instance is partially occluded but still identifiable, return the box around the visible part only.\n\nReturn boxes only for the target class.\nDo not return boxes for nearby objects unless they are part of the visible target-class instance.\n\nIf there are no visible instances of the target class, return exactly:\n\n[]\n\nDo not describe the image.\nDo not explain your answer.\nDo not include labels, confidence scores, markdown, code fences, commas between boxes, or full sentences.\nSeparate boxes with line breaks, not commas or prose.\nReturn only the boxes, or [] if there are none.\n\nASSISTANT:",
+    "prompt_labels": [
+      "Philodendron hederaceum"
+    ],
+    "correct_answers": [
+      "Philodendron hederaceum"
+    ],
+    "show_correct_answer": false,
+    "displayed_box_count": 7,
+    "status": "ok"
+  },
+  {
+    "type": "C",
+    "name": "Flickr30k",
+    "module": "benchmarks.captioning.flickr30k",
+    "class": "Flickr30kBenchmark",
+    "benchmark_name": "flickr30k",
+    "dataset_name": "flickr30k",
+    "source": "local or custom source",
+    "split": "test",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 333,
+    "height": 500,
+    "image_path": "images/c_flickr30k.png",
+    "prompt": "USER: <image>\nWrite one concise caption that describes the image or representative video frame.\nReturn only the caption text.\nASSISTANT:",
+    "prompt_labels": [],
+    "correct_answers": [
+      "Two young guys with shaggy hair look at their hands while hanging out in the yard.",
+      "Two young, White males are outside near many bushes.",
+      "Two men in green shirts are standing in a yard.",
+      "A man in a blue shirt standing in a garden.",
+      "Two friends enjoy time spent together."
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "C",
+    "name": "MS COCO Captions",
+    "module": "benchmarks.captioning.mscoco_caption",
+    "class": "MSCOCOCaptionBenchmark",
+    "benchmark_name": "mscoco_caption",
+    "dataset_name": "mscoco_caption",
+    "source": "yerevann/coco-karpathy",
+    "split": "test",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 640,
+    "height": 360,
+    "image_path": "images/c_ms_coco_captions.png",
+    "prompt": "USER: <image>\nWrite one concise caption that describes the image or representative video frame.\nReturn only the caption text.\nASSISTANT:",
+    "prompt_labels": [],
+    "correct_answers": [
+      "A man with a red helmet on a small moped on a dirt road.",
+      "Man riding a motor bike on a dirt road on the countryside.",
+      "A man riding on the back of a motorcycle.",
+      "A dirt path with a young person on a motor bike rests to the foreground of a verdant area with a bridge and a background of cloud-wreathed mountains.",
+      "A man in a red shirt and a red hat is on a motorcycle on a hill side."
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "C",
+    "name": "TextCaps",
+    "module": "benchmarks.captioning.textcaps",
+    "class": "TextCapsBenchmark",
+    "benchmark_name": "textcaps",
+    "dataset_name": "textcaps",
+    "source": "lmms-lab/TextCaps",
+    "split": "val",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 1024,
+    "height": 1024,
+    "image_path": "images/c_textcaps.png",
+    "prompt": "USER: <image>\nWrite one concise caption that describes the image or representative video frame.\nReturn only the caption text.\nASSISTANT:",
+    "prompt_labels": [],
+    "correct_answers": [
+      "A book about CEOs is sitting on top of a box.",
+      "a book called CEO (Customer Engagement Officer) by Mark Hillary.",
+      "A book titled CEO (Customer Engagement Officer) on top of a cardboard box.",
+      "A book by Mark Hillary titled CEO sits on top of a box",
+      "a book labeled 'CEO(cusotmer engagement officer) by mark hillary"
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "C",
+    "name": "Conceptual Captions",
+    "module": "benchmarks.captioning.conceptual_captions_caption",
+    "class": "ConceptualCaptionsCaptionBenchmark",
+    "benchmark_name": "conceptual_captions_caption",
+    "dataset_name": "conceptual_captions",
+    "source": "google-research-datasets/conceptual_captions",
+    "split": "validation",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 736,
+    "height": 736,
+    "image_path": "images/c_conceptual_captions.png",
+    "prompt": "USER: <image>\nWrite one concise caption that describes the image or representative video frame.\nReturn only the caption text.\nASSISTANT:",
+    "prompt_labels": [],
+    "correct_answers": [
+      "author : a life in photography -- in pictures"
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "B",
+    "name": "Visual CoT",
+    "module": "benchmarks.detection.visual_cot",
+    "class": "VisualCoTDetectionBenchmark",
+    "status": "skipped_timeout",
+    "error": "Exceeded 60 seconds."
+  },
+  {
+    "type": "C",
+    "name": "HDTF",
+    "module": "benchmarks.captioning.hdtf",
+    "class": "HDTFBenchmark",
+    "benchmark_name": "hdtf",
+    "dataset_name": "hdtf",
+    "source": "Darknsu/mead_hdtf_400_merge_video_audio_frames_only",
+    "split": "train",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 624,
+    "height": 624,
+    "image_path": "images/c_hdtf.png",
+    "prompt": "USER: <image>\nWrite one concise caption that describes the image or representative video frame.\nReturn only the caption text.\nASSISTANT:",
+    "prompt_labels": [],
+    "correct_answers": [
+      "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000001"
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "C",
+    "name": "InternVid",
+    "module": "benchmarks.captioning.internvid",
+    "class": "InternVidBenchmark",
+    "benchmark_name": "internvid",
+    "dataset_name": "internvid",
+    "source": "OpenGVLab/InternVid-Full",
+    "split": "train",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 480,
+    "height": 360,
+    "image_path": "images/c_internvid.png",
+    "prompt": "USER: <image>\nWrite one concise caption that describes the image or representative video frame.\nReturn only the caption text.\nASSISTANT:",
+    "prompt_labels": [],
+    "correct_answers": [
+      "paneau de configuration windows 7",
+      "an image of the inside of a auditorium with the words enstep on the screen",
+      "windows 8 free upgrade from windows 7",
+      "an image of a windows desktop computer with two screens"
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "C",
+    "name": "LAION-400M",
+    "module": "benchmarks.captioning.laion400m",
+    "class": "LAION400MBenchmark",
+    "status": "skipped_timeout",
+    "error": "Exceeded 60 seconds."
+  },
+  {
+    "type": "C",
+    "name": "LAION-5B",
+    "module": "benchmarks.captioning.laion5b",
+    "class": "LAION5BBenchmark",
+    "benchmark_name": "laion5b",
+    "dataset_name": "laion5b",
+    "source": "nousr/laion5b-subset-and-cliph-embeddings",
+    "split": "train",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 384,
+    "height": 384,
+    "image_path": "images/c_laion_5b.png",
+    "prompt": "USER: <image>\nWrite one concise caption that describes the image or representative video frame.\nReturn only the caption text.\nASSISTANT:",
+    "prompt_labels": [],
+    "correct_answers": [
+      "images/photo_16320"
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "C",
+    "name": "OpenVid-1M",
+    "module": "benchmarks.captioning.openvid1m",
+    "class": "OpenVid1MCaptionBenchmark",
+    "benchmark_name": "openvid1m_caption",
+    "dataset_name": "openvid1m",
+    "source": "nkp37/OpenVid-1M",
+    "split": "train",
+    "row_index": 0,
+    "row_count": 1,
+    "width": 480,
+    "height": 360,
+    "image_path": "images/c_openvid_1m.png",
+    "prompt": "USER: <image>\nWrite one concise caption that describes the image or representative video frame.\nReturn only the caption text.\nASSISTANT:",
+    "prompt_labels": [],
+    "correct_answers": [
+      "In the video, a man is seen in a living room setting, standing in front of a window with blinds. He is wearing a black sweater and appears to be in the middle of a conversation. The room is dimly lit, with a lamp providing a soft glow in the background. The man's expression is serious, suggesting that the conversation is of importance. The overall style of the video is realistic and naturalistic, capturing a candid moment in the man's life."
+    ],
+    "show_correct_answer": true,
+    "displayed_box_count": 0,
+    "status": "ok"
+  },
+  {
+    "type": "E",
+    "name": "HQ-Edit",
+    "module": "benchmarks.multiple_choice.hq_edit",
+    "class": "HQEditBenchmark",
+    "status": "skipped_timeout",
+    "error": "Exceeded 60 seconds."
+  },
+  {
+    "type": "E",
+    "name": "ImgEdit",
+    "module": "benchmarks.multiple_choice.imgedit",
+    "class": "ImgEditBenchmark",
+    "status": "skipped_timeout",
+    "error": "Exceeded 60 seconds."
+  },
+  {
+    "type": "E",
+    "name": "MagicBrush",
+    "module": "benchmarks.multiple_choice.magicbrush",
+    "class": "MagicBrushBenchmark",
+    "status": "skipped_timeout",
+    "error": "Exceeded 60 seconds."
+  },
+  {
+    "type": "E",
+    "name": "ShareGPT-4o-Image",
+    "module": "benchmarks.multiple_choice.sharegpt4o_image_edit",
+    "class": "ShareGPT4oImageEditBenchmark",
+    "status": "skipped_timeout",
+    "error": "Exceeded 60 seconds."
+  }
+]

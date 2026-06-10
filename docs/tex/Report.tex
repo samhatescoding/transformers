@@ -9,14 +9,73 @@
 \usepackage{longtable}
 \usepackage{wrapfig}
 \usepackage{multicol}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,backgrounds,matrix}
 \graphicspath{{images_datasets/}}
 
 \definecolor{ink}{RGB}{32,44,58}
+\definecolor{accent}{RGB}{37,96,151}
+\definecolor{soft}{RGB}{237,243,248}
+\definecolor{warning}{RGB}{139,69,19}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
 \setlist[itemize]{leftmargin=18pt,itemsep=2pt,topsep=3pt}
 \renewcommand{\arraystretch}{1.18}
 \captionsetup{font=small,labelfont=bf}
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{accent}\bfseries,
+  commentstyle=\color{gray},
+  stringstyle=\color{warning},
+  backgroundcolor=\color{soft},
+  frame=single,
+  rulecolor=\color{accent!45},
+  breaklines=true,
+  showstringspaces=false,
+  columns=fullflexible,
+  keepspaces=true,
+  aboveskip=8pt,
+  belowskip=8pt
+}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\figpath}[1]{../../comparison/output/#1}
+\newcommand{\archbox}[2]{\fcolorbox{accent}{soft}{\parbox{#1}{\centering #2}}}
+\newcommand{\resultbox}[1]{%
+  \vspace{3pt}\noindent
+  \fcolorbox{accent}{soft}{\parbox{0.94\textwidth}{#1}}\vspace{4pt}}
+\newcommand{\twographs}[6]{%
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{#1}}
+\captionof{subfigure}{#2}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figpath{#3}}
+\captionof{subfigure}{#4}
+\end{minipage}
+\caption{#5}
+\label{#6}
+\end{figure}}
+\newcommand{\maskedscoremat}{%
+\begin{array}{c@{\;}c}
+& \begin{array}{ccc} \mathbf{k}_1 & \mathbf{k}_2 & \mathbf{k}_3 \end{array}\\[-1mm]
+\begin{array}{c} \mathbf{q}_1\\[1.8mm] \mathbf{q}_2\\[1.8mm] \mathbf{q}_3 \end{array}
+&
+\begin{bmatrix}
+s_{11} & s_{12} & s_{13}\\
+-\infty & s_{22} & s_{23}\\
+-\infty & -\infty & s_{33}
+\end{bmatrix}
+\end{array}}
+\newcommand{\alphamat}{\begin{bmatrix}
+ \alpha_{11} & \alpha_{12} & \alpha_{13}\\
+ 0 & \alpha_{22} & \alpha_{23}\\
+ 0 & 0 & \alpha_{33}
+\end{bmatrix}}
 
 \title{\textbf{Vision-Language Model Comparison}}
 \author{Sam}
@@ -24,401 +83,267 @@
 
 \begin{document}
 \maketitle
+
+\begin{abstract}
+This project develops a common benchmark harness for comparing
+vision-language models across visual question answering, captioning,
+detection, classification, preference, rating, and prompt-reconstruction
+tasks. The final evaluation focuses on hosted API models using 20 examples
+per benchmark and identical execution settings. GPT-4o and Claude Sonnet 4.5
+are compared on 36 jointly completed benchmarks; GPT-4o wins 22, Claude wins
+10, and 4 are tied. A second comparison covers the 21 benchmarks completed
+by GPT-4o, GPT-4.1, GPT-5, Gemini 3.5 Flash, and Claude Sonnet 4.5. GPT-4o
+leads overall and in captioning, GPT-4.1 leads visual question answering,
+and Claude leads detection. The results show that model rankings depend on
+task family and that matched benchmark coverage is necessary for fair
+aggregation. Because each benchmark uses a small sample and hosted models
+may change, the conclusions should be interpreted as a reproducible
+experimental snapshot rather than a permanent leaderboard.
+\end{abstract}
+
 \tableofcontents
 \clearpage
 
 \section{Introduction and Motivation}
 
-\section{State of the Art}
-
 \section{Objectives}
+
+\section{Transformer Background}
+
+A Transformer is a neural-network architecture designed to process a sequence
+of tokens while allowing every token to gather information from other relevant
+tokens. It was introduced for machine translation by
+Vaswani et al.~\cite{vaswani2017attention}, but the same basic design now
+underpins most large language and vision-language models. In a text model, the
+tokens are usually pieces of words. In a vision-language model, image patches
+or features are also converted into vectors that can be processed alongside
+text. The important point is that, after this conversion, both modalities can
+be handled as sequences of numerical representations.
+
+The first step is an embedding. Each token is mapped to a vector, and
+positional information is added so that the model can distinguish, for
+example, the first word from the tenth word or one image patch from another.
+The vectors then pass through a stack of Transformer blocks. Each block
+contains an attention operation, a small feed-forward network applied to each
+position, residual connections that preserve earlier information, and layer
+normalisation that stabilises training. Repeating this process gradually turns
+simple token vectors into context-aware representations.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.76\textheight,keepaspectratio]
+  {../gpt3_attention_block_input_outside_dashed.pdf}
+\caption{A complete masked self-attention block. The input vectors are
+projected into queries, keys, and values before attention scores are computed.}
+\label{fig:attention-overview}
+\end{figure}
+
+Self-attention is the central mechanism. From each input vector
+\(\mathbf{z}_i\), the model learns three projections: a query
+\(\mathbf{q}_i\), a key \(\mathbf{k}_i\), and a value \(\mathbf{v}_i\).
+Queries describe what a position is looking for, keys describe what each
+position offers, and values contain the information that may be passed
+onward. Compatibility is measured with a scaled dot product:
+\[
+  s_{ij} = \frac{\mathbf{q}_i\mathbf{k}_j^\top}{\sqrt{d_k}},
+  \qquad
+  \alpha_{ij} = \operatorname{softmax}_j(s_{ij}).
+\]
+The division by \(\sqrt{d_k}\) prevents large vector dimensions from producing
+extreme softmax values. The attention weights \(\alpha_{ij}\) are then used
+to form a weighted sum of the value vectors. Put simply, the model decides
+which earlier pieces of the input matter and how much of each one to carry
+forward.
+
+The diagrams show \emph{masked} attention, as used by autoregressive language
+models. The causal mask prevents a token from reading tokens that have not yet
+been generated. Thus, when predicting the next token, the model may use the
+prompt and its earlier output but cannot look into the future. Several
+attention heads perform this operation in parallel. Different heads can focus
+on different relationships, such as nearby syntax, a distant name, an object
+in an image, or the connection between a question and a visual region. Their
+outputs are concatenated and projected before entering the rest of the block.
+
+During training, model parameters are adjusted to reduce prediction error over
+large collections of examples. During inference, the trained Transformer
+receives the image and prompt, processes them through its blocks, and predicts
+output tokens one at a time. The models evaluated in this project differ
+substantially in scale, training data, visual encoders, alignment methods, and
+serving infrastructure, but this attention-based processing is the common
+architectural idea behind them.
 
 \section{Planning}
 
+The project was carried out between February and June 2026. The initial
+plan divided the work sequentially into background study, implementation,
+experimentation, and writing. In practice, benchmark implementation and
+dataset validation required more time than expected. The experimental and
+writing phases therefore overlapped, and the final API evaluations were run
+in parallel during the preparation of this report.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Original and final project planning. The effort values are a
+retrospective estimate of effective working time.}
+\label{tab:project-planning}
+\begin{tabularx}{\textwidth}{@{}p{3.2cm}p{2.4cm}p{2.7cm}rX@{}}
+\toprule
+\textbf{Task} & \textbf{Original plan} & \textbf{Final execution} &
+\textbf{Hours} & \textbf{Main outputs} \\
+\midrule
+Requirements and literature review
+& February
+& 24 February--15 March
+& 35
+& Scope, model taxonomy, task types, and initial dataset selection. \\
+
+Architecture and prototype
+& February--March
+& 1--31 March
+& 45
+& Common model interface, first benchmark runners, and an initial user
+interface. \\
+
+Dataset and benchmark implementation
+& March--April
+& 16 March--19 May
+& 110
+& Dataset adapters, eight benchmark families, result serialization, and
+dataset-specific corrections. \\
+
+Model integration and API orchestration
+& April
+& 7 May--10 June
+& 55
+& Local-model wrappers, hosted-model wrappers, resumable notebooks, and
+parallel isolated API runs. \\
+
+Evaluation, debugging, and reruns
+& April--May
+& 8 May--10 June
+& 65
+& Smoke tests, full benchmark runs, telemetry, error diagnosis, and
+re-execution of accessible datasets. \\
+
+Exploratory fine-tuning
+& May
+& 20 May--10 June
+& 30
+& Fashion-MNIST experiments and an eight-task LLaVA-OneVision LoRA
+pipeline, retained as exploratory work rather than part of the final
+comparison. \\
+
+Analysis and report preparation
+& May
+& 27 May--10 June
+& 40
+& Matched API-model comparisons, plots, uncertainty analysis, discussion,
+and final report. \\
+\midrule
+\textbf{Total}
+& \textbf{February--May}
+& \textbf{24 February--10 June}
+& \textbf{380}
+& \textbf{Approximately 9.5 full-time working weeks.} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The principal deviation from the original plan was the extension of
+benchmark engineering into May and June. Differences between dataset
+schemas, unavailable samples, provider rate limits, and long-running API
+requests made a strictly sequential execution impractical. The revised plan
+reduced schedule risk by running one isolated process per API model, saving
+each completed benchmark immediately, and performing analysis on partial
+results while the remaining evaluations continued. The final report was
+narrowed to the API models with sufficient matched coverage; the local
+fine-tuning pipeline remains documented as exploratory implementation work
+and is not included in the reported model rankings.
+
 \section{Costs}
+
+This cost estimate is intentionally limited to the compute services required
+to reproduce the API benchmarks currently being executed and the
+LLaVA-OneVision fine-tuning experiment. It excludes development labour,
+the existing workstation, Internet access, and free/open-source software
+licences. Prices are stated in US dollars before tax and were checked on
+10 June 2026.
+
+\subsection{Estimation assumptions}
+
+Each API model is evaluated on 44 benchmarks. The notebook uses 20 examples
+per benchmark, except UCF101, which uses 9, giving 869 requests per model.
+The benchmark result files record latency but not provider token usage.
+Consequently, the budget assumes 1.50 million billed input tokens and
+0.15 million billed output tokens per complete model run. This deliberately
+allows for image tokens, prompts, labels, and short reasoning traces. The
+estimated charge is
+\[
+ C_{\mathrm{API}} =
+ 1.50P_{\mathrm{input}} + 0.15P_{\mathrm{output}},
+\]
+where both prices are expressed in dollars per million tokens. Free quotas,
+cached-input discounts, batch discounts, and promotional credits are not
+deducted, so the figures represent a comparable commercial reproduction
+cost rather than the exact account invoice.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Estimated cost of one complete run of the active API benchmark
+matrix.}
+\label{tab:api-model-costs}
+\begin{tabularx}{\textwidth}{@{}Xlrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Provider} &
+\textbf{Input / 1M} & \textbf{Output / 1M} &
+\textbf{Estimated run} \\
+\midrule
+\texttt{gpt-4o} & OpenAI & \$2.50 & \$10.00 & \$5.25 \\
+\texttt{gpt-4.1} & OpenAI & \$2.00 & \$8.00 & \$4.20 \\
+\texttt{gpt-5} & OpenAI & \$1.25 & \$10.00 & \$3.38 \\
+\texttt{claude-sonnet-4-5} & Anthropic & \$3.00 & \$15.00 & \$6.75 \\
+\texttt{gemini-3.5-flash} & Google & \$2.70 & \$16.20 & \$6.48 \\
+\texttt{qwen3.5-plus} & Alibaba Cloud, Singapore & \$0.40 & \$2.40 & \$0.96 \\
+\midrule
+\multicolumn{4}{r}{\textbf{API subtotal}} & \textbf{\$27.02} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The rates come from the providers' published pricing pages:
+OpenAI\footnote{\url{https://openai.com/api/pricing/}},
+Anthropic\footnote{\url{https://platform.claude.com/docs/en/about-claude/pricing}},
+Google\footnote{\url{https://ai.google.dev/gemini-api/docs/pricing}}, and
+Alibaba Cloud Model Studio\footnote{\url{https://www.alibabacloud.com/help/en/model-studio/model-pricing}}.
+Alibaba's one-million-token introductory quota could reduce the first Qwen
+run, but it is omitted because it is temporary and account-dependent.
+
+
 
 \section{Experimental Methodology}
 
-\subsection{Model Selection}
-\subsubsection{The Models Chosen}
+Benchmarking is more than collecting a single accuracy number. Broad suites
+such as MMLU and BIG-bench demonstrate why many tasks are needed to expose
+uneven capabilities~\cite{hendrycks2020mmlu,srivastava2022bigbench}, while
+HELM argues for standardised scenarios, multiple metrics, and transparent
+prompts and outputs~\cite{liang2022helm}. Dynabench further shows that static
+test sets can become less informative as models adapt to them and motivates
+evaluation that evolves with model failures~\cite{kiela2021dynabench}.
 
-As mentioned in the report, the models chosen are:
+For multimodal systems, benchmark breadth must include both perception and
+reasoning. MMMU illustrates this with questions spanning many disciplines and
+visual formats~\cite{yue2023mmmu}. System quality is also not only predictive
+quality: MLPerf formalises reproducible latency and throughput measurement
+under controlled run rules~\cite{reddi2019mlperf}. Finally, public benchmark
+examples may appear in model training data, so apparently strong results can
+partly reflect memorisation rather than generalisation
+~\cite{li2023contamination}. These principles motivate the matched benchmark
+intersection, task-family reporting, runtime telemetry, saved raw outputs,
+and cautious interpretation used in this project.
 
-\noindent\textbf{Proprietary/API models}
-\begin{itemize}
-    \item \texttt{gpt-5.5}
-    \item \texttt{gpt-5.4}
-    \item \texttt{o3}
-    \item \texttt{o4-mini}
-
-    \item \texttt{claude-opus-4-8}
-    \item \texttt{claude-opus-4-7}
-    \item \texttt{claude-opus-4-6}
-    \item \texttt{claude-sonnet-4-6}
-    \item \texttt{claude-sonnet-4-5}
-
-    \item \texttt{gemini-3.1-pro-preview}
-    \item \texttt{gemini-3.5-flash}
-
-    \item \texttt{qwen3.7-plus-preview}
-    \item \texttt{qwen3.6-plus}
-\end{itemize}
-
-\noindent\textbf{Open-weight models}
-\begin{itemize}
-    \item \texttt{qwen3.6-27b}
-    \item \texttt{qwen3.5-397b-a17b}
-    \item \texttt{qwen3-vl-235b-a22b}
-
-    \item \texttt{kimi-k2.6}
-    \item \texttt{kimi-k2.5-thinking}
-
-    \item \texttt{gemma-4-31b}
-    \item \texttt{gemma-4-26b-a4b}
-
-    \item \texttt{mimo-v2.5}
-    \item \texttt{mimo-v2.5-pro}
-
-    \item \texttt{mistral-medium-3.5}
-    \item \texttt{mistral-small-4}
-
-    \item \texttt{dots.vlm1}
-    \item \texttt{dots.ocr}
-
-    \item \texttt{glm-4.5v-thinking}
-    \item \texttt{glm-4.1v-thinking}
-
-    \item \texttt{skywork-r1v3-38b}
-    \item \texttt{skywork-r1v2-38b}
-\end{itemize}
-
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-
-
-\subsubsection{The Procedure}
-
-\begin{enumerate}
-    \item Freeze the four leaderboard snapshots: Arena Vision proprietary,
-    Arena Vision open-weight, MMMU-Pro proprietary, and MMMU-Pro open-weight.
-
-    \item For each leaderboard, identify the five highest-ranked model families
-    by scanning the ranking from top to bottom. Skip models that cannot be
-    evaluated through a generally available API or downloadable checkpoint.
-    Claude Opus and Claude Sonnet are treated as distinct families because they
-    occupy different capability, cost, and deployment tiers.
-
-    \item For each selected family, choose two models:
-    \begin{enumerate}
-        \item the highest-ranked model from that family in the leaderboard. If
-        this model is no longer available through its provider, replace it with
-        the closest currently available model from the same family. For example,
-        Gemini 3.0 Pro appears in the leaderboard, but it is no longer available
-        in Google AI Studio; it is therefore replaced by Gemini 3.1 Pro Preview,
-        accessed through the endpoint \texttt{gemini-3.1-pro-preview};
-
-        \item the strongest currently available distinct model from the same
-        family. If the strongest current model coincides with the leaderboard-selected
-    model, choose the next strongest currently available distinct model from
-    that family.
-    \end{enumerate}
-
-    \item Collapse variants differing only by inference or serving mode, such as
-    \texttt{thinking}, \texttt{high}, \texttt{instant}, or \texttt{flash},
-    keeping the strongest or highest-ranked variant unless the distinction is
-    itself relevant to the experiment.
-
-    \item Remove duplicates across the four leaderboards and evaluate each
-    remaining model once.
-\end{enumerate}
-
-This procedure gives at least 10 models.
-
-When a provider exposes a model only through a preview endpoint, the
-    preview endpoint is treated as the implementation of the corresponding
-    leaderboard model, provided that it is the closest available version of the
-    same model family. For example, a leaderboard entry written as Gemini 3.1 Pro
-    is evaluated using \texttt{gemini-3.1-pro-preview}.
-
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-
-\subsubsection{The Leaderboards}
-
-\begin{table}[H]
-\centering
-\small
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lccclll}
-\toprule
-\textbf{Model name} &
-\textbf{Prop. rank} &
-\textbf{Overall rank} &
-\textbf{Score} &
-\textbf{Date} &
-\textbf{Family} &
-\textbf{Company} \\
-\midrule
-GPT-5.4 Thinking w/ tools
-& 1 & 1 & 82.1 & 2026-03-05 & GPT-5.4 & OpenAI \\
-GPT-5.4 Thinking w/o tools
-& 2 & 2 & 81.2 & 2026-03-05 & GPT-5.4 & OpenAI \\
-Gemini 3.0 Pro
-& 3 & 3 & 81.0 & 2025-11-18 & Gemini 3 & Google DeepMind \\
-Gemini 3.1 Pro Thinking (High)
-& 4 & 4 & 80.5 & 2026-02-19 & Gemini 3.1 & Google DeepMind \\
-Muse Spark Thinking
-& 5 & 5 & 80.4 & 2026-04-08 & Muse Spark & Meta \\
-GPT-5.2 Thinking w/o Python
-& 5 & 5 & 80.4 & 2025-12-11 & GPT-5.2 & OpenAI \\
-GPT-5.2 Thinking w/o tools
-& 7 & 7 & 79.5 & 2025-12-11 & GPT-5.2 & OpenAI \\
-GPT-5.1 Thinking
-& 8 & 8 & 79.0 & 2025-11-13 & GPT-5.1 & OpenAI \\
-GPT-5 w/ thinking
-& 9 & 9 & 78.4 & 2025-08-07 & GPT-5 & OpenAI \\
-Claude Opus 4.6 w/ tools
-& 10 & 10 & 77.3 & 2026-02-05 & Claude Opus 4.6 & Anthropic \\
-o3
-& 11 & 12 & 76.4 & 2025-04-16 & o3 & OpenAI \\
-GPT-5.1
-& 12 & 13 & 76.0 & 2025-11-13 & GPT-5.1 & OpenAI \\
-Claude Sonnet 4.6 w/ tools
-& 13 & 14 & 75.6 & 2026-02-17 & Claude Sonnet 4.6 & Anthropic \\
-Claude Sonnet 4.6 w/o tools
-& 14 & 15 & 74.5 & 2026-02-17 & Claude Sonnet 4.6 & Anthropic \\
-Claude Opus 4.6 w/o tools
-& 15 & 16 & 73.9 & 2026-02-05 & Claude Opus 4.6 & Anthropic \\
-Claude Opus 4.5
-& 15 & 16 & 73.9 & 2025-11-24 & Claude Opus 4.5 & Anthropic \\
-Claude Sonnet 4.5
-& 17 & 20 & 68.9 & 2025-09-29 & Claude Sonnet 4.5 & Anthropic \\
-Gemini 2.5 Pro 05-06
-& 18 & 22 & 68.0 & 2025-05-06 & Gemini 2.5 & Google DeepMind \\
-Seed 1.5-VL Thinking
-& 19 & 23 & 67.6 & 2025-05-13 & Seed 1.5-VL & ByteDance \\
-\bottomrule
-\end{tabular}
-}
-\caption{Highest-ranked proprietary/API models on the MMMU-Pro leaderboard snapshot~\cite{yue2024mmmupro}, extended until five owning companies are represented. Ranks are model-only ranks, excluding human baselines. Tied scores share the same rank.}
-\label{tab:mmmu-pro-proprietary-five-companies}
-\end{table}
-
-%
-%
-%
-%
-%
-
-\begin{table}[H]
-\centering
-\small
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lccclll}
-\toprule
-\textbf{Model name} &
-\textbf{Open-weight rank} &
-\textbf{Overall rank} &
-\textbf{Score} &
-\textbf{Date} &
-\textbf{Family} &
-\textbf{Company} \\
-\midrule
-Gemma 4 31B
-& 1 & 11 & 76.9 & 2026-04-02 & Gemma 4 & Google DeepMind \\
-Gemma 4 26B A4B
-& 2 & 18 & 73.8 & 2026-04-02 & Gemma 4 & Google DeepMind \\
-dots.vlm1
-& 3 & 19 & 70.1 & 2025-08-05 & dots.vlm & RedNote \\
-Qwen3-VL 235B-A22B
-& 4 & 21 & 68.1 & 2025-09-22 & Qwen3-VL & Alibaba Cloud \\
-GLM-4.5V w/ Thinking
-& 5 & 25 & 65.2 & 2025-08-11 & GLM-4.5V & Z.ai / Zhipu AI \\
-GLM-4.1V w/ Thinking
-& 6 & 29 & 57.1 & 2025-07-01 & GLM-4.1V & Z.ai / Zhipu AI \\
-Skywork-R1V3-38B
-& 7 & 30 & 55.4 & 2025-07-05 & Skywork-R1V & Skywork AI \\
-\bottomrule
-\end{tabular}%
-}
-\caption{Highest-ranked open-weight models on MMMU-Pro~\cite{yue2024mmmupro}, extended until five distinct owning companies are represented. Ranks are model-only ranks, excluding human baselines. Seed models are excluded because they are treated here as API-accessible rather than open-weight.}
-\label{tab:mmmu-pro-open-weight-five-companies}
-\end{table}
-
-%
-%
-%
-%
-%
-
-\begin{table}[H]
-    \centering
-    \small
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{lccrcll}
-        \toprule
-        \textbf{Model name} & \textbf{Prop. rank} & \textbf{Overall rank} & \textbf{Score} & \textbf{Date} & \textbf{Family} & \textbf{Company} \\
-        \midrule
-        claude-opus-4-7-thinking & 1 & 1 & $1308 \pm 8$ & 2026-04-16 & Claude Opus 4.7 & Anthropic \\
-        claude-opus-4-6-thinking & 2 & 2 & $1303 \pm 8$ & 2026-02-05 & Claude Opus 4.6 & Anthropic \\
-        claude-opus-4-7 & 3 & 3 & $1300 \pm 8$ & 2026-04-16 & Claude Opus 4.7 & Anthropic \\
-        claude-opus-4-6 & 4 & 4 & $1296 \pm 7$ & 2026-02-05 & Claude Opus 4.6 & Anthropic \\
-        muse-spark & 5 & 5 & $1295 \pm 10$ & 2026-04-08 & Muse Spark & Meta \\
-        claude-opus-4-8-thinking & 6 & 6 & $1294 \pm 13$ & 2026-05-28 & Claude Opus 4.8 & Anthropic \\
-        gemini-3-pro & 7 & 7 & $1289 \pm 8$ & 2025-11-18 & Gemini 3 & Google \\
-        gpt-5.5 & 8 & 8 & $1286 \pm 9$ & 2026-04-23 & GPT-5.5 & OpenAI \\
-        gpt-5.4-high & 9 & 9 & $1283 \pm 8$ & 2026-03-05 & GPT-5.4 & OpenAI \\
-        gpt-5.5-high & 10 & 10 & $1282 \pm 9$ & 2026-04-23 & GPT-5.5 & OpenAI \\
-        gpt-5.2-chat-latest-20260210 & 11 & 11 & $1279 \pm 7$ & 2025-12-11 & GPT-5.2 & OpenAI \\
-        claude-opus-4-8 & 12 & 12 & $1279 \pm 12$ & 2026-05-28 & Claude Opus 4.8 & Anthropic \\
-        gemini-3.1-pro-preview & 13 & 13 & $1278 \pm 6$ & 2026-02-19 & Gemini 3.1 & Google \\
-        claude-sonnet-4-6 & 14 & 14 & $1278 \pm 7$ & 2026-02-17 & Claude Sonnet 4.6 & Anthropic \\
-        gpt-5.4 & 15 & 15 & $1275 \pm 8$ & 2026-03-05 & GPT-5.4 & OpenAI \\
-        gpt-5.5-instant & 16 & 16 & $1275 \pm 9$ & 2026-04-23 & GPT-5.5 & OpenAI \\
-        gemini-3-flash & 17 & 17 & $1271 \pm 6$ & 2025-12-17 & Gemini 3 & Google \\
-        qwen3.7-plus-preview & 18 & 18 & $1263 \pm 11$ & 2026-05-19 & Qwen3.7 & Alibaba \\
-        \bottomrule
-    \end{tabular}%
-    }
-    \caption{Highest-ranked proprietary models on Arena Vision Overall~\cite{chiang2024arena,lmarenaVision}, extended until five distinct companies are represented.}
-    \label{tab:arena-vision-proprietary-five-companies}
-\end{table}
-
-%
-%
-%
-%
-%
-
-\begin{table}[H]
-    \centering
-    \small
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{lccrclll}
-        \toprule
-        \textbf{Model name} & \textbf{Open rank} & \textbf{Overall rank} & \textbf{Score} & \textbf{Date} & \textbf{Family} & \textbf{License} & \textbf{Company} \\
-        \midrule
-        kimi-k2.6 & 1 & 19 & $1261 \pm 8$ & 2026-04-20 & Kimi K2.6 & Modified MIT & Moonshot \\
-        gemma-4-31b & 2 & 24 & $1253 \pm 7$ & 2026-04-02 & Gemma 4 & Apache 2.0 & Google \\
-        qwen3.5-397b-a17b & 3 & 26 & $1249 \pm 7$ & 2026-02-16 & Qwen3.5 & Apache 2.0 & Alibaba \\
-        kimi-k2.5-thinking & 4 & 28 & $1247 \pm 7$ & 2026-01-27 & Kimi K2.5 & Modified MIT & Moonshot \\
-        kimi-k2.5-instant & 5 & 34 & $1238 \pm 11$ & 2026-01-27 & Kimi K2.5 & Modified MIT & Moonshot \\
-        mimo-v2.5 & 6 & 35 & $1238 \pm 8$ & 2026-04-27 & MiMo-V2.5 & MIT & Xiaomi \\
-        gemma-4-26b-a4b & 7 & 36 & $1238 \pm 8$ & 2026-04-02 & Gemma 4 & Apache 2.0 & Google \\
-        qwen3.5-122b-a10b & 8 & 41 & $1226 \pm 7$ & 2026-02-24 & Qwen3.5 & Apache 2.0 & Alibaba \\
-        qwen3.5-27b & 9 & 45 & $1220 \pm 7$ & 2026-02-24 & Qwen3.5 & Apache 2.0 & Alibaba \\
-        qwen3-vl-235b-a22b-instruct & 10 & 49 & $1215 \pm 7$ & 2025-09-22 & Qwen3-VL & Apache 2.0 & Alibaba \\
-        \bottomrule
-    \end{tabular}%
-    }
-    \caption{Highest-ranked open-weight models visible in the provided Arena Vision Overall excerpt~\cite{chiang2024arena,lmarenaVision}. The excerpt reaches four distinct companies: Moonshot, Google, Alibaba, and Xiaomi.}
-    \label{tab:arena-vision-open-visible}
-\end{table}
-
-%
-%
-%
-%
-%
-
-
-\subsubsection{Models Selected per Leaderboard}
-
-\noindent
-In the lists below, model names refer to the model identifiers or closest
-currently available implementation used in the experiments. When a leaderboard
-entry refers to an unavailable or superseded model, the closest currently
-available model from the same family is used instead. For example, Gemini Pro
-entries are evaluated through \texttt{gemini-3.1-pro-preview}. Similarly,
-labels such as \texttt{thinking}, \texttt{high}, or \texttt{w/ tools} are treated
-as inference or serving configurations rather than separate model families.
-
-\noindent\textbf{Models selected from Table~\ref{tab:mmmu-pro-proprietary-five-companies}.}
-The five selected families are GPT, Gemini, Claude Opus, o-series, and Claude Sonnet. The models included from this leaderboard are:
-\begin{itemize}
-    \item \textbf{GPT}: \texttt{gpt-5.4}; \texttt{gpt-5.5}.
-    \item \textbf{Gemini}: \texttt{gemini-3.1-pro-preview}; \texttt{gemini-3.5-flash}.
-    \item \textbf{Claude Opus}: \texttt{claude-opus-4-6}; \texttt{claude-opus-4-8}.
-    \item \textbf{o-series}: \texttt{o3}; \texttt{o4-mini}.
-    \item \textbf{Claude Sonnet}: \texttt{claude-sonnet-4-6}; \texttt{claude-sonnet-4-5}.
-\end{itemize}
-
-\noindent Muse Spark is excluded because its API is not generally available.
-
-\noindent\textbf{Models selected from Table~\ref{tab:mmmu-pro-open-weight-five-companies}.}
-The five selected families are Gemma, dots, Qwen, GLM, and Skywork. The models included from this leaderboard are:
-\begin{itemize}
-    \item \textbf{Gemma}: \texttt{gemma-4-31b}; \texttt{gemma-4-26b-a4b}.
-    \item \textbf{dots}: \texttt{dots.vlm1}; \texttt{dots.ocr}.
-    \item \textbf{Qwen}: \texttt{qwen3-vl-235b-a22b}; \texttt{qwen3.6-27b}.
-    \item \textbf{GLM}: \texttt{glm-4.5v-thinking}; \texttt{glm-4.1v-thinking}.
-    \item \textbf{Skywork}: \texttt{skywork-r1v3-38b}; \texttt{skywork-r1v2-38b}.
-\end{itemize}
-
-\noindent\textbf{Models selected from Table~\ref{tab:arena-vision-proprietary-five-companies}.}
-The five selected families are Claude Opus, Gemini, GPT, Qwen, and Claude Sonnet. The models included from this leaderboard are:
-\begin{itemize}
-    \item \textbf{Claude Opus}: \texttt{claude-opus-4-7}; \texttt{claude-opus-4-8}.
-    \item \textbf{Gemini}: \texttt{gemini-3.1-pro-preview}; \texttt{gemini-3.5-flash}.
-    \item \textbf{GPT}: \texttt{gpt-5.5}; \texttt{gpt-5.4}.
-    \item \textbf{Qwen}: \texttt{qwen3.7-plus-preview}; \texttt{qwen3.6-plus}.
-    \item \textbf{Claude Sonnet}: \texttt{claude-sonnet-4-6}; \texttt{claude-sonnet-4-5}.
-\end{itemize}
-
-\noindent Muse Spark is excluded because its API is not generally available.
-
-\noindent\textbf{Models selected from Table~\ref{tab:arena-vision-open-visible}.}
-The visible excerpt contains four selected families: Kimi, Gemma, Qwen, and MiMo.
-The fifth family is obtained by extending the leaderboard beyond the visible excerpt. The models included from this leaderboard are:
-\begin{itemize}
-    \item \textbf{Kimi}: \texttt{kimi-k2.6}; \texttt{kimi-k2.5-thinking}.
-    \item \textbf{Gemma}: \texttt{gemma-4-31b}; \texttt{gemma-4-26b-a4b}.
-    \item \textbf{Qwen}: \texttt{qwen3.5-397b-a17b}; \texttt{qwen3.6-27b}.
-    \item \textbf{MiMo}: \texttt{mimo-v2.5}; \texttt{mimo-v2.5-pro}.
-    \item \textbf{Mistral}: \texttt{mistral-medium-3.5}; \texttt{mistral-small-4}.
-\end{itemize}
-
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-
-\subsection{Dataset Selection}
+\subsection{Datasets}
 \subsubsection{Dataset selection procedure}
 
 For each period $\{$pre-2015, 2015, 2016, \dots, 2024, 2025$\}$, I selected the three multimodal datasets with the highest number of citations on \texttt{Semantic Scholar} (\texttt{semanticscholar.org/}) as Google scholar does not allow me to order items by number of citations. Concretely, for each year bin I queried \texttt{Semantic Scholar} with the keywords \texttt{``dataset''}, \texttt{``image''}, and \texttt{``objects''} and then ranked results by the number of citations reported by the Semantic Scholar platform~\cite{kinney2023semanticscholar}. A dataset was included only if it satisfied all of the following:
@@ -435,6 +360,38 @@ For each period $\{$pre-2015, 2015, 2016, \dots, 2024, 2025$\}$, I selected the 
 \end{enumerate}
 
 Applying these rules, I retained, for each period, the top three qualifying datasets by publication count.
+
+Every selected source is wrapped by a dataset adapter that converts its native
+schema into the common fields expected by the benchmarks. This is necessary
+because even apparently simple concepts such as ``image'' and ``caption'' are
+stored under different keys, formats, and access mechanisms. For example,
+Conceptual Captions often supplies an image URL rather than an already decoded
+image. Listing~\ref{lst:dataset-adapter} shows how the real adapter skips
+unavailable URLs and returns a uniform RGB image and caption record.
+
+\begin{lstlisting}[caption={Dataset standardisation from
+\texttt{dataset/conceptual\_captions.py}.},label={lst:dataset-adapter}]
+def get_available_samples(self, n):
+    samples = []
+    for raw_row in self.ds:
+        row = self._standardize_row(raw_row)
+        try:
+            row["image"] = self.get_image_from_row(row)
+        except Exception:
+            continue
+        samples.append(row)
+        if len(samples) >= n:
+            break
+    return samples
+
+def get_image_from_row(self, row):
+    image_url = str(row.get("image_url", "")).strip()
+    request = Request(
+        image_url, headers={"User-Agent": "Mozilla/5.0"}
+    )
+    with urlopen(request, timeout=10) as response:
+        return Image.open(BytesIO(response.read())).convert("RGB")
+\end{lstlisting}
 
 
 
@@ -727,467 +684,9 @@ Finally, \textbf{Pick-a-Pic} captures human \bfit{preferences} for images genera
 
 Regarding the licenses,
 
-\subsection{Benchmark Tasks and Metrics}
-\label{sec:benchmark-tasks}
-\subsubsection{\textbf{L}: Labeling}
-
-This benchmark takes one image and a list of possible labels. The model returns exactly one label describing the image. For video datasets, several frames are combined into a contact sheet and the model predicts the action or video label.
-
-The smallest context windows among the listed models appear to be those of
-\texttt{glm-4.5v-thinking} and \texttt{glm-4.1v-thinking}, both at 64k tokens.
-Depending on whether one uses the official serving configuration rather than
-the Hugging Face architectural config, \texttt{dots.vlm1} may also be treated
-as a 65,536-token model.
-
-Among the classification datasets considered in this study, the largest label spaces correspond to ImageNet-1K, iNaturalist, and Open Images V4. ImageNet-1K contains 1,000 classes, iNaturalist contains 5,089 species categories, and Open Images V4 provides approximately 20,000 image-level concepts. Since all evaluated models support context windows of at least 64k input tokens, the complete label set can be provided as part of the prompt for ImageNet-1K without difficulty.
-
-For iNaturalist, only the species-level labels will be included in the prompt. This reduces the required prompt length to approximately 20k--30k tokens while preserving the standard fine-grained classification task. Higher levels of the taxonomic hierarchy (e.g., genus, family, order, and class) will not be provided as candidate labels.
-
-For Open Images V4, the full image-level vocabulary is too large to be comfortably included within a 64k-token context window. Therefore, only the subset of images associated with bounding-box annotations will be used. This restricts the candidate label set to the 600 object categories employed by the detection benchmark, allowing all possible labels to be supplied in the prompt while maintaining a closed-set classification setting.
-
-\subsubsection{\textbf{A:} Answering Visual Multiple-choice Question}
-
-This benchmark takes an image, a natural-language question about its contents, and a set of possible answers. The model selects one answer, which is normalized and compared with the accepted reference answer.
-
-All VQA is multiple choice. For some dataset, distractor choices had to be manually created. For others, even the correct choices had to be created.
-
-The distractor choices must be created for \textbf{Visual Genome}, \textbf{VQA v2.0}, \textbf{GQA}, \textbf{DocVQA}, and \textbf{Visual CoT}. These datasets already provide each image, question, and accepted answer, so the accepted answer can be used as the correct choice; however, their dataset adapters do not provide a set of incorrect candidate answers. Consequently, plausible but incorrect distractors must be added to convert these open-answer questions into multiple-choice questions.
-
-\textbf{FlyingThings3D} requires more extensive construction because it is not originally a question--answer dataset. It provides rendered stereo scenes and geometric annotations rather than natural-language questions with accepted answers. For this dataset, the question and correct textual choice must first be derived from the available scene information; the incorrect choices must then also be created. Thus, only the distractors need to be added for the five existing QA datasets, whereas both the benchmark question/answer and its distractors need to be constructed for FlyingThings3D.
-
-Visual Genome has bouding boxes, but these are very inconsitent because they are human anotatesd without a standard list of labels, so we may get `pet dog` somewhere, but `small dog` elsewhere. That is why we will not measure it in terms of boudning boxes. Moreover, there are over 30k different types of annotated objects, which would not fit into our maximum of 64k labels.
-
-\subsubsection{\textbf{B}: Bounding Box Object Detection}
-
-This benchmark takes an image and a list of allowed object labels. The model returns every detected object as a label and normalized bounding box. Predictions are compared with annotated boxes using label agreement and intersection over union (IoU).
-
-\subsubsection{\textbf{C}: Captioning}
-
-This benchmark takes an image, or representative frames from a video, without answer choices. The model generates one concise natural-language description. It is compared with one or more reference captions using BLEU.
-
-\subsubsection{\textbf{E}: Editing Prompt Reconstruction}
-
-This benchmark takes a side-by-side pair containing the original image and its edited version, plus four candidate editing prompts. The model selects the prompt that best explains the transformation from the first image to the second.
-
-\subsubsection{\textbf{G}: Generating Prompt Reconstruction}
-
-This benchmark takes an image generated from text and four candidate generation prompts. The model selects the prompt that most likely produced the image, returning either its choice letter or the exact prompt.
-
-\subsubsection{\textbf{P}: Preference}
-
-This benchmark takes two images shown side by side. The model chooses which image is preferred by returning Image A or Image B. The choice is compared with the recorded human preference.
-
-\subsubsection{\textbf{R}: Rating}
-
-This benchmark takes one image and asks the model to assess its overall aesthetic quality. The model returns one integer from 1 to 10. Evaluation records exact agreement and the absolute difference from the reference rating.
-
-\section{Design and Implementation}
-
-\subsection{Experimental Infrastructure and Deployment}
-
-\subsubsection{Execution Plan for Open-Weight Models}
-The open-weight evaluation will use a single NVIDIA B300 GPU on RunPod. A model
-will be included only if its highest-precision checkpoint and the additional
-memory required for inference fit on that GPU. Models that require more than one
-B300 will not be evaluated: hosted inference, multi-GPU execution, and
-multi-node deployment are outside the scope of this study. The oversized models
-remain listed in Table~\ref{tab:open-weight-vram-plan} to document why they were
-excluded from the experimental results.
-
-A single NVIDIA B300 GPU provides 288 GB of HBM3e memory~\cite{nvidiaB300}. The VRAM estimates in
-Table~\ref{tab:open-weight-vram-plan} refer only to the memory required to store
-the model weights. They do not include inference overhead, KV cache, image-token
-memory, batching overhead, CUDA graphs, or framework-specific runtime memory.
-Therefore, models whose weights are close to 288 GB are treated as borderline
-even if the raw weight estimate is technically below 288 GB.
-
-For a model with \(N\) parameters and \(b\) bits per parameter, the weight-only
-VRAM requirement is estimated as
-\[
-    \mathrm{VRAM}_{\mathrm{weights}}
-    \approx
-    N \cdot \frac{b}{8}.
-\]
-For mixture-of-experts models, the estimate uses the total number of parameters,
-not only the number of active parameters, since the full set of expert weights
-must normally be available during inference.
-
-\begin{longtable}{llll}
-\caption{Execution plan for open-weight models under a single-B300 RunPod setup.}
-\label{tab:open-weight-vram-plan} \\
-
-\toprule
-\textbf{Model} &
-\textbf{Native precision / size} &
-\textbf{Weight-only VRAM} &
-\textbf{Execution plan} \\
-\midrule
-\endfirsthead
-
-\toprule
-\textbf{Model} &
-\textbf{Native precision / size} &
-\textbf{Weight-only VRAM} &
-\textbf{Execution plan} \\
-\midrule
-\endhead
-
-\midrule
-\multicolumn{4}{r}{\emph{Continued on next page}} \\
-\midrule
-\endfoot
-
-\bottomrule
-\endlastfoot
-
-\texttt{dots.ocr} &
-\(\sim 2.9\mathrm{B}\), 16-bit &
-\(\sim 5.8\) GB &
-RunPod, single B300 \\
-
-\texttt{glm-4.1v-thinking} &
-\(\sim 9\mathrm{B}\), 16-bit &
-\(\sim 18\) GB &
-RunPod, single B300 \\
-
-\texttt{gemma-4-26b-a4b} &
-\(\sim 26\mathrm{B}\), 16-bit &
-\(\sim 52\) GB &
-RunPod, single B300 \\
-
-\texttt{qwen3.6-27b} &
-\(\sim 27\mathrm{B}\), 16-bit &
-\(\sim 54\) GB &
-RunPod, single B300 \\
-
-\texttt{gemma-4-31b} &
-\(\sim 31\mathrm{B}\), 16-bit &
-\(\sim 62\) GB &
-RunPod, single B300 \\
-
-\texttt{skywork-r1v2-38b} &
-\(\sim 38\mathrm{B}\), 16-bit &
-\(\sim 76\) GB &
-RunPod, single B300 \\
-
-\texttt{skywork-r1v3-38b} &
-\(\sim 38\mathrm{B}\), 16-bit &
-\(\sim 76\) GB &
-RunPod, single B300 \\
-
-\texttt{mistral-small-4} &
-\(\sim 119\mathrm{B}\), native FP8 &
-\(\sim 119\) GB &
-RunPod, single B300 \\
-
-\texttt{glm-4.5v-thinking} &
-\(\sim 106\mathrm{B}\), 16-bit &
-\(\sim 212\) GB &
-RunPod, single B300 \\
-
-\texttt{mistral-medium-3.5} &
-\(\sim 128\mathrm{B}\), 16-bit &
-\(\sim 256\) GB &
-RunPod, single B300, borderline \\
-
-\texttt{mimo-v2.5} &
-\(\sim 310\mathrm{B}\), native FP8 &
-\(\sim 310\) GB &
-Excluded: exceeds one B300 \\
-
-\texttt{qwen3-vl-235b-a22b} &
-\(\sim 235\mathrm{B}\), 16-bit &
-\(\sim 470\) GB &
-Excluded: exceeds one B300 \\
-
-\texttt{kimi-k2.5-thinking} &
-\(\sim 1\mathrm{T}\), native mixed INT4 &
-\(\sim 550\)--\(600\) GB &
-Excluded: exceeds one B300 \\
-
-\texttt{kimi-k2.6} &
-\(\sim 1\mathrm{T}\), native mixed INT4/NVFP4 &
-\(\sim 600\)--\(714\) GB &
-Excluded: exceeds one B300 \\
-
-\texttt{dots.vlm1} &
-\(\sim 672\mathrm{B}\), FP8 deployment &
-\(\sim 672\) GB &
-Excluded: exceeds one B300 \\
-
-\texttt{qwen3.5-397b-a17b} &
-\(\sim 397\mathrm{B}\), 16-bit &
-\(\sim 794\) GB &
-Excluded: exceeds one B300 \\
-
-\texttt{mimo-v2.5-pro} &
-\(\sim 1.02\mathrm{T}\), native FP8 &
-\(\sim 1020\) GB &
-Excluded: exceeds one B300 \\
-
-\end{longtable}
-
-Under this plan, every included open-weight model is evaluated with the same
-datasets, prompt templates, image preprocessing, answer extraction code,
-scoring metrics, logging format, and single-B300 RunPod environment. A raw
-weight estimate below 288 GB does not guarantee inclusion, because inference
-also requires memory for the KV cache, image tokens, temporary activations, and
-framework overhead. Therefore, a borderline model such as
-\texttt{mistral-medium-3.5} will be included only if the complete inference
-pipeline runs successfully on one B300 without reducing the checkpoint below
-its stated native precision. If it does not, it will be reported as excluded
-rather than moved to a hosted or multi-GPU backend.
-
-For this reason, each benchmark result should include at least the following
-metadata:
-\[
-\begin{array}{ll}
-\text{model identifier} & \text{exact checkpoint name}, \\
-\text{backend} & \text{self-managed inference on RunPod}, \\
-\text{precision} & \text{BF16, FP8, INT4, or checkpoint-declared}, \\
-\text{hardware} & \text{single NVIDIA B300}, \\
-\text{date tested} & \text{date on which the result was obtained}.
-\end{array}
-\]
-
-\section{Finetuning}
-
-\subsection{Purpose and Model Selection}
-
-The finetuning experiment measures whether parameter-efficient adaptation to a
-balanced mixture of visual tasks improves performance across the eight
-benchmark types defined in Section~\ref{sec:benchmark-tasks}, rather than only
-on a single dataset. The selected checkpoint is
-\texttt{LLaVA-OneVision-Qwen2-7B}\footnote{\url{https://huggingface.co/llava-hf/llava-onevision-qwen2-7b-ov-hf}},
-referred to below as LLaVA-OneVision 7B. This model was selected because it is
-supported directly by the Hugging Face \texttt{transformers} library, accepts image--text
-conversations, and is sufficiently small for both inference and
-parameter-efficient finetuning on one GPU.
-
-Two notebooks implement a matched before-and-after experiment. The baseline
-notebook evaluates the unchanged checkpoint, while the finetuning notebook
-constructs the training data, trains one adapter, and evaluates the adapted
-model. Both notebooks use the same model checkpoint, benchmark classes,
-evaluation splits, number of evaluation examples, generation limits, and
-quantization setting. Consequently, the main experimental difference is the
-presence or absence of the trained adapter.
-
-\subsection{Representative Training Tasks}
-
-One representative dataset is selected for each benchmark type. The training
-mixture is therefore broad enough to expose the model to all required answer
-formats while remaining balanced across task families.
-
-\begin{table}[htbp]
-\centering
-\begin{tabular}{lll}
-\toprule
-\textbf{Type} & \textbf{Task} & \textbf{Representative dataset} \\
-\midrule
-L & Labeling & Fashion-MNIST \\
-A & Visual question answering & DocVQA \\
-B & Bounding-box detection & Open Images V4 \\
-C & Captioning & MS COCO captions \\
-E & Editing prompt reconstruction & MagicBrush \\
-G & Generation prompt reconstruction & DiffusionDB \\
-P & Image preference & Pick-a-Pic \\
-R & Aesthetic rating & TAD66K \\
-\bottomrule
-\end{tabular}
-\caption{Representative datasets used in the eight-type finetuning mixture.}
-\label{tab:finetuning-mixture}
-\end{table}
-
-By default, 980 training examples and 200 validation examples are exported
-for each type. This produces a 7,840-example training mixture and a
-1,600-example validation mixture. Equal per-type counts prevent a large source
-dataset from dominating the optimization objective. After export, the eight
-manifests are merged and deterministically shuffled. The training count is
-limited by the configured DocVQA mirror, which exposes 1,286 usable validation
-images: after reserving 100 for evaluation and 200 for finetuning validation,
-980 are used for training, leaving a small safety margin.
-
-\subsection{Conversion to Supervised Conversations}
-
-The same benchmark implementation is used to construct both evaluation inputs
-and finetuning examples. For every selected row, the exporter:
-
-\begin{enumerate}
-    \item loads and normalizes the visual input;
-    \item calls the benchmark's prompt-construction method;
-    \item obtains the accepted answer from the dataset annotations;
-    \item writes the image path, prompt, answer, and system instruction to a
-    JSONL manifest.
-\end{enumerate}
-
-Each exported record has the conceptual form
-\[
-    (\text{image},\ \text{task instruction},\ \text{target answer}).
-\]
-During training, this record is rendered with the LLaVA-OneVision chat
-template. The user message contains the image and task instruction, and the
-assistant message contains the accepted answer. Tokens belonging to the system
-and user messages are masked from the loss. Therefore, the optimization loss is
-computed only on the assistant answer, rather than teaching the model to
-reproduce the entire prompt.
-
-The target format depends on the task. Labeling examples contain one class
-name; visual-question-answering examples contain the accepted answer;
-detection examples contain one or more labels and normalized
-\([x,y,\mathrm{width},\mathrm{height}]\) boxes; captioning examples contain a
-reference caption; preference examples contain \texttt{Image A} or
-\texttt{Image B}; and rating examples contain the reference score.
-
-\subsection{Manually Constructed Questions and Distractors}
-
-Some benchmarks require information that is not present in the source dataset.
-This occurs mainly when an originally open-answer or prompt-reconstruction task
-is converted into multiple choice. It is important to distinguish the
-\emph{supervised answer} from the \emph{manually constructed choices}.
-
-For Type A datasets such as DocVQA, the source dataset already supplies the
-image, question, and accepted answer. Manual curation supplies plausible
-incorrect choices for selected rows; it does not replace the source answer.
-When curated choices are available, the prompt lists those choices and the
-target remains the accepted dataset answer. When no curated choices are
-available, the exporter uses the native open-answer question and answer.
-
-For Type E, MagicBrush supplies a source image, an edited image, and the edit
-instruction that produced the transformation. The correct edit instruction is
-the supervised target. Manually curated instructions, dataset-derived
-instructions, or generic fallback instructions are used only as distractors in
-the multiple-choice prompt.
-
-Type G follows the same principle. DiffusionDB supplies the generated image and
-its original text prompt. That original prompt is the target answer, while the
-other candidate prompts are distractors. Type P does not require manually
-written prompts: Pick-a-Pic supplies the compared images and the recorded human
-preference, so the target is simply \texttt{Image A} or \texttt{Image B}.
-
-Thus, the model is never trained to generate the manually authored
-distractors. It is trained to predict the source dataset's correct answer in
-the context of the benchmark prompt. Manual curation controls the difficulty
-and validity of the question presented to the model.
-
-The curated choice files cover a limited number of rows rather than every
-possible training example. The finetuning exporter therefore supports a
-\texttt{skip-examples} parameter. The first 100 examples are reserved for the
-matched evaluation, and training export begins after this reserved prefix.
-As a result, manually curated rows at the beginning of a dataset are primarily
-used for evaluation, while later finetuning rows use native open-answer
-supervision or automatically constructed choices. This reduces direct
-memorization of the small manual prompt bank.
-
-\subsection{QLoRA Training Procedure}
-
-The experiment trains one balanced adapter shared by all eight task types.
-The base checkpoint is loaded in 4-bit NormalFloat quantization and adapted
-with QLoRA. Low-rank adapters are inserted into the model's linear layers with
-rank 32, scaling factor 64, and dropout 0.05. The vision tower is frozen by
-default so that optimization concentrates on the language model and
-multimodal projection components. The default run uses two epochs, a learning
-rate of \(10^{-4}\), a physical batch size of one, and gradient accumulation
-over 16 steps.
-
-Training uses BF16 computation, gradient checkpointing, a cosine learning-rate
-schedule, and validation at the end of each epoch. Checkpoints are selected by
-minimum validation loss. The final output contains the PEFT adapter and the
-processor configuration; it does not duplicate the complete base model.
-Evaluation therefore reloads the original LLaVA-OneVision checkpoint and then
-attaches the trained adapter.
-
-\subsection{Baseline and Adapted Evaluation}
-
-The unchanged model and adapted model are each evaluated on 100 examples from
-every representative benchmark. Results are written separately for the
-baseline and finetuned runs, using the repository's standard benchmark runner
-and scoring code. The experiment therefore produces eight baseline reports and
-eight adapted reports. Improvement is assessed per benchmark and per task type
-rather than only through one aggregate score, since a shared adapter may
-improve some output formats while degrading others.
-
-Where a dataset provides a dedicated split, training and evaluation use
-different splits. Fashion-MNIST trains on \texttt{train} and evaluates on
-\texttt{test}; Open Images detection trains on \texttt{train} and evaluates on
-\texttt{validation}; and MS COCO captioning trains on \texttt{train} and
-evaluates on \texttt{test}. Other repository adapters expose only one practical
-split. For these datasets, the exporter reserves the initial evaluation-sized
-slice before creating the training and validation manifests.
-
-\subsection{Validity Limitations}
-
-Prefix reservation is weaker than an official held-out split. Some streaming
-datasets may change row order or sampling behavior when a different number of
-examples is requested. Therefore, DocVQA and the train-only MagicBrush,
-DiffusionDB, Pick-a-Pic, and TAD66K comparisons must be interpreted as
-exploratory unless stable row identifiers are recorded and checked for
-disjointness. The strongest before-and-after evidence comes from datasets with
-officially separate training and evaluation splits.
-
-The experiment also measures adaptation to both visual reasoning and output
-formatting. For example, an improvement on detection may result partly from
-learning the required normalized-box syntax, while an improvement on
-multiple-choice reconstruction may result partly from learning to return a
-choice letter or exact option. Per-task error analysis is therefore required
-to distinguish improved visual understanding from improved compliance with the
-benchmark response format.
-
 \clearpage
-
-\section{Tests, Evaluation, and Results}
-
-\section{Conclusions and Future Work}
-
-\section{References}
-\begin{thebibliography}{99}
-\bibitem{deng2009imagenet} J. Deng et al., ``ImageNet: A Large-Scale Hierarchical Image Database,'' CVPR, 2009. \url{https://doi.org/10.1109/CVPR.2009.5206848}.
-\bibitem{soomro2012ucf101} K. Soomro, A. R. Zamir, and M. Shah, ``UCF101: A Dataset of 101 Human Actions Classes From Videos in the Wild,'' 2012. \url{https://arxiv.org/abs/1212.0402}.
-\bibitem{lin2014coco} T.-Y. Lin et al., ``Microsoft COCO: Common Objects in Context,'' ECCV, 2014. \url{https://arxiv.org/abs/1405.0312}.
-\bibitem{plummer2015flickr30k} B. A. Plummer et al., ``Flickr30k Entities: Collecting Region-to-Phrase Correspondences for Richer Image-to-Sentence Models,'' ICCV, 2015. \url{https://arxiv.org/abs/1505.04870}.
-\bibitem{mayer2016large} N. Mayer et al., ``A Large Dataset to Train Convolutional Networks for Disparity, Optical Flow, and Scene Flow Estimation,'' CVPR, 2016. \url{https://arxiv.org/abs/1512.02134}.
-\bibitem{yu2015lsun} F. Yu et al., ``LSUN: Construction of a Large-scale Image Dataset using Deep Learning with Humans in the Loop,'' 2015. \url{https://arxiv.org/abs/1506.03365}.
-\bibitem{cordts2016cityscapes} M. Cordts et al., ``The Cityscapes Dataset for Semantic Urban Scene Understanding,'' CVPR, 2016. \url{https://arxiv.org/abs/1604.01685}.
-\bibitem{krishna2017visualgenome} R. Krishna et al., ``Visual Genome: Connecting Language and Vision Using Crowdsourced Dense Image Annotations,'' IJCV, 2017. \url{https://arxiv.org/abs/1602.07332}.
-\bibitem{goyal2017vqa} Y. Goyal et al., ``Making the V in VQA Matter,'' CVPR, 2017. \url{https://arxiv.org/abs/1612.00837}.
-\bibitem{xiao2017fashionmnist} H. Xiao, K. Rasul, and R. Vollgraf, ``Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms,'' 2017. \url{https://arxiv.org/abs/1708.07747}.
-\bibitem{kay2017kinetics} W. Kay et al., ``The Kinetics Human Action Video Dataset,'' 2017. \url{https://arxiv.org/abs/1705.06950}.
-\bibitem{vanhorn2018inaturalist} G. Van Horn et al., ``The iNaturalist Species Classification and Detection Dataset,'' CVPR, 2018. \url{https://arxiv.org/abs/1707.06642}.
-\bibitem{zhou2017places} B. Zhou et al., ``Places: A 10 Million Image Database for Scene Recognition,'' TPAMI, 2017. \url{https://arxiv.org/abs/1610.02055}.
-\bibitem{sharma2018conceptual} P. Sharma et al., ``Conceptual Captions: A Cleaned, Hypernymed, Image Alt-text Dataset for Automatic Image Captioning,'' ACL, 2018. \url{https://aclanthology.org/P18-1238/}.
-\bibitem{kuznetsova2020openimages} A. Kuznetsova et al., ``The Open Images Dataset V4,'' IJCV, 2020. \url{https://arxiv.org/abs/1811.00982}.
-\bibitem{hudson2019gqa} D. A. Hudson and C. D. Manning, ``GQA: A New Dataset for Real-World Visual Reasoning and Compositional Question Answering,'' CVPR, 2019. \url{https://arxiv.org/abs/1902.09506}.
-\bibitem{bergmann2019mvtec} P. Bergmann et al., ``MVTec AD---A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection,'' CVPR, 2019. \url{https://arxiv.org/abs/1904.09665}.
-\bibitem{gupta2019lvis} A. Gupta, P. Dollar, and R. Girshick, ``LVIS: A Dataset for Large Vocabulary Instance Segmentation,'' CVPR, 2019. \url{https://arxiv.org/abs/1908.03195}.
-\bibitem{mathew2020docvqa} M. Mathew, D. Karatzas, and C. V. Jawahar, ``DocVQA: A Dataset for VQA on Document Images,'' WACV, 2021. \url{https://arxiv.org/abs/2007.00398}.
-\bibitem{dolhansky2020dfdc} B. Dolhansky et al., ``The DeepFake Detection Challenge (DFDC) Dataset,'' 2020. \url{https://arxiv.org/abs/2006.07397}.
-\bibitem{sidorov2020textcaps} O. Sidorov et al., ``TextCaps: a Dataset for Image Captioning with Reading Comprehension,'' ECCV, 2020. \url{https://arxiv.org/abs/2003.12462}.
-\bibitem{schuhmann2021laion400m} C. Schuhmann et al., ``LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs,'' 2021. \url{https://arxiv.org/abs/2111.02114}.
-\bibitem{karkkainen2021fairface} K. Karkkainen and J. Joo, ``FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age,'' WACV, 2021. \url{https://arxiv.org/abs/1908.04913}.
-\bibitem{zhang2021hdtf} Z. Zhang et al., ``Flow-guided One-shot Talking Face Generation with a High-Definition Talking Face Dataset,'' CVPR, 2021. \url{https://github.com/MRzzm/HDTF}.
-\bibitem{schuhmann2022laion5b} C. Schuhmann et al., ``LAION-5B: An Open Large-Scale Dataset for Training Next Generation Image-Text Models,'' NeurIPS Datasets and Benchmarks, 2022. \url{https://arxiv.org/abs/2210.08402}.
-\bibitem{wang2022diffusiondb} Z. J. Wang et al., ``DiffusionDB: A Large-scale Prompt Gallery Dataset for Text-to-Image Generative Models,'' ACL, 2023. \url{https://arxiv.org/abs/2210.14896}.
-\bibitem{he2022tad66k} S. He et al., ``Theme-Aware Visual Attribute Reasoning for Image Aesthetics Assessment,'' ACM MM, 2022. \url{https://github.com/woshidandan/TANet}.
-\bibitem{zhang2023magicbrush} K. Zhang et al., ``MagicBrush: A Manually Annotated Dataset for Instruction-Guided Image Editing,'' NeurIPS Datasets and Benchmarks, 2023. \url{https://arxiv.org/abs/2306.10012}.
-\bibitem{kirstain2023pickapic} Y. Kirstain et al., ``Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation,'' NeurIPS, 2023. \url{https://arxiv.org/abs/2305.01569}.
-\bibitem{wang2023internvid} Y. Wang et al., ``InternVid: A Large-scale Video-Text Dataset for Multimodal Understanding and Generation,'' 2023. \url{https://arxiv.org/abs/2307.06942}.
-\bibitem{nan2024openvid} K. Nan et al., ``OpenVid-1M: A Large-Scale High-Quality Dataset for Text-to-video Generation,'' 2024. \url{https://arxiv.org/abs/2407.02371}.
-\bibitem{shao2024visualcot} H. Shao et al., ``Visual CoT: Advancing Multi-Modal Language Models with a Comprehensive Dataset and Benchmark for Chain-of-Thought Reasoning,'' 2024. \url{https://arxiv.org/abs/2403.16999}.
-\bibitem{hui2024hqedit} M. Hui et al., ``HQ-Edit: A High-Quality Dataset for Instruction-based Image Editing,'' 2024. \url{https://arxiv.org/abs/2404.09990}.
-\bibitem{chen2025blip3o} J. Chen et al., ``BLIP3-o: A Family of Fully Open Unified Multimodal Models---Architecture, Training and Dataset,'' 2025. \url{https://arxiv.org/abs/2505.09568}.
-\bibitem{ye2025imgedit} Y. Ye et al., ``ImgEdit: A Unified Image Editing Dataset and Benchmark,'' 2025. \url{https://arxiv.org/abs/2505.20275}.
-\bibitem{chen2025sharegpt} J. Chen et al., ``ShareGPT-4o-Image: Aligning Multimodal Models with GPT-4o-Level Image Generation,'' 2025. \url{https://arxiv.org/abs/2506.18095}.
-\bibitem{kinney2023semanticscholar} R. Kinney et al., ``The Semantic Scholar Open Data Platform,'' 2023. \url{https://arxiv.org/abs/2301.10140}.
-\bibitem{yue2024mmmupro} X. Yue et al., ``MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark,'' 2024. \url{https://arxiv.org/abs/2409.02813}.
-\bibitem{chiang2024arena} W.-L. Chiang et al., ``Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference,'' ICML, 2024. \url{https://arxiv.org/abs/2403.04132}.
-\bibitem{lmarenaVision} LM Arena, ``Vision Arena Leaderboard.'' \url{https://lmarena.ai/leaderboard/vision}. Accessed June 10, 2026.
-\bibitem{nvidiaB300} NVIDIA, ``NVIDIA B300 Tensor Core GPU.'' \url{https://www.nvidia.com/en-us/data-center/b300/}. Accessed June 10, 2026.
-\end{thebibliography}
-
-\clearpage
-\appendix
-\section{Detailed Dataset Descriptions}
+\subsubsection{Detailed Dataset Catalogue}
 \begin{multicols}{2}
-\subsection{Dataset Catalogue}
 
 \begin{figure*}[t]
     \centering
@@ -2503,5 +2002,703 @@ The original images come from a high–aesthetics subset of LAION (aesthetic sco
 
 \end{multicols}
 
+
+\clearpage
+\subsection{Benchmark Tasks and Metrics}
+\label{sec:benchmark-tasks}
+
+The execution loop is shared by every task family. As shown in
+Listing~\ref{lst:benchmark-loop}, each sample is loaded, converted into a
+task-specific prompt, sent to the chosen model, timed, and evaluated. Errors
+are recorded as failed samples rather than terminating the complete run. This
+behaviour was particularly important for long API experiments, where one
+network or dataset error should not discard hours of completed work.
+
+\begin{lstlisting}[caption={Core per-sample execution from
+\texttt{benchmarks/\_base\_benchmark.py}.},label={lst:benchmark-loop}]
+for idx, row in enumerate(rows, start=1):
+    sample_started_at = time.perf_counter()
+    try:
+        image = self.get_image_for_row(row)
+        prompt_labels = self.get_prompt_labels_for_row(
+            row=row, labels=labels
+        )
+        prompt = self.make_prompt(
+            labels=prompt_labels, row=row, image=image
+        )
+        generation_started_at = time.perf_counter()
+        prediction = model.predict(image, prompt).strip()
+        generation_time_seconds = (
+            time.perf_counter() - generation_started_at
+        )
+    except Exception as exc:
+        sample_error = f"{exc.__class__.__name__}: {exc}"
+\end{lstlisting}
+\subsubsection{\textbf{L}: Labeling}
+
+This benchmark takes one image and a list of possible labels. The model returns exactly one label describing the image. For video datasets, several frames are combined into a contact sheet and the model predicts the action or video label.
+
+The smallest context windows among the listed models appear to be those of
+\texttt{glm-4.5v-thinking} and \texttt{glm-4.1v-thinking}, both at 64k tokens.
+Depending on whether one uses the official serving configuration rather than
+the Hugging Face architectural config, \texttt{dots.vlm1} may also be treated
+as a 65,536-token model.
+
+Among the classification datasets considered in this study, the largest label spaces correspond to ImageNet-1K, iNaturalist, and Open Images V4. ImageNet-1K contains 1,000 classes, iNaturalist contains 5,089 species categories, and Open Images V4 provides approximately 20,000 image-level concepts. Since all evaluated models support context windows of at least 64k input tokens, the complete label set can be provided as part of the prompt for ImageNet-1K without difficulty.
+
+For iNaturalist, only the species-level labels will be included in the prompt. This reduces the required prompt length to approximately 20k--30k tokens while preserving the standard fine-grained classification task. Higher levels of the taxonomic hierarchy (e.g., genus, family, order, and class) will not be provided as candidate labels.
+
+For Open Images V4, the full image-level vocabulary is too large to be comfortably included within a 64k-token context window. Therefore, only the subset of images associated with bounding-box annotations will be used. This restricts the candidate label set to the 600 object categories employed by the detection benchmark, allowing all possible labels to be supplied in the prompt while maintaining a closed-set classification setting.
+
+\subsubsection{\textbf{A:} Answering Visual Multiple-choice Question}
+
+This benchmark takes an image, a natural-language question about its contents, and a set of possible answers. The model selects one answer, which is normalized and compared with the accepted reference answer.
+
+All VQA is multiple choice. For some dataset, distractor choices had to be manually created. For others, even the correct choices had to be created.
+
+The distractor choices must be created for \textbf{Visual Genome}, \textbf{VQA v2.0}, \textbf{GQA}, \textbf{DocVQA}, and \textbf{Visual CoT}. These datasets already provide each image, question, and accepted answer, so the accepted answer can be used as the correct choice; however, their dataset adapters do not provide a set of incorrect candidate answers. Consequently, plausible but incorrect distractors must be added to convert these open-answer questions into multiple-choice questions.
+
+\textbf{FlyingThings3D} requires more extensive construction because it is not originally a question--answer dataset. It provides rendered stereo scenes and geometric annotations rather than natural-language questions with accepted answers. For this dataset, the question and correct textual choice must first be derived from the available scene information; the incorrect choices must then also be created. Thus, only the distractors need to be added for the five existing QA datasets, whereas both the benchmark question/answer and its distractors need to be constructed for FlyingThings3D.
+
+Visual Genome has bouding boxes, but these are very inconsitent because they are human anotatesd without a standard list of labels, so we may get `pet dog` somewhere, but `small dog` elsewhere. That is why we will not measure it in terms of boudning boxes. Moreover, there are over 30k different types of annotated objects, which would not fit into our maximum of 64k labels.
+
+\subsubsection{\textbf{B}: Bounding Box Object Detection}
+
+This benchmark takes an image and a list of allowed object labels. The model returns every detected object as a label and normalized bounding box. Predictions are compared with annotated boxes using label agreement and intersection over union (IoU).
+
+Listing~\ref{lst:detection-metrics} contains the metric calculation used after
+predicted and ground-truth boxes have been greedily matched at the configured
+IoU threshold. Reporting precision, recall, and F1 separately is useful:
+precision exposes excessive boxes, recall exposes missed objects, and F1
+summarises both errors without hiding them.
+
+\begin{lstlisting}[caption={Detection scoring from
+\texttt{benchmarks/detection/\_detection.py}.},
+label={lst:detection-metrics}]
+matched_predictions, matched_targets, matched_ious = (
+    self._match_boxes(pred_boxes, gt_boxes)
+)
+tp = len(matched_predictions)
+fp = max(0, len(pred_boxes) - tp)
+fn = max(0, len(gt_boxes) - tp)
+
+precision = tp / (tp + fp) if (tp + fp) else 0.0
+recall = tp / (tp + fn) if (tp + fn) else 0.0
+f1 = (
+    2 * precision * recall / (precision + recall)
+    if (precision + recall) else 0.0
+)
+\end{lstlisting}
+
+\subsubsection{\textbf{C}: Captioning}
+
+This benchmark takes an image, or representative frames from a video, without answer choices. The model generates one concise natural-language description. It is compared with one or more reference captions using BLEU.
+
+The caption evaluator in Listing~\ref{lst:caption-metric} uses the same
+references exposed by the dataset adapter and records the continuous BLEU
+score even when the binary threshold is not reached. This is why the report
+can compare mean caption quality without reducing every answer to only correct
+or incorrect.
+
+\begin{lstlisting}[caption={Caption evaluation from
+\texttt{benchmarks/captioning/\_captioning.py}.},
+label={lst:caption-metric}]
+references = self._get_captions(row)
+bleu = self._sentence_bleu(
+    references=references,
+    candidate=prediction,
+)
+return (
+    bleu >= self.bleu_threshold,
+    references,
+    {
+        "bleu": bleu,
+        "reference_captions": references,
+    },
+)
+\end{lstlisting}
+
+\subsubsection{\textbf{E}: Editing Prompt Reconstruction}
+
+This benchmark takes a side-by-side pair containing the original image and its edited version, plus four candidate editing prompts. The model selects the prompt that best explains the transformation from the first image to the second.
+
+\subsubsection{\textbf{G}: Generating Prompt Reconstruction}
+
+This benchmark takes an image generated from text and four candidate generation prompts. The model selects the prompt that most likely produced the image, returning either its choice letter or the exact prompt.
+
+\subsubsection{\textbf{P}: Preference}
+
+This benchmark takes two images shown side by side. The model chooses which image is preferred by returning Image A or Image B. The choice is compared with the recorded human preference.
+
+\subsubsection{\textbf{R}: Rating}
+
+This benchmark takes one image and asks the model to assess its overall aesthetic quality. The model returns one integer from 1 to 10. Evaluation records exact agreement and the absolute difference from the reference rating.
+
+\section{GPT-4o and Claude Sonnet 4.5 Comparison}
+
+\subsection{Comparison Scope}
+
+This section replaces the earlier implementation, fine-tuning, and broad
+multi-model results chapters with a direct comparison between
+\texttt{gpt-4o} and \texttt{claude-sonnet-4-5}. Both models were executed
+through the same benchmark notebook, with temperature set to zero and the
+same sample selection. At the time of analysis, 36 benchmarks had completed
+for both models. Only this matched intersection was retained, avoiding a
+coverage advantage for either model.
+
+The matched set contains 720 evaluations per model: 10 captioning benchmarks,
+6 visual question-answering benchmarks, 7 labeling benchmarks, 6 detection
+benchmarks, 4 image-modification multiple-choice benchmarks, and 3 prompt
+reconstruction benchmarks. Each benchmark contributes its primary metric:
+BLEU for captioning, F1 for detection, accuracy for discrete tasks, and the
+task-specific normalized score where applicable. Scores are therefore
+comparable within a benchmark and useful for paired aggregation, but a raw
+average across heterogeneous metrics must be interpreted cautiously.
+
+\subsection{Aggregate Results}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Aggregate results over the 36 matched benchmarks. A first-place
+finish includes ties.}
+\label{tab:gpt4o-claude-overall}
+\begin{tabularx}{\textwidth}{@{}Xrrrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Mean score} & \textbf{Median} &
+\textbf{Mean normalized} & \textbf{Mean rank} & \textbf{First places} \\
+\midrule
+\texttt{gpt-4o} & 0.429 & 0.327 & 0.722 & 1.28 & 26 \\
+\texttt{claude-sonnet-4-5} & 0.384 & 0.259 & 0.389 & 1.61 & 14 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+GPT-4o achieved the higher primary score on 22 benchmarks, Claude Sonnet 4.5
+on 10, and the models tied on 4. Counting each tie as half a win gives GPT-4o
+a pairwise win rate of 0.667. Its mean advantage was 0.045 score units and
+its median advantage was 0.050. The benchmark-normalized score is especially
+informative in this two-model setting: a value of one denotes the better
+score on a benchmark, zero the worse score, and tied benchmarks contribute
+one to both models under the comparison script's normalization rule.
+
+These figures tell a fairly consistent story. GPT-4o does not win every
+benchmark, and in a few cases it loses by a large margin, but it finishes
+ahead much more often than it finishes behind. The difference between the
+mean ranks, 1.28 against 1.61, makes this particularly clear: across a varied
+set of tasks, GPT-4o is usually the safer first choice. Put less formally, it
+has fewer bad days. Claude's 14 first-place finishes still matter, however.
+They show that this is not a comparison between one capable model and one
+incapable model; it is a comparison between two capable systems with
+noticeably different strengths.
+
+The raw mean gap of 0.045 may look modest, but raw means mix BLEU, F1,
+accuracy, and task-specific scores. A five-point gain has a different meaning
+on each of those scales. For that reason, the win count and normalized score
+are more persuasive here than the raw mean by itself. All three indicators
+favour GPT-4o, which makes the overall conclusion more robust than it would
+be if only one aggregation method did so. At the same time, the normalized
+score should not be read as ``GPT-4o is 85\% better.'' It describes relative
+benchmark outcomes, not a universal percentage improvement in model quality.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{../../comparison/output/gpt4o_vs_claude/model_normalized_scores.png}
+\caption{Mean score normalized within each matched benchmark. GPT-4o wins
+more of the benchmark-level comparisons, although the magnitude of the
+advantage varies substantially.}
+\label{fig:gpt4o-claude-normalized}
+\end{figure}
+
+\subsection{Results by Task Family}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Mean primary score by benchmark family. Bold values indicate the
+higher raw family mean.}
+\label{tab:gpt4o-claude-families}
+\begin{tabularx}{\textwidth}{@{}Xrrr@{}}
+\toprule
+\textbf{Family} & \textbf{Benchmarks} & \textbf{GPT-4o} &
+\textbf{Claude Sonnet 4.5} \\
+\midrule
+Captioning & 10 & \textbf{0.165} & 0.116 \\
+Visual question answering & 6 & \textbf{0.800} & 0.508 \\
+Labeling & 7 & 0.400 & \textbf{0.436} \\
+Detection & 6 & 0.100 & \textbf{0.135} \\
+Image modification VQA & 4 & \textbf{0.775} & 0.713 \\
+Prompt reconstruction & 3 & 0.833 & \textbf{0.967} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The clearest GPT-4o advantage appears in visual question answering. It leads
+on all six QA benchmarks and raises the family mean from 0.508 to 0.800.
+The largest individual gaps are ImageNet-1K (0.65 versus 0.15),
+FlyingThings3D (0.45 versus 0.00), DocVQA (0.90 versus 0.45),
+Fashion-MNIST (0.90 versus 0.55), and GQA (0.80 versus 0.50).
+GPT-4o also has the higher captioning and image-modification family means.
+
+The QA result is difficult to dismiss as a single-dataset accident because
+the advantage appears on every benchmark in the family. It also spans rather
+different visual demands: document reading, object and scene recognition,
+spatial reasoning, and conventional question answering. This suggests that
+GPT-4o is not merely matching one dataset's answer style. It appears better
+at converting visual evidence into the short, evaluator-compatible answer
+expected by these tasks. That last qualification is important. A benchmark
+rewards both understanding and disciplined output formatting, and the present
+experiment cannot completely separate the two.
+
+Captioning presents a similar but less dramatic pattern. GPT-4o's family mean
+is higher, yet both absolute means are low because exact n-gram overlap is a
+harsh way to judge an open-ended description. A perfectly sensible caption
+can use different words from the reference and receive little BLEU credit.
+The result therefore supports GPT-4o as the better benchmark captioner in
+this experiment, but not necessarily as the model whose prose a human reader
+would always prefer. This is one of those places where the metric is useful,
+but it is not the whole story.
+
+Claude Sonnet 4.5 is stronger on prompt reconstruction, scoring 1.00 on
+ShareGPT-4o-Image compared with 0.70 for GPT-4o, and slightly exceeding
+GPT-4o on DiffusionDB and BLIP3o-60k. Its labeling advantage is dominated by
+LSUN, where Claude scores 0.95 and GPT-4o scores 0.00. Claude also obtains
+higher mean detection F1, including 0.20 scores on Flickr30k Entities and
+iNaturalist Detection where GPT-4o scores zero. However, GPT-4o wins more
+detection benchmarks overall; this illustrates why win counts and score
+magnitudes should be reported together.
+
+Claude's prompt-reconstruction performance is its clearest practical selling
+point in this comparison. The task asks the model to infer language that could
+have produced or described an image, rather than to select a compact class
+label. Claude's strong result may therefore reflect an advantage when visual
+analysis has to be turned back into detailed natural language. The family
+contains only three benchmarks, so this should be treated as a strong signal
+rather than a final verdict, but the consistency across all three is notable.
+
+The LSUN result deserves special attention because a 0.95 versus 0.00 reversal
+is large enough to move an entire family average. There are at least two
+plausible readings. Claude may genuinely recognize the LSUN scene categories
+far more reliably, or GPT-4o may be producing labels that are semantically
+reasonable but incompatible with the exact parser or class vocabulary. The
+same concern applies to zero-valued detection results, where malformed box
+syntax can erase evidence of partial visual understanding. Without a manual
+error audit, the honest conclusion is that Claude integrates better with the
+current evaluation protocol on those datasets. Claiming that the score proves
+a complete absence of visual understanding would go too far.
+
+The image-modification VQA family is more competitive. GPT-4o leads by 0.062
+on the family mean, a useful but much smaller advantage than in QA. For a
+workflow centred on identifying edits or comparing related images, either
+model could therefore be defensible. The wider result favours GPT-4o, while
+Claude's prompt-reconstruction strength may matter more when the required
+output is descriptive rather than a fixed answer.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{../../comparison/output/gpt4o_vs_claude/family_grouped_bars.png}
+\caption{Raw mean primary score by task family. Metrics differ between
+families, so comparisons should be made between models within each family,
+not between the heights of unrelated families.}
+\label{fig:gpt4o-claude-families}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{../../comparison/output/gpt4o_vs_claude/score_heatmap_raw.png}
+\caption{Primary score for every matched benchmark. The heatmap exposes
+isolated reversals such as Claude's LSUN result that are hidden by aggregate
+means.}
+\label{fig:gpt4o-claude-heatmap}
+\end{figure}
+
+\subsection{Uncertainty and Robustness}
+
+A paired bootstrap was performed by resampling the 36 matched benchmarks
+50,000 times. For the difference Claude minus GPT-4o, the observed mean is
+\(-0.045\), the 90\% interval is \([-0.108, 0.025]\), and the 95\% interval is
+\([-0.120, 0.039]\). Only 13.5\% of bootstrap samples place Claude's mean
+above GPT-4o's, equivalent to an estimated 86.5\% probability that GPT-4o
+has the higher mean on a resampled benchmark set.
+
+The intervals still cross zero. The evidence therefore supports GPT-4o as
+the better model on this particular matched suite, but it does not establish
+a conventionally significant universal advantage. The result is sensitive
+to benchmark composition and to high-magnitude reversals such as LSUN.
+Increasing the sample count per benchmark and completing the remaining
+matched datasets would reduce this uncertainty.
+
+This distinction between ``best observed'' and ``proven universally better''
+is not just statistical politeness. The benchmark is the unit resampled by
+the bootstrap, so the interval asks what might happen if a somewhat different
+collection of tasks had been selected. In 13.5\% of those resamples Claude
+comes out ahead. That is not the most likely outcome, but it is far from
+impossible. The practical reading is that GPT-4o is the stronger default for
+the tested workload, whereas a specialised workload should still be tested
+directly, especially if it resembles prompt reconstruction, LSUN labeling,
+or the detection datasets where Claude recorded larger gains.
+
+There is also uncertainty within each benchmark. Only 20 examples were used,
+so one additional correct response changes an accuracy score by 0.05. Several
+reported model gaps are exactly that size or smaller. Those close results
+should be regarded as near-ties, even when the ranking code must place one
+model first. Larger gaps, such as the QA differences listed above, are much
+less likely to be explained by one fortunate example.
+
+\subsection{Execution Time}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Measured runtime telemetry over the matched benchmark set.}
+\label{tab:gpt4o-claude-runtime}
+\begin{tabularx}{\textwidth}{@{}Xrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Mean wall time/sample} &
+\textbf{Mean generation time/sample} & \textbf{Peak CPU RAM} \\
+\midrule
+\texttt{gpt-4o} & 7.20 s & 4.27 s & 1.99 GiB \\
+\texttt{claude-sonnet-4-5} & 8.07 s & 3.94 s & 1.86 GiB \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+GPT-4o has approximately 10.8\% lower end-to-end wall-clock latency, despite
+Claude recording slightly lower model-generation time. The difference
+indicates that network, request preparation, provider queueing, or response
+handling contributes materially to total latency. These values describe the
+observed API routes during this run and should not be treated as permanent
+provider speed guarantees.
+
+The latency breakdown is a useful reminder that the model's generation time
+is not the same as the time experienced by an application. Claude generated
+its answer about 0.33 seconds faster on average, yet the complete request took
+about 0.87 seconds longer. In an interactive tool, GPT-4o would consequently
+feel faster in these runs even though its measured generation stage was
+slower. For a large offline batch, the same difference accumulates: over the
+720 matched evaluations, the mean wall times correspond to roughly 86
+minutes for GPT-4o and 97 minutes for Claude if requests are processed
+sequentially.
+
+Neither model has a meaningful local-memory advantage. The 0.13 GiB
+difference in peak CPU RAM is small and, for hosted APIs, local memory is
+unlikely to be the deployment bottleneck anyway. API price limits, request
+rate limits, and wall-clock throughput are more consequential. The timing
+comparison should also be viewed as a snapshot: provider load and network
+conditions can change from one hour to the next.
+
+\subsection{Validity Limitations}
+
+The comparison uses 20 examples per benchmark, which is sufficient for a
+broad diagnostic comparison but not for precise dataset-level estimates.
+Captioning, detection, classification, and multiple-choice metrics measure
+different properties; averaging them gives every benchmark equal weight but
+does not create a single absolute measure of intelligence. Some datasets
+also expose formatting sensitivity: a semantically useful response can score
+poorly if it does not follow the expected label or bounding-box format.
+
+Finally, the analysis is a snapshot of mutable hosted APIs. Model aliases,
+provider infrastructure, safety behaviour, and tokenization may change.
+The reproducible artifacts for this comparison are stored in
+\texttt{comparison/output/gpt4o\_vs\_claude/}, including benchmark-level
+scores, family summaries, pairwise wins, telemetry, plots, and the paired
+bootstrap difference. The five-model artifacts are stored in
+\texttt{comparison/output/five\_api\_models/}.
+
+One further limitation is that every benchmark receives equal weight in the
+aggregate, regardless of its difficulty, sample diversity, or importance to
+a real application. This is transparent and avoids choosing weights after
+seeing the results, but it is not automatically the right weighting for every
+user. A document-processing product might reasonably give DocVQA much more
+importance than Fashion-MNIST, while an image-search system might do the
+opposite. The aggregate ranking is therefore a useful general-purpose answer,
+not a substitute for choosing benchmarks that match the intended deployment.
+
+\section{Five-Model API Comparison}
+
+\subsection{Scope and Overall Ranking}
+
+A second matched comparison uses the 21 benchmarks completed by GPT-4o,
+GPT-4.1, GPT-5, Gemini 3.5 Flash, and Claude Sonnet 4.5. The common set
+contains 6 QA, 6 detection, and 9 captioning benchmarks, giving 420 evaluated
+examples per model. This intersection is smaller than the 36-benchmark
+two-model study because a benchmark is admitted only when all five models
+have a completed result. The stricter matching makes the comparison fair,
+but it also removes labeling, image-modification VQA, and prompt
+reconstruction from this particular analysis.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Results over the 21 benchmarks completed by all five API models.}
+\label{tab:five-api-models}
+\begin{tabularx}{\textwidth}{@{}Xrrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Mean score} & \textbf{Normalized} &
+\textbf{Mean rank} & \textbf{First places} \\
+\midrule
+\texttt{gpt-4o} & \textbf{0.336} & \textbf{0.803} & \textbf{1.71} & \textbf{12} \\
+\texttt{gpt-4.1} & 0.275 & 0.469 & 2.43 & 8 \\
+\texttt{gpt-5} & 0.243 & 0.323 & 2.81 & 5 \\
+\texttt{claude-sonnet-4-5} & 0.239 & 0.650 & 2.52 & 4 \\
+\texttt{gemini-3.5-flash} & 0.025 & 0.157 & 3.33 & 2 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+GPT-4o is the clearest all-round performer. It has the highest raw mean, the
+highest normalized mean, the best average rank, and the most first-place
+finishes. In other words, its lead does not depend on selecting one convenient
+summary statistic. It wins or ties for first on 12 of the 21 benchmarks and
+its normalized score of 0.803 is well above Claude's second-place 0.650.
+
+The middle of the table is more interesting than a simple reading of the raw
+mean suggests. GPT-4.1 has the second-highest raw score and a slightly better
+mean rank than Claude, but Claude has a much higher normalized score. GPT-5
+also has a marginally higher raw mean than Claude while performing much worse
+after within-benchmark normalization. This disagreement occurs because raw
+metrics have different scales and because a model can collect a high raw
+average from a few high-scoring benchmark types. The normalized result asks
+how each model performs relative to the other models on the same benchmark.
+On that basis, Claude is the more competitive second-place model, even though
+GPT-4.1 reaches first place more often.
+
+This is a useful warning against sorting a heterogeneous benchmark table by
+one column and calling the job done. GPT-4.1 appears to have sharper peaks:
+it records eight first places and leads the QA family. Claude records only
+four first places, but its stronger normalized mean indicates fewer or less
+severe relative failures across the common set. Choosing between them depends
+on whether a project values peak performance on a target task or steadier
+performance across task types.
+
+\subsection{Task Families and Pairwise Behaviour}
+
+GPT-4o leads captioning with a raw family mean of 0.183. GPT-4.1 leads all
+models on QA with 0.867, while Claude leads detection with 0.135. The family
+winners therefore come from three different models. GPT-4o's overall victory
+is not the result of sweeping every category; it comes from combining strong
+captioning with competitive results elsewhere. GPT-4.1's QA lead is
+especially relevant because the two-model study already identified QA as a
+major strength of GPT-4o. On the reduced common set, GPT-4.1 improves even on
+that strong baseline.
+
+Claude's detection lead repeats the pattern seen in the broader comparison
+with GPT-4o. That repetition makes the finding more credible: detection is
+not merely one isolated win hidden inside the larger table. Still, an F1 mean
+of 0.135 is low in absolute terms. Claude is best among these APIs under the
+current detection prompt and parser, but none of the models should be
+described as solving detection reliably. For applications where bounding
+boxes are central, a specialised detector remains the more sensible
+baseline.
+
+The pairwise results reinforce GPT-4o's position. It beats Gemini on 88.1\%
+of matched comparisons, Claude on 83.3\%, and GPT-5 on 71.4\%. Its mean score
+advantage is 0.311 over Gemini, 0.096 over Claude, and 0.093 over GPT-5.
+These are not all equivalent victories: the Gemini gap is both frequent and
+large, whereas the GPT-5 comparison is closer and more dependent on task
+composition.
+
+Claude beats GPT-5 on 66.7\% of benchmarks but has a mean raw difference of
+\(-0.004\). This apparently contradictory result is actually informative.
+Claude wins more often, while GPT-5's less frequent wins are large enough to
+erase the average raw advantage. For a broad workload, Claude's consistency
+may be preferable. For a narrow workload that happens to match one of
+GPT-5's stronger tasks, the aggregate pairwise win rate could be misleading.
+The benchmark-level heatmaps and scores should therefore be consulted before
+making a deployment decision.
+
+\subsection{Uncertainty}
+
+Bootstrap intervals for the raw mean are broad: GPT-4o scores 0.336 with a
+90\% interval of \([0.221, 0.456]\), GPT-4.1 scores 0.275 with
+\([0.142, 0.419]\), GPT-5 scores 0.243 with \([0.110, 0.390]\), and Claude
+scores 0.239 with \([0.158, 0.326]\). These four intervals overlap heavily.
+The observed ordering among the leading models should therefore be understood
+as the ranking for this 21-benchmark set, not as a precise universal league
+table.
+
+Gemini is the exception. Its raw mean is 0.025 with a 90\% interval of
+\([0.009, 0.044]\), which does not overlap the intervals of the other four
+models. Its weak result is consequently more stable than the exact ordering
+within the leading group. Even here, some caution is needed: a consistently
+low score can indicate weak visual-task performance, but it can also reveal a
+systematic mismatch between the model's response format and the evaluator.
+A manual review of Gemini's failed samples would be required to separate
+those explanations.
+
+The smaller benchmark intersection also changes the question being answered.
+This study says how the five models compare on captioning, QA, and detection.
+It says nothing directly about their relative labeling or prompt-
+reconstruction ability. That matters because prompt reconstruction is where
+Claude was strongest in the broader two-model study. The five-model ranking
+should not be extrapolated to families that it never tested.
+
+\subsection{Runtime and Practical Trade-offs}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Measured runtime telemetry over the 21 benchmarks shared by all five
+models.}
+\label{tab:five-api-runtime}
+\begin{tabularx}{\textwidth}{@{}Xrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Wall time/sample} &
+\textbf{Generation time/sample} & \textbf{Peak CPU RAM} \\
+\midrule
+\texttt{gpt-4o} & 8.67 s & 3.81 s & 1.99 GiB \\
+\texttt{claude-sonnet-4-5} & 10.19 s & 3.38 s & 1.86 GiB \\
+\texttt{gpt-4.1} & 10.74 s & 2.94 s & 1.58 GiB \\
+\texttt{gpt-5} & 11.17 s & 3.23 s & 1.44 GiB \\
+\texttt{gemini-3.5-flash} & 19.13 s & 10.56 s & 1.56 GiB \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+GPT-4o is fastest end to end at 8.67 seconds per sample, despite GPT-4.1
+having the shortest measured generation stage. This repeats the lesson from
+the two-model study: provider overhead is a substantial part of API latency.
+GPT-4.1 generates in 2.94 seconds but takes 10.74 seconds overall, leaving
+roughly 7.8 seconds in upload, queueing, network transfer, preprocessing, or
+response handling. A fast decoder does not automatically produce a fast user
+experience.
+
+Gemini is the clear runtime outlier at 19.13 seconds per sample, more than
+twice GPT-4o's wall time, and it also has by far the longest generation time.
+Combined with its low benchmark score, this run gives no accuracy--latency
+trade-off in Gemini's favour. The result may still reflect a provider route,
+region, or account configuration rather than a permanent property of the
+model, so it should be remeasured before a production decision.
+
+Local peak RAM ranges only from 1.44 to 1.99 GiB and is unlikely to determine
+the API-model choice. The meaningful practical trade-off is between task
+quality, latency, and price. GPT-4o offers the best quality and wall time in
+this experiment. GPT-4.1 is attractive for QA, Claude for detection and
+cross-task consistency, and GPT-5 shows occasional strong wins without
+matching GPT-4o overall. Model routing by task could therefore outperform a
+single-model policy, although it would add implementation complexity and
+require enough traffic to justify maintaining several providers.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{../../comparison/output/five_api_models/model_normalized_scores.png}
+\caption{Mean benchmark-normalized score across the 21 matched benchmarks.}
+\label{fig:five-api-models}
+\end{figure}
+
+\subsection{Overall Interpretation}
+
+Taken together, the five-model experiment supports GPT-4o as the best default
+for the benchmark mix studied here. That conclusion is straightforward.
+The more useful secondary conclusion is that there is no universal runner-up.
+Claude looks strongest after benchmark normalization, GPT-4.1 has the best
+QA mean and more first-place finishes, and GPT-5 is close to Claude in raw
+mean while behaving less consistently. The right second choice therefore
+depends on the workload rather than on a single overall number.
+
+The study also shows why the broader GPT-4o--Claude comparison remains
+necessary. Restricting the data to what every model completed makes a clean
+five-way comparison possible, but it throws away 15 matched benchmarks and
+three entire task families available for those two models. The 36-benchmark
+study gives the more complete answer when choosing specifically between
+GPT-4o and Claude; the 21-benchmark study gives the fairer answer when all
+five systems must be considered together. Neither replaces the other.
+
+\section{Conclusions and Future Work}
+
+This project produced a common and reproducible framework for evaluating
+vision-language models across a broad collection of datasets and task types.
+The same model interface, prompts, sample counts, metrics, and telemetry were
+used throughout, allowing hosted models from different providers to be
+compared under reasonably consistent conditions.
+
+Across the 36 benchmarks shared by GPT-4o and Claude Sonnet 4.5, GPT-4o was
+the stronger general-purpose model. It won more benchmarks, achieved the
+higher normalized score, and performed particularly well in visual question
+answering and captioning. Claude remained competitive and was notably stronger
+in prompt reconstruction and some detection and labeling tasks. The result is
+therefore not that one model is always better, but that GPT-4o is the safer
+default while Claude may be preferable for particular workloads.
+
+The five-model comparison reached a similar overall conclusion. GPT-4o led
+the 21-benchmark common set and also had the lowest observed end-to-end
+latency. GPT-4.1 produced the best QA mean, while Claude obtained the best
+detection mean. GPT-5 showed occasional strong results but was less consistent,
+and Gemini 3.5 Flash performed poorly under the current prompts and evaluation
+format. In practice, routing tasks to specialised models could outperform
+using one model for everything, although it would make the system more complex
+and expensive to maintain.
+
+These findings must be read with the limitations of the experiment in mind.
+Only 20 examples were evaluated per benchmark, the metrics are heterogeneous,
+and hosted APIs can change without notice. Some low scores may also reflect
+strict output parsing rather than a complete failure of visual understanding.
+The results are consequently a useful experimental snapshot, not a permanent
+leaderboard.
+
+Future work should increase the number of samples, manually inspect formatting
+failures, test for benchmark contamination, and repeat the measurements over
+time. It would also be useful to complete the missing model--dataset
+combinations and compare API systems with locally hosted and fine-tuned
+vision-language models. Even with its limitations, the study demonstrates a
+clear point: model quality cannot be represented fairly by one benchmark or
+one average. The task, metric, latency, cost, and deployment context all matter.
+
+\clearpage
+\section{References}
+\begin{thebibliography}{99}
+\bibitem{vaswani2017attention} A. Vaswani et al., ``Attention Is All You Need,'' NeurIPS, 2017. \url{https://arxiv.org/abs/1706.03762}.
+\bibitem{hendrycks2020mmlu} D. Hendrycks et al., ``Measuring Massive Multitask Language Understanding,'' ICLR, 2021. \url{https://arxiv.org/abs/2009.03300}.
+\bibitem{kiela2021dynabench} D. Kiela et al., ``Dynabench: Rethinking Benchmarking in NLP,'' NAACL, 2021. \url{https://arxiv.org/abs/2104.14337}.
+\bibitem{srivastava2022bigbench} A. Srivastava et al., ``Beyond the Imitation Game: Quantifying and Extrapolating the Capabilities of Language Models,'' Transactions on Machine Learning Research, 2023. \url{https://arxiv.org/abs/2206.04615}.
+\bibitem{liang2022helm} P. Liang et al., ``Holistic Evaluation of Language Models,'' Transactions on Machine Learning Research, 2023. \url{https://arxiv.org/abs/2211.09110}.
+\bibitem{yue2023mmmu} X. Yue et al., ``MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI,'' CVPR, 2024. \url{https://arxiv.org/abs/2311.16502}.
+\bibitem{reddi2019mlperf} V. J. Reddi et al., ``MLPerf Inference Benchmark,'' ISCA, 2020. \url{https://arxiv.org/abs/1911.02549}.
+\bibitem{li2023contamination} Y. Li, F. Guerin, and C. Lin, ``An Open Source Data Contamination Report for Large Language Models,'' 2023. \url{https://arxiv.org/abs/2310.17589}.
+\bibitem{deng2009imagenet} J. Deng et al., ``ImageNet: A Large-Scale Hierarchical Image Database,'' CVPR, 2009. \url{https://doi.org/10.1109/CVPR.2009.5206848}.
+\bibitem{soomro2012ucf101} K. Soomro, A. R. Zamir, and M. Shah, ``UCF101: A Dataset of 101 Human Actions Classes From Videos in the Wild,'' 2012. \url{https://arxiv.org/abs/1212.0402}.
+\bibitem{lin2014coco} T.-Y. Lin et al., ``Microsoft COCO: Common Objects in Context,'' ECCV, 2014. \url{https://arxiv.org/abs/1405.0312}.
+\bibitem{plummer2015flickr30k} B. A. Plummer et al., ``Flickr30k Entities: Collecting Region-to-Phrase Correspondences for Richer Image-to-Sentence Models,'' ICCV, 2015. \url{https://arxiv.org/abs/1505.04870}.
+\bibitem{mayer2016large} N. Mayer et al., ``A Large Dataset to Train Convolutional Networks for Disparity, Optical Flow, and Scene Flow Estimation,'' CVPR, 2016. \url{https://arxiv.org/abs/1512.02134}.
+\bibitem{yu2015lsun} F. Yu et al., ``LSUN: Construction of a Large-scale Image Dataset using Deep Learning with Humans in the Loop,'' 2015. \url{https://arxiv.org/abs/1506.03365}.
+\bibitem{cordts2016cityscapes} M. Cordts et al., ``The Cityscapes Dataset for Semantic Urban Scene Understanding,'' CVPR, 2016. \url{https://arxiv.org/abs/1604.01685}.
+\bibitem{krishna2017visualgenome} R. Krishna et al., ``Visual Genome: Connecting Language and Vision Using Crowdsourced Dense Image Annotations,'' IJCV, 2017. \url{https://arxiv.org/abs/1602.07332}.
+\bibitem{goyal2017vqa} Y. Goyal et al., ``Making the V in VQA Matter,'' CVPR, 2017. \url{https://arxiv.org/abs/1612.00837}.
+\bibitem{xiao2017fashionmnist} H. Xiao, K. Rasul, and R. Vollgraf, ``Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms,'' 2017. \url{https://arxiv.org/abs/1708.07747}.
+\bibitem{kay2017kinetics} W. Kay et al., ``The Kinetics Human Action Video Dataset,'' 2017. \url{https://arxiv.org/abs/1705.06950}.
+\bibitem{vanhorn2018inaturalist} G. Van Horn et al., ``The iNaturalist Species Classification and Detection Dataset,'' CVPR, 2018. \url{https://arxiv.org/abs/1707.06642}.
+\bibitem{zhou2017places} B. Zhou et al., ``Places: A 10 Million Image Database for Scene Recognition,'' TPAMI, 2017. \url{https://arxiv.org/abs/1610.02055}.
+\bibitem{sharma2018conceptual} P. Sharma et al., ``Conceptual Captions: A Cleaned, Hypernymed, Image Alt-text Dataset for Automatic Image Captioning,'' ACL, 2018. \url{https://aclanthology.org/P18-1238/}.
+\bibitem{kuznetsova2020openimages} A. Kuznetsova et al., ``The Open Images Dataset V4,'' IJCV, 2020. \url{https://arxiv.org/abs/1811.00982}.
+\bibitem{hudson2019gqa} D. A. Hudson and C. D. Manning, ``GQA: A New Dataset for Real-World Visual Reasoning and Compositional Question Answering,'' CVPR, 2019. \url{https://arxiv.org/abs/1902.09506}.
+\bibitem{bergmann2019mvtec} P. Bergmann et al., ``MVTec AD---A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection,'' CVPR, 2019. \url{https://arxiv.org/abs/1904.09665}.
+\bibitem{gupta2019lvis} A. Gupta, P. Dollar, and R. Girshick, ``LVIS: A Dataset for Large Vocabulary Instance Segmentation,'' CVPR, 2019. \url{https://arxiv.org/abs/1908.03195}.
+\bibitem{mathew2020docvqa} M. Mathew, D. Karatzas, and C. V. Jawahar, ``DocVQA: A Dataset for VQA on Document Images,'' WACV, 2021. \url{https://arxiv.org/abs/2007.00398}.
+\bibitem{dolhansky2020dfdc} B. Dolhansky et al., ``The DeepFake Detection Challenge (DFDC) Dataset,'' 2020. \url{https://arxiv.org/abs/2006.07397}.
+\bibitem{sidorov2020textcaps} O. Sidorov et al., ``TextCaps: a Dataset for Image Captioning with Reading Comprehension,'' ECCV, 2020. \url{https://arxiv.org/abs/2003.12462}.
+\bibitem{schuhmann2021laion400m} C. Schuhmann et al., ``LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs,'' 2021. \url{https://arxiv.org/abs/2111.02114}.
+\bibitem{karkkainen2021fairface} K. Karkkainen and J. Joo, ``FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age,'' WACV, 2021. \url{https://arxiv.org/abs/1908.04913}.
+\bibitem{zhang2021hdtf} Z. Zhang et al., ``Flow-guided One-shot Talking Face Generation with a High-Definition Talking Face Dataset,'' CVPR, 2021. \url{https://github.com/MRzzm/HDTF}.
+\bibitem{schuhmann2022laion5b} C. Schuhmann et al., ``LAION-5B: An Open Large-Scale Dataset for Training Next Generation Image-Text Models,'' NeurIPS Datasets and Benchmarks, 2022. \url{https://arxiv.org/abs/2210.08402}.
+\bibitem{wang2022diffusiondb} Z. J. Wang et al., ``DiffusionDB: A Large-scale Prompt Gallery Dataset for Text-to-Image Generative Models,'' ACL, 2023. \url{https://arxiv.org/abs/2210.14896}.
+\bibitem{he2022tad66k} S. He et al., ``Theme-Aware Visual Attribute Reasoning for Image Aesthetics Assessment,'' ACM MM, 2022. \url{https://github.com/woshidandan/TANet}.
+\bibitem{zhang2023magicbrush} K. Zhang et al., ``MagicBrush: A Manually Annotated Dataset for Instruction-Guided Image Editing,'' NeurIPS Datasets and Benchmarks, 2023. \url{https://arxiv.org/abs/2306.10012}.
+\bibitem{kirstain2023pickapic} Y. Kirstain et al., ``Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation,'' NeurIPS, 2023. \url{https://arxiv.org/abs/2305.01569}.
+\bibitem{wang2023internvid} Y. Wang et al., ``InternVid: A Large-scale Video-Text Dataset for Multimodal Understanding and Generation,'' 2023. \url{https://arxiv.org/abs/2307.06942}.
+\bibitem{nan2024openvid} K. Nan et al., ``OpenVid-1M: A Large-Scale High-Quality Dataset for Text-to-video Generation,'' 2024. \url{https://arxiv.org/abs/2407.02371}.
+\bibitem{shao2024visualcot} H. Shao et al., ``Visual CoT: Advancing Multi-Modal Language Models with a Comprehensive Dataset and Benchmark for Chain-of-Thought Reasoning,'' 2024. \url{https://arxiv.org/abs/2403.16999}.
+\bibitem{hui2024hqedit} M. Hui et al., ``HQ-Edit: A High-Quality Dataset for Instruction-based Image Editing,'' 2024. \url{https://arxiv.org/abs/2404.09990}.
+\bibitem{chen2025blip3o} J. Chen et al., ``BLIP3-o: A Family of Fully Open Unified Multimodal Models---Architecture, Training and Dataset,'' 2025. \url{https://arxiv.org/abs/2505.09568}.
+\bibitem{ye2025imgedit} Y. Ye et al., ``ImgEdit: A Unified Image Editing Dataset and Benchmark,'' 2025. \url{https://arxiv.org/abs/2505.20275}.
+\bibitem{chen2025sharegpt} J. Chen et al., ``ShareGPT-4o-Image: Aligning Multimodal Models with GPT-4o-Level Image Generation,'' 2025. \url{https://arxiv.org/abs/2506.18095}.
+\bibitem{kinney2023semanticscholar} R. Kinney et al., ``The Semantic Scholar Open Data Platform,'' 2023. \url{https://arxiv.org/abs/2301.10140}.
+\bibitem{yue2024mmmupro} X. Yue et al., ``MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark,'' 2024. \url{https://arxiv.org/abs/2409.02813}.
+\bibitem{chiang2024arena} W.-L. Chiang et al., ``Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference,'' ICML, 2024. \url{https://arxiv.org/abs/2403.04132}.
+\bibitem{lmarenaVision} LM Arena, ``Vision Arena Leaderboard.'' \url{https://lmarena.ai/leaderboard/vision}. Accessed June 10, 2026.
+\bibitem{nvidiaB300} NVIDIA, ``NVIDIA B300 Tensor Core GPU.'' \url{https://www.nvidia.com/en-us/data-center/b300/}. Accessed June 10, 2026.
+\end{thebibliography}
+
+\clearpage
+\appendix
 \end{document}
 

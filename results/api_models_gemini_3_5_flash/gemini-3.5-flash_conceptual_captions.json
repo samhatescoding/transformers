@@ -1,0 +1,828 @@
+{
+  "model": "gemini-3.5-flash",
+  "benchmark": "conceptual_captions",
+  "report": {
+    "benchmark": "conceptual_captions",
+    "dataset": "conceptual_captions",
+    "task_type": "prompt_reconstruction",
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "author : a life in portraiture -- in photographs",
+          "author : a life in photography -- in pictures",
+          "author : a life in photography -- in photographs",
+          "author : a life in portraiture -- in pictures"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "author : a life in photography -- in pictures"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.8417893999721855,
+          "generation_time_seconds": 4.309282299946062,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 287305728,
+          "cpu_utilization_percent": 1.0825581395348836,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "author : a life in portraiture -- in photographs",
+          "author : a life in photography -- in pictures",
+          "author : a life in photography -- in photographs",
+          "author : a life in portraiture -- in pictures"
+        ],
+        "selected_choice": "",
+        "answer": "author : a life in photography -- in pictures"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "an angler fishes river on a snowy day ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "wall_clock_time_seconds": 2.944978000014089,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "HTTPError: HTTP Error 404: Not Found"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "photograph of the sign being repaired by brave person"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+          "wall_clock_time_seconds": 0.0790013000369072,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "the player staring intently at a computer screen ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "wall_clock_time_seconds": 0.8484324000310153,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "HTTPError: HTTP Error 404: Not Found"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "globes : the green 3d person carrying in hands globe"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "URLError: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>",
+          "wall_clock_time_seconds": 21.13392809999641,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "URLError: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "the - bathroom wooden cottage can sleep people",
+          "the - bedroom stone cottage can sleep people",
+          "the - bathroom stone cottage can sleep people",
+          "the - bedroom wooden cottage can sleep people"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "the - bedroom stone cottage can sleep people"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 16.15594239998609,
+          "generation_time_seconds": 12.198841799981892,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 286900224,
+          "cpu_utilization_percent": 0.12768595041322314,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "the - bathroom wooden cottage can sleep people",
+          "the - bedroom stone cottage can sleep people",
+          "the - bathroom stone cottage can sleep people",
+          "the - bedroom wooden cottage can sleep people"
+        ],
+        "selected_choice": "the - bedroom stone cottage can sleep people",
+        "answer": "the - bedroom stone cottage can sleep people"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "film of a garbage truck"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "wall_clock_time_seconds": 1.3167561000445858,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "HTTPError: HTTP Error 403: Forbidden"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "young woman seated on the beach"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "HTTPError: HTTP Error 400: Bad Request",
+          "wall_clock_time_seconds": 3.4977034999756142,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "HTTPError: HTTP Error 400: Bad Request"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "party in the park under cherry blossoms"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1081)>",
+          "wall_clock_time_seconds": 0.9321358000161126,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1081)>"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "classical music 's rising stars join conducted ensemble for a season"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+          "wall_clock_time_seconds": 0.11936869996134192,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "a man holds what is believed to be some of the debris that caused damage to vehicles monday afternoon after airliner returned to airport following problems after take off ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "HTTPError: HTTP Error 429: Too Many Requests",
+          "wall_clock_time_seconds": 2.4268206000560895,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "where 's the best place to show off your shoes ? right in front of the palace , of course !",
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "where 's the best place to show off your nails ? right in front of the palace , of course !",
+          "where 's the best place to show off your shoes ? right in front of the castle , of course !"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.157265100046061,
+          "generation_time_seconds": 2.6775227999314666,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 287555584,
+          "cpu_utilization_percent": 0.5867924528301887,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your shoes ? right in front of the palace , of course !",
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "where 's the best place to show off your nails ? right in front of the palace , of course !",
+          "where 's the best place to show off your shoes ? right in front of the castle , of course !"
+        ],
+        "selected_choice": "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "answer": "where 's the best place to show off your nails ? right in front of the castle , of course !"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "that combines elements of a spicy fruit and dish",
+          "that combines elements of a simple vegetable and dish",
+          "that combines elements of a spicy vegetable and dish",
+          "that combines elements of a simple fruit and dish"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "that combines elements of a simple vegetable and dish"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.7423415000084788,
+          "generation_time_seconds": 1.566835599951446,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 288653312,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "that combines elements of a spicy fruit and dish",
+          "that combines elements of a simple vegetable and dish",
+          "that combines elements of a spicy vegetable and dish",
+          "that combines elements of a simple fruit and dish"
+        ],
+        "selected_choice": "",
+        "answer": "that combines elements of a simple vegetable and dish"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "transformers : till all are issue # 4b"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "wall_clock_time_seconds": 0.4068730999715626,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "HTTPError: HTTP Error 403: Forbidden"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "illustration of a little boy taking a shower",
+          "illustration of a little girl taking a bath",
+          "illustration of a little girl taking a shower",
+          "illustration of a little boy taking a bath"
+        ],
+        "prediction": "D",
+        "correct": false,
+        "valid_labels": [
+          "illustration of a little girl taking a bath"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.181969500030391,
+          "generation_time_seconds": 1.3484490000410005,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 289718272,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "illustration of a little boy taking a shower",
+          "illustration of a little girl taking a bath",
+          "illustration of a little girl taking a shower",
+          "illustration of a little boy taking a bath"
+        ],
+        "selected_choice": "illustration of a little boy taking a bath",
+        "answer": "illustration of a little girl taking a bath"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "tv medical drama is filming on the hospital this week .",
+          "tv police procedural is filming on the street this week .",
+          "tv police procedural is filming on the hospital this week .",
+          "tv medical drama is filming on the street this week ."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "tv police procedural is filming on the street this week ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.5055265999399126,
+          "generation_time_seconds": 2.3435329000931233,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 294924288,
+          "cpu_utilization_percent": 1.3127659574468085,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "tv medical drama is filming on the hospital this week .",
+          "tv police procedural is filming on the street this week .",
+          "tv police procedural is filming on the hospital this week .",
+          "tv medical drama is filming on the street this week ."
+        ],
+        "selected_choice": "",
+        "answer": "tv police procedural is filming on the street this week ."
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "the old terminal on island with quiet sea and rising sun",
+          "the new terminal on island with quiet sea and setting sun",
+          "the new terminal on island with quiet sea and rising sun",
+          "the old terminal on island with quiet sea and setting sun"
+        ],
+        "prediction": "C",
+        "correct": false,
+        "valid_labels": [
+          "the new terminal on island with quiet sea and setting sun"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.148469200008549,
+          "generation_time_seconds": 1.6076019000029191,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 295723008,
+          "cpu_utilization_percent": 1.934375,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "the old terminal on island with quiet sea and rising sun",
+          "the new terminal on island with quiet sea and setting sun",
+          "the new terminal on island with quiet sea and rising sun",
+          "the old terminal on island with quiet sea and setting sun"
+        ],
+        "selected_choice": "the new terminal on island with quiet sea and rising sun",
+        "answer": "the new terminal on island with quiet sea and setting sun"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "what hairstyle to wear to a wedding",
+          "what makeup to wear to a job interview",
+          "what hairstyle to wear to a job interview",
+          "what makeup to wear to a wedding"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "what makeup to wear to a job interview"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.03090729995165,
+          "generation_time_seconds": 1.7310675999615341,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 296120320,
+          "cpu_utilization_percent": 1.7714285714285714,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "what hairstyle to wear to a wedding",
+          "what makeup to wear to a job interview",
+          "what hairstyle to wear to a job interview",
+          "what makeup to wear to a wedding"
+        ],
+        "selected_choice": "",
+        "answer": "what makeup to wear to a job interview"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "father and son putting on ice skates near frozen lake"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "HTTPError: HTTP Error 400: Bad Request",
+          "wall_clock_time_seconds": 0.8432341000298038,
+          "generation_time_seconds": 0.0,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": null,
+          "cpu_utilization_percent": null,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "HTTPError: HTTP Error 400: Bad Request"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "the surgeon drill the tooth with a laser",
+          "the dentist drill the tooth with a turbine",
+          "the dentist drill the tooth with a laser",
+          "the surgeon drill the tooth with a turbine"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "the dentist drill the tooth with a turbine"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.777052899939008,
+          "generation_time_seconds": 1.9375905999913812,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 294973440,
+          "cpu_utilization_percent": 1.5846153846153845,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "the surgeon drill the tooth with a laser",
+          "the dentist drill the tooth with a turbine",
+          "the dentist drill the tooth with a laser",
+          "the surgeon drill the tooth with a turbine"
+        ],
+        "selected_choice": "",
+        "answer": "the dentist drill the tooth with a turbine"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 82.09346320002805,
+      "wall_clock_time_per_sample_seconds_mean": 4.1045247800007925,
+      "total_generation_time_seconds_mean": 1.4860362249950412,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.24362475671501657,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 0.2,
+      "number_of_benchmark_samples_completed": 9,
+      "success_count": 9,
+      "failure_count": 11,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 296120320,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.9333579395854511,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.926145000034012
+    }
+  }
+}

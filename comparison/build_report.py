@@ -13,9 +13,14 @@ import pandas as pd
 
 BENCHMARK_FAMILY = {
     "blip3o_60k": "prompt_reconstruction",
+    "cityscapes": "labeling",
     "conceptual_captions": "labeling",
     "conceptual_captions_caption": "captioning",
+    "dfdc": "labeling",
+    "diffusiondb": "prompt_reconstruction",
     "flickr30k": "captioning",
+    "flyingthings3d": "qa",
+    "hdtf": "captioning",
     "internvid": "captioning",
     "laion400m": "captioning",
     "laion5b": "captioning",
@@ -39,16 +44,19 @@ BENCHMARK_FAMILY = {
     "ucf101": "labeling",
     "dfdc": "labeling",
     "flickr30k_entities": "detection",
+    "inaturalist_detection": "detection",
     "lvis": "detection",
     "mscoco": "detection",
     "openimages_v4_detection": "detection",
+    "visual_cot_detection": "detection",
     "hq_edit": "image_modification_vqa",
     "imgedit": "image_modification_vqa",
     "magicbrush": "image_modification_vqa",
+    "sharegpt4o_image_edit": "image_modification_vqa",
     "sharegpt4o_image": "prompt_reconstruction",
     "pick_a_pic": "image_preference",
     "tad66k": "aesthetic_rating",
-    "diffusiondb": "prompt_reconstruction",
+    "openvid1m_caption": "captioning",
 }
 
 PRIMARY_METRIC_BY_FAMILY = {
@@ -161,6 +169,20 @@ def _load_rows(results_dir: Path) -> pd.DataFrame:
     return df.sort_values(["family", "benchmark", "model"]).reset_index(drop=True)
 
 
+def _load_matched_rows(results_dirs: list[Path]) -> pd.DataFrame:
+    frames = [_load_rows(results_dir) for results_dir in results_dirs]
+    df = pd.concat(frames, ignore_index=True)
+    expected_models = int(df["model"].nunique())
+    benchmark_coverage = df.groupby("benchmark")["model"].nunique()
+    matched = set(benchmark_coverage[benchmark_coverage == expected_models].index)
+    return (
+        df[df["benchmark"].isin(matched)]
+        .drop_duplicates(["model", "benchmark"], keep="last")
+        .sort_values(["family", "benchmark", "model"])
+        .reset_index(drop=True)
+    )
+
+
 def _load_telemetry_rows(results_dir: Path) -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
     for path in sorted(results_dir.glob("*.json")):
@@ -203,6 +225,22 @@ def _load_telemetry_rows(results_dir: Path) -> pd.DataFrame:
     df = pd.DataFrame(rows)
     df["family"] = pd.Categorical(df["family"], categories=FAMILY_ORDER, ordered=True)
     return df.sort_values(["family", "benchmark", "model"]).reset_index(drop=True)
+
+
+def _load_matched_telemetry_rows(
+    results_dirs: list[Path],
+    matched_benchmarks: set[str],
+) -> pd.DataFrame:
+    df = pd.concat(
+        [_load_telemetry_rows(results_dir) for results_dir in results_dirs],
+        ignore_index=True,
+    )
+    return (
+        df[df["benchmark"].isin(matched_benchmarks)]
+        .drop_duplicates(["model", "benchmark"], keep="last")
+        .sort_values(["family", "benchmark", "model"])
+        .reset_index(drop=True)
+    )
 
 
 def _add_relative_metrics(df: pd.DataFrame) -> pd.DataFrame:
@@ -361,6 +399,49 @@ def _build_bootstrap(df: pd.DataFrame, n_samples: int, seed: int) -> pd.DataFram
         )
     del benchmarks
     return pd.DataFrame(rows).sort_values("observed_mean_score", ascending=False).reset_index(drop=True)
+
+
+def _build_paired_bootstrap(
+    df: pd.DataFrame,
+    n_samples: int,
+    seed: int,
+) -> pd.DataFrame:
+    pivot = df.pivot_table(
+        index="benchmark",
+        columns="model",
+        values="score",
+        aggfunc="mean",
+    ).dropna()
+    if len(pivot.columns) != 2 or pivot.empty:
+        return pd.DataFrame()
+
+    model_a, model_b = sorted(pivot.columns)
+    deltas = (
+        pivot[model_a].to_numpy(dtype=float)
+        - pivot[model_b].to_numpy(dtype=float)
+    )
+    rng = np.random.default_rng(seed)
+    draws = rng.integers(0, len(deltas), size=(n_samples, len(deltas)))
+    sampled_deltas = deltas[draws].mean(axis=1)
+    return pd.DataFrame(
+        [
+            {
+                "model_a": model_a,
+                "model_b": model_b,
+                "benchmarks_used": int(len(deltas)),
+                "observed_mean_delta_a_minus_b": float(deltas.mean()),
+                "bootstrap_mean_delta": float(sampled_deltas.mean()),
+                "ci05": float(np.quantile(sampled_deltas, 0.05)),
+                "ci025": float(np.quantile(sampled_deltas, 0.025)),
+                "ci50": float(np.quantile(sampled_deltas, 0.50)),
+                "ci975": float(np.quantile(sampled_deltas, 0.975)),
+                "ci95": float(np.quantile(sampled_deltas, 0.95)),
+                "probability_delta_above_zero": float(
+                    (sampled_deltas > 0).mean()
+                ),
+            }
+        ]
+    )
 
 
 def _save_table(df: pd.DataFrame, path: Path) -> None:
@@ -686,15 +767,35 @@ def _write_markdown_summary(
     (output_dir / "summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def build_report(results_dir: Path, output_dir: Path, bootstrap_samples: int, seed: int) -> None:
+def build_report(
+    results_dir: Path,
+    output_dir: Path,
+    bootstrap_samples: int,
+    seed: int,
+    additional_results_dirs: list[Path] | None = None,
+) -> None:
     _ensure_output_dir(output_dir)
-    benchmark_df = _add_relative_metrics(_load_rows(results_dir))
-    telemetry_df = _load_telemetry_rows(results_dir)
+    results_dirs = [results_dir, *(additional_results_dirs or [])]
+    if len(results_dirs) == 1:
+        raw_benchmark_df = _load_rows(results_dir)
+        telemetry_df = _load_telemetry_rows(results_dir)
+    else:
+        raw_benchmark_df = _load_matched_rows(results_dirs)
+        telemetry_df = _load_matched_telemetry_rows(
+            results_dirs,
+            set(raw_benchmark_df["benchmark"]),
+        )
+    benchmark_df = _add_relative_metrics(raw_benchmark_df)
     model_summary = _build_model_summary(benchmark_df)
     family_summary = _build_family_summary(benchmark_df)
     ranking_table = _build_ranking_table(benchmark_df)
     pairwise = _build_pairwise(benchmark_df)
     bootstrap_df = _build_bootstrap(benchmark_df, n_samples=bootstrap_samples, seed=seed)
+    paired_bootstrap_df = _build_paired_bootstrap(
+        benchmark_df,
+        n_samples=bootstrap_samples,
+        seed=seed,
+    )
     telemetry_summary = _build_telemetry_model_summary(telemetry_df)
     telemetry_benchmarks = _build_telemetry_benchmark_table(telemetry_df)
 
@@ -704,6 +805,10 @@ def build_report(results_dir: Path, output_dir: Path, bootstrap_samples: int, se
     _save_table(ranking_table, output_dir / "benchmark_rankings.csv")
     _save_table(pairwise, output_dir / "pairwise_wins.csv")
     _save_table(bootstrap_df, output_dir / "bootstrap_summary.csv")
+    _save_table(
+        paired_bootstrap_df,
+        output_dir / "paired_bootstrap_difference.csv",
+    )
     _save_table(telemetry_summary, output_dir / "telemetry_model_summary.csv")
     _save_table(telemetry_benchmarks, output_dir / "telemetry_by_benchmark.csv")
 
@@ -783,6 +888,12 @@ def build_report(results_dir: Path, output_dir: Path, bootstrap_samples: int, se
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build a richer cross-model comparison report from saved results.")
     parser.add_argument("--results-dir", default="results")
+    parser.add_argument(
+        "--additional-results-dir",
+        action="append",
+        default=[],
+        help="Additional flat result directory. With multiple directories, only benchmarks present for every model are compared.",
+    )
     parser.add_argument("--output-dir", default="comparison/output")
     parser.add_argument("--bootstrap-samples", type=int, default=5000)
     parser.add_argument("--seed", type=int, default=7)
@@ -793,6 +904,9 @@ def main() -> int:
         output_dir=Path(args.output_dir),
         bootstrap_samples=int(args.bootstrap_samples),
         seed=int(args.seed),
+        additional_results_dirs=[
+            Path(path) for path in args.additional_results_dir
+        ],
     )
     return 0
 
