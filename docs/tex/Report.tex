@@ -728,6 +728,7 @@ Finally, \textbf{Pick-a-Pic} captures human \bfit{preferences} for images genera
 Regarding the licenses,
 
 \subsection{Benchmark Tasks and Metrics}
+\label{sec:benchmark-tasks}
 \subsubsection{\textbf{L}: Labeling}
 
 This benchmark takes one image and a list of possible labels. The model returns exactly one label describing the image. For video datasets, several frames are combined into a contact sheet and the model predicts the action or video label.
@@ -948,6 +949,188 @@ metadata:
 \text{date tested} & \text{date on which the result was obtained}.
 \end{array}
 \]
+
+\section{Finetuning}
+
+\subsection{Purpose and Model Selection}
+
+The finetuning experiment measures whether parameter-efficient adaptation to a
+balanced mixture of visual tasks improves performance across the eight
+benchmark types defined in Section~\ref{sec:benchmark-tasks}, rather than only
+on a single dataset. The selected checkpoint is
+\texttt{LLaVA-OneVision-Qwen2-7B}\footnote{\url{https://huggingface.co/llava-hf/llava-onevision-qwen2-7b-ov-hf}},
+referred to below as LLaVA-OneVision 7B. This model was selected because it is
+supported directly by the Hugging Face \texttt{transformers} library, accepts image--text
+conversations, and is sufficiently small for both inference and
+parameter-efficient finetuning on one GPU.
+
+Two notebooks implement a matched before-and-after experiment. The baseline
+notebook evaluates the unchanged checkpoint, while the finetuning notebook
+constructs the training data, trains one adapter, and evaluates the adapted
+model. Both notebooks use the same model checkpoint, benchmark classes,
+evaluation splits, number of evaluation examples, generation limits, and
+quantization setting. Consequently, the main experimental difference is the
+presence or absence of the trained adapter.
+
+\subsection{Representative Training Tasks}
+
+One representative dataset is selected for each benchmark type. The training
+mixture is therefore broad enough to expose the model to all required answer
+formats while remaining balanced across task families.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Type} & \textbf{Task} & \textbf{Representative dataset} \\
+\midrule
+L & Labeling & Fashion-MNIST \\
+A & Visual question answering & DocVQA \\
+B & Bounding-box detection & Open Images V4 \\
+C & Captioning & MS COCO captions \\
+E & Editing prompt reconstruction & MagicBrush \\
+G & Generation prompt reconstruction & DiffusionDB \\
+P & Image preference & Pick-a-Pic \\
+R & Aesthetic rating & TAD66K \\
+\bottomrule
+\end{tabular}
+\caption{Representative datasets used in the eight-type finetuning mixture.}
+\label{tab:finetuning-mixture}
+\end{table}
+
+By default, 980 training examples and 200 validation examples are exported
+for each type. This produces a 7,840-example training mixture and a
+1,600-example validation mixture. Equal per-type counts prevent a large source
+dataset from dominating the optimization objective. After export, the eight
+manifests are merged and deterministically shuffled. The training count is
+limited by the configured DocVQA mirror, which exposes 1,286 usable validation
+images: after reserving 100 for evaluation and 200 for finetuning validation,
+980 are used for training, leaving a small safety margin.
+
+\subsection{Conversion to Supervised Conversations}
+
+The same benchmark implementation is used to construct both evaluation inputs
+and finetuning examples. For every selected row, the exporter:
+
+\begin{enumerate}
+    \item loads and normalizes the visual input;
+    \item calls the benchmark's prompt-construction method;
+    \item obtains the accepted answer from the dataset annotations;
+    \item writes the image path, prompt, answer, and system instruction to a
+    JSONL manifest.
+\end{enumerate}
+
+Each exported record has the conceptual form
+\[
+    (\text{image},\ \text{task instruction},\ \text{target answer}).
+\]
+During training, this record is rendered with the LLaVA-OneVision chat
+template. The user message contains the image and task instruction, and the
+assistant message contains the accepted answer. Tokens belonging to the system
+and user messages are masked from the loss. Therefore, the optimization loss is
+computed only on the assistant answer, rather than teaching the model to
+reproduce the entire prompt.
+
+The target format depends on the task. Labeling examples contain one class
+name; visual-question-answering examples contain the accepted answer;
+detection examples contain one or more labels and normalized
+\([x,y,\mathrm{width},\mathrm{height}]\) boxes; captioning examples contain a
+reference caption; preference examples contain \texttt{Image A} or
+\texttt{Image B}; and rating examples contain the reference score.
+
+\subsection{Manually Constructed Questions and Distractors}
+
+Some benchmarks require information that is not present in the source dataset.
+This occurs mainly when an originally open-answer or prompt-reconstruction task
+is converted into multiple choice. It is important to distinguish the
+\emph{supervised answer} from the \emph{manually constructed choices}.
+
+For Type A datasets such as DocVQA, the source dataset already supplies the
+image, question, and accepted answer. Manual curation supplies plausible
+incorrect choices for selected rows; it does not replace the source answer.
+When curated choices are available, the prompt lists those choices and the
+target remains the accepted dataset answer. When no curated choices are
+available, the exporter uses the native open-answer question and answer.
+
+For Type E, MagicBrush supplies a source image, an edited image, and the edit
+instruction that produced the transformation. The correct edit instruction is
+the supervised target. Manually curated instructions, dataset-derived
+instructions, or generic fallback instructions are used only as distractors in
+the multiple-choice prompt.
+
+Type G follows the same principle. DiffusionDB supplies the generated image and
+its original text prompt. That original prompt is the target answer, while the
+other candidate prompts are distractors. Type P does not require manually
+written prompts: Pick-a-Pic supplies the compared images and the recorded human
+preference, so the target is simply \texttt{Image A} or \texttt{Image B}.
+
+Thus, the model is never trained to generate the manually authored
+distractors. It is trained to predict the source dataset's correct answer in
+the context of the benchmark prompt. Manual curation controls the difficulty
+and validity of the question presented to the model.
+
+The curated choice files cover a limited number of rows rather than every
+possible training example. The finetuning exporter therefore supports a
+\texttt{skip-examples} parameter. The first 100 examples are reserved for the
+matched evaluation, and training export begins after this reserved prefix.
+As a result, manually curated rows at the beginning of a dataset are primarily
+used for evaluation, while later finetuning rows use native open-answer
+supervision or automatically constructed choices. This reduces direct
+memorization of the small manual prompt bank.
+
+\subsection{QLoRA Training Procedure}
+
+The experiment trains one balanced adapter shared by all eight task types.
+The base checkpoint is loaded in 4-bit NormalFloat quantization and adapted
+with QLoRA. Low-rank adapters are inserted into the model's linear layers with
+rank 32, scaling factor 64, and dropout 0.05. The vision tower is frozen by
+default so that optimization concentrates on the language model and
+multimodal projection components. The default run uses two epochs, a learning
+rate of \(10^{-4}\), a physical batch size of one, and gradient accumulation
+over 16 steps.
+
+Training uses BF16 computation, gradient checkpointing, a cosine learning-rate
+schedule, and validation at the end of each epoch. Checkpoints are selected by
+minimum validation loss. The final output contains the PEFT adapter and the
+processor configuration; it does not duplicate the complete base model.
+Evaluation therefore reloads the original LLaVA-OneVision checkpoint and then
+attaches the trained adapter.
+
+\subsection{Baseline and Adapted Evaluation}
+
+The unchanged model and adapted model are each evaluated on 100 examples from
+every representative benchmark. Results are written separately for the
+baseline and finetuned runs, using the repository's standard benchmark runner
+and scoring code. The experiment therefore produces eight baseline reports and
+eight adapted reports. Improvement is assessed per benchmark and per task type
+rather than only through one aggregate score, since a shared adapter may
+improve some output formats while degrading others.
+
+Where a dataset provides a dedicated split, training and evaluation use
+different splits. Fashion-MNIST trains on \texttt{train} and evaluates on
+\texttt{test}; Open Images detection trains on \texttt{train} and evaluates on
+\texttt{validation}; and MS COCO captioning trains on \texttt{train} and
+evaluates on \texttt{test}. Other repository adapters expose only one practical
+split. For these datasets, the exporter reserves the initial evaluation-sized
+slice before creating the training and validation manifests.
+
+\subsection{Validity Limitations}
+
+Prefix reservation is weaker than an official held-out split. Some streaming
+datasets may change row order or sampling behavior when a different number of
+examples is requested. Therefore, DocVQA and the train-only MagicBrush,
+DiffusionDB, Pick-a-Pic, and TAD66K comparisons must be interpreted as
+exploratory unless stable row identifiers are recorded and checked for
+disjointness. The strongest before-and-after evidence comes from datasets with
+officially separate training and evaluation splits.
+
+The experiment also measures adaptation to both visual reasoning and output
+formatting. For example, an improvement on detection may result partly from
+learning the required normalized-box syntax, while an improvement on
+multiple-choice reconstruction may result partly from learning to return a
+choice letter or exact option. Per-task error analysis is therefore required
+to distinguish improved visual understanding from improved compliance with the
+benchmark response format.
 
 \clearpage
 

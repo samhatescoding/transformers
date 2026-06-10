@@ -47,7 +47,9 @@ The first evaluates the unmodified
 `llava-hf/llava-onevision-qwen2-7b-ov-hf` checkpoint. The second exports a
 balanced mixture for the same eight task types, trains a 4-bit QLoRA adapter
 with `train_llava_onevision_7b.py`, and evaluates the adapter with the same
-sample counts and split configuration.
+sample counts and split configuration. The mixture uses 980 training and 200
+validation examples per type because the configured DocVQA validation mirror
+contains 1,286 usable images and 100 are reserved for evaluation.
 
 Before running, accept the Gemma license:
 <https://huggingface.co/google/gemma-4-31B-it>.
