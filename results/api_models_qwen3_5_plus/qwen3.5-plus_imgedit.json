@@ -1,0 +1,960 @@
+{
+  "model": "qwen3.5-plus",
+  "benchmark": "imgedit",
+  "report": {
+    "benchmark": "imgedit",
+    "dataset": "imgedit",
+    "task_type": "image_modification_vqa",
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "The subject holds an eyeliner brush near their face.",
+          "The person lowers the record closer to their chest.",
+          "The person lowers their head slightly and turns it more to the side.",
+          "The person lowers their hand and places it near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person lowers the record closer to their chest."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 75.1110676000826,
+          "generation_time_seconds": 75.0654923999682,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1574289408,
+          "cpu_utilization_percent": 1.238063214525891,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The subject holds an eyeliner brush near their face.",
+          "The person lowers the record closer to their chest.",
+          "The person lowers their head slightly and turns it more to the side.",
+          "The person lowers their hand and places it near their face."
+        ],
+        "selected_choice": "The person lowers the record closer to their chest.",
+        "answer": "The person lowers the record closer to their chest."
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The subject holds an eyeliner brush near their face.",
+          "The person lowers their head slightly and turns it more to the side.",
+          "The person lowers their hand and places it near their face."
+        ],
+        "prediction": "C",
+        "correct": false,
+        "valid_labels": [
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 205.3946226000553,
+          "generation_time_seconds": 205.38399470003787,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1473540096,
+          "cpu_utilization_percent": 0.022749631087063453,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The subject holds an eyeliner brush near their face.",
+          "The person lowers their head slightly and turns it more to the side.",
+          "The person lowers their hand and places it near their face."
+        ],
+        "selected_choice": "The person lowers their head slightly and turns it more to the side.",
+        "answer": "The subject holds an eyeliner brush near their face."
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The person lowers their hand and places it near their face.",
+          "The person lowers their head slightly and turns it more to the side.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "C",
+        "correct": false,
+        "valid_labels": [
+          "The person lowers their hand and places it near their face."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 34.75342850002926,
+          "generation_time_seconds": 34.73701549996622,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1464475648,
+          "cpu_utilization_percent": 0.09026162790697674,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The person lowers their hand and places it near their face.",
+          "The person lowers their head slightly and turns it more to the side.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The person lowers their head slightly and turns it more to the side.",
+        "answer": "The person lowers their hand and places it near their face."
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The person lowers their head slightly and turns it more to the side.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person lowers their head slightly and turns it more to the side."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 28.634779199957848,
+          "generation_time_seconds": 28.596168800024316,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1464573952,
+          "cpu_utilization_percent": 0.054673721340388004,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The person lowers their head slightly and turns it more to the side.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The person lowers their head slightly and turns it more to the side.",
+        "answer": "The person lowers their head slightly and turns it more to the side."
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "A man scoops a bowl with a spatula and holds a measuring cup.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "A man scoops a bowl with a spatula and holds a measuring cup."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 28.439088699989952,
+          "generation_time_seconds": 28.392981700017117,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1465122816,
+          "cpu_utilization_percent": 0.054706927175843696,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "A man scoops a bowl with a spatula and holds a measuring cup.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "A man scoops a bowl with a spatula and holds a measuring cup.",
+        "answer": "A man scoops a bowl with a spatula and holds a measuring cup."
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "The animal moves their right hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent.",
+          "The person moves their right hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent.",
+          "The animal moves their center hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent.",
+          "The person moves their center hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person moves their right hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 23.68746829999145,
+          "generation_time_seconds": 23.6659177999245,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1465806848,
+          "cpu_utilization_percent": 0.06609808102345416,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The animal moves their right hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent.",
+          "The person moves their right hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent.",
+          "The animal moves their center hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent.",
+          "The person moves their center hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent."
+        ],
+        "selected_choice": "The person moves their right hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent.",
+        "answer": "The person moves their right hand from a raised position with fingers spread to a lowered position with the palm facing up and fingers slightly bent."
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The person lowers a dumbbell from an extended overhead position.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person lowers a dumbbell from an extended overhead position."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 53.72332749993075,
+          "generation_time_seconds": 53.68437349994201,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1465827328,
+          "cpu_utilization_percent": 0.05776105362182503,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The person lowers a dumbbell from an extended overhead position.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The person lowers a dumbbell from an extended overhead position.",
+        "answer": "The person lowers a dumbbell from an extended overhead position."
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The person changes the position of their hands from resting on the armrests to clasped together in front of their body.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person changes the position of their hands from resting on the armrests to clasped together in front of their body."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 10.470983600011095,
+          "generation_time_seconds": 10.42654770007357,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1475964928,
+          "cpu_utilization_percent": 10.125120772946861,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The person changes the position of their hands from resting on the armrests to clasped together in front of their body.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The person changes the position of their hands from resting on the armrests to clasped together in front of their body.",
+        "answer": "The person changes the position of their hands from resting on the armrests to clasped together in front of their body."
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The person straightens up from a bent-over position.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person straightens up from a bent-over position."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.136656800052151,
+          "generation_time_seconds": 12.108019200037234,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1475977216,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The person straightens up from a bent-over position.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The person straightens up from a bent-over position.",
+        "answer": "The person straightens up from a bent-over position."
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The woman turns her head and opens her mouth as if speaking or reacting.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The woman turns her head and opens her mouth as if speaking or reacting."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 30.822372799972072,
+          "generation_time_seconds": 30.79620569990948,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1466839040,
+          "cpu_utilization_percent": 0.05098360655737705,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The woman turns her head and opens her mouth as if speaking or reacting.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The woman turns her head and opens her mouth as if speaking or reacting.",
+        "answer": "The woman turns her head and opens her mouth as if speaking or reacting."
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The person adjusts the angle at which they hold the phone near their ear.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person adjusts the angle at which they hold the phone near their ear."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 224.75196429993957,
+          "generation_time_seconds": 224.73502200003713,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1466949632,
+          "cpu_utilization_percent": 0.027893908743537872,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The person adjusts the angle at which they hold the phone near their ear.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The person adjusts the angle at which they hold the phone near their ear.",
+        "answer": "The person adjusts the angle at which they hold the phone near their ear."
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The person lowers their head and looks downward.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person lowers their head and looks downward."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.394560000044294,
+          "generation_time_seconds": 9.360012599965557,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1464872960,
+          "cpu_utilization_percent": 0.16559139784946236,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The person lowers their head and looks downward.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The person lowers their head and looks downward.",
+        "answer": "The person lowers their head and looks downward."
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The person straightens their arm and shifts their weight slightly to one side.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person straightens their arm and shifts their weight slightly to one side."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 49.12352050002664,
+          "generation_time_seconds": 49.07393680000678,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1475280896,
+          "cpu_utilization_percent": 2.320679012345679,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The person straightens their arm and shifts their weight slightly to one side.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The person straightens their arm and shifts their weight slightly to one side.",
+        "answer": "The person straightens their arm and shifts their weight slightly to one side."
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The woman lowers the barbell from her shoulders.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The woman lowers the barbell from her shoulders."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 28.659771199920215,
+          "generation_time_seconds": 28.640019900049083,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1484455936,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The woman lowers the barbell from her shoulders.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The woman lowers the barbell from her shoulders.",
+        "answer": "The woman lowers the barbell from her shoulders."
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "The man leans closer over the bicycle engine.",
+          "The man leans closer over the car engine.",
+          "The woman leans closer over the bicycle engine.",
+          "The woman leans closer over the car engine."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The man leans closer over the car engine."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.944291800027713,
+          "generation_time_seconds": 8.893885700032115,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1475457024,
+          "cpu_utilization_percent": 0.1751412429378531,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The man leans closer over the bicycle engine.",
+          "The man leans closer over the car engine.",
+          "The woman leans closer over the bicycle engine.",
+          "The woman leans closer over the car engine."
+        ],
+        "selected_choice": "The man leans closer over the car engine.",
+        "answer": "The man leans closer over the car engine."
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The person spreads both hands outward while speaking.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person spreads both hands outward while speaking."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 11.292595000006258,
+          "generation_time_seconds": 11.243054300080985,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1475637248,
+          "cpu_utilization_percent": 0.13946188340807175,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The person spreads both hands outward while speaking.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The person spreads both hands outward while speaking.",
+        "answer": "The person spreads both hands outward while speaking."
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The man moves both hands from lower to higher on his chest.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The man moves both hands from lower to higher on his chest."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 10.05269329994917,
+          "generation_time_seconds": 10.030404000077397,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1475641344,
+          "cpu_utilization_percent": 0.15527638190954773,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The man moves both hands from lower to higher on his chest.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The man moves both hands from lower to higher on his chest.",
+        "answer": "The man moves both hands from lower to higher on his chest."
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "The animal turns their head slightly to the right.",
+          "The person turns their head slightly to the right.",
+          "The animal turns their head slightly to the center.",
+          "The person turns their head slightly to the center."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The person turns their head slightly to the right."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 230.00335469993297,
+          "generation_time_seconds": 229.9641788000008,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1466847232,
+          "cpu_utilization_percent": 0.0067941952506596305,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The animal turns their head slightly to the right.",
+          "The person turns their head slightly to the right.",
+          "The animal turns their head slightly to the center.",
+          "The person turns their head slightly to the center."
+        ],
+        "selected_choice": "The person turns their head slightly to the right.",
+        "answer": "The person turns their head slightly to the right."
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "The woman shifts the frying pan from a horizontal to a more diagonal position while turning her torso slightly.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "The woman shifts the frying pan from a horizontal to a more diagonal position while turning her torso slightly."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 14.096816900069825,
+          "generation_time_seconds": 14.042098599951714,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1466867712,
+          "cpu_utilization_percent": 0.22114695340501794,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "The woman shifts the frying pan from a horizontal to a more diagonal position while turning her torso slightly.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "The woman shifts the frying pan from a horizontal to a more diagonal position while turning her torso slightly.",
+        "answer": "The woman shifts the frying pan from a horizontal to a more diagonal position while turning her torso slightly."
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "The person lowers the record closer to their chest.",
+          "A woman moves her hand downward while holding a pen in her other hand.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "A woman moves her hand downward while holding a pen in her other hand."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 42.59948670002632,
+          "generation_time_seconds": 42.55586059996858,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1466896384,
+          "cpu_utilization_percent": 0.0365361803084223,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The person lowers the record closer to their chest.",
+          "A woman moves her hand downward while holding a pen in her other hand.",
+          "The person lowers their hand and places it near their face.",
+          "The subject holds an eyeliner brush near their face."
+        ],
+        "selected_choice": "A woman moves her hand downward while holding a pen in her other hand.",
+        "answer": "A woman moves her hand downward while holding a pen in her other hand."
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 1132.112193299923,
+      "wall_clock_time_per_sample_seconds_mean": 56.60464250000077,
+      "total_generation_time_seconds_mean": 56.56975951500353,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.01766609362425755,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1574289408,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.7504469896171966,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.6084774999180809
+    }
+  }
+}

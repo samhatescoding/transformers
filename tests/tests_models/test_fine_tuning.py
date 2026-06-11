@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import ast
+import inspect
 import json
 import runpy
 import sys
@@ -54,7 +56,30 @@ def _load_script(name: str) -> dict:
     finally:
         sys.path.remove(str(directory))
 
+
 class FineTuningPreparationTests(unittest.TestCase):
+    def test_training_scripts_only_pass_supported_training_arguments(self) -> None:
+        from transformers import TrainingArguments
+
+        supported = set(inspect.signature(TrainingArguments).parameters)
+        directory = Path(__file__).resolve().parents[2] / "fine_tuning"
+        for script_name in ("train_llava_onevision_7b.py", "train_gemma4_31b.py"):
+            tree = ast.parse((directory / script_name).read_text(encoding="utf-8"))
+            calls = [
+                node
+                for node in ast.walk(tree)
+                if isinstance(node, ast.Call)
+                and isinstance(node.func, ast.Name)
+                and node.func.id == "TrainingArguments"
+            ]
+            self.assertEqual(len(calls), 1, script_name)
+            keywords = {
+                keyword.arg for keyword in calls[0].keywords if keyword.arg is not None
+            }
+            self.assertFalse(
+                keywords - supported, f"{script_name}: {keywords - supported}"
+            )
+
     def test_fashion_mnist_balanced_indices_select_equal_classes_without_overlap(self) -> None:
         module = _load_script("prepare_fashion_mnist.py")
         select_balanced_indices = module["select_balanced_indices"]

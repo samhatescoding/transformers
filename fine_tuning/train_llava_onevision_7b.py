@@ -304,7 +304,6 @@ def main() -> None:
         dataloader_num_workers=args.dataloader_workers,
         dataloader_pin_memory=True,
         report_to="none",
-        save_safetensors=True,
         seed=args.seed,
     )
     trainer = Trainer(

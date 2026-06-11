@@ -1,0 +1,972 @@
+{
+  "model": "qwen3.6-plus",
+  "benchmark": "visual_cot",
+  "report": {
+    "benchmark": "visual_cot",
+    "dataset": "visual_cot",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "They have shaggy hair.",
+          "They have closely cropped hair.",
+          "They have long braided hair.",
+          "They are wearing hats that hide their hair."
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "they have shaggy hair"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 74.17896129994188,
+          "generation_time_seconds": 18.0992627000669,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 755838976,
+          "cpu_utilization_percent": 2.3924791086350976,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "They have shaggy hair."
+        ],
+        "choices": [
+          "They have shaggy hair.",
+          "They have closely cropped hair.",
+          "They have long braided hair.",
+          "They are wearing hats that hide their hair."
+        ],
+        "selected_choice": "They have shaggy hair."
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "They are clapping their hands.",
+          "They are holding gardening tools.",
+          "They are waving toward the camera.",
+          "They are looking at their hands."
+        ],
+        "prediction": "D. They are looking at their hands.",
+        "correct": true,
+        "valid_labels": [
+          "they are looking at their hands"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 89.37635240005329,
+          "generation_time_seconds": 24.167068299953826,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 836907008,
+          "cpu_utilization_percent": 1.2266666666666666,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "They are looking at their hands."
+        ],
+        "choices": [
+          "They are clapping their hands.",
+          "They are holding gardening tools.",
+          "They are waving toward the camera.",
+          "They are looking at their hands."
+        ],
+        "selected_choice": "They are looking at their hands."
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "The shirts are black.",
+          "The shirts are white.",
+          "The shirts are green.",
+          "The shirts are blue."
+        ],
+        "prediction": "D. The shirts are blue.",
+        "correct": false,
+        "valid_labels": [
+          "the shirts are green"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 185.78567789995577,
+          "generation_time_seconds": 46.32401039998513,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 899907584,
+          "cpu_utilization_percent": 1.5174482006543075,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The shirts are green."
+        ],
+        "choices": [
+          "The shirts are black.",
+          "The shirts are white.",
+          "The shirts are green.",
+          "The shirts are blue."
+        ],
+        "selected_choice": "The shirts are blue."
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "They are inside a crowded store.",
+          "They are outside near many bushes.",
+          "They are inside a kitchen.",
+          "They are standing in an office."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "they are outside near many bushes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 57.983693600050174,
+          "generation_time_seconds": 8.923386699985713,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 945520640,
+          "cpu_utilization_percent": 1.0480225988700564,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "They are outside near many bushes."
+        ],
+        "choices": [
+          "They are inside a crowded store.",
+          "They are outside near many bushes.",
+          "They are inside a kitchen.",
+          "They are standing in an office."
+        ],
+        "selected_choice": "They are outside near many bushes."
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "They are wearing safety gear which includes hard hats.",
+          "They are wearing formal suits and ties.",
+          "They are wearing swimsuits and sandals.",
+          "They are wearing sports uniforms without helmets."
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "they are wearing safety gear which includes hard hats"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 74.3722226000391,
+          "generation_time_seconds": 11.126307899947278,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1013784576,
+          "cpu_utilization_percent": 2.657466063348416,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "They are wearing safety gear which includes hard hats."
+        ],
+        "choices": [
+          "They are wearing safety gear which includes hard hats.",
+          "They are wearing formal suits and ties.",
+          "They are wearing swimsuits and sandals.",
+          "They are wearing sports uniforms without helmets."
+        ],
+        "selected_choice": "They are wearing safety gear which includes hard hats."
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "No, everyone is standing at ground level.",
+          "Yes, there are four men standing on top of a tall structure."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "yes there are four men standing on top of a tall structure"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 80.76365780003835,
+          "generation_time_seconds": 28.828089800081216,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1077256192,
+          "cpu_utilization_percent": 0.48513986013986016,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Yes, there are four men standing on top of a tall structure."
+        ],
+        "choices": [
+          "No, everyone is standing at ground level.",
+          "Yes, there are four men standing on top of a tall structure."
+        ],
+        "selected_choice": "Yes, there are four men standing on top of a tall structure."
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "Yes, the men working on the machine are wearing hard hats for safety.",
+          "No, none of the men are wearing visible safety gear."
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "yes the men working on the machine are wearing hard hats for safety"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 88.0276475000428,
+          "generation_time_seconds": 9.347719899960794,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1134153728,
+          "cpu_utilization_percent": 0.8301075268817205,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Yes, the men working on the machine are wearing hard hats for safety."
+        ],
+        "choices": [
+          "Yes, the men working on the machine are wearing hard hats for safety.",
+          "No, none of the men are wearing visible safety gear."
+        ],
+        "selected_choice": "Yes, the men working on the machine are wearing hard hats for safety."
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "The group of men are repairing a car.",
+          "The group of men are operating a giant pulley system.",
+          "The group of men are painting the structure.",
+          "The group of men are playing a ball game."
+        ],
+        "prediction": "B. The group of men are operating a giant pulley system.",
+        "correct": true,
+        "valid_labels": [
+          "the group of men are operating a giant pulley system"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 131.8882777999388,
+          "generation_time_seconds": 21.226841500028968,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1192562688,
+          "cpu_utilization_percent": 1.4693586698337293,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The group of men are operating a giant pulley system."
+        ],
+        "choices": [
+          "The group of men are repairing a car.",
+          "The group of men are operating a giant pulley system.",
+          "The group of men are painting the structure.",
+          "The group of men are playing a ball game."
+        ],
+        "selected_choice": "The group of men are operating a giant pulley system."
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "The dress of the child is pink.",
+          "The dress of the child is blue.",
+          "The dress of the child is yellow.",
+          "The dress of the child is green."
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "the dress of the child is pink"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 84.91510410001501,
+          "generation_time_seconds": 10.010506800026633,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1247780864,
+          "cpu_utilization_percent": 1.400502512562814,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The dress of the child is pink."
+        ],
+        "choices": [
+          "The dress of the child is pink.",
+          "The dress of the child is blue.",
+          "The dress of the child is yellow.",
+          "The dress of the child is green."
+        ],
+        "selected_choice": "The dress of the child is pink."
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "The child is sitting on the ground.",
+          "The child is riding a bicycle.",
+          "The child is holding a ball.",
+          "The child is climbing up a set of stairs."
+        ],
+        "prediction": "D",
+        "correct": true,
+        "valid_labels": [
+          "the child is climbing up a set of stairs"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 80.00300609995611,
+          "generation_time_seconds": 10.860522100003436,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1322790912,
+          "cpu_utilization_percent": 1.4395348837209303,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The child is climbing up a set of stairs."
+        ],
+        "choices": [
+          "The child is sitting on the ground.",
+          "The child is riding a bicycle.",
+          "The child is holding a ball.",
+          "The child is climbing up a set of stairs."
+        ],
+        "selected_choice": "The child is climbing up a set of stairs."
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "The setting is a classroom doorway.",
+          "The setting is the entrance to a grocery store.",
+          "The setting is an entryway that appears to lead to a wooden playhouse or cabin.",
+          "The setting is a city bus stop."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "the setting is an entryway that appears to lead to a wooden playhouse or cabin"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 106.28877699992154,
+          "generation_time_seconds": 13.673410800052807,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1354657792,
+          "cpu_utilization_percent": 0.3416974169741697,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The setting is an entryway that appears to lead to a wooden playhouse or cabin."
+        ],
+        "choices": [
+          "The setting is a classroom doorway.",
+          "The setting is the entrance to a grocery store.",
+          "The setting is an entryway that appears to lead to a wooden playhouse or cabin.",
+          "The setting is a city bus stop."
+        ],
+        "selected_choice": "The setting is an entryway that appears to lead to a wooden playhouse or cabin."
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "The child is entering a fabric camping tent.",
+          "The child is entering a wooden structure that resembles a playhouse or cabin.",
+          "The child is entering a concrete parking garage.",
+          "The child is entering a glass office building."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "the child is entering a wooden structure that resembles a playhouse or cabin"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 102.97700900002383,
+          "generation_time_seconds": 17.100438299938105,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1395171328,
+          "cpu_utilization_percent": 1.1876106194690266,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The child is entering a wooden structure that resembles a playhouse or cabin."
+        ],
+        "choices": [
+          "The child is entering a fabric camping tent.",
+          "The child is entering a wooden structure that resembles a playhouse or cabin.",
+          "The child is entering a concrete parking garage.",
+          "The child is entering a glass office building."
+        ],
+        "selected_choice": "The child is entering a wooden structure that resembles a playhouse or cabin."
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "The child seems to be playing, as they are climbing the stairs to a playhouse.",
+          "The child appears to be working on a construction site."
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "the child seems to be playing as they are climbing the stairs to a playhouse"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 58.01738580001984,
+          "generation_time_seconds": 9.350380000076257,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1501724672,
+          "cpu_utilization_percent": 2.1666666666666665,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The child seems to be playing, as they are climbing the stairs to a playhouse."
+        ],
+        "choices": [
+          "The child seems to be playing, as they are climbing the stairs to a playhouse.",
+          "The child appears to be working on a construction site."
+        ],
+        "selected_choice": "The child seems to be playing, as they are climbing the stairs to a playhouse."
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "The person is painting a wall.",
+          "The person is repairing a roof.",
+          "The person is picking fruit.",
+          "The person is cleaning a window."
+        ],
+        "prediction": "D",
+        "correct": true,
+        "valid_labels": [
+          "the person is cleaning a window"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 108.20762560004368,
+          "generation_time_seconds": 10.259632300003432,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1528037376,
+          "cpu_utilization_percent": 0.7598039215686274,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The person is cleaning a window."
+        ],
+        "choices": [
+          "The person is painting a wall.",
+          "The person is repairing a roof.",
+          "The person is picking fruit.",
+          "The person is cleaning a window."
+        ],
+        "selected_choice": "The person is cleaning a window."
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "The individual is wearing a red dress.",
+          "The individual is wearing a white coat and shorts.",
+          "The individual is wearing a blue shirt and jeans.",
+          "The individual is wearing a black suit."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "the individual is wearing a blue shirt and jeans"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 73.37074049992952,
+          "generation_time_seconds": 9.184728299966082,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1658441728,
+          "cpu_utilization_percent": 0.7928571428571429,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The individual is wearing a blue shirt and jeans."
+        ],
+        "choices": [
+          "The individual is wearing a red dress.",
+          "The individual is wearing a white coat and shorts.",
+          "The individual is wearing a blue shirt and jeans.",
+          "The individual is wearing a black suit."
+        ],
+        "selected_choice": "The individual is wearing a blue shirt and jeans."
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "The window is at ground level.",
+          "The window is part of a taller structure."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "the window is part of a taller structure"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 86.64091359998565,
+          "generation_time_seconds": 11.046802000026219,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1590579200,
+          "cpu_utilization_percent": 0.5634703196347032,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The window is part of a taller structure."
+        ],
+        "choices": [
+          "The window is at ground level.",
+          "The window is part of a taller structure."
+        ],
+        "selected_choice": "The window is part of a taller structure."
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "Yes, the person is wearing a hat.",
+          "No, the person is not wearing any headwear."
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "yes the person is wearing a hat"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 118.46907110000029,
+          "generation_time_seconds": 11.996893800096586,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1647755264,
+          "cpu_utilization_percent": 0.6495798319327731,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Yes, the person is wearing a hat."
+        ],
+        "choices": [
+          "Yes, the person is wearing a hat.",
+          "No, the person is not wearing any headwear."
+        ],
+        "selected_choice": "Yes, the person is wearing a hat."
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "No, the man is standing without any support.",
+          "Yes, the man is using a ladder for support."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "yes the man is using a ladder for support"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 96.3118052999489,
+          "generation_time_seconds": 13.7946977999527,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1801019392,
+          "cpu_utilization_percent": 0.9883211678832117,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Yes, the man is using a ladder for support."
+        ],
+        "choices": [
+          "No, the man is standing without any support.",
+          "Yes, the man is using a ladder for support."
+        ],
+        "selected_choice": "Yes, the man is using a ladder for support."
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "One person is wearing red and the other is wearing blue.",
+          "Both people are wearing green jackets.",
+          "Yes, one person is wearing a gray shirt and the other is wearing a black shirt.",
+          "Both people are wearing white chef coats."
+        ],
+        "prediction": "C. Yes, one person is wearing a gray shirt and the other is wearing a black",
+        "correct": true,
+        "valid_labels": [
+          "yes one person is wearing a gray shirt and the other is wearing a black shirt"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 98.66317240009084,
+          "generation_time_seconds": 8.730186200002208,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1770135552,
+          "cpu_utilization_percent": 1.2520231213872832,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Yes, one person is wearing a gray shirt and the other is wearing a black shirt."
+        ],
+        "choices": [
+          "One person is wearing red and the other is wearing blue.",
+          "Both people are wearing green jackets.",
+          "Yes, one person is wearing a gray shirt and the other is wearing a black shirt.",
+          "Both people are wearing white chef coats."
+        ],
+        "selected_choice": "Yes, one person is wearing a gray shirt and the other is wearing a black shirt."
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "No, they appear to be cleaning an unused stove.",
+          "Indeed, they seem to be actively involved in cooking food on the stove."
+        ],
+        "prediction": "B. Indeed, they seem to be actively involved in cooking food on the stove.",
+        "correct": true,
+        "valid_labels": [
+          "indeed they seem to be actively involved in cooking food on the stove"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 174.9875165000558,
+          "generation_time_seconds": 9.302310900064185,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1723764736,
+          "cpu_utilization_percent": 0.8356756756756757,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Indeed, they seem to be actively involved in cooking food on the stove."
+        ],
+        "choices": [
+          "No, they appear to be cleaning an unused stove.",
+          "Indeed, they seem to be actively involved in cooking food on the stove."
+        ],
+        "selected_choice": "Indeed, they seem to be actively involved in cooking food on the stove."
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 1971.2325474000536,
+      "wall_clock_time_per_sample_seconds_mean": 98.56143089500256,
+      "total_generation_time_seconds_mean": 15.167659825010924,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.010145936371829336,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1801019392,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.200221598768144,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.626184899942018
+    }
+  }
+}
