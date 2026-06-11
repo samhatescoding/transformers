@@ -24,6 +24,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", required=True, type=Path)
     parser.add_argument("--model-id", default=MODEL_ID)
     parser.add_argument("--epochs", type=float, default=2.0)
+    parser.add_argument(
+        "--max-steps",
+        type=int,
+        default=-1,
+        help="Stop after this many optimizer steps; overrides --epochs when positive.",
+    )
     parser.add_argument("--learning-rate", type=float, default=1e-4)
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--eval-batch-size", type=int, default=1)
@@ -36,6 +42,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--logging-steps", type=int, default=5)
     parser.add_argument("--save-total-limit", type=int, default=2)
     parser.add_argument("--dataloader-workers", type=int, default=4)
+    parser.add_argument(
+        "--eval-strategy",
+        choices=("epoch", "no"),
+        default="epoch",
+        help="Run validation after each epoch, or skip it for time-limited runs.",
+    )
     parser.add_argument(
         "--max-image-patches",
         type=int,
@@ -73,6 +85,8 @@ def validate_args(args: argparse.Namespace) -> None:
             )
     if args.epochs <= 0:
         raise SystemExit("--epochs must be positive.")
+    if args.max_steps == 0 or args.max_steps < -1:
+        raise SystemExit("--max-steps must be -1 or a positive integer.")
     if args.batch_size < 1 or args.eval_batch_size < 1:
         raise SystemExit("Batch sizes must be at least 1.")
     if args.gradient_accumulation_steps < 1:
@@ -313,9 +327,11 @@ def main() -> None:
         raise RuntimeError("LoRA produced no trainable parameters.")
     model.print_trainable_parameters()
 
+    evaluate_during_training = args.eval_strategy != "no"
     training_args = TrainingArguments(
         output_dir=str(args.output_dir),
         num_train_epochs=args.epochs,
+        max_steps=args.max_steps,
         per_device_train_batch_size=args.batch_size,
         per_device_eval_batch_size=args.eval_batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
@@ -329,12 +345,12 @@ def main() -> None:
         tf32=True,
         gradient_checkpointing=True,
         gradient_checkpointing_kwargs={"use_reentrant": False},
-        eval_strategy="epoch",
-        save_strategy="epoch",
+        eval_strategy=args.eval_strategy,
+        save_strategy="epoch" if evaluate_during_training else "no",
         logging_steps=args.logging_steps,
         logging_first_step=True,
         save_total_limit=args.save_total_limit,
-        load_best_model_at_end=True,
+        load_best_model_at_end=evaluate_during_training,
         metric_for_best_model="eval_loss",
         greater_is_better=False,
         remove_unused_columns=False,

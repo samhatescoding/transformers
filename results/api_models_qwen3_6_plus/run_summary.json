@@ -93,5 +93,44 @@
     "num_samples": 20,
     "max_new_tokens": 32,
     "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\api_models_qwen3_6_plus\\qwen3.6-plus_openimages_v4_detection.json"
+  },
+  {
+    "type": "B",
+    "type_title": "Bounding Box Detection",
+    "status": "ok",
+    "model": "qwen3.6-plus",
+    "benchmark": "inaturalist_detection",
+    "num_samples": 20,
+    "max_new_tokens": 32,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\api_models_qwen3_6_plus\\qwen3.6-plus_inaturalist_detection.json"
+  },
+  {
+    "type": "B",
+    "type_title": "Bounding Box Detection",
+    "model": "qwen3.6-plus",
+    "benchmark": "visual_cot_detection",
+    "status": "error",
+    "error": "RuntimeError: Cannot send a request, as the client has been closed.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Samuel\\AppData\\Local\\Temp\\ipykernel_25116\\2491325552.py\", line 32, in <module>\n    benchmark = benchmark_cls(streaming=STREAMING)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\benchmarks\\_base_benchmark.py\", line 38, in __init__\n    dataset = self.dataset_cls(split=dataset_split, streaming=streaming, **dataset_kwargs)\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\visual_cot.py\", line 24, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        name=\"visual_cot\",\n        ^^^^^^^^^^^^^^^^^^\n    ...<6 lines>...\n        data_files=\"viscot_363k.json\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 232, in __init__\n    super().__init__(name=name, dataset_id=dataset_id, split=split, streaming=streaming, **kwargs)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\dataset\\hf_common.py\", line 41, in __init__\n    self.ds = load_dataset(dataset_id, split=split, streaming=streaming, **kwargs)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1485, in load_dataset\n    builder_instance = load_dataset_builder(\n        path=path,\n    ...<10 lines>...\n        **config_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1130, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n        path,\n    ...<5 lines>...\n        cache_dir=cache_dir,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 1029, in dataset_module_factory\n    raise e1 from None\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\datasets\\load.py\", line 982, in dataset_module_factory\n    api.hf_hub_download(\n    ~~~~~~~~~~~~~~~~~~~^\n        repo_id=path,\n        ^^^^^^^^^^^^^\n    ...<3 lines>...\n        proxies=download_config.proxies,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\utils\\_validators.py\", line 89, in _inner_fn\n    return fn(*args, **kwargs)\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\hf_api.py\", line 5720, in hf_hub_download\n    return hf_hub_download(\n        repo_id=repo_id,\n    ...<16 lines>...\n        dry_run=dry_run,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\utils\\_validators.py\", line 89, in _inner_fn\n    return fn(*args, **kwargs)\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\file_download.py\", line 986, in hf_hub_download\n    return _hf_hub_download_to_cache_dir(\n        # Destination\n    ...<15 lines>...\n        dry_run=dry_run,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\file_download.py\", line 1119, in _hf_hub_download_to_cache_dir\n    _get_metadata_or_catch_error(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        repo_id=repo_id,\n        ^^^^^^^^^^^^^^^^\n    ...<10 lines>...\n        retry_on_errors=True,\n        ^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\file_download.py\", line 1653, in _get_metadata_or_catch_error\n    metadata = get_hf_file_metadata(\n        url=url,\n    ...<4 lines>...\n        retry_on_errors=retry_on_errors,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\utils\\_validators.py\", line 89, in _inner_fn\n    return fn(*args, **kwargs)\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\file_download.py\", line 1576, in get_hf_file_metadata\n    response = _httpx_follow_relative_redirects_with_backoff(\n        method=\"HEAD\", url=url, headers=hf_headers, timeout=timeout, retry_on_errors=retry_on_errors\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\utils\\_http.py\", line 685, in _httpx_follow_relative_redirects_with_backoff\n    response = http_backoff(\n        method=method,\n    ...<3 lines>...\n        **no_retry_kwargs,\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\utils\\_http.py\", line 559, in http_backoff\n    return next(\n        _http_backoff_base(\n    ...<9 lines>...\n        )\n    )\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\huggingface_hub\\utils\\_http.py\", line 467, in _http_backoff_base\n    response = client.request(method=method, url=url, **kwargs)\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\httpx\\_client.py\", line 825, in request\n    return self.send(request, auth=auth, follow_redirects=follow_redirects)\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Samuel\\AppData\\Roaming\\Python\\Python314\\site-packages\\httpx\\_client.py\", line 901, in send\n    raise RuntimeError(\"Cannot send a request, as the client has been closed.\")\nRuntimeError: Cannot send a request, as the client has been closed.\n"
+  },
+  {
+    "type": "C",
+    "type_title": "Captioning",
+    "status": "ok",
+    "model": "qwen3.6-plus",
+    "benchmark": "flickr30k",
+    "num_samples": 20,
+    "max_new_tokens": 24,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\api_models_qwen3_6_plus\\qwen3.6-plus_flickr30k.json"
+  },
+  {
+    "type": "C",
+    "type_title": "Captioning",
+    "status": "ok",
+    "model": "qwen3.6-plus",
+    "benchmark": "mscoco_caption",
+    "num_samples": 20,
+    "max_new_tokens": 32,
+    "results_path": "C:\\Users\\Samuel\\Documents\\GitHub\\transformers\\results\\api_models_qwen3_6_plus\\qwen3.6-plus_mscoco_caption.json"
   }
 ]
