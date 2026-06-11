@@ -4,9 +4,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 from typing import Any
 
+
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 
 MODEL_ID = "llava-hf/llava-onevision-qwen2-7b-ov-hf"
 DEFAULT_SYSTEM_PROMPT = (
@@ -33,6 +36,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--logging-steps", type=int, default=5)
     parser.add_argument("--save-total-limit", type=int, default=2)
     parser.add_argument("--dataloader-workers", type=int, default=4)
+    parser.add_argument(
+        "--max-image-patches",
+        type=int,
+        default=4,
+        help="Maximum number of 384px high-resolution tiles per image.",
+    )
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
         "--quantization",
@@ -70,6 +79,8 @@ def validate_args(args: argparse.Namespace) -> None:
         raise SystemExit("--gradient-accumulation-steps must be at least 1.")
     if args.lora_rank < 1 or args.lora_alpha < 1:
         raise SystemExit("LoRA rank and alpha must be positive.")
+    if args.max_image_patches < 1:
+        raise SystemExit("--max-image-patches must be at least 1.")
 
 
 def load_records(manifest_path: Path) -> list[dict[str, str]]:
@@ -121,6 +132,23 @@ def freeze_vision_adapter_parameters(model: Any) -> int:
                 parameter.requires_grad = False
                 frozen += parameter.numel()
     return frozen
+
+
+def limit_image_grid_pinpoints(
+    image_processor: Any, max_image_patches: int
+) -> list[list[int]]:
+    size = image_processor.size
+    tile_height = int(size["height"] if isinstance(size, dict) else size.height)
+    tile_width = int(size["width"] if isinstance(size, dict) else size.width)
+    limited = [
+        [int(height), int(width)]
+        for height, width in image_processor.image_grid_pinpoints
+        if (int(height) // tile_height) * (int(width) // tile_width)
+        <= max_image_patches
+    ]
+    if not limited:
+        raise ValueError("No image grid resolutions remain after applying the patch limit.")
+    return limited
 
 
 def main() -> None:
@@ -227,6 +255,14 @@ def main() -> None:
     processor.tokenizer.padding_side = "right"
     if processor.tokenizer.pad_token_id is None:
         processor.tokenizer.pad_token = processor.tokenizer.eos_token
+    image_grid_pinpoints = limit_image_grid_pinpoints(
+        processor.image_processor, args.max_image_patches
+    )
+    processor.image_processor.image_grid_pinpoints = image_grid_pinpoints
+    print(
+        f"Limited image preprocessing to {args.max_image_patches} "
+        "high-resolution tiles per image."
+    )
 
     model_kwargs: dict[str, Any] = {
         "torch_dtype": torch.bfloat16,
@@ -245,6 +281,7 @@ def main() -> None:
     model = LlavaOnevisionForConditionalGeneration.from_pretrained(
         args.model_id, **model_kwargs
     )
+    model.config.image_grid_pinpoints = image_grid_pinpoints
     model.config.use_cache = False
     if args.quantization == "4bit":
         model = prepare_model_for_kbit_training(

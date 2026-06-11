@@ -58,6 +58,22 @@ def _load_script(name: str) -> dict:
 
 
 class FineTuningPreparationTests(unittest.TestCase):
+    def test_llava_image_grid_can_be_limited_for_training_memory(self) -> None:
+        module = _load_script("train_llava_onevision_7b.py")
+
+        class ImageProcessor:
+            size = {"height": 384, "width": 384}
+            image_grid_pinpoints = [
+                [384, 384],
+                [384, 768],
+                [768, 768],
+                [1152, 768],
+            ]
+
+        limited = module["limit_image_grid_pinpoints"](ImageProcessor(), 4)
+
+        self.assertEqual(limited, [[384, 384], [384, 768], [768, 768]])
+
     def test_training_scripts_only_pass_supported_training_arguments(self) -> None:
         from transformers import TrainingArguments
 
