@@ -1,0 +1,780 @@
+{
+  "model": "qwen3.6-plus",
+  "benchmark": "conceptual_captions_caption",
+  "report": {
+    "benchmark": "conceptual_captions_caption",
+    "dataset": "conceptual_captions",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [],
+        "prediction": "Bob Hope and Elke Sommer on a film set, with Hope seated on the arm of a sofa and Sommer reclining on it amidst studio lighting",
+        "correct": false,
+        "valid_labels": [
+          "author : a life in photography -- in pictures"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 22.46411259996239,
+          "generation_time_seconds": 22.44837859994732,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1202900992,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.04668049023095243,
+        "reference_captions": [
+          "author : a life in photography -- in pictures"
+        ]
+      },
+      {
+        "index": 2,
+        "prompt_labels": [],
+        "prediction": "A spacious bedroom featuring a double bed with grey bedding, a large white wardrobe, light wood flooring, and a dark wooden ceiling beam",
+        "correct": false,
+        "valid_labels": [
+          "the - bedroom stone cottage can sleep people"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 16.842851000023074,
+          "generation_time_seconds": 16.815083399997093,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1204166656,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.05291907393644996,
+        "reference_captions": [
+          "the - bedroom stone cottage can sleep people"
+        ]
+      },
+      {
+        "index": 3,
+        "prompt_labels": [],
+        "prediction": "Mickey and Minnie Mouse inspired nail art featuring red polka dots, a black silhouette, and silver glitter, held up against a blurred backdrop of Cinder",
+        "correct": false,
+        "valid_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 14.536015900084749,
+          "generation_time_seconds": 14.515754100051709,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1202008064,
+          "cpu_utilization_percent": 0.215625,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.048589719316429775,
+        "reference_captions": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !"
+        ]
+      },
+      {
+        "index": 4,
+        "prompt_labels": [],
+        "prediction": "A single fresh green leaf with a long stem resting on a white plate against a black background.",
+        "correct": false,
+        "valid_labels": [
+          "that combines elements of a simple vegetable and dish"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 10.152110199909657,
+          "generation_time_seconds": 10.112327500013635,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1200820224,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06809398432036522,
+        "reference_captions": [
+          "that combines elements of a simple vegetable and dish"
+        ]
+      },
+      {
+        "index": 5,
+        "prompt_labels": [],
+        "prediction": "Cover art for Transformers: Till All Are One Issue 4 depicting a blue Transformer wielding an axe and a red Transformer with a",
+        "correct": false,
+        "valid_labels": [
+          "transformers : till all are issue # 4b"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 16.07764859998133,
+          "generation_time_seconds": 16.037072199978866,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1201971200,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.15415064977510756,
+        "reference_captions": [
+          "transformers : till all are issue # 4b"
+        ]
+      },
+      {
+        "index": 6,
+        "prompt_labels": [],
+        "prediction": "A cartoon illustration of a person wearing a green shower cap taking a bubble bath with a yellow rubber duck.",
+        "correct": false,
+        "valid_labels": [
+          "illustration of a little girl taking a bath"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 11.331128300051205,
+          "generation_time_seconds": 11.328132499940693,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1201991680,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.14051676978912422,
+        "reference_captions": [
+          "illustration of a little girl taking a bath"
+        ]
+      },
+      {
+        "index": 7,
+        "prompt_labels": [],
+        "prediction": "Storefronts of Ken's Flowers and Fang & Leather situated side-by-side in a brick building with green awnings.",
+        "correct": false,
+        "valid_labels": [
+          "tv police procedural is filming on the street this week ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.498992400011048,
+          "generation_time_seconds": 8.49481800000649,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1202339840,
+          "cpu_utilization_percent": 0.18273809523809523,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06074588070876682,
+        "reference_captions": [
+          "tv police procedural is filming on the street this week ."
+        ]
+      },
+      {
+        "index": 8,
+        "prompt_labels": [],
+        "prediction": "A large, white, two-story pier building with a green roof extending into the blue water.",
+        "correct": false,
+        "valid_labels": [
+          "the new terminal on island with quiet sea and setting sun"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 19.572511900099926,
+          "generation_time_seconds": 19.553606700035743,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1203490816,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.09103526405546068,
+        "reference_captions": [
+          "the new terminal on island with quiet sea and setting sun"
+        ]
+      },
+      {
+        "index": 9,
+        "prompt_labels": [],
+        "prediction": "A smiling businesswoman shaking hands with someone in an office.",
+        "correct": false,
+        "valid_labels": [
+          "what makeup to wear to a job interview"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 11.88699530006852,
+          "generation_time_seconds": 11.859382300055586,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1203085312,
+          "cpu_utilization_percent": 0.13106382978723405,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.12605968092174913,
+        "reference_captions": [
+          "what makeup to wear to a job interview"
+        ]
+      },
+      {
+        "index": 10,
+        "prompt_labels": [],
+        "prediction": "Close-up of a dentist using a dental mirror and drill on a patient's teeth.",
+        "correct": false,
+        "valid_labels": [
+          "the dentist drill the tooth with a turbine"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 14.45669280004222,
+          "generation_time_seconds": 14.43025029997807,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1203118080,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10511846841633776,
+        "reference_captions": [
+          "the dentist drill the tooth with a turbine"
+        ]
+      },
+      {
+        "index": 11,
+        "prompt_labels": [],
+        "prediction": "A pair of bright orange running shoes with green soles isolated on a white background.",
+        "correct": true,
+        "valid_labels": [
+          "pair of new bright orange modern sneakers isolated on a white background"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.421131200040691,
+          "generation_time_seconds": 6.403366600046866,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1201938432,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.37239098949398236,
+        "reference_captions": [
+          "pair of new bright orange modern sneakers isolated on a white background"
+        ]
+      },
+      {
+        "index": 12,
+        "prompt_labels": [],
+        "prediction": "A living room with dark leather sofas and a floral rug is shown above the text \"Ask a Designer Series: What Rug and Changes to Make?\", followed",
+        "correct": false,
+        "valid_labels": [
+          "ask industry to do in our family room ?"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 22.637495000031777,
+          "generation_time_seconds": 22.610717299976386,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1209696256,
+          "cpu_utilization_percent": 0.13839285714285715,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.053414136238197775,
+        "reference_captions": [
+          "ask industry to do in our family room ?"
+        ]
+      },
+      {
+        "index": 13,
+        "prompt_labels": [],
+        "prediction": "A large, elaborate sandcastle with multiple towers stands on a sandy beach under a blue sky with the ocean in the background.",
+        "correct": false,
+        "valid_labels": [
+          "sandcastle beach on bright sky ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 16.05869130010251,
+          "generation_time_seconds": 16.052711999975145,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1211355136,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06964541799727335,
+        "reference_captions": [
+          "sandcastle beach on bright sky ."
+        ]
+      },
+      {
+        "index": 14,
+        "prompt_labels": [],
+        "prediction": "A person wearing a leopard print dress, a dark ruffled cardigan, and brown boots.",
+        "correct": false,
+        "valid_labels": [
+          "cowboy boots are a major hit for spring and summer !"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.14158860000316,
+          "generation_time_seconds": 9.104942500009201,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1204076544,
+          "cpu_utilization_percent": 0.1707182320441989,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10511846841633776,
+        "reference_captions": [
+          "cowboy boots are a major hit for spring and summer !"
+        ]
+      },
+      {
+        "index": 15,
+        "prompt_labels": [],
+        "prediction": "Close-up of a gold zipper on blue denim.",
+        "correct": false,
+        "valid_labels": [
+          "a humorous call to arms against invention ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.896177900023758,
+          "generation_time_seconds": 12.888108300045133,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1205260288,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.16036590969929357,
+        "reference_captions": [
+          "a humorous call to arms against invention ."
+        ]
+      },
+      {
+        "index": 16,
+        "prompt_labels": [],
+        "prediction": "A football manager in a red jacket shouting instructions from the sidelines.",
+        "correct": false,
+        "valid_labels": [
+          "football player said after the game that his players had to learn lessons from the loss"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 23.911722300108522,
+          "generation_time_seconds": 23.867302399943583,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1206403072,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10528787210424367,
+        "reference_captions": [
+          "football player said after the game that his players had to learn lessons from the loss"
+        ]
+      },
+      {
+        "index": 17,
+        "prompt_labels": [],
+        "prediction": "A fur seal sits upright on a rocky shore with its mouth open, while another seal rests nearby.",
+        "correct": false,
+        "valid_labels": [
+          "biological species with pup along a city"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.243914199993014,
+          "generation_time_seconds": 8.210412599961273,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1204768768,
+          "cpu_utilization_percent": 0.3773006134969325,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.07535838128770536,
+        "reference_captions": [
+          "biological species with pup along a city"
+        ]
+      },
+      {
+        "index": 18,
+        "prompt_labels": [],
+        "prediction": "A close-up selfie of a smiling woman and a baby with large blue eyes posing cheek-to-cheek.",
+        "correct": false,
+        "valid_labels": [
+          "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 10.83066910004709,
+          "generation_time_seconds": 10.82167410000693,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1203679232,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.056278617927768254,
+        "reference_captions": [
+          "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress"
+        ]
+      },
+      {
+        "index": 19,
+        "prompt_labels": [],
+        "prediction": "A man rides a motor scooter along a seaside promenade past a group of people standing by the railing.",
+        "correct": false,
+        "valid_labels": [
+          "a man on a scooter , taking part in the rally"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.790609299903736,
+          "generation_time_seconds": 12.788924099993892,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1203802112,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10079037376973914,
+        "reference_captions": [
+          "a man on a scooter , taking part in the rally"
+        ]
+      },
+      {
+        "index": 20,
+        "prompt_labels": [],
+        "prediction": "A vast expanse of tilled brown soil in an agricultural field under a cloudy blue sky.",
+        "correct": false,
+        "valid_labels": [
+          "dry fields on a summer day"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 17.038287000032142,
+          "generation_time_seconds": 16.999294699984603,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1208659968,
+          "cpu_utilization_percent": 0.0916913946587537,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.07692375026049747,
+        "reference_captions": [
+          "dry fields on a summer day"
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 285.802102799993,
+      "wall_clock_time_per_sample_seconds_mean": 14.289467245026026,
+      "total_generation_time_seconds_mean": 14.267113009997411,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.06997849142487306,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1211355136,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.06537650111840357,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.626184899942018
+    }
+  }
+}

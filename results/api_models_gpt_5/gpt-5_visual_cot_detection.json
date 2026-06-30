@@ -13,7 +13,7 @@
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "[0.478, 0.320, 0.329,",
+        "prediction": "[0.452, 0.315, 0.377,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -33,15 +33,15 @@
         "stats": {
           "success": true,
           "error": null,
-          "wall_clock_time_seconds": 37.718232100014575,
-          "generation_time_seconds": 2.331205900060013,
+          "wall_clock_time_seconds": 7.593777899994166,
+          "generation_time_seconds": 1.6380996000079904,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 309313536,
-          "cpu_utilization_percent": 0.6695652173913044,
+          "peak_cpu_ram_bytes": 768704512,
+          "cpu_utilization_percent": 18.85483870967742,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -68,7 +68,7 @@
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "0.554, 0.428, 0.257,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -77,26 +77,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.482,
-              0.396,
-              0.548,
-              0.45
+              160.506,
+              198.0,
+              182.484,
+              225.0
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 106.17495440004859,
-          "generation_time_seconds": 6.425721199950203,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.868125000008149,
+          "generation_time_seconds": 1.8158818999945652,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 377040896,
-          "cpu_utilization_percent": 0.49206349206349204,
+          "peak_cpu_ram_bytes": 786202624,
+          "cpu_utilization_percent": 16.185294117647057,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -104,17 +104,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 3,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.540, 0.381, 0.221,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -123,26 +132,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.512,
-              0.312,
-              0.6,
-              0.472
+              170.496,
+              156.0,
+              199.79999999999998,
+              236.0
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 93.84698550007306,
-          "generation_time_seconds": 4.151888300082646,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 11.32357310000225,
+          "generation_time_seconds": 7.457442400002037,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 440356864,
-          "cpu_utilization_percent": 1.4963855421686747,
+          "peak_cpu_ram_bytes": 851673088,
+          "cpu_utilization_percent": 3.8916083916083917,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -150,17 +159,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 4,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.162, 0.017, 0.673,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -169,26 +187,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.718,
-              0.43,
-              0.83,
-              0.674
+              239.094,
+              215.0,
+              276.39,
+              337.0
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 67.88676880009007,
-          "generation_time_seconds": 4.314252499956638,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.97609779999766,
+          "generation_time_seconds": 1.3603964000067208,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 558936064,
-          "cpu_utilization_percent": 2.191764705882353,
+          "peak_cpu_ram_bytes": 768278528,
+          "cpu_utilization_percent": 23.666666666666668,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -196,17 +214,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 5,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.164, 0.261, 0.257,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -215,26 +242,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.722,
-              0.444,
-              0.784,
-              0.502
+              361.0,
+              166.056,
+              392.0,
+              187.748
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 155.0544358000625,
-          "generation_time_seconds": 4.139265300007537,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.355862600001274,
+          "generation_time_seconds": 1.1106975000002421,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 575021056,
-          "cpu_utilization_percent": 1.8792682926829267,
+          "peak_cpu_ram_bytes": 822755328,
+          "cpu_utilization_percent": 14.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -242,17 +269,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 6,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.587, 0.333, 0.822,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -261,26 +297,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.768,
-              0.532,
-              0.838,
-              0.798
+              384.0,
+              198.96800000000002,
+              419.0,
+              298.452
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 81.40183630003594,
-          "generation_time_seconds": 4.448408600059338,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.112610700001824,
+          "generation_time_seconds": 1.5445851999975275,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 694550528,
-          "cpu_utilization_percent": 2.0954545454545457,
+          "peak_cpu_ram_bytes": 913555456,
+          "cpu_utilization_percent": 22.92,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -288,17 +324,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 7,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.571, 0.361, 0.213,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -307,26 +352,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.722,
-              0.444,
-              0.784,
-              0.502
+              361.0,
+              166.056,
+              392.0,
+              187.748
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 93.91157270001713,
-          "generation_time_seconds": 4.585727300029248,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.7873843999987,
+          "generation_time_seconds": 1.8333176000014646,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 725356544,
-          "cpu_utilization_percent": 0.0,
+          "peak_cpu_ram_bytes": 972619776,
+          "cpu_utilization_percent": 16.033333333333335,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -334,17 +379,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 8,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.189, 0.259, 0.241,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -353,26 +407,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.768,
-              0.532,
-              0.838,
-              0.798
+              384.0,
+              198.96800000000002,
+              419.0,
+              298.452
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 156.16045859991573,
-          "generation_time_seconds": 3.4434433999704197,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.597780299998703,
+          "generation_time_seconds": 1.7240072999993572,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 755851264,
-          "cpu_utilization_percent": 0.9073529411764706,
+          "peak_cpu_ram_bytes": 1034248192,
+          "cpu_utilization_percent": 18.833333333333332,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -380,17 +434,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 9,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.172, 0.466, 0.221,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -399,26 +462,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.14,
-              0.382,
-              0.296,
-              0.598
+              52.50000000000001,
+              191.0,
+              111.0,
+              299.0
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 118.22216170001775,
-          "generation_time_seconds": 5.023145899991505,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.670339400006924,
+          "generation_time_seconds": 1.7534311000054004,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 842645504,
-          "cpu_utilization_percent": 1.3898989898989897,
+          "peak_cpu_ram_bytes": 1133531136,
+          "cpu_utilization_percent": 16.86176470588235,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -426,17 +489,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 10,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.151, 0.405, 0.231,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -445,26 +517,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.126,
-              0.638,
-              0.354,
-              0.96
+              47.25,
+              319.0,
+              132.75,
+              480.0
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 159.28662070003338,
-          "generation_time_seconds": 4.638301400002092,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.047157699998934,
+          "generation_time_seconds": 2.012960700012627,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 905277440,
-          "cpu_utilization_percent": 0.6695652173913044,
+          "peak_cpu_ram_bytes": 1193492480,
+          "cpu_utilization_percent": 12.415384615384616,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -472,17 +544,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 11,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.018, 0.796, 0.286,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -491,26 +572,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.2,
-              0.054,
-              0.342,
-              0.616
+              75.0,
+              27.0,
+              128.25,
+              308.0
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 78.67869039997458,
-          "generation_time_seconds": 13.9691755999811,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.1642388999898685,
+          "generation_time_seconds": 1.7893760000006296,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 976252928,
-          "cpu_utilization_percent": 0.6767272727272727,
+          "peak_cpu_ram_bytes": 1230471168,
+          "cpu_utilization_percent": 24.614285714285714,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -518,17 +599,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 12,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.513, 0.289, 0.388,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -537,26 +627,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.14,
-              0.304,
-              0.34,
-              0.68
+              52.50000000000001,
+              152.0,
+              127.50000000000001,
+              340.0
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 56.440252500004135,
-          "generation_time_seconds": 9.96987009991426,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.130155699996976,
+          "generation_time_seconds": 1.2164910999999847,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1036451840,
-          "cpu_utilization_percent": 0.9365482233502538,
+          "peak_cpu_ram_bytes": 1313046528,
+          "cpu_utilization_percent": 31.22083333333333,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -564,17 +654,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 13,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.169, 0.307, 0.206,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -583,26 +682,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.14,
-              0.304,
-              0.34,
-              0.68
+              52.50000000000001,
+              152.0,
+              127.50000000000001,
+              340.0
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 125.42563499999233,
-          "generation_time_seconds": 4.546443000086583,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.58103509999637,
+          "generation_time_seconds": 1.3949414000089746,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1054810112,
-          "cpu_utilization_percent": 0.6844444444444444,
+          "peak_cpu_ram_bytes": 1371885568,
+          "cpu_utilization_percent": 30.566666666666666,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -610,17 +709,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 14,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "0.506, 0.276, 0.255,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -629,26 +737,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.444,
-              0.168,
-              0.69,
-              0.832
+              222.0,
+              55.944,
+              345.0,
+              277.056
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 66.99733219994232,
-          "generation_time_seconds": 4.958528900053352,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.893854900001315,
+          "generation_time_seconds": 1.676129999992554,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1146855424,
-          "cpu_utilization_percent": 1.2510204081632654,
+          "peak_cpu_ram_bytes": 1434959872,
+          "cpu_utilization_percent": 23.554545454545455,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -656,17 +764,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 15,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.542, 0.548, 0.223,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -675,26 +792,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.44,
-              0.42,
-              0.552,
-              0.79
+              220.0,
+              139.85999999999999,
+              276.0,
+              263.07
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 79.89556919992901,
-          "generation_time_seconds": 4.956140499911271,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.564056000002893,
+          "generation_time_seconds": 1.3496561999927508,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1180315648,
-          "cpu_utilization_percent": 1.2673469387755103,
+          "peak_cpu_ram_bytes": 1468530688,
+          "cpu_utilization_percent": 25.544444444444448,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -702,17 +819,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 16,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.537, 0.436, 0.321,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -721,26 +847,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.444,
-              0.168,
-              0.69,
-              0.576
+              222.0,
+              55.944,
+              345.0,
+              191.808
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 26.70685760001652,
-          "generation_time_seconds": 4.919185800012201,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.553906899993308,
+          "generation_time_seconds": 1.236646599994856,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1269174272,
-          "cpu_utilization_percent": 2.5153061224489797,
+          "peak_cpu_ram_bytes": 1525587968,
+          "cpu_utilization_percent": 19.425,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -748,17 +874,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 17,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.478, 0.308, 0.123,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -767,26 +902,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.46,
-              0.366,
-              0.522,
-              0.428
+              230.0,
+              121.878,
+              261.0,
+              142.524
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 41.27873819996603,
-          "generation_time_seconds": 3.8472344999900088,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.461949399992591,
+          "generation_time_seconds": 1.3463611000042874,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1360216064,
-          "cpu_utilization_percent": 3.2434210526315788,
+          "peak_cpu_ram_bytes": 1593298944,
+          "cpu_utilization_percent": 22.476923076923075,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -794,17 +929,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 18,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.481, 0.632, 0.177,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -813,26 +957,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.48,
-              0.54,
-              0.59,
-              0.832
+              240.0,
+              179.82000000000002,
+              295.0,
+              277.056
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 89.31676299998071,
-          "generation_time_seconds": 4.540104100015014,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.980281099997228,
+          "generation_time_seconds": 1.7163296999933664,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1231777792,
-          "cpu_utilization_percent": 1.3722222222222222,
+          "peak_cpu_ram_bytes": 1667284992,
+          "cpu_utilization_percent": 20.912121212121214,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -840,17 +984,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 19,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.011, 0.119, 0.978,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -859,26 +1012,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.002,
-              0.412,
               1.0,
-              0.874
+              154.5,
+              500.0,
+              327.75
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 25.97328939998988,
-          "generation_time_seconds": 6.32875620003324,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.614841999995406,
+          "generation_time_seconds": 1.2642278999992413,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1317347328,
-          "cpu_utilization_percent": 0.7333333333333334,
+          "peak_cpu_ram_bytes": 1729794048,
+          "cpu_utilization_percent": 30.864,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -886,17 +1039,26 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       },
       {
         "index": 20,
         "prompt_labels": [
           "answer-relevant region"
         ],
-        "prediction": "",
+        "prediction": "[0.506, 0.584, 0.403,",
         "correct": false,
         "valid_labels": [
           "answer-relevant region"
@@ -905,26 +1067,26 @@
           {
             "label": "answer-relevant region",
             "xyxy": [
-              0.472,
-              0.562,
-              0.784,
-              0.832
+              236.0,
+              210.75000000000003,
+              392.0,
+              312.0
             ]
           }
         ],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 25.90611500001978,
-          "generation_time_seconds": 6.424225200084038,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.133593700011261,
+          "generation_time_seconds": 1.8937814999953844,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1390501888,
-          "cpu_utilization_percent": 0.4826771653543307,
+          "peak_cpu_ram_bytes": 1762398208,
+          "cpu_utilization_percent": 47.78378378378378,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
@@ -932,38 +1094,46 @@
           "generated_output_count": 0,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
-          "false_negative_count": 0,
+          "false_negative_count": 1,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
       }
     ],
     "stats": {
-      "wall_clock_time_seconds": 1686.2867669999832,
-      "wall_clock_time_per_sample_seconds_mean": 84.3141634550062,
-      "total_generation_time_seconds_mean": 5.398051185009535,
+      "wall_clock_time_seconds": 125.42410129999917,
+      "wall_clock_time_per_sample_seconds_mean": 6.27053112999929,
+      "total_generation_time_seconds_mean": 1.8567380600004981,
       "first_token_latency_seconds_mean": null,
       "time_per_output_token_seconds_mean": null,
-      "samples_per_second": 0.011860378905529417,
+      "samples_per_second": 0.15945898589428548,
       "number_of_output_tokens_mean": null,
       "number_of_generated_outputs_mean": 0.0,
-      "number_of_benchmark_samples_completed": 1,
-      "success_count": 1,
-      "failure_count": 19,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
       "retry_count": 0,
-      "peak_cpu_ram_bytes": 1390501888,
+      "peak_cpu_ram_bytes": 1762398208,
       "peak_gpu_memory_bytes": null,
-      "cpu_utilization_percent_mean": 1.2477183063780628,
+      "cpu_utilization_percent_mean": 22.031241377981843,
       "gpu_utilization_percent_mean": null,
       "vram_allocation_over_time_bytes": null,
       "disk_offload_volume_bytes": null,
       "truncation_rate": 0.0,
       "hallucinated_label_rate": 0.0,
       "false_positive_count_total": 0,
-      "false_negative_count_total": 1,
+      "false_negative_count_total": 20,
       "mean_number_of_predicted_detections": 0.0,
-      "tokens_per_second": null,
-      "model_load_time_seconds": 1.4093711000168696
+      "tokens_per_second": null
     }
   }
 }

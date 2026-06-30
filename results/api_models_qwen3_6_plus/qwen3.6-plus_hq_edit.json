@@ -1,0 +1,960 @@
+{
+  "model": "qwen3.6-plus",
+  "benchmark": "hq_edit",
+  "report": {
+    "benchmark": "hq_edit",
+    "dataset": "hq_edit",
+    "task_type": "image_modification_vqa",
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "Add medieval elements such as holographic displays and floating platforms while maintaining the market's traditional structure.",
+          "Add medieval elements such as holographic displays and floating platforms while maintaining the library's traditional structure.",
+          "Add futuristic elements such as holographic displays and floating platforms while maintaining the market's traditional structure.",
+          "Add futuristic elements such as holographic displays and floating platforms while maintaining the library's traditional structure."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Add futuristic elements such as holographic displays and floating platforms while maintaining the market's traditional structure."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 169.35238019993994,
+          "generation_time_seconds": 169.29490199999418,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1836978176,
+          "cpu_utilization_percent": 0.04596774193548387,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Add medieval elements such as holographic displays and floating platforms while maintaining the market's traditional structure.",
+          "Add medieval elements such as holographic displays and floating platforms while maintaining the library's traditional structure.",
+          "Add futuristic elements such as holographic displays and floating platforms while maintaining the market's traditional structure.",
+          "Add futuristic elements such as holographic displays and floating platforms while maintaining the library's traditional structure."
+        ],
+        "selected_choice": "Add futuristic elements such as holographic displays and floating platforms while maintaining the market's traditional structure.",
+        "answer": "Add futuristic elements such as holographic displays and floating platforms while maintaining the market's traditional structure."
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "replace the wooden mallet with a metal hammer, add a blue pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+          "replace the metal mallet with a metal hammer, add a blue pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+          "replace the wooden mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+          "replace the metal mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "replace the wooden mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 21.080437900032848,
+          "generation_time_seconds": 21.054321600007825,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1845297152,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "replace the wooden mallet with a metal hammer, add a blue pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+          "replace the metal mallet with a metal hammer, add a blue pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+          "replace the wooden mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+          "replace the metal mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw."
+        ],
+        "selected_choice": "replace the wooden mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw.",
+        "answer": "replace the wooden mallet with a metal hammer, add a red pencil, remove the chisel, coping saw, and try square, and place a metal mug next to the circular saw."
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new metal one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+          "Remove the rust from the wrench, polish the metal to a shine, and replace the worn handle with a new metal one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+          "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+          "Remove the rust from the wrench, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 13.422953399945982,
+          "generation_time_seconds": 13.39161349995993,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1849450496,
+          "cpu_utilization_percent": 0.11735849056603774,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new metal one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+          "Remove the rust from the wrench, polish the metal to a shine, and replace the worn handle with a new metal one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+          "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+          "Remove the rust from the wrench, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay."
+        ],
+        "selected_choice": "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay.",
+        "answer": "Remove the rust from the hammer, polish the metal to a shine, and replace the worn handle with a new wooden one. Clean the barn floor, removing all dirt and debris, and lay down fresh, clean hay."
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the foreground.",
+          "Replace the skateboard with a skateboard and add multiple BMX riders performing tricks in the foreground.",
+          "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the background.",
+          "Replace the skateboard with a skateboard and add multiple BMX riders performing tricks in the background."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the background."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 14.789873900008388,
+          "generation_time_seconds": 14.761927700019442,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1844002816,
+          "cpu_utilization_percent": 0.10582191780821917,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the foreground.",
+          "Replace the skateboard with a skateboard and add multiple BMX riders performing tricks in the foreground.",
+          "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the background.",
+          "Replace the skateboard with a skateboard and add multiple BMX riders performing tricks in the background."
+        ],
+        "selected_choice": "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the background.",
+        "answer": "Replace the skateboard with a BMX bike and add multiple BMX riders performing tricks in the background."
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "Replace the soccer ball with a miniature sunflower that the puppy is holding in the same manner as the soccer ball.",
+          "Replace the soccer ball with a miniature sunflower that the kitten is holding in the same manner as the soccer ball.",
+          "Replace the soccer ball with a giant sunflower that the puppy is holding in the same manner as the soccer ball.",
+          "Replace the soccer ball with a giant sunflower that the kitten is holding in the same manner as the soccer ball."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Replace the soccer ball with a giant sunflower that the puppy is holding in the same manner as the soccer ball."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 13.310616399976425,
+          "generation_time_seconds": 13.280083500081673,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1844162560,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Replace the soccer ball with a miniature sunflower that the puppy is holding in the same manner as the soccer ball.",
+          "Replace the soccer ball with a miniature sunflower that the kitten is holding in the same manner as the soccer ball.",
+          "Replace the soccer ball with a giant sunflower that the puppy is holding in the same manner as the soccer ball.",
+          "Replace the soccer ball with a giant sunflower that the kitten is holding in the same manner as the soccer ball."
+        ],
+        "selected_choice": "Replace the soccer ball with a giant sunflower that the puppy is holding in the same manner as the soccer ball.",
+        "answer": "Replace the soccer ball with a giant sunflower that the puppy is holding in the same manner as the soccer ball."
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "change the reflection on the teapot to show a clear red sky with clouds instead of the bright kitchen window",
+          "change the reflection on the teapot to show a clear red sky with a cloudless sky instead of the bright kitchen window",
+          "change the reflection on the teapot to show a clear blue sky with clouds instead of the bright kitchen window",
+          "change the reflection on the teapot to show a clear blue sky with a cloudless sky instead of the bright kitchen window"
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "change the reflection on the teapot to show a clear blue sky with clouds instead of the bright kitchen window"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 15.097982399980538,
+          "generation_time_seconds": 15.074397400021553,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1844551680,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "change the reflection on the teapot to show a clear red sky with clouds instead of the bright kitchen window",
+          "change the reflection on the teapot to show a clear red sky with a cloudless sky instead of the bright kitchen window",
+          "change the reflection on the teapot to show a clear blue sky with clouds instead of the bright kitchen window",
+          "change the reflection on the teapot to show a clear blue sky with a cloudless sky instead of the bright kitchen window"
+        ],
+        "selected_choice": "change the reflection on the teapot to show a clear blue sky with clouds instead of the bright kitchen window",
+        "answer": "change the reflection on the teapot to show a clear blue sky with clouds instead of the bright kitchen window"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with blue leaves above the swing, and apply a foggy, early morning atmosphere.",
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with blue leaves above the swing, and apply a crisp and clear, early morning atmosphere.",
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a foggy, early morning atmosphere.",
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a crisp and clear, early morning atmosphere."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a foggy, early morning atmosphere."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 17.82473959994968,
+          "generation_time_seconds": 17.792970399954356,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1845415936,
+          "cpu_utilization_percent": 0.08778409090909091,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with blue leaves above the swing, and apply a foggy, early morning atmosphere.",
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with blue leaves above the swing, and apply a crisp and clear, early morning atmosphere.",
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a foggy, early morning atmosphere.",
+          "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a crisp and clear, early morning atmosphere."
+        ],
+        "selected_choice": "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a foggy, early morning atmosphere.",
+        "answer": "Change the setting to autumn with a ground covered in fallen leaves, add a tree with red leaves above the swing, and apply a foggy, early morning atmosphere."
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, sun-baked trees, and polar bears on ice floes",
+          "remove the parrots and change the background to a lush tropical rainforest with icy cliffs, sun-baked trees, and polar bears on ice floes",
+          "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, snow-covered trees, and polar bears on ice floes",
+          "remove the parrots and change the background to a lush tropical rainforest with icy cliffs, snow-covered trees, and polar bears on ice floes"
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, snow-covered trees, and polar bears on ice floes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.921640499960631,
+          "generation_time_seconds": 12.886959800031036,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1846272000,
+          "cpu_utilization_percent": 0.1203921568627451,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, sun-baked trees, and polar bears on ice floes",
+          "remove the parrots and change the background to a lush tropical rainforest with icy cliffs, sun-baked trees, and polar bears on ice floes",
+          "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, snow-covered trees, and polar bears on ice floes",
+          "remove the parrots and change the background to a lush tropical rainforest with icy cliffs, snow-covered trees, and polar bears on ice floes"
+        ],
+        "selected_choice": "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, snow-covered trees, and polar bears on ice floes",
+        "answer": "remove the parrots and change the background to a snowy arctic landscape with icy cliffs, snow-covered trees, and polar bears on ice floes"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "show the dragonfly with its wings open as if it is about to take off",
+          "show the dragonfly with its wings closed as if it is about to take off",
+          "show the butterfly with its wings open as if it is about to take off",
+          "show the butterfly with its wings closed as if it is about to take off"
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "show the butterfly with its wings open as if it is about to take off"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 16.925890199956484,
+          "generation_time_seconds": 16.878843400045298,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1846652928,
+          "cpu_utilization_percent": 0.18592814371257485,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "show the dragonfly with its wings open as if it is about to take off",
+          "show the dragonfly with its wings closed as if it is about to take off",
+          "show the butterfly with its wings open as if it is about to take off",
+          "show the butterfly with its wings closed as if it is about to take off"
+        ],
+        "selected_choice": "show the butterfly with its wings open as if it is about to take off",
+        "answer": "show the butterfly with its wings open as if it is about to take off"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "Change the background to show a flat coastal plain outside the window and add a potted plant next to the cat.",
+          "Change the background to show a flat coastal plain outside the window and add a potted plant next to the rabbit.",
+          "Change the background to show a mountainous landscape outside the window and add a potted plant next to the cat.",
+          "Change the background to show a mountainous landscape outside the window and add a potted plant next to the rabbit."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Change the background to show a mountainous landscape outside the window and add a potted plant next to the cat."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.46447150001768,
+          "generation_time_seconds": 12.42738789995201,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1847128064,
+          "cpu_utilization_percent": 0.12560975609756098,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Change the background to show a flat coastal plain outside the window and add a potted plant next to the cat.",
+          "Change the background to show a flat coastal plain outside the window and add a potted plant next to the rabbit.",
+          "Change the background to show a mountainous landscape outside the window and add a potted plant next to the cat.",
+          "Change the background to show a mountainous landscape outside the window and add a potted plant next to the rabbit."
+        ],
+        "selected_choice": "Change the background to show a mountainous landscape outside the window and add a potted plant next to the cat.",
+        "answer": "Change the background to show a mountainous landscape outside the window and add a potted plant next to the cat."
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous metal desk background for the laptop screen.",
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous metal desk foreground for the laptop screen.",
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk background for the laptop screen.",
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk foreground for the laptop screen."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk background for the laptop screen."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 64.46786520001478,
+          "generation_time_seconds": 64.45696740003768,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1847619584,
+          "cpu_utilization_percent": 0.07203456402199529,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous metal desk background for the laptop screen.",
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous metal desk foreground for the laptop screen.",
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk background for the laptop screen.",
+          "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk foreground for the laptop screen."
+        ],
+        "selected_choice": "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk background for the laptop screen.",
+        "answer": "Remove the fork and add a pen next to the laptop. Also, change the position of the succulents and note papers to create a continuous wooden desk background for the laptop screen."
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "Change the time of day to day, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+          "Change the time of day to day, remove the crowd to make the library appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+          "Change the time of day to night, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+          "Change the time of day to night, remove the crowd to make the library appear closed, and adjust the lighting to reflect a quieter atmosphere."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Change the time of day to night, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 17.37585160008166,
+          "generation_time_seconds": 17.329518100013956,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1848217600,
+          "cpu_utilization_percent": 0.36151603498542273,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Change the time of day to day, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+          "Change the time of day to day, remove the crowd to make the library appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+          "Change the time of day to night, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+          "Change the time of day to night, remove the crowd to make the library appear closed, and adjust the lighting to reflect a quieter atmosphere."
+        ],
+        "selected_choice": "Change the time of day to night, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere.",
+        "answer": "Change the time of day to night, remove the crowd to make the market appear closed, and adjust the lighting to reflect a quieter atmosphere."
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "change the person into a young individual wearing a denim jacket and jeans, with a bright blue backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+          "change the person into a young individual wearing a denim jacket and jeans, with a dim blue backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+          "change the person into a young individual wearing a denim jacket and jeans, with a bright yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+          "change the person into a young individual wearing a denim jacket and jeans, with a dim yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "change the person into a young individual wearing a denim jacket and jeans, with a bright yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 11.705830299993977,
+          "generation_time_seconds": 11.697675899951719,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1847730176,
+          "cpu_utilization_percent": 0.1341991341991342,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "change the person into a young individual wearing a denim jacket and jeans, with a bright blue backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+          "change the person into a young individual wearing a denim jacket and jeans, with a dim blue backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+          "change the person into a young individual wearing a denim jacket and jeans, with a bright yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+          "change the person into a young individual wearing a denim jacket and jeans, with a dim yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist."
+        ],
+        "selected_choice": "change the person into a young individual wearing a denim jacket and jeans, with a bright yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist.",
+        "answer": "change the person into a young individual wearing a denim jacket and jeans, with a bright yellow backpack and holding a digital tablet. Also, add earbuds in their ears and colorful bracelets on their wrist."
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, cream white winter jacket over her Tai Chi outfit.",
+          "Change the season to summer by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, cream white winter jacket over her Tai Chi outfit.",
+          "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit.",
+          "Change the season to summer by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit."
+        ],
+        "prediction": "A",
+        "correct": false,
+        "valid_labels": [
+          "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 139.676224200055,
+          "generation_time_seconds": 139.66305770003237,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1848266752,
+          "cpu_utilization_percent": 0.06719826023921711,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, cream white winter jacket over her Tai Chi outfit.",
+          "Change the season to summer by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, cream white winter jacket over her Tai Chi outfit.",
+          "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit.",
+          "Change the season to summer by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit."
+        ],
+        "selected_choice": "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, cream white winter jacket over her Tai Chi outfit.",
+        "answer": "Change the season to winter by adding snow on the ground and on the tree branches. Replace the orange leaves with snow, and dress the woman in a thick, dark blue winter jacket over her Tai Chi outfit."
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "Change the time of day from evening to sunset, casting a warm silver light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+          "Change the time of day from evening to sunrise, casting a warm silver light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+          "Change the time of day from evening to sunset, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+          "Change the time of day from evening to sunrise, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Change the time of day from evening to sunset, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 17.94803939992562,
+          "generation_time_seconds": 17.93248970003333,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1842397184,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Change the time of day from evening to sunset, casting a warm silver light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+          "Change the time of day from evening to sunrise, casting a warm silver light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+          "Change the time of day from evening to sunset, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+          "Change the time of day from evening to sunrise, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun."
+        ],
+        "selected_choice": "Change the time of day from evening to sunset, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun.",
+        "answer": "Change the time of day from evening to sunset, casting a warm golden light over the scene. Adjust the lighting to reflect the change in time, with the car's reflective surfaces picking up the hues of the setting sun."
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "Remove the elderly man standing next to her.",
+          "add the elderly man standing next to her.",
+          "Remove the young girl standing next to her.",
+          "add the young girl standing next to her."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Remove the young girl standing next to her."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 23.997639100067317,
+          "generation_time_seconds": 23.97319479996804,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1843421184,
+          "cpu_utilization_percent": 0.12995780590717299,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Remove the elderly man standing next to her.",
+          "add the elderly man standing next to her.",
+          "Remove the young girl standing next to her.",
+          "add the young girl standing next to her."
+        ],
+        "selected_choice": "Remove the young girl standing next to her.",
+        "answer": "Remove the young girl standing next to her."
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the foreground.",
+          "Add a watering hole with reflections, additional zebras, elephants, and acacia trees in the foreground.",
+          "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the background.",
+          "Add a watering hole with reflections, additional zebras, elephants, and acacia trees in the background."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the background."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 25.68849269999191,
+          "generation_time_seconds": 25.658536799950525,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1845952512,
+          "cpu_utilization_percent": 0.0611439842209073,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the foreground.",
+          "Add a watering hole with reflections, additional zebras, elephants, and acacia trees in the foreground.",
+          "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the background.",
+          "Add a watering hole with reflections, additional zebras, elephants, and acacia trees in the background."
+        ],
+        "selected_choice": "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the background.",
+        "answer": "Add a watering hole with reflections, additional zebras, giraffes, and acacia trees in the background."
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "Remove the rust and grime from the paintbrush, making it look new and unused.",
+          "add the rust and grime from the paintbrush, making it look new and unused.",
+          "Remove the rust and grime from the screwdriver, making it look new and unused.",
+          "add the rust and grime from the screwdriver, making it look new and unused."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Remove the rust and grime from the screwdriver, making it look new and unused."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 13.187696899985895,
+          "generation_time_seconds": 13.149820000049658,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1846128640,
+          "cpu_utilization_percent": 0.11884615384615384,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Remove the rust and grime from the paintbrush, making it look new and unused.",
+          "add the rust and grime from the paintbrush, making it look new and unused.",
+          "Remove the rust and grime from the screwdriver, making it look new and unused.",
+          "add the rust and grime from the screwdriver, making it look new and unused."
+        ],
+        "selected_choice": "Remove the rust and grime from the screwdriver, making it look new and unused.",
+        "answer": "Remove the rust and grime from the screwdriver, making it look new and unused."
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "apply a filter to create a smooth photorealistic effect",
+          "remove a filter to create a smooth photorealistic effect",
+          "apply a filter to create a hand-drawn, crosshatched effect",
+          "remove a filter to create a hand-drawn, crosshatched effect"
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "apply a filter to create a hand-drawn, crosshatched effect"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 15.710571600007825,
+          "generation_time_seconds": 15.654253599932417,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1847525376,
+          "cpu_utilization_percent": 0.0996774193548387,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "apply a filter to create a smooth photorealistic effect",
+          "remove a filter to create a smooth photorealistic effect",
+          "apply a filter to create a hand-drawn, crosshatched effect",
+          "remove a filter to create a hand-drawn, crosshatched effect"
+        ],
+        "selected_choice": "apply a filter to create a hand-drawn, crosshatched effect",
+        "answer": "apply a filter to create a hand-drawn, crosshatched effect"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "Replace the purple fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+          "Replace the purple fields with vibrant, colorful sunflower fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+          "Replace the green fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+          "Replace the green fields with vibrant, colorful sunflower fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Replace the green fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 18.291012900066562,
+          "generation_time_seconds": 18.23891930002719,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1847623680,
+          "cpu_utilization_percent": 0.08614958448753463,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Replace the purple fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+          "Replace the purple fields with vibrant, colorful sunflower fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+          "Replace the green fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+          "Replace the green fields with vibrant, colorful sunflower fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival."
+        ],
+        "selected_choice": "Replace the green fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival.",
+        "answer": "Replace the green fields with vibrant, colorful tulip fields. Add more people dressed in period attire walking among the tulips to indicate the celebration of the Tulip festival."
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 655.2572097999509,
+      "wall_clock_time_per_sample_seconds_mean": 32.76201049499796,
+      "total_generation_time_seconds_mean": 32.72989202500321,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.03052236541755255,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1849450496,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.09597926195770448,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.626184899942018
+    }
+  }
+}

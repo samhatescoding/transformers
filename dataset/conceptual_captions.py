@@ -45,6 +45,9 @@ class ConceptualCaptions(HFMultipleChoiceSourceDataset):
                 break
         return samples
 
+    def get_samples(self, n: int) -> List[Dict[str, Any]]:
+        return self.get_available_samples(n)
+
     def get_image_from_row(self, row) -> Image.Image:
         if isinstance(row.get("image"), Image.Image):
             return row["image"].convert("RGB")

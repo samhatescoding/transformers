@@ -1,0 +1,380 @@
+\documentclass[11pt,a4paper]{report}
+
+\usepackage[a4paper,margin=24mm,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{url}
+
+\definecolor{ink}{RGB}{32,44,58}
+\definecolor{accent}{RGB}{37,96,151}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=18pt,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=18pt,itemsep=2pt,topsep=3pt}
+\renewcommand{\arraystretch}{1.14}
+\captionsetup{font=small,labelfont=bf}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{ink}{Model Inclusion Criteria}}
+\fancyhead[R]{\textcolor{ink}{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\title{\textbf{Seeing the Same Task Differently}[8pt]
+Vision-Language Model Inclusion Criteria}
+\author{Technical report from the repository evaluation outputs}
+\date{}
+
+\begin{document}
+\maketitle
+
+\chapter{Model Inclusion Criteria}
+
+\section{Purpose of the Selection}
+
+This study evaluates a deliberately bounded set of vision-language models. It
+does not attempt to reproduce a full public leaderboard or catalogue every
+model available at the time of execution. The purpose is narrower: to compare a
+small group of practically accessible, general-purpose multimodal systems under
+one benchmark implementation.
+
+The model choice was informed by two contemporary vision-language leaderboards:
+MMMU-Pro\footnote{\url{https://artificialanalysis.ai/evaluations/mmmu-pro}, accessed 2026-06-11.}
+and Arena Vision Overall\footnote{\url{https://arena.ai/leaderboard/vision}, accessed 2026-06-11.}.
+The MMMU-Pro table below uses the public LLM Stats MMMU-Pro leaderboard
+snapshot.\footnote{\url{https://llm-stats.com/benchmarks/mmmu-pro}, accessed 2026-06-11.}
+These leaderboards identify relevant model families; the repository artifacts
+determine which models can actually be compared in this study.
+
+The final cohort contains six models:
+
+\begin{itemize}
+\item \textbf{OpenAI}: GPT-4o, GPT-4.1, GPT-5;
+\item \textbf{Anthropic}: Claude Sonnet 4.5;
+\item \textbf{Google}: Gemini 3.5 Flash;
+\item \textbf{Alibaba Cloud}: Qwen 3.5.
+\end{itemize}
+
+This selection gives extra depth to the GPT family because it is the strongest
+and most consistently relevant family for this study: GPT models appear
+repeatedly near the top of the leaderboard evidence, and the repository
+contains multiple completed GPT-family artifacts under the same benchmark
+pipeline. The other major families are represented by one model each, which
+keeps the comparison broad without turning the study into a full leaderboard
+survey.
+
+\section{Why These Two Leaderboards Were Used}
+
+MMMU-Pro and Arena Vision Overall were chosen because they provide complementary
+views of current vision-language performance. MMMU-Pro emphasizes structured
+multimodal reasoning, while Arena Vision Overall reflects broader comparative
+model behavior across vision-language tasks. Using both reduces dependence on a
+single benchmark source while keeping the selection process compact.
+
+The leaderboard excerpts in Tables~\ref{tab:mmmu-pro-context}
+and~\ref{tab:arena-vision-context} are fixed snapshots recorded at the time of
+model selection. Each table contains 25 entries: enough to show the main
+families visible near the top of each ranking, but not so many that the
+inclusion argument becomes a leaderboard survey.
+
+\section{MMMU-Pro Leaderboard Context}
+
+Table~\ref{tab:mmmu-pro-context} presents the MMMU-Pro leaderboard context used
+during model selection. It shows that GPT, Gemini, Qwen, Claude, and Muse Spark
+all belong to the relevant upper part of the model landscape.
+
+\begin{table}[H]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l c c l l}
+\toprule
+\textbf{Model name} &
+\textbf{Rank} &
+\textbf{Score} &
+\textbf{Family} &
+\textbf{Company} \\
+\midrule
+Gemini 3.5 Flash
+& 1 & 0.836 & Gemini & Google \\
+GPT-5.5
+& 2 & 0.832 & GPT & OpenAI \\
+Gemini 3 Flash
+& 3 & 0.812 & Gemini & Google \\
+GPT-5.4
+& 3 & 0.812 & GPT & OpenAI \\
+Gemini 3 Pro
+& 5 & 0.810 & Gemini & Google \\
+Gemini 3.1 Pro
+& 6 & 0.805 & Gemini & Google \\
+Muse Spark
+& 7 & 0.804 & Muse Spark & Meta \\
+Kimi K2.6
+& 8 & 0.801 & Kimi & Moonshot AI \\
+GPT-5.2
+& 9 & 0.795 & GPT & OpenAI \\
+Qwen3.6 Plus
+& 10 & 0.788 & Qwen & Alibaba Cloud / Qwen Team \\
+Kimi K2.5
+& 11 & 0.785 & Kimi & Moonshot AI \\
+GPT-5
+& 12 & 0.784 & GPT & OpenAI \\
+MiniMax M3
+& 13 & 0.781 & MiniMax & MiniMax \\
+MiMo-V2.5
+& 14 & 0.779 & MiMo & Xiaomi \\
+Claude Opus 4.6
+& 15 & 0.773 & Claude & Anthropic \\
+Gemma 4 31B
+& 16 & 0.769 & Gemma & Google \\
+Qwen3.5-122B-A10B
+& 16 & 0.769 & Qwen & Alibaba Cloud / Qwen Team \\
+Gemini 3.1 Flash-Lite
+& 18 & 0.768 & Gemini & Google \\
+GPT-5.4 mini
+& 19 & 0.766 & GPT & OpenAI \\
+o3
+& 20 & 0.764 & o-series & OpenAI \\
+GPT-5.5 Instant
+& 21 & 0.760 & GPT & OpenAI \\
+Qwen3.6-27B
+& 22 & 0.758 & Qwen & Alibaba Cloud / Qwen Team \\
+Claude Sonnet 4.6
+& 23 & 0.756 & Claude & Anthropic \\
+Qwen3.6-35B-A3B
+& 24 & 0.753 & Qwen & Alibaba Cloud / Qwen Team \\
+Qwen3.5-35B-A3B
+& 25 & 0.751 & Qwen & Alibaba Cloud / Qwen Team \\
+\bottomrule
+\end{tabular}
+}
+\caption{Twenty-five-entry MMMU-Pro leaderboard excerpt used during model
+selection. The table defines part of the broader candidate landscape; it does
+not determine automatic inclusion in the main study.}
+\label{tab:mmmu-pro-context}
+\end{table}
+
+\section{Arena Vision Leaderboard Context}
+
+Table~\ref{tab:arena-vision-context} presents the Arena Vision Overall context.
+It reinforces the relevance of Claude, Gemini, GPT, Qwen, and Muse Spark as
+candidate families for a vision-language study.
+
+\begin{table}[H]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l c c l l}
+\toprule
+\textbf{Model name} &
+\textbf{Rank} &
+\textbf{Score} &
+\textbf{Family} &
+\textbf{Company} \\
+\midrule
+claude-opus-4-7-thinking
+& 1 & $1309 \pm 8$ & Claude Opus & Anthropic \\
+claude-fable-5
+& 2 & $1307 \pm 15$ & Claude & Anthropic \\
+claude-opus-4-6-thinking
+& 3 & $1301 \pm 8$ & Claude Opus & Anthropic \\
+claude-opus-4-7
+& 4 & $1301 \pm 8$ & Claude Opus & Anthropic \\
+claude-opus-4-6
+& 5 & $1297 \pm 7$ & Claude Opus & Anthropic \\
+muse-spark
+& 6 & $1295 \pm 10$ & Muse Spark & Meta \\
+gemini-3-pro
+& 7 & $1290 \pm 8$ & Gemini & Google \\
+claude-opus-4-8-thinking
+& 8 & $1289 \pm 11$ & Claude Opus & Anthropic \\
+gpt-5.5-high
+& 9 & $1284 \pm 8$ & GPT & OpenAI \\
+gpt-5.4-high
+& 10 & $1283 \pm 8$ & GPT & OpenAI \\
+gpt-5.5
+& 11 & $1283 \pm 8$ & GPT & OpenAI \\
+claude-opus-4-8
+& 12 & $1280 \pm 11$ & Claude Opus & Anthropic \\
+gemini-3.1-pro-preview
+& 13 & $1280 \pm 6$ & Gemini & Google \\
+gpt-5.2-chat-latest-20260210
+& 14 & $1279 \pm 7$ & GPT & OpenAI \\
+claude-sonnet-4-6
+& 15 & $1278 \pm 7$ & Claude Sonnet & Anthropic \\
+gpt-5.5-instant
+& 16 & $1276 \pm 9$ & GPT & OpenAI \\
+gpt-5.4
+& 17 & $1275 \pm 8$ & GPT & OpenAI \\
+gemini-3-flash
+& 18 & $1272 \pm 6$ & Gemini & Google \\
+kimi-k2.6
+& 19 & $1264 \pm 8$ & Kimi & Moonshot \\
+qwen3.7-plus-preview
+& 20 & $1263 \pm 11$ & Qwen & Alibaba \\
+dola-seed-2.0-pro
+& 21 & $1259 \pm 8$ & Seed & ByteDance \\
+gemini-3-flash (thinking-minimal)
+& 22 & $1256 \pm 6$ & Gemini & Google \\
+gpt-5.4-mini-high
+& 23 & $1256 \pm 7$ & GPT & OpenAI \\
+gemma-4-31b
+& 24 & $1252 \pm 7$ & Gemma & Google \\
+grok-4.20-beta-0309-reasoning
+& 25 & $1251 \pm 7$ & Grok & xAI \\
+\bottomrule
+\end{tabular}
+}
+\caption{Twenty-five-entry Arena Vision Overall leaderboard excerpt used during
+model selection. The table documents the broader candidate landscape; final
+inclusion still requires completed repository artifacts and compatibility with
+the common evaluation procedure.}
+\label{tab:arena-vision-context}
+\end{table}
+
+\section{From Leaderboard Families to Final Cohort}
+
+The final cohort is not a top-(k) slice of either leaderboard. It is the
+intersection of three constraints: relevance in the broader model landscape,
+compatibility with the common benchmark pipeline, and the existence of
+completed repository artifacts.
+
+The family-level screening proceeds as follows. The leaderboards identify five
+main candidate families for this study: GPT, Gemini, Claude, Qwen, and Muse
+Spark. Muse Spark is excluded despite its high rank because it is not generally
+available through a reproducible public API route. Meta describes Muse Spark as
+available at \url{meta.ai} and the Meta AI app, with API access offered only as
+a private preview to selected users.\footnote{\url{https://ai.meta.com/blog/introducing-muse-spark-msl/}, accessed 2026-06-11.}
+Artificial Analysis likewise reports that there are no currently benchmarked
+API providers for Muse Spark.\footnote{\url{https://artificialanalysis.ai/models/muse-spark/providers}, accessed 2026-06-11.}
+
+After excluding Muse Spark, the remaining families are GPT, Gemini, Claude, and
+Qwen. GPT receives three slots because it is the strongest family for a
+within-family analysis in this study: it appears repeatedly near the top of both
+leaderboards and the repository contains completed artifacts for several GPT
+generations. The other three families receive one model each. This keeps the
+comparison broad across providers while preserving a controlled GPT-family
+trajectory.
+
+This gives the following six-model cohort:
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}l l X@{}}
+\toprule
+\textbf{Model} & \textbf{Provider} & \textbf{Reason for inclusion} \\
+\midrule
+GPT-4o
+& OpenAI
+& Serves as the established GPT-family multimodal reference point and anchors
+the within-family comparison. \\
+
+GPT-4.1
+& OpenAI
+& Provides an intermediate GPT generation, allowing changes across OpenAI
+models to be studied across tasks rather than inferred from a single pair. \\
+
+GPT-5
+& OpenAI
+& Provides the latest GPT model evaluated in the cohort and completes the
+three-model GPT-family comparison. \\
+
+Claude Sonnet 4.5
+& Anthropic
+& Represents the Claude family with a strong general-purpose multimodal model
+for cross-provider comparison. \\
+
+Gemini 3.5 Flash
+& Google
+& Represents the Gemini family with a high-performing and practically usable
+model that is especially relevant given Gemini's strong leaderboard presence. \\
+
+Qwen 3.5
+& Alibaba Cloud
+& Represents the Qwen family and adds a non-US provider family to the main
+comparison. \\
+\bottomrule
+\end{tabularx}
+\caption{Models included in the main comparison.}
+\label{tab:included-models}
+\end{table}
+
+The cohort is intentionally asymmetric. Equal provider counts would remove the
+GPT generational comparison, which is one of the useful internal controls of
+the study. Instead, the cohort uses a (3+1+1+1) design: three GPT models for
+depth, and one Claude, one Gemini, and one Qwen model for breadth.
+
+\section{Why Additional Leaderboard Models Were Not Included}
+
+Many models visible in the leaderboard context were not included in the main
+cohort. This does not mean they are unimportant. It means that including them
+would have changed the study from a controlled repository-backed comparison
+into a broader leaderboard survey.
+
+In particular, additional GPT, Claude, Gemini, Qwen, Kimi, Gemma, Grok, MiMo,
+Seed, MiniMax, and related systems could have been considered. They were not
+automatically included because the study requires completed artifacts from the
+same benchmark pipeline and a comparison setting close enough for the reported
+results to be interpreted together.
+
+The final cohort should therefore be read as a deliberately measured subset of
+a larger model landscape. The leaderboards establish family relevance; the
+repository artifacts determine model inclusion.
+
+\section{Fine-Tuning Case Study}
+
+Qwen2.5-VL-3B is included separately in a Fashion-MNIST fine-tuning case study.
+It is not treated as another member of the main model ranking. The purpose of
+this experiment is different: it measures whether parameter-efficient
+fine-tuning can improve a compact model on a defined visual classification
+task.
+
+The case study compares the same Qwen2.5-VL-3B base model before and after LoRA
+fine-tuning. This paired design controls for model architecture and scale, so
+the observed difference can be attributed more directly to task-specific
+adaptation.
+
+Keeping this case study separate is necessary for a fair interpretation. Its
+model size, deployment method, training exposure, and task specialization
+differ from those of the general-purpose models in the main cohort. Its results
+therefore support conclusions about fine-tuning effectiveness on Fashion-MNIST,
+not a general claim that Qwen2.5-VL-3B is directly superior or inferior to the
+six-model comparison cohort.
+
+\section{Scope of the Conclusions}
+
+The selected models support three forms of analysis:
+
+\begin{itemize}
+\item comparison of general-purpose multimodal systems across OpenAI,
+Anthropic, Google, and Alibaba Cloud;
+\item comparison of successive GPT-family models under the same benchmark
+protocol;
+\item comparison of a compact base model with its task-specific fine-tuned
+counterpart in a separate case study.
+\end{itemize}
+
+Accordingly, conclusions are limited to the evaluated model versions,
+endpoints, prompts, benchmark samples, and execution settings. The leaderboard
+tables document the broader model landscape and justify why the selected
+families were reasonable candidates. They do not override the stricter
+inclusion rule that reported comparisons must be traceable to completed
+artifacts produced by the common evaluation pipeline.
+
+\end{document}

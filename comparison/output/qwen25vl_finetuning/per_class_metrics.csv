@@ -1,0 +1,31 @@
+model,label,support,predicted_count,true_positive,precision,recall,f1
+Baseline,t-shirt/top,3,5,2,0.4,0.6666666666666666,0.5
+Baseline,trouser,7,0,0,0.0,0.0,0.0
+Baseline,pullover,6,9,4,0.4444444444444444,0.6666666666666666,0.5333333333333333
+Baseline,dress,5,1,1,1.0,0.2,0.33333333333333337
+Baseline,coat,5,1,0,0.0,0.0,0.0
+Baseline,sandal,4,1,0,0.0,0.0,0.0
+Baseline,shirt,5,20,2,0.1,0.4,0.16000000000000003
+Baseline,sneaker,7,10,7,0.7,1.0,0.8235294117647058
+Baseline,bag,4,2,2,1.0,0.5,0.6666666666666666
+Baseline,ankle boot,4,1,1,1.0,0.25,0.4
+Original LoRA,t-shirt/top,3,0,0,0.0,0.0,0.0
+Original LoRA,trouser,7,1,1,1.0,0.14285714285714285,0.25
+Original LoRA,pullover,6,0,0,0.0,0.0,0.0
+Original LoRA,dress,5,1,1,1.0,0.2,0.33333333333333337
+Original LoRA,coat,5,4,2,0.5,0.4,0.4444444444444445
+Original LoRA,sandal,4,1,0,0.0,0.0,0.0
+Original LoRA,shirt,5,29,5,0.1724137931034483,1.0,0.29411764705882354
+Original LoRA,sneaker,7,11,7,0.6363636363636364,1.0,0.7777777777777778
+Original LoRA,bag,4,3,3,1.0,0.75,0.8571428571428571
+Original LoRA,ankle boot,4,0,0,0.0,0.0,0.0
+Balanced LoRA,t-shirt/top,3,0,0,0.0,0.0,0.0
+Balanced LoRA,trouser,7,2,2,1.0,0.2857142857142857,0.4444444444444445
+Balanced LoRA,pullover,6,2,1,0.5,0.16666666666666666,0.25
+Balanced LoRA,dress,5,1,1,1.0,0.2,0.33333333333333337
+Balanced LoRA,coat,5,5,2,0.4,0.4,0.4000000000000001
+Balanced LoRA,sandal,4,2,1,0.5,0.25,0.3333333333333333
+Balanced LoRA,shirt,5,25,5,0.2,1.0,0.33333333333333337
+Balanced LoRA,sneaker,7,8,7,0.875,1.0,0.9333333333333333
+Balanced LoRA,bag,4,3,3,1.0,0.75,0.8571428571428571
+Balanced LoRA,ankle boot,4,2,2,1.0,0.5,0.6666666666666666

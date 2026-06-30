@@ -11,7 +11,7 @@
       {
         "index": 1,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A film director and actress on a movie set, with lighting and sound equipment visible.",
         "correct": false,
         "valid_labels": [
           "author : a life in photography -- in pictures"
@@ -19,169 +19,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 4.679486300097778,
-          "generation_time_seconds": 3.9455395999830216,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4172155000014754,
+          "generation_time_seconds": 1.3729539000014483,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1474797568,
-          "cpu_utilization_percent": 1.1679487179487178,
+          "peak_cpu_ram_bytes": 342011904,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08225964699966554,
+        "reference_captions": [
+          "author : a life in photography -- in pictures"
+        ]
       },
       {
         "index": 2,
         "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "an angler fishes river on a snowy day ."
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": false,
-          "error": "HTTPError: HTTP Error 404: Not Found",
-          "wall_clock_time_seconds": 3.1420671000378206,
-          "generation_time_seconds": 0.0,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "error": "HTTPError: HTTP Error 404: Not Found"
-      },
-      {
-        "index": 3,
-        "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "photograph of the sign being repaired by brave person"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": false,
-          "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-          "wall_clock_time_seconds": 0.20062500005587935,
-          "generation_time_seconds": 0.0,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
-      },
-      {
-        "index": 4,
-        "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "the player staring intently at a computer screen ."
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": false,
-          "error": "HTTPError: HTTP Error 404: Not Found",
-          "wall_clock_time_seconds": 1.5628109000390396,
-          "generation_time_seconds": 0.0,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "error": "HTTPError: HTTP Error 404: Not Found"
-      },
-      {
-        "index": 5,
-        "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "globes : the green 3d person carrying in hands globe"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": false,
-          "error": "URLError: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>",
-          "wall_clock_time_seconds": 21.27170839998871,
-          "generation_time_seconds": 0.0,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "error": "URLError: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>"
-      },
-      {
-        "index": 6,
-        "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A cozy, modern bedroom with wooden floors, a double bed, and neutral decor.",
         "correct": false,
         "valid_labels": [
           "the - bedroom stone cottage can sleep people"
@@ -189,203 +56,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 4.382513800053857,
-          "generation_time_seconds": 3.4466430000029504,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9138814000034472,
+          "generation_time_seconds": 0.8857276999988244,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1474002944,
-          "cpu_utilization_percent": 0.4434782608695652,
+          "peak_cpu_ram_bytes": 343273472,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.09552040806823767,
+        "reference_captions": [
+          "the - bedroom stone cottage can sleep people"
+        ]
       },
       {
-        "index": 7,
+        "index": 3,
         "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "film of a garbage truck"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": false,
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "wall_clock_time_seconds": 0.47705919994041324,
-          "generation_time_seconds": 0.0,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "error": "HTTPError: HTTP Error 403: Forbidden"
-      },
-      {
-        "index": 8,
-        "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "young woman seated on the beach"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": false,
-          "error": "HTTPError: HTTP Error 400: Bad Request",
-          "wall_clock_time_seconds": 0.6306177000515163,
-          "generation_time_seconds": 0.0,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "error": "HTTPError: HTTP Error 400: Bad Request"
-      },
-      {
-        "index": 9,
-        "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "party in the park under cherry blossoms"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": false,
-          "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1081)>",
-          "wall_clock_time_seconds": 0.41396300005726516,
-          "generation_time_seconds": 0.0,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1081)>"
-      },
-      {
-        "index": 10,
-        "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "classical music 's rising stars join conducted ensemble for a season"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": false,
-          "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-          "wall_clock_time_seconds": 0.04676479997579008,
-          "generation_time_seconds": 0.0,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
-      },
-      {
-        "index": 11,
-        "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "a man holds what is believed to be some of the debris that caused damage to vehicles monday afternoon after airliner returned to airport following problems after take off ."
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": false,
-          "error": "HTTPError: HTTP Error 404: Not Found",
-          "wall_clock_time_seconds": 0.6780533000128344,
-          "generation_time_seconds": 0.0,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "error": "HTTPError: HTTP Error 404: Not Found"
-      },
-      {
-        "index": 12,
-        "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A hand with Disney-themed nail art is held up in front of Cinderella's Castle at a Disney park.",
         "correct": false,
         "valid_labels": [
           "where 's the best place to show off your nails ? right in front of the castle , of course !"
@@ -393,33 +93,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.5514323000097647,
-          "generation_time_seconds": 3.062978000030853,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.1125377999997,
+          "generation_time_seconds": 1.0738825999978872,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1474899968,
-          "cpu_utilization_percent": 0.5049180327868853,
+          "peak_cpu_ram_bytes": 342024192,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.13400825781778894,
+        "reference_captions": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !"
+        ]
       },
       {
-        "index": 13,
+        "index": 4,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A single green leaf with stem on a white plate against a black background.",
         "correct": false,
         "valid_labels": [
           "that combines elements of a simple vegetable and dish"
@@ -427,33 +130,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 5.487147400039248,
-          "generation_time_seconds": 4.119431900093332,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.8127626999994391,
+          "generation_time_seconds": 0.783419800001866,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1476636672,
-          "cpu_utilization_percent": 0.3719512195121951,
+          "peak_cpu_ram_bytes": 342491136,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08839374326825923,
+        "reference_captions": [
+          "that combines elements of a simple vegetable and dish"
+        ]
       },
       {
-        "index": 14,
+        "index": 5,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "Two Transformers engage in battle on the cover of \"Transformers: Till All Are One\" comic issue #4.",
         "correct": false,
         "valid_labels": [
           "transformers : till all are issue # 4b"
@@ -461,33 +167,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "wall_clock_time_seconds": 0.7978621999500319,
-          "generation_time_seconds": 0.0,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.8110874999983935,
+          "generation_time_seconds": 0.803430700001627,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
+          "peak_cpu_ram_bytes": 343785472,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "HTTPError: HTTP Error 403: Forbidden"
+        "bleu": 0.21042990347620458,
+        "reference_captions": [
+          "transformers : till all are issue # 4b"
+        ]
       },
       {
-        "index": 15,
+        "index": 6,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A child wearing a shower cap plays with a rubber duck in a bubble-filled bathtub.",
         "correct": false,
         "valid_labels": [
           "illustration of a little girl taking a bath"
@@ -495,33 +204,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 6.418200600077398,
-          "generation_time_seconds": 5.21078550000675,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9252164999998058,
+          "generation_time_seconds": 0.9222331999990274,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1478295552,
-          "cpu_utilization_percent": 0.30097087378640774,
+          "peak_cpu_ram_bytes": 344551424,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.09103526405546068,
+        "reference_captions": [
+          "illustration of a little girl taking a bath"
+        ]
       },
       {
-        "index": 16,
+        "index": 7,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "Storefronts of Ken's Flowers and Tang Leather on a city street.",
         "correct": false,
         "valid_labels": [
           "tv police procedural is filming on the street this week ."
@@ -529,33 +241,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 4.821251000044867,
-          "generation_time_seconds": 3.9310578999575227,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4693202999987989,
+          "generation_time_seconds": 1.4189292999981262,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1346564096,
+          "peak_cpu_ram_bytes": 344887296,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.12605968092174913,
+        "reference_captions": [
+          "tv police procedural is filming on the street this week ."
+        ]
       },
       {
-        "index": 17,
+        "index": 8,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A waterfront ferry terminal building with multiple levels and a green roof.",
         "correct": false,
         "valid_labels": [
           "the new terminal on island with quiet sea and setting sun"
@@ -563,33 +278,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.962300300016068,
-          "generation_time_seconds": 3.145619999966584,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9125588999995671,
+          "generation_time_seconds": 0.8702486999973189,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1347772416,
-          "cpu_utilization_percent": 0.4888888888888889,
+          "peak_cpu_ram_bytes": 346025984,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.1235622127262679,
+        "reference_captions": [
+          "the new terminal on island with quiet sea and setting sun"
+        ]
       },
       {
-        "index": 18,
+        "index": 9,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A woman smiling and reaching out for a handshake in a professional setting.",
         "correct": false,
         "valid_labels": [
           "what makeup to wear to a job interview"
@@ -597,67 +315,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 8.306328000035137,
-          "generation_time_seconds": 3.609122300054878,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.0138291999974172,
+          "generation_time_seconds": 0.9875969000022451,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1347391488,
-          "cpu_utilization_percent": 0.43194444444444446,
+          "peak_cpu_ram_bytes": 345608192,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.09552040806823767,
+        "reference_captions": [
+          "what makeup to wear to a job interview"
+        ]
       },
       {
-        "index": 19,
+        "index": 10,
         "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
-        "valid_labels": [
-          "father and son putting on ice skates near frozen lake"
-        ],
-        "ground_truth_boxes": [],
-        "predicted_boxes": [],
-        "stats": {
-          "success": false,
-          "error": "HTTPError: HTTP Error 400: Bad Request",
-          "wall_clock_time_seconds": 2.3348724000388756,
-          "generation_time_seconds": 0.0,
-          "first_token_latency_seconds": null,
-          "time_per_output_token_seconds": null,
-          "output_tokens": null,
-          "retry_count": 0,
-          "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
-          "peak_gpu_memory_bytes": null,
-          "gpu_utilization_percent": null,
-          "vram_allocation_over_time_bytes": null,
-          "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
-          "hallucinated_label_count": 0,
-          "false_positive_count": 0,
-          "false_negative_count": 0,
-          "predicted_detection_count": 0
-        },
-        "error": "HTTPError: HTTP Error 400: Bad Request"
-      },
-      {
-        "index": 20,
-        "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A dentist performs a dental examination and cleaning on a patient.",
         "correct": false,
         "valid_labels": [
           "the dentist drill the tooth with a turbine"
@@ -665,46 +352,419 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 6.777121099992655,
-          "generation_time_seconds": 4.628082099952735,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.8125375000017812,
+          "generation_time_seconds": 0.7890262000000803,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1346260992,
-          "cpu_utilization_percent": 0.6760869565217391,
+          "peak_cpu_ram_bytes": 345632768,
+          "cpu_utilization_percent": 148.75,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.12605968092174913,
+        "reference_captions": [
+          "the dentist drill the tooth with a turbine"
+        ]
+      },
+      {
+        "index": 11,
+        "prompt_labels": [],
+        "prediction": "A pair of bright orange athletic running shoes with green soles on a white background.",
+        "correct": true,
+        "valid_labels": [
+          "pair of new bright orange modern sneakers isolated on a white background"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.8117486999981338,
+          "generation_time_seconds": 0.7916091000006418,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 344436736,
+          "cpu_utilization_percent": 135.59375,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.2934712724688435,
+        "reference_captions": [
+          "pair of new bright orange modern sneakers isolated on a white background"
+        ]
+      },
+      {
+        "index": 12,
+        "prompt_labels": [],
+        "prediction": "A living room with dark leather sofas and a floral rug, asking for designer advice on which of four new rug options to",
+        "correct": false,
+        "valid_labels": [
+          "ask industry to do in our family room ?"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.3339427999999316,
+          "generation_time_seconds": 2.281592000003002,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 352669696,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.05856458233275369,
+        "reference_captions": [
+          "ask industry to do in our family room ?"
+        ]
+      },
+      {
+        "index": 13,
+        "prompt_labels": [],
+        "prediction": "A large, intricate sandcastle stands on a sunny beach with blue sky and ocean in the background.",
+        "correct": false,
+        "valid_labels": [
+          "sandcastle beach on bright sky ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.2654651000011654,
+          "generation_time_seconds": 1.2301178999987314,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 354365440,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.09083627868206415,
+        "reference_captions": [
+          "sandcastle beach on bright sky ."
+        ]
+      },
+      {
+        "index": 14,
+        "prompt_labels": [],
+        "prediction": "A person wearing a patterned dress, navy cardigan, and brown boots stands indoors.",
+        "correct": false,
+        "valid_labels": [
+          "cowboy boots are a major hit for spring and summer !"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3683396999986144,
+          "generation_time_seconds": 1.3296566999997594,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 347082752,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.1135935489027116,
+        "reference_captions": [
+          "cowboy boots are a major hit for spring and summer !"
+        ]
+      },
+      {
+        "index": 15,
+        "prompt_labels": [],
+        "prediction": "Close-up of a gold zipper on blue denim fabric.",
+        "correct": false,
+        "valid_labels": [
+          "a humorous call to arms against invention ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.0141394000020227,
+          "generation_time_seconds": 0.9908941999965464,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 348270592,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.14113991930789777,
+        "reference_captions": [
+          "a humorous call to arms against invention ."
+        ]
+      },
+      {
+        "index": 16,
+        "prompt_labels": [],
+        "prediction": "A football coach in a red jacket gestures and shouts instructions from the sideline during a match.",
+        "correct": false,
+        "valid_labels": [
+          "football player said after the game that his players had to learn lessons from the loss"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.217650999999023,
+          "generation_time_seconds": 1.2053744000004372,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 349405184,
+          "cpu_utilization_percent": 1.2750000000000001,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10216198665886358,
+        "reference_captions": [
+          "football player said after the game that his players had to learn lessons from the loss"
+        ]
+      },
+      {
+        "index": 17,
+        "prompt_labels": [],
+        "prediction": "A Cape fur seal barks while resting on a sandy beach with rocks nearby.",
+        "correct": false,
+        "valid_labels": [
+          "biological species with pup along a city"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.0109474999990198,
+          "generation_time_seconds": 0.9777594000006502,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 347758592,
+          "cpu_utilization_percent": 1.5550000000000002,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.09782375748961449,
+        "reference_captions": [
+          "biological species with pup along a city"
+        ]
+      },
+      {
+        "index": 18,
+        "prompt_labels": [],
+        "prediction": "A woman lovingly cuddles a baby, both looking at the camera.",
+        "correct": false,
+        "valid_labels": [
+          "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.213346399999864,
+          "generation_time_seconds": 1.20360939999955,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 346652672,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.04589234221173178,
+        "reference_captions": [
+          "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress"
+        ]
+      },
+      {
+        "index": 19,
+        "prompt_labels": [],
+        "prediction": "A man rides a scooter along a seaside promenade as people watch from the sidewalk.",
+        "correct": false,
+        "valid_labels": [
+          "a man on a scooter , taking part in the rally"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9627430000000459,
+          "generation_time_seconds": 0.9350000000013097,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 346771456,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.14247788801610148,
+        "reference_captions": [
+          "a man on a scooter , taking part in the rally"
+        ]
+      },
+      {
+        "index": 20,
+        "prompt_labels": [],
+        "prediction": "A freshly plowed field under a partly cloudy sky.",
+        "correct": false,
+        "valid_labels": [
+          "dry fields on a summer day"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5716552999983833,
+          "generation_time_seconds": 1.5677531999972416,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 353615872,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.14113991930789777,
+        "reference_captions": [
+          "dry fields on a summer day"
+        ]
       }
     ],
     "stats": {
-      "wall_clock_time_seconds": 79.94403550005518,
-      "wall_clock_time_per_sample_seconds_mean": 3.9971092400257477,
-      "total_generation_time_seconds_mean": 1.7549630150024313,
+      "wall_clock_time_seconds": 22.982494100000622,
+      "wall_clock_time_per_sample_seconds_mean": 1.1485463099998015,
+      "total_generation_time_seconds_mean": 1.121040764999816,
       "first_token_latency_seconds_mean": null,
       "time_per_output_token_seconds_mean": null,
-      "samples_per_second": 0.250175011492711,
+      "samples_per_second": 0.8702275702966223,
       "number_of_output_tokens_mean": null,
-      "number_of_generated_outputs_mean": 0.0,
-      "number_of_benchmark_samples_completed": 0,
-      "success_count": 0,
-      "failure_count": 20,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
       "retry_count": 0,
-      "peak_cpu_ram_bytes": 1478295552,
+      "peak_cpu_ram_bytes": 354365440,
       "peak_gpu_memory_bytes": null,
-      "cpu_utilization_percent_mean": 0.4873541549732049,
+      "cpu_utilization_percent_mean": 14.358687499999998,
       "gpu_utilization_percent_mean": null,
       "vram_allocation_over_time_bytes": null,
       "disk_offload_volume_bytes": null,
@@ -713,8 +773,7 @@
       "false_positive_count_total": 0,
       "false_negative_count_total": 0,
       "mean_number_of_predicted_detections": 0.0,
-      "tokens_per_second": null,
-      "model_load_time_seconds": 1.3827757000690326
+      "tokens_per_second": null
     }
   }
 }

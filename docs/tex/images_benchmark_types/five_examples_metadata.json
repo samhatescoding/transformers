@@ -1,0 +1,87 @@
+[
+  {
+    "type": "C",
+    "name": "conceptual_captions",
+    "index": 2,
+    "image": "type_c_conceptual_captions_02.png",
+    "prompt_summary": "Write one concise caption for the image; return only the caption text.",
+    "answers": [
+      "the - bedroom stone cottage can sleep people"
+    ],
+    "gpt4o_response": "Cozy bedroom with wooden flooring and modern decor. (incorrect)",
+    "gpt4o_score": "BLEU 0.1604",
+    "gpt4o_result_index": 6
+  },
+  {
+    "type": "A",
+    "name": "flyingthings3d",
+    "index": 3,
+    "image": "type_a_flyingthings3d_03.png",
+    "prompt_summary": "Question: What part of the gray car is most visible? Choices: A. the front; B. the back; C. the side; D. the top.",
+    "answers": [
+      "the back"
+    ],
+    "gpt4o_response": "C. the side (incorrect)",
+    "gpt4o_result_index": 3
+  },
+  {
+    "type": "B",
+    "name": "mscoco",
+    "index": 2,
+    "image": "type_b_mscoco_02.png",
+    "prompt_summary": "Target class: chair. Detect every visible instance and return one normalized [x, y, width, height] box per line, or [] if none are visible.",
+    "answers": [
+      "chair"
+    ],
+    "gpt4o_response": "[0.0, 0.6, 0.3, 0.4] (incorrect)",
+    "gpt4o_result_index": 2,
+    "boxed_image": "type_b_mscoco_02_gpt4o_boxes.png",
+    "gpt4o_predicted_boxes": [
+      {
+        "label": "chair",
+        "xyxy": [
+          0.0,
+          138.0,
+          105.6,
+          230.0
+        ]
+      }
+    ]
+  },
+  {
+    "type": "E",
+    "name": "hq_edit",
+    "index": 5,
+    "image": "type_e_hq_edit_05.png",
+    "prompt_summary": "Identify which edit instruction produced Image B from Image A. Choices: A. Replace the soccer ball with a miniature sunflower that the puppy is holding in the same manner as the soccer ball.; B. Replace the soccer ball with a miniature sunflower that the kitten is holding in the same manner as the soccer ball.; C. Replace the soccer ball with a giant sunflower that the puppy is holding in the same manner as the soccer ball.; D. Replace the soccer ball with a giant sunflower that the kitten is holding in the same manner as the soccer ball..",
+    "answers": [
+      "Replace the soccer ball with a giant sunflower that the puppy is holding in the same manner as the soccer ball."
+    ],
+    "gpt4o_response": "C. Replace the soccer ball with a giant sunflower that the puppy is holding in (correct)",
+    "gpt4o_result_index": 5
+  },
+  {
+    "type": "G",
+    "name": "diffusiondb",
+    "index": 2,
+    "image": "type_g_diffusiondb_02.png",
+    "prompt_summary": "Identify which prompt created the image. Choices: A. a renaissance portrait of dwayne johnson, art in the style of rembrandt!! intricate. ultra detailed, oil on canvas, wet - on - wet technique, pay attention to facial details, highly realistic, cinematic lightning, intricate textures, illusionistic detail,; B. epic 3 d, become legend shiji! gpu mecha controlled by telepathic hackers, made of liquid, bubbles, crystals, and mangroves, houdini sidefx, perfect render, artstation trending, by jeremy mann, tsutomi nihei and ilya kuvshinov; C. an airbrush painting of cyber war machine scene in area 5 1 by destiny womack, gregoire boonzaier, harrison fisher, richard dadd; D. portrait of a dancing eagle woman, beautiful blonde haired lakota sioux goddess, intricate, highly detailed art by james jean, ray tracing, digital painting, artstation, concept art, smooth, sharp focus, illustration, artgerm and greg rutkowski and alphonse mucha, vladimir kush, giger, 8 k.",
+    "answers": [
+      "portrait of a dancing eagle woman, beautiful blonde haired lakota sioux goddess, intricate, highly detailed art by james jean, ray tracing, digital painting, artstation, concept art, smooth, sharp focus, illustration, artgerm and greg rutkowski and alphonse mucha, vladimir kush, giger, 8 k"
+    ],
+    "gpt4o_response": "D (correct)",
+    "gpt4o_result_index": 2
+  },
+  {
+    "type": "L",
+    "name": "imagenet1k",
+    "index": 1,
+    "image": "type_l_imagenet1k_01.png",
+    "prompt_summary": "Return exactly one label from the complete ImageNet-1K label list.",
+    "answers": [
+      "sombrero"
+    ],
+    "gpt4o_response": "sombrero (correct)",
+    "gpt4o_result_index": 12
+  }
+]

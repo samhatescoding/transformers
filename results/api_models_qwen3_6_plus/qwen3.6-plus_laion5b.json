@@ -1,0 +1,780 @@
+{
+  "model": "qwen3.6-plus",
+  "benchmark": "laion5b",
+  "report": {
+    "benchmark": "laion5b",
+    "dataset": "laion5b",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [],
+        "prediction": "A blue box of MetaRelax by Metagenics, a dietary supplement for stress, fatigue, and muscle tension.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_16320"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.49272259999998,
+          "generation_time_seconds": 8.459875399945304,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1160986624,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06468490584192432,
+        "reference_captions": [
+          "images/photo_16320"
+        ]
+      },
+      {
+        "index": 2,
+        "prompt_labels": [],
+        "prediction": "Blank white advertising billboard on a bus stop shelter on a city street.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_21369"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 11.080375300021842,
+          "generation_time_seconds": 11.059693899936974,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161011200,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08032276872815308,
+        "reference_captions": [
+          "images/photo_21369"
+        ]
+      },
+      {
+        "index": 3,
+        "prompt_labels": [],
+        "prediction": "Soldiers in camouflage gear participate in a live-fire training exercise as a large explosion detonates near a concrete wall.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_24437"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 26.09979869995732,
+          "generation_time_seconds": 26.058168399962597,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1162084352,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.05415315253510895,
+        "reference_captions": [
+          "images/photo_24437"
+        ]
+      },
+      {
+        "index": 4,
+        "prompt_labels": [],
+        "prediction": "A stainless steel Cuisinart coffee maker featuring a digital display reading 10:20 and a glass carafe filled",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_24845"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 13.405694699962623,
+          "generation_time_seconds": 13.372804899932817,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1163206656,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06074588070876682,
+        "reference_captions": [
+          "images/photo_24845"
+        ]
+      },
+      {
+        "index": 5,
+        "prompt_labels": [],
+        "prediction": "A compact kitchenette featuring white appliances, cabinetry, and a speckled countertop against yellow walls.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_28822"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 13.311668500071391,
+          "generation_time_seconds": 13.278346299892291,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1162178560,
+          "cpu_utilization_percent": 0.11634980988593156,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.07432998184513635,
+        "reference_captions": [
+          "images/photo_28822"
+        ]
+      },
+      {
+        "index": 6,
+        "prompt_labels": [],
+        "prediction": "A black and white sketch of a girl with a messy bun holding a camera up to her face.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_28450"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 13.43529159994796,
+          "generation_time_seconds": 13.389692199998535,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161084928,
+          "cpu_utilization_percent": 0.11509433962264151,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.05415315253510895,
+        "reference_captions": [
+          "images/photo_28450"
+        ]
+      },
+      {
+        "index": 7,
+        "prompt_labels": [],
+        "prediction": "A person in a yellow hazmat suit sprays disinfectant to stop COVID-19 amidst floating purple virus icons.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_36197"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 11.145590199972503,
+          "generation_time_seconds": 11.106956000090577,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161093120,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06074588070876682,
+        "reference_captions": [
+          "images/photo_36197"
+        ]
+      },
+      {
+        "index": 8,
+        "prompt_labels": [],
+        "prediction": "Map of Spain showing its autonomous communities labeled in French.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_7771"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.502292299992405,
+          "generation_time_seconds": 7.45827070006635,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161129984,
+          "cpu_utilization_percent": 0.41824324324324325,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10600313379512592,
+        "reference_captions": [
+          "images/photo_7771"
+        ]
+      },
+      {
+        "index": 9,
+        "prompt_labels": [],
+        "prediction": "A rose gold Apple Watch with a pink band displaying a black analog watch face with white dot markers.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_16487"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.078719099983573,
+          "generation_time_seconds": 6.076346600078978,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161146368,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.05415315253510895,
+        "reference_captions": [
+          "images/photo_16487"
+        ]
+      },
+      {
+        "index": 10,
+        "prompt_labels": [],
+        "prediction": "Director Wim Wenders and the cast of the film Perfect Days, including Koji Yakusho and Sakura Ando, posing for a group photo at",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_24390"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 28.072018799954094,
+          "generation_time_seconds": 28.057677099946886,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161154560,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.04449945957170705,
+        "reference_captions": [
+          "images/photo_24390"
+        ]
+      },
+      {
+        "index": 11,
+        "prompt_labels": [],
+        "prediction": "A kitchen island featuring a speckled granite countertop, a double-basin copper sink with a vintage faucet, and an ornate wooden corbel",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_2788"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.222027600044385,
+          "generation_time_seconds": 9.201462300028652,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161166848,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.048853266442119264,
+        "reference_captions": [
+          "images/photo_2788"
+        ]
+      },
+      {
+        "index": 12,
+        "prompt_labels": [],
+        "prediction": "A tote bag featuring the white Creole Queen riverboat docked in New Orleans with the green spires of the St. Louis Cathedral in the background.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_36630"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.717353599960916,
+          "generation_time_seconds": 8.681787500041537,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161183232,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.04085892079136996,
+        "reference_captions": [
+          "images/photo_36630"
+        ]
+      },
+      {
+        "index": 13,
+        "prompt_labels": [],
+        "prediction": "Two Halloween ornaments: a pumpkin with a spooky interior scene and an Oogie Boogie figure from The Nightmare Before Christmas.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_6131"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 14.796103099943139,
+          "generation_time_seconds": 14.74659110000357,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161207808,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.051366639095059514,
+        "reference_captions": [
+          "images/photo_6131"
+        ]
+      },
+      {
+        "index": 14,
+        "prompt_labels": [],
+        "prediction": "A front-facing shot of a stainless steel KitchenAid electric range with a black glass cooktop.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_29210"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.274113499908708,
+          "generation_time_seconds": 9.231005900073797,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161232384,
+          "cpu_utilization_percent": 0.16885245901639342,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06917184228205472,
+        "reference_captions": [
+          "images/photo_29210"
+        ]
+      },
+      {
+        "index": 15,
+        "prompt_labels": [],
+        "prediction": "A dual-ended Babor lip contour pencil with a nude tip and brush applicator, displayed with two black caps on a white background.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_32089"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.314972700085491,
+          "generation_time_seconds": 12.276931699947454,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161256960,
+          "cpu_utilization_percent": 0.25308641975308643,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.04657469807170698,
+        "reference_captions": [
+          "images/photo_32089"
+        ]
+      },
+      {
+        "index": 16,
+        "prompt_labels": [],
+        "prediction": "A grey helmet prop sits on a workbench while a man works on another piece in the background.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_25277"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.96956430003047,
+          "generation_time_seconds": 8.962982599972747,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161277440,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.057259987315337754,
+        "reference_captions": [
+          "images/photo_25277"
+        ]
+      },
+      {
+        "index": 17,
+        "prompt_labels": [],
+        "prediction": "A two-story brick house with a \"SOLD\" sign in the front garden.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_20529"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 13.785520100034773,
+          "generation_time_seconds": 13.744091699947603,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161281536,
+          "cpu_utilization_percent": 0.11360294117647059,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "images/photo_20529"
+        ]
+      },
+      {
+        "index": 18,
+        "prompt_labels": [],
+        "prediction": "Blue chemical drums and molecular structure diagram for 1-Naphthaldehyde (CAS 66-77-3).",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_17560"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 39.350573700037785,
+          "generation_time_seconds": 39.33217399998102,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161314304,
+          "cpu_utilization_percent": 0.07915057915057915,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.09578464408619825,
+        "reference_captions": [
+          "images/photo_17560"
+        ]
+      },
+      {
+        "index": 19,
+        "prompt_labels": [],
+        "prediction": "A dark blue phone case featuring a hot air balloon design composed of numerous colorful, overlapping circles.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_17912"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.543135199928656,
+          "generation_time_seconds": 6.534924999927171,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161334784,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06074588070876682,
+        "reference_captions": [
+          "images/photo_17912"
+        ]
+      },
+      {
+        "index": 20,
+        "prompt_labels": [],
+        "prediction": "A screenshot of a sci-fi video game's galaxy map interface showing a grid of star sectors and a yellow navigation arrow.",
+        "correct": false,
+        "valid_labels": [
+          "images/photo_6696"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 15.053399999975227,
+          "generation_time_seconds": 15.042643400025554,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161347072,
+          "cpu_utilization_percent": 0.1037037037037037,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.048853266442119264,
+        "reference_captions": [
+          "images/photo_6696"
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 276.65963289991487,
+      "wall_clock_time_per_sample_seconds_mean": 13.832546779990661,
+      "total_generation_time_seconds_mean": 13.803621334990021,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.07229099449877191,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1163206656,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.06840417477760248,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.626184899942018
+    }
+  }
+}

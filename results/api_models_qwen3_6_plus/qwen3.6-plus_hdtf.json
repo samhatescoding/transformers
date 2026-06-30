@@ -1,0 +1,780 @@
+{
+  "model": "qwen3.6-plus",
+  "benchmark": "hdtf",
+  "report": {
+    "benchmark": "hdtf",
+    "dataset": "hdtf",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [],
+        "prediction": "A realistic 3D rendering of a bald male face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000001"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.085095400107093,
+          "generation_time_seconds": 12.074497299967334,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1243910144,
+          "cpu_utilization_percent": 0.2585774058577406,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000001"
+        ]
+      },
+      {
+        "index": 2,
+        "prompt_labels": [],
+        "prediction": "A close-up 3D render of a bald male face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000002"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.952492200070992,
+          "generation_time_seconds": 12.949883900000714,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245487104,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000002"
+        ]
+      },
+      {
+        "index": 3,
+        "prompt_labels": [],
+        "prediction": "A realistic 3D render of a bald male face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000003"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 15.07161839993205,
+          "generation_time_seconds": 15.053271100041457,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245511680,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000003"
+        ]
+      },
+      {
+        "index": 4,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered model of a bald male face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000004"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 19.21264839998912,
+          "generation_time_seconds": 19.1676790000638,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245151232,
+          "cpu_utilization_percent": 0.08157894736842106,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000004"
+        ]
+      },
+      {
+        "index": 5,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered model of a bald face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000005"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 13.338274299982004,
+          "generation_time_seconds": 13.292288900003769,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245167616,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.09578464408619825,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000005"
+        ]
+      },
+      {
+        "index": 6,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered close-up of a bald face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000006"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 16.614110499969684,
+          "generation_time_seconds": 16.576830300036818,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245184000,
+          "cpu_utilization_percent": 0.09481707317073171,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.09578464408619825,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000006"
+        ]
+      },
+      {
+        "index": 7,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered model of a bald male face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000007"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 19.25409339996986,
+          "generation_time_seconds": 19.226551299914718,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245212672,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000007"
+        ]
+      },
+      {
+        "index": 8,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered close-up of a bald male face with blue eyes and a slightly open mouth.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000008"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 17.620747299981304,
+          "generation_time_seconds": 17.57309309998527,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245220864,
+          "cpu_utilization_percent": 0.2646551724137931,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06074588070876682,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000008"
+        ]
+      },
+      {
+        "index": 9,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered close-up of a bald face with blue eyes and an open mouth.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000009"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.976604399969801,
+          "generation_time_seconds": 12.957202900084667,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245257728,
+          "cpu_utilization_percent": 0.23984375000000002,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06917184228205472,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000009"
+        ]
+      },
+      {
+        "index": 10,
+        "prompt_labels": [],
+        "prediction": "A 3D rendering of a bald male face with blue eyes and an open mouth.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000010"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 21.431867499952205,
+          "generation_time_seconds": 21.389682900044136,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245270016,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06917184228205472,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000010"
+        ]
+      },
+      {
+        "index": 11,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered model of a bald male face with blue eyes and a slightly open mouth.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000011"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 98.07110239996109,
+          "generation_time_seconds": 98.05378389998805,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245290496,
+          "cpu_utilization_percent": 0.14289405684754522,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06074588070876682,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000011"
+        ]
+      },
+      {
+        "index": 12,
+        "prompt_labels": [],
+        "prediction": "A 3D computer-generated model of a bald male head with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000012"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 28.286500900052488,
+          "generation_time_seconds": 28.284810399985872,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245306880,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000012"
+        ]
+      },
+      {
+        "index": 13,
+        "prompt_labels": [],
+        "prediction": "A 3D computer-generated rendering of a bald male face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000013"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 42.07524409994949,
+          "generation_time_seconds": 42.03954909997992,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245310976,
+          "cpu_utilization_percent": 0.18545673076923078,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000013"
+        ]
+      },
+      {
+        "index": 14,
+        "prompt_labels": [],
+        "prediction": "A 3D model of a bald male face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000014"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 76.50146429997403,
+          "generation_time_seconds": 76.46196519990917,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245097984,
+          "cpu_utilization_percent": 0.020423000660938533,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.09578464408619825,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000014"
+        ]
+      },
+      {
+        "index": 15,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered model of a bald male face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000015"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 14.304069999954663,
+          "generation_time_seconds": 14.29385130002629,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245106176,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000015"
+        ]
+      },
+      {
+        "index": 16,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered model of a bald man's face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000016"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 18.25792270002421,
+          "generation_time_seconds": 18.216397400014102,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245126656,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000016"
+        ]
+      },
+      {
+        "index": 17,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered close-up of a bald man's face with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000017"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 15.1858959000092,
+          "generation_time_seconds": 15.142655699979514,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245143040,
+          "cpu_utilization_percent": 7.95752508361204,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000017"
+        ]
+      },
+      {
+        "index": 18,
+        "prompt_labels": [],
+        "prediction": "A 3D model of a bald human head with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000018"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 23.42089800001122,
+          "generation_time_seconds": 23.377655799966305,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245155328,
+          "cpu_utilization_percent": 0.10891304347826088,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.09578464408619825,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000018"
+        ]
+      },
+      {
+        "index": 19,
+        "prompt_labels": [],
+        "prediction": "A 3D rendered model of a bald male face with blue eyes and a slightly open mouth.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000019"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.421508500003256,
+          "generation_time_seconds": 9.401693099993281,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245163520,
+          "cpu_utilization_percent": 0.4994623655913979,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06074588070876682,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000019"
+        ]
+      },
+      {
+        "index": 20,
+        "prompt_labels": [],
+        "prediction": "A realistic 3D rendered face of a bald person with blue eyes.",
+        "correct": false,
+        "valid_labels": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000020"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 23.857897199923173,
+          "generation_time_seconds": 23.812311499961652,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1245179904,
+          "cpu_utilization_percent": 0.0653927813163482,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000020"
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 509.9494667999679,
+      "wall_clock_time_per_sample_seconds_mean": 25.497002789989345,
+      "total_generation_time_seconds_mean": 25.46728270499734,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.039219572334301844,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1245511680,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.49597697055432244,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.626184899942018
+    }
+  }
+}

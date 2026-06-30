@@ -57,6 +57,9 @@ class OpenVid1M(HFMultipleChoiceSourceDataset):
                 break
         return samples
 
+    def get_samples(self, n: int) -> List[Dict[str, Any]]:
+        return self.get_available_samples(n)
+
     def get_image_from_row(self, row: Dict[str, Any]) -> Image.Image:
         image = row.get("image")
         if isinstance(image, Image.Image):

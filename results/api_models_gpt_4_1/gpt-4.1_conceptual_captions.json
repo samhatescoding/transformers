@@ -16,7 +16,7 @@
           "author : a life in photography -- in photographs",
           "author : a life in portraiture -- in pictures"
         ],
-        "prediction": "",
+        "prediction": "C. author : a life in photography -- in photographs",
         "correct": false,
         "valid_labels": [
           "author : a life in photography -- in pictures"
@@ -24,28 +24,35 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 4.270698100095615,
-          "generation_time_seconds": 3.8612352000782266,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.5503508999972837,
+          "generation_time_seconds": 2.282054100000096,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 681381888,
-          "cpu_utilization_percent": 0.412,
+          "peak_cpu_ram_bytes": 546725888,
+          "cpu_utilization_percent": 20.351111111111113,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "choices": [
+          "author : a life in portraiture -- in photographs",
+          "author : a life in photography -- in pictures",
+          "author : a life in photography -- in photographs",
+          "author : a life in portraiture -- in pictures"
+        ],
+        "selected_choice": "author : a life in photography -- in photographs",
+        "answer": "author : a life in photography -- in pictures"
       },
       {
         "index": 2,
@@ -60,7 +67,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 404: Not Found",
-          "wall_clock_time_seconds": 3.4406183999963105,
+          "wall_clock_time_seconds": 1.3357410999997228,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -94,7 +101,7 @@
         "stats": {
           "success": false,
           "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-          "wall_clock_time_seconds": 0.2478851000778377,
+          "wall_clock_time_seconds": 0.011688200000207871,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -128,7 +135,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 404: Not Found",
-          "wall_clock_time_seconds": 1.3150560000212863,
+          "wall_clock_time_seconds": 0.6089569000032498,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -161,8 +168,8 @@
         "predicted_boxes": [],
         "stats": {
           "success": false,
-          "error": "URLError: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>",
-          "wall_clock_time_seconds": 21.372826599981636,
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "wall_clock_time_seconds": 1.2250143999990541,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -181,7 +188,7 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "URLError: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>"
+        "error": "HTTPError: HTTP Error 404: Not Found"
       },
       {
         "index": 6,
@@ -191,7 +198,7 @@
           "the - bathroom stone cottage can sleep people",
           "the - bedroom wooden cottage can sleep people"
         ],
-        "prediction": "",
+        "prediction": "D. the - bedroom wooden cottage can sleep people",
         "correct": false,
         "valid_labels": [
           "the - bedroom stone cottage can sleep people"
@@ -199,28 +206,35 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 7.854199200053699,
-          "generation_time_seconds": 6.803939600009471,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0298851000006835,
+          "generation_time_seconds": 0.7227945000013278,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 681066496,
+          "peak_cpu_ram_bytes": 547729408,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "choices": [
+          "the - bathroom wooden cottage can sleep people",
+          "the - bedroom stone cottage can sleep people",
+          "the - bathroom stone cottage can sleep people",
+          "the - bedroom wooden cottage can sleep people"
+        ],
+        "selected_choice": "the - bedroom wooden cottage can sleep people",
+        "answer": "the - bedroom stone cottage can sleep people"
       },
       {
         "index": 7,
@@ -235,7 +249,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 403: Forbidden",
-          "wall_clock_time_seconds": 0.5208494999678805,
+          "wall_clock_time_seconds": 0.5325257000004058,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -269,7 +283,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 400: Bad Request",
-          "wall_clock_time_seconds": 1.1775655000237748,
+          "wall_clock_time_seconds": 0.44031170000016573,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -303,7 +317,7 @@
         "stats": {
           "success": false,
           "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1081)>",
-          "wall_clock_time_seconds": 0.6257543000392616,
+          "wall_clock_time_seconds": 0.09092260000034003,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -337,7 +351,7 @@
         "stats": {
           "success": false,
           "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-          "wall_clock_time_seconds": 0.3176306000677869,
+          "wall_clock_time_seconds": 0.010307300002750708,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -370,8 +384,8 @@
         "predicted_boxes": [],
         "stats": {
           "success": false,
-          "error": "HTTPError: HTTP Error 429: Too Many Requests",
-          "wall_clock_time_seconds": 1.4018273999681696,
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "wall_clock_time_seconds": 0.4802114000012807,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -390,7 +404,7 @@
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "HTTPError: HTTP Error 429: Too Many Requests"
+        "error": "HTTPError: HTTP Error 404: Not Found"
       },
       {
         "index": 12,
@@ -400,36 +414,43 @@
           "where 's the best place to show off your nails ? right in front of the palace , of course !",
           "where 's the best place to show off your shoes ? right in front of the castle , of course !"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B. where 's the best place to show off your nails ? right in",
+        "correct": true,
         "valid_labels": [
           "where 's the best place to show off your nails ? right in front of the castle , of course !"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 7.360799800022505,
-          "generation_time_seconds": 5.975043799960986,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4644307999988087,
+          "generation_time_seconds": 1.2836843000004592,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 681676800,
+          "peak_cpu_ram_bytes": 548392960,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "choices": [
+          "where 's the best place to show off your shoes ? right in front of the palace , of course !",
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "where 's the best place to show off your nails ? right in front of the palace , of course !",
+          "where 's the best place to show off your shoes ? right in front of the castle , of course !"
+        ],
+        "selected_choice": "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "answer": "where 's the best place to show off your nails ? right in front of the castle , of course !"
       },
       {
         "index": 13,
@@ -439,70 +460,89 @@
           "that combines elements of a spicy vegetable and dish",
           "that combines elements of a simple fruit and dish"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B. that combines elements of a simple vegetable and dish",
+        "correct": true,
         "valid_labels": [
           "that combines elements of a simple vegetable and dish"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 8.216357900062576,
-          "generation_time_seconds": 3.6843634999822825,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.265947200001392,
+          "generation_time_seconds": 0.9602878000005148,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 682582016,
+          "peak_cpu_ram_bytes": 549253120,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "choices": [
+          "that combines elements of a spicy fruit and dish",
+          "that combines elements of a simple vegetable and dish",
+          "that combines elements of a spicy vegetable and dish",
+          "that combines elements of a simple fruit and dish"
+        ],
+        "selected_choice": "that combines elements of a simple vegetable and dish",
+        "answer": "that combines elements of a simple vegetable and dish"
       },
       {
         "index": 14,
-        "prompt_labels": [],
-        "prediction": "",
-        "correct": false,
+        "prompt_labels": [
+          "robots : till all are issue # 5b",
+          "transformers : till all are issue # 4b",
+          "robots : till all are issue # 4b",
+          "transformers : till all are issue # 5b"
+        ],
+        "prediction": "B. transformers : till all are issue # 4b",
+        "correct": true,
         "valid_labels": [
           "transformers : till all are issue # 4b"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "wall_clock_time_seconds": 0.4796234000241384,
-          "generation_time_seconds": 0.0,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0495043999981135,
+          "generation_time_seconds": 1.5333499000007578,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": null,
-          "cpu_utilization_percent": null,
+          "peak_cpu_ram_bytes": 550961152,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "HTTPError: HTTP Error 403: Forbidden"
+        "choices": [
+          "robots : till all are issue # 5b",
+          "transformers : till all are issue # 4b",
+          "robots : till all are issue # 4b",
+          "transformers : till all are issue # 5b"
+        ],
+        "selected_choice": "transformers : till all are issue # 4b",
+        "answer": "transformers : till all are issue # 4b"
       },
       {
         "index": 15,
@@ -512,36 +552,43 @@
           "illustration of a little girl taking a shower",
           "illustration of a little boy taking a bath"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B. illustration of a little girl taking a bath",
+        "correct": true,
         "valid_labels": [
           "illustration of a little girl taking a bath"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 4.430251499987207,
-          "generation_time_seconds": 2.763187799951993,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.132900000000518,
+          "generation_time_seconds": 0.7498808000018471,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 682680320,
+          "peak_cpu_ram_bytes": 550977536,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "choices": [
+          "illustration of a little boy taking a shower",
+          "illustration of a little girl taking a bath",
+          "illustration of a little girl taking a shower",
+          "illustration of a little boy taking a bath"
+        ],
+        "selected_choice": "illustration of a little girl taking a bath",
+        "answer": "illustration of a little girl taking a bath"
       },
       {
         "index": 16,
@@ -551,36 +598,43 @@
           "tv police procedural is filming on the hospital this week .",
           "tv medical drama is filming on the street this week ."
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B. tv police procedural is filming on the street this week .",
+        "correct": true,
         "valid_labels": [
           "tv police procedural is filming on the street this week ."
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 4.101843800046481,
-          "generation_time_seconds": 3.2250397000461817,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.713687100000243,
+          "generation_time_seconds": 1.3912685999966925,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 684666880,
-          "cpu_utilization_percent": 0.0,
+          "peak_cpu_ram_bytes": 551395328,
+          "cpu_utilization_percent": 1.1,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "choices": [
+          "tv medical drama is filming on the hospital this week .",
+          "tv police procedural is filming on the street this week .",
+          "tv police procedural is filming on the hospital this week .",
+          "tv medical drama is filming on the street this week ."
+        ],
+        "selected_choice": "tv police procedural is filming on the street this week .",
+        "answer": "tv police procedural is filming on the street this week ."
       },
       {
         "index": 17,
@@ -590,7 +644,7 @@
           "the new terminal on island with quiet sea and rising sun",
           "the old terminal on island with quiet sea and setting sun"
         ],
-        "prediction": "",
+        "prediction": "A. the old terminal on island with quiet sea and rising sun",
         "correct": false,
         "valid_labels": [
           "the new terminal on island with quiet sea and setting sun"
@@ -598,28 +652,35 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 6.176580300088972,
-          "generation_time_seconds": 4.660084100090899,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.1506338999970467,
+          "generation_time_seconds": 0.8627207999998063,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 685875200,
-          "cpu_utilization_percent": 0.3311827956989247,
+          "peak_cpu_ram_bytes": 552550400,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "choices": [
+          "the old terminal on island with quiet sea and rising sun",
+          "the new terminal on island with quiet sea and setting sun",
+          "the new terminal on island with quiet sea and rising sun",
+          "the old terminal on island with quiet sea and setting sun"
+        ],
+        "selected_choice": "the old terminal on island with quiet sea and rising sun",
+        "answer": "the new terminal on island with quiet sea and setting sun"
       },
       {
         "index": 18,
@@ -629,7 +690,7 @@
           "what hairstyle to wear to a job interview",
           "what makeup to wear to a wedding"
         ],
-        "prediction": "",
+        "prediction": "C. what hairstyle to wear to a job interview",
         "correct": false,
         "valid_labels": [
           "what makeup to wear to a job interview"
@@ -637,28 +698,35 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 5.167058799997903,
-          "generation_time_seconds": 2.857075000065379,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9439653000008548,
+          "generation_time_seconds": 0.8286270999997214,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 685531136,
-          "cpu_utilization_percent": 46.72280701754386,
+          "peak_cpu_ram_bytes": 552148992,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "choices": [
+          "what hairstyle to wear to a wedding",
+          "what makeup to wear to a job interview",
+          "what hairstyle to wear to a job interview",
+          "what makeup to wear to a wedding"
+        ],
+        "selected_choice": "what hairstyle to wear to a job interview",
+        "answer": "what makeup to wear to a job interview"
       },
       {
         "index": 19,
@@ -673,7 +741,7 @@
         "stats": {
           "success": false,
           "error": "HTTPError: HTTP Error 400: Bad Request",
-          "wall_clock_time_seconds": 0.5610651999013498,
+          "wall_clock_time_seconds": 0.46417790000123205,
           "generation_time_seconds": 0.0,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
@@ -702,54 +770,61 @@
           "the dentist drill the tooth with a laser",
           "the surgeon drill the tooth with a turbine"
         ],
-        "prediction": "",
-        "correct": false,
+        "prediction": "B. the dentist drill the tooth with a turbine",
+        "correct": true,
         "valid_labels": [
           "the dentist drill the tooth with a turbine"
         ],
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.4949146000435576,
-          "generation_time_seconds": 2.9813878999557346,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.112422300000617,
+          "generation_time_seconds": 1.7226388999988558,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 684404736,
-          "cpu_utilization_percent": 39.70508474576271,
+          "peak_cpu_ram_bytes": 550977536,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "choices": [
+          "the surgeon drill the tooth with a laser",
+          "the dentist drill the tooth with a turbine",
+          "the dentist drill the tooth with a laser",
+          "the surgeon drill the tooth with a turbine"
+        ],
+        "selected_choice": "the dentist drill the tooth with a turbine",
+        "answer": "the dentist drill the tooth with a turbine"
       }
     ],
     "stats": {
-      "wall_clock_time_seconds": 82.54044679994695,
-      "wall_clock_time_per_sample_seconds_mean": 4.126670300023397,
-      "total_generation_time_seconds_mean": 1.8405678300070576,
+      "wall_clock_time_seconds": 23.61735210000188,
+      "wall_clock_time_per_sample_seconds_mean": 1.1806792100001986,
+      "total_generation_time_seconds_mean": 0.6168653400000039,
       "first_token_latency_seconds_mean": null,
       "time_per_output_token_seconds_mean": null,
-      "samples_per_second": 0.24230544872714277,
+      "samples_per_second": 0.8468349845196409,
       "number_of_output_tokens_mean": null,
-      "number_of_generated_outputs_mean": 0.0,
-      "number_of_benchmark_samples_completed": 0,
-      "success_count": 0,
-      "failure_count": 20,
+      "number_of_generated_outputs_mean": 0.5,
+      "number_of_benchmark_samples_completed": 10,
+      "success_count": 10,
+      "failure_count": 10,
       "retry_count": 0,
-      "peak_cpu_ram_bytes": 685875200,
+      "peak_cpu_ram_bytes": 552550400,
       "peak_gpu_memory_bytes": null,
-      "cpu_utilization_percent_mean": 9.68567495100061,
+      "cpu_utilization_percent_mean": 2.1451111111111114,
       "gpu_utilization_percent_mean": null,
       "vram_allocation_over_time_bytes": null,
       "disk_offload_volume_bytes": null,
@@ -758,8 +833,7 @@
       "false_positive_count_total": 0,
       "false_negative_count_total": 0,
       "mean_number_of_predicted_detections": 0.0,
-      "tokens_per_second": null,
-      "model_load_time_seconds": 1.3827757000690326
+      "tokens_per_second": null
     }
   }
 }

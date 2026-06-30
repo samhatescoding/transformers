@@ -11,7 +11,7 @@
       {
         "index": 1,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with blue eyes and a neutral expression on a plain background.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000001"
@@ -19,33 +19,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.698604100034572,
-          "generation_time_seconds": 3.6849994000513107,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.3409329000023718,
+          "generation_time_seconds": 2.3260101999985636,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1287884800,
-          "cpu_utilization_percent": 0.4191780821917808,
+          "peak_cpu_ram_bytes": 943566848,
+          "cpu_utilization_percent": 0.6652173913043479,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.06468490584192432,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000001"
+        ]
       },
       {
         "index": 2,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with blue eyes and no visible hair.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000002"
@@ -53,33 +56,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.2445593999000266,
-          "generation_time_seconds": 3.1947238000575453,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.2290855000028387,
+          "generation_time_seconds": 1.2148755000016536,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289486336,
-          "cpu_utilization_percent": 0.9703125,
+          "peak_cpu_ram_bytes": 945152000,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000002"
+        ]
       },
       {
         "index": 3,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with blue eyes and no visible hair.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000003"
@@ -87,33 +93,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.085923200007528,
-          "generation_time_seconds": 3.052174499956891,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.020509800000582,
+          "generation_time_seconds": 1.0082161999998789,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289531392,
-          "cpu_utilization_percent": 0.0,
+          "peak_cpu_ram_bytes": 945205248,
+          "cpu_utilization_percent": 1.55,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000003"
+        ]
       },
       {
         "index": 4,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A realistic 3D-rendered human face with blue eyes and no visible hair.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000004"
@@ -121,33 +130,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.2444688000250608,
-          "generation_time_seconds": 3.2183178999694064,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9187314000009792,
+          "generation_time_seconds": 0.8747002000018256,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289584640,
-          "cpu_utilization_percent": 0.4859375,
+          "peak_cpu_ram_bytes": 945217536,
+          "cpu_utilization_percent": 1.7055555555555555,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000004"
+        ]
       },
       {
         "index": 5,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A realistic 3D-rendered human face with blue eyes and no visible hair.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000005"
@@ -155,33 +167,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.1909100000048056,
-          "generation_time_seconds": 3.1569300999399275,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.1164005000027828,
+          "generation_time_seconds": 1.0823442000000796,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289633792,
-          "cpu_utilization_percent": 0.49206349206349204,
+          "peak_cpu_ram_bytes": 945225728,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000005"
+        ]
       },
       {
         "index": 6,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with blue eyes and a neutral expression on a plain background.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000006"
@@ -189,33 +204,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 2.937382800038904,
-          "generation_time_seconds": 2.907490300014615,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5274662999981956,
+          "generation_time_seconds": 1.5037669000012102,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289682944,
+          "peak_cpu_ram_bytes": 945242112,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.06468490584192432,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000006"
+        ]
       },
       {
         "index": 7,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A realistic 3D-rendered human face with blue eyes and a neutral expression on a plain background.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000007"
@@ -223,33 +241,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 5.5200469000265,
-          "generation_time_seconds": 5.496245699934661,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9153178999986267,
+          "generation_time_seconds": 0.8948120000022755,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289740288,
+          "peak_cpu_ram_bytes": 945246208,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.06468490584192432,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000007"
+        ]
       },
       {
         "index": 8,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with exaggerated proportions and a neutral background.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000008"
@@ -257,33 +278,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 4.09984160005115,
-          "generation_time_seconds": 4.056445499998517,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3737944999993488,
+          "generation_time_seconds": 1.3624062999988382,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289777152,
-          "cpu_utilization_percent": 0.38395061728395063,
+          "peak_cpu_ram_bytes": 945254400,
+          "cpu_utilization_percent": 1.1481481481481481,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000008"
+        ]
       },
       {
         "index": 9,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with exaggerated proportions and an open mouth.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000009"
@@ -291,33 +315,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 4.031228100066073,
-          "generation_time_seconds": 4.011058299918659,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.0180374000010488,
+          "generation_time_seconds": 1.003676500000438,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289830400,
-          "cpu_utilization_percent": 0.0,
+          "peak_cpu_ram_bytes": 945278976,
+          "cpu_utilization_percent": 1.55,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000009"
+        ]
       },
       {
         "index": 10,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A realistic 3D-rendered human face with blue eyes and an open mouth on a plain background.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000010"
@@ -325,33 +352,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.2527612999547273,
-          "generation_time_seconds": 3.2266960999695584,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.0182390000009036,
+          "generation_time_seconds": 0.9717621999989206,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289871360,
+          "peak_cpu_ram_bytes": 945278976,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.06468490584192432,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000010"
+        ]
       },
       {
         "index": 11,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with exaggerated features and no visible hair.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000011"
@@ -359,33 +389,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 4.262085899943486,
-          "generation_time_seconds": 4.228203400038183,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9403043999991496,
+          "generation_time_seconds": 0.9309565000003204,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289940992,
+          "peak_cpu_ram_bytes": 945299456,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000011"
+        ]
       },
       {
         "index": 12,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A realistic 3D-rendered human face with blue eyes and a neutral expression.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000012"
@@ -393,33 +426,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.648226000019349,
-          "generation_time_seconds": 3.5981930000707507,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9666008000021975,
+          "generation_time_seconds": 0.953289400000358,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1289973760,
+          "peak_cpu_ram_bytes": 945307648,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000012"
+        ]
       },
       {
         "index": 13,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with blue eyes and no visible hair.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000013"
@@ -427,33 +463,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.764575699926354,
-          "generation_time_seconds": 3.7252505000215024,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.0140409000014188,
+          "generation_time_seconds": 1.0092149999982212,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1290027008,
+          "peak_cpu_ram_bytes": 945332224,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000013"
+        ]
       },
       {
         "index": 14,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with blue eyes and a neutral expression on a plain background.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000014"
@@ -461,33 +500,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.142129899933934,
-          "generation_time_seconds": 3.1337281999876723,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.9650992999995651,
+          "generation_time_seconds": 0.9400821999988693,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1290067968,
-          "cpu_utilization_percent": 0.5016129032258064,
+          "peak_cpu_ram_bytes": 945332224,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.06468490584192432,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000014"
+        ]
       },
       {
         "index": 15,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with blue eyes and no visible hair.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000015"
@@ -495,33 +537,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.90006509993691,
-          "generation_time_seconds": 3.8579264000291005,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.7447891000010713,
+          "generation_time_seconds": 2.7182642000007036,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1290117120,
-          "cpu_utilization_percent": 1.2025974025974024,
+          "peak_cpu_ram_bytes": 945336320,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000015"
+        ]
       },
       {
         "index": 16,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with blue eyes and no visible hair.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000016"
@@ -529,33 +574,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 4.3677117000333965,
-          "generation_time_seconds": 4.318624199950136,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6252960000019812,
+          "generation_time_seconds": 1.6090850999971735,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1290174464,
+          "peak_cpu_ram_bytes": 945336320,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000016"
+        ]
       },
       {
         "index": 17,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with exaggerated proportions and a smooth, bald head.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000017"
@@ -563,33 +611,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.343012599973008,
-          "generation_time_seconds": 3.318701700074598,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 0.8677396000020963,
+          "generation_time_seconds": 0.8229217999978573,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1290219520,
-          "cpu_utilization_percent": 0.4727272727272727,
+          "peak_cpu_ram_bytes": 945336320,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08032276872815308,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000017"
+        ]
       },
       {
         "index": 18,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with blue eyes and a neutral expression on a plain background.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000018"
@@ -597,33 +648,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 5.268589499988593,
-          "generation_time_seconds": 5.226152100018226,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3260955000005197,
+          "generation_time_seconds": 1.2870412000011129,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1290260480,
-          "cpu_utilization_percent": 0.5932692307692308,
+          "peak_cpu_ram_bytes": 945340416,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.06468490584192432,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000018"
+        ]
       },
       {
         "index": 19,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with blue eyes and a neutral expression on a plain background.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000019"
@@ -631,33 +685,36 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.4962474000640213,
-          "generation_time_seconds": 3.4926381000550464,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.019573900000978,
+          "generation_time_seconds": 0.9985653000003367,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1290309632,
+          "peak_cpu_ram_bytes": 945340416,
           "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.06468490584192432,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000019"
+        ]
       },
       {
         "index": 20,
         "prompt_labels": [],
-        "prediction": "",
+        "prediction": "A digitally rendered human face with exaggerated proportions and a neutral background.",
         "correct": false,
         "valid_labels": [
           "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000020"
@@ -665,46 +722,49 @@
         "ground_truth_boxes": [],
         "predicted_boxes": [],
         "stats": {
-          "success": false,
-          "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-          "wall_clock_time_seconds": 3.8695644000545144,
-          "generation_time_seconds": 3.86713739996776,
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.0201670000024023,
+          "generation_time_seconds": 0.9816798000028939,
           "first_token_latency_seconds": null,
           "time_per_output_token_seconds": null,
           "output_tokens": null,
           "retry_count": 0,
           "truncated": false,
-          "peak_cpu_ram_bytes": 1290358784,
-          "cpu_utilization_percent": 1.2078947368421051,
+          "peak_cpu_ram_bytes": 945344512,
+          "cpu_utilization_percent": 0.0,
           "peak_gpu_memory_bytes": null,
           "gpu_utilization_percent": null,
           "vram_allocation_over_time_bytes": null,
           "disk_offload_volume_bytes": null,
-          "generated_output_count": 0,
+          "generated_output_count": 1,
           "hallucinated_label_count": 0,
           "false_positive_count": 0,
           "false_negative_count": 0,
           "predicted_detection_count": 0
         },
-        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+        "bleu": 0.08737167851715875,
+        "reference_captions": [
+          "workspace/talking_face_preprocessing/data_processing/specified_formats/videos/video_frames/M003_angry_level_1_001/000020"
+        ]
       }
     ],
     "stats": {
-      "wall_clock_time_seconds": 75.37149010004941,
-      "wall_clock_time_per_sample_seconds_mean": 3.7683967199991457,
-      "total_generation_time_seconds_mean": 3.7385818300012033,
+      "wall_clock_time_seconds": 24.977780499997607,
+      "wall_clock_time_per_sample_seconds_mean": 1.2484110850009529,
+      "total_generation_time_seconds_mean": 1.2246835350000764,
       "first_token_latency_seconds_mean": null,
       "time_per_output_token_seconds_mean": null,
-      "samples_per_second": 0.2653523231854864,
+      "samples_per_second": 0.8007116565061462,
       "number_of_output_tokens_mean": null,
-      "number_of_generated_outputs_mean": 0.0,
-      "number_of_benchmark_samples_completed": 0,
-      "success_count": 0,
-      "failure_count": 20,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
       "retry_count": 0,
-      "peak_cpu_ram_bytes": 1290358784,
+      "peak_cpu_ram_bytes": 945344512,
       "peak_gpu_memory_bytes": null,
-      "cpu_utilization_percent_mean": 0.33647718688505207,
+      "cpu_utilization_percent_mean": 0.33094605475040256,
       "gpu_utilization_percent_mean": null,
       "vram_allocation_over_time_bytes": null,
       "disk_offload_volume_bytes": null,
@@ -713,8 +773,7 @@
       "false_positive_count_total": 0,
       "false_negative_count_total": 0,
       "mean_number_of_predicted_detections": 0.0,
-      "tokens_per_second": null,
-      "model_load_time_seconds": 1.3827757000690326
+      "tokens_per_second": null
     }
   }
 }

@@ -1,0 +1,780 @@
+{
+  "model": "qwen3.6-plus",
+  "benchmark": "laion400m",
+  "report": {
+    "benchmark": "laion400m",
+    "dataset": "laion400m",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [],
+        "prediction": "A smiling woman in a kitchen holding two plates of pizza.",
+        "correct": false,
+        "valid_labels": [
+          "Beautiful happy smiling woman in kitchen interior. — Stock Photo"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.519014100078493,
+          "generation_time_seconds": 5.47110690001864,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1276424192,
+          "cpu_utilization_percent": 2.779816513761468,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.22416933501922293,
+        "reference_captions": [
+          "Beautiful happy smiling woman in kitchen interior. — Stock Photo"
+        ]
+      },
+      {
+        "index": 2,
+        "prompt_labels": [],
+        "prediction": "Senegal national football team players posing for a team photo on the pitch.",
+        "correct": false,
+        "valid_labels": [
+          "Senegal coach Joseph Koto to take revenge on Cote D'Ivoire"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.101201900048181,
+          "generation_time_seconds": 8.09159109997563,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1176055808,
+          "cpu_utilization_percent": 0.38875000000000004,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10571070857151538,
+        "reference_captions": [
+          "Senegal coach Joseph Koto to take revenge on Cote D'Ivoire"
+        ]
+      },
+      {
+        "index": 3,
+        "prompt_labels": [],
+        "prediction": "Two cute owls sitting on a branch with floating hearts above them on a lined paper background.",
+        "correct": false,
+        "valid_labels": [
+          "Owls in love — Stock vektor"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.514922500005923,
+          "generation_time_seconds": 9.51362840004731,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1176076288,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.07223943354597204,
+        "reference_captions": [
+          "Owls in love — Stock vektor"
+        ]
+      },
+      {
+        "index": 4,
+        "prompt_labels": [],
+        "prediction": "The cover of the children's book \"My Learn to Read Bible\" featuring an illustration of Noah's Ark with animals and a rainbow.",
+        "correct": false,
+        "valid_labels": [
+          "img - for My Learn to Read Bible: Stories in Words and Pictures book / textbook / text book"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 10.329328499967232,
+          "generation_time_seconds": 10.28827410005033,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1176092672,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.21800193956058223,
+        "reference_captions": [
+          "img - for My Learn to Read Bible: Stories in Words and Pictures book / textbook / text book"
+        ]
+      },
+      {
+        "index": 5,
+        "prompt_labels": [],
+        "prediction": "Book cover for \"Song: A Guide to Art Song Style and Literature\" by Carol Kimball, Revised Edition.",
+        "correct": true,
+        "valid_labels": [
+          "Hal Leonard Song: A Guide To Art Song Style And Literature"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.684185600024648,
+          "generation_time_seconds": 5.672806199989282,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1178365952,
+          "cpu_utilization_percent": 0.27767857142857144,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.5118285025257894,
+        "reference_captions": [
+          "Hal Leonard Song: A Guide To Art Song Style And Literature"
+        ]
+      },
+      {
+        "index": 6,
+        "prompt_labels": [],
+        "prediction": "A still life painting of a large cluster of white grapes piled on a white plate.",
+        "correct": false,
+        "valid_labels": [
+          "raisins blancs sur un plat by guillaume romain fouace"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 13.841210599988699,
+          "generation_time_seconds": 13.804708400042728,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1177227264,
+          "cpu_utilization_percent": 0.11391941391941393,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.06468490584192432,
+        "reference_captions": [
+          "raisins blancs sur un plat by guillaume romain fouace"
+        ]
+      },
+      {
+        "index": 7,
+        "prompt_labels": [],
+        "prediction": "A stylized artistic greeting card featuring Bruce Springsteen playing an electric guitar and singing into a microphone.",
+        "correct": false,
+        "valid_labels": [
+          "The Bluesbreakers Greeting Cards - Clapton Live Greeting Card by David Lloyd Glover"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 11.031037400010973,
+          "generation_time_seconds": 11.00601909996476,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1174990848,
+          "cpu_utilization_percent": 0.14128440366972478,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.09507244120026236,
+        "reference_captions": [
+          "The Bluesbreakers Greeting Cards - Clapton Live Greeting Card by David Lloyd Glover"
+        ]
+      },
+      {
+        "index": 8,
+        "prompt_labels": [],
+        "prediction": "A stack of corrugated aluminum sheets with a website watermark.",
+        "correct": false,
+        "valid_labels": [
+          "4x8 galvanized corrugated steel sheet"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 15.07692100002896,
+          "generation_time_seconds": 15.041427099960856,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175023616,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.12605968092174913,
+        "reference_captions": [
+          "4x8 galvanized corrugated steel sheet"
+        ]
+      },
+      {
+        "index": 9,
+        "prompt_labels": [],
+        "prediction": "An open-concept dining and kitchen area featuring a dark dining table, abstract wall art, and a breakfast bar with black stools.",
+        "correct": false,
+        "valid_labels": [
+          "one bedroom apartments in san diego san diego 1 bedroom apartments marceladick com"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 15.12437289999798,
+          "generation_time_seconds": 15.11143930000253,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175031808,
+          "cpu_utilization_percent": 0.10267558528428093,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.048853266442119264,
+        "reference_captions": [
+          "one bedroom apartments in san diego san diego 1 bedroom apartments marceladick com"
+        ]
+      },
+      {
+        "index": 10,
+        "prompt_labels": [],
+        "prediction": "Cover of Quilting magazine featuring a geometric floral quilt pattern and article headlines.",
+        "correct": false,
+        "valid_labels": [
+          "Quilting International Magazine, 1990  -  QM"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.788361700018868,
+          "generation_time_seconds": 7.784427299979143,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175052288,
+          "cpu_utilization_percent": 0.40064935064935064,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10571070857151538,
+        "reference_captions": [
+          "Quilting International Magazine, 1990  -  QM"
+        ]
+      },
+      {
+        "index": 11,
+        "prompt_labels": [],
+        "prediction": "Movie poster for \"The Resurrection of Gavin Stone\" featuring a central male figure standing with arms crossed, surrounded by four smaller portraits of other characters in colored boxes",
+        "correct": false,
+        "valid_labels": [
+          "The Resurrection of Gavin Stone (2016) ()"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 14.282878499943763,
+          "generation_time_seconds": 14.253759199986234,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175060480,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.15852667105439355,
+        "reference_captions": [
+          "The Resurrection of Gavin Stone (2016) ()"
+        ]
+      },
+      {
+        "index": 12,
+        "prompt_labels": [],
+        "prediction": "A 3D rendering of a two-story shipping container home featuring an open living area with blue sofas.",
+        "correct": false,
+        "valid_labels": [
+          "Cheapest house ever shipping container home how much for Most affordable way to build a house"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 10.290814199950546,
+          "generation_time_seconds": 10.271764699951746,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175068672,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.14216645907653844,
+        "reference_captions": [
+          "Cheapest house ever shipping container home how much for Most affordable way to build a house"
+        ]
+      },
+      {
+        "index": 13,
+        "prompt_labels": [],
+        "prediction": "Gold chain necklace with a long, multi-strand tassel pendant.",
+        "correct": false,
+        "valid_labels": [
+          "IaM by Ileana Makri Figaro Lariat Necklace"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.929205499938689,
+          "generation_time_seconds": 5.913874800084159,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175089152,
+          "cpu_utilization_percent": 0.26495726495726496,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.14113991930789777,
+        "reference_captions": [
+          "IaM by Ileana Makri Figaro Lariat Necklace"
+        ]
+      },
+      {
+        "index": 14,
+        "prompt_labels": [],
+        "prediction": "Canon EOS 5D Mark IV camera body displayed with a free bonus kit including an LP-E6N battery and a",
+        "correct": false,
+        "valid_labels": [
+          "EOS 5D Mark IV body with free bag and battery"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.439227199996822,
+          "generation_time_seconds": 6.434832999948412,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175101440,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.21314568971111159,
+        "reference_captions": [
+          "EOS 5D Mark IV body with free bag and battery"
+        ]
+      },
+      {
+        "index": 15,
+        "prompt_labels": [],
+        "prediction": "A knitted toy drum.",
+        "correct": true,
+        "valid_labels": [
+          "Oval_drum_small2"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 17.011278800084256,
+          "generation_time_seconds": 16.996273900032975,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175121920,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.3021375397356768,
+        "reference_captions": [
+          "Oval_drum_small2"
+        ]
+      },
+      {
+        "index": 16,
+        "prompt_labels": [],
+        "prediction": "Book cover for \"CryptoFiction Classics: The Last of the Vampires\" by Phil Robinson, featuring stylized illustrations of a vampire bat",
+        "correct": true,
+        "valid_labels": [
+          "The Last of the Vampires (Cryptofiction Classics)"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 10.98146500007715,
+          "generation_time_seconds": 10.961566800018772,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175138304,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.2516441111691874,
+        "reference_captions": [
+          "The Last of the Vampires (Cryptofiction Classics)"
+        ]
+      },
+      {
+        "index": 17,
+        "prompt_labels": [],
+        "prediction": "Presentation slide titled \"IAM Overview and Self-assessment Exercise\" by Keith Hazelton and Renee Shuey at InCommon CAMP",
+        "correct": true,
+        "valid_labels": [
+          "IAM Overview and  Self-assessment Exercise"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.315267400001176,
+          "generation_time_seconds": 9.272658600006253,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175154688,
+          "cpu_utilization_percent": 0.16684782608695653,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.26460159523593296,
+        "reference_captions": [
+          "IAM Overview and  Self-assessment Exercise"
+        ]
+      },
+      {
+        "index": 18,
+        "prompt_labels": [],
+        "prediction": "A package of eight Actimel immune support yogurt drinks, featuring a blue and yellow design and labeled as rich in Vitamin D.",
+        "correct": false,
+        "valid_labels": [
+          "Actimel vanilla - 8x100g Brand Price Match - Checked Tesco.com 16/04/2014"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 10.57380050001666,
+          "generation_time_seconds": 10.541574000031687,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175166976,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.05538696232597745,
+        "reference_captions": [
+          "Actimel vanilla - 8x100g Brand Price Match - Checked Tesco.com 16/04/2014"
+        ]
+      },
+      {
+        "index": 19,
+        "prompt_labels": [],
+        "prediction": "A close-up portrait of actor Ben Affleck wearing a dark suit jacket and white shirt.",
+        "correct": false,
+        "valid_labels": [
+          "Ben Affleck Could Be Latest Addition To <em>The Great Gatsby</em> Cast"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.0315011999337,
+          "generation_time_seconds": 7.023019399959594,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1175195648,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.10825978373090527,
+        "reference_captions": [
+          "Ben Affleck Could Be Latest Addition To <em>The Great Gatsby</em> Cast"
+        ]
+      },
+      {
+        "index": 20,
+        "prompt_labels": [],
+        "prediction": "A vintage white Citroën 2CV parked outdoors.",
+        "correct": false,
+        "valid_labels": [
+          "Rare Citroen 2CV Sahara for sale - classic car auctions - carphile.co.uk"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.300732200033963,
+          "generation_time_seconds": 8.256803199998103,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1162465280,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "bleu": 0.0909326471926252,
+        "reference_captions": [
+          "Rare Citroen 2CV Sahara for sale - classic car auctions - carphile.co.uk"
+        ]
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 202.17664550000336,
+      "wall_clock_time_per_sample_seconds_mean": 10.108336335007333,
+      "total_generation_time_seconds_mean": 10.085577775002458,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.09892339419589226,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1276424192,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.23182894648785157,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.626184899942018
+    }
+  }
+}
