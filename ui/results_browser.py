@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import sys
+import threading
 import tkinter as tk
 from dataclasses import dataclass
 from pathlib import Path
@@ -9,12 +10,16 @@ from tkinter import ttk
 from tkinter.scrolledtext import ScrolledText
 from typing import Any, Iterable
 
+from PIL import Image, ImageTk
+
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DEFAULT_RESULTS_DIR = ROOT_DIR / "results"
 
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
+
+from ui.input_browser import BENCHMARK_SPECS, BenchmarkInputService, BenchmarkSpec
 
 
 @dataclass(frozen=True)
@@ -172,6 +177,12 @@ class BenchmarkResultsBrowser:
         self.filtered_runs: list[ResultRun] = []
         self.current_run: ResultRun | None = None
         self.current_sample_index = 0
+        self.input_service = BenchmarkInputService(sample_count=20)
+        self._input_service_lock = threading.Lock()
+        self._image_request_id = 0
+        self._sample_image: Image.Image | None = None
+        self._sample_photo: ImageTk.PhotoImage | None = None
+        self._benchmark_spec_cache: dict[str, BenchmarkSpec | None] = {}
 
         self.root = tk.Tk()
         self.root.title("Benchmark Results Browser")
@@ -535,6 +546,9 @@ class BenchmarkResultsBrowser:
             return
         self.current_run = self.filtered_runs[int(selection[0])]
         self.current_sample_index = 0
+        if len(self.current_run.samples) > self.input_service.sample_count:
+            with self._input_service_lock:
+                self.input_service = BenchmarkInputService(sample_count=len(self.current_run.samples))
         self._show_run_detail()
 
     def _show_run_detail(self) -> None:
@@ -677,6 +691,35 @@ class BenchmarkResultsBrowser:
 
         tk.Label(
             parent,
+            text="SAMPLE IMAGE",
+            bg=self.CARD,
+            fg=self.PURPLE,
+            font=("Segoe UI", 9, "bold"),
+            anchor="w",
+        ).pack(fill=tk.X, padx=12)
+        self.image_box = tk.Frame(
+            parent,
+            height=260,
+            bg=self.INPUT_BG,
+            highlightbackground=self.BORDER,
+            highlightthickness=1,
+        )
+        self.image_box.pack(fill=tk.X, padx=12, pady=(4, 8))
+        self.image_box.pack_propagate(False)
+        self.image_label = tk.Label(
+            self.image_box,
+            text="Select a sample to load its image.",
+            bg=self.INPUT_BG,
+            fg=self.MUTED,
+            font=("Segoe UI", 10),
+            anchor=tk.CENTER,
+            justify=tk.CENTER,
+        )
+        self.image_label.pack(fill=tk.BOTH, expand=True)
+        self.image_label.bind("<Configure>", self._resize_sample_image)
+
+        tk.Label(
+            parent,
             text="MODEL OUTPUT",
             bg=self.CARD,
             fg=self.ACCENT,
@@ -745,6 +788,7 @@ class BenchmarkResultsBrowser:
         )
         self._set_text(self.prediction_text, str(sample.get("prediction") or "(no output)"))
         self._set_text(self.reference_text, _reference_text(sample))
+        self._load_sample_image(run, sample)
         telemetry = sample.get("stats", {}) if isinstance(sample.get("stats"), dict) else {}
         evaluation = {
             key: value
@@ -765,6 +809,77 @@ class BenchmarkResultsBrowser:
         text = "Evaluation\n" + json.dumps(evaluation, indent=2, ensure_ascii=False)
         text += "\n\nRuntime statistics\n" + json.dumps(telemetry, indent=2, ensure_ascii=False)
         self._set_text(self.telemetry_text, text)
+
+    def _load_sample_image(self, run: ResultRun, sample: dict[str, Any]) -> None:
+        self._image_request_id += 1
+        request_id = self._image_request_id
+        self._sample_image = None
+        self._sample_photo = None
+        self.image_label.configure(image="", text="Loading sample image...", fg=self.MUTED)
+
+        spec = self._spec_for_run(run)
+        if spec is None:
+            self.image_label.configure(
+                text=f"No benchmark image loader found for '{run.benchmark}'.",
+                fg=self.WARNING,
+            )
+            return
+
+        row_index = _sample_row_index(sample, self.current_sample_index)
+
+        def worker() -> None:
+            try:
+                with self._input_service_lock:
+                    preview = self.input_service.preview(spec, row_index)
+                image = preview.image.convert("RGB")
+            except Exception as exc:
+                self.root.after(
+                    0,
+                    lambda: self._display_sample_image_error(
+                        request_id,
+                        f"{exc.__class__.__name__}: {exc}",
+                    ),
+                )
+                return
+            self.root.after(0, lambda: self._display_sample_image(request_id, image))
+
+        threading.Thread(target=worker, daemon=True).start()
+
+    def _display_sample_image(self, request_id: int, image: Image.Image) -> None:
+        if request_id != self._image_request_id:
+            return
+        self._sample_image = image.copy()
+        self._render_sample_image()
+
+    def _display_sample_image_error(self, request_id: int, message: str) -> None:
+        if request_id != self._image_request_id:
+            return
+        self._sample_image = None
+        self._sample_photo = None
+        self.image_label.configure(
+            image="",
+            text=f"Image unavailable.\n{message}",
+            fg=self.WARNING,
+        )
+
+    def _resize_sample_image(self, _event=None) -> None:
+        if self._sample_image is not None:
+            self._render_sample_image()
+
+    def _render_sample_image(self) -> None:
+        if self._sample_image is None:
+            return
+        width = max(1, self.image_label.winfo_width())
+        height = max(1, self.image_label.winfo_height())
+        image = _fit_image(self._sample_image, width, height)
+        self._sample_photo = ImageTk.PhotoImage(image)
+        self.image_label.configure(image=self._sample_photo, text="")
+
+    def _spec_for_run(self, run: ResultRun) -> BenchmarkSpec | None:
+        key = _benchmark_key(run.benchmark)
+        if key not in self._benchmark_spec_cache:
+            self._benchmark_spec_cache[key] = _find_benchmark_spec(run.benchmark)
+        return self._benchmark_spec_cache[key]
 
     @staticmethod
     def _set_text(widget: ScrolledText, value: str) -> None:
@@ -860,6 +975,62 @@ def _reference_text(sample: dict[str, Any]) -> str:
         if sample.get(key) is not None:
             sections.append(f"{label}\n{sample[key]}")
     return "\n\n".join(sections) or "No reference fields were recorded for this sample."
+
+
+def _sample_row_index(sample: dict[str, Any], fallback_index: int) -> int:
+    sample_index = _as_int(sample.get("index"), fallback_index + 1)
+    return max(0, sample_index - 1)
+
+
+def _find_benchmark_spec(benchmark_name: str) -> BenchmarkSpec | None:
+    target = _benchmark_key(benchmark_name)
+    for spec in BENCHMARK_SPECS:
+        if target == _benchmark_class_key(spec):
+            return spec
+
+    for spec in BENCHMARK_SPECS:
+        if target == _benchmark_key(spec.module.rsplit(".", 1)[-1]):
+            return spec
+
+    for spec in BENCHMARK_SPECS:
+        if _benchmark_key(spec.name) == target:
+            return spec
+
+    for spec in BENCHMARK_SPECS:
+        if target and target in _benchmark_key(spec.class_name):
+            return spec
+
+    for spec in BENCHMARK_SPECS:
+        try:
+            module = __import__(spec.module, fromlist=[spec.class_name])
+            benchmark_cls = getattr(module, spec.class_name)
+        except Exception:
+            continue
+        names = (
+            getattr(benchmark_cls, "benchmark_name", None),
+            getattr(benchmark_cls, "name", None),
+            spec.name,
+        )
+        if any(_benchmark_key(name) == target for name in names if name):
+            return spec
+    return None
+
+
+def _benchmark_class_key(spec: BenchmarkSpec) -> str:
+    class_key = _benchmark_key(spec.class_name)
+    if class_key.endswith("benchmark"):
+        class_key = class_key[: -len("benchmark")]
+    return class_key
+
+
+def _benchmark_key(value: Any) -> str:
+    return "".join(character for character in str(value).casefold() if character.isalnum())
+
+
+def _fit_image(image: Image.Image, width: int, height: int) -> Image.Image:
+    fitted = image.copy()
+    fitted.thumbnail((width, height), Image.Resampling.LANCZOS)
+    return fitted
 
 
 def main() -> int:

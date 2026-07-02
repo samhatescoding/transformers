@@ -5,7 +5,12 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from ui.results_browser import ResultRepository, infer_score
+from ui.results_browser import (
+    ResultRepository,
+    _find_benchmark_spec,
+    _sample_row_index,
+    infer_score,
+)
 
 
 class ResultRepositoryTests(unittest.TestCase):
@@ -72,6 +77,27 @@ class ScoreInferenceTests(unittest.TestCase):
         self.assertEqual(label, "MAE")
         self.assertEqual(value, 3.0)
         self.assertTrue(is_error)
+
+
+class SampleImageLookupTests(unittest.TestCase):
+    def test_maps_saved_benchmark_name_to_input_browser_spec(self) -> None:
+        spec = _find_benchmark_spec("mscoco_caption")
+
+        self.assertIsNotNone(spec)
+        self.assertEqual(spec.class_name, "MSCOCOCaptionBenchmark")
+
+    def test_prefers_exact_benchmark_key_over_duplicate_display_name(self) -> None:
+        classification = _find_benchmark_spec("inaturalist")
+        detection = _find_benchmark_spec("inaturalist_detection")
+
+        self.assertIsNotNone(classification)
+        self.assertIsNotNone(detection)
+        self.assertEqual(classification.class_name, "INaturalistBenchmark")
+        self.assertEqual(detection.class_name, "INaturalistDetectionBenchmark")
+
+    def test_converts_saved_one_based_sample_index_to_row_index(self) -> None:
+        self.assertEqual(_sample_row_index({"index": 3}, fallback_index=0), 2)
+        self.assertEqual(_sample_row_index({}, fallback_index=4), 4)
 
 
 if __name__ == "__main__":
