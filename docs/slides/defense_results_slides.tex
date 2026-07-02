@@ -22,6 +22,8 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
 
 \definecolor{accent}{RGB}{37,96,151}
 \setbeamercolor{structure}{fg=accent}
@@ -77,7 +79,13 @@
 \newcommand{\finetune}{../../comparison/output/qwen25vl_finetuning}
 \newcommand{\assetpath}{assets}
 \newcommand{\benchasset}{../tex/images_benchmark_types}
+\newcommand{\datasetasset}{../tex/images_datasets}
 \newcommand{\uiasset}{../ui}
+\newcommand{\datasetthumb}[3]{%
+\begin{minipage}[t]{0.31\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=0.18\textheight,keepaspectratio]{\datasetasset/#2}
+\end{minipage}}
 
 \title[Defense Results]{Defense Results Overview}
 \subtitle{Historical API runs, five-model API comparison, and fine-tuning case study}
@@ -90,6 +98,210 @@
 \titlepage
 \end{frame}
 
+\section{Motivation}
+\sectiontitle{Motivation}{Why a systematic VLM benchmark is needed}
+
+\begin{frame}{Transformer and VLM Timeline}
+\small
+\begin{center}
+\begin{tikzpicture}[
+    x=1.43cm,
+    event/.style={circle,draw=accent,fill=accent!12,minimum size=0.5cm,inner sep=0pt},
+    label/.style={align=center,text width=2.0cm,font=\scriptsize},
+    >={Latex[length=2mm]}
+]
+\draw[->,thick,accent] (0,0) -- (9.1,0);
+\node[event] (e2017) at (0,0) {};
+\node[event] (e2018) at (1.4,0) {};
+\node[event] (e2020) at (2.8,0) {};
+\node[event] (e2021) at (4.2,0) {};
+\node[event] (e2022) at (5.6,0) {};
+\node[event] (e2023) at (7.0,0) {};
+\node[event] (e2024) at (8.4,0) {};
+\node[below=0.18cm of e2017,font=\scriptsize\bfseries] {2017};
+\node[below=0.18cm of e2018,font=\scriptsize\bfseries] {2018};
+\node[below=0.18cm of e2020,font=\scriptsize\bfseries] {2020};
+\node[below=0.18cm of e2021,font=\scriptsize\bfseries] {2021};
+\node[below=0.18cm of e2022,font=\scriptsize\bfseries] {2022};
+\node[below=0.18cm of e2023,font=\scriptsize\bfseries] {2023};
+\node[below=0.18cm of e2024,font=\scriptsize\bfseries] {2024};
+\node[label,above=0.25cm] at (0,0) {Google publishes\\\textit{Attention Is All You Need}};
+\node[label,below=0.75cm] at (1.4,0) {BERT shows large-scale\\pretraining transfer};
+\node[label,above=0.25cm] at (2.8,0) {GPT-3 scales\\autoregressive LMs};
+\node[label,below=0.75cm] at (4.2,0) {CLIP links images\\and natural language};
+\node[label,above=0.25cm] at (5.6,0) {Flamingo and BLIP-2\\push few-shot VLMs};
+\node[label,below=0.75cm] at (7.0,0) {GPT-4V and Gemini\\bring VLMs to APIs};
+\node[label,above=0.25cm] at (8.4,0) {GPT-4o and newer APIs\\make comparison practical};
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.15cm}
+\scriptsize
+Transformer models moved from sequence modeling to general-purpose multimodal systems. This makes evaluation harder: model behavior depends on datasets, prompts, output parsing, metrics, provider APIs, and practical execution failures.
+\end{frame}
+
+\begin{frame}{Motivations}
+\begin{center}
+\Large
+\begin{itemize}
+    \item Measure models
+    \item Measure datasets
+\end{itemize}
+\end{center}
+\end{frame}
+
+\section{Objectives}
+\sectiontitle{Objectives}{Benchmark infrastructure instead of only a leaderboard}
+
+\begin{frame}{Objectives: Main Aim}
+\begin{itemize}
+    \item Make comparisons systematic, reproducible, and extensible.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Objectives: Concrete Goals}
+\small
+\begin{enumerate}
+    \item Select a broad set of multimodal visual datasets with labels, captions, boxes, question-answer pairs, prompts, ratings, and preferences.
+    \item Standardize dataset records through adapters that convert native formats into a common benchmark structure.
+    \item Build benchmark tasks from dataset annotations: prompts, parsers, metrics, and task definitions.
+    \item Integrate several vision-language models behind a shared image-plus-prompt interface.
+    \item Compare model behavior across predictive performance, errors, runtime, coverage, and uncertainty.
+    \item Keep the project extensible: adding a dataset mainly means adding an adapter; adding a model mainly means implementing the shared model interface.
+\end{enumerate}
+\end{frame}
+
+\section{Dataset Selection}
+\sectiontitle{Dataset Selection}{From literature search to standardized adapters}
+
+\begin{frame}{Dataset Selection Procedure}
+\scriptsize
+\begin{center}
+\begin{tikzpicture}[
+    node distance=0.38cm and 0.42cm,
+    box/.style={draw=accent,rounded corners=2pt,align=center,text width=2.35cm,minimum height=1.0cm,fill=accent!8},
+    filter/.style={draw=accent!80!black,rounded corners=2pt,align=center,text width=2.4cm,minimum height=1.0cm,fill=orange!12},
+    outputbox/.style={draw=accent,rounded corners=2pt,align=center,text width=2.55cm,minimum height=1.0cm,fill=green!10},
+    >={Latex[length=2mm]}
+]
+\node[box] (periods) {Year bins\\pre-2015, 2015, ... 2025};
+\node[box,right=of periods] (query) {Semantic Scholar queries\\\code{dataset}, \code{image}, \code{objects}};
+\node[box,right=of query] (rank) {Rank candidates\\by citation count};
+\node[filter,below=of rank] (vision) {Keep multimodal datasets\\with images or videos};
+\node[filter,left=of vision] (scope) {Exclude fully medical, aerial-only, and vehicle-camera-only sources};
+\node[filter,left=of scope] (available) {Require usable annotations\\for benchmark tasks};
+\node[outputbox,below=of scope] (top) {Retain top three\\qualifying datasets per period};
+\node[outputbox,right=of top] (adapter) {Wrap each source\\with a dataset adapter};
+\node[outputbox,right=of adapter] (bench) {Create standardized\\benchmark records};
+
+\draw[->,thick] (periods) -- (query);
+\draw[->,thick] (query) -- (rank);
+\draw[->,thick] (rank) -- (vision);
+\draw[->,thick] (vision) -- (scope);
+\draw[->,thick] (scope) -- (available);
+\draw[->,thick] (available) -- (top);
+\draw[->,thick] (top) -- (adapter);
+\draw[->,thick] (adapter) -- (bench);
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.08cm}
+\scriptsize
+The selection favors historically visible multimodal datasets while filtering for sources that can be converted into repeatable visual benchmark tasks.
+\end{frame}
+
+\begin{frame}{Selected Datasets by Publication Year}
+\tiny
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.32\textwidth}
+\textbf{Pre-2015}\\
+ImageNet (2009); UCF101 (2012); MS COCO (2014)
+
+\textbf{2015}\\
+Flickr30k Entities; FlyingThings3D; LSUN
+
+\textbf{2016}\\
+Cityscapes; Visual Genome; VQA v2.0
+
+\textbf{2017}\\
+Fashion-MNIST; Kinetics Human Action Video Dataset; iNaturalist
+\end{column}
+\begin{column}{0.32\textwidth}
+\textbf{2018}\\
+Places; Conceptual Captions; Open Images V4
+
+\textbf{2019}\\
+GQA; MVTec AD; LVIS
+
+\textbf{2020}\\
+DocVQA; DFDC; TextCaps
+
+\textbf{2021}\\
+LAION-400M; FairFace; HDTF
+\end{column}
+\begin{column}{0.32\textwidth}
+\textbf{2022}\\
+LAION-5B; DiffusionDB; TAD66K
+
+\textbf{2023}\\
+MagicBrush; Pick-a-Pic; InternVid
+
+\textbf{2024}\\
+OpenVid-1M; Visual CoT; HQ-Edit
+
+\textbf{2025}\\
+BLIP3o-60k; ImgEdit; ShareGPT-4o-Image
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Dataset Example: ImageNet}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.72\textheight,keepaspectratio]{\datasetasset/ImageNet.JPG}
+\end{center}
+\end{frame}
+
+\begin{frame}{Dataset Example: MS COCO}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.72\textheight,keepaspectratio]{\datasetasset/MSCOCO.JPG}
+\end{center}
+\end{frame}
+
+\begin{frame}{Dataset Example: DocVQA}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.72\textheight,keepaspectratio]{\datasetasset/DocVQA.JPG}
+\end{center}
+\end{frame}
+
+\begin{frame}{Dataset Example: MagicBrush}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.72\textheight,keepaspectratio]{\datasetasset/MagicBrush.JPG}
+\end{center}
+\end{frame}
+
+\section{Model Selection}
+\sectiontitle{Model Selection}{Comparable API models through one interface}
+
+\begin{frame}{Model Selection}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{2.6cm}p{3.0cm}X@{}}
+\toprule
+\textbf{Model family} & \textbf{API model ID} & \textbf{Reason for inclusion} \\
+\midrule
+OpenAI flagship VLM & \code{gpt-4o} & Strong widely used multimodal baseline available during the first API run. \\
+OpenAI later model & \code{gpt-4.1} & Included to compare a newer OpenAI API model against GPT-4o and GPT-5. \\
+OpenAI reasoning-era model & \code{gpt-5} & Evaluated as exactly \code{gpt-5} with \code{reasoning.effort=minimal}; not a GPT-5.1 or GPT-5.2 run. \\
+Anthropic Claude & \code{claude-sonnet-4-5} & Independent provider baseline with strong vision-language performance. \\
+Google Gemini & \code{gemini-3.5-flash} & Fast Google VLM API model; configured with \code{thinking\_budget=0} when supported. \\
+\bottomrule
+\end{tabularx}
+
+\vspace{0.2cm}
+\scriptsize
+All models are called through the same benchmark-facing interface: image plus prompt in, text response out, then shared parsing and scoring.
+\end{frame}
+
+\section{Overview}
 \begin{frame}{Four Result Sets}
 \begin{enumerate}
     \item June 10 GPT-4o vs. Claude Sonnet comparison.
@@ -332,13 +544,28 @@
 \section{June 10 GPT-4o vs. Sonnet}
 \sectiontitle{Results 1}{June 10 GPT-4o vs. Claude Sonnet}
 
-\begin{frame}{Results 1: Setup}
-\begin{itemize}
-    \item Source snapshot: \code{results/api\_models\_pre\_2026\_06\_11\_es}.
-    \item Source commit: \code{96e05c3}, dated 2026-06-10 22:37:44 +0200.
-    \item Matched comparison: 30 shared benchmarks.
-    \item Type A/B focus: 12 shared benchmarks.
-\end{itemize}
+\begin{frame}{Evaluated API Models}
+\tiny
+\begin{tabularx}{\textwidth}{@{}p{2.8cm}p{2.8cm}X@{}}
+\toprule
+\textbf{Slide label} & \textbf{API model ID} & \textbf{What was actually requested} \\
+\midrule
+\code{gpt-4o} & \code{gpt-4o} &
+OpenAI Responses API vision request; deterministic setting with \code{temperature=0.0}. \\
+\code{gpt-4.1} & \code{gpt-4.1} &
+OpenAI Responses API vision request; deterministic setting with \code{temperature=0.0}. \\
+\code{gpt-5} & \code{gpt-5} &
+OpenAI Responses API vision request with \code{reasoning.effort=minimal}; not \code{gpt-5.1}, \code{gpt-5.2}, or a ChatGPT UI mode label. \\
+\code{claude-sonnet-4-5} & \code{claude-sonnet-4-5} &
+Anthropic Messages API vision request; \code{temperature=0.0}. \\
+\code{gemini-3.5-flash} & \code{gemini-3.5-flash} &
+Google GenAI vision request; \code{temperature=0.0} and \code{thinking\_budget=0} when supported by the SDK. \\
+\bottomrule
+\end{tabularx}
+
+\vspace{0.2cm}
+{\scriptsize The June 10 comparison uses only \code{gpt-4o} and \code{claude-sonnet-4-5};
+the later five-model comparisons use all rows above.}
 \end{frame}
 
 \begin{frame}{Results 1: Overall Summary}
@@ -550,18 +777,6 @@ higher raw mean, while GPT-4o has the better average rank.
 \end{center}
 \end{frame}
 
-\begin{frame}{21-Benchmark Study: Performance vs. CPU RAM}
-\begin{center}
-\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_perf_vs_cpu_ram.png}
-\end{center}
-\end{frame}
-
-\begin{frame}{21-Benchmark Study: Performance vs. Error Rate}
-\begin{center}
-\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_perf_vs_error_rate.png}
-\end{center}
-\end{frame}
-
 \begin{frame}{21-Benchmark Study: Difficulty vs. Separation}
 \begin{center}
 \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_benchmark_difficulty_discrimination.png}
@@ -607,26 +822,6 @@ higher raw mean, while GPT-4o has the better average rank.
 \end{tabularx}
 \end{frame}
 
-\begin{frame}{44-Benchmark Full: Lowest Token Price}
-\begin{center}
-\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/full44_lowest_price_per_token.png}
-\end{center}
-\end{frame}
-
-\begin{frame}{44-Benchmark Full: Parameter Counts}
-\begin{center}
-\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/full44_parameter_counts_publicly_undisclosed.png}
-\end{center}
-\end{frame}
-
-\begin{frame}{44-Benchmark Full: Mean Scores}
-\plot{\assetpath}{full44_model_mean_scores_fixed_order.png}
-\end{frame}
-
-\begin{frame}{44-Benchmark Full: Normalized Scores}
-\plot{\newfive}{model_normalized_scores.png}
-\end{frame}
-
 \begin{frame}{44-Benchmark Full: Benchmark Heatmap}
 \small
 \textbf{Mean pairwise Pearson correlation:} \(\mathbf{r=-0.014}\)
@@ -641,24 +836,36 @@ higher raw mean, while GPT-4o has the better average rank.
 \typeplot{\newfive}{family_grouped_bars.png}{0.66\textheight}
 \end{frame}
 
-\begin{frame}{44-Benchmark Full: Benchmark Types by Model}
-\typeplot{\newfive}{family_small_multiples.png}{0.66\textheight}
+\begin{frame}{44-Benchmark Full: Model Correlations}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/full44_model_pairwise_correlation.png}
+\end{center}
 \end{frame}
 
-\begin{frame}{44-Benchmark Full: Pairwise Wins}
-\plot{\newfive}{pairwise_win_rate_heatmap.png}
+\begin{frame}{44-Benchmark Full: Average vs. Standard Deviation}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/full44_average_score_vs_std.png}
+\end{center}
 \end{frame}
 
 \section{Fine-Tuning Case Study}
 \sectiontitle{Results 4}{Qwen2.5-VL-3B Fashion-MNIST Fine-Tuning}
 
 \begin{frame}{Results 4: Setup}
-\begin{itemize}
-    \item Task: Fashion-MNIST classification with Qwen2.5-VL-3B-Instruct.
-    \item Compared baseline, original LoRA, and balanced LoRA.
-    \item Evaluation set: 50 ordered test examples.
-    \item Fine-tuning used 4-bit QLoRA on attention projections.
-\end{itemize}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{2.7cm}X@{}}
+\toprule
+\textbf{Component} & \textbf{Details} \\
+\midrule
+Base model & \code{Qwen/Qwen2.5-VL-3B-Instruct}. \\
+Task and data & Fashion-MNIST classification; 100 train examples and 20 validation examples from the train split; 50 ordered test examples for evaluation. \\
+Compared systems & Unmodified baseline; original Fashion-MNIST LoRA adapter; balanced Fashion-MNIST LoRA adapter. \\
+Balanced variant & Uses a class-balanced Fashion-MNIST training/validation selection; same base model and evaluation set. \\
+QLoRA setup & 4-bit NF4 quantization with double quantization; LoRA rank 16, alpha 32, dropout 0.05. \\
+Trainable modules & Attention projections only: \code{q\_proj}, \code{k\_proj}, \code{v\_proj}, and \code{o\_proj}. \\
+Training defaults & 2 epochs, learning rate \(10^{-4}\), batch size 1, gradient accumulation 8, warmup 5, seed 42; best checkpoint selected by validation loss. \\
+\bottomrule
+\end{tabularx}
 \end{frame}
 
 \begin{frame}{Results 4: Accuracy Summary}
@@ -683,23 +890,59 @@ error reduction.
 \end{frame}
 
 \begin{frame}{Results 4: Confusion Matrices}
-\plot{\finetune}{confusion_matrices.png}
-\end{frame}
-
-\begin{frame}{Results 4: Per-Class Recall}
-\plot{\finetune}{per_class_recall.png}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.58\textheight,keepaspectratio]{\finetune/confusion_matrices.png}
+\end{center}
+\vspace{-0.08cm}
+{\tiny
+\textbf{Class index:}
+0 T-shirt/top;\quad
+1 trouser;\quad
+2 pullover;\quad
+3 dress;\quad
+4 coat;\quad
+5 sandal;\quad
+6 shirt;\quad
+7 sneaker;\quad
+8 bag;\quad
+9 ankle boot.
+\par}
 \end{frame}
 
 \begin{frame}{Results 4: Prediction Distribution}
 \plot{\finetune}{prediction_distribution.png}
 \end{frame}
 
-\begin{frame}{Closing}
+\begin{frame}{Results 4: Original LoRA Training Labels}
+\small
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.46\textwidth}
+\begin{tabular}{@{}lr@{}}
+\toprule
+\textbf{Class} & \textbf{Train examples} \\
+\midrule
+Ankle boot & 5 \\
+Bag & 10 \\
+Coat & 13 \\
+Dress & 9 \\
+Pullover & 9 \\
+Sandal & 12 \\
+\textbf{Shirt} & \textbf{16} \\
+Sneaker & 13 \\
+T-shirt/top & 10 \\
+Trouser & 3 \\
+\bottomrule
+\end{tabular}
+\end{column}
+\begin{column}{0.50\textwidth}
 \begin{itemize}
-    \item The June 10 results provide a historical baseline, but with uneven coverage and known old Gemini failures.
-    \item The final clean API run is the stronger basis for current model comparisons.
-    \item Fine-tuning shows a modest but measurable improvement when the adapter data is balanced.
+    \item Original LoRA used 100 Fashion-MNIST training examples.
+    \item The class distribution was uneven.
+    \item \textbf{Shirt} was the largest class with 16 examples.
+    \item This helps explain why the original adapter over-predicts shirt in the confusion matrix.
 \end{itemize}
+\end{column}
+\end{columns}
 \end{frame}
 
 \end{document}
