@@ -1,0 +1,164 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{url}
+
+\definecolor{accent}{RGB}{37,96,151}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{3em}
+\captionsetup{font=small,labelfont=bf}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\overallpath}{../../comparison/output/pre_jun11_gpt4o_vs_sonnet}
+\newcommand{\typeabpath}{../../comparison/output/pre_jun11_gpt4o_vs_sonnet_type_ab}
+\newcommand{\comparisonfigure}[4]{%
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{#1/#2}
+\caption{#3}
+\label{#4}
+\end{figure}
+}
+
+\title{\textbf{June 10 API Results: GPT-4o vs. Claude Sonnet}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Data Source}
+
+This report uses the frozen pre-June-11 Spanish-time snapshot in
+\path{results/api_models_pre_2026_06_11_es}. The snapshot was extracted
+from commit \code{96e05c3}
+(\emph{Llava finetuning fix}), dated 2026-06-10 22:37:44 +0200.
+
+The available Claude file in that snapshot is named
+\code{claude-sonnet-4-5}. The comparison below uses that stored result set as
+the Sonnet side of the requested GPT-4o versus Sonnet analysis.
+
+\section{Overall Matched Comparison}
+
+The overall comparison uses the 30 benchmarks present for both
+\code{gpt-4o} and \code{claude-sonnet-4-5}. GPT-4o has the higher aggregate
+score, higher normalized score, and wins more benchmarks head-to-head.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Overall matched summary across 30 shared benchmarks.}
+\begin{tabularx}{\textwidth}{@{}lrrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Benchmarks} & \textbf{Mean score} & \textbf{Median score} & \textbf{Mean normalized} \\
+\midrule
+\code{gpt-4o} & 30 & 0.428 & 0.327 & 0.733 \\
+\code{claude-sonnet-4-5} & 30 & 0.368 & 0.225 & 0.367 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Pairwise result on the same 30 benchmarks.}
+\begin{tabularx}{\textwidth}{@{}lrrrrr@{}}
+\toprule
+\textbf{Model A} & \textbf{Model B} & \textbf{Wins A} & \textbf{Wins B} & \textbf{Ties} & \textbf{Mean delta A-B} \\
+\midrule
+\code{gpt-4o} & \code{claude-sonnet-4-5} & 19 & 8 & 3 & 0.061 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\comparisonfigure{\overallpath}{model_mean_scores.png}{Mean benchmark score across all shared June 10 benchmarks.}{fig:gpt4o-sonnet-overall-mean}
+\comparisonfigure{\overallpath}{model_normalized_scores.png}{Mean normalized score across all shared June 10 benchmarks.}{fig:gpt4o-sonnet-overall-normalized}
+\comparisonfigure{\overallpath}{first_place_finishes.png}{Number of first-place finishes in the two-model comparison.}{fig:gpt4o-sonnet-overall-firsts}
+\comparisonfigure{\overallpath}{pairwise_win_rate_heatmap.png}{Pairwise win-rate heatmap for GPT-4o and Sonnet.}{fig:gpt4o-sonnet-overall-pairwise}
+\comparisonfigure{\overallpath}{score_distribution_boxplot.png}{Distribution of benchmark scores by model.}{fig:gpt4o-sonnet-overall-boxplot}
+\comparisonfigure{\overallpath}{bootstrap_confidence_intervals.png}{Bootstrap confidence intervals for mean benchmark score.}{fig:gpt4o-sonnet-overall-bootstrap}
+\comparisonfigure{\overallpath}{score_heatmap_raw.png}{Raw benchmark score heatmap.}{fig:gpt4o-sonnet-overall-raw-heatmap}
+\comparisonfigure{\overallpath}{score_heatmap_normalized.png}{Normalized benchmark score heatmap.}{fig:gpt4o-sonnet-overall-normalized-heatmap}
+\comparisonfigure{\overallpath}{rank_heatmap.png}{Benchmark rank heatmap.}{fig:gpt4o-sonnet-overall-rank}
+\comparisonfigure{\overallpath}{benchmark_spread.png}{Benchmark-level score spread.}{fig:gpt4o-sonnet-overall-spread}
+\comparisonfigure{\overallpath}{family_grouped_bars.png}{Scores grouped by benchmark family.}{fig:gpt4o-sonnet-overall-family-bars}
+\comparisonfigure{\overallpath}{family_radar.png}{Family radar plot.}{fig:gpt4o-sonnet-overall-family-radar}
+\comparisonfigure{\overallpath}{family_small_multiples.png}{Family small multiples.}{fig:gpt4o-sonnet-overall-family-small}
+
+\section{Focus on Type A and Type B Benchmarks}
+
+Type A contains visual question answering and visual reasoning benchmarks.
+Type B contains detection and localization benchmarks. The June 10 snapshot has
+six shared Type A benchmarks and six shared Type B benchmarks for this pair.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Type A/B matched summary across 12 shared benchmarks.}
+\begin{tabularx}{\textwidth}{@{}lrrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Benchmarks} & \textbf{Mean score} & \textbf{Median score} & \textbf{Mean normalized} \\
+\midrule
+\code{gpt-4o} & 12 & 0.450 & 0.458 & 0.833 \\
+\code{claude-sonnet-4-5} & 12 & 0.322 & 0.293 & 0.250 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Type A/B family means.}
+\begin{tabularx}{\textwidth}{@{}llrrr@{}}
+\toprule
+\textbf{Family} & \textbf{Model} & \textbf{Benchmarks} & \textbf{Mean score} & \textbf{Mean rank} \\
+\midrule
+Type A / QA & \code{gpt-4o} & 6 & 0.800 & 1.00 \\
+Type A / QA & \code{claude-sonnet-4-5} & 6 & 0.508 & 2.00 \\
+Type B / Detection & \code{gpt-4o} & 6 & 0.100 & 1.33 \\
+Type B / Detection & \code{claude-sonnet-4-5} & 6 & 0.135 & 1.50 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+GPT-4o is clearly ahead on Type A QA benchmarks. Type B is more mixed:
+Claude has a higher raw detection mean, while GPT-4o has the better average
+rank and normalized score because the wins are distributed differently across
+the six detection benchmarks.
+
+\comparisonfigure{\typeabpath}{model_mean_scores.png}{Mean score on Type A and Type B benchmarks.}{fig:gpt4o-sonnet-typeab-mean}
+\comparisonfigure{\typeabpath}{model_normalized_scores.png}{Mean normalized score on Type A and Type B benchmarks.}{fig:gpt4o-sonnet-typeab-normalized}
+\comparisonfigure{\typeabpath}{first_place_finishes.png}{First-place finishes on Type A and Type B benchmarks.}{fig:gpt4o-sonnet-typeab-firsts}
+\comparisonfigure{\typeabpath}{pairwise_win_rate_heatmap.png}{Pairwise win rate on Type A and Type B benchmarks.}{fig:gpt4o-sonnet-typeab-pairwise}
+\comparisonfigure{\typeabpath}{score_distribution_boxplot.png}{Distribution of Type A/B scores by model.}{fig:gpt4o-sonnet-typeab-boxplot}
+\comparisonfigure{\typeabpath}{bootstrap_confidence_intervals.png}{Bootstrap confidence intervals on Type A/B benchmarks.}{fig:gpt4o-sonnet-typeab-bootstrap}
+\comparisonfigure{\typeabpath}{score_heatmap_raw.png}{Raw score heatmap on Type A/B benchmarks.}{fig:gpt4o-sonnet-typeab-raw-heatmap}
+\comparisonfigure{\typeabpath}{score_heatmap_normalized.png}{Normalized score heatmap on Type A/B benchmarks.}{fig:gpt4o-sonnet-typeab-normalized-heatmap}
+\comparisonfigure{\typeabpath}{rank_heatmap.png}{Rank heatmap on Type A/B benchmarks.}{fig:gpt4o-sonnet-typeab-rank}
+\comparisonfigure{\typeabpath}{benchmark_spread.png}{Benchmark-level score spread on Type A/B benchmarks.}{fig:gpt4o-sonnet-typeab-spread}
+\comparisonfigure{\typeabpath}{family_grouped_bars.png}{Type A and Type B grouped bar chart.}{fig:gpt4o-sonnet-typeab-family-bars}
+\comparisonfigure{\typeabpath}{family_radar.png}{Type A and Type B radar plot.}{fig:gpt4o-sonnet-typeab-family-radar}
+\comparisonfigure{\typeabpath}{family_small_multiples.png}{Type A and Type B small multiples.}{fig:gpt4o-sonnet-typeab-family-small}
+
+\section{Runtime and Telemetry}
+
+\comparisonfigure{\overallpath}{telemetry_mean_wall_clock_seconds.png}{Mean wall-clock time by model.}{fig:gpt4o-sonnet-telemetry-wall}
+\comparisonfigure{\overallpath}{telemetry_mean_generation_seconds.png}{Mean generation time by model.}{fig:gpt4o-sonnet-telemetry-generation}
+\comparisonfigure{\overallpath}{telemetry_peak_cpu_ram_gib.png}{Peak CPU RAM by model.}{fig:gpt4o-sonnet-telemetry-ram}
+\comparisonfigure{\overallpath}{telemetry_wall_clock_by_benchmark.png}{Wall-clock time by benchmark.}{fig:gpt4o-sonnet-telemetry-wall-benchmark}
+\comparisonfigure{\overallpath}{telemetry_peak_cpu_ram_by_benchmark.png}{Peak CPU RAM by benchmark.}{fig:gpt4o-sonnet-telemetry-ram-benchmark}
+\comparisonfigure{\overallpath}{telemetry_coverage.png}{Telemetry field coverage.}{fig:gpt4o-sonnet-telemetry-coverage}
+
+\end{document}

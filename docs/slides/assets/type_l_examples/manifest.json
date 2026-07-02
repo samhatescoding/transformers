@@ -1,0 +1,262 @@
+{
+  "qualifying": [
+    {
+      "index": 12,
+      "image_name": "conceptual_captions_sample_12.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_12.png",
+      "choices": [
+        "where 's the best place to show off your shoes ? right in front of the palace , of course !",
+        "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "where 's the best place to show off your nails ? right in front of the palace , of course !",
+        "where 's the best place to show off your shoes ? right in front of the castle , of course !"
+      ],
+      "answer": "where 's the best place to show off your nails ? right in front of the castle , of course !",
+      "gpt_prediction": "B. where 's the best place to show off your nails ? right in",
+      "gpt_score": "accuracy=1, correct",
+      "sonnet_prediction": "B",
+      "sonnet_score": "accuracy=1, correct"
+    },
+    {
+      "index": 13,
+      "image_name": "conceptual_captions_sample_13.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_13.png",
+      "choices": [
+        "that combines elements of a spicy fruit and dish",
+        "that combines elements of a simple vegetable and dish",
+        "that combines elements of a spicy vegetable and dish",
+        "that combines elements of a simple fruit and dish"
+      ],
+      "answer": "that combines elements of a simple vegetable and dish",
+      "gpt_prediction": "B. that combines elements of a simple vegetable and dish",
+      "gpt_score": "accuracy=1, correct",
+      "sonnet_prediction": "B",
+      "sonnet_score": "accuracy=1, correct"
+    },
+    {
+      "index": 15,
+      "image_name": "conceptual_captions_sample_15.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_15.png",
+      "choices": [
+        "illustration of a little boy taking a shower",
+        "illustration of a little girl taking a bath",
+        "illustration of a little girl taking a shower",
+        "illustration of a little boy taking a bath"
+      ],
+      "answer": "illustration of a little girl taking a bath",
+      "gpt_prediction": "D. illustration of a little boy taking a bath",
+      "gpt_score": "accuracy=0, incorrect",
+      "sonnet_prediction": "B",
+      "sonnet_score": "accuracy=1, correct"
+    },
+    {
+      "index": 16,
+      "image_name": "conceptual_captions_sample_16.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_16.png",
+      "choices": [
+        "tv medical drama is filming on the hospital this week .",
+        "tv police procedural is filming on the street this week .",
+        "tv police procedural is filming on the hospital this week .",
+        "tv medical drama is filming on the street this week ."
+      ],
+      "answer": "tv police procedural is filming on the street this week .",
+      "gpt_prediction": "B. tv police procedural is filming on the street this week .",
+      "gpt_score": "accuracy=1, correct",
+      "sonnet_prediction": "Looking at this image, I can see a street scene with storefronts",
+      "sonnet_score": "accuracy=0, incorrect"
+    },
+    {
+      "index": 18,
+      "image_name": "conceptual_captions_sample_18.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_18.png",
+      "choices": [
+        "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress",
+        "the - bedroom stone cottage can sleep people",
+        "author : a life in photography -- in pictures"
+      ],
+      "answer": "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress",
+      "gpt_prediction": "[no answer returned]",
+      "gpt_score": "accuracy=0, error (URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>)",
+      "sonnet_prediction": "B",
+      "sonnet_score": "accuracy=1, correct"
+    },
+    {
+      "index": 20,
+      "image_name": "conceptual_captions_sample_20.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_20.png",
+      "choices": [
+        "the surgeon drill the tooth with a laser",
+        "the dentist drill the tooth with a turbine",
+        "the dentist drill the tooth with a laser",
+        "the surgeon drill the tooth with a turbine"
+      ],
+      "answer": "the dentist drill the tooth with a turbine",
+      "gpt_prediction": "B. the dentist drill the tooth with a turbine",
+      "gpt_score": "accuracy=1, correct",
+      "sonnet_prediction": "B. the dentist drill the tooth with a turbine",
+      "sonnet_score": "accuracy=1, correct"
+    }
+  ],
+  "failure_examples": [
+    {
+      "index": 1,
+      "image_name": "conceptual_captions_sample_01.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_01.png",
+      "choices": [
+        "author : a life in portraiture -- in photographs",
+        "author : a life in photography -- in pictures",
+        "author : a life in photography -- in photographs",
+        "author : a life in portraiture -- in pictures"
+      ],
+      "answer": "author : a life in photography -- in pictures",
+      "gpt_prediction": "C. author : a life in photography -- in photographs",
+      "gpt_score": "accuracy=0, incorrect",
+      "sonnet_prediction": "C. author : a life in photography -- in photographs",
+      "sonnet_score": "accuracy=0, incorrect"
+    },
+    {
+      "index": 2,
+      "image_name": "conceptual_captions_sample_02.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_02.png",
+      "choices": [
+        "that combines elements of a simple vegetable and dish",
+        "the - bedroom stone cottage can sleep people",
+        "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "author : a life in photography -- in pictures"
+      ],
+      "answer": "the - bedroom stone cottage can sleep people",
+      "gpt_prediction": "[no answer returned]",
+      "gpt_score": "accuracy=0, error (HTTPError: HTTP Error 404: Not Found)",
+      "sonnet_prediction": "[no answer returned]",
+      "sonnet_score": "accuracy=0, error (HTTPError: HTTP Error 404: Not Found)"
+    },
+    {
+      "index": 3,
+      "image_name": "conceptual_captions_sample_03.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_03.png",
+      "choices": [
+        "that combines elements of a simple vegetable and dish",
+        "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "the - bedroom stone cottage can sleep people",
+        "author : a life in photography -- in pictures"
+      ],
+      "answer": "where 's the best place to show off your nails ? right in front of the castle , of course !",
+      "gpt_prediction": "[no answer returned]",
+      "gpt_score": "accuracy=0, error (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)",
+      "sonnet_prediction": "[no answer returned]",
+      "sonnet_score": "accuracy=0, error (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)"
+    },
+    {
+      "index": 4,
+      "image_name": "conceptual_captions_sample_04.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_04.png",
+      "choices": [
+        "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "that combines elements of a simple vegetable and dish",
+        "the - bedroom stone cottage can sleep people",
+        "author : a life in photography -- in pictures"
+      ],
+      "answer": "that combines elements of a simple vegetable and dish",
+      "gpt_prediction": "[no answer returned]",
+      "gpt_score": "accuracy=0, error (HTTPError: HTTP Error 404: Not Found)",
+      "sonnet_prediction": "[no answer returned]",
+      "sonnet_score": "accuracy=0, error (HTTPError: HTTP Error 404: Not Found)"
+    },
+    {
+      "index": 5,
+      "image_name": "conceptual_captions_sample_05.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_05.png",
+      "choices": [
+        "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "transformers : till all are issue # 4b",
+        "the - bedroom stone cottage can sleep people",
+        "author : a life in photography -- in pictures"
+      ],
+      "answer": "transformers : till all are issue # 4b",
+      "gpt_prediction": "[no answer returned]",
+      "gpt_score": "accuracy=0, error (HTTPError: HTTP Error 404: Not Found)",
+      "sonnet_prediction": "[no answer returned]",
+      "sonnet_score": "accuracy=0, error (URLError: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>)"
+    },
+    {
+      "index": 6,
+      "image_name": "conceptual_captions_sample_06.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_06.png",
+      "choices": [
+        "the - bathroom wooden cottage can sleep people",
+        "the - bedroom stone cottage can sleep people",
+        "the - bathroom stone cottage can sleep people",
+        "the - bedroom wooden cottage can sleep people"
+      ],
+      "answer": "the - bedroom stone cottage can sleep people",
+      "gpt_prediction": "D. the - bedroom wooden cottage can sleep people",
+      "gpt_score": "accuracy=0, incorrect",
+      "sonnet_prediction": "Looking at the image, I can see this is clearly a bedroom (with a",
+      "sonnet_score": "accuracy=0, incorrect"
+    },
+    {
+      "index": 7,
+      "image_name": "conceptual_captions_sample_07.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_07.png",
+      "choices": [
+        "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "tv police procedural is filming on the street this week .",
+        "the - bedroom stone cottage can sleep people",
+        "author : a life in photography -- in pictures"
+      ],
+      "answer": "tv police procedural is filming on the street this week .",
+      "gpt_prediction": "[no answer returned]",
+      "gpt_score": "accuracy=0, error (HTTPError: HTTP Error 403: Forbidden)",
+      "sonnet_prediction": "[no answer returned]",
+      "sonnet_score": "accuracy=0, error (HTTPError: HTTP Error 403: Forbidden)"
+    },
+    {
+      "index": 8,
+      "image_name": "conceptual_captions_sample_08.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_08.png",
+      "choices": [
+        "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "the new terminal on island with quiet sea and setting sun",
+        "the - bedroom stone cottage can sleep people",
+        "author : a life in photography -- in pictures"
+      ],
+      "answer": "the new terminal on island with quiet sea and setting sun",
+      "gpt_prediction": "[no answer returned]",
+      "gpt_score": "accuracy=0, error (HTTPError: HTTP Error 400: Bad Request)",
+      "sonnet_prediction": "[no answer returned]",
+      "sonnet_score": "accuracy=0, error (HTTPError: HTTP Error 400: Bad Request)"
+    },
+    {
+      "index": 9,
+      "image_name": "conceptual_captions_sample_09.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_09.png",
+      "choices": [
+        "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "what makeup to wear to a job interview",
+        "the - bedroom stone cottage can sleep people",
+        "author : a life in photography -- in pictures"
+      ],
+      "answer": "what makeup to wear to a job interview",
+      "gpt_prediction": "[no answer returned]",
+      "gpt_score": "accuracy=0, error (URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1081)>)",
+      "sonnet_prediction": "[no answer returned]",
+      "sonnet_score": "accuracy=0, error (URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1081)>)"
+    },
+    {
+      "index": 10,
+      "image_name": "conceptual_captions_sample_10.png",
+      "image": "assets/type_l_examples/conceptual_captions_sample_10.png",
+      "choices": [
+        "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "the dentist drill the tooth with a turbine",
+        "the - bedroom stone cottage can sleep people",
+        "author : a life in photography -- in pictures"
+      ],
+      "answer": "the dentist drill the tooth with a turbine",
+      "gpt_prediction": "[no answer returned]",
+      "gpt_score": "accuracy=0, error (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)",
+      "sonnet_prediction": "[no answer returned]",
+      "sonnet_score": "accuracy=0, error (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)"
+    }
+  ]
+}

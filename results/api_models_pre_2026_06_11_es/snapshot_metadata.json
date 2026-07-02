@@ -1,0 +1,196 @@
+﻿{
+    "snapshot_name":  "api_models_pre_2026_06_11_es",
+    "source_commit":  "96e05c39814eae82a388edf8a870b4935bf0b108",
+    "source_commit_title":  "Llava finetuning fix",
+    "source_commit_date":  "2026-06-10 22:37:44 +0200",
+    "spanish_time_boundary":  "before 2026-06-11 00:00:00 +0200",
+    "extracted_at":  "2026-07-02T02:47:01",
+    "source_folders":  [
+                           "results/api_models",
+                           "results/api_models_claude_sonnet_4_5",
+                           "results/api_models_gemini_3_5_flash",
+                           "results/api_models_gpt_4_1",
+                           "results/api_models_gpt_5"
+                       ],
+    "result_file_count":  110,
+    "benchmark_count":  37,
+    "sample_count":  2200,
+    "failed_sample_count":  270,
+    "models":  [
+                   {
+                       "model":  "claude-sonnet-4-5",
+                       "result_file_count":  30,
+                       "benchmark_count":  30,
+                       "sample_count":  600,
+                       "failed_sample_count":  27
+                   },
+                   {
+                       "model":  "gemini-3.5-flash",
+                       "result_file_count":  14,
+                       "benchmark_count":  14,
+                       "sample_count":  280,
+                       "failed_sample_count":  44
+                   },
+                   {
+                       "model":  "gpt-4.1",
+                       "result_file_count":  16,
+                       "benchmark_count":  16,
+                       "sample_count":  320,
+                       "failed_sample_count":  95
+                   },
+                   {
+                       "model":  "gpt-4o",
+                       "result_file_count":  37,
+                       "benchmark_count":  37,
+                       "sample_count":  740,
+                       "failed_sample_count":  65
+                   },
+                   {
+                       "model":  "gpt-5",
+                       "result_file_count":  13,
+                       "benchmark_count":  13,
+                       "sample_count":  260,
+                       "failed_sample_count":  39
+                   }
+               ],
+    "files_with_errors":  [
+                              {
+                                  "file":  "claude-sonnet-4-5_conceptual_captions.json",
+                                  "model":  "claude-sonnet-4-5",
+                                  "benchmark":  "conceptual_captions",
+                                  "failed_samples":  11
+                              },
+                              {
+                                  "file":  "claude-sonnet-4-5_conceptual_captions_caption.json",
+                                  "model":  "claude-sonnet-4-5",
+                                  "benchmark":  "conceptual_captions_caption",
+                                  "failed_samples":  11
+                              },
+                              {
+                                  "file":  "claude-sonnet-4-5_internvid.json",
+                                  "model":  "claude-sonnet-4-5",
+                                  "benchmark":  "internvid",
+                                  "failed_samples":  3
+                              },
+                              {
+                                  "file":  "claude-sonnet-4-5_openvid1m.json",
+                                  "model":  "claude-sonnet-4-5",
+                                  "benchmark":  "openvid1m",
+                                  "failed_samples":  1
+                              },
+                              {
+                                  "file":  "claude-sonnet-4-5_openvid1m_caption.json",
+                                  "model":  "claude-sonnet-4-5",
+                                  "benchmark":  "openvid1m_caption",
+                                  "failed_samples":  1
+                              },
+                              {
+                                  "file":  "gemini-3.5-flash_flickr30k.json",
+                                  "model":  "gemini-3.5-flash",
+                                  "benchmark":  "flickr30k",
+                                  "failed_samples":  20
+                              },
+                              {
+                                  "file":  "gemini-3.5-flash_mscoco_caption.json",
+                                  "model":  "gemini-3.5-flash",
+                                  "benchmark":  "mscoco_caption",
+                                  "failed_samples":  20
+                              },
+                              {
+                                  "file":  "gemini-3.5-flash_visual_cot_detection.json",
+                                  "model":  "gemini-3.5-flash",
+                                  "benchmark":  "visual_cot_detection",
+                                  "failed_samples":  4
+                              },
+                              {
+                                  "file":  "gpt-4.1_conceptual_captions_caption.json",
+                                  "model":  "gpt-4.1",
+                                  "benchmark":  "conceptual_captions_caption",
+                                  "failed_samples":  20
+                              },
+                              {
+                                  "file":  "gpt-4.1_flickr30k.json",
+                                  "model":  "gpt-4.1",
+                                  "benchmark":  "flickr30k",
+                                  "failed_samples":  20
+                              },
+                              {
+                                  "file":  "gpt-4.1_mscoco_caption.json",
+                                  "model":  "gpt-4.1",
+                                  "benchmark":  "mscoco_caption",
+                                  "failed_samples":  20
+                              },
+                              {
+                                  "file":  "gpt-4.1_textcaps.json",
+                                  "model":  "gpt-4.1",
+                                  "benchmark":  "textcaps",
+                                  "failed_samples":  20
+                              },
+                              {
+                                  "file":  "gpt-4.1_visual_cot_detection.json",
+                                  "model":  "gpt-4.1",
+                                  "benchmark":  "visual_cot_detection",
+                                  "failed_samples":  15
+                              },
+                              {
+                                  "file":  "gpt-4o_conceptual_captions.json",
+                                  "model":  "gpt-4o",
+                                  "benchmark":  "conceptual_captions",
+                                  "failed_samples":  12
+                              },
+                              {
+                                  "file":  "gpt-4o_conceptual_captions_caption.json",
+                                  "model":  "gpt-4o",
+                                  "benchmark":  "conceptual_captions_caption",
+                                  "failed_samples":  11
+                              },
+                              {
+                                  "file":  "gpt-4o_imagenet1k.json",
+                                  "model":  "gpt-4o",
+                                  "benchmark":  "imagenet1k",
+                                  "failed_samples":  1
+                              },
+                              {
+                                  "file":  "gpt-4o_inaturalist.json",
+                                  "model":  "gpt-4o",
+                                  "benchmark":  "inaturalist",
+                                  "failed_samples":  16
+                              },
+                              {
+                                  "file":  "gpt-4o_internvid.json",
+                                  "model":  "gpt-4o",
+                                  "benchmark":  "internvid",
+                                  "failed_samples":  3
+                              },
+                              {
+                                  "file":  "gpt-4o_lsun.json",
+                                  "model":  "gpt-4o",
+                                  "benchmark":  "lsun",
+                                  "failed_samples":  20
+                              },
+                              {
+                                  "file":  "gpt-4o_openvid1m.json",
+                                  "model":  "gpt-4o",
+                                  "benchmark":  "openvid1m",
+                                  "failed_samples":  1
+                              },
+                              {
+                                  "file":  "gpt-4o_openvid1m_caption.json",
+                                  "model":  "gpt-4o",
+                                  "benchmark":  "openvid1m_caption",
+                                  "failed_samples":  1
+                              },
+                              {
+                                  "file":  "gpt-5_flickr30k.json",
+                                  "model":  "gpt-5",
+                                  "benchmark":  "flickr30k",
+                                  "failed_samples":  20
+                              },
+                              {
+                                  "file":  "gpt-5_visual_cot_detection.json",
+                                  "model":  "gpt-5",
+                                  "benchmark":  "visual_cot_detection",
+                                  "failed_samples":  19
+                              }
+                          ]
+}

@@ -1,0 +1,154 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{url}
+
+\definecolor{accent}{RGB}{37,96,151}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{3em}
+\captionsetup{font=small,labelfont=bf}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\plotpath}{../../comparison/output/pre_jun11_five_api_models_old}
+\newcommand{\comparisonfigure}[3]{%
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\plotpath/#1}
+\caption{#2}
+\label{#3}
+\end{figure}
+}
+
+\title{\textbf{June 10 API Results: Five-Model Comparison}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Data Source}
+
+This report uses the frozen pre-June-11 Spanish-time snapshot in
+\path{results/api_models_pre_2026_06_11_es}. The snapshot was extracted
+from commit \code{96e05c3}
+(\emph{Llava finetuning fix}), dated 2026-06-10 22:37:44 +0200.
+
+The snapshot contains uneven benchmark coverage across the five API models.
+For a fair five-way comparison, this report uses the balanced overlap available
+for all five models: 12 Type A/Type B benchmarks. Type A corresponds to visual
+question answering and visual reasoning; Type B corresponds to detection and
+localization.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Raw snapshot coverage before taking the balanced five-model overlap.}
+\begin{tabularx}{\textwidth}{@{}lrrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Result files} & \textbf{Benchmarks} & \textbf{Samples} & \textbf{Failed samples} \\
+\midrule
+\code{claude-sonnet-4-5} & 30 & 30 & 600 & 27 \\
+\code{gemini-3.5-flash} & 14 & 14 & 280 & 44 \\
+\code{gpt-4.1} & 16 & 16 & 320 & 95 \\
+\code{gpt-4o} & 37 & 37 & 740 & 65 \\
+\code{gpt-5} & 13 & 13 & 260 & 39 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Balanced Five-Model Results}
+
+The balanced old comparison uses 12 benchmarks for every model: six Type A QA
+benchmarks and six Type B detection benchmarks. On this overlap,
+\code{gpt-4.1} has the highest mean score, followed closely by
+\code{gpt-4o} and \code{gpt-5}. \code{gemini-3.5-flash} is much lower in this
+old snapshot, consistent with the pre-fix Gemini result files.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Five-model summary across the 12 shared Type A/B benchmarks.}
+\begin{tabularx}{\textwidth}{@{}lrrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Benchmarks} & \textbf{Mean score} & \textbf{Median score} & \textbf{Mean normalized} \\
+\midrule
+\code{gpt-4.1} & 12 & 0.481 & 0.400 & 0.820 \\
+\code{gpt-4o} & 12 & 0.450 & 0.458 & 0.755 \\
+\code{gpt-5} & 12 & 0.425 & 0.250 & 0.565 \\
+\code{claude-sonnet-4-5} & 12 & 0.322 & 0.293 & 0.606 \\
+\code{gemini-3.5-flash} & 12 & 0.017 & 0.000 & 0.083 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Family means on the shared Type A/B overlap.}
+\begin{tabularx}{\textwidth}{@{}llrrr@{}}
+\toprule
+\textbf{Family} & \textbf{Model} & \textbf{Benchmarks} & \textbf{Mean score} & \textbf{Mean rank} \\
+\midrule
+Type A / QA & \code{gpt-4.1} & 6 & 0.867 & 1.17 \\
+Type A / QA & \code{gpt-5} & 6 & 0.850 & 1.33 \\
+Type A / QA & \code{gpt-4o} & 6 & 0.800 & 2.33 \\
+Type A / QA & \code{claude-sonnet-4-5} & 6 & 0.508 & 4.00 \\
+Type A / QA & \code{gemini-3.5-flash} & 6 & 0.033 & 4.83 \\
+\midrule
+Type B / Detection & \code{claude-sonnet-4-5} & 6 & 0.135 & 1.67 \\
+Type B / Detection & \code{gpt-4o} & 6 & 0.100 & 1.83 \\
+Type B / Detection & \code{gpt-4.1} & 6 & 0.096 & 1.67 \\
+Type B / Detection & \code{gpt-5} & 6 & 0.000 & 2.83 \\
+Type B / Detection & \code{gemini-3.5-flash} & 6 & 0.000 & 2.83 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Score and Rank Figures}
+
+\comparisonfigure{model_mean_scores.png}{Mean score for the five API models on the shared June 10 overlap.}{fig:old-five-mean}
+\comparisonfigure{model_normalized_scores.png}{Mean normalized score for the five API models.}{fig:old-five-normalized}
+\comparisonfigure{first_place_finishes.png}{First-place finishes across the 12 shared benchmarks.}{fig:old-five-firsts}
+\comparisonfigure{score_distribution_boxplot.png}{Distribution of benchmark scores by model.}{fig:old-five-boxplot}
+\comparisonfigure{bootstrap_confidence_intervals.png}{Bootstrap confidence intervals for mean benchmark score.}{fig:old-five-bootstrap}
+\comparisonfigure{score_heatmap_raw.png}{Raw score heatmap across models and benchmarks.}{fig:old-five-raw-heatmap}
+\comparisonfigure{score_heatmap_normalized.png}{Normalized score heatmap across models and benchmarks.}{fig:old-five-normalized-heatmap}
+\comparisonfigure{rank_heatmap.png}{Rank heatmap across models and benchmarks.}{fig:old-five-rank-heatmap}
+\comparisonfigure{benchmark_spread.png}{Benchmark-level score spread.}{fig:old-five-spread}
+\comparisonfigure{pairwise_win_rate_heatmap.png}{Pairwise win-rate heatmap.}{fig:old-five-pairwise}
+
+\section{Type A and Type B Figures}
+
+\comparisonfigure{family_grouped_bars.png}{Grouped bar chart for Type A QA and Type B detection benchmarks.}{fig:old-five-family-bars}
+\comparisonfigure{family_radar.png}{Family radar plot for Type A and Type B benchmarks.}{fig:old-five-family-radar}
+\comparisonfigure{family_small_multiples.png}{Small multiples for Type A and Type B benchmark families.}{fig:old-five-family-small}
+
+\section{Pairwise Notes}
+
+On the balanced overlap, \code{gpt-4.1} beats \code{gpt-4o} on seven
+benchmarks, loses on three, and ties on two. \code{gpt-4o} and \code{gpt-5}
+split evenly with four wins each and four ties. Every non-Gemini model beats
+\code{gemini-3.5-flash} decisively in this old snapshot.
+
+\section{Runtime and Telemetry}
+
+\comparisonfigure{telemetry_mean_wall_clock_seconds.png}{Mean wall-clock time by model.}{fig:old-five-telemetry-wall}
+\comparisonfigure{telemetry_mean_generation_seconds.png}{Mean generation time by model.}{fig:old-five-telemetry-generation}
+\comparisonfigure{telemetry_peak_cpu_ram_gib.png}{Peak CPU RAM by model.}{fig:old-five-telemetry-ram}
+\comparisonfigure{telemetry_wall_clock_by_benchmark.png}{Wall-clock time by benchmark.}{fig:old-five-telemetry-wall-benchmark}
+\comparisonfigure{telemetry_peak_cpu_ram_by_benchmark.png}{Peak CPU RAM by benchmark.}{fig:old-five-telemetry-ram-benchmark}
+\comparisonfigure{telemetry_coverage.png}{Telemetry field coverage.}{fig:old-five-telemetry-coverage}
+
+\end{document}

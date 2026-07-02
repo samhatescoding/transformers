@@ -1,0 +1,545 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.78\paperwidth,ht=2.5ex,dp=1.2ex,leftskip=1em]{author in head/foot}%
+      \ifx\insertsection\empty Overview\else\insertsection\fi
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.22\paperwidth,ht=2.5ex,dp=1.2ex,center]{date in head/foot}%
+      \insertframenumber{} / \inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\definecolor{accent}{RGB}{37,96,151}
+\setbeamercolor{structure}{fg=accent}
+\setbeamercolor{title}{fg=white,bg=accent}
+\setbeamercolor{frametitle}{fg=white,bg=accent}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\sectiontitle}[2]{%
+\begin{frame}
+\vfill
+\centering
+{\usebeamerfont{title}\color{accent}#1\par}
+\vspace{0.5cm}
+{\large #2\par}
+\vfill
+\end{frame}
+}
+\newcommand{\plot}[2]{%
+\begin{center}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{#1/#2}
+\end{center}
+}
+\newcommand{\typelegend}{%
+{\tiny\centering
+\begin{tabular}{@{}llll@{}}
+\textbf{A}: questions & \textbf{B}: boxes & \textbf{C}: captions & \textbf{E}: edit reconstruction \\
+\textbf{G}: generation reconstruction & \textbf{L}: labels & \textbf{P}: preference & \textbf{R}: rating
+\end{tabular}\par}
+}
+\newcommand{\typelegendab}{%
+{\scriptsize\centering
+\textbf{Types:} A = answering questions;\quad B = bounding boxes.\par}
+}
+\newcommand{\typeplot}[3]{%
+\begin{center}
+\includegraphics[width=\textwidth,height=#3,keepaspectratio]{#1/#2}
+\end{center}
+\vspace{-0.08cm}
+\typelegend
+}
+\newcommand{\typeplotab}[3]{%
+\begin{center}
+\includegraphics[width=\textwidth,height=#3,keepaspectratio]{#1/#2}
+\end{center}
+\vspace{-0.08cm}
+\typelegendab
+}
+\newcommand{\oldpair}{../../comparison/output/pre_jun11_gpt4o_vs_sonnet}
+\newcommand{\oldpairab}{../../comparison/output/pre_jun11_gpt4o_vs_sonnet_type_ab}
+\newcommand{\oldfive}{../../comparison/output/pre_jun11_five_api_models_old}
+\newcommand{\studyfive}{../../comparison/output/five_api_models}
+\newcommand{\newfive}{../../comparison/output/five_api_models_final_clean}
+\newcommand{\finetune}{../../comparison/output/qwen25vl_finetuning}
+\newcommand{\assetpath}{assets}
+\newcommand{\benchasset}{../tex/images_benchmark_types}
+
+\title[Defense Results]{Defense Results Overview}
+\subtitle{Historical API runs, five-model API comparison, and fine-tuning case study}
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Four Result Sets}
+\begin{enumerate}
+    \item June 10 GPT-4o vs. Claude Sonnet comparison.
+    \item Five-model study comparison on 21 shared benchmarks.
+    \item Five-model full comparison on 44 benchmarks.
+    \item Qwen2.5-VL-3B Fashion-MNIST fine-tuning case study.
+\end{enumerate}
+\end{frame}
+
+\section{Benchmark types}
+\sectiontitle{Benchmark types}{One example for each evaluated task family}
+
+\begin{frame}{Type A: Answering Questions}
+\begin{center}
+\includegraphics[width=0.92\textwidth,height=0.48\textheight,keepaspectratio]{\benchasset/type_a_flyingthings3d_03.png}
+\end{center}
+\vspace{-0.08cm}
+\scriptsize
+\textbf{Benchmark:} \code{flyingthings3d}, example 3
+
+\vspace{0.06cm}
+\textbf{Prompt:} What part of the gray car is most visible?
+
+\textbf{Choices:} A. the front; B. the back; C. the side; D. the top.
+
+\vspace{0.06cm}
+\textbf{Reference:} the back
+
+\textbf{GPT-4o response:} C. the side
+
+\textbf{Score:} accuracy \(=0\) (incorrect)
+\end{frame}
+
+\begin{frame}{Type B: Bounding Box Detection}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.48\textwidth}
+\includegraphics[width=\textwidth,height=0.64\textheight,keepaspectratio]{\benchasset/type_b_mscoco_02_correct_boxes.png}
+\end{column}
+\begin{column}{0.49\textwidth}
+\scriptsize
+\textbf{Benchmark:} \code{mscoco}, example 2
+
+\vspace{0.08cm}
+\textbf{Target class:} chair
+
+\textcolor{red!80!black}{\textbf{GPT-4o response:}} \code{[0.0, 0.6, 0.3, 0.4]}
+
+\textbf{Score:} F1 \(=0.000\), matched IoU \(=0.000\)
+
+\vspace{0.08cm}
+\textcolor{green!50!black}{\textbf{Correct boxes}} \([x,y,w,h]\), normalized:
+\begin{itemize}
+    \item \code{[0.08, 0.94, 0.17, 0.06]}
+    \item \code{[0.33, 0.82, 0.14, 0.11]}
+    \item \code{[0.69, 0.78, 0.15, 0.20]}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Type C: Captioning}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.46\textwidth}
+\includegraphics[width=\textwidth,height=0.66\textheight,keepaspectratio]{\benchasset/type_c_conceptual_captions_02.png}
+\end{column}
+\begin{column}{0.51\textwidth}
+\scriptsize
+\textbf{Benchmark:} \code{conceptual\_captions\_caption}, example 2
+
+\vspace{0.12cm}
+\textbf{Prompt:} Write one concise caption for the image.
+
+\textbf{Reference:} the - bedroom stone cottage can sleep people
+
+\textbf{GPT-4o response:} Cozy bedroom with wooden flooring and modern decor.
+
+\textbf{Score:} BLEU \(=0.1604\) (incorrect)
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Type E: Editing Reconstruction}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.50\textwidth}
+\includegraphics[width=\textwidth,height=0.66\textheight,keepaspectratio]{\benchasset/type_e_hq_edit_05.png}
+\end{column}
+\begin{column}{0.47\textwidth}
+\scriptsize
+\textbf{Benchmark:} \code{hq\_edit}, example 5
+
+\vspace{0.12cm}
+\textbf{Prompt:} Identify which edit instruction produced Image B from Image A.
+
+\vspace{0.06cm}
+\textbf{Options:}
+\begin{enumerate}
+    \item[A.] Replace the soccer ball with a miniature sunflower that the puppy is holding.
+    \item[B.] Replace the soccer ball with a miniature sunflower that the kitten is holding.
+    \item[C.] Replace the soccer ball with a giant sunflower that the puppy is holding.
+    \item[D.] Replace the soccer ball with a giant sunflower that the kitten is holding.
+\end{enumerate}
+
+\textbf{Reference:} replace the soccer ball with a giant sunflower that the puppy is holding.
+
+\textbf{GPT-4o response:} C. Replace the soccer ball with a giant sunflower that the puppy is holding.
+
+\textbf{Score:} accuracy \(=1\) (correct)
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Type G: Generating Reconstruction}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.46\textwidth}
+\includegraphics[width=\textwidth,height=0.66\textheight,keepaspectratio]{\benchasset/type_g_diffusiondb_02.png}
+\end{column}
+\begin{column}{0.51\textwidth}
+\scriptsize
+\textbf{Benchmark:} \code{diffusiondb}, example 2
+
+\vspace{0.12cm}
+\textbf{Prompt:} Identify which prompt created the image from four choices.
+
+\vspace{0.06cm}
+\textbf{Options:}
+\begin{enumerate}
+    \item[A.] renaissance portrait of Dwayne Johnson, Rembrandt style\ldots
+    \item[B.] epic 3D GPU mecha controlled by telepathic hackers\ldots
+    \item[C.] airbrush painting of cyber war machine scene in Area 51\ldots
+    \item[D.] portrait of a dancing eagle woman, Lakota Sioux goddess\ldots
+\end{enumerate}
+
+\textbf{Reference:} choice D, a portrait of a dancing eagle woman.
+
+\textbf{GPT-4o response:} D
+
+\textbf{Score:} accuracy \(=1\) (correct)
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Type L: Labeling}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.46\textwidth}
+\includegraphics[width=\textwidth,height=0.66\textheight,keepaspectratio]{\benchasset/type_l_imagenet1k_01.png}
+\end{column}
+\begin{column}{0.51\textwidth}
+\scriptsize
+\textbf{Benchmark:} \code{imagenet1k}, example 1
+
+\vspace{0.12cm}
+\textbf{Prompt:} Return exactly one label from the ImageNet-1K label list.
+
+\vspace{0.06cm}
+\textbf{Label list head sent to model:}
+\begin{enumerate}
+    \item tench, Tinca tinca
+    \item goldfish, Carassius auratus
+    \item great white shark, white shark, man-eater\ldots
+    \item tiger shark, Galeocerdo cuvieri
+    \item hammerhead, hammerhead shark
+    \item electric ray, crampfish, numbfish, torpedo
+\end{enumerate}
+
+\textbf{Reference:} sombrero
+
+\textbf{GPT-4o response:} sombrero
+
+\textbf{Score:} accuracy \(=1\) (correct)
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Type P: Preference}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.54\textwidth}
+\includegraphics[width=\textwidth,height=0.64\textheight,keepaspectratio]{\benchasset/type_p_pick_a_pic_04.png}
+\end{column}
+\begin{column}{0.43\textwidth}
+\scriptsize
+\textbf{Benchmark:} \code{pick\_a\_pic}, example 4
+
+\vspace{0.12cm}
+\textbf{Prompt:} Which image is more aesthetically pleasing overall?
+
+\textbf{Reference:} Image A
+
+\textbf{GPT-4o response:} A
+
+\textbf{Score:} accuracy \(=1\) (correct)
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Type R: Rating}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.46\textwidth}
+\includegraphics[width=\textwidth,height=0.66\textheight,keepaspectratio]{\benchasset/type_r_tad66k_06.png}
+\end{column}
+\begin{column}{0.51\textwidth}
+\scriptsize
+\textbf{Benchmark:} \code{tad66k}, example 6
+
+\vspace{0.12cm}
+\textbf{Prompt:} Rate the overall aesthetic quality from 1 to 10.
+
+\textbf{Reference:} 7
+
+\textbf{GPT-4o response:} 7
+
+\textbf{Score:} absolute error \(=0\) (correct)
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{June 10 GPT-4o vs. Sonnet}
+\sectiontitle{Results 1}{June 10 GPT-4o vs. Claude Sonnet}
+
+\begin{frame}{Results 1: Setup}
+\begin{itemize}
+    \item Source snapshot: \code{results/api\_models\_pre\_2026\_06\_11\_es}.
+    \item Source commit: \code{96e05c3}, dated 2026-06-10 22:37:44 +0200.
+    \item Matched comparison: 30 shared benchmarks.
+    \item Type A/B focus: 12 shared benchmarks.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Results 1: Overall Summary}
+\begin{minipage}[t]{0.45\textwidth}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabularx}{\textwidth}{@{}lrr@{}}
+\toprule
+\textbf{Model} & \textbf{Mean} & \textbf{Median} \\
+\midrule
+\code{gpt-4o} & 0.428 & 0.327 \\
+\code{claude-sonnet-4-5} & 0.368 & 0.225 \\
+\bottomrule
+\end{tabularx}
+}
+
+\vspace{0.25cm}
+\begin{itemize}
+    \item GPT-4o wins 19 benchmarks, Sonnet wins 8, and 3 are tied.
+    \item Mean score delta is +0.061 for GPT-4o.
+\end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\textwidth,height=0.63\textheight,keepaspectratio]{\assetpath/results1_model_mean_scores_tall.png}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Results 1: Benchmark Heatmap}
+\small
+\textbf{Pearson correlation:} \(\mathbf{r=0.891}\)
+
+\vspace{0.06cm}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/results1_score_heatmap_raw_flipped.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Results 1: Benchmark Types}
+\typeplot{\oldpair}{family_grouped_bars.png}{0.66\textheight}
+\end{frame}
+
+\begin{frame}{Results 1: Type A/B Summary}
+\small
+\begin{tabularx}{\textwidth}{@{}llrrr@{}}
+\toprule
+\textbf{Type} & \textbf{Model} & \textbf{Benchmarks} & \textbf{Mean} & \textbf{Mean rank} \\
+\midrule
+Type A & \code{gpt-4o} & 6 & 0.800 & 1.00 \\
+Type A & \code{claude-sonnet-4-5} & 6 & 0.508 & 2.00 \\
+Type B & \code{gpt-4o} & 6 & 0.100 & 1.33 \\
+Type B & \code{claude-sonnet-4-5} & 6 & 0.135 & 1.50 \\
+\bottomrule
+\end{tabularx}
+
+\vspace{0.35cm}
+GPT-4o is clearly ahead on Type A. Type B is more mixed: Sonnet has the
+higher raw mean, while GPT-4o has the better average rank.
+\end{frame}
+
+\begin{frame}{Results 1: Type A/B Types}
+\typeplotab{\oldpairab}{family_grouped_bars.png}{0.68\textheight}
+\end{frame}
+
+\section{21-Benchmark Study Comparison}
+\sectiontitle{Results 2}{21-Benchmark Study Comparison}
+
+\begin{frame}{21-Benchmark Study: Error Counts}
+\small
+\textbf{420 samples per model}
+
+\vspace{0.22cm}
+\begin{tabularx}{\textwidth}{@{}lrr@{}}
+\toprule
+\textbf{Model} & \textbf{Errors} & \textbf{Error rate} \\
+\midrule
+\code{claude-sonnet-4-5} & 15 & 3.6\% \\
+\code{gemini-3.5-flash} & 236 & 56.2\% \\
+\code{gpt-4.1} & 195 & 46.4\% \\
+\code{gpt-4o} & 15 & 3.6\% \\
+\code{gpt-5} & 199 & 47.4\% \\
+\bottomrule
+\end{tabularx}
+\end{frame}
+
+\begin{frame}{21-Benchmark Study: Old Type A/B/C Results}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_type_abc_old.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{21-Benchmark Study: New Clean Type A/B/C Results}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_type_abc_new_clean.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{21-Benchmark Study: Pairwise Wins}
+\plot{\assetpath}{study21_final_pairwise_win_rate_heatmap.png}
+\end{frame}
+
+\begin{frame}{21-Benchmark Study: Clean Benchmark Heatmap}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_normalized_heatmap.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{21-Benchmark Study: Top Finishes}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_topk_counts.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{21-Benchmark Study: Mean Rank by Type}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_mean_rank_by_type.png}
+\end{center}
+\end{frame}
+
+\section{44-Benchmark Full Comparison}
+\sectiontitle{Results 3}{44-Benchmark Full Comparison}
+
+\begin{frame}{44-Benchmark Full: Setup}
+\begin{itemize}
+    \item Source: \code{results/api\_models\_final\_clean}.
+    \item Balanced run: 44 benchmarks for each of five API models.
+    \item Total: 220 benchmark files and 4,345 sample results.
+    \item No sample-level errors.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{44-Benchmark Full: Summary}
+\small
+\begin{tabularx}{\textwidth}{@{}lrrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Mean} & \textbf{Median} & \textbf{Normalized} & \textbf{Mean rank} \\
+\midrule
+\code{gemini-3.5-flash} & 0.585 & 0.725 & 0.790 & 1.82 \\
+\code{gpt-4.1} & 0.559 & 0.625 & 0.668 & 2.18 \\
+\code{gpt-5} & 0.519 & 0.625 & 0.567 & 2.66 \\
+\code{gpt-4o} & 0.509 & 0.550 & 0.573 & 2.70 \\
+\code{claude-sonnet-4-5} & 0.419 & 0.393 & 0.254 & 3.82 \\
+\bottomrule
+\end{tabularx}
+\end{frame}
+
+\begin{frame}{44-Benchmark Full: Mean Scores}
+\plot{\assetpath}{full44_model_mean_scores_fixed_order.png}
+\end{frame}
+
+\begin{frame}{44-Benchmark Full: Normalized Scores}
+\plot{\newfive}{model_normalized_scores.png}
+\end{frame}
+
+\begin{frame}{44-Benchmark Full: Benchmark Heatmap}
+\small
+\textbf{Mean pairwise Pearson correlation:} \(\mathbf{r=-0.014}\)
+
+\vspace{0.06cm}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.72\textheight,keepaspectratio]{\assetpath/results3_score_heatmap_normalized_flipped.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{44-Benchmark Full: Benchmark Type Leaders}
+\typeplot{\newfive}{family_grouped_bars.png}{0.66\textheight}
+\end{frame}
+
+\begin{frame}{44-Benchmark Full: Benchmark Types by Model}
+\typeplot{\newfive}{family_small_multiples.png}{0.66\textheight}
+\end{frame}
+
+\begin{frame}{44-Benchmark Full: Pairwise Wins}
+\plot{\newfive}{pairwise_win_rate_heatmap.png}
+\end{frame}
+
+\section{Fine-Tuning Case Study}
+\sectiontitle{Results 4}{Qwen2.5-VL-3B Fashion-MNIST Fine-Tuning}
+
+\begin{frame}{Results 4: Setup}
+\begin{itemize}
+    \item Task: Fashion-MNIST classification with Qwen2.5-VL-3B-Instruct.
+    \item Compared baseline, original LoRA, and balanced LoRA.
+    \item Evaluation set: 50 ordered test examples.
+    \item Fine-tuning used 4-bit QLoRA on attention projections.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Results 4: Accuracy Summary}
+\small
+\begin{tabularx}{\textwidth}{@{}lrrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Correct} & \textbf{Accuracy} & \textbf{Macro recall} & \textbf{Macro F1} \\
+\midrule
+Baseline & 19/50 & 0.380 & 0.368 & 0.342 \\
+Original LoRA & 19/50 & 0.380 & 0.349 & 0.296 \\
+Balanced LoRA & 24/50 & 0.480 & 0.455 & 0.455 \\
+\bottomrule
+\end{tabularx}
+
+\vspace{0.35cm}
+The balanced adapter gives a 10-point accuracy gain and a 16.1\% relative
+error reduction.
+\end{frame}
+
+\begin{frame}{Results 4: Accuracy}
+\plot{\finetune}{accuracy_comparison.png}
+\end{frame}
+
+\begin{frame}{Results 4: Confusion Matrices}
+\plot{\finetune}{confusion_matrices.png}
+\end{frame}
+
+\begin{frame}{Results 4: Per-Class Recall}
+\plot{\finetune}{per_class_recall.png}
+\end{frame}
+
+\begin{frame}{Results 4: Prediction Distribution}
+\plot{\finetune}{prediction_distribution.png}
+\end{frame}
+
+\begin{frame}{Closing}
+\begin{itemize}
+    \item The June 10 results provide a historical baseline, but with uneven coverage and known old Gemini failures.
+    \item The final clean API run is the stronger basis for current model comparisons.
+    \item Fine-tuning shows a modest but measurable improvement when the adapter data is balanced.
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,191 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+
+\definecolor{accent}{RGB}{37,96,151}
+\definecolor{soft}{RGB}{237,243,248}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{3em}
+\captionsetup{font=small,labelfont=bf}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\plotpath}{../../comparison/output/five_api_models_final_clean}
+\newcommand{\comparisonfigure}[3]{%
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\plotpath/#1}
+\caption{#2}
+\label{#3}
+\end{figure}
+}
+
+\title{\textbf{Five API Models: Final Clean Comparison}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Data Source}
+
+This report analyzes the final clean result set in
+\code{results/api\_models\_final\_clean}. It contains 44 benchmarks for each of
+five API models: \code{gpt-4o}, \code{gpt-4.1}, \code{gpt-5},
+\code{claude-sonnet-4-5}, and \code{gemini-3.5-flash}. The result set contains
+220 benchmark files and 4,345 sample results in total, with no sample-level
+errors.
+
+The figures and CSV tables were generated with:
+
+\begin{quote}
+\code{python comparison\textbackslash build\_report.py --results-dir results\textbackslash api\_models\_final\_clean --output-dir comparison\textbackslash output\textbackslash five\_api\_models\_final\_clean --bootstrap-samples 5000}
+\end{quote}
+
+\section{Overall Summary}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Overall model summary across 44 benchmarks.}
+\begin{tabularx}{\textwidth}{@{}lrrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Mean score} & \textbf{Median score} & \textbf{Mean normalized} & \textbf{Mean rank} \\
+\midrule
+\code{gemini-3.5-flash} & 0.585 & 0.725 & 0.790 & 1.82 \\
+\code{gpt-4.1} & 0.559 & 0.625 & 0.668 & 2.18 \\
+\code{gpt-5} & 0.519 & 0.625 & 0.567 & 2.66 \\
+\code{gpt-4o} & 0.509 & 0.550 & 0.573 & 2.70 \\
+\code{claude-sonnet-4-5} & 0.419 & 0.393 & 0.254 & 3.82 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Family leaders by mean score.}
+\begin{tabularx}{\textwidth}{@{}llr@{}}
+\toprule
+\textbf{Family} & \textbf{Leader} & \textbf{Mean score} \\
+\midrule
+Captioning & \code{gpt-4o} & 0.170 \\
+Question answering & \code{gemini-3.5-flash} & 0.933 \\
+Labeling & \code{gemini-3.5-flash} / \code{gpt-4.1} & 0.738 \\
+Detection & \code{gemini-3.5-flash} & 0.186 \\
+Image modification VQA & \code{gemini-3.5-flash} & 0.925 \\
+Image preference & \code{gpt-5} & 0.750 \\
+Aesthetic rating & \code{gemini-3.5-flash} & 0.817 \\
+Prompt reconstruction & \code{claude-sonnet-4-5} & 0.967 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Score Figures}
+
+\comparisonfigure{model_mean_scores.png}
+{Mean primary score across all matched benchmarks.}
+{fig:model-mean-scores}
+
+\comparisonfigure{model_normalized_scores.png}
+{Mean score after normalizing each benchmark between the best and worst model.}
+{fig:model-normalized-scores}
+
+\comparisonfigure{first_place_finishes.png}
+{Number of benchmarks where each model finished in first place.}
+{fig:first-place-finishes}
+
+\comparisonfigure{score_distribution_boxplot.png}
+{Distribution of primary benchmark scores for each model.}
+{fig:score-distribution}
+
+\comparisonfigure{bootstrap_confidence_intervals.png}
+{Bootstrap confidence intervals for each model's mean benchmark score.}
+{fig:bootstrap-ci}
+
+\section{Benchmark-Level Figures}
+
+\comparisonfigure{score_heatmap_raw.png}
+{Raw primary score heatmap by benchmark and model.}
+{fig:score-heatmap-raw}
+
+\comparisonfigure{score_heatmap_normalized.png}
+{Benchmark-normalized score heatmap by benchmark and model.}
+{fig:score-heatmap-normalized}
+
+\comparisonfigure{rank_heatmap.png}
+{Rank heatmap by benchmark, where 1 is best.}
+{fig:rank-heatmap}
+
+\comparisonfigure{benchmark_spread.png}
+{Difference between the best and worst model score for each benchmark.}
+{fig:benchmark-spread}
+
+\section{Family Figures}
+
+\comparisonfigure{family_grouped_bars.png}
+{Mean model score grouped by benchmark family.}
+{fig:family-grouped-bars}
+
+\comparisonfigure{family_radar.png}
+{Radar plot of model performance across benchmark families.}
+{fig:family-radar}
+
+\comparisonfigure{family_small_multiples.png}
+{Per-family benchmark score bars.}
+{fig:family-small-multiples}
+
+\section{Pairwise Figures}
+
+\comparisonfigure{pairwise_win_rate_heatmap.png}
+{Pairwise model win-rate heatmap across benchmarks.}
+{fig:pairwise-win-rate}
+
+\section{Telemetry Figures}
+
+\comparisonfigure{telemetry_mean_wall_clock_seconds.png}
+{Mean wall-clock time per benchmark by model.}
+{fig:telemetry-wall-clock}
+
+\comparisonfigure{telemetry_mean_generation_seconds.png}
+{Mean generation time per benchmark by model.}
+{fig:telemetry-generation}
+
+\comparisonfigure{telemetry_peak_cpu_ram_gib.png}
+{Peak CPU RAM by model.}
+{fig:telemetry-cpu-ram}
+
+\comparisonfigure{telemetry_wall_clock_by_benchmark.png}
+{Wall-clock time by benchmark and model.}
+{fig:telemetry-wall-clock-benchmark}
+
+\comparisonfigure{telemetry_peak_cpu_ram_by_benchmark.png}
+{Peak CPU RAM by benchmark and model.}
+{fig:telemetry-cpu-ram-benchmark}
+
+\comparisonfigure{telemetry_coverage.png}
+{Telemetry coverage by model.}
+{fig:telemetry-coverage}
+
+\section{Generated Artifacts}
+
+The complete generated analysis is saved in
+\code{comparison/output/five\_api\_models\_final\_clean}. It includes the plots
+shown above plus the following CSV tables:
+\code{benchmark\_scores.csv}, \code{model\_summary.csv},
+\code{family\_summary.csv}, \code{benchmark\_rankings.csv},
+\code{pairwise\_wins.csv}, \code{bootstrap\_summary.csv},
+\code{telemetry\_model\_summary.csv}, and \code{telemetry\_by\_benchmark.csv}.
+
+\end{document}
