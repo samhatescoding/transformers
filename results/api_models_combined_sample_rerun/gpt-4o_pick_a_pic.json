@@ -1,0 +1,879 @@
+{
+  "model": "gpt-4o",
+  "benchmark": "pick_a_pic",
+  "report": {
+    "benchmark": "pick_a_pic",
+    "dataset": "pick_a_pic",
+    "task_type": "image_preference",
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.1385815999819897,
+          "generation_time_seconds": 2.0929446000081953,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3110064128,
+          "cpu_utilization_percent": 0.7536585365853659,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": false,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.404119900020305,
+          "generation_time_seconds": 1.3898924000095576,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3126386688,
+          "cpu_utilization_percent": 8.85925925925926,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image B"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "I'm unable to choose between the images.",
+        "correct": false,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.0664432999910787,
+          "generation_time_seconds": 3.047315299976617,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3156795392,
+          "cpu_utilization_percent": 2.571186440677966,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "I'm unable to choose between the images.",
+        "answer": "Image A"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.209173200011719,
+          "generation_time_seconds": 1.157305400003679,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3100782592,
+          "cpu_utilization_percent": 126.0391304347826,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": false,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4969483999884687,
+          "generation_time_seconds": 1.4689297000004444,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3100426240,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image B"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": false,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.656768099986948,
+          "generation_time_seconds": 1.6248937000054866,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3104051200,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image B"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.921328500000527,
+          "generation_time_seconds": 2.9116534999920987,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3105402880,
+          "cpu_utilization_percent": 0.5160714285714285,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image B"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3446912000072189,
+          "generation_time_seconds": 1.2948480999912135,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3102744576,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.5182288000069093,
+          "generation_time_seconds": 2.506217599991942,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3104161792,
+          "cpu_utilization_percent": 0.6479166666666667,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": false,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9034673999994993,
+          "generation_time_seconds": 1.8519748999970034,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3104165888,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image A"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5183412999904249,
+          "generation_time_seconds": 1.5034630000009201,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3104526336,
+          "cpu_utilization_percent": 1.0655172413793104,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4240278000070248,
+          "generation_time_seconds": 1.3769712999928743,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3107213312,
+          "cpu_utilization_percent": 1.1481481481481481,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.135241199983284,
+          "generation_time_seconds": 2.103977999999188,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3104657408,
+          "cpu_utilization_percent": 45.30487804878049,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image B"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "I'm sorry, I can't choose between the images.",
+        "correct": false,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.7600760000059381,
+          "generation_time_seconds": 1.7455928999988828,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3104161792,
+          "cpu_utilization_percent": 0.8529411764705882,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "I'm sorry, I can't choose between the images.",
+        "answer": "Image B"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "I'm unable to choose between the images based on aesthetics.",
+        "correct": false,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.7313618999905884,
+          "generation_time_seconds": 1.7160768000176176,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3107774464,
+          "cpu_utilization_percent": 0.9424242424242425,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "I'm unable to choose between the images based on aesthetics.",
+        "answer": "Image B"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "I'm unable to choose between the images based on aesthetics.",
+        "correct": false,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5746125000005122,
+          "generation_time_seconds": 1.5271164999867324,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3108634624,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "I'm unable to choose between the images based on aesthetics.",
+        "answer": "Image A"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3462492999969982,
+          "generation_time_seconds": 1.2922751000151038,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3106119680,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.118643499998143,
+          "generation_time_seconds": 4.0999540000048,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3105538048,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.392678900010651,
+          "generation_time_seconds": 2.337100900011137,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3108917248,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "I'm unable to choose between Image A and Image B based on aesthetics.",
+        "correct": false,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.8342285999970045,
+          "generation_time_seconds": 1.7861015000089537,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 3109777408,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "I'm unable to choose between Image A and Image B based on aesthetics.",
+        "answer": "Image A"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 39.51065939999535,
+      "wall_clock_time_per_sample_seconds_mean": 1.9747605699987616,
+      "total_generation_time_seconds_mean": 1.9417302600006223,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.5061925137094107,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 3156795392,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 9.435056581187304,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null
+    }
+  }
+}

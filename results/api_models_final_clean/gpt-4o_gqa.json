@@ -1,0 +1,952 @@
+{
+  "model": "gpt-4o",
+  "benchmark": "gqa",
+  "report": {
+    "benchmark": "gqa",
+    "dataset": "gqa",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "parrot",
+          "eagle",
+          "pigeon",
+          "sparrow"
+        ],
+        "prediction": "A. parrot",
+        "correct": true,
+        "valid_labels": [
+          "parrot"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.07926580007188,
+          "generation_time_seconds": 2.0336144000757486,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 964345856,
+          "cpu_utilization_percent": 3.753658536585366,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "parrot"
+        ],
+        "choices": [
+          "parrot",
+          "eagle",
+          "pigeon",
+          "sparrow"
+        ],
+        "selected_choice": "parrot"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "dark green",
+          "white",
+          "gray",
+          "light blue"
+        ],
+        "prediction": "D. light blue",
+        "correct": true,
+        "valid_labels": [
+          "light blue"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5683874000096694,
+          "generation_time_seconds": 1.5578518999973312,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 970145792,
+          "cpu_utilization_percent": 6.97741935483871,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "light blue"
+        ],
+        "choices": [
+          "dark green",
+          "white",
+          "gray",
+          "light blue"
+        ],
+        "selected_choice": "light blue"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "indoors",
+          "outdoors"
+        ],
+        "prediction": "A. indoors",
+        "correct": true,
+        "valid_labels": [
+          "indoors"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.218519899994135,
+          "generation_time_seconds": 1.1777630998985842,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 973885440,
+          "cpu_utilization_percent": 2.591666666666667,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "indoors"
+        ],
+        "choices": [
+          "indoors",
+          "outdoors"
+        ],
+        "selected_choice": "indoors"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "no",
+          "yes"
+        ],
+        "prediction": "B. yes",
+        "correct": true,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.2728005000390112,
+          "generation_time_seconds": 1.2475993999978527,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 978804736,
+          "cpu_utilization_percent": 4.9639999999999995,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ],
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "selected_choice": "yes"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "left",
+          "right"
+        ],
+        "prediction": "B. right",
+        "correct": false,
+        "valid_labels": [
+          "left"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3665957999182865,
+          "generation_time_seconds": 1.326679200050421,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 982667264,
+          "cpu_utilization_percent": 3.425925925925926,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "left"
+        ],
+        "choices": [
+          "left",
+          "right"
+        ],
+        "selected_choice": "right"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "forest",
+          "street",
+          "field",
+          "shore"
+        ],
+        "prediction": "D. shore",
+        "correct": true,
+        "valid_labels": [
+          "shore"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5668246999848634,
+          "generation_time_seconds": 1.5160553000168875,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 987406336,
+          "cpu_utilization_percent": 2.9935483870967743,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "shore"
+        ],
+        "choices": [
+          "forest",
+          "street",
+          "field",
+          "shore"
+        ],
+        "selected_choice": "shore"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "tree",
+          "fountain",
+          "statue",
+          "building"
+        ],
+        "prediction": "C. statue",
+        "correct": true,
+        "valid_labels": [
+          "statue"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4383236999856308,
+          "generation_time_seconds": 1.3932029999559745,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 957394944,
+          "cpu_utilization_percent": 2.217857142857143,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "statue"
+        ],
+        "choices": [
+          "tree",
+          "fountain",
+          "statue",
+          "building"
+        ],
+        "selected_choice": "statue"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "no",
+          "yes"
+        ],
+        "prediction": "I'm unable to determine the genders of the people in the image.",
+        "correct": false,
+        "valid_labels": [
+          "no"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6222053999081254,
+          "generation_time_seconds": 1.5867097000591457,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 958713856,
+          "cpu_utilization_percent": 0.96875,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "no"
+        ],
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "selected_choice": "I'm unable to determine the genders of the people in the image."
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "man",
+          "woman",
+          "boy",
+          "girl"
+        ],
+        "prediction": "I'm unable to determine who is wearing pants based on the image provided.",
+        "correct": false,
+        "valid_labels": [
+          "man"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0743344000075012,
+          "generation_time_seconds": 2.05310759996064,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 958865408,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "man"
+        ],
+        "choices": [
+          "man",
+          "woman",
+          "boy",
+          "girl"
+        ],
+        "selected_choice": "I'm unable to determine who is wearing pants based on the image provided."
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "no",
+          "yes"
+        ],
+        "prediction": "B. yes",
+        "correct": true,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.7197847999632359,
+          "generation_time_seconds": 1.7052575000561774,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 959184896,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ],
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "selected_choice": "yes"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "yes",
+          "no"
+        ],
+        "prediction": "B. no",
+        "correct": true,
+        "valid_labels": [
+          "no"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6059709000401199,
+          "generation_time_seconds": 1.589220599969849,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 959283200,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "no"
+        ],
+        "choices": [
+          "yes",
+          "no"
+        ],
+        "selected_choice": "no"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "left",
+          "right"
+        ],
+        "prediction": "B. right",
+        "correct": true,
+        "valid_labels": [
+          "right"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5684857000596821,
+          "generation_time_seconds": 1.5336069000186399,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 959389696,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "right"
+        ],
+        "choices": [
+          "left",
+          "right"
+        ],
+        "selected_choice": "right"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "black",
+          "white",
+          "red",
+          "blue"
+        ],
+        "prediction": "A. black",
+        "correct": true,
+        "valid_labels": [
+          "black"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4147830998990685,
+          "generation_time_seconds": 1.4121202999958768,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 960192512,
+          "cpu_utilization_percent": 1.1107142857142858,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "black"
+        ],
+        "choices": [
+          "black",
+          "white",
+          "red",
+          "blue"
+        ],
+        "selected_choice": "black"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "no",
+          "yes"
+        ],
+        "prediction": "B. yes",
+        "correct": true,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.518590599996969,
+          "generation_time_seconds": 1.474541199975647,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 960380928,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ],
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "selected_choice": "yes"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "yes",
+          "no"
+        ],
+        "prediction": "A. yes",
+        "correct": true,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.2636972001055256,
+          "generation_time_seconds": 1.2212624000385404,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 960380928,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ],
+        "choices": [
+          "yes",
+          "no"
+        ],
+        "selected_choice": "yes"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "bag",
+          "skis",
+          "poles",
+          "snowboard"
+        ],
+        "prediction": "B. skis",
+        "correct": true,
+        "valid_labels": [
+          "skis"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9276161000598222,
+          "generation_time_seconds": 1.8838299999479204,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 960409600,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "skis"
+        ],
+        "choices": [
+          "bag",
+          "skis",
+          "poles",
+          "snowboard"
+        ],
+        "selected_choice": "skis"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "yes",
+          "no"
+        ],
+        "prediction": "B. no",
+        "correct": true,
+        "valid_labels": [
+          "no"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.3317648000083864,
+          "generation_time_seconds": 2.309322400018573,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 960417792,
+          "cpu_utilization_percent": 1.9934782608695654,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "no"
+        ],
+        "choices": [
+          "yes",
+          "no"
+        ],
+        "selected_choice": "no"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "no",
+          "yes"
+        ],
+        "prediction": "B. yes",
+        "correct": true,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.529716300079599,
+          "generation_time_seconds": 2.5050116000929847,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 962326528,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ],
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "selected_choice": "yes"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "broccoli",
+          "cucumber",
+          "lettuce",
+          "carrot"
+        ],
+        "prediction": "B. cucumber",
+        "correct": false,
+        "valid_labels": [
+          "lettuce"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.217392100021243,
+          "generation_time_seconds": 1.1905046999454498,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 962392064,
+          "cpu_utilization_percent": 1.2874999999999999,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "lettuce"
+        ],
+        "choices": [
+          "broccoli",
+          "cucumber",
+          "lettuce",
+          "carrot"
+        ],
+        "selected_choice": "cucumber"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "tall",
+          "short"
+        ],
+        "prediction": "B. short",
+        "correct": true,
+        "valid_labels": [
+          "short"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9270827999571338,
+          "generation_time_seconds": 1.9053487000055611,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 960708608,
+          "cpu_utilization_percent": 0.8184210526315789,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "short"
+        ],
+        "choices": [
+          "tall",
+          "short"
+        ],
+        "selected_choice": "short"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 33.23498180008028,
+      "wall_clock_time_per_sample_seconds_mean": 1.6616071000054944,
+      "total_generation_time_seconds_mean": 1.6311304950038903,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.6017755664891531,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 987406336,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.6551469806593009,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 0.9364597999956459
+    }
+  }
+}

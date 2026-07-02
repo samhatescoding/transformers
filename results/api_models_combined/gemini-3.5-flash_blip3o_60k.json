@@ -1,0 +1,952 @@
+{
+  "model": "gemini-3.5-flash",
+  "benchmark": "blip3o_60k",
+  "report": {
+    "benchmark": "blip3o_60k",
+    "dataset": "blip3o_60k",
+    "task_type": "prompt_reconstruction",
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "Six diverse women pose amidst a neon-lit futuristic backdrop, wielding weapons and interacting among digital and graphic design elements.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 10.606113200017717,
+          "generation_time_seconds": 10.573319499992067,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 780595200,
+          "cpu_utilization_percent": 1.0149038461538462,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Six diverse women pose amidst a neon-lit futuristic backdrop, wielding weapons and interacting among digital and graphic design elements.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold."
+        ],
+        "selected_choice": "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+        "answer": "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items."
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "Inside a tavern setting, a young child with short brown hair and a muscular orange creature converse at a table near shelves filled with bottles.",
+          "Inside a tavern setting, a young child with short brown hair and a muscular green creature converse at a table near shelves filled with bottles.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular orange creature converse at a table near shelves filled with bottles."
+        ],
+        "prediction": "B",
+        "correct": false,
+        "valid_labels": [
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 21.92469310000888,
+          "generation_time_seconds": 21.880722500005504,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 787165184,
+          "cpu_utilization_percent": 0.4908450704225352,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Inside a tavern setting, a young child with short brown hair and a muscular orange creature converse at a table near shelves filled with bottles.",
+          "Inside a tavern setting, a young child with short brown hair and a muscular green creature converse at a table near shelves filled with bottles.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular orange creature converse at a table near shelves filled with bottles."
+        ],
+        "selected_choice": "Inside a tavern setting, a young child with short brown hair and a muscular green creature converse at a table near shelves filled with bottles.",
+        "answer": "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "An idyllic landscape boasts contrasting fields of red poppies and green lupines, separated by a golden path; below, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; below, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "An idyllic landscape boasts contrasting fields of red poppies and green lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 19.56244009998045,
+          "generation_time_seconds": 19.52837179999915,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 790482944,
+          "cpu_utilization_percent": 0.5986702127659574,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "An idyllic landscape boasts contrasting fields of red poppies and green lupines, separated by a golden path; below, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; below, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "An idyllic landscape boasts contrasting fields of red poppies and green lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold."
+        ],
+        "selected_choice": "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+        "answer": "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold."
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "Six diverse women pose amidst a neon-lit futuristic backdrop, wielding weapons and interacting among digital and graphic design elements.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "Six diverse women pose amidst a neon-lit futuristic backdrop, wielding weapons and interacting among digital and graphic design elements."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 34.79920330000459,
+          "generation_time_seconds": 34.78994809999131,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 792424448,
+          "cpu_utilization_percent": 0.26576576576576577,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "Six diverse women pose amidst a neon-lit futuristic backdrop, wielding weapons and interacting among digital and graphic design elements.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "selected_choice": "Six diverse women pose amidst a neon-lit futuristic backdrop, wielding weapons and interacting among digital and graphic design elements.",
+        "answer": "Six diverse women pose amidst a neon-lit futuristic backdrop, wielding weapons and interacting among digital and graphic design elements."
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "The image showcases a whimsical scene featuring a small elephant adorned with various accessories. The elephant wears a black top helmet and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism.",
+          "The image showcases a whimsical scene featuring a small elephant adorned with various accessories. The elephant wears a black top hat and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism.",
+          "The image showcases a whimsical scene featuring a large elephant adorned with various accessories. The elephant wears a black top hat and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism.",
+          "The image showcases a whimsical scene featuring a large elephant adorned with various accessories. The elephant wears a black top helmet and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism."
+        ],
+        "prediction": "B",
+        "correct": false,
+        "valid_labels": [
+          "The image showcases a whimsical scene featuring a large elephant adorned with various accessories. The elephant wears a black top hat and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 23.35009589997935,
+          "generation_time_seconds": 23.309822700015502,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 796078080,
+          "cpu_utilization_percent": 0.4665924276169265,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The image showcases a whimsical scene featuring a small elephant adorned with various accessories. The elephant wears a black top helmet and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism.",
+          "The image showcases a whimsical scene featuring a small elephant adorned with various accessories. The elephant wears a black top hat and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism.",
+          "The image showcases a whimsical scene featuring a large elephant adorned with various accessories. The elephant wears a black top hat and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism.",
+          "The image showcases a whimsical scene featuring a large elephant adorned with various accessories. The elephant wears a black top helmet and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism."
+        ],
+        "selected_choice": "The image showcases a whimsical scene featuring a small elephant adorned with various accessories. The elephant wears a black top hat and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism.",
+        "answer": "The image showcases a whimsical scene featuring a large elephant adorned with various accessories. The elephant wears a black top hat and large, round blue-tinted sunglasses. It is surrounded by a myriad of colorful balloons, flowers, and butterflies. The elephant seems to be floating amidst the clouds, with a speech bubble emerging from it that reads, 'I TOTALLY AGREE! AND AMPLIFY EVERYTHING!'. The overall ambiance of the image is playful and dreamy, with a touch of surrealism."
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive left with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or sad expression.",
+          "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive left with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or surprised expression.",
+          "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive background with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or surprised expression.",
+          "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive background with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or sad expression."
+        ],
+        "prediction": "D",
+        "correct": false,
+        "valid_labels": [
+          "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive background with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or surprised expression."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 19.455212500004563,
+          "generation_time_seconds": 19.416994300001534,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 797552640,
+          "cpu_utilization_percent": 0.6186351706036745,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive left with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or sad expression.",
+          "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive left with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or surprised expression.",
+          "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive background with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or surprised expression.",
+          "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive background with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or sad expression."
+        ],
+        "selected_choice": "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive background with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or sad expression.",
+        "answer": "This image showcases a 3D animated character resembling a frog dressed in a Santa Claus outfit, holding a banana labeled 'BANANA PEPE FROG'. The character is set against a festive background with a decorated Christmas tree, hanging ornaments, and a starry night sky. The frog appears to be in a contemplative or surprised expression."
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "The image depicts a fantasy setting in a bustling town or city during what appears to be dusk or dawn. The sky is filled with a warm, golden hue, casting a soft light over the town. In the background, there are two prominent female figures. The one on the left is dressed in ornate, bright armor with intricate gold detailing, and she has pointed ears, suggesting she might be an elf or similar fantasy creature. The one on the right is dressed in a more traditional, green gown with a corset and is also an elf, as indicated by her pointed ears. She holds a leash attached to a golden dog. In the background, various people can be seen going about their daily activities, and there are multiple buildings with distinct architectural designs. The overall atmosphere of the image is one of fantasy, adventure, and intrigue.",
+          "The image depicts a fantasy setting in a bustling town or city during what appears to be dusk or dawn. The sky is filled with a warm, golden hue, casting a soft light over the town. In the foreground, there are two prominent female figures. The one on the left is dressed in ornate, bright armor with intricate gold detailing, and she has pointed ears, suggesting she might be an elf or similar fantasy creature. The one on the right is dressed in a more traditional, green gown with a corset and is also an elf, as indicated by her pointed ears. She holds a leash attached to a golden dog. In the background, various people can be seen going about their daily activities, and there are multiple buildings with distinct architectural designs. The overall atmosphere of the image is one of fantasy, adventure, and intrigue.",
+          "The image depicts a fantasy setting in a bustling town or city during what appears to be dusk or dawn. The sky is filled with a warm, golden hue, casting a soft light over the town. In the foreground, there are two prominent female figures. The one on the left is dressed in ornate, dark armor with intricate gold detailing, and she has pointed ears, suggesting she might be an elf or similar fantasy creature. The one on the right is dressed in a more traditional, green gown with a corset and is also an elf, as indicated by her pointed ears. She holds a leash attached to a golden dog. In the background, various people can be seen going about their daily activities, and there are multiple buildings with distinct architectural designs. The overall atmosphere of the image is one of fantasy, adventure, and intrigue.",
+          "The image depicts a fantasy setting in a bustling town or city during what appears to be dusk or dawn. The sky is filled with a warm, golden hue, casting a soft light over the town. In the background, there are two prominent female figures. The one on the left is dressed in ornate, dark armor with intricate gold detailing, and she has pointed ears, suggesting she might be an elf or similar fantasy creature. The one on the right is dressed in a more traditional, green gown with a corset and is also an elf, as indicated by her pointed ears. She holds a leash attached to a golden dog. In the background, various people can be seen going about their daily activities, and there are multiple buildings with distinct architectural designs. The overall atmosphere of the image is one of fantasy, adventure, and intrigue."
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "The image depicts a fantasy setting in a bustling town or city during what appears to be dusk or dawn. The sky is filled with a warm, golden hue, casting a soft light over the town. In the foreground, there are two prominent female figures. The one on the left is dressed in ornate, dark armor with intricate gold detailing, and she has pointed ears, suggesting she might be an elf or similar fantasy creature. The one on the right is dressed in a more traditional, green gown with a corset and is also an elf, as indicated by her pointed ears. She holds a leash attached to a golden dog. In the background, various people can be seen going about their daily activities, and there are multiple buildings with distinct architectural designs. The overall atmosphere of the image is one of fantasy, adventure, and intrigue."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+          "wall_clock_time_seconds": 1.5345503000135068,
+          "generation_time_seconds": 1.4942086999944877,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 800489472,
+          "cpu_utilization_percent": 7.819999999999999,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the center, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are wide, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky.",
+          "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the foreground, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are wide, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky.",
+          "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the foreground, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are tall, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky.",
+          "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the center, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are tall, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the foreground, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are tall, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 15.707585099997232,
+          "generation_time_seconds": 15.674690899992129,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 807346176,
+          "cpu_utilization_percent": 0.6891089108910892,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the center, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are wide, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky.",
+          "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the foreground, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are wide, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky.",
+          "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the foreground, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are tall, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky.",
+          "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the center, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are tall, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky."
+        ],
+        "selected_choice": "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the foreground, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are tall, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky.",
+        "answer": "The image showcases a breathtaking sunset in a vast savannah landscape. The sky is painted with hues of orange, gold, and deep blue, with dramatic clouds illuminated by the setting sun. In the foreground, there's a green off-road vehicle with a roof rack, parked on a dirt path. The vehicle has a license plate reading 'GY 710'. Surrounding the vehicle are tall, golden grasses swaying with the wind. In the distance, there are iconic African acacia trees silhouetted against the fiery sky."
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a small, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with metal buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset.",
+          "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a large, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with metal buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset.",
+          "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a large, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with wooden buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset.",
+          "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a small, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with wooden buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a large, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with wooden buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 17.231010899995454,
+          "generation_time_seconds": 17.227026700013084,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 814809088,
+          "cpu_utilization_percent": 0.5731927710843374,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a small, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with metal buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset.",
+          "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a large, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with metal buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset.",
+          "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a large, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with wooden buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset.",
+          "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a small, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with wooden buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset."
+        ],
+        "selected_choice": "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a large, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with wooden buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset.",
+        "answer": "The image showcases a fantastical scene set in what appears to be a town during sunset. At the forefront, a large, majestic bird, possibly a giant eagle or vulture, stands on a rooftop. Perched on the bird's back is a female character with long white hair, dressed in a green outfit and a cowboy hat. She holds a pistol in her hand. The bird has human-like features, with a stern expression and wearing a vest and trousers. The background reveals a town with wooden buildings, and the sky is painted with hues of orange and red, suggesting either a sunrise or sunset."
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "An 1800s-era gentleman, wearing formal wear, is seated on a wooden chair with his portrait carved into its backrest. Vines bind him to the chair in a windswept desert landscape under a canopy of stars.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "An 1800s-era gentleman, wearing formal wear, is seated on a wooden chair with his portrait carved into its backrest. Vines bind him to the chair in a windswept desert landscape under a canopy of stars."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.239977399993222,
+          "generation_time_seconds": 12.220141500001773,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 817262592,
+          "cpu_utilization_percent": 0.7680851063829788,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "An 1800s-era gentleman, wearing formal wear, is seated on a wooden chair with his portrait carved into its backrest. Vines bind him to the chair in a windswept desert landscape under a canopy of stars.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "selected_choice": "An 1800s-era gentleman, wearing formal wear, is seated on a wooden chair with his portrait carved into its backrest. Vines bind him to the chair in a windswept desert landscape under a canopy of stars.",
+        "answer": "An 1800s-era gentleman, wearing formal wear, is seated on a wooden chair with his portrait carved into its backrest. Vines bind him to the chair in a windswept desert landscape under a canopy of stars."
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "The image showcases a surreal and vibrant scene. At the center, there's a transparent, small sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The foreground of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality.",
+          "The image showcases a surreal and vibrant scene. At the center, there's a transparent, small sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The background of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality.",
+          "The image showcases a surreal and vibrant scene. At the center, there's a transparent, large sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The background of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality.",
+          "The image showcases a surreal and vibrant scene. At the center, there's a transparent, large sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The foreground of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "The image showcases a surreal and vibrant scene. At the center, there's a transparent, large sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The background of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 14.107337699999334,
+          "generation_time_seconds": 14.074049599992577,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 819486720,
+          "cpu_utilization_percent": 0.6613970588235294,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The image showcases a surreal and vibrant scene. At the center, there's a transparent, small sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The foreground of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality.",
+          "The image showcases a surreal and vibrant scene. At the center, there's a transparent, small sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The background of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality.",
+          "The image showcases a surreal and vibrant scene. At the center, there's a transparent, large sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The background of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality.",
+          "The image showcases a surreal and vibrant scene. At the center, there's a transparent, large sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The foreground of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality."
+        ],
+        "selected_choice": "The image showcases a surreal and vibrant scene. At the center, there's a transparent, large sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The background of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality.",
+        "answer": "The image showcases a surreal and vibrant scene. At the center, there's a transparent, large sphere that encapsulates a vividly colored, abstract landscape. This landscape consists of towering, wavy structures resembling mountains or waves, made up of various hues like pink, blue, yellow, and green. Floating within this sphere are smaller, spherical objects of varying sizes, some of which are tinged with the same colors as the structures within the sphere. The background of the image displays a gradient of warm colors, transitioning from a soft pink at the top to a golden hue at the bottom. The entire scene is set against a backdrop of mountains and clouds, giving it an ethereal and dreamlike quality."
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "An illustrated series portrays a male character's transformation from childhood to adulthood, wearing a military outfit and evolving physically and emotionally throughout his life.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "An illustrated series portrays a male character's transformation from childhood to adulthood, wearing a military outfit and evolving physically and emotionally throughout his life."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 9.836451199982548,
+          "generation_time_seconds": 9.813643300003605,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 823341056,
+          "cpu_utilization_percent": 1.0854166666666665,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "An illustrated series portrays a male character's transformation from childhood to adulthood, wearing a military outfit and evolving physically and emotionally throughout his life.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "selected_choice": "An illustrated series portrays a male character's transformation from childhood to adulthood, wearing a military outfit and evolving physically and emotionally throughout his life.",
+        "answer": "An illustrated series portrays a male character's transformation from childhood to adulthood, wearing a military outfit and evolving physically and emotionally throughout his life."
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a tea pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The foreground shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables.",
+          "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a coffee pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The foreground shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables.",
+          "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a coffee pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The background shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables.",
+          "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a tea pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The background shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a coffee pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The background shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 11.572101300000213,
+          "generation_time_seconds": 11.527588199998718,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 825790464,
+          "cpu_utilization_percent": 0.8442477876106195,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a tea pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The foreground shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables.",
+          "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a coffee pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The foreground shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables.",
+          "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a coffee pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The background shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables.",
+          "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a tea pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The background shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables."
+        ],
+        "selected_choice": "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a coffee pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The background shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables.",
+        "answer": "The image depicts a scene inside a diner or cafe. On the left side, there's a man wearing a police uniform, complete with a badge and a police cap. He is seated at a table with various items on it, including a coffee pot, a coffee cup, and a plate with what appears to be fries. On the right side of the image, there's a creature that looks like a fantasy or science fiction character. This creature has large ears, pointed ears, and a wrinkled, grayish skin. It is drinking from the coffee cup and has a plate of fries in front of it. The background shows the interior of the diner with a neon sign that reads 'Coffee' and various patrons seated at other tables."
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The left is pastel, which accentuates the luminosity and the reflective properties of the pendant.",
+          "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The background is pastel, which accentuates the luminosity and the reflective properties of the pendant.",
+          "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The background is dark, which accentuates the luminosity and the reflective properties of the pendant.",
+          "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The left is dark, which accentuates the luminosity and the reflective properties of the pendant."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The background is dark, which accentuates the luminosity and the reflective properties of the pendant."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 22.327837999997428,
+          "generation_time_seconds": 22.27822959999321,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 827064320,
+          "cpu_utilization_percent": 7.248054919908467,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The left is pastel, which accentuates the luminosity and the reflective properties of the pendant.",
+          "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The background is pastel, which accentuates the luminosity and the reflective properties of the pendant.",
+          "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The background is dark, which accentuates the luminosity and the reflective properties of the pendant.",
+          "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The left is dark, which accentuates the luminosity and the reflective properties of the pendant."
+        ],
+        "selected_choice": "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The background is dark, which accentuates the luminosity and the reflective properties of the pendant.",
+        "answer": "The image showcases a heart-shaped pendant, seemingly made of a translucent material that has a textured, crystalline appearance. The pendant is suspended from a chain, and the chain itself appears to be made of a metallic material with a shiny finish. The pendant is illuminated, possibly by an external light source, which casts a glow on its surface, highlighting its intricate details. The background is dark, which accentuates the luminosity and the reflective properties of the pendant."
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and rocks, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that remove to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail.",
+          "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and rocks, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that add to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail.",
+          "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and flowers, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that add to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail.",
+          "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and flowers, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that remove to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and flowers, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that add to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 20.89678479998838,
+          "generation_time_seconds": 20.881545900017954,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 830083072,
+          "cpu_utilization_percent": 7.780684596577018,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and rocks, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that remove to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail.",
+          "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and rocks, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that add to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail.",
+          "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and flowers, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that add to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail.",
+          "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and flowers, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that remove to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail."
+        ],
+        "selected_choice": "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and flowers, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that add to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail.",
+        "answer": "The image showcases a meticulously crafted brooch or pendant. It features a circular frame with intricate designs. At the center, there are two white swans gracefully swimming on a blue background, possibly representing water. The swans are surrounded by a dense foliage of leaves and flowers, which are beautifully detailed and appear to be made of a translucent material. The brooch is adorned with multiple shiny gemstones, possibly diamonds, that add to its opulence. The entire piece is set against a dark background, which accentuates its luminosity and detail."
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "An otherworldly female figure with flowing, glowing hair stands against a darkened yet enchanting backdrop.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "An otherworldly female figure with flowing, glowing hair stands against a darkened yet enchanting backdrop."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 15.66728160000639,
+          "generation_time_seconds": 15.625526700023329,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 832438272,
+          "cpu_utilization_percent": 0.682084690553746,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "An otherworldly female figure with flowing, glowing hair stands against a darkened yet enchanting backdrop.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "selected_choice": "An otherworldly female figure with flowing, glowing hair stands against a darkened yet enchanting backdrop.",
+        "answer": "An otherworldly female figure with flowing, glowing hair stands against a darkened yet enchanting backdrop."
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "The screen capture shows a Wikipedia page dedicated to the 'Pope' category. It features a large illustration of a pope figure against the Vatican backdrop. It includes sections for 'Home', 'Search', 'History', 'Today', 'Articles', 'Books', 'Films', 'Lists', 'News', and 'Featured'; displays images of José Manuel Estrada y Valdés and Juan Carlos I; and shows a portion of the 'Pope' article viewed on a smartphone.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "The screen capture shows a Wikipedia page dedicated to the 'Pope' category. It features a large illustration of a pope figure against the Vatican backdrop. It includes sections for 'Home', 'Search', 'History', 'Today', 'Articles', 'Books', 'Films', 'Lists', 'News', and 'Featured'; displays images of José Manuel Estrada y Valdés and Juan Carlos I; and shows a portion of the 'Pope' article viewed on a smartphone."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 26.902365599991754,
+          "generation_time_seconds": 26.87222990000737,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 835739648,
+          "cpu_utilization_percent": 0.4954372623574145,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "An idyllic landscape boasts contrasting fields of red poppies and purple lupines, separated by a golden path; above, an expansive sky hosts celestial bodies and swirling clouds in shades of blue, pink, and gold.",
+          "Another world figure with a skeletal appearance, red horns, and glowing green eyes stands in an apothecary environment, offering goods while quipping about purchasing items.",
+          "The screen capture shows a Wikipedia page dedicated to the 'Pope' category. It features a large illustration of a pope figure against the Vatican backdrop. It includes sections for 'Home', 'Search', 'History', 'Today', 'Articles', 'Books', 'Films', 'Lists', 'News', and 'Featured'; displays images of José Manuel Estrada y Valdés and Juan Carlos I; and shows a portion of the 'Pope' article viewed on a smartphone.",
+          "Inside a tavern setting, a young woman with short brown hair and a muscular green creature converse at a table near shelves filled with bottles."
+        ],
+        "selected_choice": "The screen capture shows a Wikipedia page dedicated to the 'Pope' category. It features a large illustration of a pope figure against the Vatican backdrop. It includes sections for 'Home', 'Search', 'History', 'Today', 'Articles', 'Books', 'Films', 'Lists', 'News', and 'Featured'; displays images of José Manuel Estrada y Valdés and Juan Carlos I; and shows a portion of the 'Pope' article viewed on a smartphone.",
+        "answer": "The screen capture shows a Wikipedia page dedicated to the 'Pope' category. It features a large illustration of a pope figure against the Vatican backdrop. It includes sections for 'Home', 'Search', 'History', 'Today', 'Articles', 'Books', 'Films', 'Lists', 'News', and 'Featured'; displays images of José Manuel Estrada y Valdés and Juan Carlos I; and shows a portion of the 'Pope' article viewed on a smartphone."
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a child with elf-like ears, wearing a traditional yellow and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique.",
+          "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a woman with elf-like ears, wearing a traditional yellow and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique.",
+          "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a woman with elf-like ears, wearing a traditional blue and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique.",
+          "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a child with elf-like ears, wearing a traditional blue and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a woman with elf-like ears, wearing a traditional blue and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 21.888348599983146,
+          "generation_time_seconds": 21.8859123000002,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 838873088,
+          "cpu_utilization_percent": 0.536768149882904,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a child with elf-like ears, wearing a traditional yellow and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique.",
+          "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a woman with elf-like ears, wearing a traditional yellow and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique.",
+          "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a woman with elf-like ears, wearing a traditional blue and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique.",
+          "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a child with elf-like ears, wearing a traditional blue and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique."
+        ],
+        "selected_choice": "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a woman with elf-like ears, wearing a traditional blue and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique.",
+        "answer": "The image showcases a fantastical scene set against a backdrop of a starry night sky. In the foreground, there's a lizard-like creature dressed in a formal red suit, holding a glass of wine. Beside him is a woman with elf-like ears, wearing a traditional blue and red kimono adorned with floral patterns. They are standing on a balcony with intricate wooden railings. Behind them, there's a multi-tiered pagoda-style building illuminated with warm lights, and other architectural structures can be seen in the distance. The entire scene exudes an aura of elegance and mystique."
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "The image showcases a woman standing on a road at daytime. She is dressed in a white, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped.",
+          "The image showcases a woman standing on a road at nighttime. She is dressed in a white, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped.",
+          "The image showcases a woman standing on a road at nighttime. She is dressed in a black, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped.",
+          "The image showcases a woman standing on a road at daytime. She is dressed in a black, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "The image showcases a woman standing on a road at nighttime. She is dressed in a black, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 24.525930400006473,
+          "generation_time_seconds": 24.509830599999987,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 840036352,
+          "cpu_utilization_percent": 0.4441176470588235,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The image showcases a woman standing on a road at daytime. She is dressed in a white, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped.",
+          "The image showcases a woman standing on a road at nighttime. She is dressed in a white, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped.",
+          "The image showcases a woman standing on a road at nighttime. She is dressed in a black, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped.",
+          "The image showcases a woman standing on a road at daytime. She is dressed in a black, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped."
+        ],
+        "selected_choice": "The image showcases a woman standing on a road at nighttime. She is dressed in a black, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped.",
+        "answer": "The image showcases a woman standing on a road at nighttime. She is dressed in a black, form-fitting dress with lace detailing on the top. The woman has short, dark hair and is wearing black gloves. She appears to be looking over her shoulder, possibly at something or someone. Behind her is a large truck with its headlights on, and the road seems to be wet, possibly after a rain. The sky is dark, and there are raindrops visible, suggesting that it might still be raining or has just stopped."
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a glass house nestled among lush pine trees. The calm waters of the lake reflect the beach's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image.",
+          "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a wooden house nestled among lush pine trees. The calm waters of the lake reflect the beach's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image.",
+          "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a wooden house nestled among lush pine trees. The calm waters of the lake reflect the city's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image.",
+          "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a glass house nestled among lush pine trees. The calm waters of the lake reflect the city's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image."
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a wooden house nestled among lush pine trees. The calm waters of the lake reflect the city's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 23.7744173000101,
+          "generation_time_seconds": 23.752262499998324,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 843071488,
+          "cpu_utilization_percent": 0.4607456140350878,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a glass house nestled among lush pine trees. The calm waters of the lake reflect the beach's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image.",
+          "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a wooden house nestled among lush pine trees. The calm waters of the lake reflect the beach's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image.",
+          "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a wooden house nestled among lush pine trees. The calm waters of the lake reflect the city's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image.",
+          "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a glass house nestled among lush pine trees. The calm waters of the lake reflect the city's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image."
+        ],
+        "selected_choice": "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a wooden house nestled among lush pine trees. The calm waters of the lake reflect the city's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image.",
+        "answer": "The image showcases a vibrant cityscape juxtaposed against a serene natural backdrop. On the left, a dense urban area with skyscrapers, neon lights, and a bustling crowd is depicted. The buildings are adorned with colorful digital patterns, and the skyline is illuminated with a myriad of hues. On the right, a tranquil lakeside setting is portrayed with a wooden house nestled among lush pine trees. The calm waters of the lake reflect the city's lights, and a small pier with boats is visible. The contrast between the chaotic city and the peaceful nature creates a harmonious balance in the image."
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 367.9243319000234,
+      "wall_clock_time_per_sample_seconds_mean": 18.39548691499804,
+      "total_generation_time_seconds_mean": 18.36680326500209,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.054359003376364436,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 0.95,
+      "number_of_benchmark_samples_completed": 19,
+      "success_count": 19,
+      "failure_count": 1,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 843071488,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.6772376837580694,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null
+    }
+  }
+}

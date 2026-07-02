@@ -54,6 +54,17 @@
 \item \textbf{What is a Transformer?}
 \item
 \item \textbf{What is a Dataset?}
+\item 
+\item \textbf{Dataset Selection}
+\item
+\item \textbf{Model Selection}
+\item
+\iten \textbf{Benchmark Types}
+\item Type A: Visual Questions and Answers
+\item Tybe B: Bounding Box Detection...
+\item \textbf{Results: GPT-4o vs Claude Sonnet 3.5}
+\item
+\item
 \end{enumerate}
 
 \section{Title + thesis sentence}
@@ -102,6 +113,16 @@ only receives text tokens, a VLM first converts the image into visual tokens
 or features and combines them with the text prompt. The Transformer then uses
 attention to mix information across both modalities before generating a text
 output.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]
+  {vlm_vs_llm_transformer_block.pdf}
+\caption{A vision-language model extends the language-model pipeline by adding
+a visual token stream. Image features and text tokens are fused in the
+Transformer before the model generates a text output.}
+\label{fig:vlm-vs-llm}
+\end{figure}
 
 \begin{figure}[H]
 \centering
@@ -166,12 +187,28 @@ taxonomy. In ImageNet, the relevant taxonomy is the 1,000-class ImageNet-1K
 label set. This is a Type L benchmark because the output is not a free-form
 caption or a box, but a single category name.
 
+\subsection*{R: Rating -- TAD66K}
+
+Rating benchmarks ask the model to assign a numerical judgement to an image.
+In TAD66K, the model rates the overall aesthetic quality of the image on a
+1--10 scale. This is a Type R benchmark because the expected output is exactly
+one integer, and the evaluator can measure either exact agreement or absolute
+error from the reference rating.
+
+\subsection*{P: Preference -- Pick-a-Pic}
+
+Preference benchmarks ask the model to compare two images and choose the
+preferred one. In Pick-a-Pic, the two images are shown as Image A and Image B,
+and the model must decide which is more aesthetically pleasing overall. This is
+a Type P benchmark because the expected output is a binary preference, returned
+as either \code{A} or \code{B}.
+
 \input{images_benchmark_types/five_examples_fragment.tex}
 
 \begin{table}[H]
 \centering
 \small
-\caption{The six benchmark types covered in this note.}
+\caption{The eight benchmark types covered in this note.}
 \begin{tabularx}{\textwidth}{@{}clXX@{}}
 \toprule
 \textbf{Type} & \textbf{Name} & \textbf{Example} & \textbf{Expected output} \\
@@ -182,6 +219,8 @@ B & Bounding Box Detection & MS COCO & One normalized box per target object. \\
 E & Editing Reconstruction & HQ-Edit & The edit instruction that explains a before--after pair. \\
 G & Generating Reconstruction & DiffusionDB & The generation prompt that best explains the image. \\
 L & Labeling & ImageNet & One class label from a fixed label set. \\
+R & Rating & TAD66K & One integer aesthetic score from 1 to 10. \\
+P & Preference & Pick-a-Pic & One binary image preference, \code{A} or \code{B}. \\
 \bottomrule
 \end{tabularx}
 \end{table}

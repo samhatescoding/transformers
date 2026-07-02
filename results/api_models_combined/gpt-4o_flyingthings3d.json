@@ -1,0 +1,960 @@
+{
+  "model": "gpt-4o",
+  "benchmark": "flyingthings3d",
+  "report": {
+    "benchmark": "flyingthings3d",
+    "dataset": "flyingthings3d",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "blue",
+          "green",
+          "red",
+          "yellow"
+        ],
+        "prediction": "C. red",
+        "correct": true,
+        "valid_labels": [
+          "red"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.877773700049147,
+          "generation_time_seconds": 3.8681683999020606,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 661585920,
+          "cpu_utilization_percent": 9.227631578947367,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "blue",
+          "green",
+          "red",
+          "yellow"
+        ],
+        "selected_choice": "red",
+        "answer": "red"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "7",
+          "8",
+          "5",
+          "9"
+        ],
+        "prediction": "A. 7",
+        "correct": true,
+        "valid_labels": [
+          "7"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.937131299986504,
+          "generation_time_seconds": 2.9254683998879045,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 669556736,
+          "cpu_utilization_percent": 30.594736842105263,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "7",
+          "8",
+          "5",
+          "9"
+        ],
+        "selected_choice": "7",
+        "answer": "7"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "the front",
+          "the back",
+          "the side",
+          "the top"
+        ],
+        "prediction": "C. the side",
+        "correct": false,
+        "valid_labels": [
+          "the back"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.588207299937494,
+          "generation_time_seconds": 2.574000999913551,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 669749248,
+          "cpu_utilization_percent": 0.6039215686274509,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "the front",
+          "the back",
+          "the side",
+          "the top"
+        ],
+        "selected_choice": "the side",
+        "answer": "the back"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "3 planes and no car",
+          "3 planes and 1 car",
+          "2 planes and no car",
+          "2 planes and 1 car"
+        ],
+        "prediction": "B. 3 planes and 1 car",
+        "correct": true,
+        "valid_labels": [
+          "3 planes and 1 car"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.434436699957587,
+          "generation_time_seconds": 2.3821599999209866,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 670175232,
+          "cpu_utilization_percent": 0.6437499999999999,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "3 planes and no car",
+          "3 planes and 1 car",
+          "2 planes and no car",
+          "2 planes and 1 car"
+        ],
+        "selected_choice": "3 planes and 1 car",
+        "answer": "3 planes and 1 car"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "B. 2",
+        "correct": false,
+        "valid_labels": [
+          "3"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.7995509000029415,
+          "generation_time_seconds": 3.7811488000443205,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 670380032,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "selected_choice": "2",
+        "answer": "3"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "C. 3",
+        "correct": true,
+        "valid_labels": [
+          "3"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.289126000017859,
+          "generation_time_seconds": 2.2839138000272214,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 670773248,
+          "cpu_utilization_percent": 0.6888888888888889,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "selected_choice": "3",
+        "answer": "3"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "yellow",
+          "red",
+          "blue",
+          "green"
+        ],
+        "prediction": "B. red",
+        "correct": false,
+        "valid_labels": [
+          "yellow"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.258669799892232,
+          "generation_time_seconds": 2.23352440004237,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 670838784,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "yellow",
+          "red",
+          "blue",
+          "green"
+        ],
+        "selected_choice": "red",
+        "answer": "yellow"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "prediction": "B. white",
+        "correct": true,
+        "valid_labels": [
+          "white"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.2814818000188097,
+          "generation_time_seconds": 2.2711835999507457,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 671014912,
+          "cpu_utilization_percent": 0.6844444444444444,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "selected_choice": "white",
+        "answer": "white"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "prediction": "C. brown",
+        "correct": false,
+        "valid_labels": [
+          "white"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0361244999803603,
+          "generation_time_seconds": 2.017537400010042,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 671092736,
+          "cpu_utilization_percent": 0.78,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "selected_choice": "brown",
+        "answer": "white"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "prediction": "B. white",
+        "correct": false,
+        "valid_labels": [
+          "brown"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.4435240998864174,
+          "generation_time_seconds": 2.3899618999566883,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 671559680,
+          "cpu_utilization_percent": 49.979166666666664,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "black",
+          "white",
+          "brown",
+          "gray"
+        ],
+        "selected_choice": "white",
+        "answer": "brown"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "a lightbulb",
+          "a tree",
+          "a building",
+          "a car"
+        ],
+        "prediction": "A. a lightbulb",
+        "correct": true,
+        "valid_labels": [
+          "a lightbulb"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.106354699935764,
+          "generation_time_seconds": 2.0638023000210524,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 671735808,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "a lightbulb",
+          "a tree",
+          "a building",
+          "a car"
+        ],
+        "selected_choice": "a lightbulb",
+        "answer": "a lightbulb"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "B. 2",
+        "correct": false,
+        "valid_labels": [
+          "3"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.28726149990689,
+          "generation_time_seconds": 2.2366483999649063,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 671748096,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "selected_choice": "2",
+        "answer": "3"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "a car",
+          "a tree",
+          "a building",
+          "a plane"
+        ],
+        "prediction": "D. a plane",
+        "correct": true,
+        "valid_labels": [
+          "a plane"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0779722000006586,
+          "generation_time_seconds": 2.0230611000442877,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 672423936,
+          "cpu_utilization_percent": 0.7585365853658537,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "a car",
+          "a tree",
+          "a building",
+          "a plane"
+        ],
+        "selected_choice": "a plane",
+        "answer": "a plane"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "gray",
+          "orange",
+          "purple",
+          "brown"
+        ],
+        "prediction": "C. purple",
+        "correct": true,
+        "valid_labels": [
+          "purple"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.006089900038205,
+          "generation_time_seconds": 2.9713076000334695,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 672620544,
+          "cpu_utilization_percent": 0.5203389830508475,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "gray",
+          "orange",
+          "purple",
+          "brown"
+        ],
+        "selected_choice": "purple",
+        "answer": "purple"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "upper right",
+          "upper left",
+          "lower right",
+          "lower left"
+        ],
+        "prediction": "A. upper right",
+        "correct": false,
+        "valid_labels": [
+          "upper left"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.7403979999944568,
+          "generation_time_seconds": 2.733186800032854,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 672722944,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "upper right",
+          "upper left",
+          "lower right",
+          "lower left"
+        ],
+        "selected_choice": "upper right",
+        "answer": "upper left"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "above",
+          "below",
+          "right",
+          "left"
+        ],
+        "prediction": "C. right",
+        "correct": false,
+        "valid_labels": [
+          "left"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0311318000312895,
+          "generation_time_seconds": 1.994378500035964,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 673095680,
+          "cpu_utilization_percent": 1.5074999999999998,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "above",
+          "below",
+          "right",
+          "left"
+        ],
+        "selected_choice": "right",
+        "answer": "left"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "prediction": "B. 2",
+        "correct": false,
+        "valid_labels": [
+          "1"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.1296144999796525,
+          "generation_time_seconds": 2.0931110000237823,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 673607680,
+          "cpu_utilization_percent": 0.7357142857142857,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "selected_choice": "2",
+        "answer": "1"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "upper right",
+          "upper left",
+          "lower right",
+          "lower left"
+        ],
+        "prediction": "A. upper right",
+        "correct": true,
+        "valid_labels": [
+          "upper right"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 18.686592599959113,
+          "generation_time_seconds": 18.654051100020297,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 673611776,
+          "cpu_utilization_percent": 0.08292682926829269,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "upper right",
+          "upper left",
+          "lower right",
+          "lower left"
+        ],
+        "selected_choice": "upper right",
+        "answer": "upper right"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "the front",
+          "the side",
+          "the top",
+          "the bottom"
+        ],
+        "prediction": "B. the side",
+        "correct": false,
+        "valid_labels": [
+          "the bottom"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.1359123999718577,
+          "generation_time_seconds": 2.0874395000282675,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 673562624,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "the front",
+          "the side",
+          "the top",
+          "the bottom"
+        ],
+        "selected_choice": "the side",
+        "answer": "the bottom"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "upper (horizontal) center",
+          "right (vertical) center",
+          "left (vertical) center",
+          "bottom (horizontal) center"
+        ],
+        "prediction": "B. right (vertical) center",
+        "correct": false,
+        "valid_labels": [
+          "bottom (horizontal) center"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0275470999768004,
+          "generation_time_seconds": 2.009201099979691,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 673783808,
+          "cpu_utilization_percent": 0.7675,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "upper (horizontal) center",
+          "right (vertical) center",
+          "left (vertical) center",
+          "bottom (horizontal) center"
+        ],
+        "selected_choice": "right (vertical) center",
+        "answer": "bottom (horizontal) center"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 66.18526679999195,
+      "wall_clock_time_per_sample_seconds_mean": 3.308745039976202,
+      "total_generation_time_seconds_mean": 3.279662754992023,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.30218205602220877,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 673783808,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 4.878752833653968,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 0.9364597999956459
+    }
+  }
+}

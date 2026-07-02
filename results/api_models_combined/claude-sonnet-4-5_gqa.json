@@ -1,0 +1,952 @@
+{
+  "model": "claude-sonnet-4-5",
+  "benchmark": "gqa",
+  "report": {
+    "benchmark": "gqa",
+    "dataset": "gqa",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "parrot",
+          "eagle",
+          "pigeon",
+          "sparrow"
+        ],
+        "prediction": "A. parrot\n\nThis is a white cockatoo, which is a",
+        "correct": true,
+        "valid_labels": [
+          "parrot"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.639763699960895,
+          "generation_time_seconds": 2.600112900021486,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 938029056,
+          "cpu_utilization_percent": 0.5884615384615385,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "parrot"
+        ],
+        "choices": [
+          "parrot",
+          "eagle",
+          "pigeon",
+          "sparrow"
+        ],
+        "selected_choice": "parrot"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "dark green",
+          "white",
+          "gray",
+          "light blue"
+        ],
+        "prediction": "D. light blue",
+        "correct": true,
+        "valid_labels": [
+          "light blue"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.49887440004386,
+          "generation_time_seconds": 3.454753699945286,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 939708416,
+          "cpu_utilization_percent": 0.4478260869565217,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "light blue"
+        ],
+        "choices": [
+          "dark green",
+          "white",
+          "gray",
+          "light blue"
+        ],
+        "selected_choice": "light blue"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "indoors",
+          "outdoors"
+        ],
+        "prediction": "A. indoors",
+        "correct": true,
+        "valid_labels": [
+          "indoors"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.6345625000540167,
+          "generation_time_seconds": 2.6073003000346944,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 940707840,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "indoors"
+        ],
+        "choices": [
+          "indoors",
+          "outdoors"
+        ],
+        "selected_choice": "indoors"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "no",
+          "yes"
+        ],
+        "prediction": "Looking at the image, I can see a fork on the left side of the",
+        "correct": false,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.2049642999190837,
+          "generation_time_seconds": 2.194859099923633,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 941670400,
+          "cpu_utilization_percent": 1.4325581395348836,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ],
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "selected_choice": "Looking at the image, I can see a fork on the left side of the"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "left",
+          "right"
+        ],
+        "prediction": "Looking at the image, I can see a knife on the right side of the",
+        "correct": false,
+        "valid_labels": [
+          "left"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.8067510999972,
+          "generation_time_seconds": 2.769578899955377,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 943632384,
+          "cpu_utilization_percent": 0.5636363636363636,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "left"
+        ],
+        "choices": [
+          "left",
+          "right"
+        ],
+        "selected_choice": "Looking at the image, I can see a knife on the right side of the"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "forest",
+          "street",
+          "field",
+          "shore"
+        ],
+        "prediction": "D. shore\n\nThe image shows elephants at the edge of a body of",
+        "correct": true,
+        "valid_labels": [
+          "shore"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.388876699958928,
+          "generation_time_seconds": 3.3784259000094607,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 944435200,
+          "cpu_utilization_percent": 28.817910447761193,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "shore"
+        ],
+        "choices": [
+          "forest",
+          "street",
+          "field",
+          "shore"
+        ],
+        "selected_choice": "shore"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "tree",
+          "fountain",
+          "statue",
+          "building"
+        ],
+        "prediction": "C. statue",
+        "correct": true,
+        "valid_labels": [
+          "statue"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.4827133000362664,
+          "generation_time_seconds": 2.4531550999963656,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 947359744,
+          "cpu_utilization_percent": 2.524489795918367,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "statue"
+        ],
+        "choices": [
+          "tree",
+          "fountain",
+          "statue",
+          "building"
+        ],
+        "selected_choice": "statue"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "no",
+          "yes"
+        ],
+        "prediction": "A\n\nThe image shows multiple people in what appears to be a shopping area or",
+        "correct": true,
+        "valid_labels": [
+          "no"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.4326587999239564,
+          "generation_time_seconds": 2.420247200061567,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 949895168,
+          "cpu_utilization_percent": 1.9354166666666668,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "no"
+        ],
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "selected_choice": "no"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "man",
+          "woman",
+          "boy",
+          "girl"
+        ],
+        "prediction": "A. man",
+        "correct": true,
+        "valid_labels": [
+          "man"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.8930457999231294,
+          "generation_time_seconds": 2.8756825999589637,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 952508416,
+          "cpu_utilization_percent": 1.0807017543859647,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "man"
+        ],
+        "choices": [
+          "man",
+          "woman",
+          "boy",
+          "girl"
+        ],
+        "selected_choice": "man"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "no",
+          "yes"
+        ],
+        "prediction": "Looking at the image, I can see plates on the table with food on them",
+        "correct": false,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.7800051000667736,
+          "generation_time_seconds": 2.771868799929507,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 956178432,
+          "cpu_utilization_percent": 2.2581818181818183,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ],
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "selected_choice": "Looking at the image, I can see plates on the table with food on them"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "yes",
+          "no"
+        ],
+        "prediction": "B. no\n\nThe image shows a person riding a bicycle in a bike lane",
+        "correct": true,
+        "valid_labels": [
+          "no"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.7929719000821933,
+          "generation_time_seconds": 2.7535340000176802,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 959586304,
+          "cpu_utilization_percent": 1.6800000000000002,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "no"
+        ],
+        "choices": [
+          "yes",
+          "no"
+        ],
+        "selected_choice": "no"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "left",
+          "right"
+        ],
+        "prediction": "Looking at the image, I can see a curtain or fabric with a pattern",
+        "correct": false,
+        "valid_labels": [
+          "right"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.339962500031106,
+          "generation_time_seconds": 2.3027799000265077,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 986357760,
+          "cpu_utilization_percent": 1.9869565217391305,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "right"
+        ],
+        "choices": [
+          "left",
+          "right"
+        ],
+        "selected_choice": "Looking at the image, I can see a curtain or fabric with a pattern"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "black",
+          "white",
+          "red",
+          "blue"
+        ],
+        "prediction": "Looking at the image, I can see two players - one wearing a white jersey",
+        "correct": false,
+        "valid_labels": [
+          "black"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.9380939999828115,
+          "generation_time_seconds": 2.900622499990277,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 931864576,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "black"
+        ],
+        "choices": [
+          "black",
+          "white",
+          "red",
+          "blue"
+        ],
+        "selected_choice": "Looking at the image, I can see two players - one wearing a white jersey"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "no",
+          "yes"
+        ],
+        "prediction": "B. yes",
+        "correct": true,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.123041999991983,
+          "generation_time_seconds": 2.121120899915695,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 932646912,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ],
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "selected_choice": "yes"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "yes",
+          "no"
+        ],
+        "prediction": "Looking at the image, I can see a group of people in wetsuits",
+        "correct": false,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.7382448998978361,
+          "generation_time_seconds": 1.7150783000979573,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 932720640,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ],
+        "choices": [
+          "yes",
+          "no"
+        ],
+        "selected_choice": "Looking at the image, I can see a group of people in wetsuits"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "bag",
+          "skis",
+          "poles",
+          "snowboard"
+        ],
+        "prediction": "Looking at the image, I can see a person on a snowy slope with",
+        "correct": false,
+        "valid_labels": [
+          "skis"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.196237799944356,
+          "generation_time_seconds": 3.1778793999692425,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 932757504,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "skis"
+        ],
+        "choices": [
+          "bag",
+          "skis",
+          "poles",
+          "snowboard"
+        ],
+        "selected_choice": "Looking at the image, I can see a person on a snowy slope with"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "yes",
+          "no"
+        ],
+        "prediction": "Looking at this image, I can see a decorative train cake made of yellow",
+        "correct": false,
+        "valid_labels": [
+          "no"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.64075869997032,
+          "generation_time_seconds": 2.621364599908702,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 933556224,
+          "cpu_utilization_percent": 0.6039215686274509,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "no"
+        ],
+        "choices": [
+          "yes",
+          "no"
+        ],
+        "selected_choice": "Looking at this image, I can see a decorative train cake made of yellow"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "no",
+          "yes"
+        ],
+        "prediction": "Looking at the image, I can see books on shelves in the background behind",
+        "correct": false,
+        "valid_labels": [
+          "yes"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.8333857000106946,
+          "generation_time_seconds": 2.81856779998634,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 935567360,
+          "cpu_utilization_percent": 0.5571428571428572,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "yes"
+        ],
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "selected_choice": "Looking at the image, I can see books on shelves in the background behind"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "broccoli",
+          "cucumber",
+          "lettuce",
+          "carrot"
+        ],
+        "prediction": "Looking at the image, I can see a sandwich with meat and vegetables, along",
+        "correct": false,
+        "valid_labels": [
+          "lettuce"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.920464999973774,
+          "generation_time_seconds": 1.897741699940525,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 935579648,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "lettuce"
+        ],
+        "choices": [
+          "broccoli",
+          "cucumber",
+          "lettuce",
+          "carrot"
+        ],
+        "selected_choice": "Looking at the image, I can see a sandwich with meat and vegetables, along"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "tall",
+          "short"
+        ],
+        "prediction": "B. short\n\nThe grass in the image is clearly short, appearing to be",
+        "correct": true,
+        "valid_labels": [
+          "short"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.3784187000710517,
+          "generation_time_seconds": 2.3641741999890655,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 933888000,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "short"
+        ],
+        "choices": [
+          "tall",
+          "short"
+        ],
+        "selected_choice": "short"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 52.66779870004393,
+      "wall_clock_time_per_sample_seconds_mean": 2.6331898449920117,
+      "total_generation_time_seconds_mean": 2.6099423899839165,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.37973867322431526,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 986357760,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 2.223860177950638,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.8560027999337763
+    }
+  }
+}

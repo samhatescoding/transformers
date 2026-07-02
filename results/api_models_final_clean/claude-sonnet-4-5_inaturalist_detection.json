@@ -1,0 +1,1744 @@
+{
+  "model": "claude-sonnet-4-5",
+  "benchmark": "inaturalist_detection",
+  "report": {
+    "benchmark": "inaturalist_detection",
+    "dataset": "inaturalist_detection",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "Philodendron hederaceum"
+        ],
+        "prediction": "[0.32, 0.52, 0.28, 0.32]\n[0.62, 0.0,",
+        "correct": false,
+        "valid_labels": [
+          "Philodendron hederaceum"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Philodendron hederaceum",
+            "xyxy": [
+              67.0,
+              253.39999389648438,
+              255.00000000000003,
+              488.3999938964844
+            ]
+          },
+          {
+            "label": "Philodendron hederaceum",
+            "xyxy": [
+              141.5,
+              1.399993896484375,
+              287.5,
+              300.3999938964844
+            ]
+          },
+          {
+            "label": "Philodendron hederaceum",
+            "xyxy": [
+              275.5,
+              76.39999389648438,
+              344.5,
+              233.3999938964844
+            ]
+          },
+          {
+            "label": "Philodendron hederaceum",
+            "xyxy": [
+              273.5,
+              259.3999938964844,
+              340.5,
+              412.3999938964844
+            ]
+          },
+          {
+            "label": "Philodendron hederaceum",
+            "xyxy": [
+              249.5,
+              383.3999938964844,
+              323.5,
+              495.3999938964844
+            ]
+          },
+          {
+            "label": "Philodendron hederaceum",
+            "xyxy": [
+              331.5,
+              309.3999938964844,
+              374.5,
+              412.3999938964844
+            ]
+          },
+          {
+            "label": "Philodendron hederaceum",
+            "xyxy": [
+              349.5,
+              187.39999389648438,
+              372.5,
+              262.3999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Philodendron hederaceum",
+            "xyxy": [
+              120.0,
+              260.0,
+              225.00000000000003,
+              420.00000000000006
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.4308825000189245,
+          "generation_time_seconds": 3.38348690001294,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1869275136,
+          "cpu_utilization_percent": 0.4582089552238806,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 7,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 7,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "Platalea ajaja"
+        ],
+        "prediction": "[0.14, 0.18, 0.18, 0.24]",
+        "correct": false,
+        "valid_labels": [
+          "Platalea ajaja"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Platalea ajaja",
+            "xyxy": [
+              149.5,
+              111.89999389648438,
+              296.5,
+              198.89999389648438
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Platalea ajaja",
+            "xyxy": [
+              70.0,
+              67.5,
+              160.0,
+              157.5
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.6808898999588564,
+          "generation_time_seconds": 2.670094200060703,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870082048,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "Polemonium californicum"
+        ],
+        "prediction": "[0.0, 0.0, 1.0, 1.0]",
+        "correct": true,
+        "valid_labels": [
+          "Polemonium californicum"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Polemonium californicum",
+            "xyxy": [
+              91.5,
+              28.89999389648438,
+              401.50000000000006,
+              332.8999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Polemonium californicum",
+            "xyxy": [
+              0.0,
+              0.0,
+              500.0,
+              333.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.901355699985288,
+          "generation_time_seconds": 2.8719294000184163,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870110720,
+          "cpu_utilization_percent": 0.5385964912280702,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.5660060060060061,
+        "mean_iou_all_predictions": 0.5660060060060061,
+        "matched_predictions": [
+          {
+            "label": "Polemonium californicum",
+            "xyxy": [
+              0.0,
+              0.0,
+              500.0,
+              333.0
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "Polemonium californicum",
+            "xyxy": [
+              91.5,
+              28.89999389648438,
+              401.50000000000006,
+              332.8999938964844
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "Hydrochoerus hydrochaeris"
+        ],
+        "prediction": "[0.279, 0.173, 0.312, 0.227]",
+        "correct": false,
+        "valid_labels": [
+          "Hydrochoerus hydrochaeris"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Hydrochoerus hydrochaeris",
+            "xyxy": [
+              181.5,
+              181.89999389648438,
+              415.5,
+              320.8999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Hydrochoerus hydrochaeris",
+            "xyxy": [
+              139.5,
+              64.875,
+              295.5,
+              150.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.426841599983163,
+          "generation_time_seconds": 2.382446200004779,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870127104,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "Mycteria americana"
+        ],
+        "prediction": "[0.195, 0.155, 0.135, 0.165]",
+        "correct": false,
+        "valid_labels": [
+          "Mycteria americana"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Mycteria americana",
+            "xyxy": [
+              253.5,
+              163.89999389648438,
+              311.5,
+              250.89999389648435
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Mycteria americana",
+            "xyxy": [
+              97.5,
+              58.125,
+              165.0,
+              120.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.329189900076017,
+          "generation_time_seconds": 2.323990499950014,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870139392,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "Pontederia azurea"
+        ],
+        "prediction": "[0.0, 0.0, 1.0, 1.0]",
+        "correct": false,
+        "valid_labels": [
+          "Pontederia azurea"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Pontederia azurea",
+            "xyxy": [
+              98.5,
+              84.89999389648438,
+              220.5,
+              234.89999389648438
+            ]
+          },
+          {
+            "label": "Pontederia azurea",
+            "xyxy": [
+              6.0,
+              231.89999389648438,
+              143.0,
+              370.8999938964844
+            ]
+          },
+          {
+            "label": "Pontederia azurea",
+            "xyxy": [
+              210.0,
+              155.89999389648438,
+              388.0,
+              347.8999938964844
+            ]
+          },
+          {
+            "label": "Pontederia azurea",
+            "xyxy": [
+              327.0,
+              155.89999389648438,
+              457.0,
+              301.8999938964844
+            ]
+          },
+          {
+            "label": "Pontederia azurea",
+            "xyxy": [
+              274.0,
+              76.89999389648438,
+              428.0,
+              181.89999389648438
+            ]
+          },
+          {
+            "label": "Pontederia azurea",
+            "xyxy": [
+              149.0,
+              23.899993896484375,
+              279.0,
+              192.89999389648438
+            ]
+          },
+          {
+            "label": "Pontederia azurea",
+            "xyxy": [
+              0.0,
+              0.899993896484375,
+              143.0,
+              184.89999389648438
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Pontederia azurea",
+            "xyxy": [
+              0.0,
+              0.0,
+              500.0,
+              375.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.6529470999957994,
+          "generation_time_seconds": 3.6419642000691965,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870159872,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 7,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 7,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "Leptodactylus macrosternum"
+        ],
+        "prediction": "[0.12, 0.08, 0.76, 0.84]",
+        "correct": true,
+        "valid_labels": [
+          "Leptodactylus macrosternum"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Leptodactylus macrosternum",
+            "xyxy": [
+              0.5,
+              75.89999389648438,
+              498.5,
+              314.8999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Leptodactylus macrosternum",
+            "xyxy": [
+              60.0,
+              30.0,
+              440.0,
+              345.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.282360599958338,
+          "generation_time_seconds": 2.2653843000298366,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870180352,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.6140552528025314,
+        "mean_iou_all_predictions": 0.6140552528025314,
+        "matched_predictions": [
+          {
+            "label": "Leptodactylus macrosternum",
+            "xyxy": [
+              60.0,
+              30.0,
+              440.0,
+              345.0
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "Leptodactylus macrosternum",
+            "xyxy": [
+              0.5,
+              75.89999389648438,
+              498.5,
+              314.8999938964844
+            ]
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "Attalea phalerata"
+        ],
+        "prediction": "[0.0, 0.0, 1.0, 1.0]",
+        "correct": false,
+        "valid_labels": [
+          "Attalea phalerata"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Attalea phalerata",
+            "xyxy": [
+              255.5,
+              112.39999389648438,
+              332.5,
+              200.39999389648438
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Attalea phalerata",
+            "xyxy": [
+              0.0,
+              0.0,
+              500.0,
+              375.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.381715700030327,
+          "generation_time_seconds": 2.3666422999231145,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870204928,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "Jabiru mycteria"
+        ],
+        "prediction": "[0.0, 0.15, 0.55, 0.85]",
+        "correct": true,
+        "valid_labels": [
+          "Jabiru mycteria"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Jabiru mycteria",
+            "xyxy": [
+              0.5,
+              118.39999389648438,
+              268.5,
+              344.3999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Jabiru mycteria",
+            "xyxy": [
+              0.0,
+              56.25,
+              275.0,
+              375.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.483535400009714,
+          "generation_time_seconds": 2.433838800061494,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870221312,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.6909718360071301,
+        "mean_iou_all_predictions": 0.6909718360071301,
+        "matched_predictions": [
+          {
+            "label": "Jabiru mycteria",
+            "xyxy": [
+              0.0,
+              56.25,
+              275.0,
+              375.0
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "Jabiru mycteria",
+            "xyxy": [
+              0.5,
+              118.39999389648438,
+              268.5,
+              344.3999938964844
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "Dilocarcinus pagei"
+        ],
+        "prediction": "[0.12, 0.02, 0.76, 0.68]",
+        "correct": true,
+        "valid_labels": [
+          "Dilocarcinus pagei"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Dilocarcinus pagei",
+            "xyxy": [
+              12.5,
+              21.399993896484375,
+              483.5,
+              321.3999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Dilocarcinus pagei",
+            "xyxy": [
+              60.0,
+              7.5,
+              440.0,
+              262.5
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.2090537999756634,
+          "generation_time_seconds": 3.164887599996291,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870233600,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.6250290197226686,
+        "mean_iou_all_predictions": 0.6250290197226686,
+        "matched_predictions": [
+          {
+            "label": "Dilocarcinus pagei",
+            "xyxy": [
+              60.0,
+              7.5,
+              440.0,
+              262.5
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "Dilocarcinus pagei",
+            "xyxy": [
+              12.5,
+              21.399993896484375,
+              483.5,
+              321.3999938964844
+            ]
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "Pteroglossus castanotis"
+        ],
+        "prediction": "[0.123, 0.133, 0.253, 0.267]",
+        "correct": false,
+        "valid_labels": [
+          "Pteroglossus castanotis"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Pteroglossus castanotis",
+            "xyxy": [
+              80.26315789473684,
+              156.44736039011102,
+              282.89473684210526,
+              365.65788670590047
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Pteroglossus castanotis",
+            "xyxy": [
+              46.125,
+              66.5,
+              141.0,
+              200.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.4341769000748172,
+          "generation_time_seconds": 2.4248491999460384,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870249984,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "Myiopsitta monachus"
+        ],
+        "prediction": "[0.293, 0.678, 0.047, 0.047]\n[0.361, 0.678,",
+        "correct": false,
+        "valid_labels": [
+          "Myiopsitta monachus"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Myiopsitta monachus",
+            "xyxy": [
+              179.0,
+              357.8999938964844,
+              201.99999999999997,
+              378.8999938964844
+            ]
+          },
+          {
+            "label": "Myiopsitta monachus",
+            "xyxy": [
+              154.5,
+              382.8999938964844,
+              175.5,
+              408.8999938964844
+            ]
+          },
+          {
+            "label": "Myiopsitta monachus",
+            "xyxy": [
+              342.5,
+              159.89999389648438,
+              366.5,
+              188.89999389648438
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Myiopsitta monachus",
+            "xyxy": [
+              109.875,
+              339.0,
+              127.49999999999999,
+              362.50000000000006
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.429069200064987,
+          "generation_time_seconds": 2.397226999979466,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870262272,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 3,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 3,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "Paroaria capitata"
+        ],
+        "prediction": "[0.0, 0.15, 0.16, 0.15]\n[0.36, 0.15,",
+        "correct": false,
+        "valid_labels": [
+          "Paroaria capitata"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Paroaria capitata",
+            "xyxy": [
+              315.5,
+              196.39999389648438,
+              460.5,
+              267.3999938964844
+            ]
+          },
+          {
+            "label": "Paroaria capitata",
+            "xyxy": [
+              35.0,
+              189.3999938964844,
+              136.0,
+              254.3999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Paroaria capitata",
+            "xyxy": [
+              0.0,
+              56.25,
+              80.0,
+              112.5
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.5883098000194877,
+          "generation_time_seconds": 2.554247699910775,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870290944,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 2,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 2,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "Danaus plexippus"
+        ],
+        "prediction": "[0.344, 0.196, 0.088, 0.104]",
+        "correct": false,
+        "valid_labels": [
+          "Danaus plexippus"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Danaus plexippus",
+            "xyxy": [
+              232.5,
+              239.3999938964844,
+              257.5,
+              292.3999938964844
+            ]
+          },
+          {
+            "label": "Danaus plexippus",
+            "xyxy": [
+              155.0,
+              142.39999389648438,
+              182.0,
+              180.39999389648438
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Danaus plexippus",
+            "xyxy": [
+              172.0,
+              69.384,
+              215.99999999999997,
+              106.2
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.3271249999525025,
+          "generation_time_seconds": 5.313282600021921,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870311424,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 2,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 2,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "Sapajus libidinosus"
+        ],
+        "prediction": "[0.42, 0.15, 0.35, 0.35]",
+        "correct": false,
+        "valid_labels": [
+          "Sapajus libidinosus"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Sapajus libidinosus",
+            "xyxy": [
+              197.5,
+              129.89999389648438,
+              448.5,
+              357.8999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Sapajus libidinosus",
+            "xyxy": [
+              210.0,
+              56.25,
+              385.0,
+              187.5
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.1760561000555754,
+          "generation_time_seconds": 2.16878980002366,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1870336000,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "Phragmatopoma californica"
+        ],
+        "prediction": "[0.0, 0.0, 1.0, 1.0]",
+        "correct": false,
+        "valid_labels": [
+          "Phragmatopoma californica"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              323.5,
+              8.399993896484375,
+              427.5,
+              91.39999389648438
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              379.0,
+              76.39999389648438,
+              492.0,
+              220.3999938964844
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              116.0,
+              58.399993896484375,
+              301.0,
+              207.39999389648438
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              8.0,
+              55.399993896484375,
+              114.00000000000001,
+              167.39999389648438
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              22.0,
+              248.39999389648438,
+              126.0,
+              328.3999938964844
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              4.0,
+              165.39999389648438,
+              86.0,
+              259.3999938964844
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              86.0,
+              131.39999389648438,
+              161.0,
+              229.39999389648438
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              147.0,
+              191.39999389648438,
+              235.0,
+              332.3999938964844
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              212.0,
+              207.39999389648438,
+              350.0,
+              350.3999938964844
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              227.0,
+              232.39999389648438,
+              409.0,
+              407.3999938964844
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              362.0,
+              271.3999938964844,
+              489.0,
+              390.3999938964844
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              297.0,
+              382.3999938964844,
+              480.0,
+              450.3999938964844
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              241.0,
+              450.3999938964844,
+              387.0,
+              499.3999938964844
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              5.0,
+              396.3999938964844,
+              87.0,
+              472.3999938964844
+            ]
+          },
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              106.0,
+              415.3999938964844,
+              193.0,
+              499.3999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Phragmatopoma californica",
+            "xyxy": [
+              0.0,
+              0.0,
+              500.0,
+              500.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.5409103001002222,
+          "generation_time_seconds": 2.513945300015621,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1872363520,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 15,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 15,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "Chloroceryle aenea"
+        ],
+        "prediction": "[0.356, 0.356, 0.089, 0.133]",
+        "correct": false,
+        "valid_labels": [
+          "Chloroceryle aenea"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Chloroceryle aenea",
+            "xyxy": [
+              138.0,
+              159.39999389648438,
+              246.0,
+              291.3999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Chloroceryle aenea",
+            "xyxy": [
+              133.5,
+              178.0,
+              166.87499999999997,
+              244.5
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.4429009999148548,
+          "generation_time_seconds": 2.3917826999677345,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1872392192,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "Orienthella trilineata"
+        ],
+        "prediction": "[0.147, 0.147, 0.747, 0.347]",
+        "correct": false,
+        "valid_labels": [
+          "Orienthella trilineata"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Orienthella trilineata",
+            "xyxy": [
+              200.5,
+              171.89999389648435,
+              425.5,
+              311.8999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Orienthella trilineata",
+            "xyxy": [
+              73.5,
+              48.951,
+              447.0,
+              164.502
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.93154380004853,
+          "generation_time_seconds": 2.9297258999431506,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1872404480,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "Anser caerulescens"
+        ],
+        "prediction": "[0.024, 119, 0.154, 0.101]\n[0.119, 29, 0.062,",
+        "correct": false,
+        "valid_labels": [
+          "Anser caerulescens"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Anser caerulescens",
+            "xyxy": [
+              21.5,
+              124.89999389648438,
+              192.5,
+              222.8999938964844
+            ]
+          },
+          {
+            "label": "Anser caerulescens",
+            "xyxy": [
+              247.0,
+              142.89999389648438,
+              394.0,
+              222.8999938964844
+            ]
+          },
+          {
+            "label": "Anser caerulescens",
+            "xyxy": [
+              352.0,
+              132.89999389648438,
+              476.0,
+              209.89999389648438
+            ]
+          },
+          {
+            "label": "Anser caerulescens",
+            "xyxy": [
+              301.0,
+              119.89999389648439,
+              421.0,
+              174.89999389648438
+            ]
+          },
+          {
+            "label": "Anser caerulescens",
+            "xyxy": [
+              392.0,
+              111.89999389648438,
+              462.0,
+              183.89999389648438
+            ]
+          },
+          {
+            "label": "Anser caerulescens",
+            "xyxy": [
+              231.0,
+              56.89999389648438,
+              325.0,
+              106.89999389648438
+            ]
+          },
+          {
+            "label": "Anser caerulescens",
+            "xyxy": [
+              107.0,
+              31.899993896484375,
+              209.0,
+              103.89999389648438
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Anser caerulescens",
+            "xyxy": [
+              0.024,
+              119.0,
+              0.178,
+              119.101
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.545293000061065,
+          "generation_time_seconds": 3.538963200058788,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1872429056,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 7,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 7,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "Phasianus colchicus"
+        ],
+        "prediction": "[0.12, 0.06, 0.28, 0.22]",
+        "correct": false,
+        "valid_labels": [
+          "Phasianus colchicus"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Phasianus colchicus",
+            "xyxy": [
+              135.0,
+              74.89999389648438,
+              348.0,
+              218.8999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Phasianus colchicus",
+            "xyxy": [
+              57.72,
+              19.259999999999998,
+              192.4,
+              89.88000000000001
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.9486672000493854,
+          "generation_time_seconds": 2.913837100029923,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1872453632,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 57.14742080005817,
+      "wall_clock_time_per_sample_seconds_mean": 2.857141225016676,
+      "total_generation_time_seconds_mean": 2.832565745001193,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.349972049831856,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1872453632,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 0.04984027232259754,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 16,
+      "false_negative_count_total": 52,
+      "mean_number_of_predicted_detections": 1.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.8560027999337763
+    }
+  }
+}

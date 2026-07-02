@@ -183,6 +183,22 @@ class MultipleChoiceBenchmark(BaseBenchmark):
             index = ord(match.group(1).upper()) - 65
             if 0 <= index < len(choices):
                 return str(choices[index])
+        match = re.search(
+            r"\b(?:answer|choice|option)\s*(?:is|:)?\s*[*_`\"']*\(?([A-Z])\)?[*_`\"']*\b",
+            pred,
+            re.IGNORECASE,
+        )
+        if match:
+            index = ord(match.group(1).upper()) - 65
+            if 0 <= index < len(choices):
+                return str(choices[index])
+        matched_choices = [
+            str(choice)
+            for choice in choices
+            if self.dataset.normalize_text(choice) and self.dataset.normalize_text(choice) in normalized_pred
+        ]
+        if len(matched_choices) == 1:
+            return matched_choices[0]
         return pred
 
     def _make_pair_canvas(self, left: Image.Image, right: Image.Image, left_label: str, right_label: str) -> Image.Image:

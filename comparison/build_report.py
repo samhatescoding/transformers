@@ -606,7 +606,8 @@ def _plot_distribution_boxplot(df: pd.DataFrame, output_dir: Path) -> None:
     series = [df.loc[df["model"] == model, "score"].to_numpy(dtype=float) for model in models]
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.boxplot(series, tick_labels=models, patch_artist=True)
-    ax.set_ylim(0.0, 1.05)
+    ax.set_ylim(-0.05, 1.05)
+    ax.axhline(0.0, color="#555555", linewidth=0.8, alpha=0.6)
     ax.set_ylabel("Benchmark Score")
     ax.set_title("Distribution of Benchmark Scores by Model")
     fig.tight_layout()

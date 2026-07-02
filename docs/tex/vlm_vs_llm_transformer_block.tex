@@ -1,0 +1,360 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,backgrounds,matrix}
+
+\newcommand{\vlmscoremat}{%
+\begin{array}{c@{\;}c}
+&
+\begin{array}{cccccccc}
+\mathbf{k}_1^{\mathrm{img}} \quad &
+\mathbf{k}_2^{\mathrm{img}} \quad &
+\ldots \quad &
+\mathbf{k}_m^{\mathrm{img}} \quad &
+\mathbf{k}_1^{\mathrm{txt}} \quad &
+\mathbf{k}_2^{\mathrm{txt}} \quad &
+\ldots \quad &
+\mathbf{k}_n^{\mathrm{txt}}
+\end{array}
+\\[-1mm]
+\begin{array}{c}
+\mathbf{q}_1^{\mathrm{img}}\\[2.2mm]
+\mathbf{q}_2^{\mathrm{img}}\\[2.2mm]
+\vdots\\[2.2mm]
+\mathbf{q}_m^{\mathrm{img}}\\[2.2mm]
+\mathbf{q}_1^{\mathrm{txt}}\\[2.2mm]
+\mathbf{q}_2^{\mathrm{txt}}\\[2.2mm]
+\vdots\\[2.2mm]
+\mathbf{q}_n^{\mathrm{txt}}
+\end{array}
+&
+{
+\renewcommand{\arraystretch}{1.35}
+\setlength{\arraycolsep}{6pt}
+\begin{bmatrix}
+s_{11}^{\mathrm{img,img}} & s_{12}^{\mathrm{img,img}} & \ldots & s_{1m}^{\mathrm{img,img}} &
+s_{11}^{\mathrm{img,txt}} & s_{12}^{\mathrm{img,txt}} & \ldots & s_{1n}^{\mathrm{img,txt}}
+\\
+
+s_{21}^{\mathrm{img,img}} & s_{22}^{\mathrm{img,img}} & \ldots & s_{2m}^{\mathrm{img,img}} &
+s_{21}^{\mathrm{img,txt}} & s_{22}^{\mathrm{img,txt}} & \ldots & s_{2n}^{\mathrm{img,txt}}
+\\
+
+\vdots & \vdots & \ddots & \vdots &
+\vdots & \vdots & \ddots & \vdots
+\\
+
+s_{m1}^{\mathrm{img,img}} & s_{m2}^{\mathrm{img,img}} & \ldots & s_{mm}^{\mathrm{img,img}} &
+s_{m1}^{\mathrm{img,txt}} & s_{m2}^{\mathrm{img,txt}} & \ldots & s_{mn}^{\mathrm{img,txt}}
+\\
+
+s_{11}^{\mathrm{txt,img}} & s_{12}^{\mathrm{txt,img}} & \ldots & s_{1m}^{\mathrm{txt,img}} &
+s_{11}^{\mathrm{txt,txt}} & -\infty & \ldots & -\infty
+\\
+
+s_{21}^{\mathrm{txt,img}} & s_{22}^{\mathrm{txt,img}} & \ldots & s_{2m}^{\mathrm{txt,img}} &
+s_{21}^{\mathrm{txt,txt}} & s_{22}^{\mathrm{txt,txt}} & \ldots & -\infty
+\\
+
+\vdots & \vdots & \ddots & \vdots &
+\vdots & \vdots & \ddots & \vdots
+\\
+
+s_{n1}^{\mathrm{txt,img}} & s_{n2}^{\mathrm{txt,img}} & \ldots & s_{nm}^{\mathrm{txt,img}} &
+s_{n1}^{\mathrm{txt,txt}} & s_{n2}^{\mathrm{txt,txt}} & \ldots & s_{nn}^{\mathrm{txt,txt}}
+\end{bmatrix}
+}
+\end{array}}
+
+\newcommand{\vlmalphamat}{%
+{
+\renewcommand{\arraystretch}{1.35}
+\setlength{\arraycolsep}{6pt}
+\begin{bmatrix}
+\alpha_{11}^{\mathrm{img,img}} & \alpha_{12}^{\mathrm{img,img}} & \alpha_{13}^{\mathrm{img,img}} &
+\ldots &
+\alpha_{11}^{\mathrm{img,txt}} & \alpha_{12}^{\mathrm{img,txt}} & \alpha_{13}^{\mathrm{img,txt}}
+\\
+
+\alpha_{21}^{\mathrm{img,img}} & \alpha_{22}^{\mathrm{img,img}} & \alpha_{23}^{\mathrm{img,img}} &
+\ldots &
+\alpha_{21}^{\mathrm{img,txt}} & \alpha_{22}^{\mathrm{img,txt}} & \alpha_{23}^{\mathrm{img,txt}}
+\\
+
+\alpha_{31}^{\mathrm{img,img}} & \alpha_{32}^{\mathrm{img,img}} & \alpha_{33}^{\mathrm{img,img}} &
+\ldots &
+\alpha_{31}^{\mathrm{img,txt}} & \alpha_{32}^{\mathrm{img,txt}} & \alpha_{33}^{\mathrm{img,txt}}
+\\
+
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots
+\\
+
+\alpha_{11}^{\mathrm{txt,img}} & \alpha_{12}^{\mathrm{txt,img}} & \alpha_{13}^{\mathrm{txt,img}} &
+\ldots &
+\alpha_{11}^{\mathrm{txt,txt}} & 0 & 0
+\\
+
+\alpha_{21}^{\mathrm{txt,img}} & \alpha_{22}^{\mathrm{txt,img}} & \alpha_{23}^{\mathrm{txt,img}} &
+\ldots &
+\alpha_{21}^{\mathrm{txt,txt}} & \alpha_{22}^{\mathrm{txt,txt}} & 0
+\\
+
+\alpha_{31}^{\mathrm{txt,img}} & \alpha_{32}^{\mathrm{txt,img}} & \alpha_{33}^{\mathrm{txt,img}} &
+\ldots &
+\alpha_{31}^{\mathrm{txt,txt}} & \alpha_{32}^{\mathrm{txt,txt}} & \alpha_{33}^{\mathrm{txt,txt}}
+\end{bmatrix}
+}}
+
+\begin{document}
+\begin{tikzpicture}[
+    font=\sffamily,
+    >=Latex,
+    arrow/.style={->, thick},
+    box/.style={draw, rounded corners=4pt, align=center, fill=blue!7,
+        minimum width=11.0cm, text width=11.75cm, minimum height=1.9cm},
+    qbox/.style={draw, rounded corners=4pt, align=center, fill=orange!12,
+        minimum width=7.4cm, text width=7.15cm, minimum height=3.0cm},
+    kbox/.style={draw, rounded corners=4pt, align=center, fill=green!10,
+        minimum width=7.4cm, text width=7.15cm, minimum height=3.0cm},
+    vbox/.style={draw, rounded corners=4pt, align=center, fill=purple!9,
+        minimum width=7.4cm, text width=7.15cm, minimum height=3.0cm},
+    scorebox/.style={draw, rounded corners=4pt, align=center, fill=red!7,
+        minimum width=13.0cm, text width=13.0cm, minimum height=6.2cm},
+    softbox/.style={draw, rounded corners=4pt, align=center, fill=cyan!8,
+        minimum width=13.0cm, text width=13.0cm, minimum height=5.6cm},
+    outbox/.style={draw, rounded corners=4pt, align=center, fill=yellow!14,
+        minimum width=14.0cm, text width=14.0cm, minimum height=5.3cm},
+    dashedbox/.style={draw, dashed, rounded corners=6pt, inner sep=8pt}
+]
+
+% Title
+\node[font=\bfseries\Large] (title) at (7.8,2.0) {Vision--Language Self-Attention Block};
+
+% Input
+\node[box] (input) at (7.8,0.25) {\textbf{Multimodal input vectors}\\[1mm]
+\begin{tabular}{ccccccccccc}
+$\mathbf{x}_1^{\mathrm{txt}}$ &
+$\mathbf{x}_2^{\mathrm{txt}}$ &
+$\mathbf{x}_3^{\mathrm{txt}}$ &
+$\ldots$ &
+$\mathbf{x}_n^{\mathrm{txt}}$ &
+$\qquad$ &
+$\mathbf{x}_1^{\mathrm{img}}$ &
+$\mathbf{x}_2^{\mathrm{img}}$ &
+$\mathbf{x}_3^{\mathrm{img}}$ &
+$\ldots$ &
+$\mathbf{x}_m^{\mathrm{img}}$
+\\[1mm]
+\multicolumn{5}{c}{text-token vectors}
+&
+&
+\multicolumn{5}{c}{image-token vectors}
+\end{tabular}};
+
+% Q K V projections
+\node[qbox] (qproj) at (0,-3.55) {\textbf{Query projection}\\[1mm]
+same $W_Q$ for both modalities\\[2mm]
+{\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{ccccccc}
+$\mathbf{x}_1^{\mathrm{txt}}$ &
+$\ldots$ &
+$\mathbf{x}_n^{\mathrm{txt}}$ &
+$\quad$ &
+$\mathbf{x}_1^{\mathrm{img}}$ &
+$\ldots$ &
+$\mathbf{x}_m^{\mathrm{img}}$
+\\[1.8mm]
+$\downarrow W_Q$ &
+&
+$\downarrow W_Q$ &
+&
+$\downarrow W_Q$ &
+&
+$\downarrow W_Q$
+\\[1.8mm]
+$\mathbf{q}_1^{\mathrm{txt}}$ &
+$\ldots$ &
+$\mathbf{q}_n^{\mathrm{txt}}$ &
+$\quad$ &
+$\mathbf{q}_1^{\mathrm{img}}$ &
+$\ldots$ &
+$\mathbf{q}_m^{\mathrm{img}}$
+\end{tabular}}};
+
+\node[kbox] (kproj) at (7.8,-3.55) {\textbf{Key projection}\\[1mm]
+same $W_K$ for both modalities\\[2mm]
+{\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{ccccccc}
+$\mathbf{x}_1^{\mathrm{txt}}$ &
+$\ldots$ &
+$\mathbf{x}_n^{\mathrm{txt}}$ &
+$\quad$ &
+$\mathbf{x}_1^{\mathrm{img}}$ &
+$\ldots$ &
+$\mathbf{x}_m^{\mathrm{img}}$
+\\[1.8mm]
+$\downarrow W_K$ &
+&
+$\downarrow W_K$ &
+&
+$\downarrow W_K$ &
+&
+$\downarrow W_K$
+\\[1.8mm]
+$\mathbf{k}_1^{\mathrm{txt}}$ &
+$\ldots$ &
+$\mathbf{k}_n^{\mathrm{txt}}$ &
+$\quad$ &
+$\mathbf{k}_1^{\mathrm{img}}$ &
+$\ldots$ &
+$\mathbf{k}_m^{\mathrm{img}}$
+\end{tabular}}};
+
+\node[vbox] (vproj) at (15.6,-3.55) {\textbf{Value projection}\\[1mm]
+same $W_V$ for both modalities\\[2mm]
+{\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{ccccccc}
+$\mathbf{x}_1^{\mathrm{txt}}$ &
+$\ldots$ &
+$\mathbf{x}_n^{\mathrm{txt}}$ &
+$\quad$ &
+$\mathbf{x}_1^{\mathrm{img}}$ &
+$\ldots$ &
+$\mathbf{x}_m^{\mathrm{img}}$
+\\[1.8mm]
+$\downarrow W_V$ &
+&
+$\downarrow W_V$ &
+&
+$\downarrow W_V$ &
+&
+$\downarrow W_V$
+\\[1.8mm]
+$\mathbf{v}_1^{\mathrm{txt}}$ &
+$\ldots$ &
+$\mathbf{v}_n^{\mathrm{txt}}$ &
+$\quad$ &
+$\mathbf{v}_1^{\mathrm{img}}$ &
+$\ldots$ &
+$\mathbf{v}_m^{\mathrm{img}}$
+\end{tabular}}};
+
+% Scores
+\node[scorebox] (scores) at (7.8,-9.3) {\textbf{Scaled dot-product matrix + multimodal causal mask}\\[1mm]
+\begin{tabular}{c}
+$s_{ij}^{A,B}
+=
+\left(\mathbf{q}_i^{A}\cdot \mathbf{k}_j^{B}\right)/
+\sqrt{d_k}
+$,
+where $A,B\in\{\mathrm{txt},\mathrm{img}\}$\\[2mm]
+$\vlmscoremat$
+\end{tabular}};
+
+% Softmax
+\node[softbox] (softmax) at (7.8,-16.5) {\textbf{Row-wise softmax}\\[1mm]
+\begin{tabular}{c}
+masked scores\\[-1mm]
+$\downarrow$\\[-1mm]
+attention weights\\[1mm]
+$\vlmalphamat$
+\end{tabular}};
+
+% Weighted values
+\node[outbox] (weighted) at (7.8,-22.75) {\textbf{Weighted sum of values}\\[1mm]
+\begin{tabular}{c}
+Text output with causal text attention, and \\
+Image output, shown here with full bidirectional attention:\\[1mm]
+$\displaystyle
+\mathbf{a}_i^{\mathrm{txt}}
+=
+\sum_{j=1}^{m}
+\alpha_{ij}^{\mathrm{txt,img}}\mathbf{v}_j^{\mathrm{img}}
++
+\sum_{j=1}^{i}
+\alpha_{ij}^{\mathrm{txt,txt}}\mathbf{v}_j^{\mathrm{txt}},
+\qquad \quad
+\displaystyle
+\mathbf{a}_i^{\mathrm{img}}
+=
+\sum_{j=1}^{m}
+\alpha_{ij}^{\mathrm{img,img}}\mathbf{v}_j^{\mathrm{img}}
++
+\sum_{j=1}^{n}
+\alpha_{ij}^{\mathrm{img,txt}}\mathbf{v}_j^{\mathrm{txt}}
+$\\[2mm]
+Example:
+$\displaystyle
+\mathbf{a}_2^{\mathrm{txt}}
+=
+\sum_{j=1}^{m}
+\alpha_{2j}^{\mathrm{txt,img}}\mathbf{v}_j^{\mathrm{img}}
++
+\alpha_{21}^{\mathrm{txt,txt}}\mathbf{v}_1^{\mathrm{txt}}
++
+\alpha_{22}^{\mathrm{txt,txt}}\mathbf{v}_2^{\mathrm{txt}}
+$\\[3mm]
+Example:
+$\displaystyle
+\mathbf{a}_2^{\mathrm{img}}
+=
+\sum_{j=1}^{m}
+\alpha_{2j}^{\mathrm{img,img}}\mathbf{v}_j^{\mathrm{img}}
++
+\sum_{j=1}^{n}
+\alpha_{2j}^{\mathrm{img,txt}}\mathbf{v}_j^{\mathrm{txt}}
+$
+\end{tabular}};
+
+% Output
+\node[box, minimum width=13.5cm, text width=13.25cm] (output) at (7.8,-28.5) {\textbf{Attention output}\\[1mm]
+\begin{tabular}{ccccccccccc}
+$\mathbf{a}_1^{\mathrm{txt}}$ &
+$\mathbf{a}_2^{\mathrm{txt}}$ &
+$\mathbf{a}_3^{\mathrm{txt}}$ &
+$\ldots$ &
+$\mathbf{a}_n^{\mathrm{txt}}$ &
+$\qquad\qquad$ &
+$\mathbf{a}_1^{\mathrm{img}}$ &
+$\mathbf{a}_2^{\mathrm{img}}$ &
+$\mathbf{a}_3^{\mathrm{img}}$ &
+$\ldots$ &
+$\mathbf{a}_m^{\mathrm{img}}$
+\\[1mm]
+\multicolumn{5}{c}{text output vectors}
+&
+&
+\multicolumn{5}{c}{image output vectors}
+\end{tabular}};
+
+% Arrows
+\draw[arrow] (input.south) -- ++(0,-0.35) -| (qproj.north);
+\draw[arrow] (input.south) -- (kproj.north);
+\draw[arrow] (input.south) -- ++(0,-0.35) -| (vproj.north);
+
+% Query goes down, then right, entering the score block from the left.
+\draw[arrow] (qproj.south) -- ++(0,-1.15) |- (scores.west);
+
+% Key goes straight down into the score block.
+\draw[arrow] (kproj.south) -- (scores.north);
+
+\draw[arrow] (scores.south) -- (softmax.north);
+
+\draw[arrow] (softmax.south) -- (weighted.north);
+
+\coordinate (valueToWeightedA) at ($(vproj.south)+(0,-16.9)$);
+\draw[arrow] (vproj.south) -- (valueToWeightedA) |- (weighted.east);
+
+\draw[arrow] (weighted.south) -- (output.north);
+
+\begin{pgfonlayer}{background}
+\node[inner sep=0pt, minimum width=0.1cm, minimum height=0.1cm]
+    (branchfit) at ($(qproj.north)!0.5!(vproj.north)+(0,0.75)$) {};
+
+\node[dashedbox, fit=(branchfit)(qproj)(kproj)(vproj)(scores)(softmax)(weighted)] {};
+\end{pgfonlayer}
+
+\end{tikzpicture}
+\end{document}

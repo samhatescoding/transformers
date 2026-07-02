@@ -1,0 +1,1353 @@
+{
+  "model": "gemini-3.5-flash",
+  "benchmark": "flickr30k_entities",
+  "report": {
+    "benchmark": "flickr30k_entities",
+    "dataset": "flickr30k_entities",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 36,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "a cliff face"
+        ],
+        "prediction": "[0.0, 74.0, 491.0, 515.0]\n[0.0, 515.0, 1000.0, 485.0]",
+        "correct": false,
+        "valid_labels": [
+          "a cliff face"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "a cliff face",
+            "xyxy": [
+              2.83223092464,
+              400.29864777136004,
+              1065.4847623316,
+              798.72079979536
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "a cliff face",
+            "xyxy": [
+              0.0,
+              74.0,
+              491.0,
+              589.0
+            ]
+          },
+          {
+            "label": "a cliff face",
+            "xyxy": [
+              0.0,
+              515.0,
+              1000.0,
+              1000.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.7385251999949105,
+          "generation_time_seconds": 6.713624999974854,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2036920320,
+          "cpu_utilization_percent": 1.1792307692307693,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 2,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 2,
+          "false_negative_count": 1,
+          "predicted_detection_count": 2
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 2,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 2,
+        "prompt_labels": [],
+        "prediction": "[0.128, 128.0, 0.222, 0.232]\n[0.26, 260.0, 0.302, 0.17]\n[0.53, 530.0, 0.47, 0.47]",
+        "correct": false,
+        "valid_labels": [],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 24.973737899999833,
+          "generation_time_seconds": 24.94346849998692,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2042855424,
+          "cpu_utilization_percent": 0.37887029288702934,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 3,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 3
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "a car"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "a car"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "a car",
+            "xyxy": [
+              162.78637847992002,
+              239.31172986656,
+              1065.78509533808,
+              798.9667397467601
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+          "wall_clock_time_seconds": 1.415844900009688,
+          "generation_time_seconds": 1.3921062999870628,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2043334656,
+          "cpu_utilization_percent": 5.355555555555555,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "A soccer player"
+        ],
+        "prediction": "[0.195, 93.0, 0.615, 777.0]\n[622.0, 652.0, 0.278, 248.0]",
+        "correct": false,
+        "valid_labels": [
+          "A soccer player"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A soccer player",
+            "xyxy": [
+              153.83936768,
+              73.159979248,
+              646.6561523360001,
+              718.112792976
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A soccer player",
+            "xyxy": [
+              0.195,
+              93.0,
+              0.81,
+              870.0
+            ]
+          },
+          {
+            "label": "A soccer player",
+            "xyxy": [
+              622.0,
+              652.0,
+              622.278,
+              900.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 7.795197500003269,
+          "generation_time_seconds": 7.759299500001362,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2046660608,
+          "cpu_utilization_percent": 0.7033557046979866,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 2,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 2,
+          "false_negative_count": 1,
+          "predicted_detection_count": 2
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 2,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "a trunk of a tree"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "a trunk of a tree"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "a trunk of a tree",
+            "xyxy": [
+              539.33540378004,
+              3.1750135804800004,
+              1196.4183766466401,
+              767.25245213946
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+          "wall_clock_time_seconds": 1.3318502999900375,
+          "generation_time_seconds": 1.2936846000084188,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2051993600,
+          "cpu_utilization_percent": 6.957692307692308,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "A woman"
+        ],
+        "prediction": "[0.42, 4.2e-01, 0.15, 0.14]",
+        "correct": false,
+        "valid_labels": [
+          "A woman"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A woman",
+            "xyxy": [
+              466.05147185688,
+              334.50336974548003,
+              617.39956102916,
+              454.15500555828004
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 18.918967500008876,
+          "generation_time_seconds": 18.90659689999302,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2054619136,
+          "cpu_utilization_percent": 0.33746556473829203,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 7,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+          "wall_clock_time_seconds": 1.3489308999851346,
+          "generation_time_seconds": 1.3172336000134237,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2061127680,
+          "cpu_utilization_percent": 5.915384615384616,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "a red leash"
+        ],
+        "prediction": "[0.0, 0.0, 0.804, 1.0]",
+        "correct": true,
+        "valid_labels": [
+          "a red leash"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "a red leash",
+            "xyxy": [
+              67.5093691511,
+              2.3968158710800003,
+              882.1330604278401,
+              798.74949060914
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "a red leash",
+            "xyxy": [
+              0.0,
+              0.0,
+              709.932,
+              800.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 8.718162400007714,
+          "generation_time_seconds": 8.673881099995924,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2064703488,
+          "cpu_utilization_percent": 0.7125,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.7255859752357683,
+        "mean_iou_all_predictions": 0.7255859752357683,
+        "matched_predictions": [
+          {
+            "label": "a red leash",
+            "xyxy": [
+              0.0,
+              0.0,
+              709.932,
+              800.0
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "a red leash",
+            "xyxy": [
+              67.5093691511,
+              2.3968158710800003,
+              882.1330604278401,
+              798.74949060914
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "prompt_labels": [],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+          "wall_clock_time_seconds": 45.845164500002284,
+          "generation_time_seconds": 45.839075500000035,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2066800640,
+          "cpu_utilization_percent": 0.1392491467576792,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "A woman"
+        ],
+        "prediction": "[0.188, 134.0, 0.048, 201.0]\n[0.164, 326.0, 0.156, 441.0]\n[0.164, 518.0, 0.14, 423.0]\n[0.531, 340.0, 0.324, 444.0]",
+        "correct": false,
+        "valid_labels": [
+          "A woman"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A woman",
+            "xyxy": [
+              407.06932091448,
+              424.60359973247995,
+              808.24797777248,
+              787.2039184581599
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A woman",
+            "xyxy": [
+              0.188,
+              134.0,
+              0.236,
+              335.0
+            ]
+          },
+          {
+            "label": "A woman",
+            "xyxy": [
+              0.164,
+              326.0,
+              0.32,
+              767.0
+            ]
+          },
+          {
+            "label": "A woman",
+            "xyxy": [
+              0.164,
+              518.0,
+              0.30400000000000005,
+              941.0
+            ]
+          },
+          {
+            "label": "A woman",
+            "xyxy": [
+              0.531,
+              340.0,
+              0.855,
+              784.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.737360900006024,
+          "generation_time_seconds": 5.7193954000249505,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2073116672,
+          "cpu_utilization_percent": 1.6781818181818184,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 4,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 4,
+          "false_negative_count": 1,
+          "predicted_detection_count": 4
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 4,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "tackler"
+        ],
+        "prediction": "[0.44, 294.0, 0.448, 524.0]",
+        "correct": false,
+        "valid_labels": [
+          "tackler"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "tackler",
+            "xyxy": [
+              526.5793442886201,
+              234.94736594558003,
+              1073.38905860576,
+              664.06525604492
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "tackler",
+            "xyxy": [
+              0.44,
+              294.0,
+              0.888,
+              818.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.4267302000080235,
+          "generation_time_seconds": 6.38542979999329,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2079027200,
+          "cpu_utilization_percent": 1.480327868852459,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "A short-haired brown dog"
+        ],
+        "prediction": "[0.15, 1.5, 0.57, 0.6]",
+        "correct": false,
+        "valid_labels": [
+          "A short-haired brown dog"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A short-haired brown dog",
+            "xyxy": [
+              177.74699207276,
+              116.6298529386,
+              873.2387874226201,
+              617.55934587666
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A short-haired brown dog",
+            "xyxy": [
+              0.15,
+              1.5,
+              0.72,
+              2.1
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 14.912316400004784,
+          "generation_time_seconds": 14.897750400006771,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2081628160,
+          "cpu_utilization_percent": 0.7188811188811189,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "a ball"
+        ],
+        "prediction": "[0.559, 0.419, 0.037, 0.059]",
+        "correct": true,
+        "valid_labels": [
+          "a ball"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "a ball",
+            "xyxy": [
+              669.08033348562,
+              333.48300182694004,
+              719.72569280052,
+              382.62367281852
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "a ball",
+            "xyxy": [
+              669.123,
+              335.2,
+              713.4120000000001,
+              382.4
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 20.362714799994137,
+          "generation_time_seconds": 20.3190969999996,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2080632832,
+          "cpu_utilization_percent": 0.4721227621483376,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.8399571555278905,
+        "mean_iou_all_predictions": 0.8399571555278905,
+        "matched_predictions": [
+          {
+            "label": "a ball",
+            "xyxy": [
+              669.123,
+              335.2,
+              713.4120000000001,
+              382.4
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "a ball",
+            "xyxy": [
+              669.08033348562,
+              333.48300182694004,
+              719.72569280052,
+              382.62367281852
+            ]
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "Trucks"
+        ],
+        "prediction": "[0.148, 116.0, 0.41, 592.0]\n[188.0, 498.0, 0.374, 312.0]\n[268.0, 0.0, 0.238, 138.0]",
+        "correct": false,
+        "valid_labels": [
+          "Trucks"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "Trucks",
+            "xyxy": [
+              175.37181079511998,
+              90.18839354423999,
+              670.9108883009999,
+              570.12323052708
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "Trucks",
+            "xyxy": [
+              0.148,
+              116.0,
+              0.5579999999999999,
+              708.0
+            ]
+          },
+          {
+            "label": "Trucks",
+            "xyxy": [
+              188.0,
+              498.0,
+              188.374,
+              810.0
+            ]
+          },
+          {
+            "label": "Trucks",
+            "xyxy": [
+              268.0,
+              0.0,
+              268.238,
+              138.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 33.113355700013926,
+          "generation_time_seconds": 33.07896569999866,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2083442688,
+          "cpu_utilization_percent": 0.2866352201257862,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 3,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 3,
+          "false_negative_count": 1,
+          "predicted_detection_count": 3
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 3,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "A boy"
+        ],
+        "prediction": "[0.05, 0.05, 0.62, 0.38]",
+        "correct": true,
+        "valid_labels": [
+          "A boy"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A boy",
+            "xyxy": [
+              170.30702651180002,
+              62.47950703144,
+              542.1581849902401,
+              532.5247487710401
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A boy",
+            "xyxy": [
+              40.0,
+              60.050000000000004,
+              536.0,
+              516.43
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 34.130615999980364,
+          "generation_time_seconds": 34.11840210002265,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2085392384,
+          "cpu_utilization_percent": 0.32732824427480917,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.7059755345513875,
+        "mean_iou_all_predictions": 0.7059755345513875,
+        "matched_predictions": [
+          {
+            "label": "A boy",
+            "xyxy": [
+              40.0,
+              60.050000000000004,
+              536.0,
+              516.43
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "A boy",
+            "xyxy": [
+              170.30702651180002,
+              62.47950703144,
+              542.1581849902401,
+              532.5247487710401
+            ]
+          }
+        ]
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "A basketball player"
+        ],
+        "prediction": "[0.114, 114.0, 0.686, 841.0]\n[0.702, 620.0, 0.298, 380.0]\n[0.69, 656.0, 0.144, 344.0]\n[0.058, 704.0, 0.234, 296.0]\n[0.208, 1",
+        "correct": false,
+        "valid_labels": [
+          "A basketball player"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A basketball player",
+            "xyxy": [
+              162.88898657584002,
+              81.79122014839999,
+              647.1705761673601,
+              1160.21971167312
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A basketball player",
+            "xyxy": [
+              0.114,
+              114.0,
+              0.8,
+              955.0
+            ]
+          },
+          {
+            "label": "A basketball player",
+            "xyxy": [
+              0.702,
+              620.0,
+              1.0,
+              1000.0
+            ]
+          },
+          {
+            "label": "A basketball player",
+            "xyxy": [
+              0.69,
+              656.0,
+              0.834,
+              1000.0
+            ]
+          },
+          {
+            "label": "A basketball player",
+            "xyxy": [
+              0.058,
+              704.0,
+              0.29200000000000004,
+              1000.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.353968800016446,
+          "generation_time_seconds": 6.332059999986086,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2087055360,
+          "cpu_utilization_percent": 1.5172131147540986,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 4,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 4,
+          "false_negative_count": 1,
+          "predicted_detection_count": 4
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 4,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "a small sign"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "a small sign"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "a small sign",
+            "xyxy": [
+              43.884953122860004,
+              159.82132525932,
+              743.62487970198,
+              718.8571697438399
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+          "wall_clock_time_seconds": 43.74176470001112,
+          "generation_time_seconds": 43.705692700023064,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2088091648,
+          "cpu_utilization_percent": 0.1771804062126643,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "a green ramp"
+        ],
+        "prediction": "[0.0, 0.0, 1.0, 1.0]",
+        "correct": true,
+        "valid_labels": [
+          "a green ramp"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "a green ramp",
+            "xyxy": [
+              3.4652410018999995,
+              3.4741199081999996,
+              796.2528060985001,
+              1313.1916342235
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "a green ramp",
+            "xyxy": [
+              0.0,
+              0.0,
+              800.0,
+              1315.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.366182500001742,
+          "generation_time_seconds": 6.345272900012787,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2092089344,
+          "cpu_utilization_percent": 1.7393442622950819,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.9870035733254734,
+        "mean_iou_all_predictions": 0.9870035733254734,
+        "matched_predictions": [
+          {
+            "label": "a green ramp",
+            "xyxy": [
+              0.0,
+              0.0,
+              800.0,
+              1315.0
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "a green ramp",
+            "xyxy": [
+              3.4652410018999995,
+              3.4741199081999996,
+              796.2528060985001,
+              1313.1916342235
+            ]
+          }
+        ]
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "A man"
+        ],
+        "prediction": "[0.524, 0.524, 0.243, 0.326]",
+        "correct": true,
+        "valid_labels": [
+          "A man"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A man",
+            "xyxy": [
+              684.2183214182401,
+              418.0333277043,
+              926.94448224756,
+              686.7122662260001
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "A man",
+            "xyxy": [
+              627.2280000000001,
+              419.20000000000005,
+              918.099,
+              680.0000000000001
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 18.94183769999654,
+          "generation_time_seconds": 18.887686500005657,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2098696192,
+          "cpu_utilization_percent": 0.48756906077348067,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 1
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "mean_iou_matched": 0.7617037515758945,
+        "mean_iou_all_predictions": 0.7617037515758945,
+        "matched_predictions": [
+          {
+            "label": "A man",
+            "xyxy": [
+              627.2280000000001,
+              419.20000000000005,
+              918.099,
+              680.0000000000001
+            ]
+          }
+        ],
+        "matched_targets": [
+          {
+            "label": "A man",
+            "xyxy": [
+              684.2183214182401,
+              418.0333277043,
+              926.94448224756,
+              686.7122662260001
+            ]
+          }
+        ]
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "A small child"
+        ],
+        "prediction": "",
+        "correct": false,
+        "valid_labels": [
+          "A small child"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "A small child",
+            "xyxy": [
+              21.609314223600002,
+              430.526255484,
+              713.9859301811999,
+              715.3766015676
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": false,
+          "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+          "wall_clock_time_seconds": 39.81384650000837,
+          "generation_time_seconds": 39.784525199997006,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 2096185344,
+          "cpu_utilization_percent": 0.20196335078534033,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 347.00262590000057,
+      "wall_clock_time_per_sample_seconds_mean": 17.34935376500216,
+      "total_generation_time_seconds_mean": 17.320662435001577,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.05763645144795997,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.25,
+      "number_of_benchmark_samples_completed": 14,
+      "success_count": 14,
+      "failure_count": 6,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 2098696192,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.5383025592114614,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 17,
+      "false_negative_count_total": 8,
+      "mean_number_of_predicted_detections": 1.25,
+      "tokens_per_second": null
+    }
+  }
+}

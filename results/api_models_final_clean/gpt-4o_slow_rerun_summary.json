@@ -1,0 +1,82 @@
+[
+  {
+    "model": "gpt-4o",
+    "benchmark": "inaturalist",
+    "status": "ok",
+    "elapsed_seconds": 648.9816592000134,
+    "source_failed_indices": [
+      6,
+      7,
+      8,
+      10,
+      15,
+      20
+    ],
+    "remaining_failed_indices": [],
+    "rerun_results": [
+      {
+        "index": 6,
+        "status": "ok",
+        "error": null,
+        "attempts": 1
+      },
+      {
+        "index": 7,
+        "status": "ok",
+        "error": null,
+        "attempts": 1
+      },
+      {
+        "index": 8,
+        "status": "ok",
+        "error": null,
+        "attempts": 1
+      },
+      {
+        "index": 10,
+        "status": "ok",
+        "error": null,
+        "attempts": 1
+      },
+      {
+        "index": 15,
+        "status": "ok",
+        "error": null,
+        "attempts": 1
+      },
+      {
+        "index": 20,
+        "status": "ok",
+        "error": null,
+        "attempts": 1
+      }
+    ],
+    "path": "results\\api_models_combined_sample_slow_rerun\\gpt-4o_inaturalist.json"
+  },
+  {
+    "model": "gpt-4o",
+    "benchmark": "internvid",
+    "status": "ok",
+    "elapsed_seconds": 252.6578060000029,
+    "source_failed_indices": [
+      1,
+      12
+    ],
+    "remaining_failed_indices": [],
+    "rerun_results": [
+      {
+        "index": 1,
+        "status": "ok",
+        "error": null,
+        "attempts": 1
+      },
+      {
+        "index": 12,
+        "status": "ok",
+        "error": null,
+        "attempts": 1
+      }
+    ],
+    "path": "results\\api_models_combined_sample_slow_rerun\\gpt-4o_internvid.json"
+  }
+]

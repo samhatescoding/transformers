@@ -1,0 +1,1902 @@
+{
+  "model": "gpt-4o",
+  "benchmark": "lvis",
+  "report": {
+    "benchmark": "lvis",
+    "dataset": "lvis",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 79,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "license_plate"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "license_plate"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "license_plate",
+            "xyxy": [
+              387.8599853515625,
+              192.0500030517578,
+              448.6099853515625,
+              231.8800048828125
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0253073000349104,
+          "generation_time_seconds": 1.985963199986145,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1829371904,
+          "cpu_utilization_percent": 2.3225000000000002,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "doorknob"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "doorknob"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "doorknob",
+            "xyxy": [
+              433.6400146484375,
+              117.31999969482422,
+              445.13001441955566,
+              125.79999923706055
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.024236200028099,
+          "generation_time_seconds": 2.014836399932392,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1830604800,
+          "cpu_utilization_percent": 0.7775000000000001,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "cow"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "cow"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "cow",
+            "xyxy": [
+              269.9100036621094,
+              85.61000061035156,
+              451.55999755859375,
+              149.45000076293945
+            ]
+          },
+          {
+            "label": "cow",
+            "xyxy": [
+              236.0800018310547,
+              111.08000183105469,
+              367.61000061035156,
+              211.81999969482422
+            ]
+          },
+          {
+            "label": "cow",
+            "xyxy": [
+              79.47000122070312,
+              84.19000244140625,
+              98.71000099182129,
+              100.67000198364258
+            ]
+          },
+          {
+            "label": "cow",
+            "xyxy": [
+              72.37000274658203,
+              66.11000061035156,
+              91.22000312805176,
+              85.57999992370605
+            ]
+          },
+          {
+            "label": "cow",
+            "xyxy": [
+              256.239990234375,
+              80.73999786376953,
+              287.8399906158447,
+              112.73999786376953
+            ]
+          },
+          {
+            "label": "cow",
+            "xyxy": [
+              297.8399963378906,
+              68.02999877929688,
+              318.6699962615967,
+              89.27999877929688
+            ]
+          },
+          {
+            "label": "cow",
+            "xyxy": [
+              255.27999877929688,
+              136.02999877929688,
+              491.3999938964844,
+              318.86000061035156
+            ]
+          },
+          {
+            "label": "cow",
+            "xyxy": [
+              453.45001220703125,
+              86.16000366210938,
+              500.0000114440918,
+              108.7300033569336
+            ]
+          },
+          {
+            "label": "cow",
+            "xyxy": [
+              461.0400085449219,
+              74.76000213623047,
+              495.0900077819824,
+              90.09000205993652
+            ]
+          },
+          {
+            "label": "cow",
+            "xyxy": [
+              65.7300033569336,
+              58.65999984741211,
+              80.91000366210938,
+              69.51999950408936
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6445305000524968,
+          "generation_time_seconds": 1.6305829000193626,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1830617088,
+          "cpu_utilization_percent": 1.909375,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 10,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 10,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "monitor_(computer_equipment) computer_monitor"
+        ],
+        "prediction": "[0.68, 0.15, 0.32, 0.45]",
+        "correct": false,
+        "valid_labels": [
+          "monitor_(computer_equipment) computer_monitor"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "monitor_(computer_equipment) computer_monitor",
+            "xyxy": [
+              510.1099853515625,
+              0.0,
+              555.9999847412109,
+              305.0
+            ]
+          },
+          {
+            "label": "monitor_(computer_equipment) computer_monitor",
+            "xyxy": [
+              472.54998779296875,
+              1.6299999952316284,
+              520.8999862670898,
+              191.88999450206757
+            ]
+          },
+          {
+            "label": "monitor_(computer_equipment) computer_monitor",
+            "xyxy": [
+              412.2799987792969,
+              1.7200000286102295,
+              444.61999893188477,
+              33.69999957084656
+            ]
+          },
+          {
+            "label": "monitor_(computer_equipment) computer_monitor",
+            "xyxy": [
+              429.5199890136719,
+              0.0,
+              484.22998809814453,
+              124.36000061035156
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "monitor_(computer_equipment) computer_monitor",
+            "xyxy": [
+              378.08000000000004,
+              96.0,
+              556.0,
+              384.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9784065000712872,
+          "generation_time_seconds": 1.9650868999306113,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1830809600,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 4,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 4,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "mouse_(computer_equipment)"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "mouse_(computer_equipment)"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "mouse_(computer_equipment)",
+            "xyxy": [
+              348.3299865722656,
+              470.4700012207031,
+              392.9499855041504,
+              499.6200008392334
+            ]
+          },
+          {
+            "label": "mouse_(computer_equipment)",
+            "xyxy": [
+              220.47000122070312,
+              367.3900146484375,
+              293.26000213623047,
+              397.31001472473145
+            ]
+          },
+          {
+            "label": "mouse_(computer_equipment)",
+            "xyxy": [
+              305.489990234375,
+              589.8699951171875,
+              370.17999267578125,
+              625.8799934387207
+            ]
+          },
+          {
+            "label": "mouse_(computer_equipment)",
+            "xyxy": [
+              247.8800048828125,
+              301.4200134277344,
+              305.1500053405762,
+              320.91001319885254
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.924256999976933,
+          "generation_time_seconds": 1.8927322999807075,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1831907328,
+          "cpu_utilization_percent": 0.8157894736842105,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 4,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "toaster"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "toaster"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "toaster",
+            "xyxy": [
+              112.3499984741211,
+              247.10000610351562,
+              164.73999786376953,
+              286.14000701904297
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3209987999871373,
+          "generation_time_seconds": 1.28476879990194,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1831739392,
+          "cpu_utilization_percent": 26.33076923076923,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "pot"
+        ],
+        "prediction": "[0.3125, 0.4583, 0.1094, 0.1667]",
+        "correct": false,
+        "valid_labels": [
+          "pot"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "pot",
+            "xyxy": [
+              200.92999267578125,
+              275.5299987792969,
+              283.4699935913086,
+              336.689998626709
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "pot",
+            "xyxy": [
+              200.0,
+              219.98399999999998,
+              270.016,
+              300.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9427015000255778,
+          "generation_time_seconds": 1.9011613000184298,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1831944192,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "faucet"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "faucet"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "faucet",
+            "xyxy": [
+              269.25,
+              198.19000244140625,
+              345.4700012207031,
+              236.20000076293945
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3677558000199497,
+          "generation_time_seconds": 1.31983469997067,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1831936000,
+          "cpu_utilization_percent": 2.2962962962962963,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "stove"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "stove"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "stove",
+            "xyxy": [
+              246.7899932861328,
+              326.8399963378906,
+              368.5699920654297,
+              406.0299987792969
+            ]
+          },
+          {
+            "label": "stove",
+            "xyxy": [
+              29.799999237060547,
+              325.5299987792969,
+              116.42000198364258,
+              392.9199981689453
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3131391999777406,
+          "generation_time_seconds": 1.2636290000518784,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1831956480,
+          "cpu_utilization_percent": 2.3923076923076922,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 2,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "food_processor"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "food_processor"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "food_processor",
+            "xyxy": [
+              402.489990234375,
+              125.68000030517578,
+              433.1699905395508,
+              175.22999954223633
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.7750770000275224,
+          "generation_time_seconds": 1.7427687000017613,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1830723584,
+          "cpu_utilization_percent": 1.7571428571428571,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "dishwasher"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "dishwasher"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "dishwasher",
+            "xyxy": [
+              339.760009765625,
+              71.05999755859375,
+              440.0400085449219,
+              162.38999938964844
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.56849869992584,
+          "generation_time_seconds": 1.5666694999672472,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1830600704,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "trousers"
+        ],
+        "prediction": "[0.35, 0.55, 0.1, 0.2]",
+        "correct": false,
+        "valid_labels": [
+          "trousers"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "trousers",
+            "xyxy": [
+              217.44000244140625,
+              458.95001220703125,
+              246.31000328063965,
+              539.9400100708008
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "trousers",
+            "xyxy": [
+              149.79999999999998,
+              352.0,
+              192.6,
+              480.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.420558899990283,
+          "generation_time_seconds": 1.3820339000085369,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1832251392,
+          "cpu_utilization_percent": 1.1107142857142858,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "control"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "control"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "control",
+            "xyxy": [
+              234.86000061035156,
+              312.7799987792969,
+              240.59000062942505,
+              319.7999987602234
+            ]
+          },
+          {
+            "label": "control",
+            "xyxy": [
+              225.17999267578125,
+              301.6000061035156,
+              230.6899929046631,
+              306.75000619888306
+            ]
+          },
+          {
+            "label": "control",
+            "xyxy": [
+              217.1999969482422,
+              287.7300109863281,
+              224.50999689102173,
+              298.11001110076904
+            ]
+          },
+          {
+            "label": "control",
+            "xyxy": [
+              220.10000610351562,
+              297.17999267578125,
+              225.03000593185425,
+              303.1399927139282
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.2339683000463992,
+          "generation_time_seconds": 1.2134718999732286,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1833091072,
+          "cpu_utilization_percent": 1.2791666666666666,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 4,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "cauliflower"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "cauliflower"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "cauliflower",
+            "xyxy": [
+              262.510009765625,
+              306.69000244140625,
+              279.3500099182129,
+              313.10000228881836
+            ]
+          },
+          {
+            "label": "cauliflower",
+            "xyxy": [
+              287.3399963378906,
+              302.25,
+              304.8099956512451,
+              314.0600004196167
+            ]
+          },
+          {
+            "label": "cauliflower",
+            "xyxy": [
+              292.29998779296875,
+              186.5,
+              315.04998779296875,
+              206.6200008392334
+            ]
+          },
+          {
+            "label": "cauliflower",
+            "xyxy": [
+              316.6199951171875,
+              286.239990234375,
+              336.44999504089355,
+              311.3399906158447
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.741604300099425,
+          "generation_time_seconds": 2.730875000008382,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1835819008,
+          "cpu_utilization_percent": 2.2814814814814817,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 4,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "drawer"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "drawer"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "drawer",
+            "xyxy": [
+              283.6700134277344,
+              459.42999267578125,
+              343.5700149536133,
+              499.99999237060547
+            ]
+          },
+          {
+            "label": "drawer",
+            "xyxy": [
+              135.27000427246094,
+              377.07000732421875,
+              270.37001037597656,
+              500.00000762939453
+            ]
+          },
+          {
+            "label": "drawer",
+            "xyxy": [
+              95.52999877929688,
+              351.3599853515625,
+              128.88999938964844,
+              406.56998443603516
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4157976999413222,
+          "generation_time_seconds": 1.4104448000434786,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1837449216,
+          "cpu_utilization_percent": 55.603571428571435,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 3,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "sunglasses"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "sunglasses"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "sunglasses",
+            "xyxy": [
+              160.75999450683594,
+              136.58999633789062,
+              171.56999492645264,
+              140.3699963092804
+            ]
+          },
+          {
+            "label": "sunglasses",
+            "xyxy": [
+              87.01000213623047,
+              126.0199966430664,
+              94.72000217437744,
+              128.3199965953827
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.217975499923341,
+          "generation_time_seconds": 1.1861336000729352,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1838542848,
+          "cpu_utilization_percent": 5.360869565217391,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 2,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "oven"
+        ],
+        "prediction": "[0.25, 0.45, 0.25, 0.35]",
+        "correct": false,
+        "valid_labels": [
+          "oven"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "oven",
+            "xyxy": [
+              194.61000061035156,
+              152.74000549316406,
+              391.0500030517578,
+              416.8199920654297
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "oven",
+            "xyxy": [
+              160.0,
+              192.15,
+              320.0,
+              341.6
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.3707115000579506,
+          "generation_time_seconds": 1.350374999921769,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1816440832,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "mattress"
+        ],
+        "prediction": "[0.5, 0.1, 0.4, 0.4]",
+        "correct": false,
+        "valid_labels": [
+          "mattress"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "mattress",
+            "xyxy": [
+              409.0,
+              121.69000244140625,
+              480.2699966430664,
+              141.8000030517578
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              420.739990234375,
+              145.9600067138672,
+              481.93999099731445,
+              171.97000694274902
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              371.1400146484375,
+              85.75,
+              447.78001403808594,
+              115.36000061035156
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              384.6400146484375,
+              100.5199966430664,
+              456.3700180053711,
+              116.12999629974365
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              392.0799865722656,
+              144.50999450683594,
+              403.61998653411865,
+              181.2899932861328
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              406.3699951171875,
+              132.14999389648438,
+              488.5899963378906,
+              158.7199935913086
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              420.739990234375,
+              159.1699981689453,
+              488.6899871826172,
+              185.62999725341797
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              419.0799865722656,
+              169.85000610351562,
+              484.66998291015625,
+              195.77000617980957
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              398.44000244140625,
+              113.48999786376953,
+              472.42000579833984,
+              128.79999828338623
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              368.7699890136719,
+              84.08999633789062,
+              439.47998809814453,
+              112.89999580383301
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              397.4800109863281,
+              105.2699966430664,
+              465.2900085449219,
+              118.99999618530273
+            ]
+          },
+          {
+            "label": "mattress",
+            "xyxy": [
+              407.3999938964844,
+              182.82000732421875,
+              489.3999938964844,
+              208.1200065612793
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "mattress",
+            "xyxy": [
+              320.0,
+              42.400000000000006,
+              576.0,
+              212.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.478909399942495,
+          "generation_time_seconds": 2.4510993999429047,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1816440832,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 12,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 12,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "fork"
+        ],
+        "prediction": "[]",
+        "correct": false,
+        "valid_labels": [
+          "fork"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "fork",
+            "xyxy": [
+              3.2799999713897705,
+              308.55999755859375,
+              480.0000011920929,
+              401.6800003051758
+            ]
+          },
+          {
+            "label": "fork",
+            "xyxy": [
+              0.0,
+              179.63999938964844,
+              130.4499969482422,
+              199.8400001525879
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9248776000458747,
+          "generation_time_seconds": 1.9054263000143692,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1816580096,
+          "cpu_utilization_percent": 53.04210526315789,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 2,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "book"
+        ],
+        "prediction": "[0.8, 0.0, 0.2, 0.9]",
+        "correct": false,
+        "valid_labels": [
+          "book"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "book",
+            "xyxy": [
+              444.6300048828125,
+              187.55999755859375,
+              480.00000381469727,
+              206.98999786376953
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              465.2900085449219,
+              120.23999786376953,
+              475.7700080871582,
+              157.56999969482422
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              434.79998779296875,
+              225.97000122070312,
+              469.61998748779297,
+              253.1500015258789
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              408.9800109863281,
+              0.6800000071525574,
+              461.12001037597656,
+              11.89000004529953
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              406.4800109863281,
+              6.639999866485596,
+              460.0800094604492,
+              21.34999990463257
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              394.2799987792969,
+              42.83000183105469,
+              448.8400001525879,
+              62.66000175476074
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              459.8999938964844,
+              0.0,
+              475.1299934387207,
+              33.7599983215332
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              424.1600036621094,
+              103.97000122070312,
+              434.1400032043457,
+              140.96000289916992
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              442.3399963378906,
+              191.24000549316406,
+              479.99999618530273,
+              208.70000457763672
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              450.0199890136719,
+              77.30999755859375,
+              479.9999885559082,
+              90.67999744415283
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              419.5799865722656,
+              102.2300033569336,
+              427.09998655319214,
+              138.85000228881836
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              400.9800109863281,
+              21.389999389648438,
+              469.7100143432617,
+              42.05999946594238
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              390.8399963378906,
+              171.92999267578125,
+              445.7099952697754,
+              199.1699924468994
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              397.3699951171875,
+              67.66999816894531,
+              456.9599952697754,
+              89.87999725341797
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              393.19000244140625,
+              158.6199951171875,
+              450.6700019836426,
+              181.0299949645996
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              399.3500061035156,
+              63.310001373291016,
+              453.14000701904297,
+              82.01000213623047
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              446.3399963378906,
+              63.400001525878906,
+              479.99999618530273,
+              77.67000198364258
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              447.92999267578125,
+              59.290000915527344,
+              479.7599925994873,
+              72.25000095367432
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              398.55999755859375,
+              76.75,
+              453.22999572753906,
+              95.32999992370605
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              474.0400085449219,
+              135.6699981689453,
+              480.00000858306885,
+              163.39999771118164
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              460.57000732421875,
+              123.87000274658203,
+              472.26000690460205,
+              154.26000213623047
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              448.4800109863281,
+              177.27999877929688,
+              479.37001037597656,
+              195.51999855041504
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              436.2900085449219,
+              107.2300033569336,
+              443.6000084877014,
+              144.3800048828125
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              400.9200134277344,
+              37.61000061035156,
+              453.3200149536133,
+              53.55000019073486
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              429.9800109863281,
+              106.37999725341797,
+              437.79001092910767,
+              146.07999801635742
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              447.0,
+              91.91000366210938,
+              479.439998626709,
+              104.13000392913818
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              448.6300048828125,
+              90.4000015258789,
+              480.0000057220459,
+              101.2100019454956
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              441.2799987792969,
+              113.76000213623047,
+              466.8799991607666,
+              152.12000274658203
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              438.3599853515625,
+              192.9600067138672,
+              473.23998641967773,
+              212.5800075531006
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              469.42999267578125,
+              0.10000000149011612,
+              478.83999252319336,
+              43.94999847561121
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              392.8299865722656,
+              152.38999938964844,
+              443.79998779296875,
+              171.4099998474121
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              402.2099914550781,
+              53.650001525878906,
+              446.8199920654297,
+              69.4000015258789
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              402.3999938964844,
+              12.920000076293945,
+              460.51999282836914,
+              28.640000343322754
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              391.5899963378906,
+              202.27000427246094,
+              447.31999588012695,
+              223.37000465393066
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              451.260009765625,
+              176.91000366210938,
+              480.00000953674316,
+              190.84000396728516
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              397.94000244140625,
+              165.50999450683594,
+              448.00000381469727,
+              185.0299949645996
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              390.19000244140625,
+              193.33999633789062,
+              441.03000259399414,
+              217.2399959564209
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              439.6199951171875,
+              99.41000366210938,
+              479.99999618530273,
+              114.41000366210938
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              461.7799987792969,
+              248.72000122070312,
+              479.99999809265137,
+              270.70000076293945
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              468.5400085449219,
+              247.52000427246094,
+              479.6400089263916,
+              257.9500045776367
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              472.4200134277344,
+              17.780000686645508,
+              480.00001335144043,
+              48.170000076293945
+            ]
+          },
+          {
+            "label": "book",
+            "xyxy": [
+              386.19000244140625,
+              209.60000610351562,
+              455.5500030517578,
+              232.0900058746338
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "book",
+            "xyxy": [
+              384.0,
+              0.0,
+              480.0,
+              576.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5226340000517666,
+          "generation_time_seconds": 1.4822274000616744,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1816723456,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 42,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 42,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 34.22189449996222,
+      "wall_clock_time_per_sample_seconds_mean": 1.7105972850113176,
+      "total_generation_time_seconds_mean": 1.6840060499904212,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.5844211810080263,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 0.3,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1838542848,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 7.863979462050471,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 6,
+      "false_negative_count_total": 98,
+      "mean_number_of_predicted_detections": 0.3,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 0.9364597999956459
+    }
+  }
+}

@@ -1,0 +1,879 @@
+{
+  "model": "gpt-5",
+  "benchmark": "pick_a_pic",
+  "report": {
+    "benchmark": "pick_a_pic",
+    "dataset": "pick_a_pic",
+    "task_type": "image_preference",
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4485591999982717,
+          "generation_time_seconds": 1.418926600003033,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5154172928,
+          "cpu_utilization_percent": 15.110714285714286,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.712263499997789,
+          "generation_time_seconds": 1.6977642999991076,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5097988096,
+          "cpu_utilization_percent": 0.9333333333333333,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image B"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.7533847000013338,
+          "generation_time_seconds": 1.7259140999958618,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5101080576,
+          "cpu_utilization_percent": 1.8176470588235294,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4902064999914728,
+          "generation_time_seconds": 1.4367177999956766,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5099380736,
+          "cpu_utilization_percent": 1.0620689655172415,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.4345328000054,
+          "generation_time_seconds": 4.422849299997324,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5098934272,
+          "cpu_utilization_percent": 0.7151162790697675,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image B"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": false,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9662785999971675,
+          "generation_time_seconds": 1.9298088000068674,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5103067136,
+          "cpu_utilization_percent": 0.8105263157894737,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image B"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.842530900001293,
+          "generation_time_seconds": 1.8067469999950845,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5103587328,
+          "cpu_utilization_percent": 0.8194444444444444,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image B"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.051781200003461,
+          "generation_time_seconds": 2.0156308000005083,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5098754048,
+          "cpu_utilization_percent": 0.7725,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.8933531999937259,
+          "generation_time_seconds": 1.8680699999968056,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5099847680,
+          "cpu_utilization_percent": 1.7194444444444443,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": false,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.2066559000086272,
+          "generation_time_seconds": 1.1697934999974677,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5099937792,
+          "cpu_utilization_percent": 1.173913043478261,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image A"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.009063599994988,
+          "generation_time_seconds": 1.9744271999952616,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5101060096,
+          "cpu_utilization_percent": 1.546153846153846,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6501677000051131,
+          "generation_time_seconds": 1.6033272999920882,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5103988736,
+          "cpu_utilization_percent": 2.890625,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5355644000082975,
+          "generation_time_seconds": 1.4948545999941416,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5101428736,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image B"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0561844000039855,
+          "generation_time_seconds": 2.004673500006902,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5100814336,
+          "cpu_utilization_percent": 1.45,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image B"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "Image B"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.9194710999872768,
+          "generation_time_seconds": 1.8933467000024393,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5104078848,
+          "cpu_utilization_percent": 1.6675675675675676,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image B"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": false,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4009889000008116,
+          "generation_time_seconds": 1.3849634999933187,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5104893952,
+          "cpu_utilization_percent": 1.1481481481481481,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image A"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": false,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6026515000121435,
+          "generation_time_seconds": 1.5427133999910438,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5102268416,
+          "cpu_utilization_percent": 0.996774193548387,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image A"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.1475872000009986,
+          "generation_time_seconds": 2.0867728000011994,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5101817856,
+          "cpu_utilization_percent": 0.7219512195121952,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.1121437000110745,
+          "generation_time_seconds": 2.0879929999937303,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5104840704,
+          "cpu_utilization_percent": 2.253658536585366,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image A",
+        "answer": "Image A"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "Image A",
+          "Image B"
+        ],
+        "prediction": "B",
+        "correct": false,
+        "valid_labels": [
+          "Image A"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6574809000012465,
+          "generation_time_seconds": 1.6143076000007568,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 5105655808,
+          "cpu_utilization_percent": 0.959375,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Image A",
+          "Image B"
+        ],
+        "selected_choice": "Image B",
+        "answer": "Image A"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 37.90505989998928,
+      "wall_clock_time_per_sample_seconds_mean": 1.894542495001224,
+      "total_generation_time_seconds_mean": 1.858980089997931,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.527634042863118,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 5154172928,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.9284480841065146,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null
+    }
+  }
+}

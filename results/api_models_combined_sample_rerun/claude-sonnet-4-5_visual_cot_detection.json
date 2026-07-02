@@ -1,0 +1,1200 @@
+{
+  "model": "claude-sonnet-4-5",
+  "benchmark": "visual_cot_detection",
+  "report": {
+    "benchmark": "visual_cot_detection",
+    "dataset": "visual_cot",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "[0.0, 0.0, 1.0, 1.0]",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              187.14600000000002,
+              114.0,
+              215.118,
+              146.0
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              0.0,
+              0.0,
+              333.0,
+              500.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 21.87436500005424,
+          "generation_time_seconds": 1.9263872998999432,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 371552256,
+          "cpu_utilization_percent": 2.3794871794871795,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The young men in the image are holding and looking at their mobile phones. Here is the bounding box for the region showing their hands with the phones:",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              160.506,
+              198.0,
+              182.484,
+              225.0
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 50.71656420000363,
+          "generation_time_seconds": 8.549169800011441,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 481165312,
+          "cpu_utilization_percent": 2.750295857988166,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The men in the photo are wearing shirts in dark and light colors. Looking at the image, I can see one person wearing a dark-colored shirt (appears",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              170.496,
+              156.0,
+              199.79999999999998,
+              236.0
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 67.83932119992096,
+          "generation_time_seconds": 2.8436173000372946,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 540766208,
+          "cpu_utilization_percent": 2.1964285714285716,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The image shows two people standing on a garden path surrounded by lush greenery, including bushes, trees, and a lawn. They appear to be looking",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              239.094,
+              215.0,
+              276.39,
+              337.0
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 58.878223800100386,
+          "generation_time_seconds": 3.3368438999168575,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 585494528,
+          "cpu_utilization_percent": 0.9378787878787879,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The question asks about the attire of individuals operating a pulley system. Looking at the image, I can see workers on what appears to be a metal tower",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              361.0,
+              166.056,
+              392.0,
+              187.748
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 51.34378419991117,
+          "generation_time_seconds": 1.9409739000257105,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 668979200,
+          "cpu_utilization_percent": 3.705405405405405,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "[0.0, 0.0, 0.996, 0.996]",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              384.0,
+              198.96800000000002,
+              419.0,
+              298.452
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              0.0,
+              0.0,
+              498.0,
+              372.504
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 101.70872979995329,
+          "generation_time_seconds": 8.49745579995215,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 721563648,
+          "cpu_utilization_percent": 0.6928571428571428,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The question asks about safety gear visible on individuals working on the machine. Looking at the image, I can see workers on what appears to be a crane or tower",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              361.0,
+              166.056,
+              392.0,
+              187.748
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 66.89771789999213,
+          "generation_time_seconds": 3.1996651000808924,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 810381312,
+          "cpu_utilization_percent": 1.459375,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The image shows workers on what appears to be a transmission tower or electrical pylon. Looking at the scene, the workers are positioned at different heights on the metal",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              384.0,
+              198.96800000000002,
+              419.0,
+              298.452
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 50.129541100002825,
+          "generation_time_seconds": 4.017870600102469,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 867164160,
+          "cpu_utilization_percent": 1.950632911392405,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The child in the photograph is wearing a pink dress.\n\n[0.0, 0.0, 0.375, 0.498]",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              52.50000000000001,
+              191.0,
+              111.0,
+              299.0
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              0.0,
+              0.0,
+              140.625,
+              249.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 57.3277817000635,
+          "generation_time_seconds": 3.330685699940659,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 909828096,
+          "cpu_utilization_percent": 1.8681818181818182,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The child in this image is reaching up toward or interacting with what appears to be a chicken coop structure.\n\n[0, 0, 374",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              47.25,
+              319.0,
+              132.75,
+              480.0
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 65.44323720003013,
+          "generation_time_seconds": 3.4114990999223664,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 982528000,
+          "cpu_utilization_percent": 1.3632352941176469,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The setting of this photo is a backyard chicken coop. The visual evidence for this can be found in the structure itself, which shows:\n\n[0",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              75.0,
+              27.0,
+              128.25,
+              308.0
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 56.52315030002501,
+          "generation_time_seconds": 3.6608642999781296,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1040248832,
+          "cpu_utilization_percent": 29.17361111111111,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The child is entering a chicken coop. The visual evidence for this can be found in the wire mesh/chicken wire visible in the window, which is characteristic",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              52.50000000000001,
+              152.0,
+              127.50000000000001,
+              340.0
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 38.21307800000068,
+          "generation_time_seconds": 5.262735299998894,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1106763776,
+          "cpu_utilization_percent": 0.8980582524271845,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The child in the pink dress appears to be interacting with what looks like a chicken coop or similar wooden structure, reaching toward or opening something on it.",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              52.50000000000001,
+              152.0,
+              127.50000000000001,
+              340.0
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 100.68529789999593,
+          "generation_time_seconds": 9.403282199986279,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1195712512,
+          "cpu_utilization_percent": 1.9978494623655916,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The person at the top of the ladder appears to be performing window cleaning or maintenance work on the building's exterior windows.\n\n[0, 0,",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              222.0,
+              55.944,
+              345.0,
+              277.056
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 33.72146149992477,
+          "generation_time_seconds": 2.673182599944994,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1232297984,
+          "cpu_utilization_percent": 0.5830188679245283,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The individual on the ladder is wearing work attire. To identify the specific region showing their outfit, I need to locate where the person is positioned on the ladder",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              220.0,
+              139.85999999999999,
+              276.0,
+              263.07
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 61.20004030002747,
+          "generation_time_seconds": 3.194511599955149,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1261604864,
+          "cpu_utilization_percent": 0.9935483870967741,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "[0.0, 0.0, 0.496, 0.999]",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              222.0,
+              55.944,
+              345.0,
+              191.808
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              0.0,
+              0.0,
+              248.0,
+              332.667
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 82.81904440000653,
+          "generation_time_seconds": 4.994842900079675,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1322745856,
+          "cpu_utilization_percent": 1.2444444444444445,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "[0.0, 0.0, 0.498, 0.498]",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              230.0,
+              121.878,
+              261.0,
+              142.524
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              0.0,
+              0.0,
+              249.0,
+              165.834
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 47.796092099975795,
+          "generation_time_seconds": 2.5357299000024796,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1398013952,
+          "cpu_utilization_percent": 1.2019607843137254,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "[0.0, 0.0, 1.0, 1.0]",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              240.0,
+              179.82000000000002,
+              295.0,
+              277.056
+            ]
+          }
+        ],
+        "predicted_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              0.0,
+              0.0,
+              500.0,
+              333.0
+            ]
+          }
+        ],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 46.25211800006218,
+          "generation_time_seconds": 3.4940631999634206,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1435619328,
+          "cpu_utilization_percent": 1.7927536231884058,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 1,
+          "false_negative_count": 1,
+          "predicted_detection_count": 1
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The two people standing by the stove are both wearing black t-shirts. To locate the visual evidence for this in the image:\n\n[0.0",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              1.0,
+              154.5,
+              500.0,
+              327.75
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 63.10898730007466,
+          "generation_time_seconds": 2.8687794000143185,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1495318528,
+          "cpu_utilization_percent": 1.0789473684210527,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "answer-relevant region"
+        ],
+        "prediction": "The visual evidence for individuals engaged in cooking at the stove can be found in this region:\n\n[0.0, 0.0, 500",
+        "correct": false,
+        "valid_labels": [
+          "answer-relevant region"
+        ],
+        "ground_truth_boxes": [
+          {
+            "label": "answer-relevant region",
+            "xyxy": [
+              236.0,
+              210.75000000000003,
+              392.0,
+              312.0
+            ]
+          }
+        ],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 157.9772577000549,
+          "generation_time_seconds": 3.7380123001057655,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1543741440,
+          "cpu_utilization_percent": 0.8364864864864865,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 0,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 1,
+          "predicted_detection_count": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "mean_iou_matched": 0.0,
+        "mean_iou_all_predictions": 0.0,
+        "matched_predictions": [],
+        "matched_targets": []
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 1280.4704607999884,
+      "wall_clock_time_per_sample_seconds_mean": 64.02278968000901,
+      "total_generation_time_seconds_mean": 4.144008609995945,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.015619259180336558,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 0.3,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1543741440,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 2.955222837825821,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 6,
+      "false_negative_count_total": 20,
+      "mean_number_of_predicted_detections": 0.3,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.8560027999337763
+    }
+  }
+}

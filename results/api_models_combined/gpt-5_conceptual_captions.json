@@ -1,0 +1,959 @@
+{
+  "model": "gpt-5",
+  "benchmark": "conceptual_captions",
+  "report": {
+    "benchmark": "conceptual_captions",
+    "dataset": "conceptual_captions",
+    "task_type": "prompt_reconstruction",
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "author : a life in portraiture -- in photographs",
+          "author : a life in photography -- in pictures",
+          "author : a life in photography -- in photographs",
+          "author : a life in portraiture -- in pictures"
+        ],
+        "prediction": "D",
+        "correct": false,
+        "valid_labels": [
+          "author : a life in photography -- in pictures"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.08715019999363,
+          "generation_time_seconds": 4.083264000000781,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 588406784,
+          "cpu_utilization_percent": 17.193506493506494,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "author : a life in portraiture -- in photographs",
+          "author : a life in photography -- in pictures",
+          "author : a life in photography -- in photographs",
+          "author : a life in portraiture -- in pictures"
+        ],
+        "selected_choice": "author : a life in portraiture -- in pictures",
+        "answer": "author : a life in photography -- in pictures"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "that combines elements of a simple vegetable and dish",
+          "the - bedroom stone cottage can sleep people",
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "the - bedroom stone cottage can sleep people"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.131265899995924,
+          "generation_time_seconds": 2.097870600002352,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 591806464,
+          "cpu_utilization_percent": 0.6725,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "that combines elements of a simple vegetable and dish",
+          "the - bedroom stone cottage can sleep people",
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "the - bedroom stone cottage can sleep people",
+        "answer": "the - bedroom stone cottage can sleep people"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "that combines elements of a simple vegetable and dish",
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.7795210000040242,
+          "generation_time_seconds": 1.7327084999997169,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 591441920,
+          "cpu_utilization_percent": 0.8029411764705883,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "that combines elements of a simple vegetable and dish",
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "where 's the best place to show off your nails ? right in front of the castle , of course !",
+        "answer": "where 's the best place to show off your nails ? right in front of the castle , of course !"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "that combines elements of a simple vegetable and dish",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "that combines elements of a simple vegetable and dish"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.0566093000088586,
+          "generation_time_seconds": 1.0430174000066472,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 591101952,
+          "cpu_utilization_percent": 1.53,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "that combines elements of a simple vegetable and dish",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "that combines elements of a simple vegetable and dish",
+        "answer": "that combines elements of a simple vegetable and dish"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "transformers : till all are issue # 4b",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "transformers : till all are issue # 4b"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.209438299993053,
+          "generation_time_seconds": 2.1735886999958893,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 592400384,
+          "cpu_utilization_percent": 0.7285714285714286,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "transformers : till all are issue # 4b",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "transformers : till all are issue # 4b",
+        "answer": "transformers : till all are issue # 4b"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "illustration of a little girl taking a bath",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "illustration of a little girl taking a bath"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.5608519999950659,
+          "generation_time_seconds": 1.5101974999997765,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 592494592,
+          "cpu_utilization_percent": 1.0689655172413792,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "illustration of a little girl taking a bath",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "illustration of a little girl taking a bath",
+        "answer": "illustration of a little girl taking a bath"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "tv police procedural is filming on the street this week .",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "tv police procedural is filming on the street this week ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.0219237000128487,
+          "generation_time_seconds": 1.9876195000106236,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 592838656,
+          "cpu_utilization_percent": 0.8157894736842105,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "tv police procedural is filming on the street this week .",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "tv police procedural is filming on the street this week .",
+        "answer": "tv police procedural is filming on the street this week ."
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "the new terminal on island with quiet sea and setting sun",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "the new terminal on island with quiet sea and setting sun"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.682137399999192,
+          "generation_time_seconds": 1.6441468999983044,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 593981440,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "the new terminal on island with quiet sea and setting sun",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "the new terminal on island with quiet sea and setting sun",
+        "answer": "the new terminal on island with quiet sea and setting sun"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "what makeup to wear to a job interview",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "what makeup to wear to a job interview"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.492401499999687,
+          "generation_time_seconds": 1.4457809000014095,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 593575936,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "what makeup to wear to a job interview",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "what makeup to wear to a job interview",
+        "answer": "what makeup to wear to a job interview"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "the dentist drill the tooth with a turbine",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "the dentist drill the tooth with a turbine"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.6324094000010518,
+          "generation_time_seconds": 1.6015322000021115,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 593604608,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "the dentist drill the tooth with a turbine",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "the dentist drill the tooth with a turbine",
+        "answer": "the dentist drill the tooth with a turbine"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "pair of new dim orange modern sneakers isolated on a white foreground",
+          "pair of new bright orange modern sneakers isolated on a white background",
+          "pair of new bright orange modern sneakers isolated on a white foreground",
+          "pair of new dim orange modern sneakers isolated on a white background"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "pair of new bright orange modern sneakers isolated on a white background"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4652482999954373,
+          "generation_time_seconds": 1.4238235999946482,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 592424960,
+          "cpu_utilization_percent": 1.1071428571428572,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "pair of new dim orange modern sneakers isolated on a white foreground",
+          "pair of new bright orange modern sneakers isolated on a white background",
+          "pair of new bright orange modern sneakers isolated on a white foreground",
+          "pair of new dim orange modern sneakers isolated on a white background"
+        ],
+        "selected_choice": "pair of new bright orange modern sneakers isolated on a white background",
+        "answer": "pair of new bright orange modern sneakers isolated on a white background"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "ask industry to do in our family room ?",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "ask industry to do in our family room ?"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.821453399999882,
+          "generation_time_seconds": 2.792233900006977,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 601477120,
+          "cpu_utilization_percent": 1.7245283018867925,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "ask industry to do in our family room ?",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "ask industry to do in our family room ?",
+        "answer": "ask industry to do in our family room ?"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "sandcastle mountain on dim sky .",
+          "sandcastle beach on bright sky .",
+          "sandcastle beach on dim sky .",
+          "sandcastle mountain on bright sky ."
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "sandcastle beach on bright sky ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.454962899995735,
+          "generation_time_seconds": 1.4466476999950828,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 603131904,
+          "cpu_utilization_percent": 1.0464285714285715,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "sandcastle mountain on dim sky .",
+          "sandcastle beach on bright sky .",
+          "sandcastle beach on dim sky .",
+          "sandcastle mountain on bright sky ."
+        ],
+        "selected_choice": "sandcastle beach on bright sky .",
+        "answer": "sandcastle beach on bright sky ."
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "cowboy boots are a major hit for spring and summer !",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "cowboy boots are a major hit for spring and summer !"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.7789161999971839,
+          "generation_time_seconds": 1.7597269999969285,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 596066304,
+          "cpu_utilization_percent": 0.9058823529411765,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "cowboy boots are a major hit for spring and summer !",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "cowboy boots are a major hit for spring and summer !",
+        "answer": "cowboy boots are a major hit for spring and summer !"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "a humorous call to arms against invention .",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "D",
+        "correct": false,
+        "valid_labels": [
+          "a humorous call to arms against invention ."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.089398700001766,
+          "generation_time_seconds": 2.071487300010631,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 597237760,
+          "cpu_utilization_percent": 0.7897435897435897,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "a humorous call to arms against invention .",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "author : a life in photography -- in pictures",
+        "answer": "a humorous call to arms against invention ."
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "football player said after the game that his players had to learn lessons from the loss",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "football player said after the game that his players had to learn lessons from the loss"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.466845499991905,
+          "generation_time_seconds": 1.4137485999963246,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 598388736,
+          "cpu_utilization_percent": 1.1481481481481481,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "football player said after the game that his players had to learn lessons from the loss",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "football player said after the game that his players had to learn lessons from the loss",
+        "answer": "football player said after the game that his players had to learn lessons from the loss"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "biological species with pup along a city",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "biological species with pup along a city"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.4064431000006152,
+          "generation_time_seconds": 1.3838654999999562,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 596750336,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "biological species with pup along a city",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "biological species with pup along a city",
+        "answer": "biological species with pup along a city"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.645746300011524,
+          "generation_time_seconds": 1.614270399993984,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 595603456,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress",
+        "answer": "keeping fans informed : since their birth in january this year , the couple have been keeping fans updated with the babies progress"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "a man on a scooter , taking part in the rally",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "a man on a scooter , taking part in the rally"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.226176399999531,
+          "generation_time_seconds": 1.1946292000066023,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 595726336,
+          "cpu_utilization_percent": 1.3391304347826087,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "a man on a scooter , taking part in the rally",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "a man on a scooter , taking part in the rally",
+        "answer": "a man on a scooter , taking part in the rally"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "dry fields on a summer day",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "dry fields on a summer day"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.8996649999899091,
+          "generation_time_seconds": 1.8798042999987956,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 601227264,
+          "cpu_utilization_percent": 1.6111111111111112,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "where 's the best place to show off your nails ? right in front of the castle , of course !",
+          "dry fields on a summer day",
+          "the - bedroom stone cottage can sleep people",
+          "author : a life in photography -- in pictures"
+        ],
+        "selected_choice": "dry fields on a summer day",
+        "answer": "dry fields on a summer day"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 36.92095900001004,
+      "wall_clock_time_per_sample_seconds_mean": 1.8454282249993412,
+      "total_generation_time_seconds_mean": 1.8149981850008772,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.5416977386745171,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 603131904,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.6242194728329475,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null
+    }
+  }
+}

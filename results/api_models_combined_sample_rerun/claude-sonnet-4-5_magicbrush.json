@@ -1,0 +1,960 @@
+{
+  "model": "claude-sonnet-4-5",
+  "benchmark": "magicbrush",
+  "report": {
+    "benchmark": "magicbrush",
+    "dataset": "magicbrush",
+    "task_type": "image_modification_vqa",
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "change the table for a dog",
+          "change the table for a cat",
+          "change the chair for a cat",
+          "change the chair for a dog"
+        ],
+        "prediction": "A. change the table for a dog",
+        "correct": true,
+        "valid_labels": [
+          "change the table for a dog"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.679068100056611,
+          "generation_time_seconds": 3.602992399944924,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 756162560,
+          "cpu_utilization_percent": 0.4263888888888889,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "change the table for a dog",
+          "change the table for a cat",
+          "change the chair for a cat",
+          "change the chair for a dog"
+        ],
+        "selected_choice": "change the table for a dog",
+        "answer": "change the table for a dog"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "leave only words on the page",
+          "leave only words on the chalkboard",
+          "remove only words on the chalkboard",
+          "remove only words on the page"
+        ],
+        "prediction": "Looking at the two images:\n\nImage A (left): Shows a clear page",
+        "correct": false,
+        "valid_labels": [
+          "leave only words on the page"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.888983399956487,
+          "generation_time_seconds": 4.8730047000572085,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 763412480,
+          "cpu_utilization_percent": 32.00833333333333,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "leave only words on the page",
+          "leave only words on the chalkboard",
+          "remove only words on the chalkboard",
+          "remove only words on the page"
+        ],
+        "selected_choice": "Looking at the two images:\n\nImage A (left): Shows a clear page",
+        "answer": "leave only words on the page"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "leave words only on half the page",
+          "leave words only on half the chalkboard",
+          "remove words only on half the chalkboard",
+          "remove words only on half the page"
+        ],
+        "prediction": "D. remove words only on half the page\n\nThe right panel (Image B",
+        "correct": false,
+        "valid_labels": [
+          "leave words only on half the page"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.9562368999468163,
+          "generation_time_seconds": 3.906467799912207,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 766300160,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "leave words only on half the page",
+          "leave words only on half the chalkboard",
+          "remove words only on half the chalkboard",
+          "remove words only on half the page"
+        ],
+        "selected_choice": "remove words only on half the page",
+        "answer": "leave words only on half the page"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "leave only the scissor on  the cup",
+          "leave only the spoon on  the cup",
+          "remove only the spoon on  the cup",
+          "remove only the scissor on  the cup"
+        ],
+        "prediction": "I need to compare Image A (left/source) and Image B (right",
+        "correct": false,
+        "valid_labels": [
+          "leave only the scissor on  the cup"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.8895998999942094,
+          "generation_time_seconds": 3.8512705999892205,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 766664704,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "leave only the scissor on  the cup",
+          "leave only the spoon on  the cup",
+          "remove only the spoon on  the cup",
+          "remove only the scissor on  the cup"
+        ],
+        "selected_choice": "I need to compare Image A (left/source) and Image B (right",
+        "answer": "leave only the scissor on  the cup"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "the window is now square",
+          "the door is now square",
+          "the door is now circular",
+          "the window is now circular"
+        ],
+        "prediction": "Looking at the two images:\n\nImage A (left): Shows a bathroom with",
+        "correct": false,
+        "valid_labels": [
+          "the window is now square"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.14423119998537,
+          "generation_time_seconds": 3.1330033999402076,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 764878848,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "the window is now square",
+          "the door is now square",
+          "the door is now circular",
+          "the window is now circular"
+        ],
+        "selected_choice": "Looking at the two images:\n\nImage A (left): Shows a bathroom with",
+        "answer": "the window is now square"
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "let the car be a sports car",
+          "let the motorcycle be a sports car",
+          "have the motorcycle be a sports car",
+          "have the car be a sports car"
+        ],
+        "prediction": "Looking at both images, I can see they both show the trunk/cargo area",
+        "correct": false,
+        "valid_labels": [
+          "let the car be a sports car"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.7763616999145597,
+          "generation_time_seconds": 3.742640999960713,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 765198336,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "let the car be a sports car",
+          "let the motorcycle be a sports car",
+          "have the motorcycle be a sports car",
+          "have the car be a sports car"
+        ],
+        "selected_choice": "Looking at both images, I can see they both show the trunk/cargo area",
+        "answer": "let the car be a sports car"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "remove the mesh screen",
+          "remove the glass pane",
+          "add the glass pane",
+          "add the mesh screen"
+        ],
+        "prediction": "A. remove the mesh screen",
+        "correct": true,
+        "valid_labels": [
+          "remove the mesh screen"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.5381862999638543,
+          "generation_time_seconds": 2.4835670000175014,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 767823872,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "remove the mesh screen",
+          "remove the glass pane",
+          "add the glass pane",
+          "add the mesh screen"
+        ],
+        "selected_choice": "remove the mesh screen",
+        "answer": "remove the mesh screen"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "replace some bags with throw pillows",
+          "replace some bags with cardboard boxes",
+          "remove some bags with cardboard boxes",
+          "remove some bags with throw pillows"
+        ],
+        "prediction": "Looking at the two images, I need to identify what changed from Image A (",
+        "correct": false,
+        "valid_labels": [
+          "replace some bags with throw pillows"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.7609779000049457,
+          "generation_time_seconds": 3.7094039999647066,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 770105344,
+          "cpu_utilization_percent": 0.4189189189189189,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "replace some bags with throw pillows",
+          "replace some bags with cardboard boxes",
+          "remove some bags with cardboard boxes",
+          "remove some bags with throw pillows"
+        ],
+        "selected_choice": "Looking at the two images, I need to identify what changed from Image A (",
+        "answer": "replace some bags with throw pillows"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "turn the stop sign into a no parking sign",
+          "turn the yield sign into a no parking sign",
+          "keep the yield sign into a no parking sign",
+          "keep the stop sign into a no parking sign"
+        ],
+        "prediction": "A. turn the stop sign into a no parking sign",
+        "correct": true,
+        "valid_labels": [
+          "turn the stop sign into a no parking sign"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.6228220000630245,
+          "generation_time_seconds": 2.608534500002861,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 767975424,
+          "cpu_utilization_percent": 0.5647058823529412,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "turn the stop sign into a no parking sign",
+          "turn the yield sign into a no parking sign",
+          "keep the yield sign into a no parking sign",
+          "keep the stop sign into a no parking sign"
+        ],
+        "selected_choice": "turn the stop sign into a no parking sign",
+        "answer": "turn the stop sign into a no parking sign"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "remove the lower sign",
+          "remove the upper sign",
+          "add the upper sign",
+          "add the lower sign"
+        ],
+        "prediction": "A. remove the lower sign",
+        "correct": true,
+        "valid_labels": [
+          "remove the lower sign"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.396663499996066,
+          "generation_time_seconds": 3.3590466999448836,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 768184320,
+          "cpu_utilization_percent": 1.392537313432836,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "remove the lower sign",
+          "remove the upper sign",
+          "add the upper sign",
+          "add the lower sign"
+        ],
+        "selected_choice": "remove the lower sign",
+        "answer": "remove the lower sign"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "Let the sheep turn white.",
+          "Let the sheep turn black.",
+          "Let the goats turn black.",
+          "Let the goats turn white."
+        ],
+        "prediction": "Looking at the images, I can see that in Image A (left), there",
+        "correct": false,
+        "valid_labels": [
+          "Let the sheep turn white."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.738498199963942,
+          "generation_time_seconds": 3.6791028999723494,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 768507904,
+          "cpu_utilization_percent": 0.42054794520547945,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Let the sheep turn white.",
+          "Let the sheep turn black.",
+          "Let the goats turn black.",
+          "Let the goats turn white."
+        ],
+        "selected_choice": "Looking at the images, I can see that in Image A (left), there",
+        "answer": "Let the sheep turn white."
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "Have the business be called Bongos.",
+          "Have the restaurant be called Bongos.",
+          "Have the restaurant be called Maracas.",
+          "Have the business be called Maracas."
+        ],
+        "prediction": "B. Have the restaurant be called Bongos.",
+        "correct": false,
+        "valid_labels": [
+          "Have the business be called Bongos."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.8901020999765024,
+          "generation_time_seconds": 2.8475664999568835,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 766464000,
+          "cpu_utilization_percent": 30.3140350877193,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Have the business be called Bongos.",
+          "Have the restaurant be called Bongos.",
+          "Have the restaurant be called Maracas.",
+          "Have the business be called Maracas."
+        ],
+        "selected_choice": "Have the restaurant be called Bongos.",
+        "answer": "Have the business be called Bongos."
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "Turn the stop sign into a lollipop.",
+          "Turn the yield sign into a lollipop.",
+          "keep the yield sign into a lollipop.",
+          "keep the stop sign into a lollipop."
+        ],
+        "prediction": "A. Turn the stop sign into a lollipop.",
+        "correct": true,
+        "valid_labels": [
+          "Turn the stop sign into a lollipop."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.5746399000054225,
+          "generation_time_seconds": 4.534289999981411,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 769183744,
+          "cpu_utilization_percent": 0.34555555555555556,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Turn the stop sign into a lollipop.",
+          "Turn the yield sign into a lollipop.",
+          "keep the yield sign into a lollipop.",
+          "keep the stop sign into a lollipop."
+        ],
+        "selected_choice": "Turn the stop sign into a lollipop.",
+        "answer": "Turn the stop sign into a lollipop."
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "make that backpack all black",
+          "make that backpack all white",
+          "make that briefcase all white",
+          "make that briefcase all black"
+        ],
+        "prediction": "A. make that backpack all black",
+        "correct": true,
+        "valid_labels": [
+          "make that backpack all black"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.093583600013517,
+          "generation_time_seconds": 4.06717579998076,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 769286144,
+          "cpu_utilization_percent": 0.39,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "make that backpack all black",
+          "make that backpack all white",
+          "make that briefcase all white",
+          "make that briefcase all black"
+        ],
+        "selected_choice": "make that backpack all black",
+        "answer": "make that backpack all black"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "make the girl ginger",
+          "make the boy ginger",
+          "keep the boy ginger",
+          "keep the girl ginger"
+        ],
+        "prediction": "A. make the girl ginger",
+        "correct": true,
+        "valid_labels": [
+          "make the girl ginger"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.003948000026867,
+          "generation_time_seconds": 3.980862500029616,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 769351680,
+          "cpu_utilization_percent": 0.38734177215189874,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "make the girl ginger",
+          "make the boy ginger",
+          "keep the boy ginger",
+          "keep the girl ginger"
+        ],
+        "selected_choice": "make the girl ginger",
+        "answer": "make the girl ginger"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "Give the person a cape.",
+          "Give the robot a cape.",
+          "Give the robot a backpack.",
+          "Give the person a backpack."
+        ],
+        "prediction": "D. Give the person a backpack.",
+        "correct": false,
+        "valid_labels": [
+          "Give the person a cape."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.130359199945815,
+          "generation_time_seconds": 3.1187935000052676,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 769507328,
+          "cpu_utilization_percent": 0.0,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Give the person a cape.",
+          "Give the robot a cape.",
+          "Give the robot a backpack.",
+          "Give the person a backpack."
+        ],
+        "selected_choice": "Give the person a backpack.",
+        "answer": "Give the person a cape."
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "let the dogs bite a stuffed toy",
+          "let the cats bite a stuffed toy",
+          "let the cats bite a rubber ball",
+          "let the dogs bite a rubber ball"
+        ],
+        "prediction": "A. let the dogs bite a stuffed toy",
+        "correct": true,
+        "valid_labels": [
+          "let the dogs bite a stuffed toy"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 4.112635199911892,
+          "generation_time_seconds": 4.068179899943061,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 767889408,
+          "cpu_utilization_percent": 0.37777777777777777,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "let the dogs bite a stuffed toy",
+          "let the cats bite a stuffed toy",
+          "let the cats bite a rubber ball",
+          "let the dogs bite a rubber ball"
+        ],
+        "selected_choice": "let the dogs bite a stuffed toy",
+        "answer": "let the dogs bite a stuffed toy"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "let the dogs wear jackets",
+          "let the cats wear jackets",
+          "let the cats wear scarves",
+          "let the dogs wear scarves"
+        ],
+        "prediction": "A. let the dogs wear jackets",
+        "correct": true,
+        "valid_labels": [
+          "let the dogs wear jackets"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.7797989000100642,
+          "generation_time_seconds": 3.7631301999790594,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 770531328,
+          "cpu_utilization_percent": 0.4189189189189189,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "let the dogs wear jackets",
+          "let the cats wear jackets",
+          "let the cats wear scarves",
+          "let the dogs wear scarves"
+        ],
+        "selected_choice": "let the dogs wear jackets",
+        "answer": "let the dogs wear jackets"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "Get rid of all the people.",
+          "add all the people.",
+          "add one of the the people.",
+          "Get rid of one of the the people."
+        ],
+        "prediction": "Looking at the two images:\n\n**Image A (Source/Left):**",
+        "correct": false,
+        "valid_labels": [
+          "Get rid of all the people."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 3.089362300001085,
+          "generation_time_seconds": 3.083252500044182,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 770908160,
+          "cpu_utilization_percent": 52.70655737704918,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Get rid of all the people.",
+          "add all the people.",
+          "add one of the the people.",
+          "Get rid of one of the the people."
+        ],
+        "selected_choice": "Looking at the two images:\n\n**Image A (Source/Left):**",
+        "answer": "Get rid of all the people."
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "Make the umbrellas blue.",
+          "Make the umbrellas red.",
+          "Make the parasols red.",
+          "Make the parasols blue."
+        ],
+        "prediction": "A. Make the umbrellas blue.",
+        "correct": true,
+        "valid_labels": [
+          "Make the umbrellas blue."
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.9981507000047714,
+          "generation_time_seconds": 2.969597499934025,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 771870720,
+          "cpu_utilization_percent": 1.040677966101695,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "choices": [
+          "Make the umbrellas blue.",
+          "Make the umbrellas red.",
+          "Make the parasols red.",
+          "Make the parasols blue."
+        ],
+        "selected_choice": "Make the umbrellas blue.",
+        "answer": "Make the umbrellas blue."
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 72.082180300029,
+      "wall_clock_time_per_sample_seconds_mean": 3.603210449987091,
+      "total_generation_time_seconds_mean": 3.5690941699780523,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.2774610856213509,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 771870720,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 6.060614836870336,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null,
+      "model_load_time_seconds": 1.8560027999337763
+    }
+  }
+}

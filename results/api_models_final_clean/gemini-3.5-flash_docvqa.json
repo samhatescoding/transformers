@@ -1,0 +1,999 @@
+{
+  "model": "gemini-3.5-flash",
+  "benchmark": "docvqa",
+  "report": {
+    "benchmark": "docvqa",
+    "dataset": "docvqa",
+    "task_type": null,
+    "num_samples": 20,
+    "num_candidate_labels": 0,
+    "results": [
+      {
+        "index": 1,
+        "prompt_labels": [
+          "University of California",
+          "Stanford University",
+          "University of Washington",
+          "University of Michigan"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "university of california"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.8224473999871407,
+          "generation_time_seconds": 1.786986099992646,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1146662912,
+          "cpu_utilization_percent": 8.588888888888889,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "University of California"
+        ],
+        "choices": [
+          "University of California",
+          "Stanford University",
+          "University of Washington",
+          "University of Michigan"
+        ],
+        "selected_choice": "University of California"
+      },
+      {
+        "index": 2,
+        "prompt_labels": [
+          "Tata Limited",
+          "Reliance Limited",
+          "Hindustan Limited",
+          "ITC Limited"
+        ],
+        "prediction": "D. ITC Limited",
+        "correct": true,
+        "valid_labels": [
+          "itc limited"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 20.49405690000276,
+          "generation_time_seconds": 20.444445100001758,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1639481344,
+          "cpu_utilization_percent": 1.05,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "ITC Limited"
+        ],
+        "choices": [
+          "Tata Limited",
+          "Reliance Limited",
+          "Hindustan Limited",
+          "ITC Limited"
+        ],
+        "selected_choice": "ITC Limited"
+      },
+      {
+        "index": 3,
+        "prompt_labels": [
+          "1128 SIXTEENTH ST., N. E., WASHINGTON, D. C. 20036",
+          "1128 SIXTEENTH ST., N. W., WASHINGTON, D. C. 20037",
+          "1128 SIXTEENTH ST., N. W., WASHINGTON, D. C. 20036",
+          "1128 FIFTEENTH ST., N. W., WASHINGTON, D. C. 20036"
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "1128 sixteenth st n w washington d c 20036"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.490021599980537,
+          "generation_time_seconds": 2.4610533000086434,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1161420800,
+          "cpu_utilization_percent": 7.489795918367347,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "1128 SIXTEENTH ST., N. W., WASHINGTON, D. C. 20036"
+        ],
+        "choices": [
+          "1128 SIXTEENTH ST., N. E., WASHINGTON, D. C. 20036",
+          "1128 SIXTEENTH ST., N. W., WASHINGTON, D. C. 20037",
+          "1128 SIXTEENTH ST., N. W., WASHINGTON, D. C. 20036",
+          "1128 FIFTEENTH ST., N. W., WASHINGTON, D. C. 20036"
+        ],
+        "selected_choice": "1128 SIXTEENTH ST., N. W., WASHINGTON, D. C. 20036"
+      },
+      {
+        "index": 4,
+        "prompt_labels": [
+          "The Mellon Foundation",
+          "The Robert A. Welch Foundation",
+          "The Ford Foundation",
+          "The Rockefeller Foundation"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "the robert a welch foundation"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 22.501084999996237,
+          "generation_time_seconds": 22.481705099984538,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1546113024,
+          "cpu_utilization_percent": 0.27209302325581397,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The Robert A. Welch Foundation"
+        ],
+        "choices": [
+          "The Mellon Foundation",
+          "The Robert A. Welch Foundation",
+          "The Ford Foundation",
+          "The Rockefeller Foundation"
+        ],
+        "selected_choice": "The Robert A. Welch Foundation"
+      },
+      {
+        "index": 5,
+        "prompt_labels": [
+          "11:14 to 11:39 a.m.",
+          "10:45 to 11:10 a.m.",
+          "11:40 a.m. to 12:05 p.m.",
+          "12:25 to 12:58 p.m."
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "1114 to 1139 am"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 20.90281580001465,
+          "generation_time_seconds": 20.87217360001523,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1555193856,
+          "cpu_utilization_percent": 0.5226932668329177,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "11:14 to 11:39 a.m."
+        ],
+        "choices": [
+          "11:14 to 11:39 a.m.",
+          "10:45 to 11:10 a.m.",
+          "11:40 a.m. to 12:05 p.m.",
+          "12:25 to 12:58 p.m."
+        ],
+        "selected_choice": "11:14 to 11:39 a.m."
+      },
+      {
+        "index": 6,
+        "prompt_labels": [
+          "1",
+          "3",
+          "4",
+          "2"
+        ],
+        "prediction": "D",
+        "correct": true,
+        "valid_labels": [
+          "2"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.777751999994507,
+          "generation_time_seconds": 1.7650601000059396,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1067388928,
+          "cpu_utilization_percent": 4.44,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "2"
+        ],
+        "choices": [
+          "1",
+          "3",
+          "4",
+          "2"
+        ],
+        "selected_choice": "2"
+      },
+      {
+        "index": 7,
+        "prompt_labels": [
+          "CIL LIMITED",
+          "GIL LIMITED",
+          "CIGFIL LIMITED",
+          "ITC LIMITED"
+        ],
+        "prediction": "C. CIGFIL LIMITED",
+        "correct": true,
+        "valid_labels": [
+          "cigfil limited"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 43.828783799981466,
+          "generation_time_seconds": 43.78341110001202,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1562980352,
+          "cpu_utilization_percent": 0.14351961950059453,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "CIGFIL LIMITED"
+        ],
+        "choices": [
+          "CIL LIMITED",
+          "GIL LIMITED",
+          "CIGFIL LIMITED",
+          "ITC LIMITED"
+        ],
+        "selected_choice": "CIGFIL LIMITED"
+      },
+      {
+        "index": 8,
+        "prompt_labels": [
+          "As advertising expenditure stopped",
+          "As competitor's joined the price war",
+          "As menu prices increased sharply",
+          "As stores reduced their opening hours"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "as competitors joined the price war"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 19.24319119998836,
+          "generation_time_seconds": 19.19707870000275,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1577652224,
+          "cpu_utilization_percent": 0.23766937669376695,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "As competitor's joined the price war"
+        ],
+        "choices": [
+          "As advertising expenditure stopped",
+          "As competitor's joined the price war",
+          "As menu prices increased sharply",
+          "As stores reduced their opening hours"
+        ],
+        "selected_choice": "As competitor's joined the price war"
+      },
+      {
+        "index": 9,
+        "prompt_labels": [
+          "A. C. Monk",
+          "A. B. Clark",
+          "C. D. Miller",
+          "R. J. Smith"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "a c monk"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 22.937252499978058,
+          "generation_time_seconds": 22.902950499992585,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1576992768,
+          "cpu_utilization_percent": 0.20545454545454547,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "A. C. Monk"
+        ],
+        "choices": [
+          "A. C. Monk",
+          "A. B. Clark",
+          "C. D. Miller",
+          "R. J. Smith"
+        ],
+        "selected_choice": "A. C. Monk"
+      },
+      {
+        "index": 10,
+        "prompt_labels": [
+          "CIGFIL Limited",
+          "Tata Limited",
+          "Reliance Limited",
+          "ITC Limited"
+        ],
+        "prediction": "D. ITC Limited",
+        "correct": true,
+        "valid_labels": [
+          "itc limited"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 20.195669500011718,
+          "generation_time_seconds": 20.13765180000337,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1582063616,
+          "cpu_utilization_percent": 0.47668393782383417,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "ITC Limited"
+        ],
+        "choices": [
+          "CIGFIL Limited",
+          "Tata Limited",
+          "Reliance Limited",
+          "ITC Limited"
+        ],
+        "selected_choice": "ITC Limited"
+      },
+      {
+        "index": 11,
+        "prompt_labels": [
+          "A. Baijal",
+          "K. V. L. Narayan",
+          "Y. C. Deveshwar",
+          "S. Banerjee"
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "y c deveshwar"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 1.8772286000021268,
+          "generation_time_seconds": 1.8363374000182375,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1070641152,
+          "cpu_utilization_percent": 4.205405405405405,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Y. C. Deveshwar"
+        ],
+        "choices": [
+          "A. Baijal",
+          "K. V. L. Narayan",
+          "Y. C. Deveshwar",
+          "S. Banerjee"
+        ],
+        "selected_choice": "Y. C. Deveshwar"
+      },
+      {
+        "index": 12,
+        "prompt_labels": [
+          "80%",
+          "70%",
+          "50%",
+          "60%"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "70%"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 15.777617499988992,
+          "generation_time_seconds": 15.725014299998293,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1582874624,
+          "cpu_utilization_percent": 0.4052805280528053,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "70%"
+        ],
+        "choices": [
+          "80%",
+          "70%",
+          "50%",
+          "60%"
+        ],
+        "selected_choice": "70%"
+      },
+      {
+        "index": 13,
+        "prompt_labels": [
+          "ITC LIMITED",
+          "CIGFIL LIMITED",
+          "TATA LIMITED",
+          "RELIANCE LIMITED"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "itc limited"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 6.649564700026531,
+          "generation_time_seconds": 6.6106826000032015,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1601675264,
+          "cpu_utilization_percent": 1.7078740157480314,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "ITC LIMITED"
+        ],
+        "choices": [
+          "ITC LIMITED",
+          "CIGFIL LIMITED",
+          "TATA LIMITED",
+          "RELIANCE LIMITED"
+        ],
+        "selected_choice": "ITC LIMITED"
+      },
+      {
+        "index": 14,
+        "prompt_labels": [
+          "The Consumer",
+          "The Economy",
+          "The Marketplace",
+          "The Environment"
+        ],
+        "prediction": "D",
+        "correct": true,
+        "valid_labels": [
+          "the environment"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 5.455705600004876,
+          "generation_time_seconds": 5.3995636999898124,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1600905216,
+          "cpu_utilization_percent": 0.8904761904761904,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "The Environment"
+        ],
+        "choices": [
+          "The Consumer",
+          "The Economy",
+          "The Marketplace",
+          "The Environment"
+        ],
+        "selected_choice": "The Environment"
+      },
+      {
+        "index": 15,
+        "prompt_labels": [
+          "$150",
+          "$250",
+          "$200",
+          "$100"
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "$200"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 18.57412460001069,
+          "generation_time_seconds": 18.565658699983032,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1595408384,
+          "cpu_utilization_percent": 0.3390449438202247,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "$200"
+        ],
+        "choices": [
+          "$150",
+          "$250",
+          "$200",
+          "$100"
+        ],
+        "selected_choice": "$200"
+      },
+      {
+        "index": 16,
+        "prompt_labels": [
+          "NASHVILLE MEDICAL COLLEGE",
+          "MEHARRY MEDICAL COLLEGE",
+          "HOWARD MEDICAL COLLEGE",
+          "MOREHOUSE MEDICAL COLLEGE"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "meharry medical college"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 2.126482899999246,
+          "generation_time_seconds": 2.1035412999917753,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1070342144,
+          "cpu_utilization_percent": 2.1880952380952383,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "MEHARRY MEDICAL COLLEGE"
+        ],
+        "choices": [
+          "NASHVILLE MEDICAL COLLEGE",
+          "MEHARRY MEDICAL COLLEGE",
+          "HOWARD MEDICAL COLLEGE",
+          "MOREHOUSE MEDICAL COLLEGE"
+        ],
+        "selected_choice": "MEHARRY MEDICAL COLLEGE"
+      },
+      {
+        "index": 17,
+        "prompt_labels": [
+          "Scissors Menthol Fresh",
+          "Scissors Filter Kings",
+          "Scissors Gold Flake",
+          "Scissors Classic Milds"
+        ],
+        "prediction": "A",
+        "correct": true,
+        "valid_labels": [
+          "scissors menthol fresh"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 21.04788520000875,
+          "generation_time_seconds": 21.015872000018135,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1601716224,
+          "cpu_utilization_percent": 0.4548387096774194,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "Scissors Menthol Fresh"
+        ],
+        "choices": [
+          "Scissors Menthol Fresh",
+          "Scissors Filter Kings",
+          "Scissors Gold Flake",
+          "Scissors Classic Milds"
+        ],
+        "selected_choice": "Scissors Menthol Fresh"
+      },
+      {
+        "index": 18,
+        "prompt_labels": [
+          "14",
+          "15",
+          "17",
+          "16"
+        ],
+        "prediction": "D",
+        "correct": true,
+        "valid_labels": [
+          "16"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 12.994637700001476,
+          "generation_time_seconds": 12.97305589998723,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1616396288,
+          "cpu_utilization_percent": 0.357429718875502,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "16"
+        ],
+        "choices": [
+          "14",
+          "15",
+          "17",
+          "16"
+        ],
+        "selected_choice": "16"
+      },
+      {
+        "index": 19,
+        "prompt_labels": [
+          "six",
+          "eight",
+          "seven",
+          "five"
+        ],
+        "prediction": "C",
+        "correct": true,
+        "valid_labels": [
+          "seven"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 14.852536399994278,
+          "generation_time_seconds": 14.82591310000862,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1627185152,
+          "cpu_utilization_percent": 2.3561837455830386,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "seven"
+        ],
+        "choices": [
+          "six",
+          "eight",
+          "seven",
+          "five"
+        ],
+        "selected_choice": "seven"
+      },
+      {
+        "index": 20,
+        "prompt_labels": [
+          "twelve",
+          "ten",
+          "eight",
+          "nine"
+        ],
+        "prediction": "B",
+        "correct": true,
+        "valid_labels": [
+          "ten"
+        ],
+        "ground_truth_boxes": [],
+        "predicted_boxes": [],
+        "stats": {
+          "success": true,
+          "error": null,
+          "wall_clock_time_seconds": 21.44283140002517,
+          "generation_time_seconds": 21.398468300001696,
+          "first_token_latency_seconds": null,
+          "time_per_output_token_seconds": null,
+          "output_tokens": null,
+          "retry_count": 0,
+          "truncated": false,
+          "peak_cpu_ram_bytes": 1630834688,
+          "cpu_utilization_percent": 1.5065693430656935,
+          "peak_gpu_memory_bytes": null,
+          "gpu_utilization_percent": null,
+          "vram_allocation_over_time_bytes": null,
+          "disk_offload_volume_bytes": null,
+          "generated_output_count": 1,
+          "hallucinated_label_count": 0,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "predicted_detection_count": 0
+        },
+        "reference_answers": [
+          "ten"
+        ],
+        "choices": [
+          "twelve",
+          "ten",
+          "eight",
+          "nine"
+        ],
+        "selected_choice": "ten"
+      }
+    ],
+    "stats": {
+      "wall_clock_time_seconds": 296.9916902999976,
+      "wall_clock_time_per_sample_seconds_mean": 14.84958451499988,
+      "total_generation_time_seconds_mean": 14.814331135000975,
+      "first_token_latency_seconds_mean": null,
+      "time_per_output_token_seconds_mean": null,
+      "samples_per_second": 0.06734195148624386,
+      "number_of_output_tokens_mean": null,
+      "number_of_generated_outputs_mean": 1.0,
+      "number_of_benchmark_samples_completed": 20,
+      "success_count": 20,
+      "failure_count": 0,
+      "retry_count": 0,
+      "peak_cpu_ram_bytes": 1639481344,
+      "peak_gpu_memory_bytes": null,
+      "cpu_utilization_percent_mean": 1.8918998207808628,
+      "gpu_utilization_percent_mean": null,
+      "vram_allocation_over_time_bytes": null,
+      "disk_offload_volume_bytes": null,
+      "truncation_rate": 0.0,
+      "hallucinated_label_rate": 0.0,
+      "false_positive_count_total": 0,
+      "false_negative_count_total": 0,
+      "mean_number_of_predicted_detections": 0.0,
+      "tokens_per_second": null
+    }
+  }
+}

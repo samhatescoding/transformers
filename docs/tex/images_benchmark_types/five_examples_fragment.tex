@@ -1,5 +1,5 @@
-% Generated from docs/tex/images_benchmark_types/five_examples_metadata.json.
-% Contains one selected image/prompt/reference/GPT-4o example per benchmark.
+% Generated from docs/tex/images_benchmark_types/five_examples_metadata.json,
+% with additional Type R and Type P defense examples exported from GPT-4o runs.
 
 \subsection*{Conceptual Captions Example}
 
@@ -72,3 +72,27 @@
 \promptbox{\textbf{Prompt for example 1.} Return exactly one label from the complete ImageNet-1K label list.}
 
 \resultbox{\textbf{Reference for example 1.} sombrero\\\textbf{GPT-4o response.} sombrero (correct)}
+
+\subsection*{TAD66K Rating Example}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.70\textwidth]{type_r_tad66k_06.png}
+\caption{TAD66K rating example 6 image sent to the model.}
+\end{figure}
+
+\promptbox{\textbf{Prompt for example 6.} Rate the overall aesthetic quality of this image from 1 to 10, where 1 is very poor and 10 is exceptional. Return exactly one integer from 1 to 10.}
+
+\resultbox{\textbf{Reference for example 6.} 7\\\textbf{GPT-4o response.} 7 (correct)\\\textbf{GPT-4o absolute error.} 0}
+
+\subsection*{Pick-a-Pic Preference Example}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.70\textwidth]{type_p_pick_a_pic_04.png}
+\caption{Pick-a-Pic preference example 4 image pair sent to the model.}
+\end{figure}
+
+\promptbox{\textbf{Prompt for example 4.} Which image is more aesthetically pleasing overall?\\\textbf{Choices.}\\{} \textbf{A.} Image A\\{} \textbf{B.} Image B\\{} Return only A or B.}
+
+\resultbox{\textbf{Reference for example 4.} Image A\\\textbf{GPT-4o response.} A (correct)}
