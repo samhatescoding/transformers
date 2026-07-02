@@ -376,6 +376,10 @@
 \end{center}
 \end{frame}
 
+\begin{frame}{Results 1: Benchmark Types}
+\typeplot{\oldpair}{family_grouped_bars.png}{0.66\textheight}
+\end{frame}
+
 \begin{frame}{Actual Sample Type B: iNaturalist Detection}
 \begin{columns}[T,totalwidth=\textwidth]
 \begin{column}{0.52\textwidth}
@@ -395,36 +399,6 @@
 \vspace{0.15cm}
 \textbf{Sonnet answer:} {\ttfamily [0.0, 0.15, 0.55, 0.85]}\\
 \textbf{Sonnet score:} F1=1.00, P=1.00, R=1.00
-\end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}{Results 1: Benchmark Types}
-\typeplot{\oldpair}{family_grouped_bars.png}{0.66\textheight}
-\end{frame}
-
-\begin{frame}{Actual Sample Type B: iNaturalist Detection}
-\begin{columns}[T,totalwidth=\textwidth]
-\begin{column}{0.52\textwidth}
-\includegraphics[width=\textwidth,height=0.66\textheight,keepaspectratio]{\assetpath/type_b_inaturalist_detection_sample2_overlay.png}
-\vspace{0.05cm}
-
-{\scriptsize Target: \emph{Platalea ajaja}. Green: correct box. Blue/red: model boxes.}
-\end{column}
-\begin{column}{0.45\textwidth}
-\scriptsize
-\textbf{Prompt:} Detect all visible instances of the target class and return normalized \([x,y,w,h]\) boxes.
-
-\vspace{0.15cm}
-\textbf{Correct box:} one visible \emph{Platalea ajaja}.
-
-\vspace{0.15cm}
-\textbf{GPT-4o answer:} {\ttfamily [0.34, 0.36, 0.12, 0.18]}\\
-\textbf{GPT-4o score:} F1=0.00
-
-\vspace{0.15cm}
-\textbf{Sonnet answer:} {\ttfamily [0.14, 0.18, 0.18, 0.24]}\\
-\textbf{Sonnet score:} F1=0.00
 \end{column}
 \end{columns}
 \end{frame}
@@ -538,21 +512,23 @@ higher raw mean, while GPT-4o has the better average rank.
 \plot{\assetpath}{study21_final_pairwise_win_rate_heatmap.png}
 \end{frame}
 
-\begin{frame}{21-Benchmark Study: Clean Benchmark Heatmap}
+\begin{frame}{21-Benchmark Study: Clean Raw Score Heatmap}
 \begin{center}
-\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_normalized_heatmap.png}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_raw_heatmap.png}
 \end{center}
 \end{frame}
 
-\begin{frame}{21-Benchmark Study: Top Finishes}
+\begin{frame}{21-Benchmark Study: Bootstrap Intervals}
 \begin{center}
-\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_topk_counts.png}
+\includegraphics[width=\textwidth,height=0.72\textheight,keepaspectratio]{\assetpath/study21_clean_bootstrap_intervals.png}
 \end{center}
+\vspace{-0.08cm}
+{\scriptsize Horizontal intervals show the 5th--95th percentile range of bootstrapped mean raw scores over the 21 clean benchmarks.}
 \end{frame}
 
-\begin{frame}{21-Benchmark Study: Mean Rank by Type}
+\begin{frame}{21-Benchmark Study: Type A/B/C Radar}
 \begin{center}
-\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_mean_rank_by_type.png}
+\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{\assetpath/study21_clean_type_abc_radar.png}
 \end{center}
 \end{frame}
 

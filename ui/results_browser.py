@@ -182,6 +182,7 @@ class BenchmarkResultsBrowser:
         self._image_request_id = 0
         self._sample_image: Image.Image | None = None
         self._sample_photo: ImageTk.PhotoImage | None = None
+        self._sample_prompt = ""
         self._benchmark_spec_cache: dict[str, BenchmarkSpec | None] = {}
 
         self.root = tk.Tk()
@@ -610,7 +611,8 @@ class BenchmarkResultsBrowser:
         content.add(left, minsize=360, width=440)
         content.add(right, minsize=500, stretch="always")
         self._build_sample_list(left, run)
-        self._build_sample_detail(right)
+        detail_parent = self._scrollable_frame(right)
+        self._build_sample_detail(detail_parent)
         self._render_sample()
 
     def _build_sample_list(self, parent: tk.Frame, run: ResultRun) -> None:
@@ -689,22 +691,29 @@ class BenchmarkResultsBrowser:
         )
         self.sample_status_label.pack(side=tk.RIGHT)
 
+        input_panel = tk.Frame(parent, bg=self.CARD)
+        input_panel.pack(fill=tk.X, padx=12, pady=(0, 8))
+        input_panel.grid_columnconfigure(0, weight=2, uniform="sample_input")
+        input_panel.grid_columnconfigure(1, weight=3, uniform="sample_input")
+
+        image_column = tk.Frame(input_panel, bg=self.CARD)
+        image_column.grid(row=0, column=0, sticky="nsew", padx=(0, 8))
         tk.Label(
-            parent,
+            image_column,
             text="SAMPLE IMAGE",
             bg=self.CARD,
             fg=self.PURPLE,
             font=("Segoe UI", 9, "bold"),
             anchor="w",
-        ).pack(fill=tk.X, padx=12)
+        ).pack(fill=tk.X)
         self.image_box = tk.Frame(
-            parent,
-            height=260,
+            image_column,
+            height=300,
             bg=self.INPUT_BG,
             highlightbackground=self.BORDER,
             highlightthickness=1,
         )
-        self.image_box.pack(fill=tk.X, padx=12, pady=(4, 8))
+        self.image_box.pack(fill=tk.BOTH, expand=True, pady=(4, 0))
         self.image_box.pack_propagate(False)
         self.image_label = tk.Label(
             self.image_box,
@@ -718,15 +727,37 @@ class BenchmarkResultsBrowser:
         self.image_label.pack(fill=tk.BOTH, expand=True)
         self.image_label.bind("<Configure>", self._resize_sample_image)
 
+        text_column = tk.Frame(input_panel, bg=self.CARD)
+        text_column.grid(row=0, column=1, sticky="nsew")
         tk.Label(
-            parent,
+            text_column,
+            text="PROMPT SENT TO MODEL",
+            bg=self.CARD,
+            fg=self.ACCENT,
+            font=("Segoe UI", 9, "bold"),
+            anchor="w",
+        ).pack(fill=tk.X)
+        self.prompt_text = self._text_panel(
+            text_column,
+            height=7,
+            font=("Consolas", 10),
+            padx=0,
+        )
+
+        tk.Label(
+            text_column,
             text="MODEL OUTPUT",
             bg=self.CARD,
             fg=self.ACCENT,
             font=("Segoe UI", 9, "bold"),
             anchor="w",
-        ).pack(fill=tk.X, padx=12)
-        self.prediction_text = self._text_panel(parent, height=7, font=("Consolas", 11))
+        ).pack(fill=tk.X, pady=(8, 0))
+        self.prediction_text = self._text_panel(
+            text_column,
+            height=7,
+            font=("Consolas", 11),
+            padx=0,
+        )
         tk.Label(
             parent,
             text="REFERENCE / EVALUATION",
@@ -746,7 +777,13 @@ class BenchmarkResultsBrowser:
         ).pack(fill=tk.X, padx=12, pady=(8, 0))
         self.telemetry_text = self._text_panel(parent, height=8, font=("Consolas", 9))
 
-    def _text_panel(self, parent: tk.Widget, height: int, font: tuple) -> ScrolledText:
+    def _text_panel(
+        self,
+        parent: tk.Widget,
+        height: int,
+        font: tuple,
+        padx: int = 12,
+    ) -> ScrolledText:
         widget = ScrolledText(
             parent,
             wrap=tk.WORD,
@@ -762,10 +799,45 @@ class BenchmarkResultsBrowser:
             padx=10,
             pady=8,
         )
-        widget.pack(fill=tk.BOTH, expand=True, padx=12, pady=(4, 0))
+        widget.pack(fill=tk.BOTH, expand=True, padx=padx, pady=(4, 0))
         self._style_text_scrollbar(widget)
         widget.configure(state=tk.DISABLED)
         return widget
+
+    def _scrollable_frame(self, parent: tk.Frame) -> tk.Frame:
+        canvas = tk.Canvas(
+            parent,
+            bg=self.CARD,
+            highlightthickness=0,
+            borderwidth=0,
+        )
+        scrollbar = ttk.Scrollbar(
+            parent,
+            orient=tk.VERTICAL,
+            command=canvas.yview,
+            style="Dark.Vertical.TScrollbar",
+        )
+        frame = tk.Frame(canvas, bg=self.CARD)
+        window_id = canvas.create_window((0, 0), window=frame, anchor="nw")
+
+        def update_scroll_region(_event=None) -> None:
+            canvas.configure(scrollregion=canvas.bbox("all"))
+
+        def update_frame_width(event) -> None:
+            canvas.itemconfigure(window_id, width=event.width)
+
+        def on_mousewheel(event) -> None:
+            delta = int(-1 * (event.delta / 120))
+            canvas.yview_scroll(delta, "units")
+
+        frame.bind("<Configure>", update_scroll_region)
+        canvas.bind("<Configure>", update_frame_width)
+        canvas.bind("<MouseWheel>", on_mousewheel)
+        frame.bind("<MouseWheel>", on_mousewheel)
+        canvas.configure(yscrollcommand=scrollbar.set)
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        return frame
 
     def _select_sample(self, _event=None) -> None:
         selection = self.sample_tree.selection()
@@ -815,7 +887,9 @@ class BenchmarkResultsBrowser:
         request_id = self._image_request_id
         self._sample_image = None
         self._sample_photo = None
+        self._sample_prompt = ""
         self.image_label.configure(image="", text="Loading sample image...", fg=self.MUTED)
+        self._set_text(self.prompt_text, "Loading prompt...")
 
         spec = self._spec_for_run(run)
         if spec is None:
@@ -823,6 +897,7 @@ class BenchmarkResultsBrowser:
                 text=f"No benchmark image loader found for '{run.benchmark}'.",
                 fg=self.WARNING,
             )
+            self._set_text(self.prompt_text, "Prompt unavailable: no benchmark input loader was found.")
             return
 
         row_index = _sample_row_index(sample, self.current_sample_index)
@@ -832,6 +907,7 @@ class BenchmarkResultsBrowser:
                 with self._input_service_lock:
                     preview = self.input_service.preview(spec, row_index)
                 image = preview.image.convert("RGB")
+                prompt = preview.prompt
             except Exception as exc:
                 self.root.after(
                     0,
@@ -841,26 +917,30 @@ class BenchmarkResultsBrowser:
                     ),
                 )
                 return
-            self.root.after(0, lambda: self._display_sample_image(request_id, image))
+            self.root.after(0, lambda: self._display_sample_input(request_id, image, prompt))
 
         threading.Thread(target=worker, daemon=True).start()
 
-    def _display_sample_image(self, request_id: int, image: Image.Image) -> None:
+    def _display_sample_input(self, request_id: int, image: Image.Image, prompt: str) -> None:
         if request_id != self._image_request_id:
             return
         self._sample_image = image.copy()
+        self._sample_prompt = prompt
         self._render_sample_image()
+        self._set_text(self.prompt_text, prompt)
 
     def _display_sample_image_error(self, request_id: int, message: str) -> None:
         if request_id != self._image_request_id:
             return
         self._sample_image = None
         self._sample_photo = None
+        self._sample_prompt = ""
         self.image_label.configure(
             image="",
             text=f"Image unavailable.\n{message}",
             fg=self.WARNING,
         )
+        self._set_text(self.prompt_text, f"Prompt unavailable.\n{message}")
 
     def _resize_sample_image(self, _event=None) -> None:
         if self._sample_image is not None:
